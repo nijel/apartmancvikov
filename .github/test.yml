@@ -1,0 +1,42 @@
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
+    name: Python ${{ matrix.python-version }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache pip
+        uses: actions/cache@v2.1.6
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements*.txt') }}
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install pip dependencies
+        run: |
+          pip install --upgrade pip wheel setuptools
+          pip install -r requirements.txt -r requirements-test.txt
+      - name: Compile MO files
+        run: ./manage.py compilemessages
+      - name: Collect static files
+        run: ./manage.py collectstatic
+      - name: Django checks
+        run: ./manage.py check
+      - name: Test with Django
+        run: coverage run ./manage.py test
+      - name: Coverage
+        run: |
+          coverage combine
+          coverage xml
+      - uses: codecov/codecov-action@v1.5.2
+        with:
+          name: Python ${{ matrix.python-version }}
