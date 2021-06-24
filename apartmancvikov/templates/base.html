@@ -22,16 +22,16 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "home" %}">{% trans "Ubytování" %}</a>
+                <a class="nav-link {% if request.resolver_match.url_name == "home" %}active" aria-current="page{% endif %}" href="{% url "home" %}">{% trans "Ubytování" %}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">{% trans "Výlety" %}</a>
+                <a class="nav-link {% if request.resolver_match.url_name == "vylety" %}active" aria-current="page{% endif %}" href="#">{% trans "Výlety" %}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">{% trans "Rezervace" %}</a>
+                <a class="nav-link {% if request.resolver_match.url_name == "rezervace" %}active" aria-current="page{% endif %}" href="#">{% trans "Rezervace" %}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url "kontakt" %}">{% trans "Kontakt" %}</a>
+                <a class="nav-link {% if request.resolver_match.url_name == "kontakt" %}active" aria-current="page{% endif %}" href="{% url "kontakt" %}">{% trans "Kontakt" %}</a>
               </li>
             </ul>
           </div>
