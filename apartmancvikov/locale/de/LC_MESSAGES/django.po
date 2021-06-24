@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-25 10:10+0200\n"
-"PO-Revision-Date: 2021-06-24 15:38+0000\n"
+"POT-Creation-Date: 2021-06-24 15:29+0000\n"
+"PO-Revision-Date: 2021-06-25 08:10+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
@@ -34,7 +34,7 @@ msgstr ""
 #: apartmancvikov/templates/base.html:62
 #: apartmancvikov/templates/kontakt.html:12
 msgid "Apartmán Cvikov"
-msgstr "Wohnung Cvikov"
+msgstr "Ferienwohnung Cvikov"
 
 #: apartmancvikov/templates/base.html:25
 msgid "Ubytování"
@@ -42,7 +42,7 @@ msgstr "Unterkunft"
 
 #: apartmancvikov/templates/base.html:28
 msgid "Výlety"
-msgstr "Fahrten"
+msgstr "Ausflüge"
 
 #: apartmancvikov/templates/base.html:31
 msgid "Rezervace"
