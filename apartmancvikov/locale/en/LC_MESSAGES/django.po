@@ -3,50 +3,52 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-24 15:29+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-06-24 15:37+0000\n"
+"Last-Translator: Michal Čihař <michal@weblate.org>\n"
+"Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
+"web/en/>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7.1-dev\n"
+
 #: apartmancvikov/templates/base.html:13 apartmancvikov/templates/base.html:44
 #: apartmancvikov/templates/base.html:62
 #: apartmancvikov/templates/kontakt.html:14
 msgid "Apartmán Cvikov"
-msgstr ""
+msgstr "Apartment Cvikov"
 
 #: apartmancvikov/templates/base.html:25
 msgid "Ubytování"
-msgstr ""
+msgstr "Accommodation"
 
 #: apartmancvikov/templates/base.html:28
 msgid "Výlety"
-msgstr ""
+msgstr "Trips"
 
 #: apartmancvikov/templates/base.html:31
 msgid "Rezervace"
-msgstr ""
+msgstr "Booking"
 
 #: apartmancvikov/templates/base.html:34
 msgid "Kontakt"
-msgstr ""
+msgstr "Contact"
 
 #: apartmancvikov/templates/base.html:49
 msgid "Ubytování v Lužických horách."
-msgstr ""
+msgstr "Accommodation in Lusatian Mountains."
 
 #: apartmancvikov/templates/kontakt.html:4
 msgid "Konktaktujte Apartmán Cvikov"
-msgstr ""
+msgstr "Contact Apartment Cvikov"
 
 #: apartmancvikov/templates/kontakt.html:21
 msgid "Mapy Google"
-msgstr ""
+msgstr "Google Maps"
