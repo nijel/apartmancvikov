@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-25 10:10+0200\n"
-"PO-Revision-Date: 2021-06-24 15:37+0000\n"
+"PO-Revision-Date: 2021-06-25 08:22+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/en/>\n"
@@ -75,30 +75,28 @@ msgid "Mapy Google"
 msgstr "Google Maps"
 
 #: apartmancvikov/templates/vylety.html:5
-#, fuzzy
-#| msgid "Apartmán Cvikov"
 msgid "Výlety z Apartmánu Cvikov"
-msgstr "Apartment Cvikov"
+msgstr "Trips from Apartment Cvikov"
 
 #: apartmancvikov/templates/vylety.html:13
 msgid "Vyhlídka Dutý kámen"
-msgstr ""
+msgstr "Viewpoint Dutý kámen"
 
 #: apartmancvikov/templates/vylety.html:29
 msgid "Vyhlídka Švýcárna"
-msgstr ""
+msgstr "Viewpoint Švýcárna"
 
 #: apartmancvikov/templates/vylety.html:45
 msgid "Schillerova vyhlídka"
-msgstr ""
+msgstr "Schiller's Viewpoint"
 
 #: apartmancvikov/templates/vylety.html:63
 msgid "Křížová cesta"
-msgstr ""
+msgstr "Stations of the Cross"
 
 #: apartmancvikov/templates/vylety.html:79
 msgid "Skalní hrad Sloup"
-msgstr ""
+msgstr "Sloup Rock Castle"
 
 #: apartmancvikov/templates/vylety.html:84
 #: apartmancvikov/templates/vylety.html:101
@@ -107,28 +105,28 @@ msgstr ""
 #: apartmancvikov/templates/vylety.html:152
 #: apartmancvikov/templates/vylety.html:169
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #: apartmancvikov/templates/vylety.html:96
 msgid "Hrad a klášter Oybin"
-msgstr ""
+msgstr "Oybin Castle and Monastery"
 
 #: apartmancvikov/templates/vylety.html:113
 msgid "Motýlí dům Jonsdorf"
-msgstr ""
+msgstr "Butterfly House Jonsdorf"
 
 #: apartmancvikov/templates/vylety.html:131
 msgid "Výletní turistický vláček"
-msgstr ""
+msgstr "Tourist excursion train"
 
 #: apartmancvikov/templates/vylety.html:147
 msgid "Skleněná zahrada Kunratice u Cvikova"
-msgstr ""
+msgstr "Glass garden Kunratice u Cvikova"
 
 #: apartmancvikov/templates/vylety.html:164
 msgid "Sklárna AJETO Lindava"
-msgstr ""
+msgstr "Glassworks AJETO Lindava"
 
 #: apartmancvikov/templates/vylety.html:181
 msgid "Hora Klíč"
-msgstr ""
+msgstr "Klíč Mountain"
