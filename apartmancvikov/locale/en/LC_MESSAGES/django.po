@@ -3,11 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: apartmancvikov/templates/vylety.html:15
+#: apartmancvikov/templates/vylety.html:31
+#: apartmancvikov/templates/vylety.html:47
+#: apartmancvikov/templates/vylety.html:65
+#: apartmancvikov/templates/vylety.html:81
+#: apartmancvikov/templates/vylety.html:98
+#: apartmancvikov/templates/vylety.html:115
+#: apartmancvikov/templates/vylety.html:133
+#: apartmancvikov/templates/vylety.html:149
+#: apartmancvikov/templates/vylety.html:166
+#: apartmancvikov/templates/vylety.html:183
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-24 15:29+0000\n"
+"POT-Creation-Date: 2021-06-25 10:10+0200\n"
 "PO-Revision-Date: 2021-06-24 15:37+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -21,7 +32,7 @@ msgstr ""
 
 #: apartmancvikov/templates/base.html:13 apartmancvikov/templates/base.html:44
 #: apartmancvikov/templates/base.html:62
-#: apartmancvikov/templates/kontakt.html:14
+#: apartmancvikov/templates/kontakt.html:12
 msgid "Apartmán Cvikov"
 msgstr "Apartment Cvikov"
 
@@ -50,5 +61,74 @@ msgid "Konktaktujte Apartmán Cvikov"
 msgstr "Contact Apartment Cvikov"
 
 #: apartmancvikov/templates/kontakt.html:21
+#: apartmancvikov/templates/vylety.html:19
+#: apartmancvikov/templates/vylety.html:35
+#: apartmancvikov/templates/vylety.html:51
+#: apartmancvikov/templates/vylety.html:69
+#: apartmancvikov/templates/vylety.html:86
+#: apartmancvikov/templates/vylety.html:103
+#: apartmancvikov/templates/vylety.html:120
+#: apartmancvikov/templates/vylety.html:154
+#: apartmancvikov/templates/vylety.html:171
+#: apartmancvikov/templates/vylety.html:187
 msgid "Mapy Google"
 msgstr "Google Maps"
+
+#: apartmancvikov/templates/vylety.html:5
+#, fuzzy
+#| msgid "Apartmán Cvikov"
+msgid "Výlety z Apartmánu Cvikov"
+msgstr "Apartment Cvikov"
+
+#: apartmancvikov/templates/vylety.html:13
+msgid "Vyhlídka Dutý kámen"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:29
+msgid "Vyhlídka Švýcárna"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:45
+msgid "Schillerova vyhlídka"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:63
+msgid "Křížová cesta"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:79
+msgid "Skalní hrad Sloup"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:84
+#: apartmancvikov/templates/vylety.html:101
+#: apartmancvikov/templates/vylety.html:118
+#: apartmancvikov/templates/vylety.html:136
+#: apartmancvikov/templates/vylety.html:152
+#: apartmancvikov/templates/vylety.html:169
+msgid "Web"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:96
+msgid "Hrad a klášter Oybin"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:113
+msgid "Motýlí dům Jonsdorf"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:131
+msgid "Výletní turistický vláček"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:147
+msgid "Skleněná zahrada Kunratice u Cvikova"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:164
+msgid "Sklárna AJETO Lindava"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:181
+msgid "Hora Klíč"
+msgstr ""
