@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-25 10:48+0200\n"
-"PO-Revision-Date: 2021-06-25 08:22+0000\n"
+"PO-Revision-Date: 2021-06-25 08:51+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
@@ -81,6 +81,8 @@ msgstr "Ausflüge vom Ferienwohnung Cvikov"
 #: apartmancvikov/templates/vylety.html:10
 msgid "Poznejte přírodu Lužických hor, skalní hrady a sklářskou historii."
 msgstr ""
+"Entdecken Sie die Natur des Lausitzer Gebirges, Felsenburgen und die "
+"Geschichte der Glasherstellung."
 
 #: apartmancvikov/templates/vylety.html:20
 msgid "Vyhlídka Dutý kámen"
@@ -137,22 +139,24 @@ msgstr "Berg Klíč"
 
 #: apartmancvikov/templates/vylety.html:203
 msgid "Další tipy na výlet"
-msgstr ""
+msgstr "Weitere Tipps für die Reise"
 
 #: apartmancvikov/templates/vylety.html:205
 msgid ""
 "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
 "okolních oblastí a objevte další zajímavosti."
 msgstr ""
+"In der Umgebung gibt es noch viel mehr zu sehen. Werfen Sie einen Blick auf "
+"die Websites der umliegenden Gebiete und entdecken Sie weitere Attraktionen."
 
 #: apartmancvikov/templates/vylety.html:207
 msgid "Lužické hory"
-msgstr ""
+msgstr "Lausitzer Gebirge"
 
 #: apartmancvikov/templates/vylety.html:208
 msgid "Českosaské Švýcarsko"
-msgstr ""
+msgstr "Böhmische Schweiz"
 
 #: apartmancvikov/templates/vylety.html:209
 msgid "Českolipsko"
-msgstr ""
+msgstr "Českolipsko"
