@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-25 10:48+0200\n"
-"PO-Revision-Date: 2021-06-25 08:22+0000\n"
+"PO-Revision-Date: 2021-06-25 08:51+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/en/>\n"
@@ -81,6 +81,8 @@ msgstr "Trips from Apartment Cvikov"
 #: apartmancvikov/templates/vylety.html:10
 msgid "Poznejte přírodu Lužických hor, skalní hrady a sklářskou historii."
 msgstr ""
+"Discover the nature of the Lusatian Mountains, rock castles and glassmaking "
+"history."
 
 #: apartmancvikov/templates/vylety.html:20
 msgid "Vyhlídka Dutý kámen"
@@ -137,22 +139,24 @@ msgstr "Klíč Mountain"
 
 #: apartmancvikov/templates/vylety.html:203
 msgid "Další tipy na výlet"
-msgstr ""
+msgstr "More tips for the trip"
 
 #: apartmancvikov/templates/vylety.html:205
 msgid ""
 "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
 "okolních oblastí a objevte další zajímavosti."
 msgstr ""
+"There is much more to see nearby. Take a look at the websites of the "
+"surrounding areas and discover more attractions."
 
 #: apartmancvikov/templates/vylety.html:207
 msgid "Lužické hory"
-msgstr ""
+msgstr "Lusatian Mountains"
 
 #: apartmancvikov/templates/vylety.html:208
 msgid "Českosaské Švýcarsko"
-msgstr ""
+msgstr "Bohemian Switzerland"
 
 #: apartmancvikov/templates/vylety.html:209
 msgid "Českolipsko"
-msgstr ""
+msgstr "Českolipsko"
