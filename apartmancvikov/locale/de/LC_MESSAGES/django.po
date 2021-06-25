@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-24 15:29+0000\n"
-"PO-Revision-Date: 2021-06-25 08:10+0000\n"
+"PO-Revision-Date: 2021-06-25 08:22+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
@@ -58,7 +58,7 @@ msgstr "Unterkunft im Lausitzer Gebirge."
 
 #: apartmancvikov/templates/kontakt.html:4
 msgid "Konktaktujte Apartmán Cvikov"
-msgstr "Kontakt Wohnung Cvikov"
+msgstr "Kontakt Ferienwohnung Cvikov"
 
 #: apartmancvikov/templates/kontakt.html:21
 #: apartmancvikov/templates/vylety.html:19
@@ -75,30 +75,28 @@ msgid "Mapy Google"
 msgstr "Google Maps"
 
 #: apartmancvikov/templates/vylety.html:5
-#, fuzzy
-#| msgid "Apartmán Cvikov"
 msgid "Výlety z Apartmánu Cvikov"
-msgstr "Wohnung Cvikov"
+msgstr "Ausflüge vom Ferienwohnung Cvikov"
 
 #: apartmancvikov/templates/vylety.html:13
 msgid "Vyhlídka Dutý kámen"
-msgstr ""
+msgstr "Aussichtspunkt Dutý kámen"
 
 #: apartmancvikov/templates/vylety.html:29
 msgid "Vyhlídka Švýcárna"
-msgstr ""
+msgstr "Aussichtspunkt Švýcárna"
 
 #: apartmancvikov/templates/vylety.html:45
 msgid "Schillerova vyhlídka"
-msgstr ""
+msgstr "Schillers Aussichtspunkt"
 
 #: apartmancvikov/templates/vylety.html:63
 msgid "Křížová cesta"
-msgstr ""
+msgstr "Kreuzweg"
 
 #: apartmancvikov/templates/vylety.html:79
 msgid "Skalní hrad Sloup"
-msgstr ""
+msgstr "Felsenburg Sloup"
 
 #: apartmancvikov/templates/vylety.html:84
 #: apartmancvikov/templates/vylety.html:101
@@ -107,28 +105,28 @@ msgstr ""
 #: apartmancvikov/templates/vylety.html:152
 #: apartmancvikov/templates/vylety.html:169
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #: apartmancvikov/templates/vylety.html:96
 msgid "Hrad a klášter Oybin"
-msgstr ""
+msgstr "Burg und Kloster Oybin"
 
 #: apartmancvikov/templates/vylety.html:113
 msgid "Motýlí dům Jonsdorf"
-msgstr ""
+msgstr "Schmetterlingshaus Jonsdorf"
 
 #: apartmancvikov/templates/vylety.html:131
 msgid "Výletní turistický vláček"
-msgstr ""
+msgstr "Oybiner Gebirgs-Express"
 
 #: apartmancvikov/templates/vylety.html:147
 msgid "Skleněná zahrada Kunratice u Cvikova"
-msgstr ""
+msgstr "Glasgarten Kunratice u Cvikova"
 
 #: apartmancvikov/templates/vylety.html:164
 msgid "Sklárna AJETO Lindava"
-msgstr ""
+msgstr "Glashütte AJETO Lindava"
 
 #: apartmancvikov/templates/vylety.html:181
 msgid "Hora Klíč"
-msgstr ""
+msgstr "Berg Klíč"
