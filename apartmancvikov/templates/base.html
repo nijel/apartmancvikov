@@ -53,10 +53,8 @@
       </div>
     </div>
 
-    <div class="container">
-      {% block content %}
-      {% endblock %}
-    </div>
+    {% block content %}
+    {% endblock %}
 
     <footer class="container p-3 text-muted text-center">
       <a href="{% url "kontakt" %}">{% trans "Apartmán Cvikov" %}</a>

@@ -5,6 +5,7 @@
 {% block title %}{% trans "Výlety z Apartmánu Cvikov" %}{% endblock %}
 
 {% block content %}
+<div class="container">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
       <img src="{% static "vylety/.jpg" %}" />
@@ -188,5 +189,21 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="bg-dark text-secondary px-4 py-5 text-center">
+  <div class="py-5">
+    <h1 class="display-5 fw-bold text-white">{% trans "Další tipy na výlet" %}</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 mb-4">{% trans "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky okolních oblastí a objevte další zajímavosti." %}</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="http://www.luzihory.cz/" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% trans "Lužické hory" %}</a>
+        <a href="https://www.ceskesvycarsko.cz/" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% trans "Českosaské Švýcarsko" %}</a>
+        <a href="https://www.kudyznudy.cz/kam-pojedete/ceskolipsko-a-jizerske-hory/ceskolipsko" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% trans "Českolipsko" %}</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
