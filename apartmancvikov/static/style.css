@@ -7,7 +7,10 @@
 
 @media (min-width: 768px) {
   .navbar-nav .nav-item {
-    padding: 20px;
+    padding: 1rem;
+  }
+  .p-md-5 {
+    padding: 2rem !important;
   }
 }
 @media (min-width: 576px) {
