@@ -44,8 +44,13 @@
                 <a class="nav-link {% if request.resolver_match.url_name == "vylety" %}active" aria-current="page{% endif %}" href="{% url "vylety" %}">{% trans "Výlety" %}</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == "cenik" %}active" aria-current="page{% endif %}" href="{% url "cenik" %}">{% trans "Ceník" %}</a>
+              </li>
+              <!--
+              <li class="nav-item">
                 <a class="nav-link {% if request.resolver_match.url_name == "rezervace" %}active" aria-current="page{% endif %}" href="#">{% trans "Rezervace" %}</a>
               </li>
+              -->
               <li class="nav-item">
                 <a class="nav-link {% if request.resolver_match.url_name == "kontakt" %}active" aria-current="page{% endif %}" href="{% url "kontakt" %}">{% trans "Kontakt" %}</a>
               </li>

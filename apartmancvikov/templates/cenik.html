@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block lead %}
+{% block title %}
+{% trans "Ceník a podmínky Apartmánu Cvikov" %}
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <h1 class="display-5 fw-bold">{% trans "Ceník" %}</h1>
+  {% include "vystavba.html" %}
+
+  <p>
+    {% trans "Cena za dospělého je od 600,- za osobu za noc." %}
+    {% trans "Cena se liší podle počtu osob, délky pobytu a sezóny." %}
+  </p>
+
+  <p>
+    {% trans "Dítě do 3 let – bez nároku na lůžko zdarma" %}<br />
+    {% trans "Dítě do 12 let - 50% z ceny" %}
+  </p>
+
+  <h2 class="display-6 fw-bold">{% trans "Co cena zahrnuje?" %}</h2>
+
+    <ul>
+      <li>{% trans "Ubytování ve třech útulných pokojích se společnou koupelnou." %}</li>
+      <li>{% trans "Na pokojích jsou připraveny osušky a ručníky." %}</li>
+      <li>{% trans "Parkování přímo u apartmánu" %}</li>
+      <li>{% trans "Využití dětského koutku i venkovních atrakcí" %}</li>
+      <li>{% trans "Možnost využít dětského vybavení" %}</li>
+      <li>{% trans "Využití kolárny, kočárkárny, lyžárny v ubytovacím prostoru" %}</li>
+      <li>{% trans "Wi-fi připojení k internetu v celém objektu" %}</li>
+    </ul>
+
+
+<p>
+  {% trans "Minimální délka pobytu jsou 2 noci, o letních prázdninách 7 nocí." %}
+</p>
+
+  <h2 class="display-6 fw-bold">{% trans "Platba a storno" %}</h2>
+
+<p>
+  {% trans "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu, která má splatnost 30 dní před Vaším příjezdem." %}
+  {% trans "Rezervace je závazná po uhrazení rezervační platby za ubytování, a to převodem na účet." %}
+  {% trans "V případě nedodržení platebních podmínek si vyhrazujeme právo od rezervace ustoupit." %}
+</p>
+
+<p>
+  {% trans "Platba na místě pouze v hotovosti." %}
+</p>
+
+<p>
+  {% trans "V případě zrušení rezervace do 30ti dnů před termínem pobytu vracíme platbu v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem činí vratná částka 0,- z uhrazené ceny." %}
+</p>
+
+  <h2 class="display-6 fw-bold">{% trans "Příjezd a odjezd" %}</h2>
+
+<p>
+  {% trans "V den příjezdu je Váš pokoj připraven od 14 hodiny." %}
+  {% trans "Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete informovat o případném pozdním příjezdu." %}
+  {% trans "V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě dle obsazenosti může být i později." %}
+</p>
+
+
+</div>
+{% endblock %}

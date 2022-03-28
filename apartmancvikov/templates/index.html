@@ -3,5 +3,51 @@
 
 {% block content %}
 <div class="container">
+<div class="container py-5">
+  <h1 class="display-5 fw-bold">{% trans "Ubytování v apartmánu" %}</h1>
+
+  {% include "vystavba.html" %}
+
+  <p>
+    {% trans "Nabízíme rodinné ubytování ve Cvikově, bráně Lužických hor." %}
+    {% trans "Ubytujeme vás ve 3 pokojích, ve kterých naleznete 7 lůžek s možností dětské postýlky." %}
+  </p>
+
+
+
+  <h2 class="display-6 fw-bold">{% trans "Vybavení apartmánu" %}</h2>
+
+  <ul>
+    <li>{% trans "Příjemné, klidné ubytování pro rodinu či uzavřenou společnost. Apartmán má samostatný vchod." %}
+    <li>{% trans "Je k dispozici i fén na vlasy a hračky pro děti do vany." %}
+    <li>{% trans "Je možnost umístit v rámci schodiště dětskou zábranu." %}
+    <li>{% trans "Na všech oknech jsou žaluzie a zatemňovací závěsy pro Váš klidný spánek." %}
+    <li>{% trans "V kuchyni najdete vše pro Vaše vaření – indukční deska, trouba, myčka, lednice s mrazákem, mikrovlnná trouba a veškeré nádobí." %}
+    <li>{% trans "V obývacím pokoji je televize, pohodlná sedačka, vybavený dětský koutek na hraní, stoleček se židličkami na kreslení, hrací koberec na autíčka." %}
+    <li>{% trans "V přízemí se nachází prádelna s pračkou, sušičkou a sušákem na prádlo." %}
+    <li>{% trans "Psi ani jiná zvířata nejsou s ohledem na děti vítána, děkujeme za pochopení." %}
+  </ul>
+
+  <h2 class="display-6 fw-bold">{% trans "Pokoje" %}</h2>
+
+  <p>
+    {% trans "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v přízemí." %}
+  </p>
+
+  <h3 class="display-7 fw-bold">{% trans "Tyrkys" %}</h3>
+  <p>
+    {% trans "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky." %}
+  </p>
+
+  <h3 class="display-7 fw-bold">{% trans "Levandule" %}</h3>
+  <p>
+    {% trans "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka." %}
+  </p>
+
+  <h3 class="display-7 fw-bold">{% trans "Fuchsie" %}</h3>
+  <p>
+    {% trans "Pokoj s dvěma samostatnými postelemi." %}
+  </p>
+
 </div>
 {% endblock %}
