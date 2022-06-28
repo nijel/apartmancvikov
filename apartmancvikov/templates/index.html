@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block content %}
 <div class="container">
@@ -35,19 +36,77 @@
   </p>
 
   <h3 class="display-7 fw-bold">{% trans "Tyrkys" %}</h3>
-  <p>
-    {% trans "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky." %}
-  </p>
+  <div class="row flex-lg-row-reverse g-5 py-5">
+    <div class="col-lg-8">
+      <a href="{% static "foto/tyrkys.jpg" %}" data-toggle="lightbox" data-gallery="lightbox" data-caption="{% trans "Tyrkysový pokoj" %}" alt="{% trans "Tyrkysový pokoj" %}">
+        <img src="{% static "foto/tyrkys.jpg" %}" class="rounded img-fluid" />
+      </a>
+    </div>
+    <div class="col-lg-4">
+      <p>
+        {% trans "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky." %}
+      </p>
+    </div>
+  </div>
 
   <h3 class="display-7 fw-bold">{% trans "Levandule" %}</h3>
-  <p>
-    {% trans "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka." %}
-  </p>
+  <div class="row flex-lg-row-reverse g-5 py-5">
+    <div class="col-lg-8">
+      <a href="{% static "foto/levandule.jpg" %}" data-toggle="lightbox" data-gallery="lightbox" data-caption="{% trans "Levandulový pokoj" %}" alt="{% trans "Levandulový pokoj" %}">
+        <img src="{% static "foto/levandule.jpg" %}" class="rounded img-fluid" />
+      </a>
+    </div>
+    <div class="col-lg-4">
+      <p>
+        {% trans "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka." %}
+      </p>
+    </div>
+  </div>
 
   <h3 class="display-7 fw-bold">{% trans "Fuchsie" %}</h3>
-  <p>
-    {% trans "Pokoj s dvěma samostatnými postelemi." %}
-  </p>
+  <div class="row flex-lg-row-reverse g-5 py-5">
+    <div class="col-lg-8">
+      <a href="{% static "foto/fuchsie.jpg" %}" data-toggle="lightbox" data-gallery="lightbox" data-caption="{% trans "Fuchsiový pokoj" %}" alt="{% trans "Fuchsiový pokoj" %}">
+        <img src="{% static "foto/fuchsie.jpg" %}" class="rounded img-fluid" />
+      </a>
+    </div>
+    <div class="col-lg-4">
+      <p>
+        {% trans "Pokoj s dvěma samostatnými postelemi." %}
+      </p>
+    </div>
+  </div>
+
+  <h2 class="display-6 fw-bold">{% trans "Společné místnosti" %}</h2>
+
+  <div class="row">
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
+  <a href="{% static "foto/obyvak.jpg" %}" data-toggle="lightbox" data-gallery="lightbox" data-caption="{% trans "Obývací pokoj" %}" alt="{% trans "Obývací pokoj" %}">
+    <img src="{% static "foto/obyvak.jpg" %}" class="rounded img-fluid" />
+  </a>
+  </div>
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
+  <a href="{% static "foto/kuchyn.jpg" %}" data-toggle="lightbox" data-gallery="lightbox" data-caption="{% trans "Kuchyně" %}" alt="{% trans "Kuchyně" %}">
+    <img src="{% static "foto/kuchyn.jpg" %}" class="rounded img-fluid" />
+  </a>
+  </div>
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
+  <a href="{% static "foto/koupelna-dole.jpg" %}" data-toggle="lightbox" data-gallery="lightbox" data-caption="{% trans "Koupelna se sprchou" %}" alt="{% trans "Koupelna se sprchou" %}">
+    <img src="{% static "foto/koupelna-dole.jpg" %}" class="rounded img-fluid" />
+  </a>
+  </div>
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
+  <a href="{% static "foto/koupelna-nahore.jpg" %}" data-toggle="lightbox" data-gallery="lightbox" data-caption="{% trans "Koupelna s vanou" %}" alt="{% trans "Koupelna s vanou" %}">
+    <img src="{% static "foto/koupelna-nahore.jpg" %}" class="rounded img-fluid" />
+  </a>
+  </div>
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
+  <a href="{% static "foto/pradelna.jpg" %}" data-toggle="lightbox" data-gallery="lightbox" data-caption="{% trans "Prádelna" %}" alt="{% trans "Prádelna" %}">
+    <img src="{% static "foto/pradelna.jpg" %}" class="rounded img-fluid" />
+  </a>
+  </div>
+  </div>
+
 
 </div>
 {% endblock %}
