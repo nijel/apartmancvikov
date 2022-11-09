@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-09 11:49+0100\n"
-"PO-Revision-Date: 2021-06-25 08:51+0000\n"
+"PO-Revision-Date: 2022-11-09 12:27+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/en/>\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7.1-dev\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #: apartmancvikov/templates/base.html:29 apartmancvikov/templates/base.html:66
 #: apartmancvikov/templates/base.html:82 apartmancvikov/templates/index.html:21
@@ -46,7 +46,7 @@ msgstr "Trips"
 
 #: apartmancvikov/templates/base.html:47 apartmancvikov/templates/cenik.html:12
 msgid "Ceník"
-msgstr ""
+msgstr "Prices"
 
 #: apartmancvikov/templates/base.html:51
 msgid "Rezervace"
@@ -61,39 +61,39 @@ msgid "Ubytování v Lužických horách."
 msgstr "Accommodation in Lusatian Mountains."
 
 #: apartmancvikov/templates/cenik.html:6
-#, fuzzy
-#| msgid "Konktaktujte Apartmán Cvikov"
 msgid "Ceník a podmínky Apartmánu Cvikov"
-msgstr "Contact Apartment Cvikov"
+msgstr "Prices and conditions of Apartment Cvikov"
 
 #: apartmancvikov/templates/cenik.html:15
 msgid "Cena za dospělého je od 600,- za osobu za noc."
-msgstr ""
+msgstr "The price for an adult is from CZK 600 per person per night."
 
 #: apartmancvikov/templates/cenik.html:16
 msgid "Cena se liší podle počtu osob, délky pobytu a sezóny."
 msgstr ""
+"The price varies according to the number of people, length of stay and "
+"season."
 
 #: apartmancvikov/templates/cenik.html:20
 msgid "Dítě do 3 let – bez nároku na lůžko zdarma"
-msgstr ""
+msgstr "Child up to 3 years old - free of charge without entitlement to a bed"
 
 #: apartmancvikov/templates/cenik.html:21
 #, python-format
 msgid "Dítě do 12 let - 50%% z ceny"
-msgstr ""
+msgstr "Child under 12 years - 50%% of the price"
 
 #: apartmancvikov/templates/cenik.html:24
 msgid "Co cena zahrnuje?"
-msgstr ""
+msgstr "What does the price include?"
 
 #: apartmancvikov/templates/cenik.html:27
 msgid "Ubytování ve třech útulných pokojích se společnou koupelnou."
-msgstr ""
+msgstr "Accommodation in three cozy rooms with a shared bathroom."
 
 #: apartmancvikov/templates/cenik.html:28
 msgid "Na pokojích jsou připraveny osušky a ručníky."
-msgstr ""
+msgstr "Towels are provided in the rooms."
 
 #: apartmancvikov/templates/cenik.html:29
 msgid "Parkování přímo u apartmánu"
