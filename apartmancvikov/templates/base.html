@@ -26,6 +26,11 @@
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="theme-color" content="#ff0000">
 
+    <!-- OpenGraph -->
+    <meta name="description" content="{% include "snippets/description.html" %}">
+    <meta name="og:description" content="{% include "snippets/description.html" %}">
+    <meta name="og:image" content="{% static "foto/dum.jpg" %}">
+
     <title>{% block title %}{% trans "Apartmán Cvikov" %}{% endblock %}</title>
   </head>
   <body>
