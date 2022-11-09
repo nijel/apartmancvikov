@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 16:04+0100\n"
+"POT-Creation-Date: 2022-11-09 16:27+0100\n"
 "PO-Revision-Date: 2022-11-09 15:07+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -351,22 +351,33 @@ msgstr ""
 "Discover the nature of the Lusatian Mountains, rock castles and glassmaking "
 "history."
 
-#: apartmancvikov/templates/vylety.html:22
+#: apartmancvikov/templates/vylety.html:19
+#, fuzzy
+#| msgid "Křížová cesta"
+msgid "Křížová cesta ve Cvikově"
+msgstr "Stations of the Cross"
+
+#: apartmancvikov/templates/vylety.html:24
 msgid "Cvikovské vyhlídky"
 msgstr "Cvikov Prospects"
 
-#: apartmancvikov/templates/vylety.html:24
+#: apartmancvikov/templates/vylety.html:26
 msgid ""
 "Procházka po vyhlídkách v okolí Cvikova nabídne pohledy na celé Lužické hory."
 msgstr ""
 "A walk through the viewpoints around Cvikovo will offer views of the entire "
 "Lusatian Mountains."
 
-#: apartmancvikov/templates/vylety.html:37
+#: apartmancvikov/templates/vylety.html:36
+#: apartmancvikov/templates/vylety.html:66
+msgid "Oybin"
+msgstr "Oybin"
+
+#: apartmancvikov/templates/vylety.html:41
 msgid "Skalní města a hrady"
 msgstr "Rock towns and castles"
 
-#: apartmancvikov/templates/vylety.html:39
+#: apartmancvikov/templates/vylety.html:43
 msgid ""
 "V okolí se nachází mnoho skalních měst, skalních reliéfů a dalších "
 "přírodních nebo lidmi vytvořených skalnách zajímavostí."
@@ -374,94 +385,108 @@ msgstr ""
 "There are many rock towns, rock reliefs and other natural or man-made rock "
 "attractions in the surroundings."
 
-#: apartmancvikov/templates/vylety.html:42
+#: apartmancvikov/templates/vylety.html:46
 msgid "Sloup"
 msgstr "Column"
 
-#: apartmancvikov/templates/vylety.html:43
+#: apartmancvikov/templates/vylety.html:47
 msgid "Radvanec"
 msgstr "Radvanec"
 
-#: apartmancvikov/templates/vylety.html:44
+#: apartmancvikov/templates/vylety.html:48
 msgid "Kunratické Švýcarsko"
 msgstr "Kunratic Switzerland"
 
-#: apartmancvikov/templates/vylety.html:54
+#: apartmancvikov/templates/vylety.html:55
+msgid "Motýlí dům Jonsdorf"
+msgstr "Butterfly House Jonsdorf"
+
+#: apartmancvikov/templates/vylety.html:60
 msgid "Oybin a Jonsdorf"
 msgstr "Oybin and Jonsdorf"
 
-#: apartmancvikov/templates/vylety.html:56
+#: apartmancvikov/templates/vylety.html:62
 msgid "Hned za hranicemi můžete navštívit hrad Oybin, motýlí dům v Jonsdorfu."
 msgstr ""
 "Just across the border you can visit Oybin Castle, the butterfly house in "
 "Jonsdorf."
 
-#: apartmancvikov/templates/vylety.html:57
+#: apartmancvikov/templates/vylety.html:63
 msgid ""
 "V letních měsících do obou míst jezdí turistický vláček z náměstí ve Cvikově."
 msgstr ""
 "In the summer months, a tourist train runs to both places from the square in "
 "Cvikov."
 
-#: apartmancvikov/templates/vylety.html:60
-msgid "Oybin"
-msgstr "Oybin"
-
-#: apartmancvikov/templates/vylety.html:61
+#: apartmancvikov/templates/vylety.html:67
+#, fuzzy
+#| msgid "Motýlí dům Jonsdorf"
 msgid "Motýlí dům"
 msgstr "Butterfly House"
 
-#: apartmancvikov/templates/vylety.html:62
+#: apartmancvikov/templates/vylety.html:68
 msgid "Horský expres"
 msgstr "Mountain Express"
 
-#: apartmancvikov/templates/vylety.html:72
+#: apartmancvikov/templates/vylety.html:75
+#, fuzzy
+#| msgid "Skleněná zahrada Kunratice u Cvikova"
+msgid "Skleněná zahrada v Kunraticích u Cvikova"
+msgstr "Glass garden Kunratice u Cvikova"
+
+#: apartmancvikov/templates/vylety.html:80
 msgid "Sklárny "
 msgstr "Glassworks "
 
-#: apartmancvikov/templates/vylety.html:74
+#: apartmancvikov/templates/vylety.html:82
 msgid "V okolí se nachází mnoho skláren které stojí za vidění."
 msgstr "In the surroundings there are many glassworks worth seeing."
 
-#: apartmancvikov/templates/vylety.html:75
+#: apartmancvikov/templates/vylety.html:83
 msgid "V Kunraticích u Cvikova je skleněná zahrada u sklárny Pačinek."
 msgstr ""
 "In Kunratice near Cvikov there is a glass garden at the glassworks Pačinek."
 
-#: apartmancvikov/templates/vylety.html:76
+#: apartmancvikov/templates/vylety.html:84
 msgid ""
 "V Lindavě můžete navštívit sklářskou krčmu s možností výroby vlastního skla."
 msgstr ""
 "In Lindava you can visit a glassmaking pub with the possibility of making "
 "your own glass."
 
-#: apartmancvikov/templates/vylety.html:79
+#: apartmancvikov/templates/vylety.html:87
 msgid "Pačinek"
 msgstr "Pačinek"
 
-#: apartmancvikov/templates/vylety.html:80
+#: apartmancvikov/templates/vylety.html:88
 msgid "Ajeto"
 msgstr "Ajeto"
 
-#: apartmancvikov/templates/vylety.html:81
+#: apartmancvikov/templates/vylety.html:89
 msgid "Crystal valley"
 msgstr "Crystal valley"
 
-#: apartmancvikov/templates/vylety.html:91
-#: apartmancvikov/templates/vylety.html:111
+#: apartmancvikov/templates/vylety.html:96
+#, fuzzy
+#| msgid "Hora Klíč"
+msgid "Klíč"
+msgstr "Klíč Mountain"
+
+#: apartmancvikov/templates/vylety.html:101
+#: apartmancvikov/templates/vylety.html:121
 msgid "Lužické hory"
 msgstr "Lusatian Mountains"
 
-#: apartmancvikov/templates/vylety.html:93
+#: apartmancvikov/templates/vylety.html:103
 msgid "Lužické hory nabízí mnoho vrcholů s krásnými rozhledy k prozkoumání."
 msgstr ""
 "The Lusatian Mountains offer many peaks with beautiful views to explore."
 
-#: apartmancvikov/templates/vylety.html:107
+#: apartmancvikov/templates/vylety.html:117
 msgid "Další tipy na výlet"
 msgstr "More tips for the trip"
 
-#: apartmancvikov/templates/vylety.html:109
+#: apartmancvikov/templates/vylety.html:119
 msgid ""
 "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
 "okolních oblastí a objevte další zajímavosti."
@@ -469,15 +494,15 @@ msgstr ""
 "There is much more to see nearby. Take a look at the websites of the "
 "surrounding areas and discover more attractions."
 
-#: apartmancvikov/templates/vylety.html:112
+#: apartmancvikov/templates/vylety.html:122
 msgid "Pivní stezka Lužických hor"
 msgstr "Beer Trail of the Lusatian Mountains"
 
-#: apartmancvikov/templates/vylety.html:113
+#: apartmancvikov/templates/vylety.html:123
 msgid "Českosaské Švýcarsko"
 msgstr "Bohemian Switzerland"
 
-#: apartmancvikov/templates/vylety.html:114
+#: apartmancvikov/templates/vylety.html:124
 msgid "Českolipsko"
 msgstr "Českolipsko"
 
@@ -490,9 +515,6 @@ msgstr "Českolipsko"
 #~ msgid "Schillerova vyhlídka"
 #~ msgstr "Schiller's Viewpoint"
 
-#~ msgid "Křížová cesta"
-#~ msgstr "Stations of the Cross"
-
 #~ msgid "Web"
 #~ msgstr "Web"
 
@@ -502,11 +524,5 @@ msgstr "Českolipsko"
 #~ msgid "Výletní turistický vláček"
 #~ msgstr "Tourist excursion train"
 
-#~ msgid "Skleněná zahrada Kunratice u Cvikova"
-#~ msgstr "Glass garden Kunratice u Cvikova"
-
 #~ msgid "Sklárna AJETO Lindava"
 #~ msgstr "Glassworks AJETO Lindava"
-
-#~ msgid "Hora Klíč"
-#~ msgstr "Klíč Mountain"
