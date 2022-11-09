@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-09 16:27+0100\n"
-"PO-Revision-Date: 2022-11-09 15:07+0000\n"
-"Last-Translator: Michal Čihař <michal@weblate.org>\n"
+"PO-Revision-Date: 2022-11-09 15:29+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/en/>\n"
 "Language: en\n"
@@ -352,10 +352,8 @@ msgstr ""
 "history."
 
 #: apartmancvikov/templates/vylety.html:19
-#, fuzzy
-#| msgid "Křížová cesta"
 msgid "Křížová cesta ve Cvikově"
-msgstr "Stations of the Cross"
+msgstr "The Way of the Cross in Cvikov"
 
 #: apartmancvikov/templates/vylety.html:24
 msgid "Cvikovské vyhlídky"
@@ -419,8 +417,6 @@ msgstr ""
 "Cvikov."
 
 #: apartmancvikov/templates/vylety.html:67
-#, fuzzy
-#| msgid "Motýlí dům Jonsdorf"
 msgid "Motýlí dům"
 msgstr "Butterfly House"
 
@@ -429,10 +425,8 @@ msgid "Horský expres"
 msgstr "Mountain Express"
 
 #: apartmancvikov/templates/vylety.html:75
-#, fuzzy
-#| msgid "Skleněná zahrada Kunratice u Cvikova"
 msgid "Skleněná zahrada v Kunraticích u Cvikova"
-msgstr "Glass garden Kunratice u Cvikova"
+msgstr "Glass garden in Kunratice near Cvikovo"
 
 #: apartmancvikov/templates/vylety.html:80
 msgid "Sklárny "
@@ -467,10 +461,8 @@ msgid "Crystal valley"
 msgstr "Crystal valley"
 
 #: apartmancvikov/templates/vylety.html:96
-#, fuzzy
-#| msgid "Hora Klíč"
 msgid "Klíč"
-msgstr "Klíč Mountain"
+msgstr "Key"
 
 #: apartmancvikov/templates/vylety.html:101
 #: apartmancvikov/templates/vylety.html:121
