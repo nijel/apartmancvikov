@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-09 11:49+0100\n"
-"PO-Revision-Date: 2021-06-25 08:51+0000\n"
-"Last-Translator: Michal Čihař <michal@weblate.org>\n"
+"PO-Revision-Date: 2022-11-09 12:27+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
 "Language: de\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7.1-dev\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #: apartmancvikov/templates/base.html:29 apartmancvikov/templates/base.html:66
 #: apartmancvikov/templates/base.html:82 apartmancvikov/templates/index.html:21
@@ -46,7 +46,7 @@ msgstr "Ausflüge"
 
 #: apartmancvikov/templates/base.html:47 apartmancvikov/templates/cenik.html:12
 msgid "Ceník"
-msgstr ""
+msgstr "Die Preisliste"
 
 #: apartmancvikov/templates/base.html:51
 msgid "Rezervace"
@@ -61,89 +61,95 @@ msgid "Ubytování v Lužických horách."
 msgstr "Unterkunft im Lausitzer Gebirge."
 
 #: apartmancvikov/templates/cenik.html:6
-#, fuzzy
-#| msgid "Konktaktujte Apartmán Cvikov"
 msgid "Ceník a podmínky Apartmánu Cvikov"
-msgstr "Kontakt Ferienwohnung Cvikov"
+msgstr "Preisliste und Bedingungen des Appartements Cvikov"
 
 #: apartmancvikov/templates/cenik.html:15
 msgid "Cena za dospělého je od 600,- za osobu za noc."
-msgstr ""
+msgstr "Der Preis pro Erwachsener beträgt ab 600,- pro Person und Nacht."
 
 #: apartmancvikov/templates/cenik.html:16
 msgid "Cena se liší podle počtu osob, délky pobytu a sezóny."
 msgstr ""
+"Der Preis hängt von der Anzahl der Personen, der Dauer des Aufenthalts und "
+"der Saison ab."
 
 #: apartmancvikov/templates/cenik.html:20
 msgid "Dítě do 3 let – bez nároku na lůžko zdarma"
-msgstr ""
+msgstr "Kind unter 3 Jahren - kostenlos"
 
 #: apartmancvikov/templates/cenik.html:21
 #, python-format
 msgid "Dítě do 12 let - 50%% z ceny"
-msgstr ""
+msgstr "Kind unter 12 Jahren - 50%% Rabatt"
 
 #: apartmancvikov/templates/cenik.html:24
 msgid "Co cena zahrnuje?"
-msgstr ""
+msgstr "Was ist im Preis enthalten?"
 
 #: apartmancvikov/templates/cenik.html:27
 msgid "Ubytování ve třech útulných pokojích se společnou koupelnou."
-msgstr ""
+msgstr "Unterkunft in drei gemütlichen Zimmern mit Gemeinschaftsbad."
 
 #: apartmancvikov/templates/cenik.html:28
 msgid "Na pokojích jsou připraveny osušky a ručníky."
-msgstr ""
+msgstr "Handtücher und Badetücher sind in den Zimmern vorhanden."
 
 #: apartmancvikov/templates/cenik.html:29
 msgid "Parkování přímo u apartmánu"
-msgstr ""
+msgstr "Parkplatz direkt an der Wohnung"
 
 #: apartmancvikov/templates/cenik.html:30
 msgid "Využití dětského koutku i venkovních atrakcí"
-msgstr ""
+msgstr "Nutzung der Kinderecke und der Attraktionen im Freien"
 
 #: apartmancvikov/templates/cenik.html:31
 msgid "Možnost využít dětského vybavení"
-msgstr ""
+msgstr "Möglichkeit der Nutzung von Kinderausrüstungen"
 
 #: apartmancvikov/templates/cenik.html:32
 msgid "Využití kolárny, kočárkárny, lyžárny v ubytovacím prostoru"
-msgstr ""
+msgstr "Nutzung von Steuerhaus, Kutschenhaus, Skiraum im Unterkunftsbereich"
 
 #: apartmancvikov/templates/cenik.html:33
 msgid "Wi-fi připojení k internetu v celém objektu"
-msgstr ""
+msgstr "Wi-fi-Internetverbindung im gesamten Gebäude"
 
 #: apartmancvikov/templates/cenik.html:38
 msgid "Minimální délka pobytu jsou 2 noci, o letních prázdninách 7 nocí."
-msgstr ""
+msgstr "Der Mindestaufenthalt beträgt 2 Nächte, in den Sommerferien 7 Nächte."
 
 #: apartmancvikov/templates/cenik.html:41
 msgid "Platba a storno"
-msgstr ""
+msgstr "Zahlung und Stornierung"
 
 #: apartmancvikov/templates/cenik.html:44
 msgid ""
 "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu, která má "
 "splatnost 30 dní před Vaším příjezdem."
 msgstr ""
+"Nach Erhalt Ihrer Reservierung senden wir Ihnen eine Vorausrechnung, die 30 "
+"Tage vor Ihrer Ankunft fällig ist."
 
 #: apartmancvikov/templates/cenik.html:45
 msgid ""
 "Rezervace je závazná po uhrazení rezervační platby za ubytování, a to "
 "převodem na účet."
 msgstr ""
+"Die Reservierung ist nach Zahlung der Reservierungsgebühr per "
+"Banküberweisung verbindlich."
 
 #: apartmancvikov/templates/cenik.html:46
 msgid ""
 "V případě nedodržení platebních podmínek si vyhrazujeme právo od rezervace "
 "ustoupit."
 msgstr ""
+"Bei Nichteinhaltung der Zahlungsbedingungen behalten wir uns das Recht vor, "
+"von der Reservierung zurückzutreten."
 
 #: apartmancvikov/templates/cenik.html:50
 msgid "Platba na místě pouze v hotovosti."
-msgstr ""
+msgstr "Bezahlung vor Ort nur in bar."
 
 #: apartmancvikov/templates/cenik.html:54
 msgid ""
@@ -151,90 +157,112 @@ msgid ""
 "v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem činí vratná "
 "částka 0,- z uhrazené ceny."
 msgstr ""
+"Im Falle einer Stornierung innerhalb von 30 Tagen vor dem Aufenthaltsdatum "
+"erstatten wir den vollen Betrag. Im Falle einer Stornierung 30 Tage oder "
+"weniger vor der Ankunft beträgt die Rückerstattung 0,- des gezahlten Preises."
 
 #: apartmancvikov/templates/cenik.html:57
 msgid "Příjezd a odjezd"
-msgstr ""
+msgstr "Ankunft und Abreise"
 
 #: apartmancvikov/templates/cenik.html:60
 msgid "V den příjezdu je Váš pokoj připraven od 14 hodiny."
-msgstr ""
+msgstr "Am Anreisetag ist Ihr Zimmer ab 14:00 Uhr bezugsfertig."
 
 #: apartmancvikov/templates/cenik.html:61
 msgid ""
 "Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete "
 "informovat o případném pozdním příjezdu."
 msgstr ""
+"Idealerweise sollten Sie bis 18.00 Uhr anreisen; wir freuen uns, wenn Sie "
+"uns über verspätete Ankünfte informieren."
 
 #: apartmancvikov/templates/cenik.html:62
 msgid ""
 "V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě dle "
 "obsazenosti může být i později."
 msgstr ""
+"Am Abreisetag räumen Sie das Zimmer bitte bis 10 Uhr oder später nach "
+"Absprache, je nach Verfügbarkeit."
 
 #: apartmancvikov/templates/index.html:8
-#, fuzzy
-#| msgid "Ubytování"
 msgid "Ubytování v apartmánu"
-msgstr "Unterkunft"
+msgstr "Unterkunft in der Wohnung"
 
 #: apartmancvikov/templates/index.html:11
 msgid "Nabízíme rodinné ubytování ve Cvikově, bráně Lužických hor."
 msgstr ""
+"Wir bieten eine Familienunterkunft in Cvikov, dem Tor zum Lausitzer Gebirge."
 
 #: apartmancvikov/templates/index.html:12
 msgid ""
 "Ubytujeme vás ve 3 pokojích, ve kterých naleznete 7 lůžek s možností dětské "
 "postýlky."
 msgstr ""
+"Wir werden Sie in 3 Zimmern unterbringen, in denen Sie 7 Betten mit der "
+"Möglichkeit eines Kinderbettes finden werden."
 
 #: apartmancvikov/templates/index.html:17
 msgid "Vybavení apartmánu"
-msgstr ""
+msgstr "Annehmlichkeiten der Wohnung"
 
 #: apartmancvikov/templates/index.html:27
 msgid ""
 "Příjemné, klidné ubytování pro rodinu či uzavřenou společnost. Apartmán má "
 "samostatný vchod."
 msgstr ""
+"Angenehme, ruhige Unterkunft für eine Familie oder eine geschlossene "
+"Gesellschaft. Die Wohnung hat einen separaten Eingang."
 
 #: apartmancvikov/templates/index.html:28
 msgid "Je k dispozici i fén na vlasy a hračky pro děti do vany."
-msgstr ""
+msgstr "Ein Haartrockner und Badespielzeug für Kinder sind ebenfalls vorhanden."
 
 #: apartmancvikov/templates/index.html:29
 msgid "Je možnost umístit v rámci schodiště dětskou zábranu."
-msgstr ""
+msgstr "Es ist möglich, eine Kindersicherung im Treppenhaus anzubringen."
 
 #: apartmancvikov/templates/index.html:30
 msgid ""
 "Na všech oknech jsou žaluzie a zatemňovací závěsy pro Váš klidný spánek."
 msgstr ""
+"Alle Fenster sind mit Jalousien und Verdunklungsvorhängen ausgestattet, "
+"damit Sie ruhig schlafen können."
 
 #: apartmancvikov/templates/index.html:31
 msgid ""
 "V kuchyni najdete vše pro Vaše vaření – indukční deska, trouba, myčka, "
 "lednice s mrazákem, mikrovlnná trouba a veškeré nádobí."
 msgstr ""
+"In der Küche finden Sie alles, was Sie zum Kochen brauchen - "
+"Induktionskochfeld, Backofen, Geschirrspüler, Kühlschrank mit Gefrierfach, "
+"Mikrowelle und alle Utensilien."
 
 #: apartmancvikov/templates/index.html:32
 msgid ""
 "V obývacím pokoji je televize, pohodlná sedačka, vybavený dětský koutek na "
 "hraní, stoleček se židličkami na kreslení, hrací koberec na autíčka."
 msgstr ""
+"Im Wohnzimmer gibt es einen Fernseher, ein bequemes Sofa, eine ausgestattete "
+"Kinderspielecke, einen Tisch mit Stühlen zum Malen, einen Spielteppich für "
+"Autos."
 
 #: apartmancvikov/templates/index.html:33
 msgid "V přízemí se nachází prádelna s pračkou, sušičkou a sušákem na prádlo."
 msgstr ""
+"Im Erdgeschoss gibt es eine Waschküche mit Waschmaschine, Trockner und "
+"Wäschetrockner."
 
 #: apartmancvikov/templates/index.html:34
 msgid ""
 "Psi ani jiná zvířata nejsou s ohledem na děti vítána, děkujeme za pochopení."
 msgstr ""
+"Hunde und andere Tiere sind in Bezug auf Kinder nicht willkommen, wir danken "
+"für Ihr Verständnis."
 
 #: apartmancvikov/templates/index.html:39
 msgid "Pokoje"
-msgstr ""
+msgstr "Zimmer"
 
 #: apartmancvikov/templates/index.html:42
 msgid ""
@@ -242,72 +270,78 @@ msgid ""
 "toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v "
 "přízemí."
 msgstr ""
+"Für alle Zimmer gibt es ein großes geräumiges Badezimmer mit Badewanne und "
+"Toilette im ersten Stock und ein kleineres Badezimmer mit Dusche und "
+"Toilette im Erdgeschoss."
 
 #: apartmancvikov/templates/index.html:45
 msgid "Tyrkys"
-msgstr ""
+msgstr "Türkis"
 
 #: apartmancvikov/templates/index.html:48
 msgid "Tyrkysový pokoj"
-msgstr ""
+msgstr "Türkisfarbenes Zimmer"
 
 #: apartmancvikov/templates/index.html:54
 msgid "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky."
-msgstr ""
+msgstr "Zimmer mit Doppelbett, Möglichkeit eines Babybettes."
 
 #: apartmancvikov/templates/index.html:59
 msgid "Levandule"
-msgstr ""
+msgstr "Lavendel"
 
 #: apartmancvikov/templates/index.html:62
 msgid "Levandulový pokoj"
-msgstr ""
+msgstr "Lavendelzimmer"
 
 #: apartmancvikov/templates/index.html:68
 msgid ""
 "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát "
 "zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka."
 msgstr ""
+"Dreibettzimmer mit einem Doppelbett und einem zusätzlichen Einzelbett. Es "
+"ist möglich, Kinder vor dem Herausfallen aus dem Bett zu schützen. In dem "
+"Zimmer kann auch ein Kinderbett aufgestellt werden."
 
 #: apartmancvikov/templates/index.html:73
 msgid "Fuchsie"
-msgstr ""
+msgstr "Fuchsie"
 
 #: apartmancvikov/templates/index.html:76
 msgid "Fuchsiový pokoj"
-msgstr ""
+msgstr "Fuchsia Zimmer"
 
 #: apartmancvikov/templates/index.html:82
 msgid "Pokoj s dvěma samostatnými postelemi."
-msgstr ""
+msgstr "Dieses Zimmer hat zwei Einzelbetten."
 
 #: apartmancvikov/templates/index.html:87
 msgid "Společné místnosti"
-msgstr ""
+msgstr "Gemeinsame Räume"
 
 #: apartmancvikov/templates/index.html:91
 msgid "Obývací pokoj"
-msgstr ""
+msgstr "Wohnbereich"
 
 #: apartmancvikov/templates/index.html:96
 msgid "Jídelna s dětským koutkem"
-msgstr ""
+msgstr "Speisesaal mit Kinderecke"
 
 #: apartmancvikov/templates/index.html:101
 msgid "Kuchyně"
-msgstr ""
+msgstr "Küche"
 
 #: apartmancvikov/templates/index.html:106
 msgid "Koupelna se sprchou"
-msgstr ""
+msgstr "Badezimmer mit Dusche"
 
 #: apartmancvikov/templates/index.html:111
 msgid "Koupelna s vanou"
-msgstr ""
+msgstr "Badezimmer mit Badewanne"
 
 #: apartmancvikov/templates/index.html:116
 msgid "Prádelna"
-msgstr ""
+msgstr "Wäscherei"
 
 #: apartmancvikov/templates/kontakt.html:6
 msgid "Konktaktujte Apartmán Cvikov"
@@ -329,7 +363,7 @@ msgstr "Google Maps"
 
 #: apartmancvikov/templates/kontakt.html:25
 msgid "Provozovatel"
-msgstr ""
+msgstr "Betreiber"
 
 #: apartmancvikov/templates/vylety.html:6
 msgid "Výlety z Apartmánu Cvikov"
