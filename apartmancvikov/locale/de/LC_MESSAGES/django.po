@@ -56,7 +56,7 @@ msgstr "Preisliste und Bedingungen des Appartements Cvikov"
 
 #: apartmancvikov/templates/cenik.html:17
 msgid "Cena za dospělého je od 600,- za osobu za noc."
-msgstr "Der Preis pro Erwachsener beträgt ab 600,- pro Person und Nacht."
+msgstr "Der Preis pro Erwachsener beträgt ab 600 CZK pro Person und Nacht."
 
 #: apartmancvikov/templates/cenik.html:18
 msgid "Cena se liší podle počtu osob, délky pobytu a sezóny."
@@ -471,6 +471,7 @@ msgstr "Schlüssel"
 
 #: apartmancvikov/templates/vylety.html:101
 #: apartmancvikov/templates/vylety.html:140
+#: apartmancvikov/templates/vylety.html:121
 msgid "Lužické hory"
 msgstr "Lausitzer Gebirge"
 
@@ -505,10 +506,12 @@ msgid "Lyžařský areál Horní Podluží"
 msgstr ""
 
 #: apartmancvikov/templates/vylety.html:136
+#: apartmancvikov/templates/vylety.html:117
 msgid "Další tipy na výlet"
 msgstr "Weitere Tipps für die Reise"
 
 #: apartmancvikov/templates/vylety.html:138
+#: apartmancvikov/templates/vylety.html:119
 msgid ""
 "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
 "okolních oblastí a objevte další zajímavosti."
@@ -517,14 +520,17 @@ msgstr ""
 "die Websites der umliegenden Gebiete und entdecken Sie weitere Attraktionen."
 
 #: apartmancvikov/templates/vylety.html:141
+#: apartmancvikov/templates/vylety.html:122
 msgid "Pivní stezka Lužických hor"
 msgstr "Bierwanderweg Lausitzer Gebirge"
 
 #: apartmancvikov/templates/vylety.html:142
+#: apartmancvikov/templates/vylety.html:123
 msgid "Českosaské Švýcarsko"
 msgstr "Böhmische Schweiz"
 
 #: apartmancvikov/templates/vylety.html:143
+#: apartmancvikov/templates/vylety.html:124
 msgid "Českolipsko"
 msgstr "Českolipsko"
 
