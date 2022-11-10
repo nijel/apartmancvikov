@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 13:20+0100\n"
+"POT-Creation-Date: 2022-11-10 13:33+0100\n"
 "PO-Revision-Date: 2022-11-09 15:29+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -434,7 +434,9 @@ msgid "Skleněná zahrada v Kunraticích u Cvikova"
 msgstr "Glasgarten in Kunratice bei Cvikovo"
 
 #: apartmancvikov/templates/vylety.html:80
-msgid "Sklárny "
+#, fuzzy
+#| msgid "Sklárny "
+msgid "Sklárny"
 msgstr "Glashütte "
 
 #: apartmancvikov/templates/vylety.html:82
