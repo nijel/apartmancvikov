@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-10 13:33+0100\n"
-"PO-Revision-Date: 2022-11-09 15:29+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2022-11-10 12:39+0000\n"
+"Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
 "Language: de\n"
@@ -56,7 +56,7 @@ msgstr "Preisliste und Bedingungen des Appartements Cvikov"
 
 #: apartmancvikov/templates/cenik.html:17
 msgid "Cena za dospělého je od 600,- za osobu za noc."
-msgstr "Der Preis pro Erwachsener beträgt ab 600,- pro Person und Nacht."
+msgstr "Der Preis pro Erwachsener beträgt ab 600 CZK pro Person und Nacht."
 
 #: apartmancvikov/templates/cenik.html:18
 msgid "Cena se liší podle počtu osob, délky pobytu a sezóny."
@@ -390,7 +390,7 @@ msgstr ""
 
 #: apartmancvikov/templates/vylety.html:46
 msgid "Sloup"
-msgstr "Säule"
+msgstr "Bürgstein"
 
 #: apartmancvikov/templates/vylety.html:47
 msgid "Radvanec"
@@ -431,7 +431,7 @@ msgstr "Berg-Express"
 
 #: apartmancvikov/templates/vylety.html:75
 msgid "Skleněná zahrada v Kunraticích u Cvikova"
-msgstr "Glasgarten in Kunratice bei Cvikovo"
+msgstr "Glasgarten in Kunnersdorf"
 
 #: apartmancvikov/templates/vylety.html:80
 #, fuzzy
@@ -445,14 +445,13 @@ msgstr "In der Umgebung gibt es viele sehenswerte Glashütten."
 
 #: apartmancvikov/templates/vylety.html:83
 msgid "V Kunraticích u Cvikova je skleněná zahrada u sklárny Pačinek."
-msgstr ""
-"In Kunratice bei Cvikov gibt es einen Glasgarten in der Glashütte Pačinek."
+msgstr "In Kunnersdorf gibt es einen Glasgarten in der Glashütte Pačinek."
 
 #: apartmancvikov/templates/vylety.html:84
 msgid ""
 "V Lindavě můžete navštívit sklářskou krčmu s možností výroby vlastního skla."
 msgstr ""
-"In Lindava können Sie eine Glasbläserei besuchen, in der Sie Ihr eigenes "
+"In Lindenau können Sie eine Glasbläserei besuchen, in der Sie Ihr eigenes "
 "Glas herstellen können."
 
 #: apartmancvikov/templates/vylety.html:87
@@ -469,10 +468,11 @@ msgstr "Kristall-Tal"
 
 #: apartmancvikov/templates/vylety.html:96
 msgid "Klíč"
-msgstr "Schlüssel"
+msgstr "Kleis"
 
 #: apartmancvikov/templates/vylety.html:101
 #: apartmancvikov/templates/vylety.html:140
+#: apartmancvikov/templates/vylety.html:121
 msgid "Lužické hory"
 msgstr "Lausitzer Gebirge"
 
@@ -484,33 +484,35 @@ msgstr ""
 
 #: apartmancvikov/templates/vylety.html:115
 msgid "Polevsko"
-msgstr ""
+msgstr "Blottendorf"
 
 #: apartmancvikov/templates/vylety.html:120
 msgid "Lyžování nebo bikeparky"
-msgstr ""
+msgstr "Skifahren oder Bikeparks"
 
 #: apartmancvikov/templates/vylety.html:122
 msgid "V zimě můžete využít blízké lyžařské areály."
-msgstr ""
+msgstr "Im Winter können Sie die nahe gelegenen Skigebiete nutzen."
 
 #: apartmancvikov/templates/vylety.html:123
 msgid "V létě se do nich místo na lyžích můžete vydat na kolech."
-msgstr ""
+msgstr "Im Sommer kann man dort mit dem Fahrrad statt mit Skiern fahren."
 
 #: apartmancvikov/templates/vylety.html:126
 msgid "Sjezdovka a bikepark Polevsko"
-msgstr ""
+msgstr "Skipiste und Bikepark Blottendorf"
 
 #: apartmancvikov/templates/vylety.html:127
 msgid "Lyžařský areál Horní Podluží"
-msgstr ""
+msgstr "Skigebiet Obergrund"
 
 #: apartmancvikov/templates/vylety.html:136
+#: apartmancvikov/templates/vylety.html:117
 msgid "Další tipy na výlet"
 msgstr "Weitere Tipps für die Reise"
 
 #: apartmancvikov/templates/vylety.html:138
+#: apartmancvikov/templates/vylety.html:119
 msgid ""
 "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
 "okolních oblastí a objevte další zajímavosti."
@@ -519,14 +521,17 @@ msgstr ""
 "die Websites der umliegenden Gebiete und entdecken Sie weitere Attraktionen."
 
 #: apartmancvikov/templates/vylety.html:141
+#: apartmancvikov/templates/vylety.html:122
 msgid "Pivní stezka Lužických hor"
 msgstr "Bierwanderweg Lausitzer Gebirge"
 
 #: apartmancvikov/templates/vylety.html:142
+#: apartmancvikov/templates/vylety.html:123
 msgid "Českosaské Švýcarsko"
 msgstr "Böhmische Schweiz"
 
 #: apartmancvikov/templates/vylety.html:143
+#: apartmancvikov/templates/vylety.html:124
 msgid "Českolipsko"
 msgstr "Českolipsko"
 
