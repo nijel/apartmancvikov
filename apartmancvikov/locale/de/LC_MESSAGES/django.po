@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-10 13:20+0100\n"
-"PO-Revision-Date: 2022-11-09 15:29+0000\n"
+"PO-Revision-Date: 2022-11-10 12:24+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
@@ -483,27 +483,27 @@ msgstr ""
 
 #: apartmancvikov/templates/vylety.html:115
 msgid "Polevsko"
-msgstr ""
+msgstr "Polevsko"
 
 #: apartmancvikov/templates/vylety.html:120
 msgid "Lyžování nebo bikeparky"
-msgstr ""
+msgstr "Skifahren oder Bikeparks"
 
 #: apartmancvikov/templates/vylety.html:122
 msgid "V zimě můžete využít blízké lyžařské areály."
-msgstr ""
+msgstr "Im Winter können Sie die nahe gelegenen Skigebiete nutzen."
 
 #: apartmancvikov/templates/vylety.html:123
 msgid "V létě se do nich místo na lyžích můžete vydat na kolech."
-msgstr ""
+msgstr "Im Sommer kann man dort mit dem Fahrrad statt mit Skiern fahren."
 
 #: apartmancvikov/templates/vylety.html:126
 msgid "Sjezdovka a bikepark Polevsko"
-msgstr ""
+msgstr "Skipiste und Bikepark Polevsko"
 
 #: apartmancvikov/templates/vylety.html:127
 msgid "Lyžařský areál Horní Podluží"
-msgstr ""
+msgstr "Skigebiet Horní Podluží"
 
 #: apartmancvikov/templates/vylety.html:136
 #: apartmancvikov/templates/vylety.html:117
