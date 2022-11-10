@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 16:28+0100\n"
+"POT-Creation-Date: 2022-11-10 13:20+0100\n"
 "PO-Revision-Date: 2022-11-09 15:29+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -470,7 +470,7 @@ msgid "Klíč"
 msgstr "Schlüssel"
 
 #: apartmancvikov/templates/vylety.html:101
-#: apartmancvikov/templates/vylety.html:121
+#: apartmancvikov/templates/vylety.html:140
 msgid "Lužické hory"
 msgstr "Lausitzer Gebirge"
 
@@ -480,11 +480,35 @@ msgstr ""
 "Das Lausitzer Gebirge bietet viele Gipfel mit schönen Aussichten, die es zu "
 "erkunden gilt."
 
-#: apartmancvikov/templates/vylety.html:117
+#: apartmancvikov/templates/vylety.html:115
+msgid "Polevsko"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:120
+msgid "Lyžování nebo bikeparky"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:122
+msgid "V zimě můžete využít blízké lyžařské areály."
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:123
+msgid "V létě se do nich místo na lyžích můžete vydat na kolech."
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:126
+msgid "Sjezdovka a bikepark Polevsko"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:127
+msgid "Lyžařský areál Horní Podluží"
+msgstr ""
+
+#: apartmancvikov/templates/vylety.html:136
 msgid "Další tipy na výlet"
 msgstr "Weitere Tipps für die Reise"
 
-#: apartmancvikov/templates/vylety.html:119
+#: apartmancvikov/templates/vylety.html:138
 msgid ""
 "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
 "okolních oblastí a objevte další zajímavosti."
@@ -492,15 +516,15 @@ msgstr ""
 "In der Umgebung gibt es noch viel mehr zu sehen. Werfen Sie einen Blick auf "
 "die Websites der umliegenden Gebiete und entdecken Sie weitere Attraktionen."
 
-#: apartmancvikov/templates/vylety.html:122
+#: apartmancvikov/templates/vylety.html:141
 msgid "Pivní stezka Lužických hor"
 msgstr "Bierwanderweg Lausitzer Gebirge"
 
-#: apartmancvikov/templates/vylety.html:123
+#: apartmancvikov/templates/vylety.html:142
 msgid "Českosaské Švýcarsko"
 msgstr "Böhmische Schweiz"
 
-#: apartmancvikov/templates/vylety.html:124
+#: apartmancvikov/templates/vylety.html:143
 msgid "Českolipsko"
 msgstr "Českolipsko"
 
