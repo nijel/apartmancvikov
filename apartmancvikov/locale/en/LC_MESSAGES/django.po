@@ -429,10 +429,8 @@ msgid "Skleněná zahrada v Kunraticích u Cvikova"
 msgstr "Glass garden in Kunratice near Cvikov"
 
 #: apartmancvikov/templates/vylety.html:80
-#, fuzzy
-#| msgid "Sklárny "
 msgid "Sklárny"
-msgstr "Glassworks "
+msgstr "Glassworks"
 
 #: apartmancvikov/templates/vylety.html:82
 msgid "V okolí se nachází mnoho skláren které stojí za vidění."
