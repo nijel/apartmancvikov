@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 13:33+0100\n"
+"POT-Creation-Date: 2022-11-11 10:43+0100\n"
 "PO-Revision-Date: 2022-11-10 12:39+0000\n"
 "Last-Translator: Michal Čihař <michal@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -238,11 +238,20 @@ msgstr ""
 "Hunde und andere Tiere sind in Bezug auf Kinder nicht willkommen, wir danken "
 "für Ihr Verständnis."
 
-#: apartmancvikov/templates/index.html:38
+#: apartmancvikov/templates/index.html:34
+msgid ""
+"Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, "
+"redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, "
+"hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany na postel, "
+"zábrany na schodiště, podsedák na židli, vysavač s redukcí na odsávání při "
+"rýmě. Pokud bude cokoliv na děti potřeba, stačí se nás zeptat."
+msgstr ""
+
+#: apartmancvikov/templates/index.html:39
 msgid "Pokoje"
 msgstr "Zimmer"
 
-#: apartmancvikov/templates/index.html:41
+#: apartmancvikov/templates/index.html:42
 msgid ""
 "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a "
 "toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v "
@@ -252,27 +261,27 @@ msgstr ""
 "Toilette im ersten Stock und ein kleineres Badezimmer mit Dusche und "
 "Toilette im Erdgeschoss."
 
-#: apartmancvikov/templates/index.html:44
+#: apartmancvikov/templates/index.html:45
 msgid "Tyrkys"
 msgstr "Türkis"
 
-#: apartmancvikov/templates/index.html:47
+#: apartmancvikov/templates/index.html:48
 msgid "Tyrkysový pokoj"
 msgstr "Türkisfarbenes Zimmer"
 
-#: apartmancvikov/templates/index.html:53
+#: apartmancvikov/templates/index.html:54
 msgid "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky."
 msgstr "Zimmer mit Doppelbett, Möglichkeit eines Babybettes."
 
-#: apartmancvikov/templates/index.html:58
+#: apartmancvikov/templates/index.html:59
 msgid "Levandule"
 msgstr "Lavendel"
 
-#: apartmancvikov/templates/index.html:61
+#: apartmancvikov/templates/index.html:62
 msgid "Levandulový pokoj"
 msgstr "Lavendelzimmer"
 
-#: apartmancvikov/templates/index.html:67
+#: apartmancvikov/templates/index.html:68
 msgid ""
 "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát "
 "zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka."
@@ -281,43 +290,43 @@ msgstr ""
 "ist möglich, Kinder vor dem Herausfallen aus dem Bett zu schützen. In dem "
 "Zimmer kann auch ein Kinderbett aufgestellt werden."
 
-#: apartmancvikov/templates/index.html:72
+#: apartmancvikov/templates/index.html:73
 msgid "Fuchsie"
 msgstr "Fuchsie"
 
-#: apartmancvikov/templates/index.html:75
+#: apartmancvikov/templates/index.html:76
 msgid "Fuchsiový pokoj"
 msgstr "Fuchsia Zimmer"
 
-#: apartmancvikov/templates/index.html:81
+#: apartmancvikov/templates/index.html:82
 msgid "Pokoj s dvěma samostatnými postelemi."
 msgstr "Dieses Zimmer hat zwei Einzelbetten."
 
-#: apartmancvikov/templates/index.html:86
+#: apartmancvikov/templates/index.html:87
 msgid "Společné místnosti"
 msgstr "Gemeinsame Räume"
 
-#: apartmancvikov/templates/index.html:90
+#: apartmancvikov/templates/index.html:91
 msgid "Obývací pokoj"
 msgstr "Wohnbereich"
 
-#: apartmancvikov/templates/index.html:95
+#: apartmancvikov/templates/index.html:96
 msgid "Jídelna s dětským koutkem"
 msgstr "Speisesaal mit Kinderecke"
 
-#: apartmancvikov/templates/index.html:100
+#: apartmancvikov/templates/index.html:101
 msgid "Kuchyně"
 msgstr "Küche"
 
-#: apartmancvikov/templates/index.html:105
+#: apartmancvikov/templates/index.html:106
 msgid "Koupelna se sprchou"
 msgstr "Badezimmer mit Dusche"
 
-#: apartmancvikov/templates/index.html:110
+#: apartmancvikov/templates/index.html:111
 msgid "Koupelna s vanou"
 msgstr "Badezimmer mit Badewanne"
 
-#: apartmancvikov/templates/index.html:115
+#: apartmancvikov/templates/index.html:116
 msgid "Prádelna"
 msgstr "Wäscherei"
 
@@ -470,7 +479,6 @@ msgstr "Kleis"
 
 #: apartmancvikov/templates/vylety.html:101
 #: apartmancvikov/templates/vylety.html:140
-#: apartmancvikov/templates/vylety.html:121
 msgid "Lužické hory"
 msgstr "Lausitzer Gebirge"
 
@@ -505,12 +513,10 @@ msgid "Lyžařský areál Horní Podluží"
 msgstr "Skigebiet Obergrund"
 
 #: apartmancvikov/templates/vylety.html:136
-#: apartmancvikov/templates/vylety.html:117
 msgid "Další tipy na výlet"
 msgstr "Weitere Tipps für die Reise"
 
 #: apartmancvikov/templates/vylety.html:138
-#: apartmancvikov/templates/vylety.html:119
 msgid ""
 "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
 "okolních oblastí a objevte další zajímavosti."
@@ -519,17 +525,14 @@ msgstr ""
 "die Websites der umliegenden Gebiete und entdecken Sie weitere Attraktionen."
 
 #: apartmancvikov/templates/vylety.html:141
-#: apartmancvikov/templates/vylety.html:122
 msgid "Pivní stezka Lužických hor"
 msgstr "Bierwanderweg Lausitzer Gebirge"
 
 #: apartmancvikov/templates/vylety.html:142
-#: apartmancvikov/templates/vylety.html:123
 msgid "Českosaské Švýcarsko"
 msgstr "Böhmische Schweiz"
 
 #: apartmancvikov/templates/vylety.html:143
-#: apartmancvikov/templates/vylety.html:124
 msgid "Českolipsko"
 msgstr "Českolipsko"
 
