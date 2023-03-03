@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-03 15:18+0100\n"
-"PO-Revision-Date: 2022-11-11 09:44+0000\n"
+"PO-Revision-Date: 2023-03-03 14:28+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.16.2-dev\n"
 
 #: apartmancvikov/templates/base.html:32 apartmancvikov/templates/base.html:37
 #: apartmancvikov/templates/base.html:74 apartmancvikov/templates/base.html:90
@@ -193,7 +193,7 @@ msgstr ""
 
 #: apartmancvikov/templates/index.html:27
 msgid "V letní sezóně je vám po domluvě k dispozici bazén."
-msgstr ""
+msgstr "In der Sommersaison steht nach Absprache ein Schwimmbad zur Verfügung."
 
 #: apartmancvikov/templates/index.html:28
 msgid "Je k dispozici i fén na vlasy a hračky pro děti do vany."
