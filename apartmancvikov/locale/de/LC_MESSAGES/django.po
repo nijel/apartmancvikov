@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-03 15:18+0100\n"
+"POT-Creation-Date: 2023-03-17 19:49+0100\n"
 "PO-Revision-Date: 2023-03-03 14:28+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -55,7 +55,9 @@ msgid "Ceník a podmínky Apartmánu Cvikov"
 msgstr "Preisliste und Bedingungen des Appartements Cvikov"
 
 #: apartmancvikov/templates/cenik.html:17
-msgid "Cena za dospělého je od 600,- za osobu za noc."
+#, fuzzy
+#| msgid "Cena za dospělého je od 600,- za osobu za noc."
+msgid "Cena za dospělého je od 750,- za osobu za noc."
 msgstr "Der Preis pro Erwachsener beträgt ab 600 CZK pro Person und Nacht."
 
 #: apartmancvikov/templates/cenik.html:18
@@ -69,8 +71,9 @@ msgid "Dítě do 3 let – bez nároku na lůžko zdarma"
 msgstr "Kind unter 3 Jahren - kostenlos"
 
 #: apartmancvikov/templates/cenik.html:23
-#, python-format
-msgid "Dítě do 12 let - 50%% z ceny"
+#, fuzzy
+#| msgid "Dítě do 12 let - 50%% z ceny"
+msgid "Dítě do 12 let – od 400,- za noc"
 msgstr "Kind unter 12 Jahren - 50%% Rabatt"
 
 #: apartmancvikov/templates/cenik.html:26
