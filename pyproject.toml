@@ -2,6 +2,7 @@
 profile = "black"
 
 [tool.ruff]
+format = "github"
 ignore = ["D211", "D212", "D100", "D104", "D101"]
 select = ["E", "F", "B", "A", "C4", "DJ", "D", "ERA", "EXE", "G", "T20", "RET", "SLF", "N"]
 
