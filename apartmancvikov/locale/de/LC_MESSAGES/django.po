@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-28 19:58+0200\n"
-"PO-Revision-Date: 2023-03-17 18:51+0000\n"
+"PO-Revision-Date: 2023-03-28 17:58+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
+"X-Generator: Weblate 4.17-dev\n"
 
 #: apartmancvikov/templates/base.html:32 apartmancvikov/templates/base.html:37
 #: apartmancvikov/templates/base.html:74 apartmancvikov/templates/base.html:90
@@ -113,16 +113,13 @@ msgid "Platba a storno"
 msgstr "Zahlung und Stornierung"
 
 #: apartmancvikov/templates/cenik.html:46
-#, fuzzy, python-format
-#| msgid ""
-#| "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu, která má "
-#| "splatnost 30 dní před Vaším příjezdem."
+#, python-format
 msgid ""
 "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50%% ceny, "
 "která má splatnost 14 dní."
 msgstr ""
-"Nach Erhalt Ihrer Reservierung senden wir Ihnen eine Vorausrechnung, die 30 "
-"Tage vor Ihrer Ankunft fällig ist."
+"Nach Eingang Ihrer Buchung erhalten Sie von uns eine Vorausrechnung über "
+"50%% des Preises, die innerhalb von 14 Tagen zu begleichen ist."
 
 #: apartmancvikov/templates/cenik.html:47
 msgid ""
