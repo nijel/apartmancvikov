@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-28 19:58+0200\n"
+"POT-Creation-Date: 2023-07-21 19:53+0200\n"
 "PO-Revision-Date: 2023-03-28 17:58+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -339,6 +339,18 @@ msgstr "Badezimmer mit Badewanne"
 #: apartmancvikov/templates/index.html:117
 msgid "Prádelna"
 msgstr "Wäscherei"
+
+#: apartmancvikov/templates/index.html:123
+msgid "Venkovní prostředí"
+msgstr ""
+
+#: apartmancvikov/templates/index.html:127
+msgid "Venkovní bazén"
+msgstr ""
+
+#: apartmancvikov/templates/index.html:132
+msgid "Terasa"
+msgstr ""
 
 #: apartmancvikov/templates/kontakt.html:7
 msgid "Konktaktujte Apartmán Cvikov"
