@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:53+0200\n"
+"POT-Creation-Date: 2023-07-30 10:52+0200\n"
 "PO-Revision-Date: 2023-07-21 17:54+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -192,8 +192,10 @@ msgstr ""
 "Gesellschaft. Die Wohnung hat einen separaten Eingang."
 
 #: apartmancvikov/templates/index.html:27
-msgid "V letní sezóně je vám po domluvě k dispozici bazén."
-msgstr "In der Sommersaison steht nach Absprache ein Schwimmbad zur Verfügung."
+msgid ""
+"Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
+"prolézačky, trampolína, pumptrack, hřiště, vyhřívaný bazén."
+msgstr ""
 
 #: apartmancvikov/templates/index.html:28
 msgid "Je k dispozici i fén na vlasy a hračky pro děti do vany."
@@ -349,6 +351,26 @@ msgid "Venkovní bazén"
 msgstr "Außenschwimmbad"
 
 #: apartmancvikov/templates/index.html:132
+msgid "Pumptrack a hřiště"
+msgstr ""
+
+#: apartmancvikov/templates/index.html:137
+msgid "Lezecká stěna se skluzavkou a pískovištěm"
+msgstr ""
+
+#: apartmancvikov/templates/index.html:142
+msgid "Houpačka se skluzavkou a vrbovým tunelem"
+msgstr ""
+
+#: apartmancvikov/templates/index.html:147
+msgid "Blátivá kuchyňka"
+msgstr ""
+
+#: apartmancvikov/templates/index.html:152
+msgid "Trampolína a prolézačky"
+msgstr ""
+
+#: apartmancvikov/templates/index.html:157
 msgid "Terasa"
 msgstr "Terrasse"
 
@@ -557,6 +579,10 @@ msgstr "Böhmische Schweiz"
 #: apartmancvikov/templates/vylety.html:143
 msgid "Českolipsko"
 msgstr "Českolipsko"
+
+#~ msgid "V letní sezóně je vám po domluvě k dispozici bazén."
+#~ msgstr ""
+#~ "In der Sommersaison steht nach Absprache ein Schwimmbad zur Verfügung."
 
 #~ msgid "Vyhlídka Dutý kámen"
 #~ msgstr "Aussichtspunkt Dutý kámen"
