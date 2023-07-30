@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-30 10:52+0200\n"
-"PO-Revision-Date: 2023-07-21 17:54+0000\n"
+"PO-Revision-Date: 2023-07-30 08:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/en/>\n"
@@ -196,6 +196,8 @@ msgid ""
 "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
 "prolézačky, trampolína, pumptrack, hřiště, vyhřívaný bazén."
 msgstr ""
+"Lots of fun not only for your children in the garden - sandpit, slides, "
+"climbing frames, trampoline, pumptrack, playground, heated pool."
 
 #: apartmancvikov/templates/index.html:28
 msgid "Je k dispozici i fén na vlasy a hračky pro děti do vany."
@@ -345,23 +347,23 @@ msgstr "Outdoor swimming pool"
 
 #: apartmancvikov/templates/index.html:132
 msgid "Pumptrack a hřiště"
-msgstr ""
+msgstr "Pumptrack and playground"
 
 #: apartmancvikov/templates/index.html:137
 msgid "Lezecká stěna se skluzavkou a pískovištěm"
-msgstr ""
+msgstr "Climbing wall with slide and sandpit"
 
 #: apartmancvikov/templates/index.html:142
 msgid "Houpačka se skluzavkou a vrbovým tunelem"
-msgstr ""
+msgstr "Swing with slide and willow tunnel"
 
 #: apartmancvikov/templates/index.html:147
 msgid "Blátivá kuchyňka"
-msgstr ""
+msgstr "Mud kitchen"
 
 #: apartmancvikov/templates/index.html:152
 msgid "Trampolína a prolézačky"
-msgstr ""
+msgstr "Trampoline and climbing frame"
 
 #: apartmancvikov/templates/index.html:157
 msgid "Terasa"
