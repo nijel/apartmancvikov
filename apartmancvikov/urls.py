@@ -23,12 +23,14 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 
-urlpatterns = i18n_patterns(
+urlpatterns = i18n_patterns(  # noqa: RUF005
     path("", TemplateView.as_view(template_name="index.html"), name="home"),
     path("vylety/", TemplateView.as_view(template_name="vylety.html"), name="vylety"),
     path("cenik/", TemplateView.as_view(template_name="cenik.html"), name="cenik"),
     path(
-        "kontakt/", TemplateView.as_view(template_name="kontakt.html"), name="kontakt"
+        "kontakt/",
+        TemplateView.as_view(template_name="kontakt.html"),
+        name="kontakt",
     ),
 ) + [
     path("admin/", admin.site.urls),
