@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-30 10:52+0200\n"
+"POT-Creation-Date: 2024-08-05 12:50+0200\n"
 "PO-Revision-Date: 2023-07-30 08:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -192,27 +192,37 @@ msgstr ""
 "apartment has a separate entrance."
 
 #: apartmancvikov/templates/index.html:27
+#, fuzzy
+#| msgid ""
+#| "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
+#| "prolézačky, trampolína, pumptrack, hřiště, vyhřívaný bazén."
 msgid ""
 "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
-"prolézačky, trampolína, pumptrack, hřiště, vyhřívaný bazén."
+"prolézačky, trampolína, pumptrack, hřiště."
 msgstr ""
 "Lots of fun not only for your children in the garden - sandpit, slides, "
 "climbing frames, trampoline, pumptrack, playground, heated pool."
 
 #: apartmancvikov/templates/index.html:28
+msgid "V sezoně se můžete vykoupat ve vyhřívanén venkovním bazénu."
+msgstr ""
+
+#: apartmancvikov/templates/index.html:29
 msgid "Je k dispozici i fén na vlasy a hračky pro děti do vany."
 msgstr "A hairdryer and children's bath toys are also available."
 
-#: apartmancvikov/templates/index.html:29
-msgid "Je možnost umístit v rámci schodiště dětskou zábranu."
+#: apartmancvikov/templates/index.html:30
+#, fuzzy
+#| msgid "Je možnost umístit v rámci schodiště dětskou zábranu."
+msgid "Je možnost umístit na schodiště dětskou zábranu."
 msgstr "It is possible to place a child barrier within the staircase."
 
-#: apartmancvikov/templates/index.html:30
+#: apartmancvikov/templates/index.html:31
 msgid ""
 "Na všech oknech jsou žaluzie a zatemňovací závěsy pro Váš klidný spánek."
 msgstr "All windows have blinds and blackout curtains for your peaceful sleep."
 
-#: apartmancvikov/templates/index.html:31
+#: apartmancvikov/templates/index.html:32
 msgid ""
 "V kuchyni najdete vše pro Vaše vaření – indukční deska, trouba, myčka, "
 "lednice s mrazákem, mikrovlnná trouba a veškeré nádobí."
@@ -220,7 +230,7 @@ msgstr ""
 "In the kitchen you will find everything for your cooking - induction hob, "
 "oven, dishwasher, fridge with freezer, microwave and all utensils."
 
-#: apartmancvikov/templates/index.html:32
+#: apartmancvikov/templates/index.html:33
 msgid ""
 "V obývacím pokoji je televize, pohodlná sedačka, vybavený dětský koutek na "
 "hraní, stoleček se židličkami na kreslení, hrací koberec na autíčka."
@@ -228,20 +238,26 @@ msgstr ""
 "In the living room there is a TV, a comfortable sofa, an equipped children's "
 "play area, a table with chairs for drawing, a play carpet for cars."
 
-#: apartmancvikov/templates/index.html:33
+#: apartmancvikov/templates/index.html:34
 msgid "V přízemí se nachází prádelna s pračkou, sušičkou a sušákem na prádlo."
 msgstr ""
 "On the ground floor there is a laundry room with washing machine, dryer and "
 "clothes dryer."
 
-#: apartmancvikov/templates/index.html:34
+#: apartmancvikov/templates/index.html:35
+msgid ""
+"Parkování pro až 6 automobilů je k dispozici přímo u apartmánu na soukromém "
+"pozemku."
+msgstr ""
+
+#: apartmancvikov/templates/index.html:36
 msgid ""
 "Psi ani jiná zvířata nejsou s ohledem na děti vítána, děkujeme za pochopení."
 msgstr ""
 "Dogs and other animals are not welcome with regard to children, thank you "
 "for your understanding."
 
-#: apartmancvikov/templates/index.html:35
+#: apartmancvikov/templates/index.html:37
 msgid ""
 "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, "
 "redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, "
@@ -255,11 +271,11 @@ msgstr ""
 "vacuum cleaner with reduction for suction during runny nose. If you need "
 "anything for the kids, just ask us."
 
-#: apartmancvikov/templates/index.html:40
+#: apartmancvikov/templates/index.html:42
 msgid "Pokoje"
 msgstr "Rooms"
 
-#: apartmancvikov/templates/index.html:43
+#: apartmancvikov/templates/index.html:45
 msgid ""
 "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a "
 "toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v "
@@ -268,27 +284,27 @@ msgstr ""
 "For all rooms there is a large spacious bathroom with bath and toilet on the "
 "1st floor and a smaller bathroom with shower and toilet on the ground floor."
 
-#: apartmancvikov/templates/index.html:46
+#: apartmancvikov/templates/index.html:48
 msgid "Tyrkys"
 msgstr "Turquoise"
 
-#: apartmancvikov/templates/index.html:49
+#: apartmancvikov/templates/index.html:51
 msgid "Tyrkysový pokoj"
 msgstr "Turquoise room"
 
-#: apartmancvikov/templates/index.html:55
+#: apartmancvikov/templates/index.html:57
 msgid "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky."
 msgstr "Room with double bed, possibility of baby cot."
 
-#: apartmancvikov/templates/index.html:60
+#: apartmancvikov/templates/index.html:62
 msgid "Levandule"
 msgstr "Lavender"
 
-#: apartmancvikov/templates/index.html:63
+#: apartmancvikov/templates/index.html:65
 msgid "Levandulový pokoj"
 msgstr "Lavender room"
 
-#: apartmancvikov/templates/index.html:69
+#: apartmancvikov/templates/index.html:71
 msgid ""
 "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát "
 "zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka."
@@ -297,77 +313,81 @@ msgstr ""
 "to put barriers for children against falling out of bed. The room can also "
 "accommodate a cot."
 
-#: apartmancvikov/templates/index.html:74
+#: apartmancvikov/templates/index.html:76
 msgid "Fuchsie"
 msgstr "Fuchsia"
 
-#: apartmancvikov/templates/index.html:77
+#: apartmancvikov/templates/index.html:79
 msgid "Fuchsiový pokoj"
 msgstr "Fuchsia room"
 
-#: apartmancvikov/templates/index.html:83
+#: apartmancvikov/templates/index.html:85
 msgid "Pokoj s dvěma samostatnými postelemi."
 msgstr "This room has two single beds."
 
-#: apartmancvikov/templates/index.html:88
+#: apartmancvikov/templates/index.html:90
 msgid "Společné místnosti"
 msgstr "Common rooms"
 
-#: apartmancvikov/templates/index.html:92
+#: apartmancvikov/templates/index.html:94
 msgid "Obývací pokoj"
 msgstr "Living room"
 
-#: apartmancvikov/templates/index.html:97
+#: apartmancvikov/templates/index.html:99
 msgid "Jídelna s dětským koutkem"
 msgstr "Dining room with children's corner"
 
-#: apartmancvikov/templates/index.html:102
+#: apartmancvikov/templates/index.html:104
 msgid "Kuchyně"
 msgstr "Kitchen"
 
-#: apartmancvikov/templates/index.html:107
+#: apartmancvikov/templates/index.html:109
 msgid "Koupelna se sprchou"
 msgstr "Bathroom with shower"
 
-#: apartmancvikov/templates/index.html:112
+#: apartmancvikov/templates/index.html:114
 msgid "Koupelna s vanou"
 msgstr "Bathroom with bathtub"
 
-#: apartmancvikov/templates/index.html:117
+#: apartmancvikov/templates/index.html:119
 msgid "Prádelna"
 msgstr "Laundry"
 
-#: apartmancvikov/templates/index.html:123
+#: apartmancvikov/templates/index.html:125
 msgid "Venkovní prostředí"
 msgstr "Outdoor environment"
 
-#: apartmancvikov/templates/index.html:127
+#: apartmancvikov/templates/index.html:129
 msgid "Venkovní bazén"
 msgstr "Outdoor swimming pool"
 
-#: apartmancvikov/templates/index.html:132
+#: apartmancvikov/templates/index.html:134
 msgid "Pumptrack a hřiště"
 msgstr "Pumptrack and playground"
 
-#: apartmancvikov/templates/index.html:137
+#: apartmancvikov/templates/index.html:139
 msgid "Lezecká stěna se skluzavkou a pískovištěm"
 msgstr "Climbing wall with slide and sandpit"
 
-#: apartmancvikov/templates/index.html:142
+#: apartmancvikov/templates/index.html:144
 msgid "Houpačka se skluzavkou a vrbovým tunelem"
 msgstr "Swing with slide and willow tunnel"
 
-#: apartmancvikov/templates/index.html:147
+#: apartmancvikov/templates/index.html:149
 msgid "Blátivá kuchyňka"
 msgstr "Mud kitchen"
 
-#: apartmancvikov/templates/index.html:152
+#: apartmancvikov/templates/index.html:154
 msgid "Trampolína a prolézačky"
 msgstr "Trampoline and climbing frame"
 
-#: apartmancvikov/templates/index.html:157
+#: apartmancvikov/templates/index.html:159
 msgid "Terasa"
 msgstr "Terrace"
+
+#: apartmancvikov/templates/index.html:164
+msgid "Letecký pohled"
+msgstr ""
 
 #: apartmancvikov/templates/kontakt.html:7
 msgid "Konktaktujte Apartmán Cvikov"
