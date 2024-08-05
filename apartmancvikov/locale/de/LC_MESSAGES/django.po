@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-05 12:50+0200\n"
-"PO-Revision-Date: 2023-07-30 08:53+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2024-08-05 10:52+0000\n"
+"Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #: apartmancvikov/templates/base.html:32 apartmancvikov/templates/base.html:37
 #: apartmancvikov/templates/base.html:74 apartmancvikov/templates/base.html:90
@@ -192,20 +192,16 @@ msgstr ""
 "Gesellschaft. Die Wohnung hat einen separaten Eingang."
 
 #: apartmancvikov/templates/index.html:27
-#, fuzzy
-#| msgid ""
-#| "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
-#| "prolézačky, trampolína, pumptrack, hřiště, vyhřívaný bazén."
 msgid ""
 "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
 "prolézačky, trampolína, pumptrack, hřiště."
 msgstr ""
 "Jede Menge Spaß nicht nur für Ihre Kinder im Garten - Sandkasten, Rutschen, "
-"Klettergerüste, Trampolin, Pumptrack, Spielplatz, beheizter Pool."
+"Klettergerüste, Trampolin, Pumptrack, Spielplatz."
 
 #: apartmancvikov/templates/index.html:28
 msgid "V sezoně se můžete vykoupat ve vyhřívanén venkovním bazénu."
-msgstr ""
+msgstr "In der Saison können Sie ein Bad im beheizten Außenpool nehmen."
 
 #: apartmancvikov/templates/index.html:29
 msgid "Je k dispozici i fén na vlasy a hračky pro děti do vany."
@@ -213,10 +209,9 @@ msgstr ""
 "Ein Haartrockner und Badespielzeug für Kinder sind ebenfalls vorhanden."
 
 #: apartmancvikov/templates/index.html:30
-#, fuzzy
-#| msgid "Je možnost umístit v rámci schodiště dětskou zábranu."
 msgid "Je možnost umístit na schodiště dětskou zábranu."
-msgstr "Es ist möglich, eine Kindersicherung im Treppenhaus anzubringen."
+msgstr ""
+"Es besteht die Möglichkeit, eine Kindersicherung an der Treppe anzubringen."
 
 #: apartmancvikov/templates/index.html:31
 msgid ""
@@ -254,6 +249,8 @@ msgid ""
 "Parkování pro až 6 automobilů je k dispozici přímo u apartmánu na soukromém "
 "pozemku."
 msgstr ""
+"Ein Parkplatz für bis zu 6 Autos befindet sich direkt vor der Wohnung auf "
+"einem Privatgelände."
 
 #: apartmancvikov/templates/index.html:36
 msgid ""
@@ -394,7 +391,7 @@ msgstr "Terrasse"
 
 #: apartmancvikov/templates/index.html:164
 msgid "Letecký pohled"
-msgstr ""
+msgstr "Luftaufnahme"
 
 #: apartmancvikov/templates/kontakt.html:7
 msgid "Konktaktujte Apartmán Cvikov"
