@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-05 12:50+0200\n"
-"PO-Revision-Date: 2023-07-30 08:53+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2024-08-05 10:52+0000\n"
+"Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/en/>\n"
 "Language: en\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #: apartmancvikov/templates/base.html:32 apartmancvikov/templates/base.html:37
 #: apartmancvikov/templates/base.html:74 apartmancvikov/templates/base.html:90
@@ -192,30 +192,24 @@ msgstr ""
 "apartment has a separate entrance."
 
 #: apartmancvikov/templates/index.html:27
-#, fuzzy
-#| msgid ""
-#| "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
-#| "prolézačky, trampolína, pumptrack, hřiště, vyhřívaný bazén."
 msgid ""
 "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
 "prolézačky, trampolína, pumptrack, hřiště."
 msgstr ""
 "Lots of fun not only for your children in the garden - sandpit, slides, "
-"climbing frames, trampoline, pumptrack, playground, heated pool."
+"climbing frames, trampoline, pumptrack, playground."
 
 #: apartmancvikov/templates/index.html:28
 msgid "V sezoně se můžete vykoupat ve vyhřívanén venkovním bazénu."
-msgstr ""
+msgstr "In season, you can take a dip in the heated outdoor pool."
 
 #: apartmancvikov/templates/index.html:29
 msgid "Je k dispozici i fén na vlasy a hračky pro děti do vany."
 msgstr "A hairdryer and children's bath toys are also available."
 
 #: apartmancvikov/templates/index.html:30
-#, fuzzy
-#| msgid "Je možnost umístit v rámci schodiště dětskou zábranu."
 msgid "Je možnost umístit na schodiště dětskou zábranu."
-msgstr "It is possible to place a child barrier within the staircase."
+msgstr "It is possible to place a child barrier on the staircase."
 
 #: apartmancvikov/templates/index.html:31
 msgid ""
@@ -249,6 +243,8 @@ msgid ""
 "Parkování pro až 6 automobilů je k dispozici přímo u apartmánu na soukromém "
 "pozemku."
 msgstr ""
+"Parking for up to 6 cars is available directly outside the apartment on "
+"private grounds."
 
 #: apartmancvikov/templates/index.html:36
 msgid ""
@@ -387,7 +383,7 @@ msgstr "Terrace"
 
 #: apartmancvikov/templates/index.html:164
 msgid "Letecký pohled"
-msgstr ""
+msgstr "Aerial view"
 
 #: apartmancvikov/templates/kontakt.html:7
 msgid "Konktaktujte Apartmán Cvikov"
