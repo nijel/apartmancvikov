@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-21 13:21+0100\n"
+"POT-Creation-Date: 2024-11-21 13:22+0100\n"
 "PO-Revision-Date: 2024-11-21 12:22+0000\n"
 "Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -75,7 +75,9 @@ msgid "Dítě do 3 let – bez nároku na lůžko zdarma"
 msgstr "Child up to 3 years old - free of charge without entitlement to a bed"
 
 #: apartmancvikov/templates/cenik.html:26
-msgid "Dítě do 12 let – od 450,- Kč za noc"
+#, fuzzy, python-format
+#| msgid "Dítě do 12 let – od 450,- Kč za noc"
+msgid "Dítě do 12 let – od %(price)s,- Kč za noc"
 msgstr "Child up to 12 years - from 450,- CZK per night"
 
 #: apartmancvikov/templates/cenik.html:29
