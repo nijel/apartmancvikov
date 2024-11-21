@@ -14,13 +14,13 @@
   <h1 class="display-5 fw-bold">{% trans "Ceník" %}</h1>
 
   <p>
-    {% trans "Cena za dospělého je od 750,- za osobu za noc." %}
+    {% blocktranslate with price=850 %}Cena za dospělého je od {{ price }},- Kč za osobu za noc.{% endblocktranslate %}
     {% trans "Cena se liší podle počtu osob, délky pobytu a sezóny." %}
   </p>
 
   <p>
     {% trans "Dítě do 3 let – bez nároku na lůžko zdarma" %}<br />
-    {% trans "Dítě do 12 let – od 400,- za noc" %}
+    {% blocktranslate with price=450 %}Dítě do 12 let – od 450,- Kč za noc{% endblocktranslate %}
   </p>
 
   <h2 class="display-6 fw-bold">{% trans "Co cena zahrnuje?" %}</h2>
