@@ -1,6 +1,6 @@
 [tool.djlint]
 blank_line_after_tag = "load,extends,endblock"
-ignore = "H014,T003,H006,H013,H021,H022"
+ignore = "H014,T003,H006,H013,H021"
 indent = 2
 max_attribute_length = 80
 max_blank_lines = 2
