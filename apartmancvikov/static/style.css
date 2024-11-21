@@ -4,6 +4,9 @@
 :root {
   --bs-font-sans-serif: "Source Sans 3", sans-serif;
 }
+iframe {
+  border: none;
+}
 
 @media (min-width: 768px) {
   .navbar-nav .nav-item {
