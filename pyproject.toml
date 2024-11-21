@@ -1,3 +1,12 @@
+[tool.djlint]
+blank_line_after_tag = "load,extends,endblock"
+ignore = "H014,T003,H006,H013,H021,H022,H025,H023,H031"
+indent = 2
+max_attribute_length = 80
+max_blank_lines = 2
+preserve_blank_lines = true
+profile = "django"
+
 [tool.isort]
 profile = "black"
 
