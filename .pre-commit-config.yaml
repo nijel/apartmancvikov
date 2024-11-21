@@ -46,4 +46,5 @@ repos:
 - repo: https://github.com/djlint/djLint
   rev: v1.36.1
   hooks:
+  - id: djlint-reformat-django
   - id: djlint-django

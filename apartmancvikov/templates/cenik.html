@@ -1,29 +1,32 @@
 {% extends "base.html" %}
+
 {% load i18n %}
 
 {% block ogtitle %}
-{% block lead %}
-{% block title %}
-{% trans "Ceník a podmínky Apartmánu Cvikov" %}
+  {% block lead %}
+    {% block title %}
+      {% trans "Ceník a podmínky Apartmánu Cvikov" %}
+    {% endblock %}
+  {% endblock %}
 {% endblock %}
-{% endblock %}
-{% endblock %}
+
 
 {% block content %}
-<div class="container py-5">
-  <h1 class="display-5 fw-bold">{% trans "Ceník" %}</h1>
+  <div class="container py-5">
+    <h1 class="display-5 fw-bold">{% trans "Ceník" %}</h1>
 
-  <p>
-    {% blocktranslate with price=850 %}Cena za dospělého je od {{ price }},- Kč za osobu za noc.{% endblocktranslate %}
-    {% trans "Cena se liší podle počtu osob, délky pobytu a sezóny." %}
-  </p>
+    <p>
+      {% blocktranslate with price=850 %}Cena za dospělého je od {{ price }},- Kč za osobu za noc.{% endblocktranslate %}
+      {% trans "Cena se liší podle počtu osob, délky pobytu a sezóny." %}
+    </p>
 
-  <p>
-    {% trans "Dítě do 3 let – bez nároku na lůžko zdarma" %}<br />
-    {% blocktranslate with price=450 %}Dítě do 12 let – od 450,- Kč za noc{% endblocktranslate %}
-  </p>
+    <p>
+      {% trans "Dítě do 3 let – bez nároku na lůžko zdarma" %}
+      <br />
+      {% blocktranslate with price=450 %}Dítě do 12 let – od 450,- Kč za noc{% endblocktranslate %}
+    </p>
 
-  <h2 class="display-6 fw-bold">{% trans "Co cena zahrnuje?" %}</h2>
+    <h2 class="display-6 fw-bold">{% trans "Co cena zahrnuje?" %}</h2>
 
     <ul>
       <li>{% trans "Ubytování ve třech útulných pokojích se společnou koupelnou." %}</li>
@@ -36,34 +39,30 @@
     </ul>
 
 
-<p>
-  {% trans "Minimální délka pobytu jsou 2 noci, o letních prázdninách 7 nocí." %}
-</p>
+    <p>{% trans "Minimální délka pobytu jsou 2 noci, o letních prázdninách 7 nocí." %}</p>
 
-  <h2 class="display-6 fw-bold">{% trans "Platba a storno" %}</h2>
+    <h2 class="display-6 fw-bold">{% trans "Platba a storno" %}</h2>
 
-<p>
-  {% trans "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50% ceny, která má splatnost 14 dní." %}
-  {% trans "Rezervace je závazná po uhrazení rezervační platby za ubytování, a to převodem na účet." %}
-  {% trans "V případě nedodržení platebních podmínek si vyhrazujeme právo od rezervace ustoupit." %}
-</p>
+    <p>
+      {% trans "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50% ceny, která má splatnost 14 dní." %}
+      {% trans "Rezervace je závazná po uhrazení rezervační platby za ubytování, a to převodem na účet." %}
+      {% trans "V případě nedodržení platebních podmínek si vyhrazujeme právo od rezervace ustoupit." %}
+    </p>
 
-<p>
-  {% trans "Platba na místě pouze v hotovosti." %}
-</p>
+    <p>{% trans "Platba na místě pouze v hotovosti." %}</p>
 
-<p>
-  {% trans "V případě zrušení rezervace do 30ti dnů před termínem pobytu vracíme platbu v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem činí vratná částka 0,- z uhrazené ceny." %}
-</p>
+    <p>
+      {% trans "V případě zrušení rezervace do 30ti dnů před termínem pobytu vracíme platbu v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem činí vratná částka 0,- z uhrazené ceny." %}
+    </p>
 
-  <h2 class="display-6 fw-bold">{% trans "Příjezd a odjezd" %}</h2>
+    <h2 class="display-6 fw-bold">{% trans "Příjezd a odjezd" %}</h2>
 
-<p>
-  {% trans "V den příjezdu je Váš pokoj připraven od 14 hodiny." %}
-  {% trans "Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete informovat o případném pozdním příjezdu." %}
-  {% trans "V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě dle obsazenosti může být i později." %}
-</p>
+    <p>
+      {% trans "V den příjezdu je Váš pokoj připraven od 14 hodiny." %}
+      {% trans "Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete informovat o případném pozdním příjezdu." %}
+      {% trans "V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě dle obsazenosti může být i později." %}
+    </p>
 
 
-</div>
+  </div>
 {% endblock %}
