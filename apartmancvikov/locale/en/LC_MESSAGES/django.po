@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-21 13:21+0100\n"
-"PO-Revision-Date: 2024-08-05 10:52+0000\n"
+"PO-Revision-Date: 2024-11-21 12:22+0000\n"
 "Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/en/>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.9-dev\n"
 
 #: apartmancvikov/templates/base.html:45
 msgid "ubytování, cvikov, lužické, hory, sklárna, kolo, pivovar"
-msgstr ""
+msgstr "accommodation, cvikov, lusatian, mountains, glassworks, bike, brewery"
 
 #: apartmancvikov/templates/base.html:47 apartmancvikov/templates/base.html:55
 #: apartmancvikov/templates/base.html:107
@@ -60,10 +60,9 @@ msgid "Ceník a podmínky Apartmánu Cvikov"
 msgstr "Prices and conditions of Apartment Cvikov"
 
 #: apartmancvikov/templates/cenik.html:19
-#, fuzzy, python-format
-#| msgid "Cena za dospělého je od 750,- za osobu za noc."
+#, python-format
 msgid "Cena za dospělého je od %(price)s,- Kč za osobu za noc."
-msgstr "Price per adult is from 750,- per person per night."
+msgstr "Price per adult is from %(price)s, - CZK per person per night."
 
 #: apartmancvikov/templates/cenik.html:20
 msgid "Cena se liší podle počtu osob, délky pobytu a sezóny."
@@ -76,10 +75,8 @@ msgid "Dítě do 3 let – bez nároku na lůžko zdarma"
 msgstr "Child up to 3 years old - free of charge without entitlement to a bed"
 
 #: apartmancvikov/templates/cenik.html:26
-#, fuzzy
-#| msgid "Dítě do 12 let – od 400,- za noc"
 msgid "Dítě do 12 let – od 450,- Kč za noc"
-msgstr "Child up to 12 years - from 400,- per night"
+msgstr "Child up to 12 years - from 450,- CZK per night"
 
 #: apartmancvikov/templates/cenik.html:29
 msgid "Co cena zahrnuje?"
