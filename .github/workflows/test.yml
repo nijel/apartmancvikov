@@ -20,7 +20,7 @@ jobs:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements*.txt') }}
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@dc73133d4da04e56a135ae2246682783cc7c7cb6 # v2.2.2
+      uses: actions/setup-python@e9aba2c848f5ebd159c070c61ea2c4e2b122355e # v2.3.4
       with:
         python-version: ${{ matrix.python-version }}
     - run: sudo apt-get update
