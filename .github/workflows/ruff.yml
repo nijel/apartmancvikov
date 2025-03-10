@@ -20,7 +20,7 @@ jobs:
           ~/.cache/pre-commit
         key: ${{ runner.os }}-pip-lint-${{ hashFiles('**/requirements*.txt') }}-${{ hashFiles('.pre-commit-config.yaml') }}
     - name: Setup Python
-      uses: actions/setup-python@dc73133d4da04e56a135ae2246682783cc7c7cb6 # v2.2.2
+      uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
       with:
         python-version: 3.11
     - name: Install dependencies
