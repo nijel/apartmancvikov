@@ -130,3 +130,6 @@ dmypy.json
 
 # Collected static files
 /static/
+
+# Local settings
+/apartmancvikov/settings_local.py

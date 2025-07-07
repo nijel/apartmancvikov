@@ -10,7 +10,7 @@ profile = "django"
 [tool.isort]
 profile = "black"
 
-[tool.ruff]
+[tool.ruff.lint]
 ignore = [
   "ANN",
   "S105",
@@ -21,10 +21,14 @@ ignore = [
   "D212",
   "D100",
   "D104",
+  "D105",
+  "D203",  # CONFIG: incompatible with D211
   "D101"
 ]
-output-format = "github"
 select = ["ALL"]
 
-[tool.ruff.mccabe]
+[tool.ruff.lint.mccabe]
 max-complexity = 16
+
+[tool.ruff.lint.per-file-ignores]
+"apartmancvikov//migrations/*.py" = ["RUF012"]
