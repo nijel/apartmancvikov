@@ -1,19 +1,17 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-{% load booking_calendar %}
+{% load booking_calendar i18n %}
 
 {% block lead %}
   {% block title %}
     {% block ogtitle %}
-      {% trans "Volné termíny v Apartmánu Cvikov" %}
-    {% endblock %}
-  {% endblock %}
-{% endblock %}
-
+      {% translate "Volné termíny v Apartmánu Cvikov" %}
+    {% endblock ogtitle %}
+  {% endblock title %}
+{% endblock lead %}
 
 {% block content %}
   <div class="container text-center">
     <div class="d-flex flex-row flex-wrap justify-content-center align-items-start mb-3">{% render_calendar %}</div>
   </div>
-{% endblock %}
+{% endblock content %}

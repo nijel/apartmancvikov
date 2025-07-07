@@ -1,120 +1,119 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-{% load static %}
+{% load i18n static %}
 
 {% block content %}
   <div class="container">
     <div class="container py-5">
-      <h1 class="display-5 fw-bold">{% trans "Ubytování v apartmánu" %}</h1>
+      <h1 class="display-5 fw-bold">{% translate "Ubytování v apartmánu" %}</h1>
 
       <p>{% include "snippets/description.html" %}</p>
 
 
 
-      <h2 class="display-6 fw-bold">{% trans "Vybavení apartmánu" %}</h2>
+      <h2 class="display-6 fw-bold">{% translate "Vybavení apartmánu" %}</h2>
 
       <div class="row flex-lg-row-reverse g-5 py-5">
         <div class="col-lg-6">
           <a href="{% static "foto/dum.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Apartmán Cvikov" %}"
-             alt="{% trans "Apartmán Cvikov" %}">
+             data-caption="{% translate "Apartmán Cvikov" %}"
+             alt="{% translate "Apartmán Cvikov" %}">
             <img src="{% static "foto/dum.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
         <div class="col-lg-6">
           <ul>
-            <li>{% trans "Příjemné, klidné ubytování pro rodinu či uzavřenou společnost. Apartmán má samostatný vchod." %}</li>
+            <li>{% translate "Příjemné, klidné ubytování pro rodinu či uzavřenou společnost. Apartmán má samostatný vchod." %}</li>
             <li>
-              {% trans "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, prolézačky, trampolína, pumptrack, hřiště." %}
+              {% translate "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, prolézačky, trampolína, pumptrack, hřiště." %}
             </li>
-            <li>{% trans "V sezoně se můžete vykoupat ve vyhřívanén venkovním bazénu." %}</li>
-            <li>{% trans "Je k dispozici i fén na vlasy a hračky pro děti do vany." %}</li>
-            <li>{% trans "Je možnost umístit na schodiště dětskou zábranu." %}</li>
-            <li>{% trans "Na všech oknech jsou žaluzie a zatemňovací závěsy pro Váš klidný spánek." %}</li>
+            <li>{% translate "V sezoně se můžete vykoupat ve vyhřívanén venkovním bazénu." %}</li>
+            <li>{% translate "Je k dispozici i fén na vlasy a hračky pro děti do vany." %}</li>
+            <li>{% translate "Je možnost umístit na schodiště dětskou zábranu." %}</li>
+            <li>{% translate "Na všech oknech jsou žaluzie a zatemňovací závěsy pro Váš klidný spánek." %}</li>
             <li>
-              {% trans "V kuchyni najdete vše pro Vaše vaření – indukční deska, trouba, myčka, lednice s mrazákem, mikrovlnná trouba a veškeré nádobí." %}
+              {% translate "V kuchyni najdete vše pro Vaše vaření – indukční deska, trouba, myčka, lednice s mrazákem, mikrovlnná trouba a veškeré nádobí." %}
             </li>
             <li>
-              {% trans "V obývacím pokoji je televize, pohodlná sedačka, vybavený dětský koutek na hraní, stoleček se židličkami na kreslení, hrací koberec na autíčka." %}
+              {% translate "V obývacím pokoji je televize, pohodlná sedačka, vybavený dětský koutek na hraní, stoleček se židličkami na kreslení, hrací koberec na autíčka." %}
             </li>
-            <li>{% trans "V přízemí se nachází prádelna s pračkou, sušičkou a sušákem na prádlo." %}</li>
-            <li>{% trans "Parkování pro až 6 automobilů je k dispozici přímo u apartmánu na soukromém pozemku." %}</li>
-            <li>{% trans "Psi ani jiná zvířata nejsou s ohledem na děti vítána, děkujeme za pochopení." %}</li>
+            <li>{% translate "V přízemí se nachází prádelna s pračkou, sušičkou a sušákem na prádlo." %}</li>
+            <li>{% translate "Parkování pro až 6 automobilů je k dispozici přímo u apartmánu na soukromém pozemku." %}</li>
+            <li>{% translate "Psi ani jiná zvířata nejsou s ohledem na děti vítána, děkujeme za pochopení." %}</li>
             <li>
-              {% trans "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany na postel, zábrany na schodiště, podsedák na židli, vysavač s redukcí na odsávání při rýmě. Pokud bude cokoliv na děti potřeba, stačí se nás zeptat." %}
+              {% translate "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany na postel, zábrany na schodiště, podsedák na židli, vysavač s redukcí na odsávání při rýmě. Pokud bude cokoliv na děti potřeba, stačí se nás zeptat." %}
             </li>
           </ul>
         </div>
       </div>
 
-      <h2 class="display-6 fw-bold">{% trans "Pokoje" %}</h2>
+      <h2 class="display-6 fw-bold">{% translate "Pokoje" %}</h2>
 
       <p>
-        {% trans "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v přízemí." %}
+        {% translate "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v přízemí." %}
       </p>
 
-      <h3 class="display-7 fw-bold">{% trans "Tyrkys" %}</h3>
+      <h3 class="display-7 fw-bold">{% translate "Tyrkys" %}</h3>
       <div class="row flex-lg-row-reverse g-5 py-5">
         <div class="col-lg-8">
           <a href="{% static "foto/tyrkys.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Tyrkysový pokoj" %}"
-             alt="{% trans "Tyrkysový pokoj" %}">
+             data-caption="{% translate "Tyrkysový pokoj" %}"
+             alt="{% translate "Tyrkysový pokoj" %}">
             <img src="{% static "foto/tyrkys.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
         <div class="col-lg-4">
-          <p>{% trans "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky." %}</p>
+          <p>{% translate "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky." %}</p>
         </div>
       </div>
 
-      <h3 class="display-7 fw-bold">{% trans "Levandule" %}</h3>
+      <h3 class="display-7 fw-bold">{% translate "Levandule" %}</h3>
       <div class="row flex-lg-row-reverse g-5 py-5">
         <div class="col-lg-8">
           <a href="{% static "foto/levandule.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Levandulový pokoj" %}"
-             alt="{% trans "Levandulový pokoj" %}">
+             data-caption="{% translate "Levandulový pokoj" %}"
+             alt="{% translate "Levandulový pokoj" %}">
             <img src="{% static "foto/levandule.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
         <div class="col-lg-4">
           <p>
-            {% trans "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka." %}
+            {% translate "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka." %}
           </p>
         </div>
       </div>
 
-      <h3 class="display-7 fw-bold">{% trans "Fuchsie" %}</h3>
+      <h3 class="display-7 fw-bold">{% translate "Fuchsie" %}</h3>
       <div class="row flex-lg-row-reverse g-5 py-5">
         <div class="col-lg-8">
           <a href="{% static "foto/fuchsie.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Fuchsiový pokoj" %}"
-             alt="{% trans "Fuchsiový pokoj" %}">
+             data-caption="{% translate "Fuchsiový pokoj" %}"
+             alt="{% translate "Fuchsiový pokoj" %}">
             <img src="{% static "foto/fuchsie.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
         <div class="col-lg-4">
-          <p>{% trans "Pokoj s dvěma samostatnými postelemi." %}</p>
+          <p>{% translate "Pokoj s dvěma samostatnými postelemi." %}</p>
         </div>
       </div>
 
-      <h2 class="display-6 fw-bold">{% trans "Společné místnosti" %}</h2>
+      <h2 class="display-6 fw-bold">{% translate "Společné místnosti" %}</h2>
 
       <div class="row">
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
           <a href="{% static "foto/obyvak.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Obývací pokoj" %}"
-             alt="{% trans "Obývací pokoj" %}">
+             data-caption="{% translate "Obývací pokoj" %}"
+             alt="{% translate "Obývací pokoj" %}">
             <img src="{% static "foto/obyvak.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -122,8 +121,8 @@
           <a href="{% static "foto/jidelna.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Jídelna s dětským koutkem" %}"
-             alt="{% trans "Jídelna s dětským koutkem" %}">
+             data-caption="{% translate "Jídelna s dětským koutkem" %}"
+             alt="{% translate "Jídelna s dětským koutkem" %}">
             <img src="{% static "foto/jidelna.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -131,8 +130,8 @@
           <a href="{% static "foto/kuchyn.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Kuchyně" %}"
-             alt="{% trans "Kuchyně" %}">
+             data-caption="{% translate "Kuchyně" %}"
+             alt="{% translate "Kuchyně" %}">
             <img src="{% static "foto/kuchyn.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -140,8 +139,8 @@
           <a href="{% static "foto/koupelna-dole.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Koupelna se sprchou" %}"
-             alt="{% trans "Koupelna se sprchou" %}">
+             data-caption="{% translate "Koupelna se sprchou" %}"
+             alt="{% translate "Koupelna se sprchou" %}">
             <img src="{% static "foto/koupelna-dole.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -149,8 +148,8 @@
           <a href="{% static "foto/koupelna-nahore.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Koupelna s vanou" %}"
-             alt="{% trans "Koupelna s vanou" %}">
+             data-caption="{% translate "Koupelna s vanou" %}"
+             alt="{% translate "Koupelna s vanou" %}">
             <img src="{% static "foto/koupelna-nahore.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -158,22 +157,22 @@
           <a href="{% static "foto/pradelna.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Prádelna" %}"
-             alt="{% trans "Prádelna" %}">
+             data-caption="{% translate "Prádelna" %}"
+             alt="{% translate "Prádelna" %}">
             <img src="{% static "foto/pradelna.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
       </div>
 
-      <h2 class="display-6 fw-bold">{% trans "Venkovní prostředí" %}</h2>
+      <h2 class="display-6 fw-bold">{% translate "Venkovní prostředí" %}</h2>
 
       <div class="row">
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
           <a href="{% static "foto/dum.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Venkovní bazén" %}"
-             alt="{% trans "Venkovní bazén" %}">
+             data-caption="{% translate "Venkovní bazén" %}"
+             alt="{% translate "Venkovní bazén" %}">
             <img src="{% static "foto/dum.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -181,8 +180,8 @@
           <a href="{% static "foto/pumptrack.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Pumptrack a hřiště" %}"
-             alt="{% trans "Pumptrack a hřiště" %}">
+             data-caption="{% translate "Pumptrack a hřiště" %}"
+             alt="{% translate "Pumptrack a hřiště" %}">
             <img src="{% static "foto/pumptrack.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -190,8 +189,8 @@
           <a href="{% static "foto/stena.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Lezecká stěna se skluzavkou a pískovištěm" %}"
-             alt="{% trans "Lezecká stěna se skluzavkou a pískovištěm" %}">
+             data-caption="{% translate "Lezecká stěna se skluzavkou a pískovištěm" %}"
+             alt="{% translate "Lezecká stěna se skluzavkou a pískovištěm" %}">
             <img src="{% static "foto/stena.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -199,8 +198,8 @@
           <a href="{% static "foto/houpacka.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Houpačka se skluzavkou a vrbovým tunelem" %}"
-             alt="{% trans "Houpačka se skluzavkou a vrbovým tunelem" %}">
+             data-caption="{% translate "Houpačka se skluzavkou a vrbovým tunelem" %}"
+             alt="{% translate "Houpačka se skluzavkou a vrbovým tunelem" %}">
             <img src="{% static "foto/houpacka.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -208,8 +207,8 @@
           <a href="{% static "foto/kuchynka.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Blátivá kuchyňka" %}"
-             alt="{% trans "Blátivá kuchyňka" %}">
+             data-caption="{% translate "Blátivá kuchyňka" %}"
+             alt="{% translate "Blátivá kuchyňka" %}">
             <img src="{% static "foto/kuchynka.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -217,8 +216,8 @@
           <a href="{% static "foto/trampolina.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Trampolína a prolézačky" %}"
-             alt="{% trans "Trampolína a prolézačky" %}">
+             data-caption="{% translate "Trampolína a prolézačky" %}"
+             alt="{% translate "Trampolína a prolézačky" %}">
             <img src="{% static "foto/trampolina.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -226,8 +225,8 @@
           <a href="{% static "foto/terasa.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Terasa" %}"
-             alt="{% trans "Terasa" %}">
+             data-caption="{% translate "Terasa" %}"
+             alt="{% translate "Terasa" %}">
             <img src="{% static "foto/terasa.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -235,8 +234,8 @@
           <a href="{% static "foto/letecky.jpg" %}"
              data-toggle="lightbox"
              data-gallery="lightbox"
-             data-caption="{% trans "Letecký pohled" %}"
-             alt="{% trans "Letecký pohled" %}">
+             data-caption="{% translate "Letecký pohled" %}"
+             alt="{% translate "Letecký pohled" %}">
             <img src="{% static "foto/letecky.jpg" %}" class="rounded img-fluid" />
           </a>
         </div>
@@ -244,4 +243,4 @@
 
     </div>
   </div>
-{% endblock %}
+{% endblock content %}

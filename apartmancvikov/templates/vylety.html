@@ -1,19 +1,16 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-{% load static %}
+{% load i18n static %}
 
 {% block ogtitle %}
   {% block title %}
-    {% trans "Výlety z Apartmánu Cvikov" %}
-  {% endblock %}
-{% endblock %}
-
+    {% translate "Výlety z Apartmánu Cvikov" %}
+  {% endblock title %}
+{% endblock ogtitle %}
 
 {% block lead %}
-  {% trans "Poznejte přírodu Lužických hor, skalní hrady a sklářskou historii." %}
-{% endblock %}
-
+  {% translate "Poznejte přírodu Lužických hor, skalní hrady a sklářskou historii." %}
+{% endblock lead %}
 
 {% block content %}
   <div class="container">
@@ -22,14 +19,14 @@
         <a href="{% static "vylety/kalvarie.jpg" %}"
            data-toggle="lightbox"
            data-gallery="lightbox"
-           data-caption="{% trans "Křížová cesta ve Cvikově" %}"
-           alt="{% trans "Křížová cesta ve Cvikově" %}">
+           data-caption="{% translate "Křížová cesta ve Cvikově" %}"
+           alt="{% translate "Křížová cesta ve Cvikově" %}">
           <img src="{% static "vylety/kalvarie.jpg" %}" class="rounded img-fluid" />
         </a>
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% trans "Cvikovské vyhlídky" %}</h1>
-        <p class="lead">{% trans "Procházka po vyhlídkách v okolí Cvikova nabídne pohledy na celé Lužické hory." %}</p>
+        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Cvikovské vyhlídky" %}</h1>
+        <p class="lead">{% translate "Procházka po vyhlídkách v okolí Cvikova nabídne pohledy na celé Lužické hory." %}</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="https://mapy.cz/s/rodateluge"
              class="btn btn-outline-secondary btn-lg px-4">Mapy.cz</a>
@@ -42,23 +39,23 @@
         <a href="{% static "vylety/oybin.jpg" %}"
            data-toggle="lightbox"
            data-gallery="lightbox"
-           data-caption="{% trans "Oybin" %}"
-           alt="{% trans "Oybin" %}">
+           data-caption="{% translate "Oybin" %}"
+           alt="{% translate "Oybin" %}">
           <img src="{% static "vylety/oybin.jpg" %}" class="rounded img-fluid" />
         </a>
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% trans "Skalní města a hrady" %}</h1>
+        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Skalní města a hrady" %}</h1>
         <p class="lead">
-          {% trans "V okolí se nachází mnoho skalních měst, skalních reliéfů a dalších přírodních nebo lidmi vytvořených skalnách zajímavostí." %}
+          {% translate "V okolí se nachází mnoho skalních měst, skalních reliéfů a dalších přírodních nebo lidmi vytvořených skalnách zajímavostí." %}
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="https://www.kudyznudy.cz/aktivity/skalni-hrad-a-poustevna-sloup"
-             class="btn btn-outline-secondary btn-lg px-4">{% trans "Sloup" %}</a>
+             class="btn btn-outline-secondary btn-lg px-4">{% translate "Sloup" %}</a>
           <a href="https://www.liberecky-kraj.cz/dr-cs/5011-radvanec.html"
-             class="btn btn-outline-secondary btn-lg px-4">{% trans "Radvanec" %}</a>
+             class="btn btn-outline-secondary btn-lg px-4">{% translate "Radvanec" %}</a>
           <a href="https://www.liberecky-kraj.cz/dr-cs/13632-navstivte-kunraticke-svycarsko.html"
-             class="btn btn-outline-secondary btn-lg px-4">{% trans "Kunratické Švýcarsko" %}</a>
+             class="btn btn-outline-secondary btn-lg px-4">{% translate "Kunratické Švýcarsko" %}</a>
         </div>
       </div>
     </div>
@@ -68,23 +65,23 @@
         <a href="{% static "vylety/jonsdorf.jpg" %}"
            data-toggle="lightbox"
            data-gallery="lightbox"
-           data-caption="{% trans "Motýlí dům Jonsdorf" %}"
-           alt="{% trans "Motýlí dům Jonsdorf" %}">
+           data-caption="{% translate "Motýlí dům Jonsdorf" %}"
+           alt="{% translate "Motýlí dům Jonsdorf" %}">
           <img src="{% static "vylety/jonsdorf.jpg" %}" class="rounded img-fluid" />
         </a>
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% trans "Oybin a Jonsdorf" %}</h1>
+        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Oybin a Jonsdorf" %}</h1>
         <p class="lead">
-          {% trans "Hned za hranicemi můžete navštívit hrad Oybin, motýlí dům v Jonsdorfu." %}
-          {% trans "V letních měsících do obou míst jezdí turistický vláček z náměstí ve Cvikově." %}
+          {% translate "Hned za hranicemi můžete navštívit hrad Oybin, motýlí dům v Jonsdorfu." %}
+          {% translate "V letních měsících do obou míst jezdí turistický vláček z náměstí ve Cvikově." %}
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://oybin.com/" class="btn btn-outline-secondary btn-lg px-4">{% trans "Oybin" %}</a>
+          <a href="https://oybin.com/" class="btn btn-outline-secondary btn-lg px-4">{% translate "Oybin" %}</a>
           <a href="https://www.schmetterlingshaus.info/"
-             class="btn btn-outline-secondary btn-lg px-4">{% trans "Motýlí dům" %}</a>
+             class="btn btn-outline-secondary btn-lg px-4">{% translate "Motýlí dům" %}</a>
           <a href="https://www.horskyexpres.cz/"
-             class="btn btn-outline-secondary btn-lg px-4">{% trans "Horský expres" %}</a>
+             class="btn btn-outline-secondary btn-lg px-4">{% translate "Horský expres" %}</a>
         </div>
       </div>
     </div>
@@ -94,23 +91,23 @@
         <a href="{% static "vylety/pacinek.jpg" %}"
            data-toggle="lightbox"
            data-gallery="lightbox"
-           data-caption="{% trans "Skleněná zahrada v Kunraticích u Cvikova" %}"
-           alt="{% trans "Skleněná zahrada v Kunraticích u Cvikova" %}">
+           data-caption="{% translate "Skleněná zahrada v Kunraticích u Cvikova" %}"
+           alt="{% translate "Skleněná zahrada v Kunraticích u Cvikova" %}">
           <img src="{% static "vylety/pacinek.jpg" %}" class="rounded img-fluid" />
         </a>
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% trans "Sklárny" %}</h1>
+        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Sklárny" %}</h1>
         <p class="lead">
-          {% trans "V okolí se nachází mnoho skláren které stojí za vidění." %}
-          {% trans "V Kunraticích u Cvikova je skleněná zahrada u sklárny Pačinek." %}
-          {% trans "V Lindavě můžete navštívit sklářskou krčmu s možností výroby vlastního skla." %}
+          {% translate "V okolí se nachází mnoho skláren které stojí za vidění." %}
+          {% translate "V Kunraticích u Cvikova je skleněná zahrada u sklárny Pačinek." %}
+          {% translate "V Lindavě můžete navštívit sklářskou krčmu s možností výroby vlastního skla." %}
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="https://www.pacinekglass.com/"
-             class="btn btn-outline-secondary btn-lg px-4">{% trans "Pačinek" %}</a>
-          <a href="https://www.ajetoglass.com" class="btn btn-outline-secondary btn-lg px-4">{% trans "Ajeto" %}</a>
-          <a href="https://crystalvalley.cz/" class="btn btn-outline-secondary btn-lg px-4">{% trans "Crystal valley" %}</a>
+             class="btn btn-outline-secondary btn-lg px-4">{% translate "Pačinek" %}</a>
+          <a href="https://www.ajetoglass.com" class="btn btn-outline-secondary btn-lg px-4">{% translate "Ajeto" %}</a>
+          <a href="https://crystalvalley.cz/" class="btn btn-outline-secondary btn-lg px-4">{% translate "Crystal valley" %}</a>
         </div>
       </div>
     </div>
@@ -120,14 +117,14 @@
         <a href="{% static "vylety/klic.jpg" %}"
            data-toggle="lightbox"
            data-gallery="lightbox"
-           data-caption="{% trans "Klíč" %}"
-           alt="{% trans "Klíč" %}">
+           data-caption="{% translate "Klíč" %}"
+           alt="{% translate "Klíč" %}">
           <img src="{% static "vylety/klic.jpg" %}" class="rounded img-fluid" />
         </a>
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% trans "Lužické hory" %}</h1>
-        <p class="lead">{% trans "Lužické hory nabízí mnoho vrcholů s krásnými rozhledy k prozkoumání." %}</p>
+        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Lužické hory" %}</h1>
+        <p class="lead">{% translate "Lužické hory nabízí mnoho vrcholů s krásnými rozhledy k prozkoumání." %}</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="https://www.liberecky-kraj.cz/dr-cs/636-vrch-klic.html"
              class="btn btn-outline-secondary btn-lg px-4">Klíč</a>
@@ -144,21 +141,21 @@
         <a href="{% static "vylety/polevsko.jpg" %}"
            data-toggle="lightbox"
            data-gallery="lightbox"
-           data-caption="{% trans "Polevsko" %}"
-           alt="{% trans "Polevsko" %}">
+           data-caption="{% translate "Polevsko" %}"
+           alt="{% translate "Polevsko" %}">
           <img src="{% static "vylety/polevsko.jpg" %}" class="rounded img-fluid" />
         </a>
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% trans "Lyžování nebo bikeparky" %}</h1>
+        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Lyžování nebo bikeparky" %}</h1>
         <p class="lead">
-          {% trans "V zimě můžete využít blízké lyžařské areály." %}
-          {% trans "V létě se do nich místo na lyžích můžete vydat na kolech." %}
+          {% translate "V zimě můžete využít blízké lyžařské areály." %}
+          {% translate "V létě se do nich místo na lyžích můžete vydat na kolech." %}
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://www.polevsko.ski/" class="btn btn-outline-secondary btn-lg px-4">{% trans "Sjezdovka a bikepark Polevsko" %}</a>
+          <a href="https://www.polevsko.ski/" class="btn btn-outline-secondary btn-lg px-4">{% translate "Sjezdovka a bikepark Polevsko" %}</a>
           <a href="https://www.ski-podluzi.cz/"
-             class="btn btn-outline-secondary btn-lg px-4">{% trans "Lyžařský areál Horní Podluží" %}</a>
+             class="btn btn-outline-secondary btn-lg px-4">{% translate "Lyžařský areál Horní Podluží" %}</a>
         </div>
       </div>
     </div>
@@ -167,23 +164,23 @@
 
   <div class="bg-dark text-secondary px-4 py-5 text-center">
     <div class="py-5">
-      <h1 class="display-5 fw-bold text-white">{% trans "Další tipy na výlet" %}</h1>
+      <h1 class="display-5 fw-bold text-white">{% translate "Další tipy na výlet" %}</h1>
       <div class="col-lg-6 mx-auto">
         <p class="fs-5 mb-4">
-          {% trans "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky okolních oblastí a objevte další zajímavosti." %}
+          {% translate "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky okolních oblastí a objevte další zajímavosti." %}
         </p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <a href="https://www.luzihory.cz/"
-             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% trans "Lužické hory" %}</a>
+             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% translate "Lužické hory" %}</a>
           <a href="https://www.pivnistezka.cz/"
-             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% trans "Pivní stezka Lužických hor" %}</a>
+             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% translate "Pivní stezka Lužických hor" %}</a>
           <a href="https://www.ceskesvycarsko.cz/"
-             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% trans "Českosaské Švýcarsko" %}</a>
+             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% translate "Českosaské Švýcarsko" %}</a>
           <a href="https://www.kudyznudy.cz/kam-pojedete/ceskolipsko-a-jizerske-hory/ceskolipsko"
-             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% trans "Českolipsko" %}</a>
+             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% translate "Českolipsko" %}</a>
         </div>
       </div>
     </div>
   </div>
 
-{% endblock %}
+{% endblock content %}

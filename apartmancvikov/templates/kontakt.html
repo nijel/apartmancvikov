@@ -5,17 +5,16 @@
 {% block lead %}
   {% block title %}
     {% block ogtitle %}
-      {% trans "Konktaktujte Apartmán Cvikov" %}
-    {% endblock %}
-  {% endblock %}
-{% endblock %}
-
+      {% translate "Konktaktujte Apartmán Cvikov" %}
+    {% endblock ogtitle %}
+  {% endblock title %}
+{% endblock lead %}
 
 {% block content %}
   <div class="container">
     <div class="row align-items-center g-5 py-5">
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% trans "Apartmán Cvikov" %}</h1>
+        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Apartmán Cvikov" %}</h1>
         <p class="lead">
           📞 <a href="tel:+420775408751">+420 775 408 751</a>
           <br />
@@ -29,9 +28,9 @@
           <a href="https://mapy.cz/s/fugafuhazo"
              class="btn btn-outline-secondary btn-lg px-4">Mapy.cz</a>
           <a href="https://maps.google.com/maps?cid=5382507699096848928"
-             class="btn btn-outline-secondary btn-lg px-4">{% trans "Mapy Google" %}</a>
+             class="btn btn-outline-secondary btn-lg px-4">{% translate "Mapy Google" %}</a>
         </div>
-        <h1 class="display-7 fw-bold lh-1 mb-3 mt-3">{% trans "Provozovatel" %}</h1>
+        <h1 class="display-7 fw-bold lh-1 mb-3 mt-3">{% translate "Provozovatel" %}</h1>
         <p class="lead">
           Petra Čihařová
           <br />
@@ -46,4 +45,4 @@
       </div>
     </div>
   </div>
-{% endblock %}
+{% endblock content %}
