@@ -82,6 +82,10 @@
                      href="{% url "vylety" %}">{% trans "Výlety" %}</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link {% if request.resolver_match.url_name == "obsazenost" %}active" aria-current="page{% endif %}"
+                     href="{% url "obsazenost" %}">{% trans "Obsazenost" %}</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link {% if request.resolver_match.url_name == "cenik" %}active" aria-current="page{% endif %}"
                      href="{% url "cenik" %}">{% trans "Ceník" %}</a>
                 </li>

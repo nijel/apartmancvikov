@@ -23,6 +23,7 @@ ignore = [
   "D104",
   "D105",
   "D203",  # CONFIG: incompatible with D211
+  "COM",  # CONFIG: No trailing commas
   "D101"
 ]
 select = ["ALL"]

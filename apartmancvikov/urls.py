@@ -29,6 +29,11 @@ urlpatterns = i18n_patterns(  # noqa: RUF005
     path("vylety/", TemplateView.as_view(template_name="vylety.html"), name="vylety"),
     path("cenik/", TemplateView.as_view(template_name="cenik.html"), name="cenik"),
     path(
+        "obsazenost/",
+        TemplateView.as_view(template_name="obsazenost.html"),
+        name="obsazenost",
+    ),
+    path(
         "kontakt/",
         TemplateView.as_view(template_name="kontakt.html"),
         name="kontakt",

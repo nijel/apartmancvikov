@@ -10,10 +10,15 @@ from django.utils import timezone
 from apartmancvikov.models import Booking
 
 
-def fixup_date(value: date | datetime) -> date:
+def fixup_date(value: date | datetime, *, is_end: bool = False) -> date:
     """Convert iCal date into date object."""
     if isinstance(value, datetime):
-        value = value.date()
+        if is_end and value.hour == 0:
+            value = value.date() - timedelta(days=1)
+        else:
+            value = value.date()
+    elif is_end:
+        value = value - timedelta(days=1)
     return value
 
 
@@ -39,12 +44,11 @@ class Command(BaseCommand):
                 event=True,
                 start=start_date,
                 end=start_date + timedelta(days=600),
-                expand=True,
             )
 
             for event in events:
                 start = fixup_date(event.component.start)
-                end = fixup_date(event.component.end)
+                end = fixup_date(event.component.end, is_end=True)
                 uid = event.component.uid
                 if uid not in existing:
                     booking = Booking.objects.create(start=start, end=end, uid=uid)

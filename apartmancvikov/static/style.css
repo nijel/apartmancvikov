@@ -3,6 +3,7 @@
 }*/
 :root {
   --bs-font-sans-serif: "Source Sans 3", sans-serif;
+  --ap-booking-color: #dd9999;
 }
 iframe {
   border: none;
@@ -23,4 +24,35 @@ iframe {
   .navbar-nav .nav-link:hover {
     border-bottom: 1px solid white;
   }
+}
+
+table.booking td {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  text-align: center;
+}
+td.booking-month {
+  vertical-align: top;
+  padding: 1em;
+}
+
+.booking_end {
+  background-color: var(--ap-booking-color);
+  background-image: linear-gradient(
+    -45deg,
+    white 50%,
+    var(--ap-booking-color) 50%
+  );
+}
+.booking_start {
+  background-color: var(--ap-booking-color);
+  background-image: linear-gradient(
+    -45deg,
+    var(--ap-booking-color) 50%,
+    white 50%
+  );
+}
+.booking_middle {
+  background-color: var(--ap-booking-color);
 }
