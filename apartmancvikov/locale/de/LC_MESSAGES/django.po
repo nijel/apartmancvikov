@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-30 12:39+0200\n"
-"PO-Revision-Date: 2025-07-07 11:32+0000\n"
+"PO-Revision-Date: 2025-07-30 10:40+0000\n"
 "Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
 "web/de/>\n"
@@ -169,10 +169,8 @@ msgid "Příjezd a odjezd"
 msgstr "Ankunft und Abreise"
 
 #: apartmancvikov/templates/cenik.html:60
-#, fuzzy
-#| msgid "V den příjezdu je Váš pokoj připraven od 14 hodiny."
 msgid "V den příjezdu je Váš pokoj připraven od 15 hodiny."
-msgstr "Am Anreisetag ist Ihr Zimmer ab 14:00 Uhr bezugsfertig."
+msgstr "Am Anreisetag ist Ihr Zimmer ab 15:00 Uhr bezugsfertig."
 
 #: apartmancvikov/templates/cenik.html:61
 msgid ""
