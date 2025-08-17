@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-30 12:39+0200\n"
+"POT-Creation-Date: 2025-08-17 20:34+0200\n"
 "PO-Revision-Date: 2025-07-30 10:40+0000\n"
 "Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/apartman-cvikov/"
@@ -64,67 +64,83 @@ msgstr "Accommodation in Lusatian Mountains."
 msgid "Ceník a podmínky Apartmánu Cvikov"
 msgstr "Prices and conditions of Apartment Cvikov"
 
-#: apartmancvikov/templates/cenik.html:18
+#: apartmancvikov/templates/cenik.html:17
+#, fuzzy
+#| msgid "Ceník"
+msgid "Ceník 2025"
+msgstr "Prices"
+
+#: apartmancvikov/templates/cenik.html:20
+#: apartmancvikov/templates/cenik.html:33
 #, python-format
 msgid "Cena za dospělého je od %(price)s,- Kč za osobu za noc."
 msgstr "Price per adult is from %(price)s CZK per person per night."
 
-#: apartmancvikov/templates/cenik.html:19
+#: apartmancvikov/templates/cenik.html:21
+#: apartmancvikov/templates/cenik.html:34
 msgid "Cena se liší podle počtu osob, délky pobytu a sezóny."
 msgstr ""
 "The price varies according to the number of people, length of stay and "
 "season."
 
-#: apartmancvikov/templates/cenik.html:23
+#: apartmancvikov/templates/cenik.html:25
+#: apartmancvikov/templates/cenik.html:38
 msgid "Dítě do 3 let – bez nároku na lůžko zdarma"
 msgstr "Child up to 3 years old - free of charge without entitlement to a bed"
 
-#: apartmancvikov/templates/cenik.html:25
+#: apartmancvikov/templates/cenik.html:27
+#: apartmancvikov/templates/cenik.html:40
 #, python-format
 msgid "Dítě do 12 let – od %(price)s,- Kč za noc"
 msgstr "Child up to 12 years - from %(price)s CZK per night"
 
-#: apartmancvikov/templates/cenik.html:28
+#: apartmancvikov/templates/cenik.html:30
+#, fuzzy
+#| msgid "Ceník"
+msgid "Ceník 2026"
+msgstr "Prices"
+
+#: apartmancvikov/templates/cenik.html:43
 msgid "Co cena zahrnuje?"
 msgstr "What does the price include?"
 
-#: apartmancvikov/templates/cenik.html:31
+#: apartmancvikov/templates/cenik.html:46
 msgid "Ubytování ve třech útulných pokojích se společnou koupelnou."
 msgstr "Accommodation in three cozy rooms with a shared bathroom."
 
-#: apartmancvikov/templates/cenik.html:32
+#: apartmancvikov/templates/cenik.html:47
 msgid "Na pokojích jsou připraveny osušky a ručníky."
 msgstr "Towels are provided in the rooms."
 
-#: apartmancvikov/templates/cenik.html:33
+#: apartmancvikov/templates/cenik.html:48
 msgid "Parkování přímo u apartmánu"
 msgstr "Parking directly at the apartment"
 
-#: apartmancvikov/templates/cenik.html:34
+#: apartmancvikov/templates/cenik.html:49
 msgid "Využití dětského koutku i venkovních atrakcí"
 msgstr "Use of children's corner and outdoor attractions"
 
-#: apartmancvikov/templates/cenik.html:35
+#: apartmancvikov/templates/cenik.html:50
 msgid "Možnost využít dětského vybavení"
 msgstr "Possibility to use children's equipment"
 
-#: apartmancvikov/templates/cenik.html:36
+#: apartmancvikov/templates/cenik.html:51
 msgid "Využití kolárny, kočárkárny, lyžárny v ubytovacím prostoru"
 msgstr "Use of wheelhouse, carriage house, ski room in the accommodation area"
 
-#: apartmancvikov/templates/cenik.html:37
+#: apartmancvikov/templates/cenik.html:52
 msgid "Wi-fi připojení k internetu v celém objektu"
 msgstr "Wi-fi internet connection throughout the property"
 
-#: apartmancvikov/templates/cenik.html:41
+#: apartmancvikov/templates/cenik.html:56
 msgid "Minimální délka pobytu jsou 2 noci, o letních prázdninách 7 nocí."
 msgstr "Minimum stay is 2 nights, 7 nights in summer holidays."
 
-#: apartmancvikov/templates/cenik.html:43
+#: apartmancvikov/templates/cenik.html:58
 msgid "Platba a storno"
 msgstr "Payment and cancellation"
 
-#: apartmancvikov/templates/cenik.html:46
+#: apartmancvikov/templates/cenik.html:61
 #, python-format
 msgid ""
 "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50%% ceny, "
@@ -133,7 +149,7 @@ msgstr ""
 "Upon receipt of your booking, we will send you an advance invoice for 50%% "
 "of the price, which is due within 14 days."
 
-#: apartmancvikov/templates/cenik.html:47
+#: apartmancvikov/templates/cenik.html:62
 msgid ""
 "Rezervace je závazná po uhrazení rezervační platby za ubytování, a to "
 "převodem na účet."
@@ -141,7 +157,7 @@ msgstr ""
 "The reservation is binding after the payment of the reservation fee by bank "
 "transfer."
 
-#: apartmancvikov/templates/cenik.html:48
+#: apartmancvikov/templates/cenik.html:63
 msgid ""
 "V případě nedodržení platebních podmínek si vyhrazujeme právo od rezervace "
 "ustoupit."
@@ -149,11 +165,11 @@ msgstr ""
 "In case of non-compliance with the payment terms, we reserve the right to "
 "withdraw from the reservation."
 
-#: apartmancvikov/templates/cenik.html:51
+#: apartmancvikov/templates/cenik.html:66
 msgid "Platba na místě pouze v hotovosti."
 msgstr "Payment on site in cash only."
 
-#: apartmancvikov/templates/cenik.html:54
+#: apartmancvikov/templates/cenik.html:69
 msgid ""
 "V případě zrušení rezervace do 30ti dnů před termínem pobytu vracíme platbu "
 "v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem činí vratná "
@@ -163,15 +179,15 @@ msgstr ""
 "refund the full amount. In case of cancellation 30 days or less before "
 "arrival, the refund amount is 0,- of the price paid."
 
-#: apartmancvikov/templates/cenik.html:57
+#: apartmancvikov/templates/cenik.html:72
 msgid "Příjezd a odjezd"
 msgstr "Arrival and departure"
 
-#: apartmancvikov/templates/cenik.html:60
+#: apartmancvikov/templates/cenik.html:75
 msgid "V den příjezdu je Váš pokoj připraven od 15 hodiny."
 msgstr "On the day of arrival, your room is ready from 15:00."
 
-#: apartmancvikov/templates/cenik.html:61
+#: apartmancvikov/templates/cenik.html:76
 msgid ""
 "Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete "
 "informovat o případném pozdním příjezdu."
@@ -179,7 +195,7 @@ msgstr ""
 "We ideally recommend arriving by 6pm, we would be happy to be informed of "
 "any late arrivals."
 
-#: apartmancvikov/templates/cenik.html:62
+#: apartmancvikov/templates/cenik.html:77
 msgid ""
 "V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě dle "
 "obsazenosti může být i později."
