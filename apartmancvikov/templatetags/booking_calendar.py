@@ -38,12 +38,19 @@ class BookingCalendar(HTMLCalendar):
         for start in starts:
             # Merge when start overlaps with end or there is just one day space
             previous = start - timedelta(days=1)
-            if start in self.end_dates or previous in self.end_dates:
+            before_previous = start - timedelta(days=2)
+            if (
+                start in self.end_dates
+                or previous in self.end_dates
+                or before_previous in self.end_dates
+            ):
                 self.end_dates.discard(start)
                 self.end_dates.discard(previous)
+                self.end_dates.discard(before_previous)
                 self.start_dates.remove(start)
                 self.booked_dates.add(start)
                 self.booked_dates.add(previous)
+                self.booked_dates.add(before_previous)
 
     def get_calendar_data(self) -> list[tuple[int, int, list[list[date]]]]:
         """Generate calendar data."""
