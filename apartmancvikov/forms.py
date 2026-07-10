@@ -1,5 +1,4 @@
 import time
-from datetime import date
 
 from django import forms
 from django.core import signing
@@ -74,6 +73,7 @@ class ContactInquiryForm(forms.Form):
     started_at = forms.CharField(widget=forms.HiddenInput)
 
     def __init__(self, *args, **kwargs):
+        """Set date bounds and issue a signed anti-spam timestamp."""
         super().__init__(*args, **kwargs)
         today = timezone.localdate()
         self.fields["arrival"].widget.attrs["min"] = today.isoformat()
@@ -84,6 +84,7 @@ class ContactInquiryForm(forms.Form):
             )
 
     def clean_started_at(self):
+        """Reject expired, forged, or implausibly fresh form tokens."""
         token = self.cleaned_data["started_at"]
         try:
             payload = signing.loads(
@@ -105,10 +106,11 @@ class ContactInquiryForm(forms.Form):
         return token
 
     def clean(self):
+        """Validate the requested dates and the apartment capacity."""
         cleaned_data = super().clean()
         arrival = cleaned_data.get("arrival")
         departure = cleaned_data.get("departure")
-        today: date = timezone.localdate()
+        today = timezone.localdate()
         if arrival and arrival < today:
             self.add_error("arrival", _("Datum příjezdu nemůže být v minulosti."))
         if arrival and departure and departure <= arrival:
@@ -133,4 +135,5 @@ class ContactInquiryForm(forms.Form):
 
     @property
     def is_honeypot_filled(self):
+        """Return whether an automated submitter filled the trap field."""
         return bool(self.cleaned_data.get("website"))
