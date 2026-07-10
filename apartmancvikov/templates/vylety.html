@@ -2,185 +2,92 @@
 
 {% load i18n static %}
 
+{% block title %}
+  {% translate "Výlety s dětmi ve Cvikově a Lužických horách | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block meta_description %}
+  {% translate "Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: pumptrack, vyhlídky, skály, hrady, sklárny, lyžování i program za deště." %}
+{% endblock meta_description %}
+
 {% block ogtitle %}
-  {% block title %}
-    {% translate "Výlety z Apartmánu Cvikov" %}
-  {% endblock title %}
+  {% translate "Rodinné výlety z Apartmánu Cvikov" %}
 {% endblock ogtitle %}
 
+{% block ogdescription %}
+  {% translate "Praktický průvodce výlety ve Cvikově, Lužických a Žitavských horách." %}
+{% endblock ogdescription %}
+
+{% block headline %}
+  {% translate "Výlety z Apartmánu Cvikov" %}
+{% endblock headline %}
+
 {% block lead %}
-  {% translate "Poznejte přírodu Lužických hor, skalní hrady a sklářskou historii." %}
+  {% translate "Poznejte s dětmi přírodu, skály, hrady a sklářskou historii." %}
 {% endblock lead %}
 
 {% block content %}
-  <div class="container">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <a href="{% static "vylety/kalvarie.jpg" %}"
-           data-toggle="lightbox"
-           data-gallery="lightbox"
-           data-caption="{% translate "Křížová cesta ve Cvikově" %}"
-           alt="{% translate "Křížová cesta ve Cvikově" %}">
-          <img src="{% static "vylety/kalvarie.jpg" %}" class="rounded img-fluid" />
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Cvikovské vyhlídky" %}</h1>
-        <p class="lead">{% translate "Procházka po vyhlídkách v okolí Cvikova nabídne pohledy na celé Lužické hory." %}</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://mapy.cz/s/rodateluge"
-             class="btn btn-outline-secondary btn-lg px-4">Mapy.cz</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="row align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <a href="{% static "vylety/oybin.jpg" %}"
-           data-toggle="lightbox"
-           data-gallery="lightbox"
-           data-caption="{% translate "Oybin" %}"
-           alt="{% translate "Oybin" %}">
-          <img src="{% static "vylety/oybin.jpg" %}" class="rounded img-fluid" />
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Skalní města a hrady" %}</h1>
+  <div class="container py-5">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-9 text-center">
+        <h2 class="display-6 fw-bold">{% translate "Kam na výlet ve Cvikově a okolí" %}</h2>
         <p class="lead">
-          {% translate "V okolí se nachází mnoho skalních měst, skalních reliéfů a dalších přírodních nebo lidmi vytvořených skalnách zajímavostí." %}
+          {% translate "Vybrali jsme místa, která dobře fungují pro rodinnou dovolenou. U každého cíle najdete orientační vzdálenost od apartmánu, náročnost, tip pro děti a odkaz na aktuální informace provozovatele." %}
         </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://www.kudyznudy.cz/aktivity/skalni-hrad-a-poustevna-sloup"
-             class="btn btn-outline-secondary btn-lg px-4">{% translate "Sloup" %}</a>
-          <a href="https://www.liberecky-kraj.cz/dr-cs/5011-radvanec.html"
-             class="btn btn-outline-secondary btn-lg px-4">{% translate "Radvanec" %}</a>
-          <a href="https://www.liberecky-kraj.cz/dr-cs/13632-navstivte-kunraticke-svycarsko.html"
-             class="btn btn-outline-secondary btn-lg px-4">{% translate "Kunratické Švýcarsko" %}</a>
-        </div>
       </div>
     </div>
 
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <a href="{% static "vylety/jonsdorf.jpg" %}"
-           data-toggle="lightbox"
-           data-gallery="lightbox"
-           data-caption="{% translate "Motýlí dům Jonsdorf" %}"
-           alt="{% translate "Motýlí dům Jonsdorf" %}">
-          <img src="{% static "vylety/jonsdorf.jpg" %}" class="rounded img-fluid" />
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Oybin a Jonsdorf" %}</h1>
-        <p class="lead">
-          {% translate "Hned za hranicemi můžete navštívit hrad Oybin, motýlí dům v Jonsdorfu." %}
-          {% translate "V letních měsících do obou míst jezdí turistický vláček z náměstí ve Cvikově." %}
-        </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://oybin.com/" class="btn btn-outline-secondary btn-lg px-4">{% translate "Oybin" %}</a>
-          <a href="https://www.schmetterlingshaus.info/"
-             class="btn btn-outline-secondary btn-lg px-4">{% translate "Motýlí dům" %}</a>
-          <a href="https://www.horskyexpres.cz/"
-             class="btn btn-outline-secondary btn-lg px-4">{% translate "Horský expres" %}</a>
+    <div class="row g-4">
+      {% for attraction in attractions %}
+        <div class="col-md-6 col-xl-4">
+          <article class="card attraction-card h-100 shadow-sm">
+            {% if attraction.image %}
+              <figure class="card-image-wrap mb-0">
+                <img src="{% static attraction.image %}"
+                     class="card-img-top"
+                     width="{{ attraction.image_width }}"
+                     height="{{ attraction.image_height }}"
+                     loading="lazy"
+                     decoding="async"
+                     alt="{{ attraction.name }}" />
+                {% if attraction.credit_name %}
+                  <figcaption class="photo-credit">
+                    <a href="{{ attraction.credit_url }}" rel="noopener">{{ attraction.credit_name }}</a>
+                    ·
+                    <a href="{{ attraction.license_url }}" rel="license noopener">{{ attraction.license_name }}</a>
+                  </figcaption>
+                {% endif %}
+              </figure>
+            {% else %}
+              <div class="attraction-placeholder" aria-hidden="true">⌖</div>
+            {% endif %}
+            <div class="card-body d-flex flex-column">
+              <p class="small text-uppercase text-muted mb-2">
+                {% blocktranslate with distance=attraction.distance_km %}Přibližně {{ distance }} km od apartmánu{% endblocktranslate %}
+              </p>
+              <h2 class="h3 card-title">{{ attraction.name }}</h2>
+              <p class="card-text">{{ attraction.summary }}</p>
+              <a href="{% url "attraction_detail" attraction.slug %}"
+                 class="btn btn-outline-secondary mt-auto align-self-start stretched-link">{% translate "Detail výletu" %}</a>
+            </div>
+          </article>
         </div>
-      </div>
-    </div>
-
-    <div class="row align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <a href="{% static "vylety/pacinek.jpg" %}"
-           data-toggle="lightbox"
-           data-gallery="lightbox"
-           data-caption="{% translate "Skleněná zahrada v Kunraticích u Cvikova" %}"
-           alt="{% translate "Skleněná zahrada v Kunraticích u Cvikova" %}">
-          <img src="{% static "vylety/pacinek.jpg" %}" class="rounded img-fluid" />
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Sklárny" %}</h1>
-        <p class="lead">
-          {% translate "V okolí se nachází mnoho skláren které stojí za vidění." %}
-          {% translate "V Kunraticích u Cvikova je skleněná zahrada u sklárny Pačinek." %}
-          {% translate "V Lindavě můžete navštívit sklářskou krčmu s možností výroby vlastního skla." %}
-        </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://www.pacinekglass.com/"
-             class="btn btn-outline-secondary btn-lg px-4">{% translate "Pačinek" %}</a>
-          <a href="https://www.ajetoglass.com" class="btn btn-outline-secondary btn-lg px-4">{% translate "Ajeto" %}</a>
-          <a href="https://crystalvalley.cz/" class="btn btn-outline-secondary btn-lg px-4">{% translate "Crystal valley" %}</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <a href="{% static "vylety/klic.jpg" %}"
-           data-toggle="lightbox"
-           data-gallery="lightbox"
-           data-caption="{% translate "Klíč" %}"
-           alt="{% translate "Klíč" %}">
-          <img src="{% static "vylety/klic.jpg" %}" class="rounded img-fluid" />
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Lužické hory" %}</h1>
-        <p class="lead">{% translate "Lužické hory nabízí mnoho vrcholů s krásnými rozhledy k prozkoumání." %}</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://www.liberecky-kraj.cz/dr-cs/636-vrch-klic.html"
-             class="btn btn-outline-secondary btn-lg px-4">Klíč</a>
-          <a href="https://www.liberecky-kraj.cz/dr-cs/1024-rozhledna-hvozd.html"
-             class="btn btn-outline-secondary btn-lg px-4">Hvozd</a>
-          <a href="https://www.liberecky-kraj.cz/dr-cs/637-vrch-luz.html"
-             class="btn btn-outline-secondary btn-lg px-4">Luž</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="row align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <a href="{% static "vylety/polevsko.jpg" %}"
-           data-toggle="lightbox"
-           data-gallery="lightbox"
-           data-caption="{% translate "Polevsko" %}"
-           alt="{% translate "Polevsko" %}">
-          <img src="{% static "vylety/polevsko.jpg" %}" class="rounded img-fluid" />
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">{% translate "Lyžování nebo bikeparky" %}</h1>
-        <p class="lead">
-          {% translate "V zimě můžete využít blízké lyžařské areály." %}
-          {% translate "V létě se do nich místo na lyžích můžete vydat na kolech." %}
-        </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://www.polevsko.ski/" class="btn btn-outline-secondary btn-lg px-4">{% translate "Sjezdovka a bikepark Polevsko" %}</a>
-          <a href="https://www.ski-podluzi.cz/"
-             class="btn btn-outline-secondary btn-lg px-4">{% translate "Lyžařský areál Horní Podluží" %}</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 
-
-  <div class="bg-dark text-secondary px-4 py-5 text-center">
-    <div class="py-5">
-      <h1 class="display-5 fw-bold text-white">{% translate "Další tipy na výlet" %}</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="fs-5 mb-4">
-          {% translate "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky okolních oblastí a objevte další zajímavosti." %}
-        </p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="https://www.luzihory.cz/"
-             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% translate "Lužické hory" %}</a>
-          <a href="https://www.pivnistezka.cz/"
-             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% translate "Pivní stezka Lužických hor" %}</a>
-          <a href="https://www.ceskesvycarsko.cz/"
-             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% translate "Českosaské Švýcarsko" %}</a>
-          <a href="https://www.kudyznudy.cz/kam-pojedete/ceskolipsko-a-jizerske-hory/ceskolipsko"
-             class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">{% translate "Českolipsko" %}</a>
-        </div>
+  <section class="bg-dark text-white px-4 py-5 text-center">
+    <div class="container py-4">
+      <h2 class="display-6 fw-bold">{% translate "Další inspirace pro Lužické hory" %}</h2>
+      <p class="fs-5 mb-4">
+        {% translate "Aktuální akce, další trasy a sezónní tipy najdete na turistických portálech regionu." %}
+      </p>
+      <div class="d-flex gap-2 flex-wrap justify-content-center">
+        <a href="https://www.cvikov.cz/turista/ms-1091/p1=1091"
+           class="btn btn-outline-light">{% translate "Turistika ve Cvikově" %}</a>
+        <a href="https://www.luzihory.cz/" class="btn btn-outline-light">{% translate "Lužické hory" %}</a>
+        <a href="https://www.ceskesvycarsko.cz/" class="btn btn-outline-light">{% translate "Českosaské Švýcarsko" %}</a>
       </div>
     </div>
-  </div>
-
+  </section>
 {% endblock content %}

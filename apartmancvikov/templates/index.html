@@ -2,12 +2,44 @@
 
 {% load i18n static %}
 
+{% block title %}{% translate "Rodinný apartmán ve Cvikově pro 7 až 9 hostů" %} | {% translate "Apartmán Cvikov" %}{% endblock %}
+
+{% block meta_description %}
+  {% translate "Rodinné ubytování ve Cvikově se 3 ložnicemi, 2 koupelnami, zahradou, bazénem, dětským vybavením a parkováním až pro 6 aut." %}
+{% endblock meta_description %}
+
+{% block ogtitle %}
+  {% translate "Rodinné ubytování v Lužických horách | Apartmán Cvikov" %}
+{% endblock ogtitle %}
+
+{% block ogdescription %}
+  {% translate "Tři ložnice, sedm standardních lůžek a kapacita až devět hostů v apartmánu vybaveném pro rodiny s dětmi." %}
+{% endblock ogdescription %}
+
 {% block content %}
   <div class="container">
     <div class="container py-5">
-      <h1 class="display-5 fw-bold">{% translate "Ubytování v apartmánu" %}</h1>
+      <h2 class="display-5 fw-bold">{% translate "Ubytování v apartmánu" %}</h2>
 
       <p>{% include "snippets/description.html" %}</p>
+
+      <section class="quick-facts my-5" aria-labelledby="quick-facts-title">
+        <h2 id="quick-facts-title" class="display-6 fw-bold">{% translate "Apartmán v kostce" %}</h2>
+        <div class="row g-3 mt-1">
+          <div class="col-6 col-md-4 col-lg-3"><div class="quick-fact"><strong>3</strong><span>{% translate "ložnice" %}</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="quick-fact"><strong>7 + 2</strong><span>{% translate "lůžek" %}</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="quick-fact"><strong>2</strong><span>{% translate "koupelny" %}</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="quick-fact"><strong>6</strong><span>{% translate "parkovacích míst" %}</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="quick-fact"><strong>Wi-Fi</strong><span>{% translate "v celém objektu" %}</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="quick-fact"><strong>✓</strong><span>{% translate "vybavení pro děti" %}</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="quick-fact"><strong>✓</strong><span>{% translate "sezónní bazén" %}</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="quick-fact"><strong>×</strong><span>{% translate "bez domácích zvířat" %}</span></div></div>
+        </div>
+      </section>
+
+      <p class="text-center mb-5">
+        <a href="{% url "vylety" %}" class="btn btn-primary btn-lg">{% translate "Objevte výlety v okolí" %}</a>
+      </p>
 
 
 
@@ -20,7 +52,12 @@
              data-gallery="lightbox"
              data-caption="{% translate "Apartmán Cvikov" %}"
              alt="{% translate "Apartmán Cvikov" %}">
-            <img src="{% static "foto/dum.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/dum.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1200"
+                 decoding="async"
+                 alt="{% translate "Apartmán Cvikov se zahradou" %}" />
           </a>
         </div>
         <div class="col-lg-6">
@@ -63,7 +100,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Tyrkysový pokoj" %}"
              alt="{% translate "Tyrkysový pokoj" %}">
-            <img src="{% static "foto/tyrkys.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/tyrkys.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Tyrkysový pokoj" %}" />
           </a>
         </div>
         <div class="col-lg-4">
@@ -79,7 +122,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Levandulový pokoj" %}"
              alt="{% translate "Levandulový pokoj" %}">
-            <img src="{% static "foto/levandule.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/levandule.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Levandulový pokoj" %}" />
           </a>
         </div>
         <div class="col-lg-4">
@@ -97,7 +146,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Fuchsiový pokoj" %}"
              alt="{% translate "Fuchsiový pokoj" %}">
-            <img src="{% static "foto/fuchsie.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/fuchsie.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Fuchsiový pokoj" %}" />
           </a>
         </div>
         <div class="col-lg-4">
@@ -114,7 +169,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Obývací pokoj" %}"
              alt="{% translate "Obývací pokoj" %}">
-            <img src="{% static "foto/obyvak.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/obyvak.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Obývací pokoj" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -123,7 +184,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Jídelna s dětským koutkem" %}"
              alt="{% translate "Jídelna s dětským koutkem" %}">
-            <img src="{% static "foto/jidelna.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/jidelna.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Jídelna s dětským koutkem" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -132,7 +199,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Kuchyně" %}"
              alt="{% translate "Kuchyně" %}">
-            <img src="{% static "foto/kuchyn.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/kuchyn.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Kuchyně" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -141,7 +214,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Koupelna se sprchou" %}"
              alt="{% translate "Koupelna se sprchou" %}">
-            <img src="{% static "foto/koupelna-dole.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/koupelna-dole.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Koupelna se sprchou" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -150,7 +229,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Koupelna s vanou" %}"
              alt="{% translate "Koupelna s vanou" %}">
-            <img src="{% static "foto/koupelna-nahore.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/koupelna-nahore.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Koupelna s vanou" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -159,7 +244,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Prádelna" %}"
              alt="{% translate "Prádelna" %}">
-            <img src="{% static "foto/pradelna.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/pradelna.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1064"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Prádelna" %}" />
           </a>
         </div>
       </div>
@@ -173,7 +264,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Venkovní bazén" %}"
              alt="{% translate "Venkovní bazén" %}">
-            <img src="{% static "foto/dum.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/dum.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1200"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Venkovní bazén" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -182,7 +279,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Pumptrack a hřiště" %}"
              alt="{% translate "Pumptrack a hřiště" %}">
-            <img src="{% static "foto/pumptrack.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/pumptrack.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="1200"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Pumptrack a hřiště" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -191,7 +294,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Lezecká stěna se skluzavkou a pískovištěm" %}"
              alt="{% translate "Lezecká stěna se skluzavkou a pískovištěm" %}">
-            <img src="{% static "foto/stena.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/stena.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="901"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Lezecká stěna se skluzavkou a pískovištěm" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -200,7 +309,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Houpačka se skluzavkou a vrbovým tunelem" %}"
              alt="{% translate "Houpačka se skluzavkou a vrbovým tunelem" %}">
-            <img src="{% static "foto/houpacka.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/houpacka.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="901"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Houpačka se skluzavkou a vrbovým tunelem" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -209,7 +324,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Blátivá kuchyňka" %}"
              alt="{% translate "Blátivá kuchyňka" %}">
-            <img src="{% static "foto/kuchynka.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/kuchynka.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="901"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Blátivá kuchyňka" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -218,7 +339,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Trampolína a prolézačky" %}"
              alt="{% translate "Trampolína a prolézačky" %}">
-            <img src="{% static "foto/trampolina.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/trampolina.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="901"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Trampolína a prolézačky" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -227,7 +354,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Terasa" %}"
              alt="{% translate "Terasa" %}">
-            <img src="{% static "foto/terasa.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/terasa.jpg" %}"
+                 class="rounded img-fluid"
+                 width="1600"
+                 height="901"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Terasa" %}" />
           </a>
         </div>
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-5">
@@ -236,7 +369,13 @@
              data-gallery="lightbox"
              data-caption="{% translate "Letecký pohled" %}"
              alt="{% translate "Letecký pohled" %}">
-            <img src="{% static "foto/letecky.jpg" %}" class="rounded img-fluid" />
+            <img src="{% static "foto/letecky.jpg" %}"
+                 class="rounded img-fluid"
+                 width="3200"
+                 height="1800"
+                 loading="lazy"
+                 decoding="async"
+                 alt="{% translate "Letecký pohled" %}" />
           </a>
         </div>
       </div>

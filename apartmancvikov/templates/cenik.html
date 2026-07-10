@@ -2,6 +2,10 @@
 
 {% load i18n %}
 
+{% block meta_description %}
+  {% translate "Cena ubytování v Apartmánu Cvikov, zahrnuté vybavení, platební a storno podmínky a informace k příjezdu." %}
+{% endblock meta_description %}
+
 {% block ogtitle %}
   {% block lead %}
     {% block title %}
@@ -12,7 +16,7 @@
 
 {% block content %}
   <div class="container py-5">
-    <h1 class="display-5 fw-bold">{% translate "Ceník" %}</h1>
+    <h2 class="display-5 fw-bold">{% translate "Ceník" %}</h2>
 
     <p>
       {% blocktranslate with price=950 %}Cena za dospělého je od {{ price }},- Kč za osobu za noc.{% endblocktranslate %}

@@ -4,9 +4,145 @@
 :root {
   --bs-font-sans-serif: "Source Sans 3", sans-serif;
   --ap-booking-color: #dd9999;
+  --ap-accent: #8b1e1e;
+  --ap-soft: #f7f1ec;
 }
 iframe {
   border: none;
+}
+
+.language-switcher {
+  flex-direction: row;
+}
+
+.language-switcher .nav-link {
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.quick-fact {
+  align-items: center;
+  background: var(--ap-soft);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  min-height: 7rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.quick-fact strong {
+  color: var(--ap-accent);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.quick-fact span {
+  margin-top: 0.5rem;
+}
+
+.attraction-card {
+  border: 0;
+  overflow: hidden;
+}
+
+.attraction-card .card-img-top {
+  height: 11rem;
+  object-fit: cover;
+}
+
+.card-image-wrap {
+  position: relative;
+}
+
+.photo-credit {
+  background: rgb(0 0 0 / 70%);
+  bottom: 0;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.45rem;
+  position: absolute;
+  right: 0;
+}
+
+.photo-credit a {
+  color: inherit;
+  position: relative;
+  z-index: 2;
+}
+
+.photo-credit-detail {
+  background: transparent;
+  color: #6c757d;
+  padding-right: 0;
+  position: static;
+  text-align: right;
+}
+
+.attraction-card .attraction-placeholder {
+  min-height: 0;
+  height: 11rem;
+}
+
+.attraction-placeholder {
+  align-items: center;
+  background: linear-gradient(135deg, #e4d7ca, var(--ap-soft));
+  color: var(--ap-accent);
+  display: flex;
+  font-size: 4rem;
+  justify-content: center;
+  min-height: 15rem;
+}
+
+.attraction-placeholder-large {
+  border-radius: 0.5rem;
+  min-height: 28rem;
+}
+
+.attraction-detail-image {
+  max-height: 36rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.attraction-facts {
+  display: grid;
+  grid-template-columns: minmax(7rem, 35%) 1fr;
+  margin-bottom: 0;
+}
+
+.attraction-facts dt,
+.attraction-facts dd {
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.attraction-facts dd {
+  padding-left: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .attraction-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .attraction-facts dt {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .attraction-facts dd {
+    padding-left: 0;
+    padding-top: 0.25rem;
+  }
+}
+
+.trip-cta {
+  background: var(--ap-soft);
 }
 
 @media (min-width: 768px) {

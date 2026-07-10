@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "django.contrib.sitemaps",
     "django.contrib.staticfiles",
 ]
 
@@ -64,6 +65,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "apartmancvikov.context_processors.seo",
             ],
         },
     },
@@ -107,6 +109,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "cs"
 
+LANGUAGES = [
+    ("cs", "Čeština"),
+    ("en", "English"),
+    ("de", "Deutsch"),
+]
+
 TIME_ZONE = "Europe/Prague"
 
 USE_I18N = True
@@ -125,6 +133,8 @@ CALDAV_PASSWORD = ""
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "static"
+
+SITE_URL = "https://apartmancvikov.cz"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

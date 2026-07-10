@@ -21,12 +21,29 @@ Including another URLconf
 
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path
 from django.views.generic import TemplateView
 
+from .sitemaps import AttractionSitemap, StaticViewSitemap
+from .views import (
+    AttractionDetailView,
+    HomeView,
+    TripsView,
+    llms_txt,
+    robots_txt,
+)
+
+sitemaps = {"static": StaticViewSitemap, "attractions": AttractionSitemap}
+
 urlpatterns = i18n_patterns(  # noqa: RUF005
-    path("", TemplateView.as_view(template_name="index.html"), name="home"),
-    path("vylety/", TemplateView.as_view(template_name="vylety.html"), name="vylety"),
+    path("", HomeView.as_view(), name="home"),
+    path("vylety/", TripsView.as_view(), name="vylety"),
+    path(
+        "vylety/<slug:slug>/",
+        AttractionDetailView.as_view(),
+        name="attraction_detail",
+    ),
     path("cenik/", TemplateView.as_view(template_name="cenik.html"), name="cenik"),
     path(
         "obsazenost/",
@@ -39,5 +56,8 @@ urlpatterns = i18n_patterns(  # noqa: RUF005
         name="kontakt",
     ),
 ) + [
+    path("robots.txt", robots_txt, name="robots"),
+    path("llms.txt", llms_txt, name="llms"),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
     path("admin/", admin.site.urls),
 ]
