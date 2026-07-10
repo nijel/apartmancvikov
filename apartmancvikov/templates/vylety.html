@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n seo static %}
+{% load i18n images seo %}
 
 {% block title %}
   {% translate "Výlety s dětmi ve Cvikově a Lužických horách | Apartmán Cvikov" %}
@@ -49,12 +49,7 @@
           <article class="attraction-card">
             {% if attraction.image %}
               <figure class="attraction-card__media">
-                <img src="{% static attraction.image %}"
-                     width="{{ attraction.image_width }}"
-                     height="{{ attraction.image_height }}"
-                     loading="lazy"
-                     decoding="async"
-                     alt="{{ attraction.name }}" />
+                {% responsive_image attraction.image attraction.image_width attraction.image_height attraction.name sizes="(min-width: 54rem) 25vw, (min-width: 38rem) 50vw, 100vw" %}
                 {% if attraction.credit_name %}
                   <figcaption class="photo-credit">
                     <a href="{{ attraction.credit_url }}" rel="noopener">{{ attraction.credit_name }}</a>

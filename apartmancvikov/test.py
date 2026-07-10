@@ -1,6 +1,8 @@
 import json
 import re
+from pathlib import Path
 
+from django.conf import settings
 from django.test import TestCase
 
 from .content import ATTRACTIONS
@@ -71,6 +73,38 @@ class SeoTest(TestCase):
         self.assertContains(response, 'class="nav-menu"')
         self.assertContains(response, 'class="lightbox__nav lightbox__nav--previous"')
         self.assertContains(response, 'class="lightbox__nav lightbox__nav--next"')
+
+    def test_pages_render_responsive_images(self):
+        """Photos have discoverable JPEG fallbacks and responsive WebP sources."""
+        response = self.client.get("/cs/")
+        html = response.content.decode()
+        self.assertIn('<source type="image/webp"', html)
+        self.assertIn('srcset="/static/responsive/foto/dum-480.jpg 480w,', html)
+        self.assertIn('sizes="(min-width: 54rem) 50vw, 100vw"', html)
+        self.assertIn('class="site-header__media"', html)
+        self.assertIn('fetchpriority="high"', html)
+        self.assertEqual(html.count('fetchpriority="high"'), 1)
+        self.assertIn('content="index, follow, max-image-preview:large"', html)
+
+    def test_responsive_image_manifest_matches_committed_assets(self):
+        """Every recorded derivative exists and source photos are represented."""
+        static_dir = Path(settings.BASE_DIR) / "apartmancvikov" / "static"
+        manifest_path = static_dir / "responsive" / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        source_paths = {
+            "bg.jpg",
+            *(
+                path.relative_to(static_dir).as_posix()
+                for path in (static_dir / "foto").glob("*.jpg")
+            ),
+            *(
+                path.relative_to(static_dir).as_posix()
+                for path in (static_dir / "vylety").glob("*.jpg")
+            ),
+        }
+        self.assertEqual(set(manifest["sources"]), source_paths)
+        for relative in manifest["outputs"]:
+            self.assertTrue((static_dir / relative).is_file(), relative)
 
     def test_heading_prepositions_do_not_wrap_alone(self):
         """Short Czech prepositions stay attached to the following word."""
@@ -249,6 +283,15 @@ class SeoTest(TestCase):
             "https://commons.wikimedia.org/wiki/File:Koerner.jpg",
         )
 
+    def test_own_image_has_machine_readable_authorship(self):
+        """Property photography identifies the operator as its rights holder."""
+        graph = self.get_schema_graph("/cs/")
+        image = self.schema_node(graph, "ImageObject")
+        operator = self.schema_node(graph, "Person")
+        self.assertEqual(image["creditText"], "Apartmán Cvikov")
+        self.assertEqual(image["creator"]["@id"], operator["@id"])
+        self.assertEqual(image["copyrightHolder"]["@id"], operator["@id"])
+
     def test_sitemap_contains_all_localized_urls(self):
         """The sitemap contains each static and attraction language variant."""
         response = self.client.get(
@@ -267,6 +310,14 @@ class SeoTest(TestCase):
         )
         self.assertIn(
             'hreflang="x-default" href="https://apartmancvikov.cz/cs/vylety/oybin/"',
+            sitemap,
+        )
+        self.assertIn(
+            'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',
+            sitemap,
+        )
+        self.assertIn(
+            "<image:loc>https://apartmancvikov.cz/static/vylety/duty-kamen.jpg</image:loc>",
             sitemap,
         )
 

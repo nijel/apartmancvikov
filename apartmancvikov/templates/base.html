@@ -1,4 +1,4 @@
-{% load i18n seo static %}
+{% load i18n images seo static %}
 
 {% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
@@ -6,6 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
     <title>
       {% block title %}
@@ -71,6 +72,7 @@
   <body>
     <a class="skip-link" href="#content">{% translate "Přejít k obsahu" %}</a>
     <header class="site-header">
+      {% responsive_image "bg.jpg" 1920 500 "" sizes="100vw" loading="eager" fetchpriority="high" picture_class="site-header__media" image_class="site-header__image" %}
       <nav class="site-nav" aria-label="{% translate "Hlavní navigace" %}">
         <div class="site-container site-nav__inner">
           <a class="site-nav__brand" href="{% url "home" %}">

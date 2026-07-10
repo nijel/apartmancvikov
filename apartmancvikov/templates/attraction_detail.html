@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n seo static %}
+{% load i18n images seo static %}
 
 {% block title %}{{ attraction.name }} | {% translate "Tip na rodinný výlet z Apartmánu Cvikov" %}{% endblock %}
 
@@ -48,14 +48,11 @@
         <div class="attraction-detail__media">
           {% if attraction.image %}
             <figure>
-              <a href="{% static attraction.image %}"
+              {% responsive_image_url attraction.image attraction.image_width as attraction_lightbox %}
+              <a href="{{ attraction_lightbox }}"
                  data-lightbox
                  data-caption="{{ attraction.name }}">
-                <img src="{% static attraction.image %}"
-                     width="{{ attraction.image_width }}"
-                     height="{{ attraction.image_height }}"
-                     decoding="async"
-                     alt="{{ attraction.name }}" />
+                {% responsive_image attraction.image attraction.image_width attraction.image_height attraction.name sizes="(min-width: 54rem) 55vw, 100vw" %}
               </a>
               {% if attraction.credit_name %}
                 <figcaption class="photo-credit-detail">

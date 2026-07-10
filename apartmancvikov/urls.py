@@ -58,6 +58,11 @@ urlpatterns = i18n_patterns(  # noqa: RUF005
 ) + [
     path("robots.txt", robots_txt, name="robots"),
     path("llms.txt", llms_txt, name="llms"),
-    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps, "template_name": "sitemap.xml"},
+        name="sitemap",
+    ),
     path("admin/", admin.site.urls),
 ]

@@ -1,13 +1,9 @@
-{% load static %}
+{% load images %}
 
 <figure class="gallery-item">
-  <a href="{% static image %}" data-lightbox data-caption="{{ caption }}">
-    <img src="{% static image %}"
-         width="{{ width }}"
-         height="{{ height }}"
-         loading="lazy"
-         decoding="async"
-         alt="{{ caption }}" />
+  {% responsive_image_url image width as lightbox_image %}
+  <a href="{{ lightbox_image }}" data-lightbox data-caption="{{ caption }}">
+    {% responsive_image image width height caption sizes="(min-width: 54rem) 25vw, (min-width: 38rem) 33vw, 100vw" %}
     <span>{{ caption }}</span>
   </a>
 </figure>

@@ -31,6 +31,8 @@ jobs:
         pip install -r requirements.txt -r requirements-dev.txt
     - name: Compile MO files
       run: ./manage.py compilemessages
+    - name: Check responsive image variants
+      run: python scripts/generate-images.py --check
     - name: Collect static files
       run: ./manage.py collectstatic
     - name: Django checks

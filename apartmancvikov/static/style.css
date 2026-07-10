@@ -109,20 +109,38 @@ summary {
 
 /* Header and navigation */
 .site-header {
-  background-image:
-    linear-gradient(110deg, rgb(36 17 16 / 88%), rgb(55 25 20 / 45%)),
-    url("bg.jpg");
-  background-position: center;
-  background-size: cover;
   color: white;
   min-height: 30rem;
+  overflow: hidden;
   position: relative;
+}
+
+.site-header::after {
+  background: linear-gradient(110deg, rgb(36 17 16 / 88%), rgb(55 25 20 / 45%));
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.site-header__media,
+.site-header__image {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.site-header__image {
+  object-fit: cover;
+  object-position: center;
 }
 
 .site-nav {
   border-bottom: 1px solid rgb(255 255 255 / 18%);
   position: relative;
-  z-index: 5;
+  z-index: 2;
 }
 
 .site-nav__inner {
@@ -212,6 +230,8 @@ summary {
   display: flex;
   min-height: 25rem;
   padding-block: 4rem 5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .hero__content {

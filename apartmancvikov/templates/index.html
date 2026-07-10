@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n seo static %}
+{% load i18n images seo %}
 
 {% block title %}{% translate "Rodinný apartmán ve Cvikově pro 7 až 9 hostů" %} | {% translate "Apartmán Cvikov" %}{% endblock %}
 
@@ -48,14 +48,12 @@
 
       <div class="feature-split">
         <figure class="feature-split__media">
-          <a href="{% static "foto/dum.jpg" %}"
+          {% translate "Apartmán Cvikov se zahradou" as house_alt %}
+          {% responsive_image_url "foto/dum.jpg" 1600 as house_lightbox %}
+          <a href="{{ house_lightbox }}"
              data-lightbox
              data-caption="{% translate "Apartmán Cvikov" %}">
-            <img src="{% static "foto/dum.jpg" %}"
-                 width="1600"
-                 height="1200"
-                 decoding="async"
-                 alt="{% translate "Apartmán Cvikov se zahradou" %}" />
+            {% responsive_image "foto/dum.jpg" 1600 1200 house_alt sizes="(min-width: 54rem) 50vw, 100vw" %}
           </a>
         </figure>
         <div class="feature-split__content" id="vybaveni">
@@ -87,17 +85,16 @@
         <h2>{% translate "Pokoje" %}</h2>
         <p>{% translate "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v přízemí." %}</p>
       </header>
+      {% translate "Tyrkysový pokoj s manželskou postelí" as turquoise_alt %}
+      {% translate "Levandulový třílůžkový pokoj" as lavender_alt %}
+      {% translate "Fuchsiový pokoj se dvěma postelemi" as fuchsia_alt %}
       <div class="room-grid">
         <article class="room-card">
-          <a href="{% static "foto/tyrkys.jpg" %}"
+          {% responsive_image_url "foto/tyrkys.jpg" 1600 as turquoise_lightbox %}
+          <a href="{{ turquoise_lightbox }}"
              data-lightbox
              data-caption="{% translate "Tyrkysový pokoj" %}">
-            <img src="{% static "foto/tyrkys.jpg" %}"
-                 width="1600"
-                 height="1064"
-                 loading="lazy"
-                 decoding="async"
-                 alt="{% translate "Tyrkysový pokoj" %}" />
+            {% responsive_image "foto/tyrkys.jpg" 1600 1064 turquoise_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
           </a>
           <div>
             <h3>{% translate "Tyrkys" %}</h3>
@@ -105,15 +102,11 @@
           </div>
         </article>
         <article class="room-card">
-          <a href="{% static "foto/levandule.jpg" %}"
+          {% responsive_image_url "foto/levandule.jpg" 1600 as lavender_lightbox %}
+          <a href="{{ lavender_lightbox }}"
              data-lightbox
              data-caption="{% translate "Levandulový pokoj" %}">
-            <img src="{% static "foto/levandule.jpg" %}"
-                 width="1600"
-                 height="1064"
-                 loading="lazy"
-                 decoding="async"
-                 alt="{% translate "Levandulový pokoj" %}" />
+            {% responsive_image "foto/levandule.jpg" 1600 1064 lavender_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
           </a>
           <div>
             <h3>{% translate "Levandule" %}</h3>
@@ -121,15 +114,11 @@
           </div>
         </article>
         <article class="room-card">
-          <a href="{% static "foto/fuchsie.jpg" %}"
+          {% responsive_image_url "foto/fuchsie.jpg" 1600 as fuchsia_lightbox %}
+          <a href="{{ fuchsia_lightbox }}"
              data-lightbox
              data-caption="{% translate "Fuchsiový pokoj" %}">
-            <img src="{% static "foto/fuchsie.jpg" %}"
-                 width="1600"
-                 height="1064"
-                 loading="lazy"
-                 decoding="async"
-                 alt="{% translate "Fuchsiový pokoj" %}" />
+            {% responsive_image "foto/fuchsie.jpg" 1600 1064 fuchsia_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
           </a>
           <div>
             <h3>{% translate "Fuchsie" %}</h3>

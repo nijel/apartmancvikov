@@ -1,0 +1,12 @@
+<picture {% if picture_class %}class="{{ picture_class }}"{% endif %}>
+  {% if webp_srcset %}<source type="image/webp" srcset="{{ webp_srcset }}" sizes="{{ sizes }}" />{% endif %}
+  <img src="{{ src }}"
+       {% if jpeg_srcset %}srcset="{{ jpeg_srcset }}" sizes="{{ sizes }}"{% endif %}
+       width="{{ width }}"
+       height="{{ height }}"
+       {% if image_class %}class="{{ image_class }}"{% endif %}
+       {% if loading %}loading="{{ loading }}"{% endif %}
+       {% if fetchpriority %}fetchpriority="{{ fetchpriority }}"{% endif %}
+       decoding="async"
+       alt="{{ alt }}" />
+</picture>

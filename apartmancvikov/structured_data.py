@@ -246,6 +246,14 @@ def _image_node(path, width, height, caption, *, attraction=None):
                 "acquireLicensePage": attraction.credit_url,
             }
         )
+    else:
+        node.update(
+            {
+                "creditText": str(_("Apartmán Cvikov")),
+                "creator": {"@id": OPERATOR_ID},
+                "copyrightHolder": {"@id": OPERATOR_ID},
+            }
+        )
     return node
 
 
