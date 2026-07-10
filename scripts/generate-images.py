@@ -55,22 +55,37 @@ def convert(source, destination, width, extension):
     """Create one stripped, resized derivative without changing its aspect ratio."""
     destination.parent.mkdir(parents=True, exist_ok=True)
     quality = WEBP_QUALITY if extension == "webp" else JPEG_QUALITY
-    command = [
-        GM_BINARY,
-        "convert",
-        str(source),
-        "-auto-orient",
-        "-resize",
-        f"{width}x>",
-        "+profile",
-        "*",
-        "-quality",
-        str(quality),
-    ]
-    if extension == "jpg":
-        command.extend(["-interlace", "Plane"])
-    command.append(str(destination))
-    subprocess.run(command, check=True)  # noqa: S603
+
+    def run(target, interlace=None):
+        command = [
+            GM_BINARY,
+            "convert",
+            str(source),
+            "-auto-orient",
+            "-resize",
+            f"{width}x>",
+            "+profile",
+            "*",
+            "-quality",
+            str(quality),
+        ]
+        if interlace:
+            command.extend(["-interlace", interlace])
+        command.append(str(target))
+        subprocess.run(command, check=True)  # noqa: S603
+
+    if extension != "jpg":
+        run(destination)
+        return
+
+    progressive = destination.with_suffix(f".progressive{destination.suffix}")
+    run(destination, "Plane")
+    try:
+        run(progressive, "Line")
+        if progressive.stat().st_size < destination.stat().st_size:
+            progressive.replace(destination)
+    finally:
+        progressive.unlink(missing_ok=True)
 
 
 def expected_output_paths():
