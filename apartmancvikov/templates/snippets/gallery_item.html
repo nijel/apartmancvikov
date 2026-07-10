@@ -1,0 +1,13 @@
+{% load static %}
+
+<figure class="gallery-item">
+  <a href="{% static image %}" data-lightbox data-caption="{{ caption }}">
+    <img src="{% static image %}"
+         width="{{ width }}"
+         height="{{ height }}"
+         loading="lazy"
+         decoding="async"
+         alt="{{ caption }}" />
+    <span>{{ caption }}</span>
+  </a>
+</figure>
