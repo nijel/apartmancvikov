@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  {% translate "Ochrana osobních údajů | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description"
+        content="{% translate "Informace o zpracování osobních údajů při poptávce pobytu v Apartmánu Cvikov." %}" />
+{% endblock meta_description %}
+
+{% block ogtitle %}
+  <meta property="og:title" content="{% translate "Ochrana osobních údajů" %}" />
+{% endblock ogtitle %}
+
+{% block headline %}
+  {% translate "Ochrana osobních údajů" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Jak pracujeme s údaji z poptávkového formuláře" %}
+{% endblock lead %}
+
+{% block content %}
+  <section class="content-section">
+    <div class="site-container prose-layout">
+      <article class="prose-card">
+        <p class="eyebrow">{% translate "Informace pro hosty" %}</p>
+        <h2>{% translate "Kdo údaje spravuje" %}</h2>
+        <p>
+          {{ contact.operator_name }}, IČ {{ contact.operator_id_number }}, {{ contact.street }},
+          {{ contact.postal_code }} {{ contact.locality }}. {% translate "Ve věcech osobních údajů nás můžete kontaktovat na" %}
+          <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>.
+        </p>
+
+        <section>
+          <h2>{% translate "Proč a jaké údaje zpracováváme" %}</h2>
+          <p>{% translate "Jméno, e-mail, volitelný telefon, požadovaný termín, počty hostů a text zprávy používáme pouze k vyřízení vaší poptávky, navazující komunikaci a krokům před případným uzavřením smlouvy o ubytování." %}</p>
+          <p>{% translate "Údaje z formuláře se na webu neukládají do databáze. Poptávka je odeslána do naší e-mailové schránky a mohou ji zpracovávat poskytovatelé hostingu a e-mailových služeb jako naši zpracovatelé." %}</p>
+        </section>
+
+        <section>
+          <h2>{% translate "Jak dlouho údaje uchováváme" %}</h2>
+          <p>{% translate "Poptávku, která nevede k rezervaci, uchováváme nejdéle 6 měsíců od poslední komunikace. U potvrzených rezervací uchováváme potřebné údaje po dobu vyžadovanou smluvními, účetními a dalšími zákonnými povinnostmi." %}</p>
+        </section>
+
+        <section>
+          <h2>{% translate "Vaše práva" %}</h2>
+          <p>{% translate "Můžete požádat o přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování či přenositelnost, pokud jsou splněny zákonné podmínky. Máte také právo podat stížnost u Úřadu pro ochranu osobních údajů." %}</p>
+          <p><a href="https://uoou.gov.cz/" rel="noopener">{% translate "Úřad pro ochranu osobních údajů" %}</a></p>
+        </section>
+      </article>
+    </div>
+  </section>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% load i18n %}{% translate "Nová poptávka pobytu z webu Apartmánu Cvikov" %}
+
+{% translate "Jméno" %}: {{ inquiry.name }}
+{% translate "E-mail" %}: {{ inquiry.email }}
+{% translate "Telefon" %}: {{ inquiry.phone|default:"—" }}
+{% translate "Jazyk formuláře" %}: {{ language }}
+
+{% translate "Příjezd" %}: {{ inquiry.arrival|date:"DATE_FORMAT" }}
+{% translate "Odjezd" %}: {{ inquiry.departure|date:"DATE_FORMAT" }}
+{% translate "Dospělí" %}: {{ inquiry.adults }}
+{% translate "Děti od 3 do 12 let" %}: {{ inquiry.children }}
+{% translate "Děti do 3 let" %}: {{ inquiry.infants }}
+
+{% translate "Poznámka" %}:
+{{ inquiry.message|default:"—" }}

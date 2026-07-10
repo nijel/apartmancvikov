@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  {% translate "Poptávka pobytu | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description"
+        content="{% translate "Nezávazná poptávka ubytování v Apartmánu Cvikov. Zadejte termín pobytu a počet dospělých a dětí." %}" />
+{% endblock meta_description %}
+
+{% block ogtitle %}
+  <meta property="og:title"
+        content="{% translate "Poptávka pobytu | Apartmán Cvikov" %}" />
+{% endblock ogtitle %}
+
+{% block headline %}
+  {% translate "Poptat pobyt" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Nezávazná poptávka ubytování" %}
+{% endblock lead %}
+
+{% block content %}
+  <section class="content-section content-section--tinted">
+    <div class="site-container inquiry-layout">
+      <header class="section-intro section-intro--left">
+        <p class="eyebrow">{% translate "Nezávazná poptávka" %}</p>
+        <h2>{% translate "Poptat pobyt" %}</h2>
+        <p>{% translate "Napište nám termín a složení skupiny. Dostupnost a cenu vám potvrdíme e-mailem." %}</p>
+      </header>
+
+      {% if messages %}
+        {% for message in messages %}<p class="form-status form-status--success" role="status">{{ message }}</p>{% endfor %}
+      {% endif %}
+
+      <form method="post" class="inquiry-form" novalidate>
+        {% csrf_token %}
+        {{ form.started_at }}
+        <div class="form-trap" aria-hidden="true">
+          {{ form.website.label_tag }}
+          {{ form.website }}
+        </div>
+
+        {% if form.non_field_errors %}
+          <div class="form-status form-status--error" role="alert">
+            {% for error in form.non_field_errors %}<p>{{ error }}</p>{% endfor %}
+          </div>
+        {% endif %}
+        {% if form.started_at.errors %}
+          <div class="form-status form-status--error" role="alert">
+            {% for error in form.started_at.errors %}<p>{{ error }}</p>{% endfor %}
+          </div>
+        {% endif %}
+
+        <fieldset>
+          <legend>{% translate "Kontaktní údaje" %}</legend>
+          <div class="form-grid form-grid--contact">
+            <div class="form-field{% if form.name.errors %} form-field--error{% endif %}">
+              {{ form.name.label_tag }}
+              {{ form.name }}
+              {% for error in form.name.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+            </div>
+            <div class="form-field{% if form.email.errors %} form-field--error{% endif %}">
+              {{ form.email.label_tag }}
+              {{ form.email }}
+              {% for error in form.email.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+            </div>
+            <div class="form-field{% if form.phone.errors %} form-field--error{% endif %}">
+              {{ form.phone.label_tag }} <span class="form-optional">{% translate "volitelné" %}</span>
+              {{ form.phone }}
+              {% for error in form.phone.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>{% translate "Termín a hosté" %}</legend>
+          <div class="form-grid form-grid--dates">
+            <div class="form-field{% if form.arrival.errors %} form-field--error{% endif %}">
+              {{ form.arrival.label_tag }}
+              {{ form.arrival }}
+              {% for error in form.arrival.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+            </div>
+            <div class="form-field{% if form.departure.errors %} form-field--error{% endif %}">
+              {{ form.departure.label_tag }}
+              {{ form.departure }}
+              {% for error in form.departure.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+            </div>
+          </div>
+          <p class="form-help form-help--availability">
+            <a href="{% url "obsazenost" %}">{% translate "Zkontrolovat obsazenost" %}</a>
+          </p>
+          <div class="form-grid form-grid--guests">
+            <div class="form-field{% if form.adults.errors %} form-field--error{% endif %}">
+              {{ form.adults.label_tag }}
+              {{ form.adults }}
+              {% for error in form.adults.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+            </div>
+            <div class="form-field{% if form.children.errors %} form-field--error{% endif %}">
+              {{ form.children.label_tag }}
+              {{ form.children }}
+              {% for error in form.children.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+            </div>
+            <div class="form-field{% if form.infants.errors %} form-field--error{% endif %}">
+              {{ form.infants.label_tag }}
+              {{ form.infants }}
+              {% for error in form.infants.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+            </div>
+          </div>
+          <p class="form-help">{% blocktranslate %}Apartmán má kapacitu nejvýše 9 hostů včetně dětí.{% endblocktranslate %}</p>
+        </fieldset>
+
+        <div class="form-field{% if form.message.errors %} form-field--error{% endif %}">
+          {{ form.message.label_tag }} <span class="form-optional">{% translate "volitelné" %}</span>
+          {{ form.message }}
+          {% for error in form.message.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+        </div>
+
+        <p class="privacy-summary">
+          {% blocktranslate with privacy_url=privacy_url %}Odesláním formuláře nám předáte údaje pouze pro vyřízení poptávky. Podrobnosti najdete v <a href="{{ privacy_url }}">informacích o zpracování osobních údajů</a>.{% endblocktranslate %}
+        </p>
+        <button class="button button--primary button--large" type="submit">{% translate "Odeslat poptávku" %}</button>
+      </form>
+    </div>
+  </section>
+{% endblock content %}
