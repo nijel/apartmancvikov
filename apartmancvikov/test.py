@@ -1,16 +1,24 @@
 import json
 import re
+import time
 from datetime import date, timedelta
 from pathlib import Path
+from smtplib import SMTPException
+from unittest.mock import patch
 
 from django.conf import settings
-from django.test import TestCase
+from django.core import mail, signing
+from django.test import TestCase, override_settings
 from django.utils.safestring import mark_safe
 
 from .content import ATTRACTIONS
+from .forms import FORM_TOKEN_SALT
 from .image_config import variant_path
 from .models import Booking
-from .pricing import (
+from .site_config import (
+    CONTACT_EMAIL,
+    CONTACT_PHONE_DISPLAY,
+    MAX_GUESTS,
     PRICE_CURRENCY,
     STANDARD_ADULT_PRICE_CZK,
     STANDARD_CHILD_PRICE_CZK,
@@ -273,8 +281,10 @@ class SeoTest(TestCase):
         cases = (
             ("/cs/vylety/", "CollectionPage", "ItemList"),
             ("/cs/kontakt/", "ContactPage", None),
+            ("/cs/poptavka/", "WebPage", None),
             ("/cs/cenik/", "WebPage", None),
             ("/cs/obsazenost/", "WebPage", None),
+            ("/cs/ochrana-osobnich-udaju/", "WebPage", None),
         )
         for path, page_type, main_type in cases:
             with self.subTest(path=path):
@@ -332,7 +342,7 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 45)
+        self.assertEqual(len(locations), 51)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
         self.assertIn(
             "https://apartmancvikov.cz/de/vylety/motyli-dum-jonsdorf/", locations
@@ -340,6 +350,8 @@ class SeoTest(TestCase):
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/pumptrack-cvikov/", locations
         )
+        self.assertIn("https://apartmancvikov.cz/cs/ochrana-osobnich-udaju/", locations)
+        self.assertIn("https://apartmancvikov.cz/cs/poptavka/", locations)
         self.assertIn(
             'hreflang="x-default" href="https://apartmancvikov.cz/cs/vylety/oybin/"',
             sitemap,
@@ -369,3 +381,134 @@ class SeoTest(TestCase):
         self.assertContains(llms, "Spacious 180 m² apartment with 3 bedrooms")
         self.assertContains(llms, "2 additional floor mattresses")
         self.assertContains(llms, "https://apartmancvikov.cz/cs/vylety/")
+        self.assertContains(llms, "https://apartmancvikov.cz/cs/poptavka/")
+
+
+@override_settings(
+    EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend",
+    DEFAULT_FROM_EMAIL=CONTACT_EMAIL,
+)
+class ContactInquiryTest(TestCase):
+    def inquiry_data(self, **overrides):
+        """Return a valid inquiry payload with optional field overrides."""
+        arrival = date.today() + timedelta(days=14)  # noqa: DTZ011
+        data = {
+            "name": "Jana Nováková",
+            "email": "jana@example.com",
+            "phone": "+420 123 456 789",
+            "arrival": arrival.isoformat(),
+            "departure": (arrival + timedelta(days=4)).isoformat(),
+            "adults": 2,
+            "children": 1,
+            "infants": 0,
+            "message": "Prosím o potvrzení dostupnosti.",
+            "website": "",
+            "started_at": signing.dumps(
+                {"started": time.time() - 5}, salt=FORM_TOKEN_SALT
+            ),
+        }
+        data.update(overrides)
+        return data
+
+    def test_inquiry_page_exposes_structured_form(self):
+        """The inquiry page exposes semantic stay and guest fields."""
+        response = self.client.get("/cs/poptavka/")
+
+        self.assertContains(response, 'name="arrival"')
+        self.assertContains(response, 'name="departure"')
+        self.assertContains(response, 'name="adults"')
+        self.assertContains(response, 'name="children"')
+        self.assertContains(response, 'name="infants"')
+        self.assertContains(response, "Zkontrolovat obsazenost")
+
+    def test_primary_navigation_links_directly_to_inquiry(self):
+        """The main navigation makes the inquiry action prominent."""
+        response = self.client.get("/cs/")
+
+        self.assertContains(
+            response,
+            'class="nav-links__inquiry"',
+        )
+        self.assertContains(response, 'href="/cs/poptavka/"')
+        self.assertContains(response, "Poptat pobyt")
+
+        contact = self.client.get("/cs/kontakt/")
+        self.assertContains(contact, 'href="/cs/poptavka/"')
+        self.assertNotContains(contact, 'name="arrival"')
+        self.assertContains(contact, CONTACT_EMAIL)
+        self.assertContains(contact, CONTACT_PHONE_DISPLAY)
+
+    def test_valid_inquiry_sends_one_message_to_central_contact(self):
+        """A valid inquiry reaches only the configured contact address."""
+        response = self.client.post("/cs/poptavka/", self.inquiry_data(), follow=True)
+
+        self.assertRedirects(response, "/cs/poptavka/")
+        self.assertEqual(len(mail.outbox), 1)
+        message = mail.outbox[0]
+        self.assertEqual(message.to, [CONTACT_EMAIL])
+        self.assertEqual(message.from_email, CONTACT_EMAIL)
+        self.assertEqual(message.reply_to, ["jana@example.com"])
+        self.assertIn("Jana Nováková", message.body)
+        self.assertIn("Prosím o potvrzení dostupnosti.", message.body)
+
+        self.assertContains(response, "Děkujeme, poptávka byla odeslána")
+
+    def test_capacity_and_dates_are_validated_without_sending(self):
+        """Invalid dates and excessive capacity never produce an e-mail."""
+        yesterday = date.today() - timedelta(days=1)  # noqa: DTZ011
+        response = self.client.post(
+            "/cs/poptavka/",
+            self.inquiry_data(
+                arrival=yesterday.isoformat(),
+                departure=yesterday.isoformat(),
+                adults=MAX_GUESTS,
+                children=1,
+            ),
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Datum příjezdu nemůže být v minulosti")
+        self.assertContains(response, "Datum odjezdu musí být později")
+        self.assertContains(response, "kapacitu nejvýše")
+        self.assertEqual(len(mail.outbox), 0)
+
+    def test_honeypot_does_not_send_message(self):
+        """A filled honeypot receives a generic success without an e-mail."""
+        response = self.client.post(
+            "/cs/poptavka/", self.inquiry_data(website="https://spam.example")
+        )
+
+        self.assertRedirects(response, "/cs/poptavka/")
+        self.assertEqual(len(mail.outbox), 0)
+
+    def test_too_fast_submission_is_rejected(self):
+        """An implausibly quick submission is rejected before sending."""
+        response = self.client.post(
+            "/cs/poptavka/",
+            self.inquiry_data(
+                started_at=signing.dumps({"started": time.time()}, salt=FORM_TOKEN_SALT)
+            ),
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Formulář byl odeslán příliš rychle")
+        self.assertEqual(len(mail.outbox), 0)
+
+    @patch("apartmancvikov.views.EmailMessage.send", side_effect=SMTPException)
+    def test_smtp_failure_keeps_form_and_shows_error(self, _send):
+        """SMTP failure preserves values and does not claim success."""
+        with self.assertLogs("apartmancvikov.views", level="ERROR"):
+            response = self.client.post("/cs/poptavka/", self.inquiry_data())
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Poptávku se nepodařilo odeslat")
+        self.assertContains(response, "Jana Nováková")
+        self.assertEqual(len(mail.outbox), 0)
+
+    def test_privacy_page_describes_retention_without_consent_checkbox(self):
+        """The privacy notice explains retention without needless consent."""
+        response = self.client.get("/cs/ochrana-osobnich-udaju/")
+
+        self.assertContains(response, "nejdéle 6 měsíců")
+        self.assertContains(response, CONTACT_EMAIL)
+        self.assertNotContains(response, 'type="checkbox"')

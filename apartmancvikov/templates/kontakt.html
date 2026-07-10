@@ -30,11 +30,11 @@
         <p class="eyebrow">{% translate "Napište nebo zavolejte" %}</p>
         <h2>{% translate "Apartmán Cvikov" %}</h2>
         <address class="contact-list">
-          <a href="tel:+420775408751"><span aria-hidden="true">☎</span> +420 775 408 751</a>
-          <a href="mailto:ubytovani@apartmancvikov.cz"><span aria-hidden="true">✉</span> ubytovani@apartmancvikov.cz</a>
-          <span><span aria-hidden="true">⌖</span> Nábřežní 694
+          <a href="tel:{{ contact.phone }}"><span aria-hidden="true">☎</span> {{ contact.phone_display }}</a>
+          <a href="mailto:{{ contact.email }}"><span aria-hidden="true">✉</span> {{ contact.email }}</a>
+          <span><span aria-hidden="true">⌖</span> {{ contact.street }}
             <br />
-          471 54 Cvikov</span>
+          {{ contact.postal_code }} {{ contact.locality }}</span>
         </address>
         <div class="button-row">
           <a href="https://mapy.cz/s/fugafuhazo" class="button button--primary">Mapy.cz</a>
@@ -44,9 +44,9 @@
         <div class="operator">
           <h3>{% translate "Provozovatel" %}</h3>
           <p>
-            Petra Čihařová
+            {{ contact.operator_name }}
             <br />
-            IČ: 10843116
+            IČ: {{ contact.operator_id_number }}
           </p>
         </div>
       </div>

@@ -112,6 +112,11 @@
                      {% if request.resolver_match.url_name == "kontakt" %}aria-current="page"{% endif %}
                      href="{% url "kontakt" %}">{% translate "Kontakt" %}</a>
                 </li>
+                <li>
+                  <a class="nav-links__inquiry{% if request.resolver_match.url_name == "poptavka" %} active{% endif %}"
+                     {% if request.resolver_match.url_name == "poptavka" %}aria-current="page"{% endif %}
+                     href="{% url "poptavka" %}">{% translate "Poptat pobyt" %}</a>
+                </li>
               </ul>
               {% if language_urls %}
                 <ul class="language-links" aria-label="{% translate "Výběr jazyka" %}">
@@ -157,6 +162,7 @@
     <footer class="site-footer">
       <div class="site-container site-footer__inner">
         <a href="{% url "kontakt" %}">{% translate "Apartmán Cvikov" %}</a>
+        <a href="{% url "privacy" %}">{% translate "Ochrana osobních údajů" %}</a>
         <span>Copyright © <a href="https://cihar.com/">Michal Čihař</a></span>
       </div>
     </footer>

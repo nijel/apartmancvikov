@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apartmancvikov\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-10 17:03+0200\n"
+"POT-Creation-Date: 2026-07-10 17:26+0200\n"
 "PO-Revision-Date: 2026-07-10 13:07+0200\n"
 "Last-Translator: Apartmán Cvikov\n"
 "Language-Team: English\n"
@@ -255,18 +255,83 @@ msgstr ""
 msgid "Vhodné pro malé děti i jako program při nepříznivém počasí."
 msgstr "Suitable for young children and as a bad-weather activity."
 
-#: apartmancvikov/structured_data.py:73 apartmancvikov/structured_data.py:85
-#: apartmancvikov/structured_data.py:252 apartmancvikov/structured_data.py:264
+#: apartmancvikov/forms.py:19
+msgid "Jméno a příjmení"
+msgstr "Full name"
+
+#: apartmancvikov/forms.py:24
+#: apartmancvikov/templates/emails/contact_inquiry.txt:4
+msgid "E-mail"
+msgstr "Email"
+
+#: apartmancvikov/forms.py:29
+#: apartmancvikov/templates/emails/contact_inquiry.txt:5
+msgid "Telefon"
+msgstr "Phone"
+
+#: apartmancvikov/forms.py:37
+#: apartmancvikov/templates/emails/contact_inquiry.txt:8
+msgid "Příjezd"
+msgstr "Arrival"
+
+#: apartmancvikov/forms.py:41
+#: apartmancvikov/templates/emails/contact_inquiry.txt:9
+msgid "Odjezd"
+msgstr "Departure"
+
+#: apartmancvikov/forms.py:45
+#: apartmancvikov/templates/emails/contact_inquiry.txt:10
+msgid "Dospělí"
+msgstr "Adults"
+
+#: apartmancvikov/forms.py:52
+#: apartmancvikov/templates/emails/contact_inquiry.txt:11
+msgid "Děti od 3 do 12 let"
+msgstr "Children aged 3 to 12"
+
+#: apartmancvikov/forms.py:59
+#: apartmancvikov/templates/emails/contact_inquiry.txt:12
+msgid "Děti do 3 let"
+msgstr "Children under 3"
+
+#: apartmancvikov/forms.py:66
+#: apartmancvikov/templates/emails/contact_inquiry.txt:14
+msgid "Poznámka"
+msgstr "Note"
+
+#: apartmancvikov/forms.py:101
+msgid "Platnost formuláře vypršela. Obnovte stránku a zkuste to znovu."
+msgstr "The form has expired. Refresh the page and try again."
+
+#: apartmancvikov/forms.py:106
+msgid "Formulář byl odeslán příliš rychle. Zkuste to prosím znovu."
+msgstr "The form was submitted too quickly. Please try again."
+
+#: apartmancvikov/forms.py:118
+msgid "Datum příjezdu nemůže být v minulosti."
+msgstr "The arrival date cannot be in the past."
+
+#: apartmancvikov/forms.py:122
+msgid "Datum odjezdu musí být později než příjezd."
+msgstr "The departure date must be after the arrival date."
+
+#: apartmancvikov/forms.py:134
+#, python-format
+msgid "Apartmán má kapacitu nejvýše %(capacity)s hostů."
+msgstr "The apartment accommodates no more than %(capacity)s guests."
+
+#: apartmancvikov/structured_data.py:83 apartmancvikov/structured_data.py:95
+#: apartmancvikov/structured_data.py:269 apartmancvikov/structured_data.py:281
 #: apartmancvikov/templates/attraction_detail.html:13
 #: apartmancvikov/templates/base.html:29 apartmancvikov/templates/base.html:32
-#: apartmancvikov/templates/base.html:82 apartmancvikov/templates/base.html:137
-#: apartmancvikov/templates/base.html:159 apartmancvikov/templates/index.html:5
+#: apartmancvikov/templates/base.html:82 apartmancvikov/templates/base.html:142
+#: apartmancvikov/templates/base.html:164 apartmancvikov/templates/index.html:5
 #: apartmancvikov/templates/index.html:55
 #: apartmancvikov/templates/kontakt.html:31
 msgid "Apartmán Cvikov"
 msgstr "Apartment Cvikov"
 
-#: apartmancvikov/structured_data.py:88
+#: apartmancvikov/structured_data.py:98
 msgid ""
 "Prostorný rodinný apartmán o ploše 180 m² ve Cvikově se třemi ložnicemi, "
 "zahradou, dětským vybavením a venkovním bazénem."
@@ -274,7 +339,7 @@ msgstr ""
 "Spacious 180 m² family apartment in Cvikov with three bedrooms, a garden, "
 "children's equipment and an outdoor pool."
 
-#: apartmancvikov/structured_data.py:199 apartmancvikov/templates/cenik.html:42
+#: apartmancvikov/structured_data.py:216 apartmancvikov/templates/cenik.html:42
 msgid ""
 "U pobytů na jednu noc a v dalších nestandardních situacích se cena stanovuje "
 "individuálně."
@@ -282,43 +347,43 @@ msgstr ""
 "For one-night stays and other non-standard situations, the price is agreed "
 "individually."
 
-#: apartmancvikov/structured_data.py:205
+#: apartmancvikov/structured_data.py:222
 msgid "Standardní cena za dospělého"
 msgstr "Standard adult rate"
 
-#: apartmancvikov/structured_data.py:206
+#: apartmancvikov/structured_data.py:223
 #, python-format
 msgid "%(price)s Kč za osobu a noc. %(exceptions)s"
 msgstr "CZK %(price)s per person per night. %(exceptions)s"
 
-#: apartmancvikov/structured_data.py:212
+#: apartmancvikov/structured_data.py:229
 msgid "Standardní cena za dítě do 12 let"
 msgstr "Standard rate for a child under 12"
 
-#: apartmancvikov/structured_data.py:213
+#: apartmancvikov/structured_data.py:230
 #, python-format
 msgid "%(price)s Kč za dítě a noc. %(exceptions)s"
 msgstr "CZK %(price)s per child per night. %(exceptions)s"
 
-#: apartmancvikov/structured_data.py:219
+#: apartmancvikov/structured_data.py:236
 msgid "Dítě do 3 let bez nároku na lůžko"
 msgstr "Child under 3 without a bed"
 
-#: apartmancvikov/structured_data.py:220
+#: apartmancvikov/structured_data.py:237
 msgid "Dítě do 3 let bez nároku na lůžko má pobyt zdarma."
 msgstr "A child under 3 staying without a bed stays free of charge."
 
-#: apartmancvikov/structured_data.py:266
+#: apartmancvikov/structured_data.py:283
 msgid ""
 "Prostorný rodinný apartmán o ploše 180 m² ve Cvikově pro až devět hostů."
 msgstr "Spacious 180 m² family apartment in Cvikov for up to nine guests."
 
-#: apartmancvikov/structured_data.py:272
+#: apartmancvikov/structured_data.py:289
 #: apartmancvikov/templates/vylety.html:16
 msgid "Rodinné výlety z Apartmánu Cvikov"
 msgstr "Family trips from Apartment Cvikov"
 
-#: apartmancvikov/structured_data.py:274
+#: apartmancvikov/structured_data.py:291
 #: apartmancvikov/templates/vylety.html:11
 msgid ""
 "Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: pumptrack, "
@@ -327,14 +392,14 @@ msgstr ""
 "Ten verified family trip ideas from Apartment Cvikov: a pump track, "
 "viewpoints, rocks, castles, glassworks, skiing and rainy-day activities."
 
-#: apartmancvikov/structured_data.py:281 apartmancvikov/templates/cenik.html:6
+#: apartmancvikov/structured_data.py:298 apartmancvikov/templates/cenik.html:6
 #: apartmancvikov/templates/cenik.html:16
 #: apartmancvikov/templates/cenik.html:20
 #: apartmancvikov/templates/cenik.html:24
 msgid "Ceník a podmínky Apartmánu Cvikov"
 msgstr "Prices and conditions of Apartment Cvikov"
 
-#: apartmancvikov/structured_data.py:283 apartmancvikov/templates/cenik.html:11
+#: apartmancvikov/structured_data.py:300 apartmancvikov/templates/cenik.html:11
 msgid ""
 "Cena ubytování v Apartmánu Cvikov, zahrnuté vybavení, platební a storno "
 "podmínky a informace k příjezdu."
@@ -342,7 +407,7 @@ msgstr ""
 "Apartment Cvikov prices, included amenities, payment and cancellation terms, "
 "and arrival information."
 
-#: apartmancvikov/structured_data.py:289
+#: apartmancvikov/structured_data.py:306
 #: apartmancvikov/templates/obsazenost.html:6
 #: apartmancvikov/templates/obsazenost.html:16
 #: apartmancvikov/templates/obsazenost.html:20
@@ -350,7 +415,7 @@ msgstr ""
 msgid "Volné termíny v Apartmánu Cvikov"
 msgstr "Available dates in Apartment Cvikov"
 
-#: apartmancvikov/structured_data.py:291
+#: apartmancvikov/structured_data.py:308
 #: apartmancvikov/templates/obsazenost.html:11
 msgid ""
 "Kalendář volných a obsazených termínů Apartmánu Cvikov. Vyberte si termín "
@@ -359,7 +424,7 @@ msgstr ""
 "Calendar of available and occupied dates at Apartment Cvikov. Choose a date "
 "for a family stay in the Lusatian Mountains."
 
-#: apartmancvikov/structured_data.py:297
+#: apartmancvikov/structured_data.py:314
 #: apartmancvikov/templates/kontakt.html:6
 #: apartmancvikov/templates/kontakt.html:15
 #: apartmancvikov/templates/kontakt.html:19
@@ -367,31 +432,58 @@ msgstr ""
 msgid "Kontaktujte Apartmán Cvikov"
 msgstr "Contact Apartment Cvikov"
 
-#: apartmancvikov/structured_data.py:299
-#: apartmancvikov/templates/kontakt.html:11
+#: apartmancvikov/structured_data.py:316
 msgid ""
-"Kontakt, telefon, e-mail, adresa a mapa Apartmánu Cvikov v Lužických horách."
+"Poptávkový formulář, telefon, e-mail, adresa a mapa Apartmánu Cvikov v "
+"Lužických horách."
 msgstr ""
-"Contact details, phone, email, address and map for Apartment Cvikov in the "
+"Stay enquiry form, phone, email, address and map for Apartment Cvikov in the "
 "Lusatian Mountains."
 
-#: apartmancvikov/structured_data.py:349 apartmancvikov/structured_data.py:448
+#: apartmancvikov/structured_data.py:322
+#: apartmancvikov/templates/poptavka.html:6
+#: apartmancvikov/templates/poptavka.html:15
+msgid "Poptávka pobytu | Apartmán Cvikov"
+msgstr "Stay enquiry | Apartment Cvikov"
+
+#: apartmancvikov/structured_data.py:324
+#: apartmancvikov/templates/poptavka.html:11
+msgid ""
+"Nezávazná poptávka ubytování v Apartmánu Cvikov. Zadejte termín pobytu a "
+"počet dospělých a dětí."
+msgstr "Non-binding accommodation enquiry for Apartment Cvikov. Enter your stay dates and the number of adults and children."
+
+#: apartmancvikov/structured_data.py:330 apartmancvikov/templates/base.html:165
+#: apartmancvikov/templates/privacy.html:15
+#: apartmancvikov/templates/privacy.html:19
+msgid "Ochrana osobních údajů"
+msgstr "Privacy"
+
+#: apartmancvikov/structured_data.py:332
+#: apartmancvikov/templates/privacy.html:11
+msgid ""
+"Informace o zpracování osobních údajů při poptávce pobytu v Apartmánu Cvikov."
+msgstr ""
+"Information about personal data processing for stay enquiries at Apartment "
+"Cvikov."
+
+#: apartmancvikov/structured_data.py:382 apartmancvikov/structured_data.py:483
 #: apartmancvikov/templates/base.html:46 apartmancvikov/templates/index.html:51
 msgid "Apartmán Cvikov se zahradou"
 msgstr "Apartment Cvikov with its garden"
 
-#: apartmancvikov/structured_data.py:379
+#: apartmancvikov/structured_data.py:412
 #: apartmancvikov/templates/vylety.html:25
 msgid "Výlety z Apartmánu Cvikov"
 msgstr "Trips from Apartment Cvikov"
 
-#: apartmancvikov/structured_data.py:430 apartmancvikov/structured_data.py:468
+#: apartmancvikov/structured_data.py:465 apartmancvikov/structured_data.py:503
 #: apartmancvikov/templates/attraction_detail.html:41
 #: apartmancvikov/templates/base.html:93
 msgid "Ubytování"
 msgstr "Accommodation"
 
-#: apartmancvikov/structured_data.py:431
+#: apartmancvikov/structured_data.py:466
 #: apartmancvikov/templates/attraction_detail.html:42
 #: apartmancvikov/templates/base.html:98
 msgid "Výlety"
@@ -510,23 +602,30 @@ msgstr "Prices"
 msgid "Kontakt"
 msgstr "Contact"
 
-#: apartmancvikov/templates/base.html:117
+#: apartmancvikov/templates/base.html:118
+#: apartmancvikov/templates/cenik.html:80
+#: apartmancvikov/templates/poptavka.html:19
+#: apartmancvikov/templates/poptavka.html:31
+msgid "Poptat pobyt"
+msgstr "Enquire about a stay"
+
+#: apartmancvikov/templates/base.html:122
 msgid "Výběr jazyka"
 msgstr "Language selection"
 
-#: apartmancvikov/templates/base.html:144
+#: apartmancvikov/templates/base.html:149
 msgid "Ubytování v Lužických horách."
 msgstr "Accommodation in Lusatian Mountains."
 
-#: apartmancvikov/templates/base.html:165
+#: apartmancvikov/templates/base.html:171
 msgid "Zavřít"
 msgstr "Close"
 
-#: apartmancvikov/templates/base.html:168
+#: apartmancvikov/templates/base.html:174
 msgid "Předchozí fotografie"
 msgstr "Previous photo"
 
-#: apartmancvikov/templates/base.html:175
+#: apartmancvikov/templates/base.html:181
 msgid "Další fotografie"
 msgstr "Next photo"
 
@@ -656,6 +755,19 @@ msgid ""
 msgstr ""
 "On the day of departure, please vacate the room by 10 am or later by "
 "arrangement depending on availability."
+
+#: apartmancvikov/templates/emails/contact_inquiry.txt:1
+#: apartmancvikov/views.py:85
+msgid "Nová poptávka pobytu z webu Apartmánu Cvikov"
+msgstr "New stay enquiry from the Apartment Cvikov website"
+
+#: apartmancvikov/templates/emails/contact_inquiry.txt:3
+msgid "Jméno"
+msgstr "Name"
+
+#: apartmancvikov/templates/emails/contact_inquiry.txt:6
+msgid "Jazyk formuláře"
+msgstr "Form language"
 
 #: apartmancvikov/templates/index.html:5
 msgid "Rodinný apartmán ve Cvikově pro 7 až 9 hostů"
@@ -832,19 +944,15 @@ msgstr ""
 
 #: apartmancvikov/templates/index.html:88
 msgid "Tyrkysový pokoj s manželskou postelí"
-msgstr ""
+msgstr "Turquoise room with a double bed"
 
 #: apartmancvikov/templates/index.html:89
-#, fuzzy
-#| msgid "Levandulový pokoj"
 msgid "Levandulový třílůžkový pokoj"
-msgstr "Lavender room"
+msgstr "Lavender triple room"
 
 #: apartmancvikov/templates/index.html:90
-#, fuzzy
-#| msgid "Fuchsiový pokoj"
 msgid "Fuchsiový pokoj se dvěma postelemi"
-msgstr "Fuchsia room"
+msgstr "Fuchsia room with two beds"
 
 #: apartmancvikov/templates/index.html:96
 msgid "Tyrkysový pokoj"
@@ -963,6 +1071,13 @@ msgstr "Aerial view"
 msgid "Objevte výlety v okolí"
 msgstr "Discover trips nearby"
 
+#: apartmancvikov/templates/kontakt.html:11
+msgid ""
+"Kontakt, telefon, e-mail, adresa a mapa Apartmánu Cvikov v Lužických horách."
+msgstr ""
+"Contact details, phone, email, address and map for Apartment Cvikov in the "
+"Lusatian Mountains."
+
 #: apartmancvikov/templates/kontakt.html:30
 msgid "Napište nebo zavolejte"
 msgstr "Write or call us"
@@ -989,31 +1104,167 @@ msgstr "Choose your stay dates"
 
 #: apartmancvikov/templates/obsazenost.html:33
 msgid "Stav termínů je orientační. Dostupnost vždy potvrdíme při rezervaci."
-msgstr "The displayed availability is indicative. We always confirm availability when booking."
+msgstr ""
+"The displayed availability is indicative. We always confirm availability "
+"when booking."
 
-#: apartmancvikov/templates/obsazenost.html:36
+#: apartmancvikov/templates/obsazenost.html:35
 msgid "Legenda dostupnosti"
 msgstr "Availability legend"
 
-#: apartmancvikov/templates/obsazenost.html:37
+#: apartmancvikov/templates/obsazenost.html:36
 #: apartmancvikov/templatetags/booking_calendar.py:79
 msgid "Volno"
 msgstr "Available"
 
-#: apartmancvikov/templates/obsazenost.html:38
+#: apartmancvikov/templates/obsazenost.html:37
 #: apartmancvikov/templatetags/booking_calendar.py:83
 msgid "Obsazeno"
 msgstr "Booked"
 
-#: apartmancvikov/templates/obsazenost.html:39
+#: apartmancvikov/templates/obsazenost.html:38
 #: apartmancvikov/templatetags/booking_calendar.py:91
 msgid "Začátek pobytu"
 msgstr "Start of stay"
 
-#: apartmancvikov/templates/obsazenost.html:40
+#: apartmancvikov/templates/obsazenost.html:39
 #: apartmancvikov/templatetags/booking_calendar.py:87
 msgid "Konec pobytu"
 msgstr "End of stay"
+
+#: apartmancvikov/templates/obsazenost.html:44
+msgid "Poptat vybraný termín"
+msgstr "Enquire about selected dates"
+
+#: apartmancvikov/templates/poptavka.html:23
+msgid "Nezávazná poptávka ubytování"
+msgstr "Non-binding accommodation enquiry"
+
+#: apartmancvikov/templates/poptavka.html:30
+msgid "Nezávazná poptávka"
+msgstr "Non-binding enquiry"
+
+#: apartmancvikov/templates/poptavka.html:32
+msgid ""
+"Napište nám termín a složení skupiny. Dostupnost a cenu vám potvrdíme e-"
+"mailem."
+msgstr ""
+"Tell us your dates and group size. We will confirm availability and price by "
+"email."
+
+#: apartmancvikov/templates/poptavka.html:59
+msgid "Kontaktní údaje"
+msgstr "Contact details"
+
+#: apartmancvikov/templates/poptavka.html:72
+#: apartmancvikov/templates/poptavka.html:117
+msgid "volitelné"
+msgstr "optional"
+
+#: apartmancvikov/templates/poptavka.html:80
+msgid "Termín a hosté"
+msgstr "Dates and guests"
+
+#: apartmancvikov/templates/poptavka.html:94
+msgid "Zkontrolovat obsazenost"
+msgstr "Check availability"
+
+#: apartmancvikov/templates/poptavka.html:113
+msgid "Apartmán má kapacitu nejvýše 9 hostů včetně dětí."
+msgstr "The apartment accommodates no more than 9 guests, including children."
+
+#: apartmancvikov/templates/poptavka.html:123
+#, python-format
+msgid ""
+"Odesláním formuláře nám předáte údaje pouze pro vyřízení poptávky. "
+"Podrobnosti najdete v <a href=\"%(privacy_url)s\">informacích o zpracování "
+"osobních údajů</a>."
+msgstr ""
+"By submitting the form, you provide your details solely to process the "
+"enquiry. See our <a href=\"%(privacy_url)s\">privacy information</a> for "
+"details."
+
+#: apartmancvikov/templates/poptavka.html:125
+msgid "Odeslat poptávku"
+msgstr "Send enquiry"
+
+#: apartmancvikov/templates/privacy.html:6
+msgid "Ochrana osobních údajů | Apartmán Cvikov"
+msgstr "Privacy | Apartment Cvikov"
+
+#: apartmancvikov/templates/privacy.html:23
+msgid "Jak pracujeme s údaji z poptávkového formuláře"
+msgstr "How we handle data from the enquiry form"
+
+#: apartmancvikov/templates/privacy.html:30
+msgid "Informace pro hosty"
+msgstr "Information for guests"
+
+#: apartmancvikov/templates/privacy.html:31
+msgid "Kdo údaje spravuje"
+msgstr "Who controls the data"
+
+#: apartmancvikov/templates/privacy.html:34
+msgid "Ve věcech osobních údajů nás můžete kontaktovat na"
+msgstr "For matters concerning personal data, contact us at"
+
+#: apartmancvikov/templates/privacy.html:39
+msgid "Proč a jaké údaje zpracováváme"
+msgstr "Why we process data and which data we use"
+
+#: apartmancvikov/templates/privacy.html:40
+msgid ""
+"Jméno, e-mail, volitelný telefon, požadovaný termín, počty hostů a text "
+"zprávy používáme pouze k vyřízení vaší poptávky, navazující komunikaci a "
+"krokům před případným uzavřením smlouvy o ubytování."
+msgstr ""
+"We use your name, email, optional phone number, requested dates, guest "
+"counts and message only to process your enquiry, continue communication and "
+"take steps before a possible accommodation contract."
+
+#: apartmancvikov/templates/privacy.html:41
+msgid ""
+"Údaje z formuláře se na webu neukládají do databáze. Poptávka je odeslána do "
+"naší e-mailové schránky a mohou ji zpracovávat poskytovatelé hostingu a e-"
+"mailových služeb jako naši zpracovatelé."
+msgstr ""
+"Data from the form is not stored in the website database. The enquiry is "
+"sent to our mailbox and may be processed by our hosting and email providers "
+"acting as our processors."
+
+#: apartmancvikov/templates/privacy.html:45
+msgid "Jak dlouho údaje uchováváme"
+msgstr "How long we retain data"
+
+#: apartmancvikov/templates/privacy.html:46
+msgid ""
+"Poptávku, která nevede k rezervaci, uchováváme nejdéle 6 měsíců od poslední "
+"komunikace. U potvrzených rezervací uchováváme potřebné údaje po dobu "
+"vyžadovanou smluvními, účetními a dalšími zákonnými povinnostmi."
+msgstr ""
+"We retain an enquiry that does not result in a booking for no more than 6 "
+"months after the last communication. For confirmed bookings, we retain the "
+"necessary data for the period required by contractual, accounting and other "
+"legal obligations."
+
+#: apartmancvikov/templates/privacy.html:50
+msgid "Vaše práva"
+msgstr "Your rights"
+
+#: apartmancvikov/templates/privacy.html:51
+msgid ""
+"Můžete požádat o přístup ke svým údajům, jejich opravu nebo výmaz, omezení "
+"zpracování či přenositelnost, pokud jsou splněny zákonné podmínky. Máte také "
+"právo podat stížnost u Úřadu pro ochranu osobních údajů."
+msgstr ""
+"You may request access to, correction or deletion of your data, restriction "
+"of processing or data portability where the legal conditions are met. You "
+"also have the right to lodge a complaint with the Czech Data Protection "
+"Authority."
+
+#: apartmancvikov/templates/privacy.html:52
+msgid "Úřad pro ochranu osobních údajů"
+msgstr "Czech Data Protection Authority"
 
 #: apartmancvikov/templates/snippets/description.html:3
 msgid "Nabízíme rodinné ubytování ve Cvikově, bráně Lužických hor."
@@ -1105,181 +1356,21 @@ msgstr "Bohemian Switzerland"
 msgid "%(date)s: %(status)s"
 msgstr "%(date)s: %(status)s"
 
-#: apartmancvikov/views.py:39
+#: apartmancvikov/views.py:57
 #, python-format
 msgid "Přibližně %(distance)s km od Apartmánu Cvikov."
 msgstr "Approximately %(distance)s km from Apartment Cvikov."
 
-#~ msgid ""
-#~ "Tři ložnice, sedm standardních lůžek a kapacita až devět hostů v "
-#~ "apartmánu vybaveném pro rodiny s dětmi."
-#~ msgstr ""
-#~ "Three bedrooms, seven standard beds and capacity for up to nine guests in "
-#~ "an apartment equipped for families with children."
+#: apartmancvikov/views.py:98 apartmancvikov/views.py:108
+msgid ""
+"Poptávku se nepodařilo odeslat. Zkuste to prosím později nebo nás "
+"kontaktujte přímo e-mailem či telefonem."
+msgstr ""
+"We could not send the enquiry. Please try again later or contact us directly "
+"by email or phone."
 
-#~ msgid "lůžek"
-#~ msgstr "beds"
-
-#~ msgid "v celém objektu"
-#~ msgstr "throughout the property"
-
-#~ msgid ""
-#~ "Ceny, otevírací dobu a případnou nutnost rezervace si ověřte na webu "
-#~ "provozovatele."
-#~ msgstr ""
-#~ "Check prices, opening hours and any booking requirements on the "
-#~ "operator's website."
-
-#~ msgid "ubytování, cvikov, lužické, hory, sklárna, kolo, pivovar"
-#~ msgstr ""
-#~ "accommodation, cvikov, lusatian, mountains, glassworks, bike, brewery"
-
-#~ msgid "Rezervace"
-#~ msgstr "Booking"
-
-#~ msgid "Ceník 2025"
-#~ msgstr "Price list 2025"
-
-#~ msgid "Ceník 2026"
-#~ msgstr "Price list 2026"
-
-#~ msgid ""
-#~ "Ubytujeme vás ve 3 pokojích, ve kterých naleznete 7 lůžek s možností "
-#~ "dětské postýlky."
-#~ msgstr ""
-#~ "We will accommodate you in 3 rooms, in which you will find 7 beds with "
-#~ "the possibility of a cot."
-
-#~ msgid ""
-#~ "Procházka po vyhlídkách v okolí Cvikova nabídne pohledy na celé Lužické "
-#~ "hory."
-#~ msgstr ""
-#~ "A walk through the viewpoints around Cvikovo will offer views of the "
-#~ "entire Lusatian Mountains."
-
-#~ msgid "Oybin"
-#~ msgstr "Oybin"
-
-#~ msgid ""
-#~ "V okolí se nachází mnoho skalních měst, skalních reliéfů a dalších "
-#~ "přírodních nebo lidmi vytvořených skalnách zajímavostí."
-#~ msgstr ""
-#~ "There are many rock towns, rock reliefs and other natural or man-made "
-#~ "rock attractions in the surroundings."
-
-#~ msgid "Sloup"
-#~ msgstr "Sloup"
-
-#~ msgid "Radvanec"
-#~ msgstr "Radvanec"
-
-#~ msgid "Kunratické Švýcarsko"
-#~ msgstr "Kunratic Switzerland"
-
-#~ msgid "Oybin a Jonsdorf"
-#~ msgstr "Oybin and Jonsdorf"
-
-#~ msgid ""
-#~ "Hned za hranicemi můžete navštívit hrad Oybin, motýlí dům v Jonsdorfu."
-#~ msgstr ""
-#~ "Just across the border you can visit Oybin Castle, the butterfly house in "
-#~ "Jonsdorf."
-
-#~ msgid ""
-#~ "V letních měsících do obou míst jezdí turistický vláček z náměstí ve "
-#~ "Cvikově."
-#~ msgstr ""
-#~ "In the summer months, a tourist train runs to both places from the square "
-#~ "in Cvikov."
-
-#~ msgid "Motýlí dům"
-#~ msgstr "Butterfly House"
-
-#~ msgid "Horský expres"
-#~ msgstr "Mountain Express"
-
-#~ msgid "Skleněná zahrada v Kunraticích u Cvikova"
-#~ msgstr "Glass garden in Kunratice near Cvikov"
-
-#~ msgid "Sklárny"
-#~ msgstr "Glassworks"
-
-#~ msgid "V okolí se nachází mnoho skláren které stojí za vidění."
-#~ msgstr "In the surroundings there are many glassworks worth seeing."
-
-#~ msgid "V Kunraticích u Cvikova je skleněná zahrada u sklárny Pačinek."
-#~ msgstr ""
-#~ "In Kunratice near Cvikov there is a glass garden at the glassworks "
-#~ "Pačinek."
-
-#~ msgid ""
-#~ "V Lindavě můžete navštívit sklářskou krčmu s možností výroby vlastního "
-#~ "skla."
-#~ msgstr ""
-#~ "In Lindava you can visit a glassmaking pub with the possibility of making "
-#~ "your own glass."
-
-#~ msgid "Pačinek"
-#~ msgstr "Pačinek"
-
-#~ msgid "Ajeto"
-#~ msgstr "Ajeto"
-
-#~ msgid "Crystal valley"
-#~ msgstr "Crystal valley"
-
-#~ msgid "Klíč"
-#~ msgstr "Klíč"
-
-#~ msgid "Lužické hory nabízí mnoho vrcholů s krásnými rozhledy k prozkoumání."
-#~ msgstr ""
-#~ "The Lusatian Mountains offer many peaks with beautiful views to explore."
-
-#~ msgid "Polevsko"
-#~ msgstr "Polevsko"
-
-#~ msgid "Lyžování nebo bikeparky"
-#~ msgstr "Skiing or bike parks"
-
-#~ msgid "V zimě můžete využít blízké lyžařské areály."
-#~ msgstr "In winter you can use the nearby ski areas."
-
-#~ msgid "V létě se do nich místo na lyžích můžete vydat na kolech."
-#~ msgstr "In summer, you can go there on bicycles instead of skis."
-
-#~ msgid "Sjezdovka a bikepark Polevsko"
-#~ msgstr "Polevsko ski slope and bikepark"
-
-#~ msgid "Lyžařský areál Horní Podluží"
-#~ msgstr "Ski resort Horní Podluží"
-
-#~ msgid "Další tipy na výlet"
-#~ msgstr "More tips for the trip"
-
-#~ msgid ""
-#~ "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
-#~ "okolních oblastí a objevte další zajímavosti."
-#~ msgstr ""
-#~ "There is much more to see nearby. Take a look at the websites of the "
-#~ "surrounding areas and discover more attractions."
-
-#~ msgid "Pivní stezka Lužických hor"
-#~ msgstr "Beer Trail of the Lusatian Mountains"
-
-#~ msgid "Českolipsko"
-#~ msgstr "Českolipsko"
-
-#~ msgid "V letní sezóně je vám po domluvě k dispozici bazén."
-#~ msgstr "In the summer season, a swimming pool is available by arrangement."
-
-#~ msgid "Vyhlídka Švýcárna"
-#~ msgstr "Viewpoint Švýcárna"
-
-#~ msgid "Schillerova vyhlídka"
-#~ msgstr "Schiller's Viewpoint"
-
-#~ msgid "Web"
-#~ msgstr "Web"
-
-#~ msgid "Výletní turistický vláček"
-#~ msgstr "Tourist excursion train"
+#: apartmancvikov/views.py:116
+msgid "Děkujeme, poptávka byla odeslána. Ozveme se vám co nejdříve."
+msgstr ""
+"Thank you, your enquiry has been sent. We will get back to you as soon as "
+"possible."

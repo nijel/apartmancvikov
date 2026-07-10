@@ -29,6 +29,7 @@ from .sitemaps import AttractionSitemap, StaticViewSitemap
 from .views import (
     AttractionDetailView,
     HomeView,
+    InquiryView,
     TripsView,
     llms_txt,
     robots_txt,
@@ -54,6 +55,12 @@ urlpatterns = i18n_patterns(  # noqa: RUF005
         "kontakt/",
         TemplateView.as_view(template_name="kontakt.html"),
         name="kontakt",
+    ),
+    path("poptavka/", InquiryView.as_view(), name="poptavka"),
+    path(
+        "ochrana-osobnich-udaju/",
+        TemplateView.as_view(template_name="privacy.html"),
+        name="privacy",
     ),
 ) + [
     path("robots.txt", robots_txt, name="robots"),

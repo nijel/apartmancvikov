@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+from .site_config import CONTACT_EMAIL
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -135,6 +137,12 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "static"
 
 SITE_URL = "https://apartmancvikov.cz"
+
+# Development never sends real messages. Production overrides these values in
+# the untracked settings_local.py with its authenticated SMTP credentials.
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+DEFAULT_FROM_EMAIL = CONTACT_EMAIL
+EMAIL_TIMEOUT = 10
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

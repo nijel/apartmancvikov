@@ -65,7 +65,15 @@ class StaticViewSitemap(LocalizedSitemap):
 
     def items(self):
         """Return the named static pages included in the sitemap."""
-        return ["home", "vylety", "cenik", "obsazenost", "kontakt"]
+        return [
+            "home",
+            "vylety",
+            "cenik",
+            "obsazenost",
+            "kontakt",
+            "poptavka",
+            "privacy",
+        ]
 
     def location(self, item):
         """Resolve a named static page in the active language."""

@@ -4,7 +4,17 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 
 from .content import ATTRACTIONS, ATTRACTIONS_BY_SLUG
-from .pricing import (
+from .site_config import (
+    ADDRESS_COUNTRY,
+    ADDRESS_LOCALITY,
+    ADDRESS_POSTAL_CODE,
+    ADDRESS_REGION,
+    ADDRESS_STREET,
+    CONTACT_EMAIL,
+    CONTACT_PHONE,
+    MAX_GUESTS,
+    OPERATOR_ID_NUMBER,
+    OPERATOR_NAME,
     PRICE_CURRENCY,
     STANDARD_ADULT_PRICE_CZK,
     STANDARD_CHILD_PRICE_CZK,
@@ -54,14 +64,14 @@ def _operator_node():
     return {
         "@type": "Person",
         "@id": OPERATOR_ID,
-        "name": "Petra Čihařová",
+        "name": OPERATOR_NAME,
         "identifier": {
             "@type": "PropertyValue",
             "propertyID": "IČO",
-            "value": "10843116",
+            "value": OPERATOR_ID_NUMBER,
         },
-        "telephone": "+420775408751",
-        "email": "ubytovani@apartmancvikov.cz",
+        "telephone": CONTACT_PHONE,
+        "email": CONTACT_EMAIL,
     }
 
 
@@ -92,8 +102,15 @@ def _lodging_node():
         ),
         "url": _absolute(reverse("home")),
         "image": [_image_url(path) for path, _width, _height in PROPERTY_IMAGES],
-        "telephone": "+420775408751",
-        "email": "ubytovani@apartmancvikov.cz",
+        "telephone": CONTACT_PHONE,
+        "email": CONTACT_EMAIL,
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "reservations",
+            "telephone": CONTACT_PHONE,
+            "email": CONTACT_EMAIL,
+            "availableLanguage": ["cs", "en"],
+        },
         "latitude": 50.77409,
         "longitude": 14.64013,
         "checkinTime": "15:00",
@@ -112,17 +129,17 @@ def _lodging_node():
         ],
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Nábřežní 694",
-            "addressLocality": "Cvikov",
-            "addressRegion": "Liberecký kraj",
-            "postalCode": "471 54",
-            "addressCountry": "CZ",
+            "streetAddress": ADDRESS_STREET,
+            "addressLocality": ADDRESS_LOCALITY,
+            "addressRegion": ADDRESS_REGION,
+            "postalCode": ADDRESS_POSTAL_CODE,
+            "addressCountry": ADDRESS_COUNTRY,
         },
         "containsPlace": {
             "@type": ["Accommodation", "Product"],
             "@id": UNIT_ID,
             "additionalType": "EntirePlace",
-            "occupancy": {"@type": "QuantitativeValue", "value": 9},
+            "occupancy": {"@type": "QuantitativeValue", "value": MAX_GUESTS},
             "floorSize": {
                 "@type": "QuantitativeValue",
                 "value": 180,
@@ -296,8 +313,24 @@ def _page_metadata(view_name):
             "ContactPage",
             _("Kontaktujte Apartmán Cvikov"),
             _(
-                "Kontakt, telefon, e-mail, adresa a mapa Apartmánu Cvikov v "
-                "Lužických horách."
+                "Poptávkový formulář, telefon, e-mail, adresa a mapa "
+                "Apartmánu Cvikov v Lužických horách."
+            ),
+        ),
+        "poptavka": (
+            "WebPage",
+            _("Poptávka pobytu | Apartmán Cvikov"),
+            _(
+                "Nezávazná poptávka ubytování v Apartmánu Cvikov. Zadejte "
+                "termín pobytu a počet dospělých a dětí."
+            ),
+        ),
+        "privacy": (
+            "WebPage",
+            _("Ochrana osobních údajů"),
+            _(
+                "Informace o zpracování osobních údajů při poptávce pobytu "
+                "v Apartmánu Cvikov."
             ),
         ),
     }
@@ -407,6 +440,8 @@ def build_structured_data(request):
         "cenik",
         "obsazenost",
         "kontakt",
+        "poptavka",
+        "privacy",
     }:
         return {"@context": "https://schema.org", "@graph": []}
 
