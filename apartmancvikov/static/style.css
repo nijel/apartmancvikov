@@ -791,6 +791,30 @@ summary {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 
+.availability-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.availability-legend li {
+  align-items: center;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.availability-swatch {
+  border: 1px solid var(--line);
+  border-radius: 0.2rem;
+  display: inline-block;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
 .calendar-month {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -812,16 +836,21 @@ table.booking td {
   vertical-align: middle;
 }
 
-table.booking th.month {
+table.booking caption {
   color: var(--accent);
   font-size: 1.15rem;
+  font-weight: 700;
   padding-bottom: 0.55rem;
 }
 
-table.booking th:not(.month) {
+table.booking th {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 600;
+}
+
+table.booking abbr {
+  text-decoration: none;
 }
 
 .booking_middle {

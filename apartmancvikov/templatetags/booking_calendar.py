@@ -2,9 +2,10 @@ from calendar import HTMLCalendar
 from datetime import date, timedelta
 
 from django import template
-from django.utils.dates import MONTHS, WEEKDAYS_ABBR
+from django.utils.dates import MONTHS, WEEKDAYS, WEEKDAYS_ABBR
+from django.utils.formats import date_format
 from django.utils.html import format_html, format_html_join
-from django.utils.safestring import mark_safe
+from django.utils.translation import gettext as _
 
 from apartmancvikov.models import Booking
 
@@ -69,44 +70,67 @@ class BookingCalendar(HTMLCalendar):
         return months
 
     def format_day(self, year: int, month: int, day: date):
-        """Return a formatted day entry."""
-        css_class = ""
+        """Return a day with a textual status for agents and assistive tools."""
         if day.year != year or day.month != month:
-            value = mark_safe("&nbsp;")
-        else:
-            value = format_html("{}", day.day)
-            # Booking CSS
-            if day in self.booked_dates:
-                css_class = "booking_middle"
-            elif day in self.end_dates:
-                css_class = "booking_end"
-            elif day in self.start_dates:
-                css_class = "booking_start"
-        return format_html('<td class="{}">{}</td>', css_class, value)
+            return format_html('<td aria-hidden="true">{}</td>', "\N{NO-BREAK SPACE}")
 
-    def formatmonthname(self, theyear, themonth, withyear=True):  # noqa: ARG002, FBT002
-        """Return a month name as a table row."""
+        css_class = ""
+        status = "available"
+        status_label = _("Volno")
+        if day in self.booked_dates:
+            css_class = "booking_middle"
+            status = "occupied"
+            status_label = _("Obsazeno")
+        elif day in self.end_dates:
+            css_class = "booking_end"
+            status = "departure"
+            status_label = _("Konec pobytu")
+        elif day in self.start_dates:
+            css_class = "booking_start"
+            status = "arrival"
+            status_label = _("Začátek pobytu")
+
+        accessible_label = _("%(date)s: %(status)s") % {
+            "date": date_format(day, "DATE_FORMAT"),
+            "status": status_label,
+        }
         return format_html(
-            '<tr><th colspan="7" class="{}">{} {}</th></tr>',
-            self.cssclass_month_head,
-            MONTHS[themonth],
-            theyear,
+            '<td class="{}" data-status="{}"><time datetime="{}">'
+            '<span aria-hidden="true">{}</span>'
+            '<span class="visually-hidden">{}</span></time></td>',
+            css_class,
+            status,
+            day.isoformat(),
+            day.day,
+            accessible_label,
         )
 
+    def formatmonthname(self, theyear, themonth, withyear=True):  # noqa: ARG002, FBT002
+        """Return the localized month as the table caption."""
+        return format_html("<caption>{} {}</caption>", MONTHS[themonth], theyear)
+
     def formatweekheader(self):
-        """Return a header for a week as a table row."""
-        return mark_safe(super().formatweekheader())  # noqa: S308
+        """Return an accessible weekday header row."""
+        return format_html(
+            "<tr>{}</tr>",
+            format_html_join(
+                "",
+                "{}",
+                ((self.formatweekday(day),) for day in self.iterweekdays()),
+            ),
+        )
 
     def formatweekday(self, day):
-        """Return a weekday name as a table header."""
+        """Return a weekday name with its unabbreviated accessible title."""
         return format_html(
-            '<th class="{}">{}</th>',
+            '<th class="{}" scope="col"><abbr title="{}">{}</abbr></th>',
             self.cssclasses_weekday_head[day],
+            WEEKDAYS[day],
             WEEKDAYS_ABBR[day],
         )
 
     def format_month(self, year: int, month: int, dates: list[list[date]]):
-        """Generate HTML with a month calendar."""
+        """Generate a semantic HTML table for one month."""
         calendar = format_html_join(
             "\n",
             "<tr>{}</tr>",
@@ -122,7 +146,7 @@ class BookingCalendar(HTMLCalendar):
             ),
         )
         return format_html(
-            '<table class="booking">{}{}{}</table>',
+            '<table class="booking">{}<thead>{}</thead><tbody>{}</tbody></table>',
             self.formatmonthname(year, month, withyear=True),
             self.formatweekheader(),
             calendar,

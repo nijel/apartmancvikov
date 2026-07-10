@@ -30,7 +30,14 @@
       <header class="section-intro">
         <p class="eyebrow">{% translate "Kalendář obsazenosti" %}</p>
         <h2>{% translate "Vyberte si termín pobytu" %}</h2>
+        <p>{% translate "Stav termínů je orientační. Dostupnost vždy potvrdíme při rezervaci." %}</p>
       </header>
+      <ul class="availability-legend" aria-label="{% translate "Legenda dostupnosti" %}">
+        <li><span class="availability-swatch" aria-hidden="true"></span>{% translate "Volno" %}</li>
+        <li><span class="availability-swatch booking_middle" aria-hidden="true"></span>{% translate "Obsazeno" %}</li>
+        <li><span class="availability-swatch booking_start" aria-hidden="true"></span>{% translate "Začátek pobytu" %}</li>
+        <li><span class="availability-swatch booking_end" aria-hidden="true"></span>{% translate "Konec pobytu" %}</li>
+      </ul>
       <div class="calendar-grid">{% render_calendar %}</div>
     </div>
   </section>

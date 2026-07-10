@@ -1,11 +1,15 @@
 import json
 import re
+from datetime import date, timedelta
 from pathlib import Path
 
 from django.conf import settings
 from django.test import TestCase
+from django.utils.safestring import mark_safe
 
 from .content import ATTRACTIONS
+from .image_config import variant_path
+from .models import Booking
 from .pricing import (
     PRICE_CURRENCY,
     STANDARD_ADULT_PRICE_CZK,
@@ -85,6 +89,34 @@ class SeoTest(TestCase):
         self.assertIn('fetchpriority="high"', html)
         self.assertEqual(html.count('fetchpriority="high"'), 1)
         self.assertIn('content="index, follow, max-image-preview:large"', html)
+
+    def test_responsive_image_paths_accept_template_safe_strings(self):
+        """Django's quoted template arguments work with pathlib on Python 3.11."""
+        self.assertEqual(
+            variant_path(mark_safe("foto/dum.jpg"), 800, "webp"),
+            "responsive/foto/dum-800.webp",
+        )
+
+    def test_availability_calendar_exposes_semantic_statuses(self):
+        """Availability remains understandable without relying on color or CSS."""
+        start = date.today() + timedelta(days=10)  # noqa: DTZ011
+        end = start + timedelta(days=3)
+        booking = Booking.objects.create(start=start, end=end, uid="private-booking")
+
+        response = self.client.get("/cs/obsazenost/")
+        html = response.content.decode()
+
+        self.assertIn("<caption>", html)
+        self.assertIn('scope="col"', html)
+        self.assertIn('data-status="available"', html)
+        self.assertIn('data-status="arrival"', html)
+        self.assertIn('data-status="occupied"', html)
+        self.assertIn('data-status="departure"', html)
+        self.assertIn(f'<time datetime="{booking.start.isoformat()}">', html)
+        self.assertIn("Začátek pobytu", html)
+        self.assertIn("Konec pobytu", html)
+        self.assertIn("Obsazeno", html)
+        self.assertNotIn(booking.uid, html)
 
     def test_responsive_image_manifest_matches_committed_assets(self):
         """Every recorded derivative exists and source photos are represented."""
