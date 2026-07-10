@@ -134,7 +134,7 @@ class BookingCalendar(HTMLCalendar):
         months = [self.format_month(year, month, dates) for year, month, dates in data]
         return format_html_join(
             "\n",
-            '<div class="p-2">{}</div>',
+            '<div class="calendar-month">{}</div>',
             ((month,) for month in months),
         )
 

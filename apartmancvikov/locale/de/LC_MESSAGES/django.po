@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apartmancvikov\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-10 13:33+0200\n"
+"POT-Creation-Date: 2026-07-10 14:03+0200\n"
 "PO-Revision-Date: 2026-07-10 13:07+0200\n"
 "Last-Translator: Apartmán Cvikov\n"
 "Language-Team: German\n"
@@ -16,539 +16,1033 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: apartmancvikov/content.py:26
 msgid "Lehká"
 msgstr "Leicht"
 
+#: apartmancvikov/content.py:27
 msgid "Střední"
 msgstr "Mittel"
 
+#: apartmancvikov/content.py:33
 msgid "Kalvárie a cvikovské vyhlídky"
 msgstr "Kalvarienberg und Aussichtspunkte von Cvikov"
 
+#: apartmancvikov/content.py:34
 msgid "Nenáročný výlet přímo ze Cvikova s výhledy na Lužické hory."
-msgstr "Ein leichter Ausflug direkt ab Cvikov mit Blick auf das Lausitzer Gebirge."
+msgstr ""
+"Ein leichter Ausflug direkt ab Cvikov mit Blick auf das Lausitzer Gebirge."
 
-msgid "Křížová cesta na Kalvárii a značené vycházkové okruhy patří k nejbližším výletům od apartmánu. Trasu lze přizpůsobit věku dětí a spojit ji s krátkou procházkou po městě."
-msgstr "Der Kreuzweg auf den Kalvarienberg und die markierten Rundwege gehören zu den nächstgelegenen Ausflügen ab der Ferienwohnung. Die Strecke lässt sich an das Alter der Kinder anpassen und mit einem kurzen Stadtspaziergang verbinden."
+#: apartmancvikov/content.py:36
+msgid ""
+"Křížová cesta na Kalvárii a značené vycházkové okruhy patří k nejbližším "
+"výletům od apartmánu. Trasu lze přizpůsobit věku dětí a spojit ji s krátkou "
+"procházkou po městě."
+msgstr ""
+"Der Kreuzweg auf den Kalvarienberg und die markierten Rundwege gehören zu "
+"den nächstgelegenen Ausflügen ab der Ferienwohnung. Die Strecke lässt sich "
+"an das Alter der Kinder anpassen und mit einem kurzen Stadtspaziergang "
+"verbinden."
 
+#: apartmancvikov/content.py:43
 msgid "Vhodné i pro kratší výlet s menšími dětmi; část cest vede lesem."
-msgstr "Auch für einen kürzeren Ausflug mit kleinen Kindern geeignet; ein Teil der Wege führt durch den Wald."
+msgstr ""
+"Auch für einen kürzeren Ausflug mit kleinen Kindern geeignet; ein Teil der "
+"Wege führt durch den Wald."
 
+#: apartmancvikov/content.py:53
 msgid "Pumptrack ve Cvikově"
 msgstr "Pumptrack in Cvikov"
 
+#: apartmancvikov/content.py:54
 msgid "Dva asfaltové okruhy pro děti, začátečníky i zkušenější jezdce."
 msgstr "Zwei Asphalt-Runden für Kinder, Anfänger und erfahrene Fahrer."
 
-msgid "Nový pumptrack u cyklostezky Svaté Zdislavy nabízí dvě oddělené tratě. Menší okruh je určený především dětem a začátečníkům, větší okruh umožňuje rychlejší a techničtější jízdu."
-msgstr "Der neue Pumptrack am Radweg der Heiligen Zdislava bietet zwei getrennte Runden. Die kleinere Runde ist vor allem für Kinder und Anfänger gedacht, die größere ermöglicht schnelleres und technisch anspruchsvolleres Fahren."
+#: apartmancvikov/content.py:56
+msgid ""
+"Nový pumptrack u cyklostezky Svaté Zdislavy nabízí dvě oddělené tratě. Menší "
+"okruh je určený především dětem a začátečníkům, větší okruh umožňuje "
+"rychlejší a techničtější jízdu."
+msgstr ""
+"Der neue Pumptrack am Radweg der Heiligen Zdislava bietet zwei getrennte "
+"Runden. Die kleinere Runde ist vor allem für Kinder und Anfänger gedacht, "
+"die größere ermöglicht schnelleres und technisch anspruchsvolleres Fahren."
 
+#: apartmancvikov/content.py:63
 msgid "Nezapomeňte na helmu; menší okruh je vhodný pro první zkušenosti."
-msgstr "Helm nicht vergessen; die kleinere Runde eignet sich für erste Erfahrungen."
+msgstr ""
+"Helm nicht vergessen; die kleinere Runde eignet sich für erste Erfahrungen."
 
+#: apartmancvikov/content.py:76
 msgid "Dutý kámen"
 msgstr "Felsrücken Dutý kámen"
 
+#: apartmancvikov/content.py:77
 msgid "Pískovcový hřbet s vyhlídkou a neobvyklými skalními útvary."
-msgstr "Ein Sandsteinrücken mit Aussichtspunkt und ungewöhnlichen Felsformationen."
+msgstr ""
+"Ein Sandsteinrücken mit Aussichtspunkt und ungewöhnlichen Felsformationen."
 
-msgid "Dutý kámen mezi Cvikovem a Kunraticemi nabízí krátkou lesní túru, skalní reliéfy a výhled směrem ke Cvikovu. Závěrečné schody a skalní terén vyžadují u menších dětí zvýšenou pozornost."
-msgstr "Dutý kámen zwischen Cvikov und Kunratice bietet eine kurze Waldwanderung, Felsreliefs und einen Blick in Richtung Cvikov. Die Treppen am Ende und das felsige Gelände erfordern bei kleinen Kindern besondere Aufmerksamkeit."
+#: apartmancvikov/content.py:79
+msgid ""
+"Dutý kámen mezi Cvikovem a Kunraticemi nabízí krátkou lesní túru, skalní "
+"reliéfy a výhled směrem ke Cvikovu. Závěrečné schody a skalní terén vyžadují "
+"u menších dětí zvýšenou pozornost."
+msgstr ""
+"Dutý kámen zwischen Cvikov und Kunratice bietet eine kurze Waldwanderung, "
+"Felsreliefs und einen Blick in Richtung Cvikov. Die Treppen am Ende und das "
+"felsige Gelände erfordern bei kleinen Kindern besondere Aufmerksamkeit."
 
+#: apartmancvikov/content.py:85
 msgid "Pro děti, které zvládnou schody a nerovný terén; bez kočárku."
-msgstr "Für Kinder, die Treppen und unebenes Gelände bewältigen; nicht für Kinderwagen geeignet."
+msgstr ""
+"Für Kinder, die Treppen und unebenes Gelände bewältigen; nicht für "
+"Kinderwagen geeignet."
 
+#: apartmancvikov/content.py:98
 msgid "Skalní hrad Sloup"
 msgstr "Felsenburg Sloup"
 
+#: apartmancvikov/content.py:99
 msgid "Skalní památka s vyhlídkami, chodbami a poustevnickou historií."
 msgstr "Ein Felsdenkmal mit Aussichtspunkten, Gängen und Einsiedlergeschichte."
 
-msgid "Skalní hrad ve Sloupu v Čechách je oblíbeným rodinným cílem s prohlídkovým okruhem vytesaným do pískovce. Návštěvu lze spojit s procházkou obcí nebo dalšími cíli v okolních skalách."
-msgstr "Die Felsenburg in Sloup v Čechách ist ein beliebtes Familienziel mit einem in den Sandstein gehauenen Rundgang. Der Besuch lässt sich mit einem Spaziergang durch den Ort oder weiteren Zielen in den umliegenden Felsen verbinden."
+#: apartmancvikov/content.py:101
+msgid ""
+"Skalní hrad ve Sloupu v Čechách je oblíbeným rodinným cílem s prohlídkovým "
+"okruhem vytesaným do pískovce. Návštěvu lze spojit s procházkou obcí nebo "
+"dalšími cíli v okolních skalách."
+msgstr ""
+"Die Felsenburg in Sloup v Čechách ist ein beliebtes Familienziel mit einem "
+"in den Sandstein gehauenen Rundgang. Der Besuch lässt sich mit einem "
+"Spaziergang durch den Ort oder weiteren Zielen in den umliegenden Felsen "
+"verbinden."
 
+#: apartmancvikov/content.py:107
 msgid "Počítejte se schody a dohledem nad dětmi na vyhlídkách."
-msgstr "Rechnen Sie mit Treppen und beaufsichtigen Sie Kinder an den Aussichtspunkten."
+msgstr ""
+"Rechnen Sie mit Treppen und beaufsichtigen Sie Kinder an den "
+"Aussichtspunkten."
 
+#: apartmancvikov/content.py:116
 msgid "Pačinek Glass a Skleněná zahrada"
 msgstr "Pačinek Glass und der Glasgarten"
 
+#: apartmancvikov/content.py:117
 msgid "Barevná skleněná zahrada a živá sklářská tradice v Kunraticích."
-msgstr "Ein farbenfroher Glasgarten und lebendige Glasmachertradition in Kunratice."
+msgstr ""
+"Ein farbenfroher Glasgarten und lebendige Glasmachertradition in Kunratice."
 
-msgid "Areál Pačinek Glass spojuje venkovní Skleněnou zahradu, umělecké sklo a možnost nahlédnout do práce sklářů. Pro děti je atraktivní především zahrada plná skleněných rostlin a zvířat."
-msgstr "Das Gelände von Pačinek Glass verbindet den Glasgarten im Freien, Glaskunst und die Möglichkeit, den Glasmachern bei der Arbeit zuzusehen. Kinder begeistert besonders der Garten voller gläserner Pflanzen und Tiere."
+#: apartmancvikov/content.py:119
+msgid ""
+"Areál Pačinek Glass spojuje venkovní Skleněnou zahradu, umělecké sklo a "
+"možnost nahlédnout do práce sklářů. Pro děti je atraktivní především zahrada "
+"plná skleněných rostlin a zvířat."
+msgstr ""
+"Das Gelände von Pačinek Glass verbindet den Glasgarten im Freien, Glaskunst "
+"und die Möglichkeit, den Glasmachern bei der Arbeit zuzusehen. Kinder "
+"begeistert besonders der Garten voller gläserner Pflanzen und Tiere."
 
+#: apartmancvikov/content.py:126
 msgid "Dobrá volba pro všechny věkové skupiny a také pro kratší program."
 msgstr "Eine gute Wahl für alle Altersgruppen und für einen kürzeren Ausflug."
 
+#: apartmancvikov/content.py:136
 msgid "Sklárna AJETO v Lindavě"
 msgstr "Glashütte AJETO in Lindava"
 
+#: apartmancvikov/content.py:137
 msgid "Sklářská huť, zážitkové prohlídky a Sklářská krčma."
 msgstr "Glashütte, Erlebnisführungen und Glasmacher-Schänke."
 
-msgid "Ve sklárně AJETO lze sledovat ruční výrobu skla a po předchozí domluvě využít nabídku exkurzí a sklářských zážitků. Výlet můžete spojit s návštěvou přilehlé Sklářské krčmy."
-msgstr "In der Glashütte AJETO können Sie die Glasherstellung von Hand beobachten und nach vorheriger Absprache an Führungen oder Glaserlebnissen teilnehmen. Verbinden Sie den Ausflug mit einem Besuch der angrenzenden Glasmacher-Schänke."
+#: apartmancvikov/content.py:139
+msgid ""
+"Ve sklárně AJETO lze sledovat ruční výrobu skla a po předchozí domluvě "
+"využít nabídku exkurzí a sklářských zážitků. Výlet můžete spojit s návštěvou "
+"přilehlé Sklářské krčmy."
+msgstr ""
+"In der Glashütte AJETO können Sie die Glasherstellung von Hand beobachten "
+"und nach vorheriger Absprache an Führungen oder Glaserlebnissen teilnehmen. "
+"Verbinden Sie den Ausflug mit einem Besuch der angrenzenden Glasmacher-"
+"Schänke."
 
+#: apartmancvikov/content.py:145
 msgid "Exkurzi nebo zážitek pro děti si předem ověřte a rezervujte."
-msgstr "Führungen oder Erlebnisse für Kinder bitte vorab prüfen und reservieren."
+msgstr ""
+"Führungen oder Erlebnisse für Kinder bitte vorab prüfen und reservieren."
 
+#: apartmancvikov/content.py:154
 msgid "Výstup na Klíč"
 msgstr "Aufstieg zum Klíč"
 
+#: apartmancvikov/content.py:155
 msgid "Výrazný vrchol Lužických hor s dalekým kruhovým výhledem."
 msgstr "Ein markanter Gipfel des Lausitzer Gebirges mit weitem Rundblick."
 
-msgid "Klíč je jedním z nejznámějších vrcholů Lužických hor. Výstup vede lesem a v závěru prudším kamenitým svahem, odměnou je rozsáhlý výhled do krajiny."
-msgstr "Der Klíč ist einer der bekanntesten Gipfel des Lausitzer Gebirges. Der Aufstieg führt durch den Wald und zuletzt über einen steileren steinigen Hang; als Belohnung wartet ein weiter Blick über die Landschaft."
+#: apartmancvikov/content.py:157
+msgid ""
+"Klíč je jedním z nejznámějších vrcholů Lužických hor. Výstup vede lesem a v "
+"závěru prudším kamenitým svahem, odměnou je rozsáhlý výhled do krajiny."
+msgstr ""
+"Der Klíč ist einer der bekanntesten Gipfel des Lausitzer Gebirges. Der "
+"Aufstieg führt durch den Wald und zuletzt über einen steileren steinigen "
+"Hang; als Belohnung wartet ein weiter Blick über die Landschaft."
 
+#: apartmancvikov/content.py:163
 msgid "Vhodné pro zdatnější děti; vezměte pevnou obuv a dostatek pití."
-msgstr "Für wandererfahrene Kinder geeignet; feste Schuhe und ausreichend Getränke mitnehmen."
+msgstr ""
+"Für wandererfahrene Kinder geeignet; feste Schuhe und ausreichend Getränke "
+"mitnehmen."
 
+#: apartmancvikov/content.py:172
 msgid "Polevsko v létě i v zimě"
 msgstr "Polevsko im Sommer und Winter"
 
+#: apartmancvikov/content.py:173
 msgid "Rodinné lyžování, cyklistika a výlety v krajině nad Novým Borem."
-msgstr "Familienskifahren, Radfahren und Ausflüge in der Landschaft oberhalb von Nový Bor."
+msgstr ""
+"Familienskifahren, Radfahren und Ausflüge in der Landschaft oberhalb von "
+"Nový Bor."
 
-msgid "Polevsko nabízí v zimě menší lyžařský areál a během roku síť cest pro pěší a cyklisty. Díky krátké dojezdové vzdálenosti lze program snadno přizpůsobit počasí a zkušenostem dětí."
-msgstr "Polevsko bietet im Winter ein kleines Skigebiet und das ganze Jahr über ein Netz von Wander- und Radwegen. Dank der kurzen Anfahrt lässt sich der Ausflug leicht an Wetter und Erfahrung der Kinder anpassen."
+#: apartmancvikov/content.py:175
+msgid ""
+"Polevsko nabízí v zimě menší lyžařský areál a během roku síť cest pro pěší a "
+"cyklisty. Díky krátké dojezdové vzdálenosti lze program snadno přizpůsobit "
+"počasí a zkušenostem dětí."
+msgstr ""
+"Polevsko bietet im Winter ein kleines Skigebiet und das ganze Jahr über ein "
+"Netz von Wander- und Radwegen. Dank der kurzen Anfahrt lässt sich der "
+"Ausflug leicht an Wetter und Erfahrung der Kinder anpassen."
 
+#: apartmancvikov/content.py:182
 msgid "Aktuální provoz areálu a podmínky vždy zkontrolujte před odjezdem."
-msgstr "Prüfen Sie vor der Abfahrt immer den aktuellen Betrieb und die Bedingungen."
+msgstr ""
+"Prüfen Sie vor der Abfahrt immer den aktuellen Betrieb und die Bedingungen."
 
+#: apartmancvikov/content.py:192
 msgid "Hrad a klášter Oybin"
 msgstr "Burg und Kloster Oybin"
 
+#: apartmancvikov/content.py:193
 msgid "Romantické zříceniny na skalním masivu v Žitavských horách."
 msgstr "Romantische Ruinen auf einem Felsmassiv im Zittauer Gebirge."
 
-msgid "Hrad a klášter Oybin stojí na výrazném pískovcovém masivu nad lázeňským městečkem. Rodinný výlet spojuje historii, skály, výhledy a možnost jízdy úzkorozchodnou železnicí."
-msgstr "Burg und Kloster Oybin stehen auf einem markanten Sandsteinmassiv über dem Kurort. Dieser Familienausflug verbindet Geschichte, Felsen und Ausblicke mit der Möglichkeit einer Fahrt mit der Schmalspurbahn."
+#: apartmancvikov/content.py:195
+msgid ""
+"Hrad a klášter Oybin stojí na výrazném pískovcovém masivu nad lázeňským "
+"městečkem. Rodinný výlet spojuje historii, skály, výhledy a možnost jízdy "
+"úzkorozchodnou železnicí."
+msgstr ""
+"Burg und Kloster Oybin stehen auf einem markanten Sandsteinmassiv über dem "
+"Kurort. Dieser Familienausflug verbindet Geschichte, Felsen und Ausblicke "
+"mit der Möglichkeit einer Fahrt mit der Schmalspurbahn."
 
+#: apartmancvikov/content.py:201
 msgid "Na hrad vede stoupání a schody; pro malé děti se hodí nosítko."
-msgstr "Der Weg zur Burg steigt an und umfasst Treppen; für kleine Kinder ist eine Trage hilfreich."
+msgstr ""
+"Der Weg zur Burg steigt an und umfasst Treppen; für kleine Kinder ist eine "
+"Trage hilfreich."
 
+#: apartmancvikov/content.py:210
 msgid "Motýlí dům Jonsdorf"
 msgstr "Schmetterlingshaus Jonsdorf"
 
+#: apartmancvikov/content.py:211
 msgid "Tropičtí motýli a další zvířata v celoročním krytém areálu."
-msgstr "Tropische Schmetterlinge und weitere Tiere in einer ganzjährig geöffneten Innenanlage."
+msgstr ""
+"Tropische Schmetterlinge und weitere Tiere in einer ganzjährig geöffneten "
+"Innenanlage."
 
-msgid "Motýlí dům v Jonsdorfu je praktickým cílem i za deště. V tropické hale lze zblízka pozorovat volně poletující motýly a návštěvu spojit s dalšími rodinnými cíli v Žitavských horách."
-msgstr "Das Schmetterlingshaus in Jonsdorf ist auch bei Regen ein praktisches Ziel. In der Tropenhalle lassen sich frei fliegende Schmetterlinge aus der Nähe beobachten; der Besuch kann mit weiteren Familienzielen im Zittauer Gebirge verbunden werden."
+#: apartmancvikov/content.py:213
+msgid ""
+"Motýlí dům v Jonsdorfu je praktickým cílem i za deště. V tropické hale lze "
+"zblízka pozorovat volně poletující motýly a návštěvu spojit s dalšími "
+"rodinnými cíli v Žitavských horách."
+msgstr ""
+"Das Schmetterlingshaus in Jonsdorf ist auch bei Regen ein praktisches Ziel. "
+"In der Tropenhalle lassen sich frei fliegende Schmetterlinge aus der Nähe "
+"beobachten; der Besuch kann mit weiteren Familienzielen im Zittauer Gebirge "
+"verbunden werden."
 
+#: apartmancvikov/content.py:219
 msgid "Vhodné pro malé děti i jako program při nepříznivém počasí."
 msgstr "Für kleine Kinder und als Schlechtwetterprogramm geeignet."
 
+#: apartmancvikov/context_processors.py:44
+#: apartmancvikov/templates/attraction_detail.html:13
+#: apartmancvikov/templates/base.html:28 apartmancvikov/templates/base.html:31
+#: apartmancvikov/templates/base.html:81 apartmancvikov/templates/base.html:136
+#: apartmancvikov/templates/base.html:158 apartmancvikov/templates/index.html:5
+#: apartmancvikov/templates/index.html:53
+#: apartmancvikov/templates/kontakt.html:31
 msgid "Apartmán Cvikov"
 msgstr "Ferienwohnung Cvikov"
 
-msgid "Rodinné ubytování ve Cvikově se třemi ložnicemi, zahradou, dětským vybavením a venkovním bazénem."
-msgstr "Familienunterkunft in Cvikov mit drei Schlafzimmern, Garten, Kinderausstattung und Außenpool."
+#: apartmancvikov/context_processors.py:47
+msgid ""
+"Rodinné ubytování ve Cvikově se třemi ložnicemi, zahradou, dětským vybavením "
+"a venkovním bazénem."
+msgstr ""
+"Familienunterkunft in Cvikov mit drei Schlafzimmern, Garten, "
+"Kinderausstattung und Außenpool."
 
+#: apartmancvikov/templates/attraction_detail.html:5
 msgid "Tip na rodinný výlet z Apartmánu Cvikov"
 msgstr "Tipp für einen Familienausflug ab der Ferienwohnung Cvikov"
 
-#, python-format
-msgid "Přibližně %(distance)s km od Apartmánu Cvikov."
-msgstr "Etwa %(distance)s km von der Ferienwohnung Cvikov."
-
+#: apartmancvikov/templates/attraction_detail.html:44
 msgid "Drobečková navigace"
 msgstr "Brotkrümelnavigation"
 
+#: apartmancvikov/templates/attraction_detail.html:46
+#: apartmancvikov/templates/base.html:92 apartmancvikov/views.py:67
 msgid "Ubytování"
 msgstr "Unterkunft"
 
+#: apartmancvikov/templates/attraction_detail.html:47
+#: apartmancvikov/templates/base.html:97 apartmancvikov/views.py:73
 msgid "Výlety"
 msgstr "Ausflüge"
 
+#: apartmancvikov/templates/attraction_detail.html:82
+msgid "Pro plánování"
+msgstr "Für die Planung"
+
+#: apartmancvikov/templates/attraction_detail.html:83
 msgid "Praktické informace"
 msgstr "Praktische Informationen"
 
+#: apartmancvikov/templates/attraction_detail.html:85
 msgid "Vzdálenost"
 msgstr "Entfernung"
 
+#: apartmancvikov/templates/attraction_detail.html:86
 #, python-format
 msgid "přibližně %(distance)s km"
 msgstr "etwa %(distance)s km"
 
+#: apartmancvikov/templates/attraction_detail.html:87
 msgid "Náročnost"
 msgstr "Schwierigkeit"
 
+#: apartmancvikov/templates/attraction_detail.html:91
 msgid "Pro rodiny"
 msgstr "Für Familien"
 
+#: apartmancvikov/templates/attraction_detail.html:97
 msgid "Zobrazit mapu"
 msgstr "Karte anzeigen"
 
+#: apartmancvikov/templates/attraction_detail.html:100
 msgid "Aktuální informace"
 msgstr "Aktuelle Informationen"
 
+#: apartmancvikov/templates/attraction_detail.html:106
+msgid "Náš tip"
+msgstr "Unser Tipp"
+
+#: apartmancvikov/templates/attraction_detail.html:107
 msgid "Proč sem vyrazit"
 msgstr "Warum sich der Ausflug lohnt"
 
+#: apartmancvikov/templates/attraction_detail.html:113
+msgid "Dovolená ve Cvikově"
+msgstr "Urlaub in Cvikov"
+
+#: apartmancvikov/templates/attraction_detail.html:116
 msgid "Naplánujte si pobyt v Lužických horách"
 msgstr "Planen Sie Ihren Aufenthalt im Lausitzer Gebirge"
 
-msgid "Podívejte se na volné termíny nebo nám napište a rádi poradíme s pobytem."
-msgstr "Sehen Sie sich freie Termine an oder schreiben Sie uns – wir beraten Sie gerne zu Ihrem Aufenthalt."
+#: apartmancvikov/templates/attraction_detail.html:119
+msgid ""
+"Podívejte se na volné termíny nebo nám napište a rádi poradíme s pobytem."
+msgstr ""
+"Sehen Sie sich freie Termine an oder schreiben Sie uns – wir beraten Sie "
+"gerne zu Ihrem Aufenthalt."
 
+#: apartmancvikov/templates/attraction_detail.html:122
 msgid "Volné termíny"
 msgstr "Freie Termine"
 
+#: apartmancvikov/templates/attraction_detail.html:123
 msgid "Kontaktovat apartmán"
 msgstr "Ferienwohnung kontaktieren"
 
+#: apartmancvikov/templates/base.html:12 apartmancvikov/templates/index.html:14
 msgid "Rodinné ubytování v Lužických horách | Apartmán Cvikov"
 msgstr "Familienunterkunft im Lausitzer Gebirge | Ferienwohnung Cvikov"
 
-msgid "Rodinný apartmán ve Cvikově pro 7 až 9 hostů se zahradou, bazénem, dětským vybavením a soukromým parkováním."
-msgstr "Familienferienwohnung in Cvikov für 7 bis 9 Gäste mit Garten, Pool, Kinderausstattung und Privatparkplatz."
+#: apartmancvikov/templates/base.html:18
+msgid ""
+"Rodinný apartmán ve Cvikově pro 7 až 9 hostů se zahradou, bazénem, dětským "
+"vybavením a soukromým parkováním."
+msgstr ""
+"Familienferienwohnung in Cvikov für 7 bis 9 Gäste mit Garten, Pool, "
+"Kinderausstattung und Privatparkplatz."
 
+#: apartmancvikov/templates/base.html:36
 msgid "Rodinné ubytování ve Cvikově, bráně Lužických hor."
 msgstr "Familienunterkunft in Cvikov, dem Tor zum Lausitzer Gebirge."
 
+#: apartmancvikov/templates/base.html:45 apartmancvikov/templates/index.html:58
 msgid "Apartmán Cvikov se zahradou"
 msgstr "Ferienwohnung Cvikov mit Garten"
 
+#: apartmancvikov/templates/base.html:73
+msgid "Přejít k obsahu"
+msgstr "Zum Inhalt springen"
+
+#: apartmancvikov/templates/base.html:75
 msgid "Hlavní navigace"
 msgstr "Hauptnavigation"
 
+#: apartmancvikov/templates/base.html:84
 msgid "Otevřít navigaci"
 msgstr "Navigation öffnen"
 
+#: apartmancvikov/templates/base.html:102
 msgid "Obsazenost"
 msgstr "Verfügbarkeit"
 
+#: apartmancvikov/templates/base.html:107
+#: apartmancvikov/templates/cenik.html:32
 msgid "Ceník"
 msgstr "Die Preisliste"
 
+#: apartmancvikov/templates/base.html:112
 msgid "Kontakt"
 msgstr "Kontakt"
 
+#: apartmancvikov/templates/base.html:116
 msgid "Výběr jazyka"
 msgstr "Sprachauswahl"
 
+#: apartmancvikov/templates/base.html:143
 msgid "Ubytování v Lužických horách."
 msgstr "Unterkunft im Lausitzer Gebirge."
 
-msgid "Cena ubytování v Apartmánu Cvikov, zahrnuté vybavení, platební a storno podmínky a informace k příjezdu."
-msgstr "Preise der Ferienwohnung Cvikov, enthaltene Ausstattung, Zahlungs- und Stornobedingungen sowie Informationen zur Anreise."
+#: apartmancvikov/templates/base.html:164
+msgid "Zavřít"
+msgstr "Schließen"
 
+#: apartmancvikov/templates/base.html:167
+msgid "Předchozí fotografie"
+msgstr "Vorheriges Foto"
+
+#: apartmancvikov/templates/base.html:174
+msgid "Další fotografie"
+msgstr "Nächstes Foto"
+
+#: apartmancvikov/templates/cenik.html:6 apartmancvikov/templates/cenik.html:16
+#: apartmancvikov/templates/cenik.html:20
+#: apartmancvikov/templates/cenik.html:24
 msgid "Ceník a podmínky Apartmánu Cvikov"
 msgstr "Preisliste und Bedingungen des Appartements Cvikov"
 
+#: apartmancvikov/templates/cenik.html:11
+msgid ""
+"Cena ubytování v Apartmánu Cvikov, zahrnuté vybavení, platební a storno "
+"podmínky a informace k příjezdu."
+msgstr ""
+"Preise der Ferienwohnung Cvikov, enthaltene Ausstattung, Zahlungs- und "
+"Stornobedingungen sowie Informationen zur Anreise."
+
+#: apartmancvikov/templates/cenik.html:31
+msgid "Cena pobytu"
+msgstr "Aufenthaltspreis"
+
+#: apartmancvikov/templates/cenik.html:34
 #, python-format
 msgid "Cena za dospělého je od %(price)s,- Kč za osobu za noc."
-msgstr "Der Preis pro Erwachsener beträgt ab %(price)s CZK pro Person und Nacht."
+msgstr ""
+"Der Preis pro Erwachsener beträgt ab %(price)s CZK pro Person und Nacht."
 
+#: apartmancvikov/templates/cenik.html:35
 msgid "Cena se liší podle počtu osob, délky pobytu a sezóny."
-msgstr "Der Preis hängt von der Anzahl der Personen, der Dauer des Aufenthalts und der Saison ab."
+msgstr ""
+"Der Preis hängt von der Anzahl der Personen, der Dauer des Aufenthalts und "
+"der Saison ab."
 
+#: apartmancvikov/templates/cenik.html:38
 msgid "Dítě do 3 let – bez nároku na lůžko zdarma"
 msgstr "Kind unter 3 Jahren - kostenlos"
 
+#: apartmancvikov/templates/cenik.html:40
 #, python-format
 msgid "Dítě do 12 let – od %(price)s,- Kč za noc"
 msgstr "Kind bis zu 12 Jahren - ab %(price)s CZK pro Nacht"
 
+#: apartmancvikov/templates/cenik.html:44
 msgid "Co cena zahrnuje?"
 msgstr "Was ist im Preis enthalten?"
 
+#: apartmancvikov/templates/cenik.html:46
 msgid "Ubytování ve třech útulných pokojích se společnou koupelnou."
 msgstr "Unterkunft in drei gemütlichen Zimmern mit Gemeinschaftsbad."
 
+#: apartmancvikov/templates/cenik.html:47
 msgid "Na pokojích jsou připraveny osušky a ručníky."
 msgstr "Handtücher und Badetücher sind in den Zimmern vorhanden."
 
+#: apartmancvikov/templates/cenik.html:48
 msgid "Parkování přímo u apartmánu"
 msgstr "Parkplatz direkt an der Wohnung"
 
+#: apartmancvikov/templates/cenik.html:49
 msgid "Využití dětského koutku i venkovních atrakcí"
 msgstr "Nutzung der Kinderecke und der Attraktionen im Freien"
 
+#: apartmancvikov/templates/cenik.html:50
 msgid "Možnost využít dětského vybavení"
 msgstr "Möglichkeit der Nutzung von Kinderausrüstungen"
 
+#: apartmancvikov/templates/cenik.html:51
 msgid "Využití kolárny, kočárkárny, lyžárny v ubytovacím prostoru"
 msgstr "Nutzung von Steuerhaus, Kutschenhaus, Skiraum im Unterkunftsbereich"
 
+#: apartmancvikov/templates/cenik.html:52
 msgid "Wi-fi připojení k internetu v celém objektu"
 msgstr "Wi-fi-Internetverbindung im gesamten Gebäude"
 
+#: apartmancvikov/templates/cenik.html:54
 msgid "Minimální délka pobytu jsou 2 noci, o letních prázdninách 7 nocí."
 msgstr "Der Mindestaufenthalt beträgt 2 Nächte, in den Sommerferien 7 Nächte."
 
+#: apartmancvikov/templates/cenik.html:58
 msgid "Platba a storno"
 msgstr "Zahlung und Stornierung"
 
+#: apartmancvikov/templates/cenik.html:60
 #, python-format
-msgid "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50%% ceny, která má splatnost 14 dní."
-msgstr "Nach Eingang Ihrer Buchung erhalten Sie von uns eine Vorausrechnung über 50%% des Preises, die innerhalb von 14 Tagen zu begleichen ist."
+msgid ""
+"Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50%% ceny, "
+"která má splatnost 14 dní."
+msgstr ""
+"Nach Eingang Ihrer Buchung erhalten Sie von uns eine Vorausrechnung über "
+"50%% des Preises, die innerhalb von 14 Tagen zu begleichen ist."
 
-msgid "Rezervace je závazná po uhrazení rezervační platby za ubytování, a to převodem na účet."
-msgstr "Die Reservierung ist nach Zahlung der Reservierungsgebühr per Banküberweisung verbindlich."
+#: apartmancvikov/templates/cenik.html:61
+msgid ""
+"Rezervace je závazná po uhrazení rezervační platby za ubytování, a to "
+"převodem na účet."
+msgstr ""
+"Die Reservierung ist nach Zahlung der Reservierungsgebühr per "
+"Banküberweisung verbindlich."
 
-msgid "V případě nedodržení platebních podmínek si vyhrazujeme právo od rezervace ustoupit."
-msgstr "Bei Nichteinhaltung der Zahlungsbedingungen behalten wir uns das Recht vor, von der Reservierung zurückzutreten."
+#: apartmancvikov/templates/cenik.html:62
+msgid ""
+"V případě nedodržení platebních podmínek si vyhrazujeme právo od rezervace "
+"ustoupit."
+msgstr ""
+"Bei Nichteinhaltung der Zahlungsbedingungen behalten wir uns das Recht vor, "
+"von der Reservierung zurückzutreten."
 
+#: apartmancvikov/templates/cenik.html:64
 msgid "Platba na místě pouze v hotovosti."
 msgstr "Bezahlung vor Ort nur in bar."
 
-msgid "V případě zrušení rezervace do 30ti dnů před termínem pobytu vracíme platbu v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem činí vratná částka 0,- z uhrazené ceny."
-msgstr "Im Falle einer Stornierung innerhalb von 30 Tagen vor dem Aufenthaltsdatum erstatten wir den vollen Betrag. Im Falle einer Stornierung 30 Tage oder weniger vor der Ankunft beträgt die Rückerstattung 0,- des gezahlten Preises."
+#: apartmancvikov/templates/cenik.html:65
+msgid ""
+"V případě zrušení rezervace do 30ti dnů před termínem pobytu vracíme platbu "
+"v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem činí vratná "
+"částka 0,- z uhrazené ceny."
+msgstr ""
+"Im Falle einer Stornierung innerhalb von 30 Tagen vor dem Aufenthaltsdatum "
+"erstatten wir den vollen Betrag. Im Falle einer Stornierung 30 Tage oder "
+"weniger vor der Ankunft beträgt die Rückerstattung 0,- des gezahlten Preises."
 
+#: apartmancvikov/templates/cenik.html:69
 msgid "Příjezd a odjezd"
 msgstr "Ankunft und Abreise"
 
+#: apartmancvikov/templates/cenik.html:71
 msgid "V den příjezdu je Váš pokoj připraven od 15 hodiny."
 msgstr "Am Anreisetag ist Ihr Zimmer ab 15:00 Uhr bezugsfertig."
 
-msgid "Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete informovat o případném pozdním příjezdu."
-msgstr "Idealerweise sollten Sie bis 18.00 Uhr anreisen; wir freuen uns, wenn Sie uns über verspätete Ankünfte informieren."
+#: apartmancvikov/templates/cenik.html:72
+msgid ""
+"Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete "
+"informovat o případném pozdním příjezdu."
+msgstr ""
+"Idealerweise sollten Sie bis 18.00 Uhr anreisen; wir freuen uns, wenn Sie "
+"uns über verspätete Ankünfte informieren."
 
-msgid "V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě dle obsazenosti může být i později."
-msgstr "Am Abreisetag räumen Sie das Zimmer bitte bis 10 Uhr oder später nach Absprache, je nach Verfügbarkeit."
+#: apartmancvikov/templates/cenik.html:73
+msgid ""
+"V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě dle "
+"obsazenosti může být i později."
+msgstr ""
+"Am Abreisetag räumen Sie das Zimmer bitte bis 10 Uhr oder später nach "
+"Absprache, je nach Verfügbarkeit."
 
+#: apartmancvikov/templates/index.html:5
 msgid "Rodinný apartmán ve Cvikově pro 7 až 9 hostů"
 msgstr "Familienferienwohnung in Cvikov für 7 bis 9 Gäste"
 
-msgid "Rodinné ubytování ve Cvikově se 3 ložnicemi, 2 koupelnami, zahradou, bazénem, dětským vybavením a parkováním až pro 6 aut."
-msgstr "Familienunterkunft in Cvikov mit 3 Schlafzimmern, 2 Bädern, Garten, Pool, Kinderausstattung und Parkplatz für bis zu 6 Autos."
+#: apartmancvikov/templates/index.html:9
+msgid ""
+"Rodinné ubytování ve Cvikově se 3 ložnicemi, 2 koupelnami, zahradou, "
+"bazénem, dětským vybavením a parkováním až pro 6 aut."
+msgstr ""
+"Familienunterkunft in Cvikov mit 3 Schlafzimmern, 2 Bädern, Garten, Pool, "
+"Kinderausstattung und Parkplatz für bis zu 6 Autos."
 
-msgid "Tři ložnice, sedm standardních lůžek a kapacita až devět hostů v apartmánu vybaveném pro rodiny s dětmi."
-msgstr "Drei Schlafzimmer, sieben Standardbetten und Platz für bis zu neun Gäste in einer für Familien mit Kindern ausgestatteten Ferienwohnung."
+#: apartmancvikov/templates/index.html:19
+msgid ""
+"Tři ložnice, sedm standardních lůžek a kapacita až devět hostů v apartmánu "
+"vybaveném pro rodiny s dětmi."
+msgstr ""
+"Drei Schlafzimmer, sieben Standardbetten und Platz für bis zu neun Gäste in "
+"einer für Familien mit Kindern ausgestatteten Ferienwohnung."
 
+#: apartmancvikov/templates/index.html:26
+msgid "Rodinná dovolená"
+msgstr "Familienurlaub"
+
+#: apartmancvikov/templates/index.html:29
 msgid "Ubytování v apartmánu"
 msgstr "Unterkunft in einer Ferienwohnung"
 
+#: apartmancvikov/templates/index.html:36
 msgid "Apartmán v kostce"
 msgstr "Die Ferienwohnung im Überblick"
 
+#: apartmancvikov/templates/index.html:38
 msgid "ložnice"
 msgstr "Schlafzimmer"
 
+#: apartmancvikov/templates/index.html:39
 msgid "lůžek"
 msgstr "Betten"
 
+#: apartmancvikov/templates/index.html:40
 msgid "koupelny"
 msgstr "Bäder"
 
+#: apartmancvikov/templates/index.html:41
 msgid "parkovacích míst"
 msgstr "Parkplätze"
 
+#: apartmancvikov/templates/index.html:42
 msgid "v celém objektu"
 msgstr "im gesamten Objekt"
 
+#: apartmancvikov/templates/index.html:43
 msgid "vybavení pro děti"
 msgstr "Kinderausstattung"
 
+#: apartmancvikov/templates/index.html:44
 msgid "sezónní bazén"
 msgstr "saisonaler Pool"
 
+#: apartmancvikov/templates/index.html:45
 msgid "bez domácích zvířat"
 msgstr "keine Haustiere"
 
-msgid "Objevte výlety v okolí"
-msgstr "Ausflüge in der Umgebung entdecken"
+#: apartmancvikov/templates/index.html:62
+msgid "Vše pro pohodlný pobyt"
+msgstr "Alles für einen komfortablen Aufenthalt"
 
+#: apartmancvikov/templates/index.html:63
 msgid "Vybavení apartmánu"
 msgstr "Annehmlichkeiten der Wohnung"
 
-msgid "Příjemné, klidné ubytování pro rodinu či uzavřenou společnost. Apartmán má samostatný vchod."
-msgstr "Angenehme, ruhige Unterkunft für eine Familie oder eine geschlossene Gesellschaft. Die Wohnung hat einen separaten Eingang."
+#: apartmancvikov/templates/index.html:65
+msgid ""
+"Příjemné, klidné ubytování pro rodinu či uzavřenou společnost. Apartmán má "
+"samostatný vchod."
+msgstr ""
+"Angenehme, ruhige Unterkunft für eine Familie oder eine geschlossene "
+"Gesellschaft. Die Wohnung hat einen separaten Eingang."
 
-msgid "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, prolézačky, trampolína, pumptrack, hřiště."
-msgstr "Jede Menge Spaß nicht nur für Ihre Kinder im Garten - Sandkasten, Rutschen, Klettergerüste, Trampolin, Pumptrack, Spielplatz."
+#: apartmancvikov/templates/index.html:66
+msgid ""
+"Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, "
+"prolézačky, trampolína, pumptrack, hřiště."
+msgstr ""
+"Jede Menge Spaß nicht nur für Ihre Kinder im Garten - Sandkasten, Rutschen, "
+"Klettergerüste, Trampolin, Pumptrack, Spielplatz."
 
+#: apartmancvikov/templates/index.html:67
 msgid "V sezoně se můžete vykoupat ve vyhřívanén venkovním bazénu."
 msgstr "In der Saison können Sie ein Bad im beheizten Außenpool nehmen."
 
+#: apartmancvikov/templates/index.html:68
 msgid "Je k dispozici i fén na vlasy a hračky pro děti do vany."
-msgstr "Ein Haartrockner und Badespielzeug für Kinder sind ebenfalls vorhanden."
+msgstr ""
+"Ein Haartrockner und Badespielzeug für Kinder sind ebenfalls vorhanden."
 
+#: apartmancvikov/templates/index.html:69
 msgid "Je možnost umístit na schodiště dětskou zábranu."
-msgstr "Es besteht die Möglichkeit, eine Kindersicherung an der Treppe anzubringen."
+msgstr ""
+"Es besteht die Möglichkeit, eine Kindersicherung an der Treppe anzubringen."
 
-msgid "Na všech oknech jsou žaluzie a zatemňovací závěsy pro Váš klidný spánek."
-msgstr "Alle Fenster sind mit Jalousien und Verdunklungsvorhängen ausgestattet, damit Sie ruhig schlafen können."
+#: apartmancvikov/templates/index.html:70
+msgid ""
+"Na všech oknech jsou žaluzie a zatemňovací závěsy pro Váš klidný spánek."
+msgstr ""
+"Alle Fenster sind mit Jalousien und Verdunklungsvorhängen ausgestattet, "
+"damit Sie ruhig schlafen können."
 
-msgid "V kuchyni najdete vše pro Vaše vaření – indukční deska, trouba, myčka, lednice s mrazákem, mikrovlnná trouba a veškeré nádobí."
-msgstr "In der Küche finden Sie alles, was Sie zum Kochen brauchen - Induktionskochfeld, Backofen, Geschirrspüler, Kühlschrank mit Gefrierfach, Mikrowelle und alle Utensilien."
+#: apartmancvikov/templates/index.html:71
+msgid ""
+"V kuchyni najdete vše pro Vaše vaření – indukční deska, trouba, myčka, "
+"lednice s mrazákem, mikrovlnná trouba a veškeré nádobí."
+msgstr ""
+"In der Küche finden Sie alles, was Sie zum Kochen brauchen - "
+"Induktionskochfeld, Backofen, Geschirrspüler, Kühlschrank mit Gefrierfach, "
+"Mikrowelle und alle Utensilien."
 
-msgid "V obývacím pokoji je televize, pohodlná sedačka, vybavený dětský koutek na hraní, stoleček se židličkami na kreslení, hrací koberec na autíčka."
-msgstr "Im Wohnzimmer gibt es einen Fernseher, ein bequemes Sofa, eine ausgestattete Kinderspielecke, einen Tisch mit Stühlen zum Malen, einen Spielteppich für Autos."
+#: apartmancvikov/templates/index.html:72
+msgid ""
+"V obývacím pokoji je televize, pohodlná sedačka, vybavený dětský koutek na "
+"hraní, stoleček se židličkami na kreslení, hrací koberec na autíčka."
+msgstr ""
+"Im Wohnzimmer gibt es einen Fernseher, ein bequemes Sofa, eine ausgestattete "
+"Kinderspielecke, einen Tisch mit Stühlen zum Malen, einen Spielteppich für "
+"Autos."
 
+#: apartmancvikov/templates/index.html:73
 msgid "V přízemí se nachází prádelna s pračkou, sušičkou a sušákem na prádlo."
-msgstr "Im Erdgeschoss gibt es eine Waschküche mit Waschmaschine, Trockner und Wäschetrockner."
+msgstr ""
+"Im Erdgeschoss gibt es eine Waschküche mit Waschmaschine, Trockner und "
+"Wäschetrockner."
 
-msgid "Parkování pro až 6 automobilů je k dispozici přímo u apartmánu na soukromém pozemku."
-msgstr "Ein Parkplatz für bis zu 6 Autos befindet sich direkt vor der Wohnung auf einem Privatgelände."
+#: apartmancvikov/templates/index.html:74
+msgid ""
+"Parkování pro až 6 automobilů je k dispozici přímo u apartmánu na soukromém "
+"pozemku."
+msgstr ""
+"Ein Parkplatz für bis zu 6 Autos befindet sich direkt vor der Wohnung auf "
+"einem Privatgelände."
 
-msgid "Psi ani jiná zvířata nejsou s ohledem na děti vítána, děkujeme za pochopení."
-msgstr "Hunde und andere Tiere sind in Bezug auf Kinder nicht willkommen, wir danken für Ihr Verständnis."
+#: apartmancvikov/templates/index.html:75
+msgid ""
+"Psi ani jiná zvířata nejsou s ohledem na děti vítána, děkujeme za pochopení."
+msgstr ""
+"Hunde und andere Tiere sind in Bezug auf Kinder nicht willkommen, wir danken "
+"für Ihr Verständnis."
 
-msgid "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany na postel, zábrany na schodiště, podsedák na židli, vysavač s redukcí na odsávání při rýmě. Pokud bude cokoliv na děti potřeba, stačí se nás zeptat."
-msgstr "Es ist auch möglich, Ausrüstung für Kinder zu mieten - ein Kinderbett, einen Hochstuhl, eine Verkleinerung für die Toilette, ein Töpfchen, ein Baby-Badebett, eine Badewanne, eine Spieldecke, einen Milchwärmer, Spielzeug für die Badewanne, ein Bettgitter, ein Treppengeländer, einen Stuhlsitz, einen Staubsauger mit Verkleinerung für das Absaugen bei Schnupfen. Wenn Sie etwas für die Kinder brauchen, fragen Sie uns einfach."
+#: apartmancvikov/templates/index.html:76
+msgid ""
+"Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, "
+"redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, "
+"hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany na postel, "
+"zábrany na schodiště, podsedák na židli, vysavač s redukcí na odsávání při "
+"rýmě. Pokud bude cokoliv na děti potřeba, stačí se nás zeptat."
+msgstr ""
+"Es ist auch möglich, Ausrüstung für Kinder zu mieten - ein Kinderbett, einen "
+"Hochstuhl, eine Verkleinerung für die Toilette, ein Töpfchen, ein Baby-"
+"Badebett, eine Badewanne, eine Spieldecke, einen Milchwärmer, Spielzeug für "
+"die Badewanne, ein Bettgitter, ein Treppengeländer, einen Stuhlsitz, einen "
+"Staubsauger mit Verkleinerung für das Absaugen bei Schnupfen. Wenn Sie etwas "
+"für die Kinder brauchen, fragen Sie uns einfach."
 
+#: apartmancvikov/templates/index.html:86
+msgid "Klidný spánek"
+msgstr "Erholsamer Schlaf"
+
+#: apartmancvikov/templates/index.html:87
 msgid "Pokoje"
 msgstr "Zimmer"
 
-msgid "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v přízemí."
-msgstr "Für alle Zimmer gibt es ein großes geräumiges Badezimmer mit Badewanne und Toilette im ersten Stock und ein kleineres Badezimmer mit Dusche und Toilette im Erdgeschoss."
+#: apartmancvikov/templates/index.html:88
+msgid ""
+"Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a "
+"toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v "
+"přízemí."
+msgstr ""
+"Für alle Zimmer gibt es ein großes geräumiges Badezimmer mit Badewanne und "
+"Toilette im ersten Stock und ein kleineres Badezimmer mit Dusche und "
+"Toilette im Erdgeschoss."
 
-msgid "Tyrkys"
-msgstr "Türkis"
-
+#: apartmancvikov/templates/index.html:94
+#: apartmancvikov/templates/index.html:100
 msgid "Tyrkysový pokoj"
 msgstr "Türkisfarbenes Zimmer"
 
+#: apartmancvikov/templates/index.html:103
+msgid "Tyrkys"
+msgstr "Türkis"
+
+#: apartmancvikov/templates/index.html:104
 msgid "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky."
 msgstr "Zimmer mit Doppelbett, Möglichkeit eines Babybettes."
 
-msgid "Levandule"
-msgstr "Lavendel"
-
+#: apartmancvikov/templates/index.html:110
+#: apartmancvikov/templates/index.html:116
 msgid "Levandulový pokoj"
 msgstr "Lavendelzimmer"
 
-msgid "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka."
-msgstr "Dreibettzimmer mit einem Doppelbett und einem zusätzlichen Einzelbett. Es ist möglich, Kinder vor dem Herausfallen aus dem Bett zu schützen. In dem Zimmer kann auch ein Kinderbett aufgestellt werden."
+#: apartmancvikov/templates/index.html:119
+msgid "Levandule"
+msgstr "Lavendel"
 
-msgid "Fuchsie"
-msgstr "Fuchsie"
+#: apartmancvikov/templates/index.html:120
+msgid ""
+"Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát "
+"zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka."
+msgstr ""
+"Dreibettzimmer mit einem Doppelbett und einem zusätzlichen Einzelbett. Es "
+"ist möglich, Kinder vor dem Herausfallen aus dem Bett zu schützen. In dem "
+"Zimmer kann auch ein Kinderbett aufgestellt werden."
 
+#: apartmancvikov/templates/index.html:126
+#: apartmancvikov/templates/index.html:132
 msgid "Fuchsiový pokoj"
 msgstr "Fuchsia Zimmer"
 
+#: apartmancvikov/templates/index.html:135
+msgid "Fuchsie"
+msgstr "Fuchsie"
+
+#: apartmancvikov/templates/index.html:136
 msgid "Pokoj s dvěma samostatnými postelemi."
 msgstr "Dieses Zimmer hat zwei Einzelbetten."
 
+#: apartmancvikov/templates/index.html:146
+msgid "Uvnitř apartmánu"
+msgstr "In der Ferienwohnung"
+
+#: apartmancvikov/templates/index.html:147
 msgid "Společné místnosti"
 msgstr "Gemeinsame Räume"
 
+#: apartmancvikov/templates/index.html:149
 msgid "Obývací pokoj"
 msgstr "Wohnbereich"
 
+#: apartmancvikov/templates/index.html:150
 msgid "Jídelna s dětským koutkem"
 msgstr "Speisesaal mit Kinderecke"
 
+#: apartmancvikov/templates/index.html:151
 msgid "Kuchyně"
 msgstr "Küche"
 
+#: apartmancvikov/templates/index.html:152
 msgid "Koupelna se sprchou"
 msgstr "Badezimmer mit Dusche"
 
+#: apartmancvikov/templates/index.html:153
 msgid "Koupelna s vanou"
 msgstr "Badezimmer mit Badewanne"
 
+#: apartmancvikov/templates/index.html:154
 msgid "Prádelna"
 msgstr "Wäscherei"
 
+#: apartmancvikov/templates/index.html:169
+msgid "Pro děti i dospělé"
+msgstr "Für Kinder und Erwachsene"
+
+#: apartmancvikov/templates/index.html:170
 msgid "Venkovní prostředí"
 msgstr "Umgebung im Freien"
 
+#: apartmancvikov/templates/index.html:172
 msgid "Venkovní bazén"
 msgstr "Außenschwimmbad"
 
+#: apartmancvikov/templates/index.html:173
 msgid "Pumptrack a hřiště"
 msgstr "Pumptrack und Spielplatz"
 
+#: apartmancvikov/templates/index.html:174
 msgid "Lezecká stěna se skluzavkou a pískovištěm"
 msgstr "Kletterwand mit Rutsche und Sandkasten"
 
+#: apartmancvikov/templates/index.html:175
 msgid "Houpačka se skluzavkou a vrbovým tunelem"
 msgstr "Schaukel mit Rutsche und Weidentunnel"
 
+#: apartmancvikov/templates/index.html:176
 msgid "Blátivá kuchyňka"
 msgstr "Schmutzige Küche"
 
+#: apartmancvikov/templates/index.html:177
 msgid "Trampolína a prolézačky"
 msgstr "Trampolin und Klettergerüst"
 
+#: apartmancvikov/templates/index.html:178
 msgid "Terasa"
 msgstr "Terrasse"
 
+#: apartmancvikov/templates/index.html:179
 msgid "Letecký pohled"
 msgstr "Luftaufnahme"
 
-msgid "Kontakt, telefon, e-mail, adresa a mapa Apartmánu Cvikov v Lužických horách."
-msgstr "Kontakt, Telefon, E-Mail, Adresse und Karte der Ferienwohnung Cvikov im Lausitzer Gebirge."
+#: apartmancvikov/templates/index.html:191
+msgid "Objevte výlety v okolí"
+msgstr "Ausflüge in der Umgebung entdecken"
 
-msgid "Konktaktujte Apartmán Cvikov"
-msgstr "Kontakt Ferienwohnung Cvikov"
+#: apartmancvikov/templates/kontakt.html:6
+#: apartmancvikov/templates/kontakt.html:15
+#: apartmancvikov/templates/kontakt.html:19
+#: apartmancvikov/templates/kontakt.html:23
+msgid "Kontaktujte Apartmán Cvikov"
+msgstr "Kontaktieren Sie die Ferienwohnung Cvikov"
 
+#: apartmancvikov/templates/kontakt.html:11
+msgid ""
+"Kontakt, telefon, e-mail, adresa a mapa Apartmánu Cvikov v Lužických horách."
+msgstr ""
+"Kontakt, Telefon, E-Mail, Adresse und Karte der Ferienwohnung Cvikov im "
+"Lausitzer Gebirge."
+
+#: apartmancvikov/templates/kontakt.html:30
+msgid "Napište nebo zavolejte"
+msgstr "Schreiben Sie uns oder rufen Sie an"
+
+#: apartmancvikov/templates/kontakt.html:42
 msgid "Mapy Google"
 msgstr "Google Maps"
 
+#: apartmancvikov/templates/kontakt.html:45
 msgid "Provozovatel"
 msgstr "Betreiber"
 
+#: apartmancvikov/templates/kontakt.html:55
 msgid "Mapa Apartmánu Cvikov"
 msgstr "Karte der Ferienwohnung Cvikov"
 
-msgid "Kalendář volných a obsazených termínů Apartmánu Cvikov. Vyberte si termín rodinného pobytu v Lužických horách."
-msgstr "Kalender der freien und belegten Termine der Ferienwohnung Cvikov. Wählen Sie einen Termin für Ihren Familienaufenthalt im Lausitzer Gebirge."
-
+#: apartmancvikov/templates/obsazenost.html:6
+#: apartmancvikov/templates/obsazenost.html:16
+#: apartmancvikov/templates/obsazenost.html:20
+#: apartmancvikov/templates/obsazenost.html:24
 msgid "Volné termíny v Apartmánu Cvikov"
 msgstr "Freie Termine in Apartment Cvikov"
 
+#: apartmancvikov/templates/obsazenost.html:11
+msgid ""
+"Kalendář volných a obsazených termínů Apartmánu Cvikov. Vyberte si termín "
+"rodinného pobytu v Lužických horách."
+msgstr ""
+"Kalender der freien und belegten Termine der Ferienwohnung Cvikov. Wählen "
+"Sie einen Termin für Ihren Familienaufenthalt im Lausitzer Gebirge."
+
+#: apartmancvikov/templates/obsazenost.html:31
+msgid "Kalendář obsazenosti"
+msgstr "Belegungskalender"
+
+#: apartmancvikov/templates/obsazenost.html:32
+msgid "Vyberte si termín pobytu"
+msgstr "Wählen Sie Ihren Reisetermin"
+
+#: apartmancvikov/templates/snippets/description.html:3
 msgid "Nabízíme rodinné ubytování ve Cvikově, bráně Lužických hor."
-msgstr "Wir bieten eine Familienunterkunft in Cvikov, dem Tor zum Lausitzer Gebirge."
+msgstr ""
+"Wir bieten eine Familienunterkunft in Cvikov, dem Tor zum Lausitzer Gebirge."
 
-msgid "Ve 3 ložnicích najdete 7 standardních lůžek, další 2 místa a možnost dětské postýlky."
-msgstr "In 3 Schlafzimmern stehen 7 Standardbetten, 2 zusätzliche Schlafplätze und auf Wunsch ein Babybett zur Verfügung."
+#: apartmancvikov/templates/snippets/description.html:4
+msgid ""
+"Ve 3 ložnicích najdete 7 standardních lůžek, další 2 místa a možnost dětské "
+"postýlky."
+msgstr ""
+"In 3 Schlafzimmern stehen 7 Standardbetten, 2 zusätzliche Schlafplätze und "
+"auf Wunsch ein Babybett zur Verfügung."
 
+#: apartmancvikov/templates/vylety.html:6
 msgid "Výlety s dětmi ve Cvikově a Lužických horách | Apartmán Cvikov"
-msgstr "Ausflüge mit Kindern in Cvikov und im Lausitzer Gebirge | Ferienwohnung Cvikov"
+msgstr ""
+"Ausflüge mit Kindern in Cvikov und im Lausitzer Gebirge | Ferienwohnung "
+"Cvikov"
 
-msgid "Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: pumptrack, vyhlídky, skály, hrady, sklárny, lyžování i program za deště."
-msgstr "Zehn geprüfte Tipps für Familienausflüge ab der Ferienwohnung Cvikov: Pumptrack, Aussichtspunkte, Felsen, Burgen, Glashütten, Skifahren und Schlechtwetterprogramm."
+#: apartmancvikov/templates/vylety.html:11
+msgid ""
+"Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: pumptrack, "
+"vyhlídky, skály, hrady, sklárny, lyžování i program za deště."
+msgstr ""
+"Zehn geprüfte Tipps für Familienausflüge ab der Ferienwohnung Cvikov: "
+"Pumptrack, Aussichtspunkte, Felsen, Burgen, Glashütten, Skifahren und "
+"Schlechtwetterprogramm."
 
+#: apartmancvikov/templates/vylety.html:16
 msgid "Rodinné výlety z Apartmánu Cvikov"
 msgstr "Familienausflüge ab der Ferienwohnung Cvikov"
 
+#: apartmancvikov/templates/vylety.html:21
 msgid "Praktický průvodce výlety ve Cvikově, Lužických a Žitavských horách."
-msgstr "Ein praktischer Ausflugsführer für Cvikov sowie das Lausitzer und Zittauer Gebirge."
+msgstr ""
+"Ein praktischer Ausflugsführer für Cvikov sowie das Lausitzer und Zittauer "
+"Gebirge."
 
+#: apartmancvikov/templates/vylety.html:25
 msgid "Výlety z Apartmánu Cvikov"
 msgstr "Ausflüge vom Ferienwohnung Cvikov"
 
+#: apartmancvikov/templates/vylety.html:29
 msgid "Poznejte s dětmi přírodu, skály, hrady a sklářskou historii."
-msgstr "Entdecken Sie mit Ihren Kindern Natur, Felsen, Burgen und Glasmachertradition."
+msgstr ""
+"Entdecken Sie mit Ihren Kindern Natur, Felsen, Burgen und "
+"Glasmachertradition."
 
+#: apartmancvikov/templates/vylety.html:36
+msgid "Tipy pro rodiny"
+msgstr "Tipps für Familien"
+
+#: apartmancvikov/templates/vylety.html:39
 msgid "Kam na výlet ve Cvikově a okolí"
 msgstr "Ausflugsziele in Cvikov und Umgebung"
 
-msgid "Vybrali jsme místa, která dobře fungují pro rodinnou dovolenou. U každého cíle najdete orientační vzdálenost od apartmánu, náročnost, tip pro děti a odkaz na aktuální informace provozovatele."
-msgstr "Wir haben Ziele ausgewählt, die sich gut für einen Familienurlaub eignen. Zu jedem Ziel finden Sie die ungefähre Entfernung von der Ferienwohnung, den Schwierigkeitsgrad, einen Tipp für Kinder und einen Link zu aktuellen Informationen des Betreibers."
+#: apartmancvikov/templates/vylety.html:43
+msgid ""
+"Vybrali jsme místa, která dobře fungují pro rodinnou dovolenou. U každého "
+"cíle najdete orientační vzdálenost od apartmánu, náročnost, tip pro děti a "
+"odkaz na aktuální informace provozovatele."
+msgstr ""
+"Wir haben Ziele ausgewählt, die sich gut für einen Familienurlaub eignen. Zu "
+"jedem Ziel finden Sie die ungefähre Entfernung von der Ferienwohnung, den "
+"Schwierigkeitsgrad, einen Tipp für Kinder und einen Link zu aktuellen "
+"Informationen des Betreibers."
 
+#: apartmancvikov/templates/vylety.html:71
 #, python-format
 msgid "Přibližně %(distance)s km od apartmánu"
 msgstr "Etwa %(distance)s km von der Ferienwohnung"
 
+#: apartmancvikov/templates/vylety.html:76
 msgid "Detail výletu"
 msgstr "Ausflugsdetails"
 
-msgid "Další inspirace pro Lužické hory"
-msgstr "Weitere Inspiration für das Lausitzer Gebirge"
+#: apartmancvikov/templates/vylety.html:87
+msgid "Další inspirace"
+msgstr "Weitere Inspiration"
 
-msgid "Aktuální akce, další trasy a sezónní tipy najdete na turistických portálech regionu."
-msgstr "Aktuelle Veranstaltungen, weitere Routen und saisonale Tipps finden Sie auf den Tourismusportalen der Region."
+#: apartmancvikov/templates/vylety.html:88
+msgid "Objevte celé Lužické hory"
+msgstr "Entdecken Sie das ganze Lausitzer Gebirge"
 
+#: apartmancvikov/templates/vylety.html:89
+msgid ""
+"Aktuální akce, další trasy a sezónní tipy najdete na turistických portálech "
+"regionu."
+msgstr ""
+"Aktuelle Veranstaltungen, weitere Routen und saisonale Tipps finden Sie auf "
+"den Tourismusportalen der Region."
+
+#: apartmancvikov/templates/vylety.html:93
 msgid "Turistika ve Cvikově"
 msgstr "Tourismus in Cvikov"
 
+#: apartmancvikov/templates/vylety.html:94
 msgid "Lužické hory"
 msgstr "Lausitzer Gebirge"
 
+#: apartmancvikov/templates/vylety.html:95
 msgid "Českosaské Švýcarsko"
 msgstr "Böhmische Schweiz"
 
-#~ msgid "Ceny, otevírací dobu a případnou nutnost rezervace si ověřte na webu provozovatele."
-#~ msgstr "Preise, Öffnungszeiten und eine mögliche Reservierungspflicht prüfen Sie bitte auf der Website des Betreibers."
+#: apartmancvikov/views.py:47
+#, python-format
+msgid "Přibližně %(distance)s km od Apartmánu Cvikov."
+msgstr "Etwa %(distance)s km von der Ferienwohnung Cvikov."
+
+#~ msgid ""
+#~ "Ceny, otevírací dobu a případnou nutnost rezervace si ověřte na webu "
+#~ "provozovatele."
+#~ msgstr ""
+#~ "Preise, Öffnungszeiten und eine mögliche Reservierungspflicht prüfen Sie "
+#~ "bitte auf der Website des Betreibers."
 
 #~ msgid "ubytování, cvikov, lužické, hory, sklárna, kolo, pivovar"
 #~ msgstr "Unterkunft, Cvikov, Lausitzer, Berge, Glashütte, Fahrrad, Brauerei"
@@ -562,17 +1056,29 @@ msgstr "Böhmische Schweiz"
 #~ msgid "Ceník 2026"
 #~ msgstr "Preisliste 2026"
 
-#~ msgid "Ubytujeme vás ve 3 pokojích, ve kterých naleznete 7 lůžek s možností dětské postýlky."
-#~ msgstr "Wir werden Sie in 3 Zimmern unterbringen, in denen Sie 7 Betten mit der Möglichkeit eines Kinderbettes finden werden."
+#~ msgid ""
+#~ "Ubytujeme vás ve 3 pokojích, ve kterých naleznete 7 lůžek s možností "
+#~ "dětské postýlky."
+#~ msgstr ""
+#~ "Wir werden Sie in 3 Zimmern unterbringen, in denen Sie 7 Betten mit der "
+#~ "Möglichkeit eines Kinderbettes finden werden."
 
-#~ msgid "Procházka po vyhlídkách v okolí Cvikova nabídne pohledy na celé Lužické hory."
-#~ msgstr "Ein Spaziergang zu den Aussichtspunkten rund um Cvikovo bietet Ausblicke auf das gesamte Lausitzer Gebirge."
+#~ msgid ""
+#~ "Procházka po vyhlídkách v okolí Cvikova nabídne pohledy na celé Lužické "
+#~ "hory."
+#~ msgstr ""
+#~ "Ein Spaziergang zu den Aussichtspunkten rund um Cvikovo bietet Ausblicke "
+#~ "auf das gesamte Lausitzer Gebirge."
 
 #~ msgid "Oybin"
 #~ msgstr "Oybin"
 
-#~ msgid "V okolí se nachází mnoho skalních měst, skalních reliéfů a dalších přírodních nebo lidmi vytvořených skalnách zajímavostí."
-#~ msgstr "In der Umgebung gibt es zahlreiche Felsenstädte, Felsenreliefs und andere natürliche oder künstliche Felsenattraktionen."
+#~ msgid ""
+#~ "V okolí se nachází mnoho skalních měst, skalních reliéfů a dalších "
+#~ "přírodních nebo lidmi vytvořených skalnách zajímavostí."
+#~ msgstr ""
+#~ "In der Umgebung gibt es zahlreiche Felsenstädte, Felsenreliefs und andere "
+#~ "natürliche oder künstliche Felsenattraktionen."
 
 #~ msgid "Sloup"
 #~ msgstr "Bürgstein"
@@ -586,11 +1092,18 @@ msgstr "Böhmische Schweiz"
 #~ msgid "Oybin a Jonsdorf"
 #~ msgstr "Oybin und Jonsdorf"
 
-#~ msgid "Hned za hranicemi můžete navštívit hrad Oybin, motýlí dům v Jonsdorfu."
-#~ msgstr "Gleich hinter der Grenze können Sie Schloss Oybin, das Schmetterlingshaus in Jonsdorf, besuchen."
+#~ msgid ""
+#~ "Hned za hranicemi můžete navštívit hrad Oybin, motýlí dům v Jonsdorfu."
+#~ msgstr ""
+#~ "Gleich hinter der Grenze können Sie Schloss Oybin, das Schmetterlingshaus "
+#~ "in Jonsdorf, besuchen."
 
-#~ msgid "V letních měsících do obou míst jezdí turistický vláček z náměstí ve Cvikově."
-#~ msgstr "In den Sommermonaten verkehrt ein Touristenzug vom Platz in Cvikov aus zu beiden Orten."
+#~ msgid ""
+#~ "V letních měsících do obou míst jezdí turistický vláček z náměstí ve "
+#~ "Cvikově."
+#~ msgstr ""
+#~ "In den Sommermonaten verkehrt ein Touristenzug vom Platz in Cvikov aus zu "
+#~ "beiden Orten."
 
 #~ msgid "Motýlí dům"
 #~ msgstr "Schmetterlingshaus"
@@ -610,8 +1123,12 @@ msgstr "Böhmische Schweiz"
 #~ msgid "V Kunraticích u Cvikova je skleněná zahrada u sklárny Pačinek."
 #~ msgstr "In Kunnersdorf gibt es einen Glasgarten in der Glashütte Pačinek."
 
-#~ msgid "V Lindavě můžete navštívit sklářskou krčmu s možností výroby vlastního skla."
-#~ msgstr "In Lindenau können Sie eine Glasbläserei besuchen, in der Sie Ihr eigenes Glas herstellen können."
+#~ msgid ""
+#~ "V Lindavě můžete navštívit sklářskou krčmu s možností výroby vlastního "
+#~ "skla."
+#~ msgstr ""
+#~ "In Lindenau können Sie eine Glasbläserei besuchen, in der Sie Ihr eigenes "
+#~ "Glas herstellen können."
 
 #~ msgid "Pačinek"
 #~ msgstr "Pačinek"
@@ -626,7 +1143,9 @@ msgstr "Böhmische Schweiz"
 #~ msgstr "Kleis"
 
 #~ msgid "Lužické hory nabízí mnoho vrcholů s krásnými rozhledy k prozkoumání."
-#~ msgstr "Das Lausitzer Gebirge bietet viele Gipfel mit schönen Aussichten, die es zu erkunden gilt."
+#~ msgstr ""
+#~ "Das Lausitzer Gebirge bietet viele Gipfel mit schönen Aussichten, die es "
+#~ "zu erkunden gilt."
 
 #~ msgid "Polevsko"
 #~ msgstr "Blottendorf"
@@ -649,8 +1168,13 @@ msgstr "Böhmische Schweiz"
 #~ msgid "Další tipy na výlet"
 #~ msgstr "Weitere Tipps für die Reise"
 
-#~ msgid "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky okolních oblastí a objevte další zajímavosti."
-#~ msgstr "In der Umgebung gibt es noch viel mehr zu sehen. Werfen Sie einen Blick auf die Websites der umliegenden Gebiete und entdecken Sie weitere Attraktionen."
+#~ msgid ""
+#~ "V okolí je toho k vidění mnohem více. Podívejte se na webové stránky "
+#~ "okolních oblastí a objevte další zajímavosti."
+#~ msgstr ""
+#~ "In der Umgebung gibt es noch viel mehr zu sehen. Werfen Sie einen Blick "
+#~ "auf die Websites der umliegenden Gebiete und entdecken Sie weitere "
+#~ "Attraktionen."
 
 #~ msgid "Pivní stezka Lužických hor"
 #~ msgstr "Bierwanderweg Lausitzer Gebirge"
@@ -659,7 +1183,8 @@ msgstr "Böhmische Schweiz"
 #~ msgstr "Českolipsko"
 
 #~ msgid "V letní sezóně je vám po domluvě k dispozici bazén."
-#~ msgstr "In der Sommersaison steht nach Absprache ein Schwimmbad zur Verfügung."
+#~ msgstr ""
+#~ "In der Sommersaison steht nach Absprache ein Schwimmbad zur Verfügung."
 
 #~ msgid "Vyhlídka Švýcárna"
 #~ msgstr "Aussichtspunkt Švýcárna"

@@ -23,7 +23,7 @@ class SeoTest(SimpleTestCase):
                 self.assertIn('hreflang="en"', html)
                 self.assertIn('hreflang="de"', html)
                 self.assertIn('hreflang="x-default"', html)
-                self.assertEqual(html.count("<h1 "), 1)
+                self.assertEqual(len(re.findall(r"<h1(?:\s|>)", html)), 1)
                 self.assertEqual(html.count('name="description"'), 1)
 
     def test_supported_and_unsupported_languages(self):
@@ -33,6 +33,27 @@ class SeoTest(SimpleTestCase):
         self.assertEqual(self.client.get("/de/").status_code, 200)
         self.assertEqual(self.client.get("/fr/").status_code, 404)
 
+    def test_pages_use_local_design_without_bootstrap(self):
+        """The custom responsive design has no Bootstrap dependency."""
+        response = self.client.get("/cs/")
+        self.assertNotContains(response, "bootstrap")
+        self.assertNotContains(response, "jsdelivr")
+        self.assertContains(response, "/static/style.css")
+        self.assertContains(response, "/static/site.js")
+        self.assertContains(response, 'class="nav-menu"')
+        self.assertContains(response, 'class="lightbox__nav lightbox__nav--previous"')
+        self.assertContains(response, 'class="lightbox__nav lightbox__nav--next"')
+
+    def test_heading_prepositions_do_not_wrap_alone(self):
+        """Short Czech prepositions stay attached to the following word."""
+        response = self.client.get("/cs/vylety/")
+        self.assertContains(response, "Výlety z\N{NO-BREAK SPACE}Apartmánu Cvikov")
+        self.assertContains(
+            response,
+            "Kam na\N{NO-BREAK SPACE}výlet ve\N{NO-BREAK SPACE}Cvikově "
+            "a\N{NO-BREAK SPACE}okolí",
+        )
+
     def test_all_attraction_pages_exist_in_all_languages(self):
         """Every curated guide renders for each supported language."""
         for language in self.languages:
@@ -41,7 +62,7 @@ class SeoTest(SimpleTestCase):
                     response = self.client.get(f"/{language}/vylety/{attraction.slug}/")
                     self.assertEqual(response.status_code, 200)
                     html = response.content.decode()
-                    self.assertEqual(html.count("<h1 "), 1)
+                    self.assertEqual(len(re.findall(r"<h1(?:\s|>)", html)), 1)
                     self.assertIn(str(attraction.official_url), html)
 
     def test_unknown_attraction_returns_404(self):

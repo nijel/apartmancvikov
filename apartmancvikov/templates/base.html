@@ -13,155 +13,166 @@
       {% endblock title %}
 
     </title>
-    <meta name="description" content="{% block meta_description %}{% translate "Rodinný apartmán ve Cvikově pro 7 až 9 hostů se zahradou, bazénem, dětským vybavením a soukromým parkováním." %}{% endblock %}
-       " />
-      {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}" />{% endif %}
-      {% for language in language_urls %}
-        <link rel="alternate" hreflang="{{ language.code }}" href="{{ language.url }}" />
-      {% endfor %}
-      {% if x_default_url %}<link rel="alternate" hreflang="x-default" href="{{ x_default_url }}" />{% endif %}
+    {% block meta_description %}
+      <meta name="description"
+            content="{% translate "Rodinný apartmán ve Cvikově pro 7 až 9 hostů se zahradou, bazénem, dětským vybavením a soukromým parkováním." %}" />
+    {% endblock meta_description %}
 
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="{% translate "Apartmán Cvikov" %}" />
-      <meta property="og:locale" content="{{ og_locale }}" />
-      <meta property="og:title" content="{% block ogtitle %}{% translate "Apartmán Cvikov" %}{% endblock %}
-         " />
-        <meta property="og:description" content="{% block ogdescription %}{% translate "Rodinné ubytování ve Cvikově, bráně Lužických hor." %}{% endblock %}
-           " />
-          {% if canonical_url %}<meta property="og:url" content="{{ canonical_url }}" />{% endif %}
-          <meta property="og:image" content="{% block ogimage %}{{ site_url }}{% static "foto/dum.jpg" %}{% endblock %}
-             " />
-            <meta property="og:image:alt" content="{% block ogimagealt %}{% translate "Apartmán Cvikov se zahradou" %}{% endblock %}
-               " />
-              <meta name="twitter:card" content="summary_large_image" />
+    {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}" />{% endif %}
+    {% for language in language_urls %}
+      <link rel="alternate" hreflang="{{ language.code }}" href="{{ language.url }}" />
+    {% endfor %}
+    {% if x_default_url %}<link rel="alternate" hreflang="x-default" href="{{ x_default_url }}" />{% endif %}
 
-              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-                    rel="stylesheet"
-                    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-                    crossorigin="anonymous" />
-              <link rel="stylesheet" href="{% static "vendor/font-source/source-sans-3.css" %}" />
-              <link rel="stylesheet" href="{% static "style.css" %}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{% translate "Apartmán Cvikov" %}" />
+    <meta property="og:locale" content="{{ og_locale }}" />
+    {% block ogtitle %}
+      <meta property="og:title" content="{% translate "Apartmán Cvikov" %}" />
+    {% endblock ogtitle %}
 
-              <link rel="apple-touch-icon"
-                    sizes="180x180"
-                    href="{% static "apple-touch-icon.png" %}" />
-              <link rel="icon"
-                    type="image/png"
-                    sizes="32x32"
-                    href="{% static "favicon-32x32.png" %}" />
-              <link rel="icon"
-                    type="image/png"
-                    sizes="16x16"
-                    href="{% static "favicon-16x16.png" %}" />
-              <link rel="manifest" href="{% static "site.webmanifest" %}" />
-              <link rel="mask-icon" href="{% static "safari-pinned-tab.svg" %}" color="#ffc40d" />
-              <meta name="msapplication-TileColor" content="#ffc40d" />
-              <meta name="theme-color" content="#8b1e1e" />
-              <link href="https://mastodon.social/@nijel" rel="me" />
+    {% block ogdescription %}
+      <meta property="og:description"
+            content="{% translate "Rodinné ubytování ve Cvikově, bráně Lužických hor." %}" />
+    {% endblock ogdescription %}
 
-              {% json_ld lodging_schema %}
-              {% block structured_data %}
-              {% endblock structured_data %}
+    {% if canonical_url %}<meta property="og:url" content="{{ canonical_url }}" />{% endif %}
+    {% block ogimage %}
+      <meta property="og:image" content="{{ site_url }}{% static "foto/dum.jpg" %}" />
+    {% endblock ogimage %}
 
-            </head>
-            <body>
-              <header class="head-bg" style="background-image: url({% block bgimage %}{% static "bg.jpg" %}{% endblock %}
-                 )">
-                <nav class="navbar navbar-dark navbar-expand-md bg-dark bg-transparent"
-                     aria-label="{% translate "Hlavní navigace" %}">
-                  <div class="container-fluid">
-                    <button class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav"
-                            aria-controls="navbarNav"
-                            aria-expanded="false"
-                            aria-label="{% translate "Otevřít navigaci" %}">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav mx-auto fw-bold fs-5">
-                        <li class="nav-item">
-                          <a class="nav-link{% if request.resolver_match.url_name == "home" %} active{% endif %}"
-                             {% if request.resolver_match.url_name == "home" %}aria-current="page"{% endif %}
-                             href="{% url "home" %}">{% translate "Ubytování" %}</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link{% if request.resolver_match.url_name == "vylety" or request.resolver_match.url_name == "attraction_detail" %} active{% endif %}"
-                             {% if request.resolver_match.url_name == "vylety" or request.resolver_match.url_name == "attraction_detail" %}aria-current="page"{% endif %}
-                             href="{% url "vylety" %}">{% translate "Výlety" %}</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link{% if request.resolver_match.url_name == "obsazenost" %} active{% endif %}"
-                             {% if request.resolver_match.url_name == "obsazenost" %}aria-current="page"{% endif %}
-                             href="{% url "obsazenost" %}">{% translate "Obsazenost" %}</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link{% if request.resolver_match.url_name == "cenik" %} active{% endif %}"
-                             {% if request.resolver_match.url_name == "cenik" %}aria-current="page"{% endif %}
-                             href="{% url "cenik" %}">{% translate "Ceník" %}</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link{% if request.resolver_match.url_name == "kontakt" %} active{% endif %}"
-                             {% if request.resolver_match.url_name == "kontakt" %}aria-current="page"{% endif %}
-                             href="{% url "kontakt" %}">{% translate "Kontakt" %}</a>
-                        </li>
-                      </ul>
-                      {% if language_urls %}
-                        <ul class="navbar-nav language-switcher"
-                            aria-label="{% translate "Výběr jazyka" %}">
-                          {% for language in language_urls %}
-                            <li class="nav-item">
-                              <a class="nav-link{% if language.code == LANGUAGE_CODE %} active{% endif %}"
-                                 lang="{{ language.code }}"
-                                 hreflang="{{ language.code }}"
-                                 href="{{ language.url }}">{{ language.code|upper }}</a>
-                            </li>
-                          {% endfor %}
-                        </ul>
-                      {% endif %}
-                    </div>
-                  </div>
-                </nav>
-                <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center text-white">
-                  <div class="col-md-8 p-lg-5 mx-auto my-5">
-                    <h1 class="display-4 fw-bold">
-                      <img src="{% static "logo.png" %}"
-                           width="100"
-                           height="73"
-                           alt=""
-                           fetchpriority="high" />
-                      <span class="d-block mt-2">
-                        {% block headline %}
-                          {% translate "Apartmán Cvikov" %}
-                        {% endblock headline %}
+    {% block ogimagealt %}
+      <meta property="og:image:alt" content="{% translate "Apartmán Cvikov se zahradou" %}" />
+    {% endblock ogimagealt %}
 
-                      </span>
-                    </h1>
-                    <p class="lead fw-normal">
-                      {% block lead %}
-                        {% translate "Ubytování v Lužických horách." %}
-                      {% endblock lead %}
+    <meta name="twitter:card" content="summary_large_image" />
 
-                    </p>
-                  </div>
-                </div>
-              </header>
+    <link rel="stylesheet" href="{% static "vendor/font-source/source-sans-3.css" %}" />
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="{% static "apple-touch-icon.png" %}" />
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="{% static "favicon-32x32.png" %}" />
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="{% static "favicon-16x16.png" %}" />
+    <link rel="manifest" href="{% static "site.webmanifest" %}" />
+    <link rel="mask-icon" href="{% static "safari-pinned-tab.svg" %}" color="#d39b32" />
+    <meta name="theme-color" content="#761919" />
+    <link href="https://mastodon.social/@nijel" rel="me" />
 
-              <main>
-                {% block content %}
-                {% endblock content %}
+    {% json_ld lodging_schema %}
+    {% block structured_data %}{% endblock %}
 
-              </main>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">{% translate "Přejít k obsahu" %}</a>
+    <header class="site-header" style="--hero-image: url({% static "bg.jpg" %})">
+      <nav class="site-nav" aria-label="{% translate "Hlavní navigace" %}">
+        <div class="site-container site-nav__inner">
+          <a class="site-nav__brand" href="{% url "home" %}">
+            <img src="{% static "logo.png" %}"
+                 width="72"
+                 height="53"
+                 alt="{% translate "Apartmán Cvikov" %}" />
+          </a>
+          <details class="nav-menu">
+            <summary class="nav-menu__toggle" aria-label="{% translate "Otevřít navigaci" %}">
+              <span aria-hidden="true">☰</span>
+            </summary>
+            <div class="nav-menu__panel">
+              <ul class="nav-links">
+                <li>
+                  <a class="{% if request.resolver_match.url_name == "home" %}active{% endif %}"
+                     {% if request.resolver_match.url_name == "home" %}aria-current="page"{% endif %}
+                     href="{% url "home" %}">{% translate "Ubytování" %}</a>
+                </li>
+                <li>
+                  <a class="{% if request.resolver_match.url_name == "vylety" or request.resolver_match.url_name == "attraction_detail" %}active{% endif %}"
+                     {% if request.resolver_match.url_name == "vylety" or request.resolver_match.url_name == "attraction_detail" %}aria-current="page"{% endif %}
+                     href="{% url "vylety" %}">{% translate "Výlety" %}</a>
+                </li>
+                <li>
+                  <a class="{% if request.resolver_match.url_name == "obsazenost" %}active{% endif %}"
+                     {% if request.resolver_match.url_name == "obsazenost" %}aria-current="page"{% endif %}
+                     href="{% url "obsazenost" %}">{% translate "Obsazenost" %}</a>
+                </li>
+                <li>
+                  <a class="{% if request.resolver_match.url_name == "cenik" %}active{% endif %}"
+                     {% if request.resolver_match.url_name == "cenik" %}aria-current="page"{% endif %}
+                     href="{% url "cenik" %}">{% translate "Ceník" %}</a>
+                </li>
+                <li>
+                  <a class="{% if request.resolver_match.url_name == "kontakt" %}active{% endif %}"
+                     {% if request.resolver_match.url_name == "kontakt" %}aria-current="page"{% endif %}
+                     href="{% url "kontakt" %}">{% translate "Kontakt" %}</a>
+                </li>
+              </ul>
+              {% if language_urls %}
+                <ul class="language-links" aria-label="{% translate "Výběr jazyka" %}">
+                  {% for language in language_urls %}
+                    <li>
+                      <a class="{% if language.code == LANGUAGE_CODE %}active{% endif %}"
+                         lang="{{ language.code }}"
+                         hreflang="{{ language.code }}"
+                         href="{{ language.url }}">{{ language.code|upper }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </details>
+        </div>
+      </nav>
+      <div class="hero site-container">
+        <div class="hero__content">
+          <h1>
+            {% filter nbsp_prepositions %}
+              {% block headline %}
+                {% translate "Apartmán Cvikov" %}
+              {% endblock headline %}
+            {% endfilter %}
 
-              <footer class="container p-3 text-muted text-center">
-                <a href="{% url "kontakt" %}">{% translate "Apartmán Cvikov" %}</a>
-                • Copyright © <a href="https://cihar.com/">Michal Čihař</a>
-              </footer>
+          </h1>
+          <p>
+            {% block lead %}
+              {% translate "Ubytování v Lužických horách." %}
+            {% endblock lead %}
 
-              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                      crossorigin="anonymous"></script>
-              <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.0/dist/index.bundle.min.js"></script>
-            </body>
-          </html>
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main id="content">
+      {% block content %}{% endblock %}
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-container site-footer__inner">
+        <a href="{% url "kontakt" %}">{% translate "Apartmán Cvikov" %}</a>
+        <span>Copyright © <a href="https://cihar.com/">Michal Čihař</a></span>
+      </div>
+    </footer>
+
+    <dialog class="lightbox" id="lightbox">
+      <button class="lightbox__close" type="button" aria-label="{% translate "Zavřít" %}">×</button>
+      <button class="lightbox__nav lightbox__nav--previous"
+              type="button"
+              aria-label="{% translate "Předchozí fotografie" %}">‹</button>
+      <figure>
+        <img src="" alt="" />
+        <figcaption aria-live="polite">&nbsp;</figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--next"
+              type="button"
+              aria-label="{% translate "Další fotografie" %}">›</button>
+    </dialog>
+    <script src="{% static "site.js" %}"></script>
+  </body>
+</html>

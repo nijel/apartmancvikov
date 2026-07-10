@@ -42,6 +42,11 @@ class AttractionDetailView(TemplateView):
         context.update(
             {
                 "attraction": attraction,
+                "attraction_meta_description": "{} {}".format(
+                    attraction.summary,
+                    _("Přibližně %(distance)s km od Apartmánu Cvikov.")
+                    % {"distance": attraction.distance_km},
+                ),
                 "attraction_schema": {
                     "@context": "https://schema.org",
                     "@type": "TouristAttraction",

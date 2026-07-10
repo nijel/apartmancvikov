@@ -2,52 +2,59 @@
 
 {% load i18n %}
 
+{% block title %}
+  {% translate "Kontaktujte Apartmán Cvikov" %}
+{% endblock title %}
+
 {% block meta_description %}
-  {% translate "Kontakt, telefon, e-mail, adresa a mapa Apartmánu Cvikov v Lužických horách." %}
+  <meta name="description"
+        content="{% translate "Kontakt, telefon, e-mail, adresa a mapa Apartmánu Cvikov v Lužických horách." %}" />
 {% endblock meta_description %}
 
+{% block ogtitle %}
+  <meta property="og:title" content="{% translate "Kontaktujte Apartmán Cvikov" %}" />
+{% endblock ogtitle %}
+
+{% block headline %}
+  {% translate "Kontaktujte Apartmán Cvikov" %}
+{% endblock headline %}
+
 {% block lead %}
-  {% block title %}
-    {% block ogtitle %}
-      {% translate "Konktaktujte Apartmán Cvikov" %}
-    {% endblock ogtitle %}
-  {% endblock title %}
+  {% translate "Kontaktujte Apartmán Cvikov" %}
 {% endblock lead %}
 
 {% block content %}
-  <div class="container">
-    <div class="row align-items-center g-5 py-5">
-      <div class="col-lg-6">
-        <h2 class="display-5 fw-bold lh-1 mb-3">{% translate "Apartmán Cvikov" %}</h2>
-        <p class="lead">
-          📞 <a href="tel:+420775408751">+420 775 408 751</a>
-          <br />
-          🖂 <a href="mailto:ubytovani@apartmancvikov.cz">ubytovani@apartmancvikov.cz</a>
-          <br />
-          Nábřežní 694
-          <br />
-          471 54 Cvikov
-        </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="https://mapy.cz/s/fugafuhazo"
-             class="btn btn-outline-secondary btn-lg px-4">Mapy.cz</a>
+  <section class="content-section">
+    <div class="site-container contact-layout">
+      <div class="contact-card">
+        <p class="eyebrow">{% translate "Napište nebo zavolejte" %}</p>
+        <h2>{% translate "Apartmán Cvikov" %}</h2>
+        <address class="contact-list">
+          <a href="tel:+420775408751"><span aria-hidden="true">☎</span> +420 775 408 751</a>
+          <a href="mailto:ubytovani@apartmancvikov.cz"><span aria-hidden="true">✉</span> ubytovani@apartmancvikov.cz</a>
+          <span><span aria-hidden="true">⌖</span> Nábřežní 694
+            <br />
+          471 54 Cvikov</span>
+        </address>
+        <div class="button-row">
+          <a href="https://mapy.cz/s/fugafuhazo" class="button button--primary">Mapy.cz</a>
           <a href="https://maps.google.com/maps?cid=5382507699096848928"
-             class="btn btn-outline-secondary btn-lg px-4">{% translate "Mapy Google" %}</a>
+             class="button button--secondary">{% translate "Mapy Google" %}</a>
         </div>
-        <h2 class="display-7 fw-bold lh-1 mb-3 mt-3">{% translate "Provozovatel" %}</h2>
-        <p class="lead">
-          Petra Čihařová
-          <br />
-          IČ: 10843116
-        </p>
+        <div class="operator">
+          <h3>{% translate "Provozovatel" %}</h3>
+          <p>
+            Petra Čihařová
+            <br />
+            IČ: 10843116
+          </p>
+        </div>
       </div>
-      <div class="col-lg-6">
+      <div class="map-card">
         <iframe src="https://frame.mapy.cz/s/pejunohaba"
                 title="{% translate "Mapa Apartmánu Cvikov" %}"
-                class="w-100"
-                height="333"
                 loading="lazy"></iframe>
       </div>
     </div>
-  </div>
+  </section>
 {% endblock content %}

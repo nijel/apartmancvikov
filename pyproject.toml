@@ -23,6 +23,7 @@ ignore = [
   "D104",
   "D105",
   "D203",  # CONFIG: incompatible with D211
+  "E501",  # CONFIG: using formatter
   "COM",  # CONFIG: No trailing commas
   "D101"
 ]

@@ -4,19 +4,34 @@
 
 {% block title %}{{ attraction.name }} | {% translate "Tip na rodinný výlet z Apartmánu Cvikov" %}{% endblock %}
 
-{% block meta_description %}{{ attraction.summary }} {% blocktranslate with distance=attraction.distance_km %}Přibližně {{ distance }} km od Apartmánu Cvikov.{% endblocktranslate %}{% endblock %}
+{% block meta_description %}
+  <meta name="description" content="{{ attraction_meta_description }}" />
+{% endblock meta_description %}
 
-{% block ogtitle %}{{ attraction.name }} | {% translate "Apartmán Cvikov" %}{% endblock %}
+{% block ogtitle %}
+  <meta property="og:title"
+        content="{{ attraction.name }} | {% translate "Apartmán Cvikov" %}" />
+{% endblock ogtitle %}
 
-{% block ogdescription %}{{ attraction.summary }}{% endblock %}
+{% block ogdescription %}
+  <meta property="og:description" content="{{ attraction.summary }}" />
+{% endblock ogdescription %}
 
-{% block headline %}{{ attraction.name }}{% endblock %}
+{% block headline %}{{ attraction.name|nbsp_prepositions }}{% endblock %}
 
 {% block lead %}{{ attraction.summary }}{% endblock %}
 
-{% block ogimage %}{% if attraction.image %}{{ site_url }}{% static attraction.image %}{% else %}{{ block.super }}{% endif %}{% endblock %}
+{% block ogimage %}
+  {% if attraction.image %}
+    <meta property="og:image" content="{{ site_url }}{% static attraction.image %}" />
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock ogimage %}
 
-{% block ogimagealt %}{{ attraction.name }}{% endblock %}
+{% block ogimagealt %}
+  <meta property="og:image:alt" content="{{ attraction.name }}" />
+{% endblock ogimagealt %}
 
 {% block structured_data %}
   {% json_ld attraction_schema %}
@@ -24,80 +39,90 @@
 {% endblock structured_data %}
 
 {% block content %}
-  <div class="container py-4 py-lg-5">
-    <nav aria-label="{% translate "Drobečková navigace" %}">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{% url "home" %}">{% translate "Ubytování" %}</a></li>
-        <li class="breadcrumb-item"><a href="{% url "vylety" %}">{% translate "Výlety" %}</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ attraction.name }}</li>
-      </ol>
-    </nav>
+  <article class="content-section">
+    <div class="site-container">
+      <nav class="breadcrumbs" aria-label="{% translate "Drobečková navigace" %}">
+        <ol>
+          <li><a href="{% url "home" %}">{% translate "Ubytování" %}</a></li>
+          <li><a href="{% url "vylety" %}">{% translate "Výlety" %}</a></li>
+          <li aria-current="page">{{ attraction.name }}</li>
+        </ol>
+      </nav>
 
-    <article class="row g-5 align-items-start">
-      <div class="col-lg-7">
-        {% if attraction.image %}
-          <figure>
-            <a href="{% static attraction.image %}"
-               data-toggle="lightbox"
-               data-caption="{{ attraction.name }}">
-              <img src="{% static attraction.image %}"
-                   class="rounded img-fluid attraction-detail-image"
-                   width="{{ attraction.image_width }}"
-                   height="{{ attraction.image_height }}"
-                   decoding="async"
-                   alt="{{ attraction.name }}" />
-            </a>
-            {% if attraction.credit_name %}
-              <figcaption class="photo-credit photo-credit-detail">
-                <a href="{{ attraction.credit_url }}" rel="noopener">{{ attraction.credit_name }}</a>
-                ·
-                <a href="{{ attraction.license_url }}" rel="license noopener">{{ attraction.license_name }}</a>
-              </figcaption>
-            {% endif %}
-          </figure>
-        {% else %}
-          <div class="attraction-placeholder attraction-placeholder-large">
-            <span aria-hidden="true">⌖</span>
-            <span class="visually-hidden">{{ attraction.name }}</span>
-          </div>
-        {% endif %}
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h1 mb-3">{% translate "Praktické informace" %}</h2>
-        <dl class="attraction-facts">
-          <dt>{% translate "Vzdálenost" %}</dt>
-          <dd>
-            {% blocktranslate with distance=attraction.distance_km %}přibližně {{ distance }} km{% endblocktranslate %}
-          </dd>
-          <dt>{% translate "Náročnost" %}</dt>
-          <dd>
-            {{ attraction.difficulty }}
-          </dd>
-          <dt>{% translate "Pro rodiny" %}</dt>
-          <dd>
-            {{ attraction.family_tip }}
-          </dd>
-        </dl>
-        <div class="d-flex flex-wrap gap-2 mt-4">
-          <a href="{{ attraction.map_url }}" class="btn btn-primary" rel="noopener">{% translate "Zobrazit mapu" %}</a>
-          <a href="{{ attraction.official_url }}"
-             class="btn btn-outline-secondary"
-             rel="noopener">{% translate "Aktuální informace" %}</a>
+      <div class="attraction-detail">
+        <div class="attraction-detail__media">
+          {% if attraction.image %}
+            <figure>
+              <a href="{% static attraction.image %}"
+                 data-lightbox
+                 data-caption="{{ attraction.name }}">
+                <img src="{% static attraction.image %}"
+                     width="{{ attraction.image_width }}"
+                     height="{{ attraction.image_height }}"
+                     decoding="async"
+                     alt="{{ attraction.name }}" />
+              </a>
+              {% if attraction.credit_name %}
+                <figcaption class="photo-credit-detail">
+                  <a href="{{ attraction.credit_url }}" rel="noopener">{{ attraction.credit_name }}</a>
+                  ·
+                  <a href="{{ attraction.license_url }}" rel="license noopener">{{ attraction.license_name }}</a>
+                </figcaption>
+              {% endif %}
+            </figure>
+          {% else %}
+            <div class="attraction-placeholder attraction-placeholder--large">
+              <span aria-hidden="true">⌖</span>
+              <span class="visually-hidden">{{ attraction.name }}</span>
+            </div>
+          {% endif %}
         </div>
-      </div>
-      <div class="col-lg-9">
-        <h2 class="display-6 fw-bold">{% translate "Proč sem vyrazit" %}</h2>
-        <p class="lead">{{ attraction.description }}</p>
-      </div>
-    </article>
 
-    <aside class="trip-cta rounded p-4 p-lg-5 mt-5 text-center">
-      <h2>{% translate "Naplánujte si pobyt v Lužických horách" %}</h2>
-      <p>{% translate "Podívejte se na volné termíny nebo nám napište a rádi poradíme s pobytem." %}</p>
-      <div class="d-flex gap-2 justify-content-center flex-wrap">
-        <a href="{% url "obsazenost" %}" class="btn btn-primary">{% translate "Volné termíny" %}</a>
-        <a href="{% url "kontakt" %}" class="btn btn-outline-secondary">{% translate "Kontaktovat apartmán" %}</a>
+        <aside class="fact-card">
+          <p class="eyebrow">{% translate "Pro plánování" %}</p>
+          <h2>{% translate "Praktické informace" %}</h2>
+          <dl class="attraction-facts">
+            <dt>{% translate "Vzdálenost" %}</dt>
+            <dd>{% blocktranslate with distance=attraction.distance_km %}přibližně {{ distance }} km{% endblocktranslate %}</dd>
+            <dt>{% translate "Náročnost" %}</dt>
+            <dd>
+              {{ attraction.difficulty }}
+            </dd>
+            <dt>{% translate "Pro rodiny" %}</dt>
+            <dd>
+              {{ attraction.family_tip }}
+            </dd>
+          </dl>
+          <div class="button-row">
+            <a href="{{ attraction.map_url }}" class="button button--primary" rel="noopener">{% translate "Zobrazit mapu" %}</a>
+            <a href="{{ attraction.official_url }}"
+               class="button button--secondary"
+               rel="noopener">{% translate "Aktuální informace" %}</a>
+          </div>
+        </aside>
       </div>
-    </aside>
-  </div>
+
+      <section class="story-block">
+        <p class="eyebrow">{% translate "Náš tip" %}</p>
+        <h2>{% translate "Proč sem vyrazit" %}</h2>
+        <p>{{ attraction.description }}</p>
+      </section>
+
+      <aside class="callout">
+        <div>
+          <p class="eyebrow">{% translate "Dovolená ve Cvikově" %}</p>
+          <h2>
+            {% filter nbsp_prepositions %}
+              {% translate "Naplánujte si pobyt v Lužických horách" %}
+            {% endfilter %}
+          </h2>
+          <p>{% translate "Podívejte se na volné termíny nebo nám napište a rádi poradíme s pobytem." %}</p>
+        </div>
+        <div class="button-row">
+          <a href="{% url "obsazenost" %}" class="button button--primary">{% translate "Volné termíny" %}</a>
+          <a href="{% url "kontakt" %}" class="button button--secondary">{% translate "Kontaktovat apartmán" %}</a>
+        </div>
+      </aside>
+    </div>
+  </article>
 {% endblock content %}
