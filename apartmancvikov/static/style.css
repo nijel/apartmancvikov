@@ -111,7 +111,7 @@ summary {
 .site-header {
   background-image:
     linear-gradient(110deg, rgb(36 17 16 / 88%), rgb(55 25 20 / 45%)),
-    var(--hero-image);
+    url("bg.jpg");
   background-position: center;
   background-size: cover;
   color: white;
