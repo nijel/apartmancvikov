@@ -10,7 +10,10 @@ def available_widths(source_width):
 
 def variant_path(path, width, extension):
     """Return the stable static path for one generated image variant."""
-    source = PurePosixPath(path)
+    # Django template literals are SafeString instances. Python 3.11's
+    # pathlib passes str subclasses to sys.intern(), which only accepts an
+    # exact str instance.
+    source = PurePosixPath(str.__str__(path))
     return str(
         PurePosixPath("responsive")
         / source.parent
