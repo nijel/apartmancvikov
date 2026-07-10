@@ -1,8 +1,14 @@
 from django.conf import settings
-from django.templatetags.static import static
 from django.urls import NoReverseMatch, reverse
-from django.utils.translation import gettext as _
 from django.utils.translation import override
+
+from .pricing import (
+    PRICE_CURRENCY,
+    STANDARD_ADULT_PRICE_CZK,
+    STANDARD_CHILD_PRICE_CZK,
+    STANDARD_INFANT_PRICE_CZK,
+)
+from .structured_data import build_structured_data
 
 
 def _absolute(path):
@@ -25,83 +31,6 @@ def _localized_urls(request):
     return result
 
 
-def _lodging_schema():
-    images = [
-        "foto/dum.jpg",
-        "foto/tyrkys.jpg",
-        "foto/levandule.jpg",
-        "foto/fuchsie.jpg",
-        "foto/obyvak.jpg",
-        "foto/kuchyn.jpg",
-        "foto/koupelna-nahore.jpg",
-        "foto/terasa.jpg",
-    ]
-    return {
-        "@context": "https://schema.org",
-        "@type": "VacationRental",
-        "@id": f"{settings.SITE_URL}/#accommodation",
-        "identifier": "apartman-cvikov-nabrezni-694",
-        "name": str(_("Apartmán Cvikov")),
-        "description": str(
-            _(
-                "Rodinné ubytování ve Cvikově se třemi ložnicemi, zahradou, "
-                "dětským vybavením a venkovním bazénem."
-            )
-        ),
-        "url": f"{settings.SITE_URL}/cs/",
-        "image": [_absolute(static(image)) for image in images],
-        "telephone": "+420775408751",
-        "email": "ubytovani@apartmancvikov.cz",
-        "latitude": 50.77409,
-        "longitude": 14.64013,
-        "checkinTime": "15:00",
-        "checkoutTime": "10:00",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Nábřežní 694",
-            "addressLocality": "Cvikov",
-            "addressRegion": "Liberecký kraj",
-            "postalCode": "471 54",
-            "addressCountry": "CZ",
-        },
-        "containsPlace": {
-            "@type": "Accommodation",
-            "additionalType": "EntirePlace",
-            "occupancy": {"@type": "QuantitativeValue", "value": 9},
-            "numberOfBedrooms": 3,
-            "numberOfBathroomsTotal": 2,
-            "petsAllowed": False,
-            "amenityFeature": [
-                {
-                    "@type": "LocationFeatureSpecification",
-                    "name": "childFriendly",
-                    "value": True,
-                },
-                {
-                    "@type": "LocationFeatureSpecification",
-                    "name": "parkingType",
-                    "value": "Free",
-                },
-                {
-                    "@type": "LocationFeatureSpecification",
-                    "name": "poolType",
-                    "value": "Outdoor",
-                },
-                {
-                    "@type": "LocationFeatureSpecification",
-                    "name": "wifi",
-                    "value": True,
-                },
-                {
-                    "@type": "LocationFeatureSpecification",
-                    "name": "washerDryer",
-                    "value": True,
-                },
-            ],
-        },
-    }
-
-
 def seo(request):
     """Provide canonical URLs, language alternatives, and lodging metadata."""
     language_urls = _localized_urls(request)
@@ -122,5 +51,11 @@ def seo(request):
             request.LANGUAGE_CODE, "cs_CZ"
         ),
         "site_url": settings.SITE_URL,
-        "lodging_schema": _lodging_schema(),
+        "prices": {
+            "adult": STANDARD_ADULT_PRICE_CZK,
+            "child": STANDARD_CHILD_PRICE_CZK,
+            "infant": STANDARD_INFANT_PRICE_CZK,
+            "currency": PRICE_CURRENCY,
+        },
+        "structured_data": build_structured_data(request),
     }

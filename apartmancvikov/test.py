@@ -1,13 +1,41 @@
 import json
 import re
 
-from django.test import SimpleTestCase
+from django.test import TestCase
 
 from .content import ATTRACTIONS
+from .pricing import (
+    PRICE_CURRENCY,
+    STANDARD_ADULT_PRICE_CZK,
+    STANDARD_CHILD_PRICE_CZK,
+    STANDARD_INFANT_PRICE_CZK,
+    STANDARD_PAID_PRICE_MAX_CZK,
+    STANDARD_PAID_PRICE_MIN_CZK,
+)
 
 
-class SeoTest(SimpleTestCase):
+class SeoTest(TestCase):
     languages = ("cs", "en", "de")
+
+    def get_schema_graph(self, path):
+        """Return the sole JSON-LD graph rendered for a page."""
+        response = self.client.get(path)
+        self.assertEqual(response.status_code, 200)
+        scripts = re.findall(
+            r'<script type="application/ld\+json">(.*?)</script>',
+            response.content.decode(),
+            re.DOTALL,
+        )
+        self.assertEqual(len(scripts), 1)
+        schema = json.loads(scripts[0])
+        self.assertEqual(schema["@context"], "https://schema.org")
+        return schema["@graph"]
+
+    def schema_node(self, graph, node_type):
+        """Find exactly one node of a given type in a JSON-LD graph."""
+        nodes = [node for node in graph if node.get("@type") == node_type]
+        self.assertEqual(len(nodes), 1)
+        return nodes[0]
 
     def test_localized_pages_have_seo_metadata(self):
         """Localized home pages expose consistent SEO annotations."""
@@ -80,19 +108,146 @@ class SeoTest(SimpleTestCase):
         self.assertContains(response, "https://creativecommons.org/licenses/by-sa/3.0/")
 
     def test_structured_data_is_valid_json(self):
-        """Rendered JSON-LD is parseable and contains the expected entities."""
-        response = self.client.get("/cs/vylety/oybin/")
-        scripts = re.findall(
-            r'<script type="application/ld\+json">(.*?)</script>',
-            response.content.decode(),
-            re.DOTALL,
+        """Attraction pages expose one linked graph with all expected entities."""
+        graph = self.get_schema_graph("/cs/vylety/oybin/")
+        lodging = self.schema_node(graph, "VacationRental")
+        attraction = self.schema_node(graph, "TouristAttraction")
+        page = self.schema_node(graph, "WebPage")
+        breadcrumb = self.schema_node(graph, "BreadcrumbList")
+
+        self.assertEqual(lodging["containsPlace"]["occupancy"]["value"], 9)
+        self.assertEqual(page["mainEntity"]["@id"], attraction["@id"])
+        self.assertEqual(attraction["mainEntityOfPage"]["@id"], page["@id"])
+        self.assertEqual(len(breadcrumb["itemListElement"]), 3)
+
+    def test_lodging_schema_contains_confirmed_property_details(self):
+        """The rental entity publishes confirmed layout and identity details."""
+        graph = self.get_schema_graph("/cs/")
+        lodging = self.schema_node(graph, "VacationRental")
+        accommodation = lodging["containsPlace"]
+
+        self.assertEqual(lodging["additionalType"], "Apartment")
+        self.assertEqual(lodging["knowsLanguage"], ["cs-CZ", "en"])
+        self.assertEqual(
+            lodging["sameAs"],
+            [
+                "https://maps.google.com/maps?cid=5382507699096848928",
+                "https://www.firmy.cz/detail/13404124-apartman-cvikov-cvikov-ii.html",
+                "https://www.facebook.com/apartman.cvikov/",
+            ],
         )
-        self.assertEqual(len(scripts), 3)
-        schemas = [json.loads(script) for script in scripts]
-        self.assertEqual(schemas[0]["@type"], "VacationRental")
-        self.assertEqual(schemas[0]["containsPlace"]["occupancy"]["value"], 9)
-        self.assertEqual(schemas[1]["@type"], "TouristAttraction")
-        self.assertEqual(schemas[2]["@type"], "BreadcrumbList")
+        self.assertEqual(accommodation["floorSize"]["value"], 180)
+        self.assertEqual(accommodation["floorSize"]["unitCode"], "MTK")
+        self.assertEqual(accommodation["numberOfRooms"], 5)
+        self.assertEqual(accommodation["numberOfBedrooms"], 3)
+        self.assertEqual(accommodation["numberOfBathroomsTotal"], 2)
+        self.assertEqual(
+            accommodation["bed"],
+            [
+                {"@type": "BedDetails", "numberOfBeds": 2, "typeOfBed": "Double"},
+                {"@type": "BedDetails", "numberOfBeds": 3, "typeOfBed": "Single"},
+                {
+                    "@type": "BedDetails",
+                    "numberOfBeds": 2,
+                    "typeOfBed": "Floor mattress",
+                },
+            ],
+        )
+        self.assertEqual(
+            lodging["mainEntityOfPage"]["@id"],
+            "https://apartmancvikov.cz/cs/#webpage",
+        )
+
+    def test_lodging_schema_contains_standard_prices(self):
+        """Standard per-person rates are linked to the rental as qualified offers."""
+        graph = self.get_schema_graph("/cs/cenik/")
+        lodging = self.schema_node(graph, "VacationRental")
+        offers = [node for node in graph if node.get("@type") == "Offer"]
+
+        self.assertEqual(len(offers), 3)
+        self.assertEqual(
+            lodging["priceRange"],
+            f"{STANDARD_PAID_PRICE_MIN_CZK}-{STANDARD_PAID_PRICE_MAX_CZK} "
+            f"{PRICE_CURRENCY} per person per night",
+        )
+        self.assertEqual(
+            {offer["priceSpecification"]["price"] for offer in offers},
+            {
+                STANDARD_INFANT_PRICE_CZK,
+                STANDARD_CHILD_PRICE_CZK,
+                STANDARD_ADULT_PRICE_CZK,
+            },
+        )
+        for offer in offers:
+            price = offer["priceSpecification"]
+            self.assertEqual(price["priceCurrency"], PRICE_CURRENCY)
+            self.assertEqual(price["priceType"], "RegularPrice")
+            self.assertEqual(price["unitCode"], "IE")
+            self.assertEqual(price["billingDuration"], "P1D")
+            self.assertEqual(
+                offer["itemOffered"]["@id"],
+                "https://apartmancvikov.cz/#accommodation-unit",
+            )
+
+        response = self.client.get("/cs/cenik/")
+        self.assertContains(
+            response,
+            f"Standardní cena za dospělého je {STANDARD_ADULT_PRICE_CZK},- Kč",
+        )
+        self.assertContains(
+            response,
+            f"standardní cena {STANDARD_CHILD_PRICE_CZK},- Kč za noc",
+        )
+        self.assertContains(response, "v dalších nestandardních situacích")
+        self.assertNotContains(response, "Silvestr")
+        self.assertNotIn("Silvestr", json.dumps(graph, ensure_ascii=False))
+
+    def test_page_specific_schema_types(self):
+        """Static and listing pages identify their role and main entity."""
+        cases = (
+            ("/cs/vylety/", "CollectionPage", "ItemList"),
+            ("/cs/kontakt/", "ContactPage", None),
+            ("/cs/cenik/", "WebPage", None),
+            ("/cs/obsazenost/", "WebPage", None),
+        )
+        for path, page_type, main_type in cases:
+            with self.subTest(path=path):
+                graph = self.get_schema_graph(path)
+                page = self.schema_node(graph, page_type)
+                self.schema_node(graph, "BreadcrumbList")
+                if main_type:
+                    main = self.schema_node(graph, main_type)
+                    self.assertEqual(page["mainEntity"]["@id"], main["@id"])
+                    self.assertEqual(main["numberOfItems"], len(ATTRACTIONS))
+                else:
+                    self.assertEqual(
+                        page["about"]["@id"],
+                        "https://apartmancvikov.cz/#accommodation",
+                    )
+
+    def test_schema_is_localized_without_external_review_markup(self):
+        """Localized graphs do not republish ratings from third-party profiles."""
+        for language, language_tag in (("cs", "cs-CZ"), ("en", "en"), ("de", "de")):
+            with self.subTest(language=language):
+                graph = self.get_schema_graph(f"/{language}/")
+                page = self.schema_node(graph, "WebPage")
+                schema_text = json.dumps(graph)
+                self.assertEqual(page["inLanguage"], language_tag)
+                self.assertNotIn("AggregateRating", schema_text)
+                self.assertNotIn('"Review"', schema_text)
+
+    def test_licensed_image_has_machine_readable_attribution(self):
+        """Licensed attraction photography carries source and license metadata."""
+        graph = self.get_schema_graph("/cs/vylety/duty-kamen/")
+        image = self.schema_node(graph, "ImageObject")
+        self.assertEqual(image["creditText"], "Lutz Maertens")
+        self.assertEqual(
+            image["license"], "https://creativecommons.org/licenses/by-sa/3.0/"
+        )
+        self.assertEqual(
+            image["acquireLicensePage"],
+            "https://commons.wikimedia.org/wiki/File:Koerner.jpg",
+        )
 
     def test_sitemap_contains_all_localized_urls(self):
         """The sitemap contains each static and attraction language variant."""
@@ -119,10 +274,15 @@ class SeoTest(SimpleTestCase):
         """Robots and agent summaries publish their essential information."""
         robots = self.client.get("/robots.txt")
         self.assertEqual(robots.status_code, 200)
+        self.assertContains(
+            robots,
+            "Content-Signal: search=yes, ai-input=yes, ai-train=no",
+        )
         self.assertContains(robots, "Sitemap: https://apartmancvikov.cz/sitemap.xml")
         self.assertContains(robots, "Disallow: /admin/")
 
         llms = self.client.get("/llms.txt")
         self.assertEqual(llms.status_code, 200)
-        self.assertContains(llms, "3 bedrooms, 7 standard beds")
+        self.assertContains(llms, "Spacious 180 m² apartment with 3 bedrooms")
+        self.assertContains(llms, "2 additional floor mattresses")
         self.assertContains(llms, "https://apartmancvikov.cz/cs/vylety/")

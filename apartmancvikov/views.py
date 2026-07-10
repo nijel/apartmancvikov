@@ -1,7 +1,5 @@
 from django.conf import settings
 from django.http import Http404, HttpResponse
-from django.templatetags.static import static
-from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic import TemplateView
 
@@ -33,12 +31,6 @@ class AttractionDetailView(TemplateView):
         except KeyError as error:
             raise Http404 from error
 
-        absolute_url = f"{settings.SITE_URL}{self.request.path}"
-        image_url = (
-            f"{settings.SITE_URL}{static(attraction.image)}"
-            if attraction.image
-            else f"{settings.SITE_URL}{static('foto/dum.jpg')}"
-        )
         context.update(
             {
                 "attraction": attraction,
@@ -47,40 +39,6 @@ class AttractionDetailView(TemplateView):
                     _("Přibližně %(distance)s km od Apartmánu Cvikov.")
                     % {"distance": attraction.distance_km},
                 ),
-                "attraction_schema": {
-                    "@context": "https://schema.org",
-                    "@type": "TouristAttraction",
-                    "@id": f"{absolute_url}#attraction",
-                    "name": str(attraction.name),
-                    "description": str(attraction.description),
-                    "url": absolute_url,
-                    "image": image_url,
-                    "sameAs": attraction.official_url,
-                },
-                "breadcrumb_schema": {
-                    "@context": "https://schema.org",
-                    "@type": "BreadcrumbList",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": str(_("Ubytování")),
-                            "item": f"{settings.SITE_URL}{reverse('home')}",
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": str(_("Výlety")),
-                            "item": f"{settings.SITE_URL}{reverse('vylety')}",
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 3,
-                            "name": str(attraction.name),
-                            "item": absolute_url,
-                        },
-                    ],
-                },
             }
         )
         return context
@@ -91,6 +49,7 @@ def robots_txt(_request):
     content = "\n".join(
         [
             "User-agent: *",
+            "Content-Signal: search=yes, ai-input=yes, ai-train=no",
             "Allow: /",
             "Disallow: /admin/",
             f"Sitemap: {settings.SITE_URL}/sitemap.xml",
@@ -109,7 +68,9 @@ def llms_txt(_request):
 ## Key facts
 
 - Address: Nábřežní 694, 471 54 Cvikov, Czechia
-- 3 bedrooms, 7 standard beds, maximum capacity 9 guests, baby cot available
+- Spacious 180 m² apartment with 3 bedrooms
+- 7 standard beds, 2 additional floor mattresses, maximum capacity 9 guests
+- Baby cot available
 - 2 bathrooms, equipped kitchen, Wi-Fi, free private parking
 - Garden, children's play equipment, pump track and seasonal outdoor pool
 - Pets are not accepted

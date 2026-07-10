@@ -33,11 +33,6 @@
   <meta property="og:image:alt" content="{{ attraction.name }}" />
 {% endblock ogimagealt %}
 
-{% block structured_data %}
-  {% json_ld attraction_schema %}
-  {% json_ld breadcrumb_schema %}
-{% endblock structured_data %}
-
 {% block content %}
   <article class="content-section">
     <div class="site-container">
