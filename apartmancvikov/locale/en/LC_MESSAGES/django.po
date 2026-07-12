@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apartmancvikov\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-10 17:26+0200\n"
+"POT-Creation-Date: 2026-07-12 07:55+0200\n"
 "PO-Revision-Date: 2026-07-10 13:07+0200\n"
 "Last-Translator: Apartmán Cvikov\n"
 "Language-Team: English\n"
@@ -255,67 +255,67 @@ msgstr ""
 msgid "Vhodné pro malé děti i jako program při nepříznivém počasí."
 msgstr "Suitable for young children and as a bad-weather activity."
 
-#: apartmancvikov/forms.py:19
+#: apartmancvikov/forms.py:18
 msgid "Jméno a příjmení"
 msgstr "Full name"
 
-#: apartmancvikov/forms.py:24
+#: apartmancvikov/forms.py:23
 #: apartmancvikov/templates/emails/contact_inquiry.txt:4
 msgid "E-mail"
 msgstr "Email"
 
-#: apartmancvikov/forms.py:29
+#: apartmancvikov/forms.py:28
 #: apartmancvikov/templates/emails/contact_inquiry.txt:5
 msgid "Telefon"
 msgstr "Phone"
 
-#: apartmancvikov/forms.py:37
+#: apartmancvikov/forms.py:34
 #: apartmancvikov/templates/emails/contact_inquiry.txt:8
 msgid "Příjezd"
 msgstr "Arrival"
 
-#: apartmancvikov/forms.py:41
+#: apartmancvikov/forms.py:38
 #: apartmancvikov/templates/emails/contact_inquiry.txt:9
 msgid "Odjezd"
 msgstr "Departure"
 
-#: apartmancvikov/forms.py:45
+#: apartmancvikov/forms.py:42
 #: apartmancvikov/templates/emails/contact_inquiry.txt:10
 msgid "Dospělí"
 msgstr "Adults"
 
-#: apartmancvikov/forms.py:52
+#: apartmancvikov/forms.py:49
 #: apartmancvikov/templates/emails/contact_inquiry.txt:11
 msgid "Děti od 3 do 12 let"
 msgstr "Children aged 3 to 12"
 
-#: apartmancvikov/forms.py:59
+#: apartmancvikov/forms.py:56
 #: apartmancvikov/templates/emails/contact_inquiry.txt:12
 msgid "Děti do 3 let"
 msgstr "Children under 3"
 
-#: apartmancvikov/forms.py:66
+#: apartmancvikov/forms.py:63
 #: apartmancvikov/templates/emails/contact_inquiry.txt:14
 msgid "Poznámka"
 msgstr "Note"
 
-#: apartmancvikov/forms.py:101
+#: apartmancvikov/forms.py:98
 msgid "Platnost formuláře vypršela. Obnovte stránku a zkuste to znovu."
 msgstr "The form has expired. Refresh the page and try again."
 
-#: apartmancvikov/forms.py:106
+#: apartmancvikov/forms.py:103
 msgid "Formulář byl odeslán příliš rychle. Zkuste to prosím znovu."
 msgstr "The form was submitted too quickly. Please try again."
 
-#: apartmancvikov/forms.py:118
+#: apartmancvikov/forms.py:115
 msgid "Datum příjezdu nemůže být v minulosti."
 msgstr "The arrival date cannot be in the past."
 
-#: apartmancvikov/forms.py:122
+#: apartmancvikov/forms.py:118
 msgid "Datum odjezdu musí být později než příjezd."
 msgstr "The departure date must be after the arrival date."
 
-#: apartmancvikov/forms.py:134
+#: apartmancvikov/forms.py:130
 #, python-format
 msgid "Apartmán má kapacitu nejvýše %(capacity)s hostů."
 msgstr "The apartment accommodates no more than %(capacity)s guests."
@@ -442,7 +442,7 @@ msgstr ""
 
 #: apartmancvikov/structured_data.py:322
 #: apartmancvikov/templates/poptavka.html:6
-#: apartmancvikov/templates/poptavka.html:15
+#: apartmancvikov/templates/poptavka.html:16
 msgid "Poptávka pobytu | Apartmán Cvikov"
 msgstr "Stay enquiry | Apartment Cvikov"
 
@@ -451,7 +451,9 @@ msgstr "Stay enquiry | Apartment Cvikov"
 msgid ""
 "Nezávazná poptávka ubytování v Apartmánu Cvikov. Zadejte termín pobytu a "
 "počet dospělých a dětí."
-msgstr "Non-binding accommodation enquiry for Apartment Cvikov. Enter your stay dates and the number of adults and children."
+msgstr ""
+"Non-binding accommodation enquiry for Apartment Cvikov. Enter your stay "
+"dates and the number of adults and children."
 
 #: apartmancvikov/structured_data.py:330 apartmancvikov/templates/base.html:165
 #: apartmancvikov/templates/privacy.html:15
@@ -603,9 +605,9 @@ msgid "Kontakt"
 msgstr "Contact"
 
 #: apartmancvikov/templates/base.html:118
-#: apartmancvikov/templates/cenik.html:80
-#: apartmancvikov/templates/poptavka.html:19
-#: apartmancvikov/templates/poptavka.html:31
+#: apartmancvikov/templates/cenik.html:79
+#: apartmancvikov/templates/poptavka.html:20
+#: apartmancvikov/templates/poptavka.html:32
 msgid "Poptat pobyt"
 msgstr "Enquire about a stay"
 
@@ -682,11 +684,13 @@ msgid "Využití kolárny, kočárkárny, lyžárny v ubytovacím prostoru"
 msgstr "Use of wheelhouse, carriage house, ski room in the accommodation area"
 
 #: apartmancvikov/templates/cenik.html:53
-msgid "Wi-fi připojení k internetu v celém objektu"
-msgstr "Wi-fi internet connection throughout the property"
+#| msgid "Wi-fi připojení k internetu v celém objektu"
+msgid "Wi-Fi připojení k internetu v celém objektu"
+msgstr "Wi-Fi internet connection throughout the property"
 
 #: apartmancvikov/templates/cenik.html:55
-msgid "Minimální délka pobytu jsou 2 noci, o letních prázdninách 7 nocí."
+#| msgid "Minimální délka pobytu jsou 2 noci, o letních prázdninách 7 nocí."
+msgid "Minimální délka pobytu je 2 noci, o letních prázdninách 7 nocí."
 msgstr "Minimum stay is 2 nights, 7 nights in summer holidays."
 
 #: apartmancvikov/templates/cenik.html:59
@@ -695,8 +699,11 @@ msgstr "Payment and cancellation"
 
 #: apartmancvikov/templates/cenik.html:61
 #, python-format
+#| msgid ""
+#| "Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50%% ceny, "
+#| "která má splatnost 14 dní."
 msgid ""
-"Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50%% ceny, "
+"Po obdržení vaší rezervace Vám odešleme zálohovou fakturu na 50 %% ceny, "
 "která má splatnost 14 dní."
 msgstr ""
 "Upon receipt of your booking, we will send you an advance invoice for 50%% "
@@ -723,9 +730,13 @@ msgid "Platba na místě pouze v hotovosti."
 msgstr "Payment on site in cash only."
 
 #: apartmancvikov/templates/cenik.html:66
+#| msgid ""
+#| "V případě zrušení rezervace do 30ti dnů před termínem pobytu vracíme "
+#| "platbu v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem "
+#| "činí vratná částka 0,- z uhrazené ceny."
 msgid ""
-"V případě zrušení rezervace do 30ti dnů před termínem pobytu vracíme platbu "
-"v plné výši zpět. Při storno pobytu 30 a méně dnů před příjezdem činí vratná "
+"V případě zrušení rezervace do 30 dnů před termínem pobytu vracíme platbu v "
+"plné výši zpět. Při stornu pobytu 30 a méně dnů před příjezdem činí vratná "
 "částka 0,- z uhrazené ceny."
 msgstr ""
 "In case of cancellation within 30 days before the date of stay, we will "
@@ -737,20 +748,27 @@ msgid "Příjezd a odjezd"
 msgstr "Arrival and departure"
 
 #: apartmancvikov/templates/cenik.html:72
-msgid "V den příjezdu je Váš pokoj připraven od 15 hodiny."
+#| msgid "V den příjezdu je Váš pokoj připraven od 15 hodiny."
+msgid "V den příjezdu je Váš pokoj připraven od 15. hodiny."
 msgstr "On the day of arrival, your room is ready from 15:00."
 
 #: apartmancvikov/templates/cenik.html:73
+#| msgid ""
+#| "Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete "
+#| "informovat o případném pozdním příjezdu."
 msgid ""
-"Ideálně doporučujeme příjezd do 18 hodiny, budeme rádi pokud nás budete "
+"Ideálně doporučujeme příjezd do 18. hodiny, budeme rádi, pokud nás budete "
 "informovat o případném pozdním příjezdu."
 msgstr ""
 "We ideally recommend arriving by 6pm, we would be happy to be informed of "
 "any late arrivals."
 
 #: apartmancvikov/templates/cenik.html:74
+#| msgid ""
+#| "V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě "
+#| "dle obsazenosti může být i později."
 msgid ""
-"V den odjezdu prosíme o uvolnění pokoje do 10 hodiny a nebo po domluvě dle "
+"V den odjezdu prosíme o uvolnění pokoje do 10. hodiny a nebo po domluvě dle "
 "obsazenosti může být i později."
 msgstr ""
 "On the day of departure, please vacate the room by 10 am or later by "
@@ -858,7 +876,8 @@ msgstr ""
 "climbing frames, trampoline, pumptrack, playground."
 
 #: apartmancvikov/templates/index.html:65
-msgid "V sezoně se můžete vykoupat ve vyhřívanén venkovním bazénu."
+#| msgid "V sezoně se můžete vykoupat ve vyhřívanén venkovním bazénu."
+msgid "V sezoně se můžete vykoupat ve vyhřívaném venkovním bazénu."
 msgstr "In season, you can take a dip in the heated outdoor pool."
 
 #: apartmancvikov/templates/index.html:66
@@ -1132,19 +1151,19 @@ msgstr "Start of stay"
 msgid "Konec pobytu"
 msgstr "End of stay"
 
-#: apartmancvikov/templates/obsazenost.html:44
+#: apartmancvikov/templates/obsazenost.html:43
 msgid "Poptat vybraný termín"
 msgstr "Enquire about selected dates"
 
-#: apartmancvikov/templates/poptavka.html:23
+#: apartmancvikov/templates/poptavka.html:24
 msgid "Nezávazná poptávka ubytování"
 msgstr "Non-binding accommodation enquiry"
 
-#: apartmancvikov/templates/poptavka.html:30
+#: apartmancvikov/templates/poptavka.html:31
 msgid "Nezávazná poptávka"
 msgstr "Non-binding enquiry"
 
-#: apartmancvikov/templates/poptavka.html:32
+#: apartmancvikov/templates/poptavka.html:33
 msgid ""
 "Napište nám termín a složení skupiny. Dostupnost a cenu vám potvrdíme e-"
 "mailem."
@@ -1152,28 +1171,28 @@ msgstr ""
 "Tell us your dates and group size. We will confirm availability and price by "
 "email."
 
-#: apartmancvikov/templates/poptavka.html:59
+#: apartmancvikov/templates/poptavka.html:60
 msgid "Kontaktní údaje"
 msgstr "Contact details"
 
-#: apartmancvikov/templates/poptavka.html:72
-#: apartmancvikov/templates/poptavka.html:117
+#: apartmancvikov/templates/poptavka.html:73
+#: apartmancvikov/templates/poptavka.html:118
 msgid "volitelné"
 msgstr "optional"
 
-#: apartmancvikov/templates/poptavka.html:80
+#: apartmancvikov/templates/poptavka.html:81
 msgid "Termín a hosté"
 msgstr "Dates and guests"
 
-#: apartmancvikov/templates/poptavka.html:94
+#: apartmancvikov/templates/poptavka.html:95
 msgid "Zkontrolovat obsazenost"
 msgstr "Check availability"
 
-#: apartmancvikov/templates/poptavka.html:113
+#: apartmancvikov/templates/poptavka.html:114
 msgid "Apartmán má kapacitu nejvýše 9 hostů včetně dětí."
 msgstr "The apartment accommodates no more than 9 guests, including children."
 
-#: apartmancvikov/templates/poptavka.html:123
+#: apartmancvikov/templates/poptavka.html:124
 #, python-format
 msgid ""
 "Odesláním formuláře nám předáte údaje pouze pro vyřízení poptávky. "
@@ -1184,7 +1203,7 @@ msgstr ""
 "enquiry. See our <a href=\"%(privacy_url)s\">privacy information</a> for "
 "details."
 
-#: apartmancvikov/templates/poptavka.html:125
+#: apartmancvikov/templates/poptavka.html:126
 msgid "Odeslat poptávku"
 msgstr "Send enquiry"
 
