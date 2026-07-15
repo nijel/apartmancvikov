@@ -98,6 +98,21 @@ class SeoTest(TestCase):
         self.assertEqual(html.count('fetchpriority="high"'), 1)
         self.assertIn('content="index, follow, max-image-preview:large"', html)
 
+    def test_home_links_selected_reviews_to_their_original_sources(self):
+        """Selected review excerpts identify and link to their source portals."""
+        response = self.client.get("/cs/")
+        html = response.content.decode()
+
+        self.assertEqual(html.count('class="review-card"'), 3)
+        self.assertIn(
+            "https://www.firmy.cz/detail/13404124-apartman-cvikov-cvikov-ii.html",
+            html,
+        )
+        self.assertIn("https://www.e-chalupy.cz/apartman-cvikov-o16404", html)
+        self.assertIn("https://www.google.com/maps?cid=5382507699096848928", html)
+        self.assertIn('rel="external noopener noreferrer"', html)
+        self.assertNotIn("<iframe", html)
+
     def test_responsive_image_paths_accept_template_safe_strings(self):
         """Django's quoted template arguments work with pathlib on Python 3.11."""
         self.assertEqual(
@@ -207,6 +222,7 @@ class SeoTest(TestCase):
             [
                 "https://maps.google.com/maps?cid=5382507699096848928",
                 "https://www.firmy.cz/detail/13404124-apartman-cvikov-cvikov-ii.html",
+                "https://www.e-chalupy.cz/apartman-cvikov-o16404",
                 "https://www.facebook.com/apartman.cvikov/",
             ],
         )

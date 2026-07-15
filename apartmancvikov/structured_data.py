@@ -42,6 +42,7 @@ PROPERTY_IMAGES = (
 EXTERNAL_PROFILES = (
     "https://maps.google.com/maps?cid=5382507699096848928",
     "https://www.firmy.cz/detail/13404124-apartman-cvikov-cvikov-ii.html",
+    "https://www.e-chalupy.cz/apartman-cvikov-o16404",
     "https://www.facebook.com/apartman.cvikov/",
 )
 

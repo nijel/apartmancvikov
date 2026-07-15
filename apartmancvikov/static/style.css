@@ -443,6 +443,7 @@ summary {
 }
 
 .room-grid,
+.review-grid,
 .gallery-grid,
 .attraction-grid {
   display: grid;
@@ -479,6 +480,61 @@ summary {
 .room-card p {
   color: var(--muted);
   margin-bottom: 0;
+}
+
+.review-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 0.8rem 2rem rgb(69 43 25 / 7%);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.review-card__rating {
+  color: var(--gold);
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+.review-card blockquote {
+  flex: 1;
+  margin: 0;
+}
+
+.review-card blockquote p {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.review-card__translation-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.review-card footer {
+  align-items: flex-start;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-top: 1rem;
+}
+
+.review-card cite {
+  font-style: normal;
+  font-weight: 750;
+}
+
+.review-card footer a {
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .gallery-grid {
@@ -1146,6 +1202,7 @@ html.lightbox-open {
   }
 
   .room-grid,
+  .review-grid,
   .attraction-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1226,6 +1283,7 @@ html.lightbox-open {
   }
 
   .room-grid,
+  .review-grid,
   .attraction-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
