@@ -347,10 +347,10 @@ msgstr "Ferienwohnung Cvikov"
 
 #: apartmancvikov/structured_data.py:98
 msgid ""
-"Prostorný rodinný apartmán o ploše 180 m² ve Cvikově se třemi ložnicemi, "
+"Prostorný rodinný apartmán o ploše 130 m² ve Cvikově se třemi ložnicemi, "
 "zahradou, dětským vybavením a venkovním bazénem."
 msgstr ""
-"Geräumige 180 m² große Familienferienwohnung in Cvikov mit drei "
+"Geräumige 130 m² große Familienferienwohnung in Cvikov mit drei "
 "Schlafzimmern, Garten, Kinderausstattung und Außenpool."
 
 #: apartmancvikov/structured_data.py:216 apartmancvikov/templates/cenik.html:42
@@ -389,9 +389,9 @@ msgstr "Ein Kind unter 3 Jahren übernachtet ohne eigenes Bett kostenlos."
 
 #: apartmancvikov/structured_data.py:283
 msgid ""
-"Prostorný rodinný apartmán o ploše 180 m² ve Cvikově pro až devět hostů."
+"Prostorný rodinný apartmán o ploše 130 m² ve Cvikově pro až devět hostů."
 msgstr ""
-"Geräumige 180 m² große Familienferienwohnung in Cvikov für bis zu neun Gäste."
+"Geräumige 130 m² große Familienferienwohnung in Cvikov für bis zu neun Gäste."
 
 #: apartmancvikov/structured_data.py:289
 #: apartmancvikov/templates/vylety.html:16
@@ -810,18 +810,18 @@ msgstr "Familienferienwohnung in Cvikov für 7 bis 9 Gäste"
 
 #: apartmancvikov/templates/index.html:9
 msgid ""
-"Prostorný rodinný apartmán o ploše 180 m² ve Cvikově se 3 ložnicemi, 2 "
+"Prostorný rodinný apartmán o ploše 130 m² ve Cvikově se 3 ložnicemi, 2 "
 "koupelnami, zahradou, bazénem a vybavením pro děti."
 msgstr ""
-"Geräumige 180 m² große Familienferienwohnung in Cvikov mit 3 Schlafzimmern, "
+"Geräumige 130 m² große Familienferienwohnung in Cvikov mit 3 Schlafzimmern, "
 "2 Bädern, Garten, Pool und Kinderausstattung."
 
 #: apartmancvikov/templates/index.html:19
 msgid ""
-"Prostorný apartmán o ploše 180 m² se třemi ložnicemi, sedmi standardními "
+"Prostorný apartmán o ploše 130 m² se třemi ložnicemi, sedmi standardními "
 "lůžky a dvěma dalšími místy na matracích."
 msgstr ""
-"Geräumige 180 m² große Ferienwohnung mit drei Schlafzimmern, sieben "
+"Geräumige 130 m² große Ferienwohnung mit drei Schlafzimmern, sieben "
 "Standardbetten und zwei zusätzlichen Schlafplätzen auf Matratzen."
 
 #: apartmancvikov/templates/index.html:26
@@ -1319,10 +1319,10 @@ msgstr ""
 
 #: apartmancvikov/templates/snippets/description.html:4
 msgid ""
-"Prostorný apartmán o ploše 180 m² nabízí ve 3 ložnicích 7 standardních "
+"Prostorný apartmán o ploše 130 m² nabízí ve 3 ložnicích 7 standardních "
 "lůžek, další 2 místa na matracích a možnost dětské postýlky."
 msgstr ""
-"Die geräumige 180 m² große Ferienwohnung bietet in 3 Schlafzimmern 7 "
+"Die geräumige 130 m² große Ferienwohnung bietet in 3 Schlafzimmern 7 "
 "Standardbetten, 2 zusätzliche Schlafplätze auf Matratzen und Platz für ein "
 "Babybett."
 

@@ -142,7 +142,7 @@ def llms_txt(_request):
 ## Key facts
 
 - Address: {ADDRESS_STREET}, {ADDRESS_POSTAL_CODE} {ADDRESS_LOCALITY}, Czechia
-- Spacious 180 m² apartment with 3 bedrooms
+- Spacious 130 m² apartment with 3 bedrooms
 - 7 standard beds, 2 additional floor mattresses, maximum capacity 9 guests
 - Baby cot available
 - 2 bathrooms, equipped kitchen, Wi-Fi, free private parking

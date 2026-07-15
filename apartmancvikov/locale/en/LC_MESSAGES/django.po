@@ -333,10 +333,10 @@ msgstr "Apartment Cvikov"
 
 #: apartmancvikov/structured_data.py:98
 msgid ""
-"Prostorný rodinný apartmán o ploše 180 m² ve Cvikově se třemi ložnicemi, "
+"Prostorný rodinný apartmán o ploše 130 m² ve Cvikově se třemi ložnicemi, "
 "zahradou, dětským vybavením a venkovním bazénem."
 msgstr ""
-"Spacious 180 m² family apartment in Cvikov with three bedrooms, a garden, "
+"Spacious 130 m² family apartment in Cvikov with three bedrooms, a garden, "
 "children's equipment and an outdoor pool."
 
 #: apartmancvikov/structured_data.py:216 apartmancvikov/templates/cenik.html:42
@@ -375,8 +375,8 @@ msgstr "A child under 3 staying without a bed stays free of charge."
 
 #: apartmancvikov/structured_data.py:283
 msgid ""
-"Prostorný rodinný apartmán o ploše 180 m² ve Cvikově pro až devět hostů."
-msgstr "Spacious 180 m² family apartment in Cvikov for up to nine guests."
+"Prostorný rodinný apartmán o ploše 130 m² ve Cvikově pro až devět hostů."
+msgstr "Spacious 130 m² family apartment in Cvikov for up to nine guests."
 
 #: apartmancvikov/structured_data.py:289
 #: apartmancvikov/templates/vylety.html:16
@@ -793,18 +793,18 @@ msgstr "Family apartment in Cvikov for 7 to 9 guests"
 
 #: apartmancvikov/templates/index.html:9
 msgid ""
-"Prostorný rodinný apartmán o ploše 180 m² ve Cvikově se 3 ložnicemi, 2 "
+"Prostorný rodinný apartmán o ploše 130 m² ve Cvikově se 3 ložnicemi, 2 "
 "koupelnami, zahradou, bazénem a vybavením pro děti."
 msgstr ""
-"Spacious 180 m² family apartment in Cvikov with 3 bedrooms, 2 bathrooms, a "
+"Spacious 130 m² family apartment in Cvikov with 3 bedrooms, 2 bathrooms, a "
 "garden, pool and children's equipment."
 
 #: apartmancvikov/templates/index.html:19
 msgid ""
-"Prostorný apartmán o ploše 180 m² se třemi ložnicemi, sedmi standardními "
+"Prostorný apartmán o ploše 130 m² se třemi ložnicemi, sedmi standardními "
 "lůžky a dvěma dalšími místy na matracích."
 msgstr ""
-"Spacious 180 m² apartment with three bedrooms, seven standard beds and two "
+"Spacious 130 m² apartment with three bedrooms, seven standard beds and two "
 "additional sleeping places on floor mattresses."
 
 #: apartmancvikov/templates/index.html:26
@@ -1293,10 +1293,10 @@ msgstr ""
 
 #: apartmancvikov/templates/snippets/description.html:4
 msgid ""
-"Prostorný apartmán o ploše 180 m² nabízí ve 3 ložnicích 7 standardních "
+"Prostorný apartmán o ploše 130 m² nabízí ve 3 ložnicích 7 standardních "
 "lůžek, další 2 místa na matracích a možnost dětské postýlky."
 msgstr ""
-"The spacious 180 m² apartment offers 7 standard beds in 3 bedrooms, 2 "
+"The spacious 130 m² apartment offers 7 standard beds in 3 bedrooms, 2 "
 "additional sleeping places on floor mattresses and space for a baby cot."
 
 #: apartmancvikov/templates/vylety.html:6

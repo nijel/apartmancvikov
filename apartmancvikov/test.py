@@ -210,7 +210,7 @@ class SeoTest(TestCase):
                 "https://www.facebook.com/apartman.cvikov/",
             ],
         )
-        self.assertEqual(accommodation["floorSize"]["value"], 180)
+        self.assertEqual(accommodation["floorSize"]["value"], 130)
         self.assertEqual(accommodation["floorSize"]["unitCode"], "MTK")
         self.assertEqual(accommodation["numberOfRooms"], 5)
         self.assertEqual(accommodation["numberOfBedrooms"], 3)
@@ -378,7 +378,7 @@ class SeoTest(TestCase):
 
         llms = self.client.get("/llms.txt")
         self.assertEqual(llms.status_code, 200)
-        self.assertContains(llms, "Spacious 180 m² apartment with 3 bedrooms")
+        self.assertContains(llms, "Spacious 130 m² apartment with 3 bedrooms")
         self.assertContains(llms, "2 additional floor mattresses")
         self.assertContains(llms, "https://apartmancvikov.cz/cs/vylety/")
         self.assertContains(llms, "https://apartmancvikov.cz/cs/poptavka/")

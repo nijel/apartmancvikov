@@ -95,7 +95,7 @@ def _lodging_node():
         "name": str(_("Apartmán Cvikov")),
         "description": str(
             _(
-                "Prostorný rodinný apartmán o ploše 180 m² ve Cvikově se "
+                "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově se "
                 "třemi ložnicemi, zahradou, dětským vybavením a venkovním "
                 "bazénem."
             )
@@ -142,7 +142,7 @@ def _lodging_node():
             "occupancy": {"@type": "QuantitativeValue", "value": MAX_GUESTS},
             "floorSize": {
                 "@type": "QuantitativeValue",
-                "value": 180,
+                "value": 130,
                 "unitCode": "MTK",
             },
             "numberOfRooms": 5,
@@ -280,7 +280,7 @@ def _page_metadata(view_name):
             "WebPage",
             _("Apartmán Cvikov"),
             _(
-                "Prostorný rodinný apartmán o ploše 180 m² ve Cvikově pro až "
+                "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově pro až "
                 "devět hostů."
             ),
         ),
