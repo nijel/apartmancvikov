@@ -677,8 +677,8 @@ msgid "Co cena zahrnuje?"
 msgstr "Was ist im Preis enthalten?"
 
 #: apartmancvikov/templates/cenik.html:47
-msgid "Ubytování ve třech útulných pokojích se společnou koupelnou."
-msgstr "Unterkunft in drei gemütlichen Zimmern mit Gemeinschaftsbad."
+msgid "Ubytování v útulných pokojích se společnou koupelnou."
+msgstr "Unterkunft in gemütlichen Zimmern mit Gemeinschaftsbad."
 
 #: apartmancvikov/templates/cenik.html:48
 msgid "Na pokojích jsou připraveny osušky a ručníky."
