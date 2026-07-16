@@ -62,6 +62,11 @@ urlpatterns = i18n_patterns(  # noqa: RUF005
         TemplateView.as_view(template_name="privacy.html"),
         name="privacy",
     ),
+    path(
+        "podminky-uziti-fotografii/",
+        TemplateView.as_view(template_name="image_license.html"),
+        name="image_license",
+    ),
 ) + [
     path("robots.txt", robots_txt, name="robots"),
     path("llms.txt", llms_txt, name="llms"),

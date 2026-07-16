@@ -27,6 +27,7 @@ SITE_ID = f"{settings.SITE_URL}/#website"
 OPERATOR_ID = f"{settings.SITE_URL}/#operator"
 ACCOMMODATION_ID = f"{settings.SITE_URL}/#accommodation"
 UNIT_ID = f"{settings.SITE_URL}/#accommodation-unit"
+SERVICE_ID = f"{settings.SITE_URL}/#accommodation-service"
 
 PROPERTY_IMAGES = (
     ("foto/dum.jpg", 1600, 1200),
@@ -123,11 +124,6 @@ def _lodging_node():
             f"{STANDARD_PAID_PRICE_MIN_CZK}-{STANDARD_PAID_PRICE_MAX_CZK} "
             f"{PRICE_CURRENCY} per person per night"
         ),
-        "makesOffer": [
-            {"@id": f"{settings.SITE_URL}/#offer-adult"},
-            {"@id": f"{settings.SITE_URL}/#offer-child"},
-            {"@id": f"{settings.SITE_URL}/#offer-infant"},
-        ],
         "address": {
             "@type": "PostalAddress",
             "streetAddress": ADDRESS_STREET,
@@ -137,7 +133,7 @@ def _lodging_node():
             "addressCountry": ADDRESS_COUNTRY,
         },
         "containsPlace": {
-            "@type": ["Accommodation", "Product"],
+            "@type": "Accommodation",
             "@id": UNIT_ID,
             "additionalType": "EntirePlace",
             "occupancy": {"@type": "QuantitativeValue", "value": MAX_GUESTS},
@@ -190,6 +186,26 @@ def _lodging_node():
     }
 
 
+def _service_node():
+    return {
+        "@type": "Service",
+        "@id": SERVICE_ID,
+        "name": str(_("Apartmán Cvikov")),
+        "serviceType": "Vacation rental accommodation",
+        "url": _absolute(reverse("cenik")),
+        "provider": {"@id": OPERATOR_ID},
+        "areaServed": {
+            "@type": "City",
+            "name": ADDRESS_LOCALITY,
+        },
+        "offers": [
+            {"@id": f"{settings.SITE_URL}/#offer-adult"},
+            {"@id": f"{settings.SITE_URL}/#offer-child"},
+            {"@id": f"{settings.SITE_URL}/#offer-infant"},
+        ],
+    }
+
+
 def _offer_node(identifier, name, description, price):
     return {
         "@type": "Offer",
@@ -198,8 +214,8 @@ def _offer_node(identifier, name, description, price):
         "description": str(description),
         "url": _absolute(reverse("cenik")),
         "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut",
-        "offeredBy": {"@id": ACCOMMODATION_ID},
-        "itemOffered": {"@id": UNIT_ID},
+        "offeredBy": {"@id": OPERATOR_ID},
+        "itemOffered": {"@id": SERVICE_ID},
         "priceSpecification": {
             "@type": "UnitPriceSpecification",
             "price": price,
@@ -260,6 +276,7 @@ def _image_node(path, width, height, caption, *, attraction=None):
                     "@type": "Person",
                     "name": attraction.credit_name,
                 },
+                "copyrightNotice": f"© {attraction.credit_name}",
                 "license": attraction.license_url,
                 "acquireLicensePage": attraction.credit_url,
             }
@@ -270,6 +287,9 @@ def _image_node(path, width, height, caption, *, attraction=None):
                 "creditText": str(_("Apartmán Cvikov")),
                 "creator": {"@id": OPERATOR_ID},
                 "copyrightHolder": {"@id": OPERATOR_ID},
+                "copyrightNotice": f"© {OPERATOR_NAME}",
+                "license": _absolute(reverse("image_license")),
+                "acquireLicensePage": _absolute(reverse("kontakt")),
             }
         )
     return node
@@ -332,6 +352,14 @@ def _page_metadata(view_name):
             _(
                 "Informace o zpracování osobních údajů při poptávce pobytu "
                 "v Apartmánu Cvikov."
+            ),
+        ),
+        "image_license": (
+            "WebPage",
+            _("Podmínky užití fotografií"),
+            _(
+                "Informace o autorských právech k fotografiím na webu "
+                "Apartmánu Cvikov a možnosti získat souhlas k jejich užití."
             ),
         ),
     }
@@ -443,11 +471,14 @@ def build_structured_data(request):
         "kontakt",
         "poptavka",
         "privacy",
+        "image_license",
     }:
         return {"@context": "https://schema.org", "@graph": []}
 
     view_name = match.url_name
-    nodes = [_website_node(), _operator_node(), _lodging_node(), *_offer_nodes()]
+    nodes = [_website_node(), _operator_node(), _lodging_node()]
+    if view_name == "cenik":
+        nodes.extend([_service_node(), *_offer_nodes()])
     home_url = _absolute(reverse("home"))
 
     if view_name == "attraction_detail":
@@ -484,7 +515,12 @@ def build_structured_data(request):
                 _("Apartmán Cvikov se zahradou"),
             )
             item_list = None
-            main_entity = ACCOMMODATION_ID if view_name == "home" else None
+            if view_name == "home":
+                main_entity = ACCOMMODATION_ID
+            elif view_name == "cenik":
+                main_entity = SERVICE_ID
+            else:
+                main_entity = None
 
         page_node = _webpage_node(
             request,

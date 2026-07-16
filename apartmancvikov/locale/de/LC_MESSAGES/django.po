@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apartmancvikov\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 21:24+0200\n"
+"POT-Creation-Date: 2026-07-16 10:14+0200\n"
 "PO-Revision-Date: 2026-07-10 13:07+0200\n"
 "Last-Translator: Apartmán Cvikov\n"
 "Language-Team: German\n"
@@ -335,7 +335,7 @@ msgid "Apartmán má kapacitu nejvýše %(capacity)s hostů."
 msgstr "Die Ferienwohnung bietet Platz für höchstens %(capacity)s Gäste."
 
 #: apartmancvikov/structured_data.py:84 apartmancvikov/structured_data.py:96
-#: apartmancvikov/structured_data.py:270 apartmancvikov/structured_data.py:282
+#: apartmancvikov/structured_data.py:271 apartmancvikov/structured_data.py:286
 #: apartmancvikov/templates/attraction_detail.html:13
 #: apartmancvikov/templates/base.html:29 apartmancvikov/templates/base.html:32
 #: apartmancvikov/templates/base.html:82 apartmancvikov/templates/base.html:142
@@ -387,18 +387,18 @@ msgstr "Kind unter 3 Jahren ohne eigenes Bett"
 msgid "Dítě do 3 let bez nároku na lůžko má pobyt zdarma."
 msgstr "Ein Kind unter 3 Jahren übernachtet ohne eigenes Bett kostenlos."
 
-#: apartmancvikov/structured_data.py:284
+#: apartmancvikov/structured_data.py:288
 msgid ""
 "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově pro až devět hostů."
 msgstr ""
 "Geräumige 130 m² große Familienferienwohnung in Cvikov für bis zu neun Gäste."
 
-#: apartmancvikov/structured_data.py:290
+#: apartmancvikov/structured_data.py:294
 #: apartmancvikov/templates/vylety.html:16
 msgid "Rodinné výlety z Apartmánu Cvikov"
 msgstr "Familienausflüge ab der Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:292
+#: apartmancvikov/structured_data.py:296
 #: apartmancvikov/templates/vylety.html:11
 msgid ""
 "Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: pumptrack, "
@@ -408,14 +408,14 @@ msgstr ""
 "Pumptrack, Aussichtspunkte, Felsen, Burgen, Glashütten, Skifahren und "
 "Schlechtwetterprogramm."
 
-#: apartmancvikov/structured_data.py:299 apartmancvikov/templates/cenik.html:6
+#: apartmancvikov/structured_data.py:303 apartmancvikov/templates/cenik.html:6
 #: apartmancvikov/templates/cenik.html:16
 #: apartmancvikov/templates/cenik.html:20
 #: apartmancvikov/templates/cenik.html:24
 msgid "Ceník a podmínky Apartmánu Cvikov"
 msgstr "Preisliste und Bedingungen des Appartements Cvikov"
 
-#: apartmancvikov/structured_data.py:301 apartmancvikov/templates/cenik.html:11
+#: apartmancvikov/structured_data.py:305 apartmancvikov/templates/cenik.html:11
 msgid ""
 "Cena ubytování v Apartmánu Cvikov, zahrnuté vybavení, platební a storno "
 "podmínky a informace k příjezdu."
@@ -423,7 +423,7 @@ msgstr ""
 "Preise der Ferienwohnung Cvikov, enthaltene Ausstattung, Zahlungs- und "
 "Stornobedingungen sowie Informationen zur Anreise."
 
-#: apartmancvikov/structured_data.py:307
+#: apartmancvikov/structured_data.py:311
 #: apartmancvikov/templates/obsazenost.html:6
 #: apartmancvikov/templates/obsazenost.html:16
 #: apartmancvikov/templates/obsazenost.html:20
@@ -431,7 +431,7 @@ msgstr ""
 msgid "Volné termíny v Apartmánu Cvikov"
 msgstr "Freie Termine in der Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:309
+#: apartmancvikov/structured_data.py:313
 #: apartmancvikov/templates/obsazenost.html:11
 msgid ""
 "Kalendář volných a obsazených termínů Apartmánu Cvikov. Vyberte si termín "
@@ -440,7 +440,7 @@ msgstr ""
 "Kalender der freien und belegten Termine der Ferienwohnung Cvikov. Wählen "
 "Sie einen Termin für Ihren Familienaufenthalt im Lausitzer Gebirge."
 
-#: apartmancvikov/structured_data.py:315
+#: apartmancvikov/structured_data.py:319
 #: apartmancvikov/templates/kontakt.html:6
 #: apartmancvikov/templates/kontakt.html:15
 #: apartmancvikov/templates/kontakt.html:19
@@ -448,7 +448,7 @@ msgstr ""
 msgid "Kontaktujte Apartmán Cvikov"
 msgstr "Kontaktieren Sie die Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:317
+#: apartmancvikov/structured_data.py:321
 msgid ""
 "Poptávkový formulář, telefon, e-mail, adresa a mapa Apartmánu Cvikov v "
 "Lužických horách."
@@ -456,13 +456,13 @@ msgstr ""
 "Anfrageformular, Telefon, E-Mail, Adresse und Karte der Ferienwohnung Cvikov "
 "im Lausitzer Gebirge."
 
-#: apartmancvikov/structured_data.py:323
+#: apartmancvikov/structured_data.py:327
 #: apartmancvikov/templates/poptavka.html:6
 #: apartmancvikov/templates/poptavka.html:16
 msgid "Poptávka pobytu | Apartmán Cvikov"
 msgstr "Aufenthaltsanfrage | Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:325
+#: apartmancvikov/structured_data.py:329
 #: apartmancvikov/templates/poptavka.html:11
 msgid ""
 "Nezávazná poptávka ubytování v Apartmánu Cvikov. Zadejte termín pobytu a "
@@ -471,13 +471,13 @@ msgstr ""
 "Unverbindliche Unterkunftsanfrage für die Ferienwohnung Cvikov. Geben Sie "
 "Reisedaten sowie die Anzahl der Erwachsenen und Kinder an."
 
-#: apartmancvikov/structured_data.py:331 apartmancvikov/templates/base.html:165
+#: apartmancvikov/structured_data.py:335 apartmancvikov/templates/base.html:165
 #: apartmancvikov/templates/privacy.html:15
 #: apartmancvikov/templates/privacy.html:19
 msgid "Ochrana osobních údajů"
 msgstr "Datenschutz"
 
-#: apartmancvikov/structured_data.py:333
+#: apartmancvikov/structured_data.py:337
 #: apartmancvikov/templates/privacy.html:11
 msgid ""
 "Informace o zpracování osobních údajů při poptávce pobytu v Apartmánu Cvikov."
@@ -485,23 +485,38 @@ msgstr ""
 "Informationen zur Verarbeitung personenbezogener Daten bei "
 "Aufenthaltsanfragen für die Ferienwohnung Cvikov."
 
-#: apartmancvikov/structured_data.py:383 apartmancvikov/structured_data.py:484
+#: apartmancvikov/structured_data.py:343
+#: apartmancvikov/templates/image_license.html:15
+#: apartmancvikov/templates/image_license.html:19
+msgid "Podmínky užití fotografií"
+msgstr "Nutzungsbedingungen für Fotografien"
+
+#: apartmancvikov/structured_data.py:345
+#: apartmancvikov/templates/image_license.html:11
+msgid ""
+"Informace o autorských právech k fotografiím na webu Apartmánu Cvikov a "
+"možnosti získat souhlas k jejich užití."
+msgstr ""
+"Informationen zum Urheberrecht für Fotografien auf der Website der "
+"Ferienwohnung Cvikov und zur Einholung einer Nutzungserlaubnis."
+
+#: apartmancvikov/structured_data.py:395 apartmancvikov/structured_data.py:497
 #: apartmancvikov/templates/base.html:46 apartmancvikov/templates/index.html:53
 msgid "Apartmán Cvikov se zahradou"
 msgstr "Ferienwohnung Cvikov mit Garten"
 
-#: apartmancvikov/structured_data.py:413
+#: apartmancvikov/structured_data.py:425
 #: apartmancvikov/templates/vylety.html:25
 msgid "Výlety z Apartmánu Cvikov"
 msgstr "Ausflüge von der Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:466 apartmancvikov/structured_data.py:504
+#: apartmancvikov/structured_data.py:479 apartmancvikov/structured_data.py:517
 #: apartmancvikov/templates/attraction_detail.html:41
 #: apartmancvikov/templates/base.html:93
 msgid "Ubytování"
 msgstr "Unterkunft"
 
-#: apartmancvikov/structured_data.py:467
+#: apartmancvikov/structured_data.py:480
 #: apartmancvikov/templates/attraction_detail.html:42
 #: apartmancvikov/templates/base.html:98
 msgid "Výlety"
@@ -635,15 +650,19 @@ msgstr "Sprachauswahl"
 msgid "Ubytování v Lužických horách."
 msgstr "Unterkunft im Lausitzer Gebirge."
 
-#: apartmancvikov/templates/base.html:171
+#: apartmancvikov/templates/base.html:166
+msgid "Užití fotografií"
+msgstr "Nutzung von Fotografien"
+
+#: apartmancvikov/templates/base.html:172
 msgid "Zavřít"
 msgstr "Schließen"
 
-#: apartmancvikov/templates/base.html:174
+#: apartmancvikov/templates/base.html:175
 msgid "Předchozí fotografie"
 msgstr "Vorheriges Foto"
 
-#: apartmancvikov/templates/base.html:181
+#: apartmancvikov/templates/base.html:182
 msgid "Další fotografie"
 msgstr "Nächstes Foto"
 
@@ -787,6 +806,68 @@ msgstr "Name"
 #: apartmancvikov/templates/emails/contact_inquiry.txt:6
 msgid "Jazyk formuláře"
 msgstr "Formularsprache"
+
+#: apartmancvikov/templates/image_license.html:6
+msgid "Podmínky užití fotografií | Apartmán Cvikov"
+msgstr "Nutzungsbedingungen für Fotografien | Ferienwohnung Cvikov"
+
+#: apartmancvikov/templates/image_license.html:23
+msgid "Autorská práva a souhlas k užití fotografií"
+msgstr "Urheberrecht und Erlaubnis zur Nutzung von Fotografien"
+
+#: apartmancvikov/templates/image_license.html:30
+msgid "Fotografie na tomto webu"
+msgstr "Fotografien auf dieser Website"
+
+#: apartmancvikov/templates/image_license.html:31
+msgid "Autorská práva"
+msgstr "Urheberrecht"
+
+#: apartmancvikov/templates/image_license.html:33
+msgid ""
+"Fotografie na tomto webu jsou, není-li u konkrétní fotografie uvedeno jinak, "
+"chráněny autorským právem."
+msgstr ""
+"Sofern bei einer bestimmten Fotografie nicht anders angegeben, sind die "
+"Fotografien auf dieser Website urheberrechtlich geschützt."
+
+#: apartmancvikov/templates/image_license.html:34
+msgid "Všechna práva vyhrazena."
+msgstr "Alle Rechte vorbehalten."
+
+#: apartmancvikov/templates/image_license.html:36
+msgid ""
+"Kopírování, další zveřejnění nebo jiné užití těchto fotografií není dovoleno "
+"bez předchozího písemného souhlasu."
+msgstr ""
+"Das Kopieren, erneute Veröffentlichen oder eine andere Nutzung dieser "
+"Fotografien ist ohne vorherige schriftliche Zustimmung nicht gestattet."
+
+#: apartmancvikov/templates/image_license.html:39
+msgid "Souhlas k užití"
+msgstr "Nutzungserlaubnis"
+
+#: apartmancvikov/templates/image_license.html:41
+msgid "Máte-li zájem některou fotografii použít, kontaktujte nás na"
+msgstr "Wenn Sie eine Fotografie verwenden möchten, kontaktieren Sie uns unter"
+
+#: apartmancvikov/templates/image_license.html:43
+msgid "V žádosti prosím uveďte fotografii, účel a způsob zamýšleného užití."
+msgstr ""
+"Bitte nennen Sie in Ihrer Anfrage die Fotografie, den Zweck und die "
+"beabsichtigte Art der Nutzung."
+
+#: apartmancvikov/templates/image_license.html:48
+msgid "Fotografie třetích stran"
+msgstr "Fotografien Dritter"
+
+#: apartmancvikov/templates/image_license.html:49
+msgid ""
+"U fotografií převzatých od třetích stran platí autorství a licenční podmínky "
+"uvedené přímo u dané fotografie."
+msgstr ""
+"Bei Fotografien von Dritten gelten die direkt bei der jeweiligen Fotografie "
+"angegebenen Urheber- und Lizenzbedingungen."
 
 #: apartmancvikov/templates/index.html:7
 msgid "Rodinný apartmán ve Cvikově pro 7 až 9 hostů"

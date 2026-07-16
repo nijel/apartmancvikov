@@ -73,6 +73,7 @@ class StaticViewSitemap(LocalizedSitemap):
             "kontakt",
             "poptavka",
             "privacy",
+            "image_license",
         ]
 
     def location(self, item):

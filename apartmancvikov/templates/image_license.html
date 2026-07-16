@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  {% translate "Podmínky užití fotografií | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description"
+        content="{% translate "Informace o autorských právech k fotografiím na webu Apartmánu Cvikov a možnosti získat souhlas k jejich užití." %}" />
+{% endblock meta_description %}
+
+{% block ogtitle %}
+  <meta property="og:title" content="{% translate "Podmínky užití fotografií" %}" />
+{% endblock ogtitle %}
+
+{% block headline %}
+  {% translate "Podmínky užití fotografií" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Autorská práva a souhlas k užití fotografií" %}
+{% endblock lead %}
+
+{% block content %}
+  <section class="content-section">
+    <div class="site-container prose-layout">
+      <article class="prose-card">
+        <p class="eyebrow">{% translate "Fotografie na tomto webu" %}</p>
+        <h2>{% translate "Autorská práva" %}</h2>
+        <p>
+          {% translate "Fotografie na tomto webu jsou, není-li u konkrétní fotografie uvedeno jinak, chráněny autorským právem." %}
+          © {{ contact.operator_name }}. {% translate "Všechna práva vyhrazena." %}
+        </p>
+        <p>{% translate "Kopírování, další zveřejnění nebo jiné užití těchto fotografií není dovoleno bez předchozího písemného souhlasu." %}</p>
+
+        <section>
+          <h2>{% translate "Souhlas k užití" %}</h2>
+          <p>
+            {% translate "Máte-li zájem některou fotografii použít, kontaktujte nás na" %}
+            <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>.
+            {% translate "V žádosti prosím uveďte fotografii, účel a způsob zamýšleného užití." %}
+          </p>
+        </section>
+
+        <section>
+          <h2>{% translate "Fotografie třetích stran" %}</h2>
+          <p>{% translate "U fotografií převzatých od třetích stran platí autorství a licenční podmínky uvedené přímo u dané fotografie." %}</p>
+        </section>
+      </article>
+    </div>
+  </section>
+{% endblock content %}

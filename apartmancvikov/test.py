@@ -19,6 +19,7 @@ from .site_config import (
     CONTACT_EMAIL,
     CONTACT_PHONE_DISPLAY,
     MAX_GUESTS,
+    OPERATOR_NAME,
     PRICE_CURRENCY,
     STANDARD_ADULT_PRICE_CZK,
     STANDARD_CHILD_PRICE_CZK,
@@ -216,6 +217,10 @@ class SeoTest(TestCase):
         accommodation = lodging["containsPlace"]
 
         self.assertEqual(lodging["additionalType"], "Apartment")
+        self.assertEqual(accommodation["@type"], "Accommodation")
+        self.assertNotIn('"Product"', json.dumps(graph))
+        self.assertEqual(lodging["checkinTime"], "15:00")
+        self.assertEqual(lodging["checkoutTime"], "10:00")
         self.assertEqual(lodging["knowsLanguage"], ["cs-CZ", "en"])
         self.assertEqual(
             lodging["sameAs"],
@@ -252,9 +257,26 @@ class SeoTest(TestCase):
         """Standard per-person rates are linked to the rental as qualified offers."""
         graph = self.get_schema_graph("/cs/cenik/")
         lodging = self.schema_node(graph, "VacationRental")
+        service = self.schema_node(graph, "Service")
+        operator = self.schema_node(graph, "Person")
+        page = self.schema_node(graph, "WebPage")
         offers = [node for node in graph if node.get("@type") == "Offer"]
 
         self.assertEqual(len(offers), 3)
+        self.assertNotIn("makesOffer", lodging)
+        self.assertEqual(
+            page["mainEntity"]["@id"],
+            "https://apartmancvikov.cz/#accommodation-service",
+        )
+        self.assertEqual(service["provider"]["@id"], operator["@id"])
+        self.assertEqual(
+            {offer["@id"] for offer in service["offers"]},
+            {
+                "https://apartmancvikov.cz/#offer-adult",
+                "https://apartmancvikov.cz/#offer-child",
+                "https://apartmancvikov.cz/#offer-infant",
+            },
+        )
         self.assertEqual(
             lodging["priceRange"],
             f"{STANDARD_PAID_PRICE_MIN_CZK}-{STANDARD_PAID_PRICE_MAX_CZK} "
@@ -276,8 +298,16 @@ class SeoTest(TestCase):
             self.assertEqual(price["billingDuration"], "P1D")
             self.assertEqual(
                 offer["itemOffered"]["@id"],
-                "https://apartmancvikov.cz/#accommodation-unit",
+                "https://apartmancvikov.cz/#accommodation-service",
             )
+            self.assertEqual(offer["offeredBy"]["@id"], operator["@id"])
+
+        home_graph = self.get_schema_graph("/cs/")
+        home_lodging = self.schema_node(home_graph, "VacationRental")
+        self.assertNotIn("makesOffer", home_lodging)
+        self.assertFalse(
+            any(node.get("@type") == "Offer" for node in home_graph),
+        )
 
         response = self.client.get("/cs/cenik/")
         self.assertContains(
@@ -298,9 +328,10 @@ class SeoTest(TestCase):
             ("/cs/vylety/", "CollectionPage", "ItemList"),
             ("/cs/kontakt/", "ContactPage", None),
             ("/cs/poptavka/", "WebPage", None),
-            ("/cs/cenik/", "WebPage", None),
+            ("/cs/cenik/", "WebPage", "Service"),
             ("/cs/obsazenost/", "WebPage", None),
             ("/cs/ochrana-osobnich-udaju/", "WebPage", None),
+            ("/cs/podminky-uziti-fotografii/", "WebPage", None),
         )
         for path, page_type, main_type in cases:
             with self.subTest(path=path):
@@ -310,7 +341,8 @@ class SeoTest(TestCase):
                 if main_type:
                     main = self.schema_node(graph, main_type)
                     self.assertEqual(page["mainEntity"]["@id"], main["@id"])
-                    self.assertEqual(main["numberOfItems"], len(ATTRACTIONS))
+                    if main_type == "ItemList":
+                        self.assertEqual(main["numberOfItems"], len(ATTRACTIONS))
                 else:
                     self.assertEqual(
                         page["about"]["@id"],
@@ -340,6 +372,7 @@ class SeoTest(TestCase):
             image["acquireLicensePage"],
             "https://commons.wikimedia.org/wiki/File:Koerner.jpg",
         )
+        self.assertEqual(image["copyrightNotice"], "© Lutz Maertens")
 
     def test_own_image_has_machine_readable_authorship(self):
         """Property photography identifies the operator as its rights holder."""
@@ -349,6 +382,18 @@ class SeoTest(TestCase):
         self.assertEqual(image["creditText"], "Apartmán Cvikov")
         self.assertEqual(image["creator"]["@id"], operator["@id"])
         self.assertEqual(image["copyrightHolder"]["@id"], operator["@id"])
+        self.assertEqual(image["copyrightNotice"], f"© {OPERATOR_NAME}")
+        self.assertEqual(
+            image["license"],
+            "https://apartmancvikov.cz/cs/podminky-uziti-fotografii/",
+        )
+        self.assertEqual(
+            image["acquireLicensePage"],
+            "https://apartmancvikov.cz/cs/kontakt/",
+        )
+        license_page = self.client.get("/cs/podminky-uziti-fotografii/")
+        self.assertContains(license_page, f"© {OPERATOR_NAME}")
+        self.assertNotContains(license_page, "© Apartmán Cvikov")
 
     def test_sitemap_contains_all_localized_urls(self):
         """The sitemap contains each static and attraction language variant."""
@@ -358,7 +403,7 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 51)
+        self.assertEqual(len(locations), 54)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
         self.assertIn(
             "https://apartmancvikov.cz/de/vylety/motyli-dum-jonsdorf/", locations
@@ -367,6 +412,9 @@ class SeoTest(TestCase):
             "https://apartmancvikov.cz/cs/vylety/pumptrack-cvikov/", locations
         )
         self.assertIn("https://apartmancvikov.cz/cs/ochrana-osobnich-udaju/", locations)
+        self.assertIn(
+            "https://apartmancvikov.cz/cs/podminky-uziti-fotografii/", locations
+        )
         self.assertIn("https://apartmancvikov.cz/cs/poptavka/", locations)
         self.assertIn(
             'hreflang="x-default" href="https://apartmancvikov.cz/cs/vylety/oybin/"',
