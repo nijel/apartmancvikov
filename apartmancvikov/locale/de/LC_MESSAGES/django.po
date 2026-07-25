@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apartmancvikov\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-16 10:14+0200\n"
+"POT-Creation-Date: 2026-07-25 13:46+0200\n"
 "PO-Revision-Date: 2026-07-10 13:07+0200\n"
 "Last-Translator: Apartmán Cvikov\n"
 "Language-Team: German\n"
@@ -334,8 +334,9 @@ msgstr "Das Abreisedatum muss nach dem Anreisedatum liegen."
 msgid "Apartmán má kapacitu nejvýše %(capacity)s hostů."
 msgstr "Die Ferienwohnung bietet Platz für höchstens %(capacity)s Gäste."
 
-#: apartmancvikov/structured_data.py:84 apartmancvikov/structured_data.py:96
-#: apartmancvikov/structured_data.py:271 apartmancvikov/structured_data.py:286
+#: apartmancvikov/structured_data.py:85 apartmancvikov/structured_data.py:97
+#: apartmancvikov/structured_data.py:193 apartmancvikov/structured_data.py:287
+#: apartmancvikov/structured_data.py:302
 #: apartmancvikov/templates/attraction_detail.html:13
 #: apartmancvikov/templates/base.html:29 apartmancvikov/templates/base.html:32
 #: apartmancvikov/templates/base.html:82 apartmancvikov/templates/base.html:142
@@ -345,7 +346,7 @@ msgstr "Die Ferienwohnung bietet Platz für höchstens %(capacity)s Gäste."
 msgid "Apartmán Cvikov"
 msgstr "Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:99
+#: apartmancvikov/structured_data.py:100
 msgid ""
 "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově se třemi ložnicemi, "
 "zahradou, dětským vybavením a venkovním bazénem."
@@ -353,7 +354,7 @@ msgstr ""
 "Geräumige 130 m² große Familienferienwohnung in Cvikov mit drei "
 "Schlafzimmern, Garten, Kinderausstattung und Außenpool."
 
-#: apartmancvikov/structured_data.py:217 apartmancvikov/templates/cenik.html:42
+#: apartmancvikov/structured_data.py:233 apartmancvikov/templates/cenik.html:42
 msgid ""
 "U pobytů na jednu noc a v dalších nestandardních situacích se cena stanovuje "
 "individuálně."
@@ -361,44 +362,44 @@ msgstr ""
 "Bei Aufenthalten für eine Nacht und in anderen Sonderfällen wird der Preis "
 "individuell vereinbart."
 
-#: apartmancvikov/structured_data.py:223
+#: apartmancvikov/structured_data.py:239
 msgid "Standardní cena za dospělého"
 msgstr "Standardpreis für Erwachsene"
 
-#: apartmancvikov/structured_data.py:224
+#: apartmancvikov/structured_data.py:240
 #, python-format
 msgid "%(price)s Kč za osobu a noc. %(exceptions)s"
 msgstr "%(price)s CZK pro Person und Nacht. %(exceptions)s"
 
-#: apartmancvikov/structured_data.py:230
+#: apartmancvikov/structured_data.py:246
 msgid "Standardní cena za dítě do 12 let"
 msgstr "Standardpreis für ein Kind unter 12 Jahren"
 
-#: apartmancvikov/structured_data.py:231
+#: apartmancvikov/structured_data.py:247
 #, python-format
 msgid "%(price)s Kč za dítě a noc. %(exceptions)s"
 msgstr "%(price)s CZK pro Kind und Nacht. %(exceptions)s"
 
-#: apartmancvikov/structured_data.py:237
+#: apartmancvikov/structured_data.py:253
 msgid "Dítě do 3 let bez nároku na lůžko"
 msgstr "Kind unter 3 Jahren ohne eigenes Bett"
 
-#: apartmancvikov/structured_data.py:238
+#: apartmancvikov/structured_data.py:254
 msgid "Dítě do 3 let bez nároku na lůžko má pobyt zdarma."
 msgstr "Ein Kind unter 3 Jahren übernachtet ohne eigenes Bett kostenlos."
 
-#: apartmancvikov/structured_data.py:288
+#: apartmancvikov/structured_data.py:304
 msgid ""
 "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově pro až devět hostů."
 msgstr ""
 "Geräumige 130 m² große Familienferienwohnung in Cvikov für bis zu neun Gäste."
 
-#: apartmancvikov/structured_data.py:294
+#: apartmancvikov/structured_data.py:310
 #: apartmancvikov/templates/vylety.html:16
 msgid "Rodinné výlety z Apartmánu Cvikov"
 msgstr "Familienausflüge ab der Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:296
+#: apartmancvikov/structured_data.py:312
 #: apartmancvikov/templates/vylety.html:11
 msgid ""
 "Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: pumptrack, "
@@ -408,14 +409,14 @@ msgstr ""
 "Pumptrack, Aussichtspunkte, Felsen, Burgen, Glashütten, Skifahren und "
 "Schlechtwetterprogramm."
 
-#: apartmancvikov/structured_data.py:303 apartmancvikov/templates/cenik.html:6
+#: apartmancvikov/structured_data.py:319 apartmancvikov/templates/cenik.html:6
 #: apartmancvikov/templates/cenik.html:16
 #: apartmancvikov/templates/cenik.html:20
 #: apartmancvikov/templates/cenik.html:24
 msgid "Ceník a podmínky Apartmánu Cvikov"
 msgstr "Preisliste und Bedingungen des Appartements Cvikov"
 
-#: apartmancvikov/structured_data.py:305 apartmancvikov/templates/cenik.html:11
+#: apartmancvikov/structured_data.py:321 apartmancvikov/templates/cenik.html:11
 msgid ""
 "Cena ubytování v Apartmánu Cvikov, zahrnuté vybavení, platební a storno "
 "podmínky a informace k příjezdu."
@@ -423,7 +424,7 @@ msgstr ""
 "Preise der Ferienwohnung Cvikov, enthaltene Ausstattung, Zahlungs- und "
 "Stornobedingungen sowie Informationen zur Anreise."
 
-#: apartmancvikov/structured_data.py:311
+#: apartmancvikov/structured_data.py:327
 #: apartmancvikov/templates/obsazenost.html:6
 #: apartmancvikov/templates/obsazenost.html:16
 #: apartmancvikov/templates/obsazenost.html:20
@@ -431,7 +432,7 @@ msgstr ""
 msgid "Volné termíny v Apartmánu Cvikov"
 msgstr "Freie Termine in der Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:313
+#: apartmancvikov/structured_data.py:329
 #: apartmancvikov/templates/obsazenost.html:11
 msgid ""
 "Kalendář volných a obsazených termínů Apartmánu Cvikov. Vyberte si termín "
@@ -440,7 +441,7 @@ msgstr ""
 "Kalender der freien und belegten Termine der Ferienwohnung Cvikov. Wählen "
 "Sie einen Termin für Ihren Familienaufenthalt im Lausitzer Gebirge."
 
-#: apartmancvikov/structured_data.py:319
+#: apartmancvikov/structured_data.py:335
 #: apartmancvikov/templates/kontakt.html:6
 #: apartmancvikov/templates/kontakt.html:15
 #: apartmancvikov/templates/kontakt.html:19
@@ -448,7 +449,7 @@ msgstr ""
 msgid "Kontaktujte Apartmán Cvikov"
 msgstr "Kontaktieren Sie die Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:321
+#: apartmancvikov/structured_data.py:337
 msgid ""
 "Poptávkový formulář, telefon, e-mail, adresa a mapa Apartmánu Cvikov v "
 "Lužických horách."
@@ -456,13 +457,13 @@ msgstr ""
 "Anfrageformular, Telefon, E-Mail, Adresse und Karte der Ferienwohnung Cvikov "
 "im Lausitzer Gebirge."
 
-#: apartmancvikov/structured_data.py:327
+#: apartmancvikov/structured_data.py:343
 #: apartmancvikov/templates/poptavka.html:6
 #: apartmancvikov/templates/poptavka.html:16
 msgid "Poptávka pobytu | Apartmán Cvikov"
 msgstr "Aufenthaltsanfrage | Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:329
+#: apartmancvikov/structured_data.py:345
 #: apartmancvikov/templates/poptavka.html:11
 msgid ""
 "Nezávazná poptávka ubytování v Apartmánu Cvikov. Zadejte termín pobytu a "
@@ -471,13 +472,13 @@ msgstr ""
 "Unverbindliche Unterkunftsanfrage für die Ferienwohnung Cvikov. Geben Sie "
 "Reisedaten sowie die Anzahl der Erwachsenen und Kinder an."
 
-#: apartmancvikov/structured_data.py:335 apartmancvikov/templates/base.html:165
+#: apartmancvikov/structured_data.py:351 apartmancvikov/templates/base.html:165
 #: apartmancvikov/templates/privacy.html:15
 #: apartmancvikov/templates/privacy.html:19
 msgid "Ochrana osobních údajů"
 msgstr "Datenschutz"
 
-#: apartmancvikov/structured_data.py:337
+#: apartmancvikov/structured_data.py:353
 #: apartmancvikov/templates/privacy.html:11
 msgid ""
 "Informace o zpracování osobních údajů při poptávce pobytu v Apartmánu Cvikov."
@@ -485,13 +486,13 @@ msgstr ""
 "Informationen zur Verarbeitung personenbezogener Daten bei "
 "Aufenthaltsanfragen für die Ferienwohnung Cvikov."
 
-#: apartmancvikov/structured_data.py:343
+#: apartmancvikov/structured_data.py:359
 #: apartmancvikov/templates/image_license.html:15
 #: apartmancvikov/templates/image_license.html:19
 msgid "Podmínky užití fotografií"
 msgstr "Nutzungsbedingungen für Fotografien"
 
-#: apartmancvikov/structured_data.py:345
+#: apartmancvikov/structured_data.py:361
 #: apartmancvikov/templates/image_license.html:11
 msgid ""
 "Informace o autorských právech k fotografiím na webu Apartmánu Cvikov a "
@@ -500,23 +501,23 @@ msgstr ""
 "Informationen zum Urheberrecht für Fotografien auf der Website der "
 "Ferienwohnung Cvikov und zur Einholung einer Nutzungserlaubnis."
 
-#: apartmancvikov/structured_data.py:395 apartmancvikov/structured_data.py:497
+#: apartmancvikov/structured_data.py:411 apartmancvikov/structured_data.py:515
 #: apartmancvikov/templates/base.html:46 apartmancvikov/templates/index.html:53
 msgid "Apartmán Cvikov se zahradou"
 msgstr "Ferienwohnung Cvikov mit Garten"
 
-#: apartmancvikov/structured_data.py:425
+#: apartmancvikov/structured_data.py:441
 #: apartmancvikov/templates/vylety.html:25
 msgid "Výlety z Apartmánu Cvikov"
 msgstr "Ausflüge von der Ferienwohnung Cvikov"
 
-#: apartmancvikov/structured_data.py:479 apartmancvikov/structured_data.py:517
+#: apartmancvikov/structured_data.py:497 apartmancvikov/structured_data.py:540
 #: apartmancvikov/templates/attraction_detail.html:41
 #: apartmancvikov/templates/base.html:93
 msgid "Ubytování"
 msgstr "Unterkunft"
 
-#: apartmancvikov/structured_data.py:480
+#: apartmancvikov/structured_data.py:498
 #: apartmancvikov/templates/attraction_detail.html:42
 #: apartmancvikov/templates/base.html:98
 msgid "Výlety"
@@ -724,7 +725,9 @@ msgid "Wi-Fi připojení k internetu v celém objektu"
 msgstr "Wi-Fi-Internetverbindung im gesamten Gebäude"
 
 #: apartmancvikov/templates/cenik.html:55
-msgid "Minimální délka pobytu je 2 noci, o letních prázdninách 7 nocí."
+#, fuzzy
+#| msgid "Minimální délka pobytu je 2 noci, o letních prázdninách 7 nocí."
+msgid "Minimální délka pobytu je 2 noci."
 msgstr "Der Mindestaufenthalt beträgt 2 Nächte, in den Sommerferien 7 Nächte."
 
 #: apartmancvikov/templates/cenik.html:59
@@ -1018,12 +1021,20 @@ msgstr ""
 "für Ihr Verständnis."
 
 #: apartmancvikov/templates/index.html:76
+#, fuzzy
+#| msgid ""
+#| "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní "
+#| "židlička, redukce na toaletu, nočník, lehátko na koupání miminek, koupací "
+#| "vanička, hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany "
+#| "na postel, zábrany na schodiště, podsedák na židli, vysavač s redukcí na "
+#| "odsávání při rýmě. Pokud bude cokoliv na děti potřeba, stačí se nás "
+#| "zeptat."
 msgid ""
 "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, "
 "redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, "
 "hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany na postel, "
-"zábrany na schodiště, podsedák na židli, vysavač s redukcí na odsávání při "
-"rýmě. Pokud bude cokoliv na děti potřeba, stačí se nás zeptat."
+"zábrany na schodiště, podsedák na židli, vysavač. Pokud bude cokoliv na děti "
+"potřeba, stačí se nás zeptat."
 msgstr ""
 "Es ist auch möglich, Ausrüstung für Kinder zu mieten - ein Kinderbett, einen "
 "Hochstuhl, eine Verkleinerung für die Toilette, ein Töpfchen, ein Baby-"
@@ -1041,10 +1052,15 @@ msgid "Pokoje"
 msgstr "Zimmer"
 
 #: apartmancvikov/templates/index.html:88
+#, fuzzy
+#| msgid ""
+#| "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a "
+#| "toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v "
+#| "přízemí."
 msgid ""
-"Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a "
-"toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v "
-"přízemí."
+"Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou s "
+"protiskluzovou podložkou a toaletou v 1. patře a menší koupelna se sprchovým "
+"koutem a toaletou v přízemí."
 msgstr ""
 "Für alle Zimmer gibt es ein großes geräumiges Badezimmer mit Badewanne und "
 "Toilette im ersten Stock und ein kleineres Badezimmer mit Dusche und "
