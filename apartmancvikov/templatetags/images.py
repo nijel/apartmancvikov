@@ -15,6 +15,7 @@ def responsive_image(  # noqa: PLR0913
     width,
     height,
     alt,
+    *,
     sizes="100vw",
     loading="lazy",
     fetchpriority=None,

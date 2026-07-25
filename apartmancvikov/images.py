@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0
 
+from __future__ import annotations
+
 from django.templatetags.static import static
 
 from .image_config import available_widths, variant_path
@@ -18,12 +20,13 @@ def variant_url(path, source_width, extension="jpg", preferred_width=None):
 
 
 def responsive_image_context(  # noqa: PLR0913
-    path,
-    source_width,
-    source_height,
-    alt,
-    sizes="100vw",
-    loading="lazy",
+    path: str,
+    source_width: int,
+    source_height: int,
+    alt: str,
+    *,
+    sizes: str = "100vw",
+    loading: str = "lazy",
     fetchpriority=None,
     picture_class=None,
     image_class=None,
