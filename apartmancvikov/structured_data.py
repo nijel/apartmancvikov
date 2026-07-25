@@ -1,3 +1,7 @@
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: AGPL-3.0
+
 from django.conf import settings
 from django.templatetags.static import static
 from django.urls import reverse

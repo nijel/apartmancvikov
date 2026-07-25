@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: AGPL-3.0
+
 """Django's command-line utility for administrative tasks."""
 
 import os

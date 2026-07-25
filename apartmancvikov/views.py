@@ -1,3 +1,7 @@
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: AGPL-3.0
+
 import logging
 from smtplib import SMTPException
 

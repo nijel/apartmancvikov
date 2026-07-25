@@ -1,3 +1,7 @@
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: AGPL-3.0
+
 """Stable business data shared by pages, metadata, and e-mail handling."""
 
 SITE_NAME = "Apartmán Cvikov"

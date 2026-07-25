@@ -1,3 +1,7 @@
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: AGPL-3.0
+
 from django import template
 
 from apartmancvikov.images import responsive_image_context, variant_url

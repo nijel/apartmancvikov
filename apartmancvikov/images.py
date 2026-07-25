@@ -1,3 +1,7 @@
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: AGPL-3.0
+
 from django.templatetags.static import static
 
 from .image_config import available_widths, variant_path

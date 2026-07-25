@@ -1,3 +1,7 @@
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: AGPL-3.0
+
 from pathlib import PurePosixPath
 
 IMAGE_WIDTHS = (480, 800, 1200, 1600, 1920)
