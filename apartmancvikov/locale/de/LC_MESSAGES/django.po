@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: apartmancvikov\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-25 13:46+0200\n"
-"PO-Revision-Date: 2026-07-10 13:07+0200\n"
-"Last-Translator: Apartmán Cvikov\n"
-"Language-Team: German\n"
+"PO-Revision-Date: 2026-07-25 11:55+0000\n"
+"Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/apartman-cvikov/"
+"web/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: apartmancvikov/content.py:26
 msgid "Lehká"
@@ -725,10 +727,8 @@ msgid "Wi-Fi připojení k internetu v celém objektu"
 msgstr "Wi-Fi-Internetverbindung im gesamten Gebäude"
 
 #: apartmancvikov/templates/cenik.html:55
-#, fuzzy
-#| msgid "Minimální délka pobytu je 2 noci, o letních prázdninách 7 nocí."
 msgid "Minimální délka pobytu je 2 noci."
-msgstr "Der Mindestaufenthalt beträgt 2 Nächte, in den Sommerferien 7 Nächte."
+msgstr "Die Mindestaufenthaltsdauer beträgt 2 Nächte."
 
 #: apartmancvikov/templates/cenik.html:59
 msgid "Platba a storno"
@@ -1021,14 +1021,6 @@ msgstr ""
 "für Ihr Verständnis."
 
 #: apartmancvikov/templates/index.html:76
-#, fuzzy
-#| msgid ""
-#| "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní "
-#| "židlička, redukce na toaletu, nočník, lehátko na koupání miminek, koupací "
-#| "vanička, hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany "
-#| "na postel, zábrany na schodiště, podsedák na židli, vysavač s redukcí na "
-#| "odsávání při rýmě. Pokud bude cokoliv na děti potřeba, stačí se nás "
-#| "zeptat."
 msgid ""
 "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, "
 "redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, "
@@ -1036,12 +1028,11 @@ msgid ""
 "zábrany na schodiště, podsedák na židli, vysavač. Pokud bude cokoliv na děti "
 "potřeba, stačí se nás zeptat."
 msgstr ""
-"Es ist auch möglich, Ausrüstung für Kinder zu mieten - ein Kinderbett, einen "
-"Hochstuhl, eine Verkleinerung für die Toilette, ein Töpfchen, ein Baby-"
-"Badebett, eine Badewanne, eine Spieldecke, einen Milchwärmer, Spielzeug für "
-"die Badewanne, ein Bettgitter, ein Treppengeländer, einen Stuhlsitz, einen "
-"Staubsauger mit Verkleinerung für das Absaugen bei Schnupfen. Wenn Sie etwas "
-"für die Kinder brauchen, fragen Sie uns einfach."
+"Es ist auch möglich, Ausrüstung für Kinder auszuleihen – Babybett, "
+"Hochstuhl, Toilettensitzadapter, Töpfchen, Baby-Badeliege, Babybadewanne, "
+"Spielmatte, Milch- oder Breiwärmer, Badespielzeug, Bettgitter, "
+"Treppengitter, Stuhlaufsatz, Staubsauger. Wenn Sie etwas für Kinder "
+"benötigen, fragen Sie uns einfach."
 
 #: apartmancvikov/templates/index.html:86
 msgid "Klidný spánek"
@@ -1052,19 +1043,14 @@ msgid "Pokoje"
 msgstr "Zimmer"
 
 #: apartmancvikov/templates/index.html:88
-#, fuzzy
-#| msgid ""
-#| "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou a "
-#| "toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v "
-#| "přízemí."
 msgid ""
 "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou s "
 "protiskluzovou podložkou a toaletou v 1. patře a menší koupelna se sprchovým "
 "koutem a toaletou v přízemí."
 msgstr ""
-"Für alle Zimmer gibt es ein großes geräumiges Badezimmer mit Badewanne und "
-"Toilette im ersten Stock und ein kleineres Badezimmer mit Dusche und "
-"Toilette im Erdgeschoss."
+"Für alle Zimmer steht im 1. Stock ein großes, geräumiges Badezimmer mit "
+"Badewanne (mit rutschfester Matte) und Toilette sowie im Erdgeschoss ein "
+"kleineres Badezimmer mit Duschkabine und Toilette zur Verfügung."
 
 #: apartmancvikov/templates/index.html:90
 msgid "Tyrkysový pokoj s manželskou postelí"
