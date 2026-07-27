@@ -88,6 +88,8 @@ class SeoTest(TestCase):
         self.assertContains(response, "/static/style.css")
         self.assertContains(response, "/static/site.js")
         self.assertContains(response, 'class="nav-menu"')
+        self.assertContains(response, 'class="lightbox__image-stage"')
+        self.assertContains(response, 'class="lightbox__zoom"')
         self.assertContains(response, 'class="lightbox__nav lightbox__nav--previous"')
         self.assertContains(response, 'class="lightbox__nav lightbox__nav--next"')
 

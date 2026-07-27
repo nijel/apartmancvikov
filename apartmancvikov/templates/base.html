@@ -170,11 +170,17 @@
 
     <dialog class="lightbox" id="lightbox">
       <button class="lightbox__close" type="button" aria-label="{% translate "Zavřít" %}">×</button>
+      <button class="lightbox__zoom"
+              type="button"
+              aria-label="{% translate "Zvětšit fotografii" %}"
+              aria-pressed="false">+</button>
       <button class="lightbox__nav lightbox__nav--previous"
               type="button"
               aria-label="{% translate "Předchozí fotografie" %}">‹</button>
       <figure>
-        <img src="" alt="" />
+        <div class="lightbox__image-stage">
+          <img src="" alt="" />
+        </div>
         <figcaption aria-live="polite">&nbsp;</figcaption>
       </figure>
       <button class="lightbox__nav lightbox__nav--next"

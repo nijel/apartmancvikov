@@ -662,6 +662,10 @@ msgid "Zavřít"
 msgstr "Schließen"
 
 #: apartmancvikov/templates/base.html:175
+msgid "Zvětšit fotografii"
+msgstr "Foto vergrößern"
+
+#: apartmancvikov/templates/base.html:175
 msgid "Předchozí fotografie"
 msgstr "Vorheriges Foto"
 
