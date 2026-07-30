@@ -14,6 +14,7 @@ from django.conf import settings
 from django.core import mail, signing
 from django.test import TestCase, override_settings
 from django.utils import timezone
+from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
 from .availability import maximum_inquiry_date
@@ -189,7 +190,7 @@ class SeoTest(TestCase):
                     self.assertEqual(response.status_code, 200)
                     html = response.content.decode()
                     self.assertEqual(len(re.findall(r"<h1(?:\s|>)", html)), 1)
-                    self.assertIn(str(attraction.official_url), html)
+                    self.assertIn(escape(str(attraction.official_url)), html)
 
     def test_walking_loop_length_is_not_presented_as_distance(self):
         """A complete walking circuit is clearly distinguished from distance."""
@@ -322,6 +323,80 @@ class SeoTest(TestCase):
                 for detail in details:
                     self.assertContains(response, detail)
 
+    def test_new_guest_document_trips_have_routes_photos_and_practical_data(self):
+        """The eight added handout trips render their supplied planning details."""
+        expected = {
+            "kunraticke-svycarsko": (
+                "https://mapy.com/s/bupomahunu",
+                "8 km",
+                "Karlův odpočinek",
+            ),
+            "panska-skala": (
+                "https://mapy.com/s/nupocenega",
+                "13 km",
+                "parkovné 70 Kč",
+            ),
+            "sloni-kameny": (
+                "https://mapy.com/s/bokedakepe",
+                "2 km",
+                "zakázáno lézt přímo na skály",
+            ),
+            "hvozd": (
+                "https://mapy.com/s/hacajetave",
+                "6,5 km",
+                "také autobusem",
+            ),
+            "loreta-rumburk": (
+                "https://mapy.com/s/fokuhejoko",
+                "31 km",
+                "Dospělý 80 Kč",
+            ),
+            "transborder-chrastava": (
+                "https://mapy.com/s/latagomabe",
+                "8,3 km",
+                "vlastní silou",
+            ),
+            "lesopark-horka": (
+                "https://mapy.com/s/leredazeka",
+                "1–2 km",
+                "spící obr Máza",
+            ),
+            "stezky-brniste": (
+                "https://mapy.com/s/nujepuhota",
+                "3,7 km",
+                "okolní pozemky jsou soukromé",
+            ),
+        }
+        for slug, details in expected.items():
+            with self.subTest(slug=slug):
+                response = self.client.get(f"/cs/vylety/{slug}/")
+                self.assertEqual(response.status_code, 200)
+                image_slug = "brniste-stezky" if slug == "stezky-brniste" else slug
+                self.assertContains(response, f"/static/vylety/{image_slug}.jpg")
+                for detail in details:
+                    self.assertContains(response, detail)
+
+    def test_route_variants_have_individual_lengths_and_maps(self):
+        """Multi-route trips keep each walking option and its map together."""
+        brniste = self.client.get("/cs/vylety/stezky-brniste/")
+        self.assertContains(brniste, 'class="route-variant"', count=3)
+        self.assertContains(brniste, "Sochy ve skalách")
+        self.assertContains(brniste, "1,5 km")
+        self.assertContains(brniste, "https://mapy.com/s/jenojasole")
+        self.assertContains(brniste, "Stezka Hastrmanů")
+        self.assertContains(brniste, "6 km")
+        self.assertContains(brniste, "https://mapy.com/s/jatubucura")
+        self.assertContains(brniste, "Skleněná stezka")
+        self.assertContains(brniste, "3,7 km")
+        self.assertContains(brniste, "https://mapy.com/s/nujepuhota")
+        self.assertNotContains(brniste, 'href="None"')
+
+        horka = self.client.get("/cs/vylety/lesopark-horka/")
+        self.assertContains(horka, 'class="route-variant"', count=1)
+        self.assertContains(horka, "1–2 km")
+        self.assertContains(horka, "https://mapy.com/s/leredazeka")
+        self.assertNotContains(horka, 'href="None"')
+
     def test_extended_trip_descriptions_are_translated(self):
         """New paragraphs remain useful in both translated site versions."""
         english = self.client.get("/en/vylety/klic/")
@@ -331,6 +406,16 @@ class SeoTest(TestCase):
         german = self.client.get("/de/vylety/duty-kamen/")
         self.assertContains(german, "Felsbank Karolínin odpočinek")
         self.assertNotContains(german, "skalní lavici")
+
+        new_english = self.client.get("/en/vylety/lesopark-horka/")
+        self.assertContains(new_english, "Horka Forest Park")
+        self.assertContains(new_english, "Forest park walk")
+        self.assertNotContains(new_english, "Procházka lesoparkem")
+
+        new_german = self.client.get("/de/vylety/stezky-brniste/")
+        self.assertContains(new_german, "Wege rund um Brniště")
+        self.assertContains(new_german, "Routenkarte anzeigen")
+        self.assertNotContains(new_german, "Zobrazit mapu trasy")
 
     def test_every_destination_has_structured_practical_information(self):
         """Every trip and swimming destination has the three maintained facts."""
@@ -446,8 +531,32 @@ class SeoTest(TestCase):
                     ("swimming", "koupaliste-ceska-kamenice"),
                 )
             ),
+            frozenset(
+                (
+                    ("attraction", "duty-kamen"),
+                    ("attraction", "kunraticke-svycarsko"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "oybin"),
+                    ("attraction", "hvozd"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "pacinek-glass"),
+                    ("attraction", "stezky-brniste"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "privoz-mlynky-vyhlidky"),
+                    ("attraction", "transborder-chrastava"),
+                )
+            ),
         }
-        self.assertEqual(relation_count, 14)
+        self.assertEqual(relation_count, 22)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):
@@ -619,6 +728,7 @@ class SeoTest(TestCase):
             stylesheet,
         )
         self.assertIn("body.trip-print--detail .attraction-detail", stylesheet)
+        self.assertIn("body.trip-print--detail .route-variants", stylesheet)
         self.assertIn("body.trip-print--detail .related-trips", stylesheet)
         self.assertIn("body.trip-print .button-row", stylesheet)
         self.assertIn("body.trip-print .text-link", stylesheet)
@@ -871,7 +981,7 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 60)
+        self.assertEqual(len(locations), 84)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/koupani/",
@@ -886,6 +996,10 @@ class SeoTest(TestCase):
         )
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/pumptrack-cvikov/", locations
+        )
+        self.assertIn(
+            "https://apartmancvikov.cz/de/vylety/stezky-brniste/",
+            locations,
         )
         self.assertIn("https://apartmancvikov.cz/cs/ochrana-osobnich-udaju/", locations)
         self.assertIn(
@@ -912,6 +1026,11 @@ class SeoTest(TestCase):
         self.assertIn(
             "<image:loc>https://apartmancvikov.cz/static/vylety/"
             "ceska-kamenice-privoz.jpg</image:loc>",
+            sitemap,
+        )
+        self.assertIn(
+            "<image:loc>https://apartmancvikov.cz/static/vylety/"
+            "brniste-stezky.jpg</image:loc>",
             sitemap,
         )
 

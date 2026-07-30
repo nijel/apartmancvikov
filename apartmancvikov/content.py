@@ -16,6 +16,15 @@ class TripRelation:
 
 
 @dataclass(frozen=True)
+class RouteVariant:
+    name: object
+    distance_km: int | float
+    map_url: str
+    description: object
+    distance_km_max: int | float | None = None
+
+
+@dataclass(frozen=True)
 class Attraction:
     slug: str
     name: object
@@ -24,7 +33,7 @@ class Attraction:
     distance_km: int | float
     difficulty: object
     family_tip: object
-    map_url: str
+    map_url: str | None
     official_url: str
     stroller_access: object
     admission: object
@@ -44,6 +53,7 @@ class Attraction:
     alternate_distance_label: object | None = None
     alternate_distance_km: int | float | None = None
     description_paragraphs: tuple[object, ...] = ()
+    route_variants: tuple[RouteVariant, ...] = ()
     related_trips: tuple[TripRelation, ...] = ()
 
 
@@ -190,6 +200,14 @@ ATTRACTIONS = (
                     "a cvikovské vyhlídky."
                 ),
             ),
+            TripRelation(
+                target_kind="attraction",
+                target_slug="kunraticke-svycarsko",
+                description=_(
+                    "Na delší cestu zdejšími pískovcovými skalami navazuje "
+                    "okruh Kunratickým Švýcarskem."
+                ),
+            ),
         ),
         image="vylety/duty-kamen.jpg",
         image_width=800,
@@ -198,6 +216,65 @@ ATTRACTIONS = (
         credit_url="https://commons.wikimedia.org/wiki/File:Koerner.jpg",
         license_name="CC BY-SA 3.0",
         license_url="https://creativecommons.org/licenses/by-sa/3.0/",
+    ),
+    Attraction(
+        slug="kunraticke-svycarsko",
+        name=_("Kunratické Švýcarsko"),
+        summary=_(
+            "Malé skalní město s reliéfy, kaplemi a ukrytými místy nedaleko Cvikova."
+        ),
+        description=_(
+            "Osmikilometrový pěší okruh vede přímo od apartmánu do krajiny "
+            "nižších pískovcových skal mezi Drnovcem a Kunraticemi. Čekají vás "
+            "skalní reliéfy, kaple, vyhlídky i stopy příběhů, které se k tomuto "
+            "malému skalnímu městu vážou."
+        ),
+        description_paragraphs=(
+            _(
+                "Jednou ze zastávek je kaple vytesaná ve skále ve tvaru "
+                "antického chrámku. Poblíž ní se ukrývá další skalní kaple "
+                "s lavicí, upravená při obnově místa v roce 1934."
+            ),
+            _(
+                "Pod převisem najdete Karlův odpočinek s lavicí, kterou členové "
+                "kunratické sekce Horského spolku věnovali svému předsedovi "
+                "Karlu Beckertovi. Dvojice podobných skal na ostrožně dostala "
+                "příznačné jméno Blíženci."
+            ),
+            _(
+                "Nevelký skalní úkryt Waltro připomíná odbojovou skupinu "
+                "Waltera Hofmanna a uprchlíky, kteří se zde skrývali za druhé "
+                "světové války. Trasa spojuje tato drobná místa do pestrého "
+                "výletu, na který se vyplatí vzít pevnou obuv."
+            ),
+        ),
+        distance_km=8,
+        distance_kind="walking_loop",
+        difficulty=MODERATE,
+        family_tip=_(
+            "Dobrodružná cesta pro děti, které zvládnou osm kilometrů a nerovný terén."
+        ),
+        map_url="https://mapy.com/s/bupomahunu",
+        official_url=(
+            "https://www.kraj-lbc.cz/aktuality/okolim-cvikova-waltro-karluv-"
+            "odpocinek-a-skalni-kaple-u-drnovce-n575612.htm"
+        ),
+        stroller_access=_("Ne"),
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné"),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="duty-kamen",
+                description=_(
+                    "Pro kratší výlet podobnou skalní krajinou zvolte okruh "
+                    "kolem Dutého kamene."
+                ),
+            ),
+        ),
+        image="vylety/kunraticke-svycarsko.jpg",
+        image_width=1280,
+        image_height=960,
     ),
     Attraction(
         slug="skalni-hrad-sloup",
@@ -306,6 +383,14 @@ ATTRACTIONS = (
                     "Sklářské krčmy v Lindavě."
                 ),
             ),
+            TripRelation(
+                target_kind="attraction",
+                target_slug="stezky-brniste",
+                description=_(
+                    "Na Skleněné stezce v Brništi potkáte další díla Jiřího "
+                    "Pačinka zasazená přímo do krajiny."
+                ),
+            ),
         ),
         image="vylety/pacinek.jpg",
         image_width=1600,
@@ -342,6 +427,57 @@ ATTRACTIONS = (
         image="vylety/ajeto.jpg",
         image_width=1600,
         image_height=1064,
+    ),
+    Attraction(
+        slug="panska-skala",
+        name=_("Panská skála"),
+        summary=_(
+            "Čedičové varhany známé z pohádky Pyšná princezna a krátká procházka."
+        ),
+        description=_(
+            "Panská skála u Kamenického Šenova je jednou z nejznámějších "
+            "geologických památek v Česku. Pravidelné čedičové sloupce "
+            "připomínají píšťaly varhan a místo poznají i děti z pohádky "
+            "Pyšná princezna."
+        ),
+        description_paragraphs=(
+            _(
+                "Dnešní podoba skály se odkryla při někdejší těžbě. Pěti až "
+                "šestiboké sloupce vznikly při chladnutí magmatu, jsou téměř "
+                "svislé a dosahují délky až patnáct metrů."
+            ),
+            _(
+                "Z horní části se otevírá výhled na Kamenický Šenov a okolní "
+                "kopce. Pod skálou leží malé jezírko naplněné srážkovou vodou "
+                "v prohlubni po těžbě a na jihovýchodním úpatí stojí historický "
+                "Mariánský sloup."
+            ),
+            _(
+                "Od parkoviště je to ke skále jen krátká cesta, takže jde o "
+                "dobrý cíl i na půldenní výlet nebo jako zastávku při cestě "
+                "do České Kamenice."
+            ),
+        ),
+        distance_km=13,
+        distance_kind="driving",
+        difficulty=EASY,
+        family_tip=_(
+            "Krátký a snadno dostupný výlet; na mokrém čediči dávejte pozor na uklouznutí."
+        ),
+        map_url="https://mapy.com/s/nupocenega",
+        official_url=(
+            "https://www.kamenicky-senov.cz/turistika/turisticke-informacni-"
+            "centrum-a-parkoviste/?lang=cs&mapa-webu=1"
+        ),
+        stroller_access=_("Ano"),
+        admission=_(
+            "Vstup zdarma; parkovné 70 Kč za prvních 75 minut, poté 50 Kč za "
+            "každou další hodinu; od listopadu do března 100 Kč za den."
+        ),
+        opening_hours=_("Skála je volně přístupná celoročně."),
+        image="vylety/panska-skala.jpg",
+        image_width=1360,
+        image_height=900,
     ),
     Attraction(
         slug="klic",
@@ -389,6 +525,64 @@ ATTRACTIONS = (
         image="vylety/klic.jpg",
         image_width=1600,
         image_height=1064,
+    ),
+    Attraction(
+        slug="hvozd",
+        name=_("Výstup na Hvozd"),
+        summary=_(
+            "Hraniční vrchol s rozhlednou, horskou chatou a výhledy do Čech i Saska."
+        ),
+        description=_(
+            "Z Krompachu vystoupáte po červené značce na Hvozd, výrazný "
+            "hraniční vrchol vysoký 749 metrů. Šest a půl kilometru dlouhý "
+            "okruh nabízí horskou cestu, daleké rozhledy a možnost občerstvení "
+            "na vrcholu."
+        ),
+        description_paragraphs=(
+            _(
+                "Kamenná rozhledna Hochwaldturm stojí na německé straně vrcholu. "
+                "Za dobré viditelnosti je z ní možné přehlédnout Lužické hory, "
+                "Žitavskou pánev i vzdálenější hřebeny."
+            ),
+            _(
+                "Přímo u vrcholu se nachází horská chata Hochwaldbaude, kde se "
+                "lze během výletu zastavit na jídlo. Otevírací dobu chaty i "
+                "rozhledny je vhodné ověřit před cestou."
+            ),
+            _(
+                "Do Krompachu se můžete z Cvikova dopravit také autobusem. "
+                "Trasa vede lesním a místy kamenitým terénem, proto není vhodná "
+                "pro kočárek."
+            ),
+        ),
+        distance_km=6.5,
+        distance_kind="walking_loop",
+        driving_distance_km=10,
+        difficulty=MODERATE,
+        family_tip=_("Vhodné pro děti zvyklé na delší stoupání; přibalte pevnou obuv."),
+        map_url="https://mapy.com/s/hacajetave",
+        official_url=(
+            "https://www.hochwaldbaude.de/bergbaude-im-naturpark-zittauer-gebirge"
+        ),
+        stroller_access=_("Ne"),
+        admission=_("Výlet zdarma; vstup na rozhlednu je placený."),
+        opening_hours=_(
+            "Trasa je volně přístupná; provoz rozhledny a chaty ověřte předem."
+        ),
+        travel_tip=_("Do Krompachu je možné dojet také autobusem ze Cvikova."),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="oybin",
+                description=_(
+                    "Další výrazný vrchol Žitavských hor nabízí skalní hrad "
+                    "a klášter Oybin."
+                ),
+            ),
+        ),
+        image="vylety/hvozd.jpg",
+        image_width=1600,
+        image_height=1068,
     ),
     Attraction(
         slug="polevsko",
@@ -439,6 +633,288 @@ ATTRACTIONS = (
         image="vylety/polevsko.jpg",
         image_width=1600,
         image_height=1200,
+    ),
+    Attraction(
+        slug="sloni-kameny",
+        name=_("Sloní kameny"),
+        summary=_("Krátká rodinná procházka k nápadným bílým skalám u Jítravy."),
+        description=_(
+            "Bílé neboli Sloní kameny připomínají hřbety odpočívajících slonů. "
+            "Dvoukilometrová pěší trasa od Jítravy vede mírným terénem a patří "
+            "k nejjednodušším skalním výletům v Lužických horách."
+        ),
+        description_paragraphs=(
+            _(
+                "Skály jsou vidět už ze silnice a od malého parkoviště k nim "
+                "dojdete po červené značce přibližně za dvacet minut velmi "
+                "pomalé chůze. Pozvolné stoupání zvládnou i menší děti."
+            ),
+            _(
+                "Nápadně světlý pískovec vytváří zaoblené bloky, úzké průchody "
+                "a drobné prohlubně. Jde o chráněnou přírodní památku, proto je "
+                "zakázáno lézt přímo na skály nebo do nich zasahovat."
+            ),
+            _(
+                "Kdo má dost sil, může pokračovat po mezinárodní naučné stezce "
+                "směrem k Vraním skalám. Tato delší varianta už vede náročnějším "
+                "terénem a není vhodná pro kočárky."
+            ),
+        ),
+        distance_km=2,
+        distance_kind="walking_loop",
+        driving_distance_km=18,
+        difficulty=EASY,
+        family_tip=_("Nenáročný výlet pro malé děti; na chráněné skály se nesmí lézt."),
+        map_url="https://mapy.com/s/bokedakepe",
+        official_url=(
+            "https://www.rynoltice.cz/obec/zajimavosti/tipy-na-vylety/"
+            "po-hrbetech-slonu-251cs.html?lang=cs&mapa-webu=1"
+        ),
+        stroller_access=_("Ano"),
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné"),
+        image="vylety/sloni-kameny.jpg",
+        image_width=800,
+        image_height=517,
+    ),
+    Attraction(
+        slug="loreta-rumburk",
+        name=_("Loreta Rumburk"),
+        summary=_("Barokní poutní areál s nejseverněji položenou loretou v Evropě."),
+        description=_(
+            "Loretánská kaple Panny Marie v Rumburku vznikla v letech 1704 až "
+            "1709 podle návrhu Jana Lucase Hildebrandta. Je přesnou kopií "
+            "Svaté chýše v italském Loretu, zde však zdobenou místním pískovcem."
+        ),
+        description_paragraphs=(
+            _(
+                "Bohatě zdobená kaple stojí uprostřed ambitu bývalého "
+                "kapucínského kláštera. Spolu s kostelem svatého Vavřince "
+                "vytváří klidný uzavřený areál jen několik kroků od centra "
+                "Rumburku."
+            ),
+            _(
+                "Návštěva ukazuje architekturu, výzdobu i duchovní tradici "
+                "místa. V areálu se konají výstavy a je zde také expozice "
+                "církevního umění, k níž se však vystupuje po schodech."
+            ),
+            _(
+                "Hlavní kaple, ambity a kostel jsou přístupné s kočárkem. "
+                "Aktuální program a případné změny návštěvní doby si ověřte "
+                "před cestou na oficiálním webu."
+            ),
+        ),
+        distance_km=31,
+        distance_kind="driving",
+        difficulty=EASY,
+        family_tip=_(
+            "Klidný kulturní program vhodný i do horšího počasí a pro více generací."
+        ),
+        map_url="https://mapy.com/s/fokuhejoko",
+        official_url=("https://www.loretarumburk.cz/kontakt-navstevni-doba-a-vstupne/"),
+        stroller_access=_(
+            "Ano do hlavních prostor; expozice církevního umění je pouze po schodech."
+        ),
+        admission=_("Dospělý 80 Kč, dítě od 7 do 15 let 40 Kč, děti do 6 let zdarma."),
+        opening_hours=_(
+            "Od listopadu do dubna v sobotu 9–16:30; od května do října "
+            "od úterý do soboty 9–16:30."
+        ),
+        image="vylety/loreta-rumburk.jpg",
+        image_width=400,
+        image_height=274,
+    ),
+    Attraction(
+        slug="transborder-chrastava",
+        name=_("Transbordér u Chrastavy"),
+        summary=_(
+            "Ruční převoz přes Lužickou Nisu na výletě po cyklostezce u Chrastavy."
+        ),
+        description=_(
+            "Hlavním zážitkem osmikilometrového okruhu je transbordér u "
+            "Andělské Hory: zavěšená kabina, kterou se vlastní silou převezete "
+            "přes Lužickou Nisu. Trasa vede převážně po cyklostezce a spojuje "
+            "přírodu s technickými památkami."
+        ),
+        description_paragraphs=(
+            _(
+                "Kabina překonává řeku na více než dvacetimetrovém závěsu. "
+                "Cestující otáčením kliky pohánějí jednoduchý mechanismus a "
+                "převezou na druhý břeh sebe, jízdní kolo i dětský kočárek."
+            ),
+            _(
+                "Při pokračování směrem do Chrastavy minete výraznou secesní "
+                "textilní továrnu z červených cihel. Ve městě lze navštívit také "
+                "muzeum hasičské techniky nebo expozici vodního náhonu a "
+                "Francisovy turbíny."
+            ),
+            _(
+                "Transbordér je volně přístupný a funguje bez obsluhy, takže "
+                "samotné převezení je pro děti součástí dobrodružství. Při "
+                "vyšším stavu vody vždy respektujte aktuální podmínky na místě."
+            ),
+        ),
+        distance_km=8.3,
+        distance_kind="walking_loop",
+        driving_distance_km=29,
+        difficulty=EASY,
+        family_tip=_(
+            "Děti si mohou kabinu samy pohánět; menším pomůže s klikou dospělý."
+        ),
+        map_url="https://mapy.com/s/latagomabe",
+        official_url=(
+            "https://www.chrastava.eu/volny-cas/turista/co-navstivit/"
+            "transborder-1905cs.html"
+        ),
+        stroller_access=_("Ano"),
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné celoročně."),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="privoz-mlynky-vyhlidky",
+                description=_(
+                    "Další přívoz, který děti ovládají vlastní silou, najdete "
+                    "u České Kamenice."
+                ),
+            ),
+        ),
+        image="vylety/transborder-chrastava.jpg",
+        image_width=1280,
+        image_height=960,
+    ),
+    Attraction(
+        slug="lesopark-horka",
+        name=_("Lesopark Horka"),
+        summary=_("Les plný hádanek, herních prvků a odpočinkových míst pod Ještědem."),
+        description=_(
+            "Volnočasový lesopark Horka v Rozstání proměňuje procházku lesem "
+            "v hravé objevování. Na jednom až dvou kilometrech můžete řešit "
+            "hádanky, zkoušet herní prvky a zastavovat se na mnoha místech "
+            "připravených pro děti."
+        ),
+        description_paragraphs=(
+            _(
+                "U vstupu návštěvníky vítá spící obr Máza, který po zavolání "
+                "odpovídá. V areálu je přibližně pět set hádanek a zajímavostí, "
+                "lesní hřiště, lanové prvky, amfiteátr i dráhy pro golfové míčky."
+            ),
+            _(
+                "Cesty jsou sjízdné s kočárkem a podél nich najdete dostatek "
+                "laviček a míst k odpočinku. Délku procházky lze snadno "
+                "přizpůsobit věku dětí a času, který chcete v lese strávit."
+            ),
+            _(
+                "Parkování pro návštěvníky je vyhrazené pod budovou golfového "
+                "areálu. V jeho sousedství je restaurace, dětský koutek a další "
+                "placené aktivity, které lze s návštěvou lesoparku spojit."
+            ),
+        ),
+        distance_km=35,
+        distance_kind="driving",
+        difficulty=EASY,
+        family_tip=_(
+            "Délku procházky si zvolíte podle nálady; dostatek zastávek zabaví i menší děti."
+        ),
+        map_url=None,
+        official_url="https://golfjested.cz/lesopark-horka/",
+        stroller_access=_("Ano"),
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné"),
+        route_variants=(
+            RouteVariant(
+                name=_("Procházka lesoparkem"),
+                distance_km=1,
+                distance_km_max=2,
+                map_url="https://mapy.com/s/leredazeka",
+                description=_(
+                    "Okruh můžete zkrátit nebo prodloužit podle vybraných "
+                    "herních zastávek a věku dětí."
+                ),
+            ),
+        ),
+        image="vylety/lesopark-horka.jpg",
+        image_width=1024,
+        image_height=684,
+    ),
+    Attraction(
+        slug="stezky-brniste",
+        name=_("Stezky kolem Brniště"),
+        summary=_("Tři rodinné trasy za skalními sochami, hastrmany a českým sklem."),
+        description=_(
+            "V Brništi si můžete vybrat ze tří tematických stezek různé délky. "
+            "Každá má vlastní mapu a jiný příběh: umění ukryté v lese, vodní "
+            "svět hastrmanů nebo skleněná díla zasazená do krajiny."
+        ),
+        description_paragraphs=(
+            _(
+                "Trasy začínají na různých místech v okolí obce, proto si před "
+                "odjezdem otevřete mapu vybrané varianty. Všechny jsou volně "
+                "přístupné a lze je projít samostatně."
+            ),
+            _(
+                "Stezky propojují přírodní prostředí s úkoly, herními prvky a "
+                "uměleckými objekty. Díky tomu se hodí pro rodiny, které chtějí "
+                "dětem rozdělit procházku na řadu menších objevů."
+            ),
+        ),
+        distance_km=10,
+        distance_kind="driving",
+        difficulty=EASY,
+        family_tip=_(
+            "Vyberte trasu podle věku dětí: od krátkých skalních soch po šestikilometrové hastrmany."
+        ),
+        map_url=None,
+        official_url=(
+            "https://www.brniste.cz/volny-cas/turistika-5/"
+            "mapa-stezek-v-brnisti/?rss=200"
+        ),
+        stroller_access=_("Ano; pro Sochy ve skalách je vhodnější terénní kočárek."),
+        admission=_("Zdarma"),
+        opening_hours=_("Všechny tři stezky jsou volně přístupné celoročně."),
+        route_variants=(
+            RouteVariant(
+                name=_("Sochy ve skalách"),
+                distance_km=1.5,
+                map_url="https://mapy.com/s/jenojasole",
+                description=_(
+                    "Lesní trasa mezi trolly, bohyněmi, strážci lesa a land "
+                    "artem vede až ke znovuobjevené kapličce z roku 1863."
+                ),
+            ),
+            RouteVariant(
+                name=_("Stezka Hastrmanů"),
+                distance_km=6,
+                map_url="https://mapy.com/s/jatubucura",
+                description=_(
+                    "Devět zastavení s úkoly a herními prvky provází světem "
+                    "potoků, mokřadů, mlýnů, hastrmanů a víl."
+                ),
+            ),
+            RouteVariant(
+                name=_("Skleněná stezka"),
+                distance_km=3.7,
+                map_url="https://mapy.com/s/nujepuhota",
+                description=_(
+                    "Cesta ke Schrötrově kapli míjí skleněný strom a díla "
+                    "Bořka Šípka i Jiřího Pačinka; zpět se vraťte stejnou trasou, "
+                    "okolní pozemky jsou soukromé."
+                ),
+            ),
+        ),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="pacinek-glass",
+                description=_(
+                    "Po Skleněné stezce pokračujte za dalšími díly Jiřího "
+                    "Pačinka do sklářské zahrady v Kunraticích."
+                ),
+            ),
+        ),
+        image="vylety/brniste-stezky.jpg",
+        image_width=1440,
+        image_height=1080,
     ),
     Attraction(
         slug="privoz-mlynky-vyhlidky",
@@ -496,6 +972,14 @@ ATTRACTIONS = (
                     "koupališti s bistrem."
                 ),
             ),
+            TripRelation(
+                target_kind="attraction",
+                target_slug="transborder-chrastava",
+                description=_(
+                    "Podobné dobrodružství s ručním převozem přes vodu zažijete "
+                    "na transbordéru u Chrastavy."
+                ),
+            ),
         ),
         image="vylety/ceska-kamenice-privoz.jpg",
         image_width=1600,
@@ -526,6 +1010,14 @@ ATTRACTIONS = (
                 description=_(
                     "Výlet do Žitavských hor můžete doplnit krytým programem "
                     "se zvířaty v nedalekém Jonsdorfu."
+                ),
+            ),
+            TripRelation(
+                target_kind="attraction",
+                target_slug="hvozd",
+                description=_(
+                    "Pro pěší horský výlet s rozhlednou vystoupejte na nedaleký "
+                    "hraniční vrchol Hvozd."
                 ),
             ),
         ),

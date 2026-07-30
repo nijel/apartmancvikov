@@ -142,7 +142,9 @@
             {% translate "Ceny a provozní doba se mohou změnit. Před cestou si vždy ověřte aktuální informace na webu provozovatele." %}
           </p>
           <div class="button-row">
-            <a href="{{ attraction.map_url }}" class="button button--primary" rel="noopener">{% translate "Zobrazit mapu" %}</a>
+            {% if attraction.map_url %}
+              <a href="{{ attraction.map_url }}" class="button button--primary" rel="noopener">{% translate "Zobrazit mapu" %}</a>
+            {% endif %}
             <a href="{{ attraction.official_url }}"
                class="button button--secondary"
                rel="noopener">{% translate "Aktuální informace" %}</a>
@@ -156,6 +158,33 @@
         <p>{{ attraction.description }}</p>
         {% for paragraph in attraction.description_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
       </section>
+
+      {% if attraction.route_variants %}
+        <section class="route-variants" aria-labelledby="route-variants-title">
+          <p class="eyebrow">{% translate "Vyberte si trasu" %}</p>
+          <h2 id="route-variants-title">{% translate "Varianty výletu" %}</h2>
+          <div class="route-variants__grid">
+            {% for route in attraction.route_variants %}
+              <article class="route-variant">
+                <div class="route-variant__heading">
+                  <h3>{{ route.name|nbsp_prepositions }}</h3>
+                  <p class="route-variant__distance">
+                    {% if route.distance_km_max %}
+                      {% blocktranslate with distance=route.distance_km distance_max=route.distance_km_max %}{{ distance }}–{{ distance_max }} km{% endblocktranslate %}
+                    {% else %}
+                      {% blocktranslate with distance=route.distance_km %}{{ distance }} km{% endblocktranslate %}
+                    {% endif %}
+                  </p>
+                </div>
+                <p>{{ route.description }}</p>
+                <div class="button-row">
+                  <a href="{{ route.map_url }}" class="button button--secondary" rel="noopener">{% translate "Zobrazit mapu trasy" %}</a>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
 
       {% if related_trips %}
         <section class="related-trips" aria-labelledby="related-trips-title">

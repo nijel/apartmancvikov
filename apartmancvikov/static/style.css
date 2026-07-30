@@ -891,6 +891,50 @@ summary {
   font-size: 1.3rem;
 }
 
+.route-variants {
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.route-variants h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.route-variants__grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.route-variant {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+}
+
+.route-variant__heading {
+  align-items: start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.route-variant h3 {
+  font-size: 1.55rem;
+  margin-bottom: 0.65rem;
+}
+
+.route-variant > p {
+  color: var(--muted);
+}
+
+.route-variant__distance {
+  color: var(--accent);
+  flex: none;
+  font-weight: 750;
+  margin: 0;
+}
+
 .related-trips {
   margin-bottom: clamp(4rem, 8vw, 7rem);
 }
@@ -1694,8 +1738,8 @@ html.lightbox-open {
   }
 
   body.trip-print--overview .attraction-grid {
-    gap: 2.5mm;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.8mm;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   body.trip-print--overview .attraction-card {
@@ -1713,20 +1757,25 @@ html.lightbox-open {
   body.trip-print--overview .attraction-card__body {
     display: block;
     min-height: 0;
-    padding: 2.3mm 2.7mm;
+    padding: 1.8mm 2mm;
   }
 
   body.trip-print--overview .attraction-card__body h2 {
-    font-size: 10.5pt;
+    font-size: 8.8pt;
     line-height: 1.08;
-    margin: 0 0 1mm;
+    margin: 0 0 0.7mm;
   }
 
   body.trip-print--overview .attraction-card__body > p:not(.eyebrow) {
     color: #413c38;
-    font-size: 7.6pt;
-    line-height: 1.2;
+    font-size: 6.6pt;
+    line-height: 1.15;
     margin: 0;
+  }
+
+  body.trip-print--overview .attraction-card__body .eyebrow {
+    font-size: 5.5pt;
+    margin-bottom: 0.6mm;
   }
 
   body.trip-print--swimming .swimming-page > .site-container {
@@ -1905,6 +1954,49 @@ html.lightbox-open {
 
   body.trip-print--detail .story-block > p:last-child {
     margin-bottom: 0;
+  }
+
+  body.trip-print--detail .route-variants {
+    break-inside: avoid;
+    margin: 3mm 0 0;
+  }
+
+  body.trip-print--detail .route-variants > .eyebrow {
+    display: none;
+  }
+
+  body.trip-print--detail .route-variants h2 {
+    font-size: 11pt;
+    margin: 0 0 1.2mm;
+  }
+
+  body.trip-print--detail .route-variants__grid {
+    gap: 2mm;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body.trip-print--detail .route-variant {
+    border: 0.5pt solid #cfc6bc;
+    border-radius: 1.5mm;
+    padding: 1.8mm 2.2mm;
+  }
+
+  body.trip-print--detail .route-variant__heading {
+    gap: 1mm;
+  }
+
+  body.trip-print--detail .route-variant h3 {
+    font-size: 8pt;
+    line-height: 1.1;
+    margin: 0 0 0.5mm;
+  }
+
+  body.trip-print--detail .route-variant > p,
+  body.trip-print--detail .route-variant__distance {
+    color: #413c38;
+    font-size: 6.5pt;
+    line-height: 1.15;
+    margin: 0;
   }
 
   body.trip-print--detail .related-trips {

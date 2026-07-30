@@ -2401,3 +2401,357 @@ msgid ""
 "%(primary)s Kratší varianta „%(label)s“ měří %(distance)s km."
 msgstr ""
 "%(primary)s The shorter “%(label)s” option is %(distance)s km long."
+
+#: apartmancvikov/content.py
+msgid "Na delší cestu zdejšími pískovcovými skalami navazuje okruh Kunratickým Švýcarskem."
+msgstr "For a longer walk through the local sandstone landscape, continue on the Kunratice Switzerland loop."
+
+#: apartmancvikov/content.py
+msgid "Kunratické Švýcarsko"
+msgstr "Kunratice Switzerland"
+
+#: apartmancvikov/content.py
+msgid "Malé skalní město s reliéfy, kaplemi a ukrytými místy nedaleko Cvikova."
+msgstr "A small rock town with reliefs, chapels and hidden places near Cvikov."
+
+#: apartmancvikov/content.py
+msgid "Osmikilometrový pěší okruh vede přímo od apartmánu do krajiny nižších pískovcových skal mezi Drnovcem a Kunraticemi. Čekají vás skalní reliéfy, kaple, vyhlídky i stopy příběhů, které se k tomuto malému skalnímu městu vážou."
+msgstr "This eight-kilometre walking loop leads directly from the apartment into the low sandstone rocks between Drnovec and Kunratice. Along the way you will discover rock reliefs, chapels, viewpoints and traces of the stories associated with this small rock town."
+
+#: apartmancvikov/content.py
+msgid "Jednou ze zastávek je kaple vytesaná ve skále ve tvaru antického chrámku. Poblíž ní se ukrývá další skalní kaple s lavicí, upravená při obnově místa v roce 1934."
+msgstr "One stop is a chapel carved into the rock in the shape of a classical temple. Nearby is another rock chapel with a bench, created when the site was restored in 1934."
+
+#: apartmancvikov/content.py
+msgid "Pod převisem najdete Karlův odpočinek s lavicí, kterou členové kunratické sekce Horského spolku věnovali svému předsedovi Karlu Beckertovi. Dvojice podobných skal na ostrožně dostala příznačné jméno Blíženci."
+msgstr "Beneath an overhang you will find Karlův odpočinek, with a bench dedicated by the Kunratice branch of the Mountain Association to its chairman Karel Beckert. A pair of similar rocks on a small spur is aptly named Blíženci, the Twins."
+
+#: apartmancvikov/content.py
+msgid "Nevelký skalní úkryt Waltro připomíná odbojovou skupinu Waltera Hofmanna a uprchlíky, kteří se zde skrývali za druhé světové války. Trasa spojuje tato drobná místa do pestrého výletu, na který se vyplatí vzít pevnou obuv."
+msgstr "The small Waltro rock shelter commemorates Walter Hofmann's resistance group and the refugees who hid here during the Second World War. The route links these modest landmarks into a varied trip for which sturdy footwear is worthwhile."
+
+#: apartmancvikov/content.py
+msgid "Dobrodružná cesta pro děti, které zvládnou osm kilometrů a nerovný terén."
+msgstr "An adventurous route for children who can manage eight kilometres and uneven terrain."
+
+#: apartmancvikov/content.py
+msgid "Pro kratší výlet podobnou skalní krajinou zvolte okruh kolem Dutého kamene."
+msgstr "For a shorter trip through a similar rocky landscape, choose the loop around Dutý kámen."
+
+#: apartmancvikov/content.py
+msgid "Na Skleněné stezce v Brništi potkáte další díla Jiřího Pačinka zasazená přímo do krajiny."
+msgstr "On the Glass Trail in Brniště you will encounter more works by Jiří Pačinek set directly into the landscape."
+
+#: apartmancvikov/content.py
+msgid "Panská skála"
+msgstr "Panská skála"
+
+#: apartmancvikov/content.py
+msgid "Čedičové varhany známé z pohádky Pyšná princezna a krátká procházka."
+msgstr "Basalt organ pipes known from the fairy tale The Proud Princess, reached on a short walk."
+
+#: apartmancvikov/content.py
+msgid "Panská skála u Kamenického Šenova je jednou z nejznámějších geologických památek v Česku. Pravidelné čedičové sloupce připomínají píšťaly varhan a místo poznají i děti z pohádky Pyšná princezna."
+msgstr "Panská skála near Kamenický Šenov is one of the best-known geological monuments in Czechia. Its regular basalt columns resemble organ pipes, and children may recognise the location from the fairy tale The Proud Princess."
+
+#: apartmancvikov/content.py
+msgid "Dnešní podoba skály se odkryla při někdejší těžbě. Pěti až šestiboké sloupce vznikly při chladnutí magmatu, jsou téměř svislé a dosahují délky až patnáct metrů."
+msgstr "The rock's present form was exposed by former quarrying. Its five- to six-sided columns formed as magma cooled; they are almost vertical and reach up to fifteen metres in length."
+
+#: apartmancvikov/content.py
+msgid "Z horní části se otevírá výhled na Kamenický Šenov a okolní kopce. Pod skálou leží malé jezírko naplněné srážkovou vodou v prohlubni po těžbě a na jihovýchodním úpatí stojí historický Mariánský sloup."
+msgstr "The upper part overlooks Kamenický Šenov and the surrounding hills. Below the rock is a small rain-fed lake in a former quarry hollow, while a historic Marian column stands at the south-eastern foot."
+
+#: apartmancvikov/content.py
+msgid "Od parkoviště je to ke skále jen krátká cesta, takže jde o dobrý cíl i na půldenní výlet nebo jako zastávku při cestě do České Kamenice."
+msgstr "The rock is only a short walk from the car park, making it a good half-day destination or a stop on the way to Česká Kamenice."
+
+#: apartmancvikov/content.py
+msgid "Krátký a snadno dostupný výlet; na mokrém čediči dávejte pozor na uklouznutí."
+msgstr "A short and easily accessible trip; take care on wet, slippery basalt."
+
+#: apartmancvikov/content.py
+msgid "Vstup zdarma; parkovné 70 Kč za prvních 75 minut, poté 50 Kč za každou další hodinu; od listopadu do března 100 Kč za den."
+msgstr "Admission free; parking costs CZK 70 for the first 75 minutes, then CZK 50 for each additional hour; from November to March, CZK 100 per day."
+
+#: apartmancvikov/content.py
+msgid "Skála je volně přístupná celoročně."
+msgstr "The rock is freely accessible all year round."
+
+#: apartmancvikov/content.py
+msgid "Výstup na Hvozd"
+msgstr "Hike up Hvozd"
+
+#: apartmancvikov/content.py
+msgid "Hraniční vrchol s rozhlednou, horskou chatou a výhledy do Čech i Saska."
+msgstr "A border summit with a lookout tower, mountain lodge and views over Bohemia and Saxony."
+
+#: apartmancvikov/content.py
+msgid "Z Krompachu vystoupáte po červené značce na Hvozd, výrazný hraniční vrchol vysoký 749 metrů. Šest a půl kilometru dlouhý okruh nabízí horskou cestu, daleké rozhledy a možnost občerstvení na vrcholu."
+msgstr "From Krompach, follow the red trail up Hvozd, a prominent 749-metre border summit. The six-and-a-half-kilometre loop offers a mountain walk, far-reaching views and refreshments at the top."
+
+#: apartmancvikov/content.py
+msgid "Kamenná rozhledna Hochwaldturm stojí na německé straně vrcholu. Za dobré viditelnosti je z ní možné přehlédnout Lužické hory, Žitavskou pánev i vzdálenější hřebeny."
+msgstr "The stone Hochwaldturm lookout stands on the German side of the summit. In good visibility it overlooks the Lusatian Mountains, the Zittau Basin and more distant ridges."
+
+#: apartmancvikov/content.py
+msgid "Přímo u vrcholu se nachází horská chata Hochwaldbaude, kde se lze během výletu zastavit na jídlo. Otevírací dobu chaty i rozhledny je vhodné ověřit před cestou."
+msgstr "The Hochwaldbaude mountain lodge stands right by the summit and offers a place to stop for food. Check the opening times of both the lodge and the lookout tower before setting off."
+
+#: apartmancvikov/content.py
+msgid "Do Krompachu se můžete z Cvikova dopravit také autobusem. Trasa vede lesním a místy kamenitým terénem, proto není vhodná pro kočárek."
+msgstr "Krompach can also be reached by bus from Cvikov. The route follows forest paths and is rocky in places, so it is not suitable for pushchairs."
+
+#: apartmancvikov/content.py
+msgid "Vhodné pro děti zvyklé na delší stoupání; přibalte pevnou obuv."
+msgstr "Suitable for children used to longer climbs; bring sturdy footwear."
+
+#: apartmancvikov/content.py
+msgid "Výlet zdarma; vstup na rozhlednu je placený."
+msgstr "The walk is free; admission to the lookout tower is charged."
+
+#: apartmancvikov/content.py
+msgid "Trasa je volně přístupná; provoz rozhledny a chaty ověřte předem."
+msgstr "The route is freely accessible; check the lookout tower and lodge opening times in advance."
+
+#: apartmancvikov/content.py
+msgid "Do Krompachu je možné dojet také autobusem ze Cvikova."
+msgstr "Krompach can also be reached by bus from Cvikov."
+
+#: apartmancvikov/content.py
+msgid "Další výrazný vrchol Žitavských hor nabízí skalní hrad a klášter Oybin."
+msgstr "Another prominent summit in the Zittau Mountains is home to Oybin's rock castle and monastery."
+
+#: apartmancvikov/content.py
+msgid "Sloní kameny"
+msgstr "Elephant Rocks"
+
+#: apartmancvikov/content.py
+msgid "Krátká rodinná procházka k nápadným bílým skalám u Jítravy."
+msgstr "A short family walk to the striking white rocks near Jítrava."
+
+#: apartmancvikov/content.py
+msgid "Bílé neboli Sloní kameny připomínají hřbety odpočívajících slonů. Dvoukilometrová pěší trasa od Jítravy vede mírným terénem a patří k nejjednodušším skalním výletům v Lužických horách."
+msgstr "The White Rocks, also known as Elephant Rocks, resemble the backs of resting elephants. The two-kilometre walking route from Jítrava follows gentle terrain and is one of the easiest rock trips in the Lusatian Mountains."
+
+#: apartmancvikov/content.py
+msgid "Skály jsou vidět už ze silnice a od malého parkoviště k nim dojdete po červené značce přibližně za dvacet minut velmi pomalé chůze. Pozvolné stoupání zvládnou i menší děti."
+msgstr "The rocks are visible from the road, and the red trail from the small car park reaches them in about twenty minutes at a very slow pace. Even younger children can manage the gentle ascent."
+
+#: apartmancvikov/content.py
+msgid "Nápadně světlý pískovec vytváří zaoblené bloky, úzké průchody a drobné prohlubně. Jde o chráněnou přírodní památku, proto je zakázáno lézt přímo na skály nebo do nich zasahovat."
+msgstr "The strikingly pale sandstone forms rounded blocks, narrow passages and small hollows. This is a protected natural monument, so climbing directly on the rocks or damaging them is prohibited."
+
+#: apartmancvikov/content.py
+msgid "Kdo má dost sil, může pokračovat po mezinárodní naučné stezce směrem k Vraním skalám. Tato delší varianta už vede náročnějším terénem a není vhodná pro kočárky."
+msgstr "Those with energy to spare can continue along the international nature trail towards Vraní skály. This longer option crosses more demanding terrain and is not suitable for pushchairs."
+
+#: apartmancvikov/content.py
+msgid "Nenáročný výlet pro malé děti; na chráněné skály se nesmí lézt."
+msgstr "An easy trip for young children; climbing on the protected rocks is not permitted."
+
+#: apartmancvikov/content.py
+msgid "Loreta Rumburk"
+msgstr "Rumburk Loreto"
+
+#: apartmancvikov/content.py
+msgid "Barokní poutní areál s nejseverněji položenou loretou v Evropě."
+msgstr "A Baroque pilgrimage complex containing Europe's northernmost Loreto."
+
+#: apartmancvikov/content.py
+msgid "Loretánská kaple Panny Marie v Rumburku vznikla v letech 1704 až 1709 podle návrhu Jana Lucase Hildebrandta. Je přesnou kopií Svaté chýše v italském Loretu, zde však zdobenou místním pískovcem."
+msgstr "The Loreto Chapel of the Virgin Mary in Rumburk was built between 1704 and 1709 to a design by Johann Lucas von Hildebrandt. It is an exact copy of the Holy House in Loreto, Italy, but here it is decorated with local sandstone."
+
+#: apartmancvikov/content.py
+msgid "Bohatě zdobená kaple stojí uprostřed ambitu bývalého kapucínského kláštera. Spolu s kostelem svatého Vavřince vytváří klidný uzavřený areál jen několik kroků od centra Rumburku."
+msgstr "The richly decorated chapel stands in the centre of the cloister of the former Capuchin monastery. Together with St Lawrence's Church, it forms a peaceful enclosed complex just a few steps from central Rumburk."
+
+#: apartmancvikov/content.py
+msgid "Návštěva ukazuje architekturu, výzdobu i duchovní tradici místa. V areálu se konají výstavy a je zde také expozice církevního umění, k níž se však vystupuje po schodech."
+msgstr "A visit reveals the site's architecture, decoration and spiritual tradition. The complex hosts exhibitions and a display of ecclesiastical art, although the latter is reached only by stairs."
+
+#: apartmancvikov/content.py
+msgid "Hlavní kaple, ambity a kostel jsou přístupné s kočárkem. Aktuální program a případné změny návštěvní doby si ověřte před cestou na oficiálním webu."
+msgstr "The main chapel, cloisters and church are accessible with a pushchair. Check the current programme and any changes to visiting hours on the official website before travelling."
+
+#: apartmancvikov/content.py
+msgid "Klidný kulturní program vhodný i do horšího počasí a pro více generací."
+msgstr "A quiet cultural visit suitable for poor weather and several generations."
+
+#: apartmancvikov/content.py
+msgid "Ano do hlavních prostor; expozice církevního umění je pouze po schodech."
+msgstr "Yes in the main areas; the ecclesiastical art exhibition is accessible only by stairs."
+
+#: apartmancvikov/content.py
+msgid "Dospělý 80 Kč, dítě od 7 do 15 let 40 Kč, děti do 6 let zdarma."
+msgstr "Adults CZK 80, children aged 7–15 CZK 40, children under 6 free."
+
+#: apartmancvikov/content.py
+msgid "Od listopadu do dubna v sobotu 9–16:30; od května do října od úterý do soboty 9–16:30."
+msgstr "November to April: Saturday 09:00–16:30; May to October: Tuesday to Saturday 09:00–16:30."
+
+#: apartmancvikov/content.py
+msgid "Transbordér u Chrastavy"
+msgstr "Transporter bridge near Chrastava"
+
+#: apartmancvikov/content.py
+msgid "Ruční převoz přes Lužickou Nisu na výletě po cyklostezce u Chrastavy."
+msgstr "A hand-operated crossing of the Lusatian Neisse on a trip along the cycle path near Chrastava."
+
+#: apartmancvikov/content.py
+msgid "Hlavním zážitkem osmikilometrového okruhu je transbordér u Andělské Hory: zavěšená kabina, kterou se vlastní silou převezete přes Lužickou Nisu. Trasa vede převážně po cyklostezce a spojuje přírodu s technickými památkami."
+msgstr "The highlight of the eight-kilometre loop is the transporter bridge at Andělská Hora: a suspended cabin that you propel across the Lusatian Neisse yourself. The route runs mainly along a cycle path and combines nature with industrial heritage."
+
+#: apartmancvikov/content.py
+msgid "Kabina překonává řeku na více než dvacetimetrovém závěsu. Cestující otáčením kliky pohánějí jednoduchý mechanismus a převezou na druhý břeh sebe, jízdní kolo i dětský kočárek."
+msgstr "The cabin crosses the river on a suspension more than twenty metres long. By turning a crank, passengers power a simple mechanism that carries them, their bicycle and even a pushchair to the opposite bank."
+
+#: apartmancvikov/content.py
+msgid "Při pokračování směrem do Chrastavy minete výraznou secesní textilní továrnu z červených cihel. Ve městě lze navštívit také muzeum hasičské techniky nebo expozici vodního náhonu a Francisovy turbíny."
+msgstr "Continuing towards Chrastava, you pass a striking Art Nouveau red-brick textile factory. In the town you can also visit the fire-fighting technology museum or an exhibition about the millrace and Francis turbine."
+
+#: apartmancvikov/content.py
+msgid "Transbordér je volně přístupný a funguje bez obsluhy, takže samotné převezení je pro děti součástí dobrodružství. Při vyšším stavu vody vždy respektujte aktuální podmínky na místě."
+msgstr "The transporter bridge is freely accessible and operates without staff, making the crossing itself part of the adventure for children. When water levels are high, always respect the current conditions on site."
+
+#: apartmancvikov/content.py
+msgid "Děti si mohou kabinu samy pohánět; menším pomůže s klikou dospělý."
+msgstr "Children can propel the cabin themselves; an adult can help younger ones with the crank."
+
+#: apartmancvikov/content.py
+msgid "Volně přístupné celoročně."
+msgstr "Freely accessible all year round."
+
+#: apartmancvikov/content.py
+msgid "Další přívoz, který děti ovládají vlastní silou, najdete u České Kamenice."
+msgstr "Another hand-operated ferry that children can power themselves can be found near Česká Kamenice."
+
+#: apartmancvikov/content.py
+msgid "Lesopark Horka"
+msgstr "Horka Forest Park"
+
+#: apartmancvikov/content.py
+msgid "Les plný hádanek, herních prvků a odpočinkových míst pod Ještědem."
+msgstr "A forest full of puzzles, play features and places to rest below Ještěd."
+
+#: apartmancvikov/content.py
+msgid "Volnočasový lesopark Horka v Rozstání proměňuje procházku lesem v hravé objevování. Na jednom až dvou kilometrech můžete řešit hádanky, zkoušet herní prvky a zastavovat se na mnoha místech připravených pro děti."
+msgstr "Horka leisure forest park in Rozstání turns a walk in the woods into playful discovery. Over one to two kilometres you can solve puzzles, try play features and stop at many places designed for children."
+
+#: apartmancvikov/content.py
+msgid "U vstupu návštěvníky vítá spící obr Máza, který po zavolání odpovídá. V areálu je přibližně pět set hádanek a zajímavostí, lesní hřiště, lanové prvky, amfiteátr i dráhy pro golfové míčky."
+msgstr "At the entrance, visitors are greeted by the sleeping giant Máza, who answers when called. The park contains around five hundred puzzles and facts, a forest playground, rope features, an amphitheatre and tracks for golf balls."
+
+#: apartmancvikov/content.py
+msgid "Cesty jsou sjízdné s kočárkem a podél nich najdete dostatek laviček a míst k odpočinku. Délku procházky lze snadno přizpůsobit věku dětí a času, který chcete v lese strávit."
+msgstr "The paths are suitable for pushchairs and offer plenty of benches and resting places. You can easily adapt the length of the walk to the children's age and the time you want to spend in the woods."
+
+#: apartmancvikov/content.py
+msgid "Parkování pro návštěvníky je vyhrazené pod budovou golfového areálu. V jeho sousedství je restaurace, dětský koutek a další placené aktivity, které lze s návštěvou lesoparku spojit."
+msgstr "Visitor parking is reserved below the golf complex building. Nearby are a restaurant, a children's play area and other paid activities that can be combined with the forest park."
+
+#: apartmancvikov/content.py
+msgid "Délku procházky si zvolíte podle nálady; dostatek zastávek zabaví i menší děti."
+msgstr "Choose the length of the walk to suit your mood; plenty of stops will entertain younger children too."
+
+#: apartmancvikov/content.py
+msgid "Procházka lesoparkem"
+msgstr "Forest park walk"
+
+#: apartmancvikov/content.py
+msgid "Okruh můžete zkrátit nebo prodloužit podle vybraných herních zastávek a věku dětí."
+msgstr "Shorten or lengthen the loop according to the play stops you choose and the children's age."
+
+#: apartmancvikov/content.py
+msgid "Stezky kolem Brniště"
+msgstr "Trails around Brniště"
+
+#: apartmancvikov/content.py
+msgid "Tři rodinné trasy za skalními sochami, hastrmany a českým sklem."
+msgstr "Three family trails featuring rock sculptures, water sprites and Czech glass."
+
+#: apartmancvikov/content.py
+msgid "V Brništi si můžete vybrat ze tří tematických stezek různé délky. Každá má vlastní mapu a jiný příběh: umění ukryté v lese, vodní svět hastrmanů nebo skleněná díla zasazená do krajiny."
+msgstr "In Brniště you can choose from three themed trails of different lengths. Each has its own map and story: art hidden in the forest, the watery world of water sprites, or glass artworks set in the landscape."
+
+#: apartmancvikov/content.py
+msgid "Trasy začínají na různých místech v okolí obce, proto si před odjezdem otevřete mapu vybrané varianty. Všechny jsou volně přístupné a lze je projít samostatně."
+msgstr "The routes start at different places around the village, so open the map for your chosen option before setting off. Each is freely accessible and can be walked separately."
+
+#: apartmancvikov/content.py
+msgid "Stezky propojují přírodní prostředí s úkoly, herními prvky a uměleckými objekty. Díky tomu se hodí pro rodiny, které chtějí dětem rozdělit procházku na řadu menších objevů."
+msgstr "The trails combine the natural setting with tasks, play features and artworks. They are ideal for families who want to divide a walk into a series of small discoveries for children."
+
+#: apartmancvikov/content.py
+msgid "Vyberte trasu podle věku dětí: od krátkých skalních soch po šestikilometrové hastrmany."
+msgstr "Choose a route to suit the children's age, from the short rock sculptures to the six-kilometre water-sprite trail."
+
+#: apartmancvikov/content.py
+msgid "Ano; pro Sochy ve skalách je vhodnější terénní kočárek."
+msgstr "Yes; an all-terrain pushchair is better for the Rock Sculptures trail."
+
+#: apartmancvikov/content.py
+msgid "Všechny tři stezky jsou volně přístupné celoročně."
+msgstr "All three trails are freely accessible all year round."
+
+#: apartmancvikov/content.py
+msgid "Sochy ve skalách"
+msgstr "Rock Sculptures"
+
+#: apartmancvikov/content.py
+msgid "Lesní trasa mezi trolly, bohyněmi, strážci lesa a land artem vede až ke znovuobjevené kapličce z roku 1863."
+msgstr "A forest trail among trolls, goddesses, forest guardians and land art leads to a rediscovered chapel dating from 1863."
+
+#: apartmancvikov/content.py
+msgid "Stezka Hastrmanů"
+msgstr "Water Sprite Trail"
+
+#: apartmancvikov/content.py
+msgid "Devět zastavení s úkoly a herními prvky provází světem potoků, mokřadů, mlýnů, hastrmanů a víl."
+msgstr "Nine stops with tasks and play features explore a world of streams, wetlands, mills, water sprites and fairies."
+
+#: apartmancvikov/content.py
+msgid "Skleněná stezka"
+msgstr "Glass Trail"
+
+#: apartmancvikov/content.py
+msgid "Cesta ke Schrötrově kapli míjí skleněný strom a díla Bořka Šípka i Jiřího Pačinka; zpět se vraťte stejnou trasou, okolní pozemky jsou soukromé."
+msgstr "The path to Schröter's Chapel passes a glass tree and works by Bořek Šípek and Jiří Pačinek; return along the same route because the surrounding land is private."
+
+#: apartmancvikov/content.py
+msgid "Po Skleněné stezce pokračujte za dalšími díly Jiřího Pačinka do sklářské zahrady v Kunraticích."
+msgstr "After the Glass Trail, continue to Jiří Pačinek's glass garden in Kunratice to see more of his work."
+
+#: apartmancvikov/content.py
+msgid "Podobné dobrodružství s ručním převozem přes vodu zažijete na transbordéru u Chrastavy."
+msgstr "A similar hand-operated crossing adventure awaits at the transporter bridge near Chrastava."
+
+#: apartmancvikov/content.py
+msgid "Pro pěší horský výlet s rozhlednou vystoupejte na nedaleký hraniční vrchol Hvozd."
+msgstr "For a mountain walk with a lookout tower, climb the nearby border summit of Hvozd."
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/vylety.html
+msgid "Devatenáct ověřených tipů na rodinné výlety a šest míst ke koupání v okolí Apartmánu Cvikov."
+msgstr "Nineteen tried-and-tested family trip ideas and six places to swim near Apartment Cvikov."
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Vyberte si trasu"
+msgstr "Choose a route"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Varianty výletu"
+msgstr "Trip options"
+
+#: apartmancvikov/templates/attraction_detail.html
+#, python-format
+msgid "%(distance)s–%(distance_max)s km"
+msgstr "%(distance)s–%(distance_max)s km"
+
+#: apartmancvikov/templates/attraction_detail.html
+#, python-format
+msgid "%(distance)s km"
+msgstr "%(distance)s km"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Zobrazit mapu trasy"
+msgstr "View route map"
