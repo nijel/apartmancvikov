@@ -63,7 +63,19 @@
             {% endif %}
             <div class="attraction-card__body">
               <p class="eyebrow">
-                {% blocktranslate with distance=attraction.distance_km %}Přibližně {{ distance }} km od apartmánu{% endblocktranslate %}
+                {% if attraction.driving_distance_km %}
+                  {% blocktranslate with distance=attraction.driving_distance_km %}Autem od apartmánu: {{ distance }} km{% endblocktranslate %}
+                  ·
+                {% endif %}
+                {% if attraction.distance_kind == "walking_loop" %}
+                  {% blocktranslate with distance=attraction.distance_km %}Délka pěšího okruhu: {{ distance }} km{% endblocktranslate %}
+                {% elif attraction.distance_kind == "cycling" %}
+                  {% blocktranslate with distance=attraction.distance_km %}Na kole od apartmánu: {{ distance }} km{% endblocktranslate %}
+                {% elif attraction.distance_kind == "driving" %}
+                  {% blocktranslate with distance=attraction.distance_km %}Autem od apartmánu: {{ distance }} km{% endblocktranslate %}
+                {% else %}
+                  {% blocktranslate with distance=attraction.distance_km %}Přibližně {{ distance }} km od apartmánu{% endblocktranslate %}
+                {% endif %}
               </p>
               <h2>{{ attraction.name|nbsp_prepositions }}</h2>
               <p>{{ attraction.summary }}</p>

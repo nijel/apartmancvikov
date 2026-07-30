@@ -12,6 +12,7 @@ from django.http import Http404, HttpResponse
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.urls import reverse
+from django.utils.formats import number_format
 from django.utils.translation import gettext as _
 from django.views.generic import FormView, TemplateView
 
@@ -63,13 +64,37 @@ class AttractionDetailView(TemplateView):
         except KeyError as error:
             raise Http404 from error
 
+        distance = number_format(attraction.distance_km)
+        if attraction.driving_distance_km is not None:
+            distance_description = _(
+                "Autem je nástupní místo od apartmánu vzdálené "
+                "%(driving_distance)s km, pěší okruh měří %(distance)s km."
+            ) % {
+                "driving_distance": number_format(attraction.driving_distance_km),
+                "distance": distance,
+            }
+        elif attraction.distance_kind == "walking_loop":
+            distance_description = _(
+                "Pěší okruh od apartmánu měří %(distance)s km."
+            ) % {"distance": distance}
+        elif attraction.distance_kind == "cycling":
+            distance_description = _(
+                "Cyklistická trasa od apartmánu měří %(distance)s km."
+            ) % {"distance": distance}
+        elif attraction.distance_kind == "driving":
+            distance_description = _(
+                "Autem je cíl od apartmánu vzdálený %(distance)s km."
+            ) % {"distance": distance}
+        else:
+            distance_description = _(
+                "Přibližně %(distance)s km od Apartmánu Cvikov."
+            ) % {"distance": distance}
+
         context.update(
             {
                 "attraction": attraction,
-                "attraction_meta_description": "{} {}".format(
-                    attraction.summary,
-                    _("Přibližně %(distance)s km od Apartmánu Cvikov.")
-                    % {"distance": attraction.distance_km},
+                "attraction_meta_description": (
+                    f"{attraction.summary} {distance_description}"
                 ),
             }
         )

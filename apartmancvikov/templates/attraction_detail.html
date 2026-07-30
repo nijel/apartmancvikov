@@ -74,8 +74,31 @@
           <p class="eyebrow">{% translate "Pro plánování" %}</p>
           <h2>{% translate "Praktické informace" %}</h2>
           <dl class="attraction-facts">
-            <dt>{% translate "Vzdálenost" %}</dt>
-            <dd>{% blocktranslate with distance=attraction.distance_km %}přibližně {{ distance }} km{% endblocktranslate %}</dd>
+            {% if attraction.driving_distance_km %}
+              <dt>{% translate "Vzdálenost autem" %}</dt>
+              <dd>
+                {{ attraction.driving_distance_km }} km
+              </dd>
+            {% endif %}
+            {% if attraction.distance_kind == "walking_loop" %}
+              <dt>{% translate "Délka okruhu" %}</dt>
+              <dd>
+                {{ attraction.distance_km }} km
+              </dd>
+            {% elif attraction.distance_kind == "cycling" %}
+              <dt>{% translate "Vzdálenost na kole" %}</dt>
+              <dd>
+                {{ attraction.distance_km }} km
+              </dd>
+            {% elif attraction.distance_kind == "driving" %}
+              <dt>{% translate "Vzdálenost autem" %}</dt>
+              <dd>
+                {{ attraction.distance_km }} km
+              </dd>
+            {% else %}
+              <dt>{% translate "Vzdálenost" %}</dt>
+              <dd>{% blocktranslate with distance=attraction.distance_km %}přibližně {{ distance }} km{% endblocktranslate %}</dd>
+            {% endif %}
             <dt>{% translate "Náročnost" %}</dt>
             <dd>
               {{ attraction.difficulty }}

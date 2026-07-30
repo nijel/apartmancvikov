@@ -64,11 +64,16 @@ msgstr "Zwei Asphalt-Runden für Kinder, Anfänger und erfahrene Fahrer."
 msgid ""
 "Nový pumptrack u cyklostezky Svaté Zdislavy nabízí dvě oddělené tratě. Menší "
 "okruh je určený především dětem a začátečníkům, větší okruh umožňuje "
-"rychlejší a techničtější jízdu."
+"rychlejší a techničtější jízdu. Přímo u pumptracku je také velké dětské "
+"hřiště, workoutové hřiště, atletický ovál, občerstvení a placené vzduchové "
+"trampolíny."
 msgstr ""
 "Der neue Pumptrack am Radweg der Heiligen Zdislava bietet zwei getrennte "
 "Runden. Die kleinere Runde ist vor allem für Kinder und Anfänger gedacht, "
-"die größere ermöglicht schnelleres und technisch anspruchsvolleres Fahren."
+"die größere ermöglicht schnelleres und technisch anspruchsvolleres Fahren. "
+"Direkt am Pumptrack gibt es außerdem einen großen Kinderspielplatz, einen "
+"Workout-Bereich, eine Leichtathletikrundbahn, einen Imbiss und "
+"kostenpflichtige Lufttrampoline."
 
 #: apartmancvikov/content.py:63
 msgid "Nezapomeňte na helmu; menší okruh je vhodný pro první zkušenosti."
@@ -88,11 +93,14 @@ msgstr ""
 msgid ""
 "Dutý kámen mezi Cvikovem a Kunraticemi nabízí krátkou lesní túru, skalní "
 "reliéfy a výhled směrem ke Cvikovu. Závěrečné schody a skalní terén vyžadují "
-"u menších dětí zvýšenou pozornost."
+"u menších dětí zvýšenou pozornost. Odkazovaná trasa je zkrácenou variantou "
+"cvikovského okruhu po vyhlídkách."
 msgstr ""
 "Dutý kámen zwischen Cvikov und Kunratice bietet eine kurze Waldwanderung, "
 "Felsreliefs und einen Blick in Richtung Cvikov. Die Treppen am Ende und das "
-"felsige Gelände erfordern bei kleinen Kindern besondere Aufmerksamkeit."
+"felsige Gelände erfordern bei kleinen Kindern besondere Aufmerksamkeit. Die "
+"verlinkte Route ist eine verkürzte Variante des Cvikover "
+"Aussichtsrundwegs."
 
 #: apartmancvikov/content.py:85
 msgid "Pro děti, které zvládnou schody a nerovný terén; bez kočárku."
@@ -207,13 +215,13 @@ msgstr ""
 
 #: apartmancvikov/content.py:175
 msgid ""
-"Polevsko nabízí v zimě menší lyžařský areál a během roku síť cest pro pěší a "
-"cyklisty. Díky krátké dojezdové vzdálenosti lze program snadno přizpůsobit "
-"počasí a zkušenostem dětí."
+"Polevsko nabízí v zimě menší lyžařský areál. V létě se můžete vydat po naučné "
+"stezce Za polevskými obry, která propojuje zdejší mohutné stromy, nebo "
+"navštívit bikepark."
 msgstr ""
-"Polevsko bietet im Winter ein kleines Skigebiet und das ganze Jahr über ein "
-"Netz von Wander- und Radwegen. Dank der kurzen Anfahrt lässt sich der "
-"Ausflug leicht an Wetter und Erfahrung der Kinder anpassen."
+"Polevsko bietet im Winter ein kleines Skigebiet. Im Sommer können Sie dem "
+"Naturlehrpfad Za polevskými obry folgen, der die mächtigen Bäume der Umgebung "
+"verbindet, oder den Bikepark besuchen."
 
 #: apartmancvikov/content.py:182
 msgid "Aktuální provoz areálu a podmínky vždy zkontrolujte před odjezdem."
@@ -1748,3 +1756,58 @@ msgstr ""
 "Ein Freibad mit Bistro. Verbinden Sie den Besuch mit einem Ausflug zur "
 "handbetriebenen Fähre und in den Miniaturenpark Mlýnky Brand, der auch mit "
 "dem Kinderwagen erreichbar ist, oder zum Felsenaussichtspunkt Ponorka."
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Délka okruhu"
+msgstr "Länge des Rundwegs"
+
+#: apartmancvikov/templates/vylety.html
+#, python-format
+msgid "Délka pěšího okruhu: %(distance)s km"
+msgstr "Länge des Rundwegs zu Fuß: %(distance)s km"
+
+#: apartmancvikov/views.py
+#, python-format
+msgid "Pěší okruh od apartmánu měří %(distance)s km."
+msgstr "Der Rundweg zu Fuß ab der Ferienwohnung ist %(distance)s km lang."
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Vzdálenost na kole"
+msgstr "Entfernung mit dem Fahrrad"
+
+#: apartmancvikov/templates/vylety.html
+#, python-format
+msgid "Na kole od apartmánu: %(distance)s km"
+msgstr "Mit dem Fahrrad ab der Ferienwohnung: %(distance)s km"
+
+#: apartmancvikov/views.py
+#, python-format
+msgid "Cyklistická trasa od apartmánu měří %(distance)s km."
+msgstr "Die Radroute ab der Ferienwohnung ist %(distance)s km lang."
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Vzdálenost autem"
+msgstr "Entfernung mit dem Auto"
+
+#: apartmancvikov/templates/vylety.html
+#, python-format
+msgid "Autem od apartmánu: %(distance)s km"
+msgstr "Mit dem Auto ab der Ferienwohnung: %(distance)s km"
+
+#: apartmancvikov/views.py
+#, python-format
+msgid "Autem je cíl od apartmánu vzdálený %(distance)s km."
+msgstr "Mit dem Auto ist das Ziel %(distance)s km von der Ferienwohnung entfernt."
+
+#: apartmancvikov/content.py
+msgid "Do Sloupu v Čechách je možné dojet také autobusem."
+msgstr "Sloup v Čechách ist auch mit dem Bus erreichbar."
+
+#: apartmancvikov/views.py
+#, python-format
+msgid ""
+"Autem je nástupní místo od apartmánu vzdálené %(driving_distance)s km, pěší "
+"okruh měří %(distance)s km."
+msgstr ""
+"Der Ausgangspunkt ist mit dem Auto %(driving_distance)s km von der "
+"Ferienwohnung entfernt, der Rundweg zu Fuß ist %(distance)s km lang."

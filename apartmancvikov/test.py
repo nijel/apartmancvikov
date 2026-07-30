@@ -189,6 +189,96 @@ class SeoTest(TestCase):
                     self.assertEqual(len(re.findall(r"<h1(?:\s|>)", html)), 1)
                     self.assertIn(str(attraction.official_url), html)
 
+    def test_walking_loop_length_is_not_presented_as_distance(self):
+        """A complete walking circuit is clearly distinguished from distance."""
+        overview = self.client.get("/cs/vylety/")
+        self.assertContains(overview, "Délka pěšího okruhu: 8,7 km")
+        self.assertContains(overview, "Délka pěšího okruhu: 4,5 km")
+        self.assertNotContains(overview, "Přibližně 8,7 km od apartmánu")
+        self.assertNotContains(overview, "Přibližně 4,5 km od apartmánu")
+
+        detail = self.client.get("/cs/vylety/cvikovske-vyhlidky/")
+        self.assertContains(detail, "Délka okruhu")
+
+        shortened_route = self.client.get("/cs/vylety/duty-kamen/")
+        self.assertContains(shortened_route, "zkrácenou variantou")
+        self.assertContains(shortened_route, "https://mapy.com/s/madepucoso")
+
+    def test_pumptrack_has_cycling_distance_and_nearby_facilities(self):
+        """The pump track guide states the travel mode and adjacent amenities."""
+        overview = self.client.get("/cs/vylety/")
+        self.assertContains(overview, "Na kole od apartmánu: 1,3 km")
+        self.assertNotContains(overview, "Přibližně 1,3 km od apartmánu")
+
+        detail = self.client.get("/cs/vylety/pumptrack-cvikov/")
+        self.assertContains(detail, "Vzdálenost na kole")
+        self.assertContains(detail, "https://mapy.com/s/dezohapela")
+        for facility in (
+            "velké dětské hřiště",
+            "workoutové hřiště",
+            "atletický ovál",
+            "občerstvení",
+            "placené vzduchové trampolíny",
+        ):
+            self.assertContains(detail, facility)
+
+    def test_driving_distances_are_labeled(self):
+        """Distances measured by car are labeled in the overview and detail."""
+        overview = self.client.get("/cs/vylety/")
+        self.assertContains(overview, "Autem od apartmánu: 8 km")
+        self.assertContains(overview, "Autem od apartmánu: 6 km")
+        self.assertContains(overview, "Autem od apartmánu: 17 km")
+        self.assertContains(overview, "Autem od apartmánu: 15 km")
+
+        sloup_detail = self.client.get("/cs/vylety/skalni-hrad-sloup/")
+        self.assertContains(sloup_detail, "Vzdálenost autem")
+        self.assertContains(sloup_detail, "možné dojet také autobusem")
+        self.assertContains(sloup_detail, "https://mapy.com/s/judatacovu")
+
+        ajeto_detail = self.client.get("/cs/vylety/ajeto-lindava/")
+        self.assertContains(ajeto_detail, "Vzdálenost autem")
+        self.assertContains(ajeto_detail, "https://mapy.com/s/budufokado")
+
+        oybin_detail = self.client.get("/cs/vylety/oybin/")
+        self.assertContains(oybin_detail, "Vzdálenost autem")
+        self.assertContains(oybin_detail, "17 km")
+        self.assertContains(oybin_detail, "https://mapy.com/s/locacosoge")
+
+        exotenhaus_detail = self.client.get("/cs/vylety/motyli-dum-jonsdorf/")
+        self.assertContains(exotenhaus_detail, "Vzdálenost autem")
+        self.assertContains(exotenhaus_detail, "15 km")
+        self.assertContains(exotenhaus_detail, "https://mapy.com/s/mamubazode")
+
+    def test_pacinek_uses_supplied_map(self):
+        """Pačinek Glass links to the supplied map."""
+        detail = self.client.get("/cs/vylety/pacinek-glass/")
+        self.assertContains(detail, "https://mapy.com/s/fejukapobu")
+
+    def test_klic_shows_drive_and_walking_loop_distances(self):
+        """Klíč distinguishes the drive from the following walking loop."""
+        overview = self.client.get("/cs/vylety/")
+        self.assertContains(overview, "Autem od apartmánu: 6 km")
+        self.assertContains(overview, "Délka pěšího okruhu: 2,8 km")
+
+        detail = self.client.get("/cs/vylety/klic/")
+        self.assertContains(detail, "Vzdálenost autem")
+        self.assertContains(detail, "6 km")
+        self.assertContains(detail, "Délka okruhu")
+        self.assertContains(detail, "2,8 km")
+        self.assertContains(detail, "https://mapy.com/s/masavogaza")
+
+    def test_polevsko_has_driving_distance_and_summer_tips(self):
+        """Polevsko includes the parking route and summer activities."""
+        overview = self.client.get("/cs/vylety/")
+        self.assertContains(overview, "Autem od apartmánu: 12 km")
+
+        detail = self.client.get("/cs/vylety/polevsko/")
+        self.assertContains(detail, "Vzdálenost autem")
+        self.assertContains(detail, "https://mapy.com/s/gunedatolu")
+        self.assertContains(detail, "Za polevskými obry")
+        self.assertContains(detail, "mohutné stromy")
+        self.assertContains(detail, "bikepark")
+
     def test_trip_guide_includes_swimming_tips(self):
         """One trip card opens the complete swimming guide."""
         overview = self.client.get("/cs/vylety/")

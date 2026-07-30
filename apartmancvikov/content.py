@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0
 
 from dataclasses import dataclass
+from typing import Literal
 
 from django.utils.translation import gettext_lazy as _
 
@@ -13,7 +14,7 @@ class Attraction:
     name: object
     summary: object
     description: object
-    distance_km: int
+    distance_km: int | float
     difficulty: object
     family_tip: object
     map_url: str
@@ -26,6 +27,10 @@ class Attraction:
     credit_url: str | None = None
     license_name: str | None = None
     license_url: str | None = None
+    distance_kind: Literal["from_apartment", "walking_loop", "cycling", "driving"] = (
+        "from_apartment"
+    )
+    driving_distance_km: int | float | None = None
 
 
 EASY = _("Lehká")
@@ -46,7 +51,8 @@ ATTRACTIONS = (
             "nejbližším výletům od apartmánu. Trasu lze přizpůsobit věku dětí "
             "a spojit ji s krátkou procházkou po městě."
         ),
-        distance_km=2,
+        distance_km=8.7,
+        distance_kind="walking_loop",
         difficulty=EASY,
         family_tip=_(
             "Vhodné i pro kratší výlet s menšími dětmi; část cest vede lesem."
@@ -64,14 +70,17 @@ ATTRACTIONS = (
         description=_(
             "Nový pumptrack u cyklostezky Svaté Zdislavy nabízí dvě oddělené "
             "tratě. Menší okruh je určený především dětem a začátečníkům, větší "
-            "okruh umožňuje rychlejší a techničtější jízdu."
+            "okruh umožňuje rychlejší a techničtější jízdu. Přímo u pumptracku "
+            "je také velké dětské hřiště, workoutové hřiště, atletický ovál, "
+            "občerstvení a placené vzduchové trampolíny."
         ),
-        distance_km=1,
+        distance_km=1.3,
+        distance_kind="cycling",
         difficulty=EASY,
         family_tip=_(
             "Nezapomeňte na helmu; menší okruh je vhodný pro první zkušenosti."
         ),
-        map_url="https://mapy.cz/turisticka?q=Pumptrack%20Cvikov",
+        map_url="https://mapy.com/s/dezohapela",
         official_url=(
             "https://admin-storage.munipolis.com/cvikov/bulletin/files/"
             "2b5ab9d5-83b9-438d-a11e-30e8bfe85010.pdf"
@@ -87,12 +96,14 @@ ATTRACTIONS = (
         description=_(
             "Dutý kámen mezi Cvikovem a Kunraticemi nabízí krátkou lesní túru, "
             "skalní reliéfy a výhled směrem ke Cvikovu. Závěrečné schody a skalní "
-            "terén vyžadují u menších dětí zvýšenou pozornost."
+            "terén vyžadují u menších dětí zvýšenou pozornost. Odkazovaná trasa "
+            "je zkrácenou variantou cvikovského okruhu po vyhlídkách."
         ),
-        distance_km=4,
+        distance_km=4.5,
+        distance_kind="walking_loop",
         difficulty=MODERATE,
         family_tip=_("Pro děti, které zvládnou schody a nerovný terén; bez kočárku."),
-        map_url="https://mapy.cz/turisticka?q=Dut%C3%BD%20k%C3%A1men",
+        map_url="https://mapy.com/s/madepucoso",
         official_url="https://www.cvikov.cz/turista/ms-1091/p1=1091",
         image="vylety/duty-kamen.jpg",
         image_width=800,
@@ -112,10 +123,12 @@ ATTRACTIONS = (
             "procházkou obcí nebo dalšími cíli v okolních skalách."
         ),
         distance_km=8,
+        distance_kind="driving",
         difficulty=MODERATE,
         family_tip=_("Počítejte se schody a dohledem nad dětmi na vyhlídkách."),
-        map_url="https://mapy.cz/turisticka?q=Skaln%C3%AD%20hrad%20Sloup",
+        map_url="https://mapy.com/s/judatacovu",
         official_url="https://www.hrad-sloup.cz/",
+        travel_tip=_("Do Sloupu v Čechách je možné dojet také autobusem."),
         image="vylety/sloup.jpg",
         image_width=1600,
         image_height=1200,
@@ -134,7 +147,7 @@ ATTRACTIONS = (
         family_tip=_(
             "Dobrá volba pro všechny věkové skupiny a také pro kratší program."
         ),
-        map_url="https://mapy.cz/turisticka?q=Pa%C4%8Dinek%20Glass",
+        map_url="https://mapy.com/s/fejukapobu",
         official_url="https://www.pacinekglass.com/sklenena-zahrada",
         image="vylety/pacinek.jpg",
         image_width=1600,
@@ -149,10 +162,11 @@ ATTRACTIONS = (
             "domluvě využít nabídku exkurzí a sklářských zážitků. Výlet můžete "
             "spojit s návštěvou přilehlé Sklářské krčmy."
         ),
-        distance_km=7,
+        distance_km=6,
+        distance_kind="driving",
         difficulty=EASY,
         family_tip=_("Exkurzi nebo zážitek pro děti si předem ověřte a rezervujte."),
-        map_url="https://mapy.cz/turisticka?q=AJETO%20Lindava",
+        map_url="https://mapy.com/s/budufokado",
         official_url="https://www.ajetoglass.com/",
         image="vylety/ajeto.jpg",
         image_width=1600,
@@ -167,10 +181,12 @@ ATTRACTIONS = (
             "lesem a v závěru prudším kamenitým svahem, odměnou je rozsáhlý "
             "výhled do krajiny."
         ),
-        distance_km=8,
+        distance_km=2.8,
+        distance_kind="walking_loop",
+        driving_distance_km=6,
         difficulty=MODERATE,
         family_tip=_("Vhodné pro zdatnější děti; vezměte pevnou obuv a dostatek pití."),
-        map_url="https://mapy.cz/turisticka?q=Kl%C3%AD%C4%8D%20Lu%C5%BEick%C3%A9%20hory",
+        map_url="https://mapy.com/s/masavogaza",
         official_url="https://www.liberecky-kraj.cz/dr-cs/636-vrch-klic.html",
         image="vylety/klic.jpg",
         image_width=1600,
@@ -181,16 +197,17 @@ ATTRACTIONS = (
         name=_("Polevsko v létě i v zimě"),
         summary=_("Rodinné lyžování, cyklistika a výlety v krajině nad Novým Borem."),
         description=_(
-            "Polevsko nabízí v zimě menší lyžařský areál a během roku síť cest "
-            "pro pěší a cyklisty. Díky krátké dojezdové vzdálenosti lze program "
-            "snadno přizpůsobit počasí a zkušenostem dětí."
+            "Polevsko nabízí v zimě menší lyžařský areál. V létě se můžete vydat "
+            "po naučné stezce Za polevskými obry, která propojuje zdejší mohutné "
+            "stromy, nebo navštívit bikepark."
         ),
         distance_km=12,
+        distance_kind="driving",
         difficulty=EASY,
         family_tip=_(
             "Aktuální provoz areálu a podmínky vždy zkontrolujte před odjezdem."
         ),
-        map_url="https://mapy.cz/turisticka?q=Polevsko",
+        map_url="https://mapy.com/s/gunedatolu",
         official_url="https://www.polevsko.ski/",
         image="vylety/polevsko.jpg",
         image_width=1600,
@@ -205,10 +222,11 @@ ATTRACTIONS = (
             "lázeňským městečkem. Rodinný výlet spojuje historii, skály, výhledy "
             "a možnost jízdy úzkorozchodnou železnicí."
         ),
-        distance_km=22,
+        distance_km=17,
+        distance_kind="driving",
         difficulty=MODERATE,
         family_tip=_("Na hrad vede stoupání a schody; pro malé děti se hodí nosítko."),
-        map_url="https://mapy.cz/turisticka?q=Burg%20und%20Kloster%20Oybin",
+        map_url="https://mapy.com/s/locacosoge",
         official_url="https://oybin.com/erleben-entdecken/burg-und-kloster/",
         travel_tip=MOUNTAIN_EXPRESS_TIP,
         image="vylety/oybin.jpg",
@@ -229,10 +247,11 @@ ATTRACTIONS = (
             "o objemu 2 000 litrů s korálovými rybami a živými korály. Část "
             "s motýly je momentálně uzavřená."
         ),
-        distance_km=20,
+        distance_km=15,
+        distance_kind="driving",
         difficulty=EASY,
         family_tip=_("Celoroční krytý program vhodný i za deště."),
-        map_url="https://mapy.cz/turisticka?q=Exotenhaus%20Jonsdorf",
+        map_url="https://mapy.com/s/mamubazode",
         official_url="https://www.exotenhaus.info/",
         travel_tip=MOUNTAIN_EXPRESS_TIP,
         image="vylety/jonsdorf.jpg",
