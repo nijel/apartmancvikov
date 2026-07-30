@@ -1646,11 +1646,11 @@ msgstr "Badeausflüge ab Apartmán Cvikov"
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/koupani.html
 msgid ""
-"Šest tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, Jablonné v "
-"Podještědí, Kristýna, Jonsdorf, Dubice a Česká Kamenice."
+"Sedm tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, Jablonné v "
+"Podještědí, Naděje, Kristýna, Jonsdorf, Dubice a Česká Kamenice."
 msgstr ""
-"Sechs Badetipps in der Umgebung des Apartmánu Cvikov: Sloup v Čechách, "
-"Jablonné v Podještědí, Kristýna, Jonsdorf, Dubice und Česká Kamenice."
+"Sieben Badetipps rund um die Ferienwohnung Cvikov: Sloup v Čechách, Jablonné "
+"v Podještědí, Naděje, Kristýna, Jonsdorf, Dubice und Česká Kamenice."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/vylety.html
 #: apartmancvikov/templates/koupani.html
@@ -1694,8 +1694,8 @@ msgid "K vodě"
 msgstr "Ans Wasser"
 
 #: apartmancvikov/templates/koupani.html
-msgid "Šest míst pro malé i velké plavce"
-msgstr "Sechs Orte für kleine und große Badegäste"
+msgid "Sedm míst pro malé i velké plavce"
+msgstr "Sieben Orte für kleine und große Badegäste"
 
 #: apartmancvikov/templates/koupani.html
 msgid ""
@@ -1736,8 +1736,8 @@ msgid "Všechny výlety"
 msgstr "Alle Ausflüge"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Šest tipů v okolí"
-msgstr "Sechs Tipps in der Umgebung"
+msgid "Sedm tipů v okolí"
+msgstr "Sieben Tipps in der Umgebung"
 
 #: apartmancvikov/templates/vylety.html
 msgid "Prohlédnout koupání"
@@ -2970,8 +2970,8 @@ msgid "Doporučené restaurace"
 msgstr "Empfohlene Restaurants"
 
 #: apartmancvikov/structured_data.py
-msgid "Devatenáct ověřených tipů na rodinné výlety, šest míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Neunzehn erprobte Tipps für Familienausflüge, sechs Badestellen und zwölf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
+msgid "Dvacet ověřených tipů na rodinné výlety, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Zwanzig erprobte Tipps für Familienausflüge, sieben Badestellen und zwölf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace z Apartmánu Cvikov"
@@ -3078,8 +3078,8 @@ msgid "Provoz"
 msgstr "Betrieb"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Devatenáct rodinných výletů, šest míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Neunzehn Familienausflüge, sechs Badestellen und zwölf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
+msgid "Dvacet rodinných výletů, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Zwanzig Familienausflüge, sieben Badestellen und zwölf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
 
 #: apartmancvikov/templates/vylety.html
 msgid "Dvanáct tipů v okolí"
@@ -3108,3 +3108,146 @@ msgstr "Sushi und Ramen in Česká Lípa."
 #: apartmancvikov/restaurants.py
 msgid "Návštěvu Kaido Sushi můžete spojit s koupáním na koupališti Dubice."
 msgstr "Verbinden Sie einen Besuch bei Kaido Sushi mit einem Bad im Freibad Dubice."
+
+#: apartmancvikov/content.py
+msgid "Milštejn a Naděje"
+msgstr "Milštejn und Naděje"
+
+#: apartmancvikov/content.py
+msgid "Lesní okruh za skalními pozůstatky hradu a chladnou horskou nádrží."
+msgstr ""
+"Eine Waldrunde zu den felsigen Überresten einer Burg und einem kalten "
+"Bergstausee."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pestrý okruh z Trávníku vede přes skalní areál zaniklého hradu Milštejn k "
+"přehradní nádrži Naděje. Cestou se střídají lesní cesty, pískovcové skály, "
+"stopy po těžbě mlýnských kamenů a údolí Hamerského potoka."
+msgstr ""
+"Diese abwechslungsreiche Runde von Trávník führt durch das Felsareal der "
+"verschwundenen Burg Milštejn zum Stausee Naděje. Unterwegs wechseln sich "
+"Waldwege, Sandsteinfelsen, Spuren des Mühlsteinabbaus und das Tal des "
+"Hamerský-Bachs ab."
+
+#: apartmancvikov/content.py
+msgid ""
+"Hrad Milštejn vznikl na pískovcové skále u staré obchodní stezky mezi Českem "
+"a Lužicí. Po opuštění hradu jeho podobu zásadně proměnila dlouhá těžba "
+"kvalitního pískovce pro výrobu mlýnských kamenů. Dnes místo připomíná "
+"především mohutný skalní útvar, brána, dutiny a jen nepatrné zbytky zdiva."
+msgstr ""
+"Die Burg Milštejn entstand auf einem Sandsteinfelsen an einem alten "
+"Handelsweg zwischen Böhmen und der Lausitz. Nach der Aufgabe der Burg "
+"veränderte der langjährige Abbau hochwertigen Sandsteins für Mühlsteine ihr "
+"Aussehen grundlegend. Heute erinnern vor allem ein mächtiges Felsgebilde, "
+"ein Felstor, Hohlräume und nur geringe Mauerreste an den Ort."
+
+#: apartmancvikov/content.py
+msgid ""
+"Nádrž Naděje byla vybudována v letech 1937 až 1938 na Hamerském potoce jako "
+"zásobárna vody pro mlýn a pilu. Leží v hlubokém zalesněném údolí a její voda "
+"zůstává velmi chladná i během léta."
+msgstr ""
+"Der Stausee Naděje wurde 1937 bis 1938 am Hamerský-Bach als Wasserspeicher "
+"für eine Mühle und ein Sägewerk angelegt. Er liegt in einem tiefen "
+"bewaldeten Tal und sein Wasser bleibt auch im Sommer sehr kalt."
+
+#: apartmancvikov/content.py
+msgid ""
+"Základní okruh měří 8,2 kilometru a vede místy po užších lesních cestách. "
+"Pro kočárek je připravená samostatná varianta dlouhá 8,4 kilometru, která "
+"využívá schůdnější cesty a přitom propojuje stejné hlavní cíle."
+msgstr ""
+"Die Hauptrunde ist 8,2 Kilometer lang und verläuft stellenweise auf "
+"schmaleren Waldwegen. Eine separate, 8,4 Kilometer lange "
+"kinderwagentaugliche Route nutzt bequemere Wege und verbindet dennoch "
+"dieselben Hauptziele."
+
+#: apartmancvikov/content.py
+msgid ""
+"Skalní brána a dutiny na Milštejně jsou pro děti dobrodružným cílem; v "
+"teplém dni lze výlet spojit s koupáním v Naději."
+msgstr ""
+"Das Felstor und die Hohlräume von Milštejn sind für Kinder ein "
+"abenteuerliches Ziel; an einem warmen Tag lässt sich der Ausflug mit einem "
+"Bad in Naděje verbinden."
+
+#: apartmancvikov/content.py
+msgid "Hlavní trasa ne; kočárková varianta 8,4 km ano."
+msgstr ""
+"Die Hauptroute nicht; die 8,4 km lange Alternative ist kinderwagentauglich."
+
+#: apartmancvikov/content.py
+msgid "Do Trávníku je možné dojet autem nebo autobusem."
+msgstr "Trávník ist mit dem Auto oder Bus erreichbar."
+
+#: apartmancvikov/content.py
+msgid "Hlavní okruh přes Milštejn a Naději"
+msgstr "Hauptrunde über Milštejn und Naděje"
+
+#: apartmancvikov/content.py
+msgid ""
+"Lesní okruh přes skalní areál Milštejna, nádrž Naděje a osadu Naděje není "
+"vhodný pro kočárek."
+msgstr ""
+"Die Waldrunde durch das Felsareal von Milštejn, am Stausee Naděje und durch "
+"die Siedlung Naděje ist nicht für Kinderwagen geeignet."
+
+#: apartmancvikov/content.py
+msgid "Kočárková varianta"
+msgstr "Kinderwagentaugliche Route"
+
+#: apartmancvikov/content.py
+msgid ""
+"Mírně delší varianta vede po cestách sjízdných s kočárkem a propojuje "
+"Milštejn s nádrží Naděje."
+msgstr ""
+"Diese etwas längere Alternative verläuft auf kinderwagentauglichen Wegen und "
+"verbindet Milštejn mit dem Stausee Naděje."
+
+#: apartmancvikov/content.py
+msgid ""
+"Okruh vede kolem nádrže Naděje, kde se můžete osvěžit v chladné horské vodě."
+msgstr ""
+"Die Runde führt am Stausee Naděje vorbei, wo Sie sich im kalten Bergwasser "
+"erfrischen können."
+
+#: apartmancvikov/content.py
+msgid "Nádrž Naděje"
+msgstr "Stausee Naděje"
+
+#: apartmancvikov/content.py
+msgid ""
+"Volně přístupná přehradní nádrž v hlubokém lesním údolí s chladnou horskou "
+"vodou."
+msgstr ""
+"Ein frei zugänglicher Stausee mit kaltem Bergwasser in einem tiefen "
+"bewaldeten Tal."
+
+#: apartmancvikov/content.py
+msgid "Vzdálenost od apartmánu"
+msgstr "Entfernung von der Ferienwohnung"
+
+#: apartmancvikov/content.py
+msgid ""
+"Přímo k nádrži nelze dojet autem; poslední úsek je nutné dojít pěšky. "
+"Výchozí Trávník je dostupný autem i autobusem."
+msgstr ""
+"Der Stausee ist nicht direkt mit dem Auto erreichbar; das letzte Stück muss "
+"zu Fuß zurückgelegt werden. Der Ausgangspunkt Trávník ist mit dem Auto oder "
+"Bus erreichbar."
+
+#: apartmancvikov/content.py
+msgid "Koupání spojte s okruhem z Trávníku přes skalní areál Milštejna."
+msgstr ""
+"Verbinden Sie das Baden mit der Runde von Trávník durch das Felsareal "
+"Milštejn."
+
+#: apartmancvikov/templates/koupani.html
+msgid ""
+"Ceny, provozní doba i podmínky se mohou změnit. Před cestou si vždy ověřte "
+"aktuální informace u provozovatele nebo v mapě."
+msgstr ""
+"Preise, Öffnungszeiten und Bedingungen können sich ändern. Prüfen Sie vor "
+"dem Ausflug die aktuellen Informationen beim Betreiber oder auf der Karte."

@@ -14,7 +14,7 @@
 
 {% block meta_description %}
   <meta name="description"
-        content="{% translate "Šest tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, Jablonné v Podještědí, Kristýna, Jonsdorf, Dubice a Česká Kamenice." %}" />
+        content="{% translate "Sedm tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, Jablonné v Podještědí, Naděje, Kristýna, Jonsdorf, Dubice a Česká Kamenice." %}" />
 {% endblock meta_description %}
 
 {% block ogtitle %}
@@ -58,10 +58,10 @@
 
       <header class="section-intro">
         <p class="eyebrow">{% translate "K vodě" %}</p>
-        <h2>{% translate "Šest míst pro malé i velké plavce" %}</h2>
+        <h2>{% translate "Sedm míst pro malé i velké plavce" %}</h2>
         <p>{% translate "Vyberte si přírodní koupaliště, horský bazén nebo jezero s dalšími aktivitami pro děti." %}</p>
         <p class="practical-note">
-          {% translate "Ceny a provozní doba se mohou změnit. Před cestou si vždy ověřte aktuální informace na webu provozovatele." %}
+          {% translate "Ceny, provozní doba i podmínky se mohou změnit. Před cestou si vždy ověřte aktuální informace u provozovatele nebo v mapě." %}
         </p>
       </header>
 
@@ -82,10 +82,16 @@
               <h3>{{ tip.name|nbsp_prepositions }}</h3>
               <p>{{ tip.description }}</p>
               <dl class="swimming-facts">
-                {% if tip.driving_distance_km %}
-                  <dt>{% translate "Vzdálenost autem" %}</dt>
+                {% if tip.distance_km %}
+                  <dt>
+                    {% if tip.distance_label %}
+                      {{ tip.distance_label }}
+                    {% else %}
+                      {% translate "Vzdálenost" %}
+                    {% endif %}
+                  </dt>
                   <dd>
-                    {{ tip.driving_distance_km }} km
+                    {{ tip.distance_km }} km
                   </dd>
                 {% endif %}
                 <dt>{% translate "Vstupné" %}</dt>
@@ -121,7 +127,12 @@
                   {% endfor %}
                 </div>
               {% endif %}
-              <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
+              {% if tip.map_url %}
+                <a href="{{ tip.map_url }}" class="text-link" rel="external noopener">{% translate "Zobrazit mapu" %}<span aria-hidden="true">→</span></a>
+              {% endif %}
+              {% if tip.official_url %}
+                <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
+              {% endif %}
             </section>
           {% endwith %}
         {% endfor %}

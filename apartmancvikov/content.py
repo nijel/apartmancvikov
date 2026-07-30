@@ -286,6 +286,87 @@ ATTRACTIONS = (
         image_height=960,
     ),
     Attraction(
+        slug="milstejn-nadeje",
+        name=_("Milštejn a Naděje"),
+        summary=_(
+            "Lesní okruh za skalními pozůstatky hradu a chladnou horskou nádrží."
+        ),
+        description=_(
+            "Pestrý okruh z Trávníku vede přes skalní areál zaniklého hradu "
+            "Milštejn k přehradní nádrži Naděje. Cestou se střídají lesní "
+            "cesty, pískovcové skály, stopy po těžbě mlýnských kamenů a údolí "
+            "Hamerského potoka."
+        ),
+        description_paragraphs=(
+            _(
+                "Hrad Milštejn vznikl na pískovcové skále u staré obchodní "
+                "stezky mezi Českem a Lužicí. Po opuštění hradu jeho podobu "
+                "zásadně proměnila dlouhá těžba kvalitního pískovce pro výrobu "
+                "mlýnských kamenů. Dnes místo připomíná především mohutný "
+                "skalní útvar, brána, dutiny a jen nepatrné zbytky zdiva."
+            ),
+            _(
+                "Nádrž Naděje byla vybudována v letech 1937 až 1938 na "
+                "Hamerském potoce jako zásobárna vody pro mlýn a pilu. Leží v "
+                "hlubokém zalesněném údolí a její voda zůstává velmi chladná "
+                "i během léta."
+            ),
+            _(
+                "Základní okruh měří 8,2 kilometru a vede místy po užších "
+                "lesních cestách. Pro kočárek je připravená samostatná "
+                "varianta dlouhá 8,4 kilometru, která využívá schůdnější cesty "
+                "a přitom propojuje stejné hlavní cíle."
+            ),
+        ),
+        distance_km=8.2,
+        distance_kind="walking_loop",
+        driving_distance_km=4,
+        difficulty=MODERATE,
+        family_tip=_(
+            "Skalní brána a dutiny na Milštejně jsou pro děti dobrodružným "
+            "cílem; v teplém dni lze výlet spojit s koupáním v Naději."
+        ),
+        map_url=None,
+        official_url="https://www.luzicke-hory.cz/mista/index.php?pg=zmmilsc",
+        stroller_access=_("Hlavní trasa ne; kočárková varianta 8,4 km ano."),
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné"),
+        travel_tip=_("Do Trávníku je možné dojet autem nebo autobusem."),
+        route_variants=(
+            RouteVariant(
+                name=_("Hlavní okruh přes Milštejn a Naději"),
+                distance_km=8.2,
+                map_url="https://mapy.com/s/nojudacesu",
+                description=_(
+                    "Lesní okruh přes skalní areál Milštejna, nádrž Naděje "
+                    "a osadu Naděje není vhodný pro kočárek."
+                ),
+            ),
+            RouteVariant(
+                name=_("Kočárková varianta"),
+                distance_km=8.4,
+                map_url="https://mapy.com/s/galusenedu",
+                description=_(
+                    "Mírně delší varianta vede po cestách sjízdných s "
+                    "kočárkem a propojuje Milštejn s nádrží Naděje."
+                ),
+            ),
+        ),
+        related_trips=(
+            TripRelation(
+                target_kind="swimming",
+                target_slug="nadrz-nadeje",
+                description=_(
+                    "Okruh vede kolem nádrže Naděje, kde se můžete osvěžit v "
+                    "chladné horské vodě."
+                ),
+            ),
+        ),
+        image="vylety/milstejn.jpg",
+        image_width=4000,
+        image_height=3000,
+    ),
+    Attraction(
         slug="skalni-hrad-sloup",
         name=_("Skalní hrad Sloup"),
         summary=_("Skalní památka s vyhlídkami, chodbami a poustevnickou historií."),
@@ -1141,10 +1222,12 @@ class SwimmingTip:
     slug: str
     name: object
     description: object
-    official_url: str
+    official_url: str | None
     admission: object
     opening_hours: object
-    driving_distance_km: int | float | None = None
+    distance_km: int | float | None = None
+    distance_label: object | None = None
+    map_url: str | None = None
     travel_tip: object | None = None
     related_trips: tuple[TripRelation, ...] = ()
 
@@ -1202,6 +1285,33 @@ SWIMMING_TIPS = (
         official_url="https://www.kempjablonne.cz/",
         admission=_("Dítě 30 Kč, dospělý 50 Kč."),
         opening_hours=_("V létě 8–22."),
+    ),
+    SwimmingTip(
+        slug="nadrz-nadeje",
+        name=_("Nádrž Naděje"),
+        description=_(
+            "Volně přístupná přehradní nádrž v hlubokém lesním údolí s "
+            "chladnou horskou vodou."
+        ),
+        official_url=None,
+        map_url="https://mapy.com/s/jamobakeju",
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné"),
+        distance_km=13,
+        distance_label=_("Vzdálenost od apartmánu"),
+        travel_tip=_(
+            "Přímo k nádrži nelze dojet autem; poslední úsek je nutné dojít "
+            "pěšky. Výchozí Trávník je dostupný autem i autobusem."
+        ),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="milstejn-nadeje",
+                description=_(
+                    "Koupání spojte s okruhem z Trávníku přes skalní areál Milštejna."
+                ),
+            ),
+        ),
     ),
     SwimmingTip(
         slug="kristyna",
@@ -1267,7 +1377,8 @@ SWIMMING_TIPS = (
         official_url=("https://ceska-kamenice.cz/mapa-vyletu/mestske-koupaliste/"),
         admission=_("Dítě 40 Kč, dospělý 80 Kč."),
         opening_hours=_("V létě 10–19."),
-        driving_distance_km=22,
+        distance_km=22,
+        distance_label=_("Vzdálenost autem"),
         related_trips=(
             TripRelation(
                 target_kind="attraction",

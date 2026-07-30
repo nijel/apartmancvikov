@@ -1618,11 +1618,11 @@ msgstr "Swimming trips from Apartmán Cvikov"
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/koupani.html
 msgid ""
-"Šest tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, Jablonné v "
-"Podještědí, Kristýna, Jonsdorf, Dubice a Česká Kamenice."
+"Sedm tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, Jablonné v "
+"Podještědí, Naděje, Kristýna, Jonsdorf, Dubice a Česká Kamenice."
 msgstr ""
-"Six swimming tips near Apartmán Cvikov: Sloup v Čechách, Jablonné v "
-"Podještědí, Kristýna, Jonsdorf, Dubice and Česká Kamenice."
+"Seven swimming tips near Apartment Cvikov: Sloup v Čechách, Jablonné v "
+"Podještědí, Naděje, Kristýna, Jonsdorf, Dubice and Česká Kamenice."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/vylety.html
 #: apartmancvikov/templates/koupani.html
@@ -1666,8 +1666,8 @@ msgid "K vodě"
 msgstr "By the water"
 
 #: apartmancvikov/templates/koupani.html
-msgid "Šest míst pro malé i velké plavce"
-msgstr "Six places for swimmers of all ages"
+msgid "Sedm míst pro malé i velké plavce"
+msgstr "Seven places for swimmers of all ages"
 
 #: apartmancvikov/templates/koupani.html
 msgid ""
@@ -1708,8 +1708,8 @@ msgid "Všechny výlety"
 msgstr "All trips"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Šest tipů v okolí"
-msgstr "Six nearby tips"
+msgid "Sedm tipů v okolí"
+msgstr "Seven nearby tips"
 
 #: apartmancvikov/templates/vylety.html
 msgid "Prohlédnout koupání"
@@ -2926,8 +2926,8 @@ msgid "Doporučené restaurace"
 msgstr "Recommended restaurants"
 
 #: apartmancvikov/structured_data.py
-msgid "Devatenáct ověřených tipů na rodinné výlety, šest míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Nineteen tried-and-tested family trip ideas, six places to swim and twelve recommended restaurants near Apartment Cvikov."
+msgid "Dvacet ověřených tipů na rodinné výlety, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Twenty tried-and-tested family trip ideas, seven places to swim and twelve recommended restaurants near Apartment Cvikov."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace z Apartmánu Cvikov"
@@ -3034,8 +3034,8 @@ msgid "Provoz"
 msgstr "Opening"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Devatenáct rodinných výletů, šest míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Nineteen family trips, six places to swim and twelve recommended restaurants near Apartment Cvikov."
+msgid "Dvacet rodinných výletů, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Twenty family trips, seven places to swim and twelve recommended restaurants near Apartment Cvikov."
 
 #: apartmancvikov/templates/vylety.html
 msgid "Dvanáct tipů v okolí"
@@ -3064,3 +3064,141 @@ msgstr "Sushi and ramen in Česká Lípa."
 #: apartmancvikov/restaurants.py
 msgid "Návštěvu Kaido Sushi můžete spojit s koupáním na koupališti Dubice."
 msgstr "Combine a visit to Kaido Sushi with a swim at the Dubice swimming pool."
+
+#: apartmancvikov/content.py
+msgid "Milštejn a Naděje"
+msgstr "Milštejn and Naděje"
+
+#: apartmancvikov/content.py
+msgid "Lesní okruh za skalními pozůstatky hradu a chladnou horskou nádrží."
+msgstr ""
+"A woodland loop to the rocky remains of a castle and a cold mountain "
+"reservoir."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pestrý okruh z Trávníku vede přes skalní areál zaniklého hradu Milštejn k "
+"přehradní nádrži Naděje. Cestou se střídají lesní cesty, pískovcové skály, "
+"stopy po těžbě mlýnských kamenů a údolí Hamerského potoka."
+msgstr ""
+"This varied loop from Trávník leads through the rocky site of the vanished "
+"Milštejn Castle to the Naděje reservoir. Along the way, woodland paths "
+"alternate with sandstone rocks, traces of millstone quarrying and the "
+"Hamerský stream valley."
+
+#: apartmancvikov/content.py
+msgid ""
+"Hrad Milštejn vznikl na pískovcové skále u staré obchodní stezky mezi Českem "
+"a Lužicí. Po opuštění hradu jeho podobu zásadně proměnila dlouhá těžba "
+"kvalitního pískovce pro výrobu mlýnských kamenů. Dnes místo připomíná "
+"především mohutný skalní útvar, brána, dutiny a jen nepatrné zbytky zdiva."
+msgstr ""
+"Milštejn Castle was built on a sandstone rock beside an old trade route "
+"between Bohemia and Lusatia. After the castle was abandoned, prolonged "
+"quarrying of high-quality sandstone for millstones radically changed its "
+"appearance. Today the site is marked mainly by a massive rock formation, a "
+"gateway, cavities and only slight remnants of masonry."
+
+#: apartmancvikov/content.py
+msgid ""
+"Nádrž Naděje byla vybudována v letech 1937 až 1938 na Hamerském potoce jako "
+"zásobárna vody pro mlýn a pilu. Leží v hlubokém zalesněném údolí a její voda "
+"zůstává velmi chladná i během léta."
+msgstr ""
+"The Naděje reservoir was built on the Hamerský stream in 1937–1938 as a "
+"water supply for a mill and sawmill. It lies in a deep wooded valley and its "
+"water remains very cold even in summer."
+
+#: apartmancvikov/content.py
+msgid ""
+"Základní okruh měří 8,2 kilometru a vede místy po užších lesních cestách. "
+"Pro kočárek je připravená samostatná varianta dlouhá 8,4 kilometru, která "
+"využívá schůdnější cesty a přitom propojuje stejné hlavní cíle."
+msgstr ""
+"The main loop is 8.2 kilometres long and follows narrower woodland paths in "
+"places. A separate 8.4-kilometre pushchair-friendly route uses easier paths "
+"while still linking the same main destinations."
+
+#: apartmancvikov/content.py
+msgid ""
+"Skalní brána a dutiny na Milštejně jsou pro děti dobrodružným cílem; v "
+"teplém dni lze výlet spojit s koupáním v Naději."
+msgstr ""
+"Milštejn's rock gateway and cavities make an adventurous destination for "
+"children; on a warm day you can combine the trip with a swim in Naděje."
+
+#: apartmancvikov/content.py
+msgid "Hlavní trasa ne; kočárková varianta 8,4 km ano."
+msgstr "Not the main route; the 8.4 km alternative is suitable for a pushchair."
+
+#: apartmancvikov/content.py
+msgid "Do Trávníku je možné dojet autem nebo autobusem."
+msgstr "Trávník can be reached by car or bus."
+
+#: apartmancvikov/content.py
+msgid "Hlavní okruh přes Milštejn a Naději"
+msgstr "Main loop via Milštejn and Naděje"
+
+#: apartmancvikov/content.py
+msgid ""
+"Lesní okruh přes skalní areál Milštejna, nádrž Naděje a osadu Naděje není "
+"vhodný pro kočárek."
+msgstr ""
+"The woodland loop through the Milštejn rock site, Naděje reservoir and the "
+"settlement of Naděje is not suitable for a pushchair."
+
+#: apartmancvikov/content.py
+msgid "Kočárková varianta"
+msgstr "Pushchair-friendly route"
+
+#: apartmancvikov/content.py
+msgid ""
+"Mírně delší varianta vede po cestách sjízdných s kočárkem a propojuje "
+"Milštejn s nádrží Naděje."
+msgstr ""
+"This slightly longer alternative follows pushchair-friendly paths and links "
+"Milštejn with the Naděje reservoir."
+
+#: apartmancvikov/content.py
+msgid ""
+"Okruh vede kolem nádrže Naděje, kde se můžete osvěžit v chladné horské vodě."
+msgstr ""
+"The loop passes the Naděje reservoir, where you can cool off in the cold "
+"mountain water."
+
+#: apartmancvikov/content.py
+msgid "Nádrž Naděje"
+msgstr "Naděje Reservoir"
+
+#: apartmancvikov/content.py
+msgid ""
+"Volně přístupná přehradní nádrž v hlubokém lesním údolí s chladnou horskou "
+"vodou."
+msgstr ""
+"A freely accessible reservoir with cold mountain water in a deep wooded "
+"valley."
+
+#: apartmancvikov/content.py
+msgid "Vzdálenost od apartmánu"
+msgstr "Distance from the apartment"
+
+#: apartmancvikov/content.py
+msgid ""
+"Přímo k nádrži nelze dojet autem; poslední úsek je nutné dojít pěšky. "
+"Výchozí Trávník je dostupný autem i autobusem."
+msgstr ""
+"The reservoir cannot be reached directly by car; the final section must be "
+"walked. The starting point in Trávník is accessible by car or bus."
+
+#: apartmancvikov/content.py
+msgid "Koupání spojte s okruhem z Trávníku přes skalní areál Milštejna."
+msgstr ""
+"Combine your swim with the loop from Trávník through the Milštejn rock site."
+
+#: apartmancvikov/templates/koupani.html
+msgid ""
+"Ceny, provozní doba i podmínky se mohou změnit. Před cestou si vždy ověřte "
+"aktuální informace u provozovatele nebo v mapě."
+msgstr ""
+"Prices, opening hours and conditions may change. Always check the latest "
+"information with the operator or on the map before setting off."

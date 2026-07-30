@@ -321,7 +321,7 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Rodinné výlety z Apartmánu Cvikov"),
             _(
-                "Devatenáct ověřených tipů na rodinné výlety, šest míst ke "
+                "Dvacet ověřených tipů na rodinné výlety, sedm míst ke "
                 "koupání a dvanáct doporučených restaurací v okolí "
                 "Apartmánu Cvikov."
             ),
@@ -330,9 +330,9 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Výlety s koupáním z Apartmánu Cvikov"),
             _(
-                "Šest tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, "
-                "Jablonné v Podještědí, Kristýna, Jonsdorf, Dubice a Česká "
-                "Kamenice."
+                "Sedm tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, "
+                "Jablonné v Podještědí, Naděje, Kristýna, Jonsdorf, Dubice a "
+                "Česká Kamenice."
             ),
         ),
         "restaurants": (
@@ -528,7 +528,7 @@ def _swimming_list_node():
                 "@type": "SportsActivityLocation",
                 "name": str(item.name),
                 "description": str(item.description),
-                "url": item.official_url,
+                "url": item.official_url or item.map_url,
             },
         }
         for position, item in enumerate(SWIMMING_TIPS, start=1)

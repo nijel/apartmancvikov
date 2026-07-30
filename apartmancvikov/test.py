@@ -398,6 +398,30 @@ class SeoTest(TestCase):
         self.assertContains(horka, "https://mapy.com/s/leredazeka")
         self.assertNotContains(horka, 'href="None"')
 
+        milstejn = self.client.get("/cs/vylety/milstejn-nadeje/")
+        self.assertContains(milstejn, 'class="route-variant"', count=2)
+        self.assertContains(
+            milstejn,
+            "Hlavní okruh přes Milštejn a\N{NO-BREAK SPACE}Naději",
+        )
+        self.assertContains(milstejn, "8,2 km")
+        self.assertContains(milstejn, "https://mapy.com/s/nojudacesu")
+        self.assertContains(milstejn, "Kočárková varianta")
+        self.assertContains(milstejn, "8,4 km")
+        self.assertContains(milstejn, "https://mapy.com/s/galusenedu")
+        self.assertContains(milstejn, "4 km")
+        self.assertContains(milstejn, "autem nebo autobusem")
+        self.assertContains(milstejn, "Volně přístupné")
+        self.assertContains(
+            milstejn,
+            "/static/responsive/vylety/milstejn-480.webp",
+        )
+        self.assertContains(
+            milstejn,
+            'href="/cs/vylety/koupani/#nadrz-nadeje"',
+        )
+        self.assertNotContains(milstejn, 'href="None"')
+
     def test_extended_trip_descriptions_are_translated(self):
         """New paragraphs remain useful in both translated site versions."""
         english = self.client.get("/en/vylety/klic/")
@@ -417,6 +441,16 @@ class SeoTest(TestCase):
         self.assertContains(new_german, "Wege rund um Brniště")
         self.assertContains(new_german, "Routenkarte anzeigen")
         self.assertNotContains(new_german, "Zobrazit mapu trasy")
+
+        milstejn_english = self.client.get("/en/vylety/milstejn-nadeje/")
+        self.assertContains(milstejn_english, "Milštejn and Naděje")
+        self.assertContains(milstejn_english, "Pushchair-friendly route")
+        self.assertNotContains(milstejn_english, "Kočárková varianta")
+
+        milstejn_german = self.client.get("/de/vylety/milstejn-nadeje/")
+        self.assertContains(milstejn_german, "Milštejn und Naděje")
+        self.assertContains(milstejn_german, "Kinderwagentaugliche Route")
+        self.assertNotContains(milstejn_german, "Kočárková varianta")
 
     def test_every_destination_has_structured_practical_information(self):
         """Trips and swimming tips expose only the facts maintained for them."""
@@ -453,8 +487,8 @@ class SeoTest(TestCase):
         self.assertContains(response, "parkování auta 100 Kč")
         self.assertContains(response, "V létě 11–19")
         self.assertContains(response, "celodenní parkování 150 Kč")
-        self.assertContains(response, "<dt>Doprava</dt>", count=2, html=True)
-        self.assertContains(response, "Ceny a provozní doba se mohou změnit")
+        self.assertContains(response, "<dt>Doprava</dt>", count=3, html=True)
+        self.assertContains(response, "Ceny, provozní doba i podmínky se mohou změnit")
 
     def test_practical_information_is_translated(self):
         """Maintained facts and their warning are localized."""
@@ -469,7 +503,10 @@ class SeoTest(TestCase):
         self.assertNotContains(german, "Kinderwagen")
         self.assertContains(german, "Erwachsene 5 €")
         self.assertContains(german, "Im Sommer 11–19 Uhr")
-        self.assertContains(german, "Preise und Öffnungszeiten können sich ändern")
+        self.assertContains(
+            german,
+            "Preise, Öffnungszeiten und Bedingungen können sich ändern",
+        )
         self.assertNotContains(german, "Vstupné")
 
     def test_related_trip_graph_is_valid_and_bidirectional(self):
@@ -611,8 +648,14 @@ class SeoTest(TestCase):
                     ("restaurant", "kaido-sushi"),
                 )
             ),
+            frozenset(
+                (
+                    ("attraction", "milstejn-nadeje"),
+                    ("swimming", "nadrz-nadeje"),
+                )
+            ),
         }
-        self.assertEqual(relation_count, 38)
+        self.assertEqual(relation_count, 40)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):
@@ -636,16 +679,29 @@ class SeoTest(TestCase):
     def test_swimming_cards_link_to_related_attractions(self):
         """The curated swimming cards carry contextual trip links."""
         response = self.client.get("/cs/vylety/koupani/")
-        self.assertContains(response, 'class="swimming-card__related"', count=3)
+        self.assertContains(response, 'class="swimming-card__related"', count=4)
         self.assertContains(response, 'id="koupaliste-sloup"')
         self.assertContains(response, 'id="koupaliste-jonsdorf"')
         self.assertContains(response, 'id="koupaliste-ceska-kamenice"')
+        self.assertContains(response, 'id="nadrz-nadeje"')
         self.assertContains(response, 'href="/cs/vylety/skalni-hrad-sloup/"')
         self.assertContains(response, 'href="/cs/vylety/motyli-dum-jonsdorf/"')
         self.assertContains(
             response,
             'href="/cs/vylety/privoz-mlynky-vyhlidky/"',
         )
+        self.assertContains(response, 'href="/cs/vylety/milstejn-nadeje/"')
+
+    def test_nadeje_swimming_tip_has_map_distance_and_access_note(self):
+        """The natural reservoir uses its map without implying direct car access."""
+        response = self.client.get("/cs/vylety/koupani/")
+        self.assertContains(response, "Nádrž Naděje")
+        self.assertContains(response, "chladnou horskou vodou")
+        self.assertContains(response, "Vzdálenost od apartmánu")
+        self.assertContains(response, "13 km")
+        self.assertContains(response, "Přímo k nádrži nelze dojet autem")
+        self.assertContains(response, "https://mapy.com/s/jamobakeju")
+        self.assertNotContains(response, 'href="None"')
 
     def test_restaurants_are_linked_bidirectionally_from_nearby_trips(self):
         """Food tips have their own section and lead back to the matching trips."""
@@ -754,7 +810,10 @@ class SeoTest(TestCase):
         for tip in SWIMMING_TIPS:
             with self.subTest(tip=tip.name):
                 self.assertContains(response, tip.name)
-                self.assertContains(response, tip.official_url)
+                if tip.official_url:
+                    self.assertContains(response, tip.official_url)
+                if tip.map_url:
+                    self.assertContains(response, tip.map_url)
 
     def test_trip_guide_includes_recommended_restaurants(self):
         """The overview opens one complete, distance-sorted restaurant guide."""
@@ -838,10 +897,14 @@ class SeoTest(TestCase):
         english = self.client.get("/en/vylety/koupani/")
         self.assertContains(english, "Swimming trips")
         self.assertContains(english, "Česká Kamenice municipal swimming pool")
+        self.assertContains(english, "Naděje Reservoir")
+        self.assertContains(english, "Distance from the apartment")
 
         german = self.client.get("/de/vylety/koupani/")
         self.assertContains(german, "Badeausflüge")
         self.assertContains(german, "Städtisches Freibad Česká Kamenice")
+        self.assertContains(german, "Stausee Naděje")
+        self.assertContains(german, "Entfernung von der Ferienwohnung")
 
     def test_trip_pages_include_a_print_header_and_current_page_qr(self):
         """Every trip layout carries a local SVG QR code for its canonical URL."""
@@ -856,7 +919,7 @@ class SeoTest(TestCase):
                 "/cs/vylety/koupani/",
                 "trip-print--swimming",
                 "Výlety s\N{NO-BREAK SPACE}koupáním",
-                "Šest míst pro malé i velké plavce",
+                "Sedm míst pro malé i velké plavce",
             ),
             (
                 "/cs/vylety/restaurace/",
@@ -869,6 +932,12 @@ class SeoTest(TestCase):
                 "trip-print--detail",
                 "Výstup na\N{NO-BREAK SPACE}Klíč",
                 "Praktické informace",
+            ),
+            (
+                "/cs/vylety/milstejn-nadeje/",
+                "trip-print--detail",
+                "Milštejn a\N{NO-BREAK SPACE}Naděje",
+                "Varianty výletu",
             ),
         )
         for path, page_class, print_title, content_heading in pages:
@@ -1175,7 +1244,7 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 87)
+        self.assertEqual(len(locations), 90)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/koupani/",
@@ -1197,6 +1266,10 @@ class SeoTest(TestCase):
         )
         self.assertIn(
             "https://apartmancvikov.cz/de/vylety/stezky-brniste/",
+            locations,
+        )
+        self.assertIn(
+            "https://apartmancvikov.cz/cs/vylety/milstejn-nadeje/",
             locations,
         )
         self.assertIn("https://apartmancvikov.cz/cs/ochrana-osobnich-udaju/", locations)
@@ -1229,6 +1302,11 @@ class SeoTest(TestCase):
         self.assertIn(
             "<image:loc>https://apartmancvikov.cz/static/vylety/"
             "brniste-stezky.jpg</image:loc>",
+            sitemap,
+        )
+        self.assertIn(
+            "<image:loc>https://apartmancvikov.cz/static/vylety/"
+            "milstejn.jpg</image:loc>",
             sitemap,
         )
 

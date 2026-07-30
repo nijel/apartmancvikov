@@ -1882,7 +1882,11 @@ html.lightbox-open {
   body.trip-print--swimming .swimming-page > .site-container {
     column-gap: 5mm;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 55mm;
+    grid-template-columns: minmax(0, 1fr) 50mm;
+  }
+
+  body.trip-print--swimming .print-header {
+    margin-bottom: 2mm;
   }
 
   body.trip-print--swimming .section-intro {
@@ -1893,7 +1897,7 @@ html.lightbox-open {
     align-self: start;
     grid-column: 2;
     grid-row: 1;
-    margin: 0 0 4mm;
+    margin: 0 0 1mm;
     max-width: none;
   }
 
@@ -1908,17 +1912,18 @@ html.lightbox-open {
   }
 
   body.trip-print--swimming .swimming-grid {
-    gap: 3mm;
+    gap: 1.5mm;
     grid-column: 1 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-right: 0.5mm;
   }
 
   body.trip-print--swimming .swimming-card {
-    border: 0.5pt solid #bdb5ae;
+    border: 0.75pt solid #b2aaa2;
     border-radius: 2mm;
     break-inside: avoid;
     display: block;
-    padding: 3mm;
+    padding: 2.2mm;
   }
 
   body.trip-print--swimming .swimming-card h3 {
