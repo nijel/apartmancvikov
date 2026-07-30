@@ -1811,3 +1811,20 @@ msgid ""
 msgstr ""
 "Der Ausgangspunkt ist mit dem Auto %(driving_distance)s km von der "
 "Ferienwohnung entfernt, der Rundweg zu Fuß ist %(distance)s km lang."
+
+#: apartmancvikov/forms.py
+#, python-format
+msgid "Nejbližší možné datum příjezdu je %(date)s."
+msgstr "Das frühestmögliche Anreisedatum ist der %(date)s."
+
+#: apartmancvikov/forms.py
+#, python-format
+msgid "Termín lze poptat nejpozději do %(date)s."
+msgstr "Ein Aufenthalt kann spätestens bis zum %(date)s angefragt werden."
+
+#: apartmancvikov/forms.py
+msgid ""
+"Vybraný termín zasahuje do již obsazeného období. Zvolte prosím jiný termín."
+msgstr ""
+"Der gewählte Zeitraum überschneidet sich mit einem bereits belegten "
+"Zeitraum. Bitte wählen Sie einen anderen Zeitraum."

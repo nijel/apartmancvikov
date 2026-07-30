@@ -13,8 +13,10 @@ from unittest.mock import patch
 from django.conf import settings
 from django.core import mail, signing
 from django.test import TestCase, override_settings
+from django.utils import timezone
 from django.utils.safestring import mark_safe
 
+from .availability import maximum_inquiry_date
 from .content import ATTRACTIONS, SWIMMING_TIPS
 from .forms import FORM_TOKEN_SALT
 from .image_config import variant_path
@@ -621,7 +623,7 @@ class SeoTest(TestCase):
 class ContactInquiryTest(TestCase):
     def inquiry_data(self, **overrides):
         """Return a valid inquiry payload with optional field overrides."""
-        arrival = date.today() + timedelta(days=14)  # noqa: DTZ011
+        arrival = timezone.localdate() + timedelta(days=14)
         data = {
             "name": "Jana Nováková",
             "email": "jana@example.com",
@@ -650,6 +652,100 @@ class ContactInquiryTest(TestCase):
         self.assertContains(response, 'name="children"')
         self.assertContains(response, 'name="infants"')
         self.assertContains(response, "Zkontrolovat obsazenost")
+
+    def test_date_inputs_start_at_next_availability_and_end_in_two_years(self):
+        """Date inputs expose useful bounds based on current availability."""
+        today = timezone.localdate()
+        tomorrow = today + timedelta(days=1)
+        occupied_until = tomorrow + timedelta(days=3)
+        Booking.objects.create(
+            start=tomorrow,
+            end=occupied_until,
+            uid="upcoming-booking",
+        )
+
+        response = self.client.get("/cs/poptavka/")
+        form = response.context["form"]
+
+        self.assertEqual(
+            form.fields["arrival"].widget.attrs["min"],
+            (occupied_until + timedelta(days=1)).isoformat(),
+        )
+        self.assertEqual(
+            form.fields["departure"].widget.attrs["min"],
+            (occupied_until + timedelta(days=2)).isoformat(),
+        )
+        maximum = maximum_inquiry_date(today).isoformat()
+        self.assertEqual(form.fields["arrival"].widget.attrs["max"], maximum)
+        self.assertEqual(form.fields["departure"].widget.attrs["max"], maximum)
+
+    def test_today_and_dates_after_two_year_horizon_are_rejected(self):
+        """The server enforces the same minimum and maximum as date inputs."""
+        today = timezone.localdate()
+        maximum = maximum_inquiry_date(today)
+
+        today_response = self.client.post(
+            "/cs/poptavka/",
+            self.inquiry_data(
+                arrival=today.isoformat(),
+                departure=(today + timedelta(days=2)).isoformat(),
+            ),
+        )
+        self.assertEqual(today_response.status_code, 200)
+        self.assertContains(today_response, "Nejbližší možné datum příjezdu")
+
+        late_response = self.client.post(
+            "/cs/poptavka/",
+            self.inquiry_data(
+                arrival=maximum.isoformat(),
+                departure=(maximum + timedelta(days=1)).isoformat(),
+            ),
+        )
+        self.assertEqual(late_response.status_code, 200)
+        self.assertContains(late_response, "Termín lze poptat nejpozději")
+        self.assertEqual(len(mail.outbox), 0)
+
+    def test_booking_conflict_is_rejected_without_sending(self):
+        """An inquiry overlapping any occupied date does not send an e-mail."""
+        arrival = timezone.localdate() + timedelta(days=7)
+        Booking.objects.create(
+            start=arrival + timedelta(days=2),
+            end=arrival + timedelta(days=4),
+            uid="conflicting-booking",
+        )
+
+        response = self.client.post(
+            "/cs/poptavka/",
+            self.inquiry_data(
+                arrival=arrival.isoformat(),
+                departure=(arrival + timedelta(days=6)).isoformat(),
+            ),
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "zasahuje do již obsazeného období")
+        self.assertEqual(len(mail.outbox), 0)
+
+    def test_stay_ending_when_next_booking_starts_is_allowed(self):
+        """A departure on the next booking's arrival date is not an overlap."""
+        arrival = timezone.localdate() + timedelta(days=7)
+        next_arrival = arrival + timedelta(days=3)
+        Booking.objects.create(
+            start=next_arrival,
+            end=next_arrival + timedelta(days=4),
+            uid="following-booking",
+        )
+
+        response = self.client.post(
+            "/cs/poptavka/",
+            self.inquiry_data(
+                arrival=arrival.isoformat(),
+                departure=next_arrival.isoformat(),
+            ),
+        )
+
+        self.assertRedirects(response, "/cs/poptavka/")
+        self.assertEqual(len(mail.outbox), 1)
 
     def test_primary_navigation_links_directly_to_inquiry(self):
         """The main navigation makes the inquiry action prominent."""
@@ -685,7 +781,7 @@ class ContactInquiryTest(TestCase):
 
     def test_capacity_and_dates_are_validated_without_sending(self):
         """Invalid dates and excessive capacity never produce an e-mail."""
-        yesterday = date.today() - timedelta(days=1)  # noqa: DTZ011
+        yesterday = timezone.localdate() - timedelta(days=1)
         response = self.client.post(
             "/cs/poptavka/",
             self.inquiry_data(

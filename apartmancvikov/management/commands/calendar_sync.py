@@ -11,6 +11,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 
+from apartmancvikov.availability import maximum_inquiry_date
 from apartmancvikov.models import Booking
 
 
@@ -42,12 +43,13 @@ class Command(BaseCommand):
             calendar_url = settings.CALDAV_URL.split("/", 3)[-1]
             calendar = client.calendar(url=f"/{calendar_url}")
 
-            start_date = timezone.now().date().replace(day=1)
+            today = timezone.localdate()
+            start_date = today.replace(day=1)
 
             events = calendar.search(
                 event=True,
                 start=start_date,
-                end=start_date + timedelta(days=600),
+                end=maximum_inquiry_date(today) + timedelta(days=1),
             )
 
             for event in events:

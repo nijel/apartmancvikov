@@ -3,13 +3,16 @@
 # SPDX-License-Identifier: AGPL-3.0
 
 import time
+from datetime import timedelta
 
 from django import forms
 from django.core import signing
 from django.core.exceptions import ValidationError
 from django.utils import timezone
+from django.utils.formats import date_format
 from django.utils.translation import gettext_lazy as _
 
+from .availability import get_inquiry_date_bounds, has_booking_conflict
 from .site_config import MAX_GUESTS
 
 FORM_TOKEN_SALT = "contact-inquiry"
@@ -80,8 +83,19 @@ class ContactInquiryForm(forms.Form):
         """Set date bounds and issue a signed anti-spam timestamp."""
         super().__init__(*args, **kwargs)
         today = timezone.localdate()
-        self.fields["arrival"].widget.attrs["min"] = today.isoformat()
-        self.fields["departure"].widget.attrs["min"] = today.isoformat()
+        self.minimum_arrival, self.maximum_date = get_inquiry_date_bounds(today)
+        self.fields["arrival"].widget.attrs.update(
+            {
+                "min": self.minimum_arrival.isoformat(),
+                "max": self.maximum_date.isoformat(),
+            }
+        )
+        self.fields["departure"].widget.attrs.update(
+            {
+                "min": (self.minimum_arrival + timedelta(days=1)).isoformat(),
+                "max": self.maximum_date.isoformat(),
+            }
+        )
         if not self.is_bound:
             self.initial["started_at"] = signing.dumps(
                 {"started": time.time()}, salt=FORM_TOKEN_SALT
@@ -117,9 +131,52 @@ class ContactInquiryForm(forms.Form):
         today = timezone.localdate()
         if arrival and arrival < today:
             self.add_error("arrival", _("Datum příjezdu nemůže být v minulosti."))
+        elif arrival and arrival < self.minimum_arrival:
+            self.add_error(
+                "arrival",
+                ValidationError(
+                    _("Nejbližší možné datum příjezdu je %(date)s."),
+                    code="arrival_before_minimum",
+                    params={
+                        "date": date_format(self.minimum_arrival, "DATE_FORMAT"),
+                    },
+                ),
+            )
+        if arrival and arrival > self.maximum_date:
+            self.add_error(
+                "arrival",
+                ValidationError(
+                    _("Termín lze poptat nejpozději do %(date)s."),
+                    code="arrival_after_maximum",
+                    params={"date": date_format(self.maximum_date, "DATE_FORMAT")},
+                ),
+            )
+        if departure and departure > self.maximum_date:
+            self.add_error(
+                "departure",
+                ValidationError(
+                    _("Termín lze poptat nejpozději do %(date)s."),
+                    code="departure_after_maximum",
+                    params={"date": date_format(self.maximum_date, "DATE_FORMAT")},
+                ),
+            )
         if arrival and departure and departure <= arrival:
             self.add_error(
                 "departure", _("Datum odjezdu musí být později než příjezd.")
+            )
+        elif (
+            arrival
+            and departure
+            and arrival >= self.minimum_arrival
+            and departure <= self.maximum_date
+            and has_booking_conflict(arrival, departure)
+        ):
+            raise ValidationError(
+                _(
+                    "Vybraný termín zasahuje do již obsazeného období. "
+                    "Zvolte prosím jiný termín."
+                ),
+                code="booking_conflict",
             )
 
         guest_counts = (

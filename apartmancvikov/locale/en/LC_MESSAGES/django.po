@@ -1783,3 +1783,20 @@ msgid ""
 msgstr ""
 "The trailhead is %(driving_distance)s km from the apartment by car, and the "
 "walking loop is %(distance)s km long."
+
+#: apartmancvikov/forms.py
+#, python-format
+msgid "Nejbližší možné datum příjezdu je %(date)s."
+msgstr "The earliest possible arrival date is %(date)s."
+
+#: apartmancvikov/forms.py
+#, python-format
+msgid "Termín lze poptat nejpozději do %(date)s."
+msgstr "A stay can be requested no later than %(date)s."
+
+#: apartmancvikov/forms.py
+msgid ""
+"Vybraný termín zasahuje do již obsazeného období. Zvolte prosím jiný termín."
+msgstr ""
+"The selected dates overlap an occupied period. Please choose different "
+"dates."
