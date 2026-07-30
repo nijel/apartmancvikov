@@ -1142,7 +1142,6 @@ class SwimmingTip:
     name: object
     description: object
     official_url: str
-    stroller_access: object
     admission: object
     opening_hours: object
     driving_distance_km: int | float | None = None
@@ -1161,7 +1160,6 @@ SWIMMING_TIPS = (
         name=_("Koupaliště Sloup v Čechách"),
         description=_("Přírodní koupaliště v kempu s lanovým centrem a občerstvením."),
         official_url="https://koupaliste.sloupvcechach.cz/",
-        stroller_access=_("Ano"),
         admission=_(
             "Dítě do 6 let 30 Kč, dítě od 6 do 15 let 45 Kč, návštěvníci nad "
             "15 let 70 Kč; parkování auta 100 Kč."
@@ -1202,7 +1200,6 @@ SWIMMING_TIPS = (
             "skluzavkou na vodě."
         ),
         official_url="https://www.kempjablonne.cz/",
-        stroller_access=_("Ano"),
         admission=_("Dítě 30 Kč, dospělý 50 Kč."),
         opening_hours=_("V létě 8–22."),
     ),
@@ -1214,7 +1211,6 @@ SWIMMING_TIPS = (
             "hřištěm, šlapadly a restaurací."
         ),
         official_url="https://www.kemp-kristyna.cz/",
-        stroller_access=_("Ano"),
         admission=_("70 Kč za osobu."),
         opening_hours=_("V létě 8–21."),
     ),
@@ -1226,7 +1222,6 @@ SWIMMING_TIPS = (
             "a občerstvením."
         ),
         official_url="https://www.jonsdorf.de/gebirgsbad/",
-        stroller_access=_("Ano"),
         admission=_("Dospělý 5 €, dítě 3 €, rodinné vstupné 12 €."),
         opening_hours=_("V létě 11–19."),
         travel_tip=MOUNTAIN_EXPRESS_TIP,
@@ -1250,7 +1245,6 @@ SWIMMING_TIPS = (
             "a v okolí je volně přístupné 3D bludiště."
         ),
         official_url="https://www.sportlipa.cz/venkovni-koupaliste-dubice",
-        stroller_access=_("Ano"),
         admission=_(
             "30–150 Kč podle sezony, věku a času vstupu; celodenní parkování 150 Kč."
         ),
@@ -1271,7 +1265,6 @@ SWIMMING_TIPS = (
         name=_("Městské koupaliště Česká Kamenice"),
         description=_("Koupaliště s bistrem."),
         official_url=("https://ceska-kamenice.cz/mapa-vyletu/mestske-koupaliste/"),
-        stroller_access=_("Ano"),
         admission=_("Dítě 40 Kč, dospělý 80 Kč."),
         opening_hours=_("V létě 10–19."),
         driving_distance_km=22,

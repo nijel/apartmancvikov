@@ -419,12 +419,17 @@ class SeoTest(TestCase):
         self.assertNotContains(new_german, "Zobrazit mapu trasy")
 
     def test_every_destination_has_structured_practical_information(self):
-        """Every trip and swimming destination has the three maintained facts."""
-        for destination in (*ATTRACTIONS, *SWIMMING_TIPS):
-            with self.subTest(destination=destination.name):
-                self.assertTrue(str(destination.stroller_access))
-                self.assertTrue(str(destination.admission))
-                self.assertTrue(str(destination.opening_hours))
+        """Trips and swimming tips expose only the facts maintained for them."""
+        for attraction in ATTRACTIONS:
+            with self.subTest(attraction=attraction.name):
+                self.assertTrue(str(attraction.stroller_access))
+                self.assertTrue(str(attraction.admission))
+                self.assertTrue(str(attraction.opening_hours))
+        for swimming_tip in SWIMMING_TIPS:
+            with self.subTest(swimming_tip=swimming_tip.name):
+                self.assertFalse(hasattr(swimming_tip, "stroller_access"))
+                self.assertTrue(str(swimming_tip.admission))
+                self.assertTrue(str(swimming_tip.opening_hours))
 
     def test_attraction_detail_shows_structured_practical_information(self):
         """Trip facts include access, prices, hours, and a freshness warning."""
@@ -437,13 +442,14 @@ class SeoTest(TestCase):
         self.assertContains(response, "Ceny a provozní doba se mohou změnit")
 
     def test_swimming_destinations_show_structured_practical_information(self):
-        """Each swimming card contains access, admission, and summer hours."""
+        """Each swimming card contains admission and summer hours without access."""
         response = self.client.get("/cs/vylety/koupani/")
         html = response.content.decode()
         self.assertEqual(
             html.count('class="swimming-facts"'),
             len(SWIMMING_TIPS),
         )
+        self.assertNotContains(response, "Kočárek")
         self.assertContains(response, "parkování auta 100 Kč")
         self.assertContains(response, "V létě 11–19")
         self.assertContains(response, "celodenní parkování 150 Kč")
@@ -460,7 +466,7 @@ class SeoTest(TestCase):
         self.assertNotContains(english, "Provozní doba")
 
         german = self.client.get("/de/vylety/koupani/")
-        self.assertContains(german, "Kinderwagen")
+        self.assertNotContains(german, "Kinderwagen")
         self.assertContains(german, "Erwachsene 5 €")
         self.assertContains(german, "Im Sommer 11–19 Uhr")
         self.assertContains(german, "Preise und Öffnungszeiten können sich ändern")
