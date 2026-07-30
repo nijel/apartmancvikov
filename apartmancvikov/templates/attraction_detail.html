@@ -133,6 +133,7 @@
         <p class="eyebrow">{% translate "Náš tip" %}</p>
         <h2>{% translate "Proč sem vyrazit" %}</h2>
         <p>{{ attraction.description }}</p>
+        {% for paragraph in attraction.description_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
       </section>
 
       <aside class="callout">

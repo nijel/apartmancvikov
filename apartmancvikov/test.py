@@ -281,6 +281,57 @@ class SeoTest(TestCase):
         self.assertContains(detail, "mohutné stromy")
         self.assertContains(detail, "bikepark")
 
+    def test_existing_trips_include_extended_descriptions_from_guest_documents(self):
+        """Guest handouts enrich matching trip pages with reusable detail."""
+        expected_details = {
+            "cvikovske-vyhlidky": (
+                "Johann Franz Richter",
+                "lesního divadla",
+                "Schillerově vyhlídce",
+            ),
+            "duty-kamen": (
+                "600 metrů dlouhý",
+                "Karolínin odpočinek",
+                "Theodora Körnera",
+            ),
+            "skalni-hrad-sloup": (
+                "více než třicet metrů",
+                "barokní úpravy",
+            ),
+            "pacinek-glass": (
+                "Skleněné květy",
+                "tradiční sklářská huť",
+            ),
+            "klic": (
+                "Kamzičí studánku",
+                "kamenné moře",
+            ),
+            "polevsko": (
+                "trasy pro zkušenější jezdce i děti",
+                "pastvinám",
+            ),
+            "motyli-dum-jonsdorf": (
+                "bezbariérová",
+                "Gondelfahrt",
+                "horském koupališti",
+            ),
+        }
+        for slug, details in expected_details.items():
+            with self.subTest(slug=slug):
+                response = self.client.get(f"/cs/vylety/{slug}/")
+                for detail in details:
+                    self.assertContains(response, detail)
+
+    def test_extended_trip_descriptions_are_translated(self):
+        """New paragraphs remain useful in both translated site versions."""
+        english = self.client.get("/en/vylety/klic/")
+        self.assertContains(english, "stone sea")
+        self.assertNotContains(english, "kamenné moře")
+
+        german = self.client.get("/de/vylety/duty-kamen/")
+        self.assertContains(german, "Felsbank Karolínin odpočinek")
+        self.assertNotContains(german, "skalní lavici")
+
     def test_trip_guide_includes_swimming_tips(self):
         """One trip card opens the complete swimming guide."""
         overview = self.client.get("/cs/vylety/")

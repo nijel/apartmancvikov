@@ -133,3 +133,6 @@ dmypy.json
 
 # Local settings
 /apartmancvikov/settings_local.py
+
+# Documents
+/vylety/
