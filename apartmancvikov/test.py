@@ -210,14 +210,13 @@ class SeoTest(TestCase):
 
     def test_swimming_tips_are_translated(self):
         """The dedicated guide remains useful in every supported language."""
-        self.assertContains(
-            self.client.get("/en/vylety/koupani/"),
-            "Swimming trips",
-        )
-        self.assertContains(
-            self.client.get("/de/vylety/koupani/"),
-            "Badeausflüge",
-        )
+        english = self.client.get("/en/vylety/koupani/")
+        self.assertContains(english, "Swimming trips")
+        self.assertContains(english, "Česká Kamenice municipal swimming pool")
+
+        german = self.client.get("/de/vylety/koupani/")
+        self.assertContains(german, "Badeausflüge")
+        self.assertContains(german, "Städtisches Freibad Česká Kamenice")
 
     def test_unknown_attraction_returns_404(self):
         """Unknown attraction slugs do not create soft 404 pages."""
