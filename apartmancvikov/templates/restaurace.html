@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% load i18n seo static trip_print %}
+
+{% block body_class %}trip-print trip-print--restaurants{% endblock %}
+
+{% block print_header %}
+  {% trip_print_header _("Doporučené restaurace") canonical_url %}
+{% endblock print_header %}
+
+{% block title %}
+  {% translate "Doporučené restaurace v okolí Cvikova | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description"
+        content="{% translate "Jedenáct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech." %}" />
+{% endblock meta_description %}
+
+{% block ogtitle %}
+  <meta property="og:title"
+        content="{% translate "Doporučené restaurace z Apartmánu Cvikov" %}" />
+{% endblock ogtitle %}
+
+{% block ogdescription %}
+  <meta property="og:description"
+        content="{% translate "Česká, asijská i indická kuchyně, pivovary, rybí speciality, zmrzlina a občerstvení u rodinných výletů." %}" />
+{% endblock ogdescription %}
+
+{% block headline %}
+  {% translate "Doporučené restaurace" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Kam zajít pěšky na oběd a kde se dobře najíst při výletech v okolí Cvikova." %}
+{% endblock lead %}
+
+{% block ogimage %}
+  <meta property="og:image" content="{{ site_url }}{% static "bg.jpg" %}" />
+{% endblock ogimage %}
+
+{% block ogimagealt %}
+  <meta property="og:image:alt" content="{% translate "Lužické hory u Cvikova" %}" />
+{% endblock ogimagealt %}
+
+{% block content %}
+  <article class="content-section restaurant-page">
+    <div class="site-container">
+      <nav class="breadcrumbs" aria-label="{% translate "Drobečková navigace" %}">
+        <ol>
+          <li><a href="{% url "home" %}">{% translate "Ubytování" %}</a></li>
+          <li><a href="{% url "vylety" %}">{% translate "Výlety" %}</a></li>
+          <li aria-current="page">{% translate "Restaurace" %}</li>
+        </ol>
+      </nav>
+
+      <header class="section-intro">
+        <p class="eyebrow">{% translate "Kam na jídlo" %}</p>
+        <h2>{% translate "Ověřené tipy pro oběd, večeři i sladkou zastávku" %}</h2>
+        <p>{% translate "Čtyři podniky jsou dostupné pěšky přímo z apartmánu, další můžete navštívit cestou na výlet nebo při návratu." %}</p>
+        <p class="practical-note">
+          {% translate "Otevírací doba, nabídka a sezonní provoz se mohou změnit. Před návštěvou si vždy ověřte aktuální informace u provozovatele." %}
+        </p>
+      </header>
+
+      <section class="restaurant-group" aria-labelledby="walking-restaurants">
+        <p class="eyebrow">{% translate "Bez auta" %}</p>
+        <h2 id="walking-restaurants">{% translate "Pěšky z apartmánu" %}</h2>
+        <div class="restaurant-grid">
+          {% for card in walking_restaurants %}
+            {% include "snippets/restaurant_card.html" with card=card %}
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="restaurant-group" aria-labelledby="driving-restaurants">
+        <p class="eyebrow">{% translate "Na výletě" %}</p>
+        <h2 id="driving-restaurants">{% translate "Autem nebo autobusem" %}</h2>
+        <div class="restaurant-grid">
+          {% for card in driving_restaurants %}
+            {% include "snippets/restaurant_card.html" with card=card %}
+          {% endfor %}
+        </div>
+      </section>
+
+      <aside class="callout">
+        <div>
+          <p class="eyebrow">{% translate "Naplánujte si den" %}</p>
+          <h2>{% translate "Spojte dobré jídlo s rodinným výletem" %}</h2>
+          <p>{% translate "Vyberte si skály, hrady, koupání nebo kratší program pro děti v okolí restaurace." %}</p>
+        </div>
+        <div class="button-row">
+          <a href="{% url "vylety" %}" class="button button--primary">{% translate "Všechny výlety" %}</a>
+          <a href="{% url "swimming" %}" class="button button--secondary">{% translate "Výlety s koupáním" %}</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+{% endblock content %}

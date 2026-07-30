@@ -116,6 +116,15 @@
                   {% endfor %}
                 </div>
               {% endif %}
+              {% if card.related_restaurants %}
+                <div class="swimming-card__related swimming-card__restaurants">
+                  <strong>{% translate "Kde se najíst poblíž" %}</strong>
+                  {% for restaurant in card.related_restaurants %}
+                    <a href="{{ restaurant.url }}">{{ restaurant.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
+                    <p>{{ restaurant.description }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
               <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
             </section>
           {% endwith %}

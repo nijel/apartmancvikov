@@ -10,7 +10,7 @@ from django.utils.translation import gettext_lazy as _
 
 @dataclass(frozen=True)
 class TripRelation:
-    target_kind: Literal["attraction", "swimming"]
+    target_kind: Literal["attraction", "swimming", "restaurant"]
     target_slug: str
     description: object
 
@@ -147,6 +147,15 @@ ATTRACTIONS = (
         ),
         admission=_("Pumptrack zdarma; vzduchové trampolíny jsou placené."),
         opening_hours=_("Volně přístupné"),
+        related_trips=(
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="na-krajicku",
+                description=_(
+                    "Přímo u pumptracku a trampolín se můžete občerstvit Na Krajíčku."
+                ),
+            ),
+        ),
         image="vylety/pumptrack-cvikov.jpg",
         image_width=1600,
         image_height=1200,
@@ -322,6 +331,19 @@ ATTRACTIONS = (
                     "Po prohlídce skalního hradu se můžete v létě osvěžit na "
                     "koupališti ve Sloupu."
                 ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="na-strazi",
+                description=_(
+                    "Po prohlídce hradu můžete pokračovat za moderní gastronomií "
+                    "do restaurace Na Stráži."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="sloupska-terasa",
+                description=_("Na zmrzlinu a zákusky se zastavte ve Sloupské Terase."),
             ),
         ),
         travel_tip=_("Do Sloupu v Čechách je možné dojet také autobusem."),
@@ -577,6 +599,22 @@ ATTRACTIONS = (
                 description=_(
                     "Další výrazný vrchol Žitavských hor nabízí skalní hrad "
                     "a klášter Oybin."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="resort-hvozd",
+                description=_(
+                    "Před výstupem nebo po návratu se můžete najíst v restauraci "
+                    "Resortu Hvozd."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="pivovar-krompach",
+                description=_(
+                    "Výlet lze zakončit českou kuchyní a vlastním pivem v "
+                    "Pivovaru Krompach."
                 ),
             ),
         ),
@@ -1137,6 +1175,21 @@ SWIMMING_TIPS = (
                 description=_(
                     "Koupání můžete spojit s prohlídkou skalního hradu "
                     "a poustevny ve Sloupu."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="na-strazi",
+                description=_(
+                    "Po koupání můžete zajít na moderní gastronomii do restaurace "
+                    "Na Stráži."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="sloupska-terasa",
+                description=_(
+                    "Na zmrzlinu nebo zákusek se zastavte ve Sloupské Terase."
                 ),
             ),
         ),

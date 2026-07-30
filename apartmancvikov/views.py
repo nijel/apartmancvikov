@@ -23,6 +23,7 @@ from .content import (
     SWIMMING_TIPS_BY_SLUG,
 )
 from .forms import ContactInquiryForm
+from .restaurants import RESTAURANTS, RESTAURANTS_BY_SLUG
 from .site_config import (
     ADDRESS_LOCALITY,
     ADDRESS_POSTAL_CODE,
@@ -34,24 +35,41 @@ from .site_config import (
 logger = logging.getLogger(__name__)
 
 
-def resolve_related_trips(relations):
+def resolve_related_destinations(relations):
     """Resolve curated relations to localized internal links."""
-    related_trips = []
+    related_destinations = []
     for relation in relations:
         if relation.target_kind == "attraction":
             target = ATTRACTIONS_BY_SLUG[relation.target_slug]
             url = reverse("attraction_detail", kwargs={"slug": target.slug})
-        else:
+        elif relation.target_kind == "swimming":
             target = SWIMMING_TIPS_BY_SLUG[relation.target_slug]
             url = f"{reverse('swimming')}#{target.slug}"
-        related_trips.append(
+        else:
+            target = RESTAURANTS_BY_SLUG[relation.target_slug]
+            url = f"{reverse('restaurants')}#{target.slug}"
+        related_destinations.append(
             {
                 "name": target.name,
                 "description": relation.description,
+                "kind": relation.target_kind,
                 "url": url,
             }
         )
-    return tuple(related_trips)
+    return tuple(related_destinations)
+
+
+def group_related_destinations(relations):
+    """Separate food recommendations from trips while preserving their order."""
+    destinations = resolve_related_destinations(relations)
+    return {
+        "related_trips": tuple(
+            item for item in destinations if item["kind"] != "restaurant"
+        ),
+        "related_restaurants": tuple(
+            item for item in destinations if item["kind"] == "restaurant"
+        ),
+    }
 
 
 class HomeView(TemplateView):
@@ -78,9 +96,31 @@ class SwimmingTripsView(TemplateView):
         context["swimming_cards"] = tuple(
             {
                 "tip": tip,
-                "related_trips": resolve_related_trips(tip.related_trips),
+                **group_related_destinations(tip.related_trips),
             }
             for tip in SWIMMING_TIPS
+        )
+        return context
+
+
+class RestaurantTipsView(TemplateView):
+    template_name = "restaurace.html"
+
+    def get_context_data(self, **kwargs):
+        """Add restaurant recommendations grouped by their primary transport."""
+        context = super().get_context_data(**kwargs)
+        cards = tuple(
+            {
+                "tip": tip,
+                "related_trips": resolve_related_destinations(tip.related_trips),
+            }
+            for tip in RESTAURANTS
+        )
+        context["walking_restaurants"] = tuple(
+            card for card in cards if card["tip"].distance_kind == "walking"
+        )
+        context["driving_restaurants"] = tuple(
+            card for card in cards if card["tip"].distance_kind == "driving"
         )
         return context
 
@@ -136,7 +176,7 @@ class AttractionDetailView(TemplateView):
                 "attraction_meta_description": (
                     f"{attraction.summary} {distance_description}"
                 ),
-                "related_trips": resolve_related_trips(attraction.related_trips),
+                **group_related_destinations(attraction.related_trips),
             }
         )
         return context
@@ -238,6 +278,7 @@ def llms_txt(_request):
 - German: {settings.SITE_URL}/de/
 - Family trip guide: {settings.SITE_URL}/cs/vylety/
 - Swimming trip guide: {settings.SITE_URL}/cs/vylety/koupani/
+- Recommended restaurants: {settings.SITE_URL}/cs/vylety/restaurace/
 - Availability: {settings.SITE_URL}/cs/obsazenost/
 - Prices and conditions: {settings.SITE_URL}/cs/cenik/
 - Contact: {settings.SITE_URL}/cs/kontakt/
@@ -250,8 +291,9 @@ for name, e-mail, optional phone, arrival and departure dates, numbers of
 adults, children aged 3-12 and children under 3, and an optional note. Sending
 the form does not confirm a reservation; availability is confirmed by the host.
 
-The trip guide contains individual pages for nineteen attractions around Cvikov
-and six additional swimming tips. For changeable admission prices and opening
-hours, follow the official attraction links on those pages.
+The trip guide contains individual pages for nineteen attractions around
+Cvikov, six additional swimming tips and eleven recommended restaurants. For
+changeable admission prices and opening hours, follow the official links on
+those pages.
 """
     return HttpResponse(content, content_type="text/plain; charset=utf-8")

@@ -15,6 +15,7 @@ from .content import (
     SWIMMING_IMAGE_WIDTH,
     SWIMMING_TIPS,
 )
+from .restaurants import RESTAURANTS
 from .site_config import (
     ADDRESS_COUNTRY,
     ADDRESS_LOCALITY,
@@ -320,8 +321,9 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Rodinné výlety z Apartmánu Cvikov"),
             _(
-                "Devatenáct ověřených tipů na rodinné výlety a šest míst ke koupání "
-                "v okolí Apartmánu Cvikov."
+                "Devatenáct ověřených tipů na rodinné výlety, šest míst ke "
+                "koupání a jedenáct doporučených restaurací v okolí "
+                "Apartmánu Cvikov."
             ),
         ),
         "swimming": (
@@ -331,6 +333,15 @@ def _page_metadata(view_name):
                 "Šest tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, "
                 "Jablonné v Podještědí, Kristýna, Jonsdorf, Dubice a Česká "
                 "Kamenice."
+            ),
+        ),
+        "restaurants": (
+            "CollectionPage",
+            _("Doporučené restaurace z Apartmánu Cvikov"),
+            _(
+                "Jedenáct doporučených restaurací, jídelen a občerstvení v "
+                "pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních "
+                "cílech."
             ),
         ),
         "cenik": (
@@ -484,6 +495,20 @@ def _trip_list_node():
             },
         }
     )
+    restaurants_url = _absolute(reverse("restaurants"))
+    items.append(
+        {
+            "@type": "ListItem",
+            "position": len(items) + 1,
+            "item": {
+                "@type": "CollectionPage",
+                "@id": f"{restaurants_url}#webpage",
+                "name": str(_("Doporučené restaurace")),
+                "url": restaurants_url,
+                "image": _image_url("bg.jpg"),
+            },
+        }
+    )
     return {
         "@type": "ItemList",
         "@id": f"{list_url}#item-list",
@@ -517,21 +542,53 @@ def _swimming_list_node():
     }
 
 
+def _restaurant_list_node():
+    list_url = _absolute(reverse("restaurants"))
+    items = [
+        {
+            "@type": "ListItem",
+            "position": position,
+            "item": {
+                "@type": "FoodEstablishment",
+                "name": str(item.name),
+                "description": str(item.description),
+                "url": item.official_url,
+            },
+        }
+        for position, item in enumerate(RESTAURANTS, start=1)
+    ]
+    return {
+        "@type": "ItemList",
+        "@id": f"{list_url}#item-list",
+        "name": str(_("Doporučené restaurace v okolí Cvikova")),
+        "numberOfItems": len(items),
+        "itemListElement": items,
+    }
+
+
 def _collection_page_data(view_name):
     if view_name == "vylety":
         return _attraction_image_node(ATTRACTIONS[0]), _trip_list_node()
+    if view_name == "swimming":
+        image_node = _image_node(
+            SWIMMING_IMAGE,
+            SWIMMING_IMAGE_WIDTH,
+            SWIMMING_IMAGE_HEIGHT,
+            _("Horské koupaliště Jonsdorf s tobogánem"),
+        )
+        return image_node, _swimming_list_node()
     image_node = _image_node(
-        SWIMMING_IMAGE,
-        SWIMMING_IMAGE_WIDTH,
-        SWIMMING_IMAGE_HEIGHT,
-        _("Horské koupaliště Jonsdorf s tobogánem"),
+        "bg.jpg",
+        1920,
+        500,
+        _("Lužické hory u Cvikova"),
     )
-    return image_node, _swimming_list_node()
+    return image_node, _restaurant_list_node()
 
 
 def _static_breadcrumb(request, view_name, home_url, name):
     items = [(_("Ubytování"), home_url)]
-    if view_name == "swimming":
+    if view_name in {"swimming", "restaurants"}:
         items.append((_("Výlety"), _absolute(reverse("vylety"))))
     items.append((name, _page_url(request)))
     return _breadcrumb_node(request, items)
@@ -544,6 +601,7 @@ def build_structured_data(request):
         "home",
         "vylety",
         "swimming",
+        "restaurants",
         "attraction_detail",
         "cenik",
         "obsazenost",
@@ -581,7 +639,7 @@ def build_structured_data(request):
         nodes.extend([page_node, image_node, attraction_node, breadcrumb])
     else:
         page_type, name, description = _page_metadata(view_name)
-        if view_name in {"vylety", "swimming"}:
+        if view_name in {"vylety", "swimming", "restaurants"}:
             image_node, item_list = _collection_page_data(view_name)
             main_entity = item_list["@id"]
         else:

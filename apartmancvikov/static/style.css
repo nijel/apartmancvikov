@@ -446,7 +446,8 @@ summary {
 .review-grid,
 .gallery-grid,
 .attraction-grid,
-.swimming-grid {
+.swimming-grid,
+.restaurant-grid {
   display: grid;
   gap: 1.25rem;
 }
@@ -665,6 +666,11 @@ summary {
   height: 30rem;
 }
 
+.attraction-placeholder--restaurant svg {
+  height: 5rem;
+  width: 5rem;
+}
+
 .swimming-photo {
   margin: 0 auto clamp(2rem, 5vw, 3.5rem);
   max-width: 62rem;
@@ -771,6 +777,99 @@ summary {
 }
 
 .swimming-page .callout {
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.restaurant-group {
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.restaurant-group h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.restaurant-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+  scroll-margin-top: 1.5rem;
+}
+
+.restaurant-card:target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgb(139 45 38 / 12%);
+}
+
+.restaurant-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.restaurant-card > p {
+  color: var(--muted);
+}
+
+.restaurant-facts {
+  display: grid;
+  font-size: 0.92rem;
+  grid-template-columns: minmax(5.5rem, 29%) 1fr;
+  margin: 0 0 1rem;
+}
+
+.restaurant-facts dt,
+.restaurant-facts dd {
+  border-top: 1px solid var(--line);
+  margin: 0;
+  padding-block: 0.55rem;
+}
+
+.restaurant-facts dt {
+  font-weight: 700;
+}
+
+.restaurant-facts dd {
+  color: var(--muted);
+  padding-left: 0.75rem;
+}
+
+.restaurant-card__related {
+  border-top: 1px solid var(--line);
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
+}
+
+.restaurant-card__related strong,
+.restaurant-card__related a {
+  display: block;
+}
+
+.restaurant-card__related strong {
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.restaurant-card__related a {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.restaurant-card__related p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0.35rem 0 0;
+}
+
+.restaurant-card .text-link {
+  margin-top: auto;
+}
+
+.restaurant-page .callout {
   margin-top: clamp(3rem, 7vw, 5rem);
 }
 
@@ -1470,7 +1569,8 @@ html.lightbox-open {
   .room-grid,
   .review-grid,
   .attraction-grid,
-  .swimming-grid {
+  .swimming-grid,
+  .restaurant-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1552,7 +1652,8 @@ html.lightbox-open {
   .room-grid,
   .review-grid,
   .attraction-grid,
-  .swimming-grid {
+  .swimming-grid,
+  .restaurant-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -1873,6 +1974,92 @@ html.lightbox-open {
     font-size: 6.2pt;
     line-height: 1.12;
     margin: 0.5mm 0 0;
+  }
+
+  body.trip-print--restaurants .section-intro {
+    margin-bottom: 2.5mm;
+  }
+
+  body.trip-print--restaurants .restaurant-group {
+    margin: 2.5mm 0 0;
+  }
+
+  body.trip-print--restaurants .restaurant-group > .eyebrow {
+    display: none;
+  }
+
+  body.trip-print--restaurants .restaurant-group h2 {
+    font-size: 11pt;
+    margin: 0 0 1.2mm;
+  }
+
+  body.trip-print--restaurants .restaurant-grid {
+    gap: 2mm;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.trip-print--restaurants .restaurant-card {
+    border: 0.5pt solid #bdb5ae;
+    border-radius: 2mm;
+    break-inside: avoid;
+    display: block;
+    padding: 2mm 2.3mm;
+  }
+
+  body.trip-print--restaurants .restaurant-card h3 {
+    font-size: 8.5pt;
+    line-height: 1.1;
+    margin: 0 0 0.7mm;
+  }
+
+  body.trip-print--restaurants .restaurant-card > p {
+    color: #413c38;
+    font-size: 6.6pt;
+    line-height: 1.15;
+    margin: 0 0 1mm;
+  }
+
+  body.trip-print--restaurants .restaurant-facts {
+    font-size: 6.2pt;
+    grid-template-columns: 15mm 1fr;
+    line-height: 1.12;
+    margin-bottom: 0.7mm;
+  }
+
+  body.trip-print--restaurants .restaurant-facts dt,
+  body.trip-print--restaurants .restaurant-facts dd {
+    border-top: 0.5pt solid #d6cec6;
+    padding-block: 0.55mm;
+  }
+
+  body.trip-print--restaurants .restaurant-facts dd {
+    color: #413c38;
+    padding-left: 1mm;
+  }
+
+  body.trip-print--restaurants .restaurant-card__related {
+    border-top: 0.5pt solid #d6cec6;
+    margin: 0;
+    padding-top: 0.7mm;
+  }
+
+  body.trip-print--restaurants .restaurant-card__related strong {
+    font-size: 5.5pt;
+    margin-bottom: 0.3mm;
+  }
+
+  body.trip-print--restaurants .restaurant-card__related a {
+    color: #292522;
+    font-size: 6.2pt;
+    line-height: 1.08;
+    text-decoration: none;
+  }
+
+  body.trip-print--restaurants .restaurant-card__related p {
+    color: #413c38;
+    font-size: 5.8pt;
+    line-height: 1.1;
+    margin: 0.3mm 0 0;
   }
 
   body.trip-print--detail .attraction-detail {

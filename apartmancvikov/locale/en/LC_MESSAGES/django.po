@@ -2755,3 +2755,296 @@ msgstr "%(distance)s km"
 #: apartmancvikov/templates/attraction_detail.html
 msgid "Zobrazit mapu trasy"
 msgstr "View route map"
+
+#: apartmancvikov/content.py
+msgid "Přímo u pumptracku a trampolín se můžete občerstvit Na Krajíčku."
+msgstr "Refreshments are available at Na Krajíčku right beside the pump track and trampolines."
+
+#: apartmancvikov/content.py
+msgid "Po prohlídce hradu můžete pokračovat za moderní gastronomií do restaurace Na Stráži."
+msgstr "After touring the castle, continue to Restaurant Na Stráži for modern cuisine."
+
+#: apartmancvikov/content.py
+msgid "Na zmrzlinu a zákusky se zastavte ve Sloupské Terase."
+msgstr "Stop at Sloupská Terasa for ice cream and desserts."
+
+#: apartmancvikov/content.py
+msgid "Před výstupem nebo po návratu se můžete najíst v restauraci Resortu Hvozd."
+msgstr "Eat at the Resort Hvozd restaurant before the ascent or after returning."
+
+#: apartmancvikov/content.py
+msgid "Výlet lze zakončit českou kuchyní a vlastním pivem v Pivovaru Krompach."
+msgstr "Finish the trip with Czech cuisine and house-brewed beer at Pivovar Krompach."
+
+#: apartmancvikov/content.py
+msgid "Po koupání můžete zajít na moderní gastronomii do restaurace Na Stráži."
+msgstr "After your swim, head to Restaurant Na Stráži for modern cuisine."
+
+#: apartmancvikov/content.py
+msgid "Na zmrzlinu nebo zákusek se zastavte ve Sloupské Terase."
+msgstr "Stop at Sloupská Terasa for ice cream or dessert."
+
+#: apartmancvikov/restaurants.py
+msgid "Plechovka"
+msgstr "Plechovka"
+
+#: apartmancvikov/restaurants.py
+msgid "Jídelna pro rychlý a cenově dostupný oběd během pracovního týdne."
+msgstr "A canteen for a quick, affordable lunch during the working week."
+
+#: apartmancvikov/restaurants.py
+msgid "Obědy v pracovní dny."
+msgstr "Lunches on weekdays."
+
+#: apartmancvikov/restaurants.py
+msgid "Sladovna Cvikov (Pivovar Cvikov)"
+msgstr "Sladovna Cvikov (Cvikov Brewery)"
+
+#: apartmancvikov/restaurants.py
+msgid "Moderní česká kuchyně a řemeslné pivo přímo v areálu Pivovaru Cvikov."
+msgstr "Modern Czech cuisine and craft beer in the Cvikov Brewery complex."
+
+#: apartmancvikov/restaurants.py
+msgid "Restaurace Pizzerie Sever"
+msgstr "Restaurant and Pizzeria Sever"
+
+#: apartmancvikov/restaurants.py
+msgid "Česká klasika k obědu a pizza, kterou si můžete o víkendu objednat s rozvozem."
+msgstr "Classic Czech lunches and pizza available for weekend delivery."
+
+#: apartmancvikov/restaurants.py
+msgid "Obědy v pracovní dny; o víkendu rozvoz pizzy. V létě bývá někdy otevřená zahrádka také o víkendu."
+msgstr "Lunches on weekdays; pizza delivery at weekends. In summer, the garden is sometimes also open at weekends."
+
+#: apartmancvikov/restaurants.py
+msgid "Občerstvení Na Krajíčku"
+msgstr "Na Krajíčku refreshments"
+
+#: apartmancvikov/restaurants.py
+msgid "Občerstvení přímo u pumptracku, dětského areálu a placených vzduchových trampolín."
+msgstr "Refreshments right beside the pump track, children's area and paid air trampolines."
+
+#: apartmancvikov/restaurants.py
+msgid "V létě se zde v pátek konají koncerty."
+msgstr "Concerts take place here on Fridays in summer."
+
+#: apartmancvikov/restaurants.py
+msgid "Občerstvení leží přímo u pumptracku a navazujícího dětského areálu."
+msgstr "The refreshment stand is right beside the pump track and adjoining children's area."
+
+#: apartmancvikov/restaurants.py
+msgid "Sloupská Terasa"
+msgstr "Sloupská Terasa"
+
+#: apartmancvikov/restaurants.py
+msgid "Zmrzlina a zákusky pro sladkou zastávku během výletu do Sloupu."
+msgstr "Ice cream and desserts for a sweet stop during a trip to Sloup."
+
+#: apartmancvikov/restaurants.py
+msgid "Na zmrzlinu nebo zákusek se zastavte při návštěvě skalního hradu ve Sloupu."
+msgstr "Stop for ice cream or dessert while visiting the rock castle in Sloup."
+
+#: apartmancvikov/restaurants.py
+msgid "Sladkou zastávku můžete spojit také s letním koupáním ve Sloupu."
+msgstr "Combine this sweet stop with a summer swim in Sloup."
+
+#: apartmancvikov/restaurants.py
+msgid "Restaurace Na Stráži"
+msgstr "Restaurant Na Stráži"
+
+#: apartmancvikov/restaurants.py
+msgid "Moderní gastronomie v příjemném prostředí nedaleko sloupských výletních cílů."
+msgstr "Modern cuisine in pleasant surroundings near Sloup's attractions."
+
+#: apartmancvikov/restaurants.py
+msgid "Návštěvu restaurace můžete spojit s prohlídkou skalního hradu ve Sloupu."
+msgstr "Combine a visit to the restaurant with a tour of the rock castle in Sloup."
+
+#: apartmancvikov/restaurants.py
+msgid "V létě se nabízí spojení s koupáním na sloupském koupališti."
+msgstr "In summer, combine it with a swim at the Sloup swimming pool."
+
+#: apartmancvikov/restaurants.py
+msgid "BẾP Nový Bor"
+msgstr "BẾP Nový Bor"
+
+#: apartmancvikov/restaurants.py
+msgid "Asijská kuchyně založená na vietnamských a čínských chutích s japonskou inspirací a moderním pojetím."
+msgstr "Asian cuisine based on Vietnamese and Chinese flavours with Japanese inspiration and a modern approach."
+
+#: apartmancvikov/restaurants.py
+msgid "Do Nového Boru je možné dojet také autobusem."
+msgstr "Nový Bor can also be reached by bus."
+
+#: apartmancvikov/restaurants.py
+msgid "The Royal Maharaja"
+msgstr "The Royal Maharaja"
+
+#: apartmancvikov/restaurants.py
+msgid "Indická restaurace v Novém Boru."
+msgstr "An Indian restaurant in Nový Bor."
+
+#: apartmancvikov/restaurants.py
+msgid "Restaurace Resort Hvozd"
+msgstr "Resort Hvozd Restaurant"
+
+#: apartmancvikov/restaurants.py
+msgid "Tradiční i moderní česká kuchyně v restauraci známé také jako Farma Hvozd."
+msgstr "Traditional and modern Czech cuisine at the restaurant also known as Farma Hvozd."
+
+#: apartmancvikov/restaurants.py
+msgid "Restaurace je vhodnou zastávkou před výstupem na Hvozd nebo po návratu z výletu."
+msgstr "The restaurant is a convenient stop before climbing Hvozd or after returning from the trip."
+
+#: apartmancvikov/restaurants.py
+msgid "Pivovar Krompach"
+msgstr "Pivovar Krompach"
+
+#: apartmancvikov/restaurants.py
+msgid "Česká kuchyně doplněná pivem z vlastního pivovaru."
+msgstr "Czech cuisine accompanied by beer from the restaurant's own brewery."
+
+#: apartmancvikov/restaurants.py
+msgid "Pivovar nabízí občerstvení před výstupem na Hvozd nebo po návratu z okruhu."
+msgstr "The brewery offers refreshments before climbing Hvozd or after returning from the circuit."
+
+#: apartmancvikov/restaurants.py
+msgid "Restaurace a penzion Lemberk"
+msgstr "Lemberk Restaurant and Guesthouse"
+
+#: apartmancvikov/restaurants.py
+msgid "Rybí speciality z vlastních rybníků a sádek i tradiční česká kuchyně."
+msgstr "Fish specialities from the restaurant's own ponds and tanks, along with traditional Czech cuisine."
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
+msgid "Jedenáct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
+msgstr "Eleven recommended restaurants, canteens and refreshment stands within walking distance of Apartment Cvikov and near surrounding attractions."
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
+#: apartmancvikov/templates/vylety.html
+msgid "Doporučené restaurace"
+msgstr "Recommended restaurants"
+
+#: apartmancvikov/structured_data.py
+msgid "Devatenáct ověřených tipů na rodinné výlety, šest míst ke koupání a jedenáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Nineteen tried-and-tested family trip ideas, six places to swim and eleven recommended restaurants near Apartment Cvikov."
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
+msgid "Doporučené restaurace z Apartmánu Cvikov"
+msgstr "Recommended restaurants from Apartment Cvikov"
+
+#: apartmancvikov/structured_data.py
+msgid "Doporučené restaurace v okolí Cvikova"
+msgstr "Recommended restaurants near Cvikov"
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
+msgid "Lužické hory u Cvikova"
+msgstr "Lusatian Mountains near Cvikov"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Po výletě na jídlo"
+msgstr "Food after the trip"
+
+#: apartmancvikov/templates/attraction_detail.html apartmancvikov/templates/koupani.html
+msgid "Kde se najíst poblíž"
+msgstr "Where to eat nearby"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Doporučená restaurace"
+msgstr "Recommended restaurant"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Zobrazit doporučenou restauraci"
+msgstr "View recommended restaurant"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Doporučené restaurace v okolí Cvikova | Apartmán Cvikov"
+msgstr "Recommended restaurants near Cvikov | Apartment Cvikov"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Česká, asijská i indická kuchyně, pivovary, rybí speciality, zmrzlina a občerstvení u rodinných výletů."
+msgstr "Czech, Asian and Indian cuisine, breweries, fish specialities, ice cream and refreshments near family attractions."
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Kam zajít pěšky na oběd a kde se dobře najíst při výletech v okolí Cvikova."
+msgstr "Where to walk for lunch and where to eat well on trips around Cvikov."
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Restaurace"
+msgstr "Restaurants"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Kam na jídlo"
+msgstr "Where to eat"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Ověřené tipy pro oběd, večeři i sladkou zastávku"
+msgstr "Tried-and-tested tips for lunch, dinner and a sweet stop"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Čtyři podniky jsou dostupné pěšky přímo z apartmánu, další můžete navštívit cestou na výlet nebo při návratu."
+msgstr "Four places are within walking distance of the apartment; visit the others on your way to or from a trip."
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Otevírací doba, nabídka a sezonní provoz se mohou změnit. Před návštěvou si vždy ověřte aktuální informace u provozovatele."
+msgstr "Opening hours, menus and seasonal operation may change. Always check the latest information with the operator before visiting."
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Bez auta"
+msgstr "Without a car"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Pěšky z apartmánu"
+msgstr "On foot from the apartment"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Na výletě"
+msgstr "On a trip"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Autem nebo autobusem"
+msgstr "By car or bus"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Naplánujte si den"
+msgstr "Plan your day"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Spojte dobré jídlo s rodinným výletem"
+msgstr "Combine good food with a family trip"
+
+#: apartmancvikov/templates/restaurace.html
+msgid "Vyberte si skály, hrady, koupání nebo kratší program pro děti v okolí restaurace."
+msgstr "Choose rocks, castles, swimming or a shorter children's activity near the restaurant."
+
+#: apartmancvikov/templates/snippets/restaurant_card.html
+msgid "Pěšky"
+msgstr "On foot"
+
+#: apartmancvikov/templates/snippets/restaurant_card.html
+msgid "Autem"
+msgstr "By car"
+
+#: apartmancvikov/templates/snippets/restaurant_card.html
+msgid "od apartmánu"
+msgstr "from the apartment"
+
+#: apartmancvikov/templates/snippets/restaurant_card.html
+msgid "Provoz"
+msgstr "Opening"
+
+#: apartmancvikov/templates/vylety.html
+msgid "Devatenáct rodinných výletů, šest míst ke koupání a jedenáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Nineteen family trips, six places to swim and eleven recommended restaurants near Apartment Cvikov."
+
+#: apartmancvikov/templates/vylety.html
+msgid "Jedenáct tipů v okolí"
+msgstr "Eleven nearby tips"
+
+#: apartmancvikov/templates/vylety.html
+msgid "Kam zajít pěšky na oběd a kde se najíst při výletech v okolí Cvikova."
+msgstr "Where to walk for lunch and where to eat on trips around Cvikov."
+
+#: apartmancvikov/templates/vylety.html
+msgid "Prohlédnout restaurace"
+msgstr "Explore restaurants"

@@ -1,0 +1,40 @@
+{% load i18n seo %}
+
+{% with tip=card.tip %}
+  <section class="restaurant-card" id="{{ tip.slug }}">
+    <h3>{{ tip.name|nbsp_prepositions }}</h3>
+    <p>{{ tip.description }}</p>
+    <dl class="restaurant-facts">
+      {% if tip.distance_kind == "walking" %}
+        <dt>{% translate "Pěšky" %}</dt>
+      {% else %}
+        <dt>{% translate "Autem" %}</dt>
+      {% endif %}
+      <dd>
+        {{ tip.distance_km }} km {% translate "od apartmánu" %}
+      </dd>
+      {% if tip.schedule_note %}
+        <dt>{% translate "Provoz" %}</dt>
+        <dd>
+          {{ tip.schedule_note }}
+        </dd>
+      {% endif %}
+      {% if tip.travel_tip %}
+        <dt>{% translate "Doprava" %}</dt>
+        <dd>
+          {{ tip.travel_tip }}
+        </dd>
+      {% endif %}
+    </dl>
+    {% if card.related_trips %}
+      <div class="restaurant-card__related">
+        <strong>{% translate "Spojte s výletem" %}</strong>
+        {% for related_trip in card.related_trips %}
+          <a href="{{ related_trip.url }}">{{ related_trip.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
+          <p>{{ related_trip.description }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
+  </section>
+{% endwith %}

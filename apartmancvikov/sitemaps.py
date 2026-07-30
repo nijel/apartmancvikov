@@ -73,6 +73,7 @@ class StaticViewSitemap(LocalizedSitemap):
             "home",
             "vylety",
             "swimming",
+            "restaurants",
             "cenik",
             "obsazenost",
             "kontakt",

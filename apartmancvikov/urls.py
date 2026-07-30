@@ -34,6 +34,7 @@ from .views import (
     AttractionDetailView,
     HomeView,
     InquiryView,
+    RestaurantTipsView,
     SwimmingTripsView,
     TripsView,
     llms_txt,
@@ -46,6 +47,7 @@ urlpatterns = i18n_patterns(  # noqa: RUF005
     path("", HomeView.as_view(), name="home"),
     path("vylety/", TripsView.as_view(), name="vylety"),
     path("vylety/koupani/", SwimmingTripsView.as_view(), name="swimming"),
+    path("vylety/restaurace/", RestaurantTipsView.as_view(), name="restaurants"),
     path(
         "vylety/<slug:slug>/",
         AttractionDetailView.as_view(),

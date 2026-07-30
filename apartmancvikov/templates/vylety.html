@@ -14,7 +14,7 @@
 
 {% block meta_description %}
   <meta name="description"
-        content="{% translate "Devatenáct ověřených tipů na rodinné výlety a šest míst ke koupání v okolí Apartmánu Cvikov." %}" />
+        content="{% translate "Devatenáct rodinných výletů, šest míst ke koupání a jedenáct doporučených restaurací v okolí Apartmánu Cvikov." %}" />
 {% endblock meta_description %}
 
 {% block ogtitle %}
@@ -103,6 +103,20 @@
             <h2>{% translate "Výlety s koupáním" %}</h2>
             <p>{% translate "Přírodní koupaliště, bazény a jezera pro osvěžení i celodenní rodinný výlet." %}</p>
             <a href="{% url "swimming" %}" class="text-link card-link">{% translate "Prohlédnout koupání" %}<span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="attraction-card" id="restaurace">
+          <div class="attraction-placeholder attraction-placeholder--restaurant"
+               aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img">
+              <path d="M15 8v19m7-19v19m-14-8h21m-7 8v29M43 8c7 7 8 19 2 26v22m-2-48v26h9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+            </svg>
+          </div>
+          <div class="attraction-card__body">
+            <p class="eyebrow">{% translate "Jedenáct tipů v okolí" %}</p>
+            <h2>{% translate "Doporučené restaurace" %}</h2>
+            <p>{% translate "Kam zajít pěšky na oběd a kde se najíst při výletech v okolí Cvikova." %}</p>
+            <a href="{% url "restaurants" %}" class="text-link card-link">{% translate "Prohlédnout restaurace" %}<span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>

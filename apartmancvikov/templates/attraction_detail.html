@@ -206,6 +206,27 @@
         </section>
       {% endif %}
 
+      {% if related_restaurants %}
+        <section class="related-trips related-restaurants"
+                 aria-labelledby="related-restaurants-title">
+          <p class="eyebrow">{% translate "Po výletě na jídlo" %}</p>
+          <h2 id="related-restaurants-title">{% translate "Kde se najíst poblíž" %}</h2>
+          <div class="related-trips__grid">
+            {% for restaurant in related_restaurants %}
+              <a href="{{ restaurant.url }}" class="related-trip-card">
+                <span class="eyebrow">{% translate "Doporučená restaurace" %}</span>
+                <h3>{{ restaurant.name|nbsp_prepositions }}</h3>
+                <p>{{ restaurant.description }}</p>
+                <span class="related-trip-card__link">
+                  {% translate "Zobrazit doporučenou restauraci" %}
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
       <aside class="callout">
         <div>
           <p class="eyebrow">{% translate "Dovolená ve Cvikově" %}</p>

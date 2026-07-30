@@ -22,6 +22,7 @@ from .content import ATTRACTIONS, SWIMMING_TIPS
 from .forms import FORM_TOKEN_SALT
 from .image_config import variant_path
 from .models import Booking
+from .restaurants import RESTAURANTS
 from .site_config import (
     CONTACT_EMAIL,
     CONTACT_PHONE_DISPLAY,
@@ -470,6 +471,7 @@ class SeoTest(TestCase):
         destinations = {
             **{("attraction", item.slug): item for item in ATTRACTIONS},
             **{("swimming", item.slug): item for item in SWIMMING_TIPS},
+            **{("restaurant", item.slug): item for item in RESTAURANTS},
         }
         actual_pairs = set()
         relation_count = 0
@@ -555,8 +557,50 @@ class SeoTest(TestCase):
                     ("attraction", "transborder-chrastava"),
                 )
             ),
+            frozenset(
+                (
+                    ("attraction", "pumptrack-cvikov"),
+                    ("restaurant", "na-krajicku"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "hvozd"),
+                    ("restaurant", "resort-hvozd"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "hvozd"),
+                    ("restaurant", "pivovar-krompach"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "skalni-hrad-sloup"),
+                    ("restaurant", "na-strazi"),
+                )
+            ),
+            frozenset(
+                (
+                    ("swimming", "koupaliste-sloup"),
+                    ("restaurant", "na-strazi"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "skalni-hrad-sloup"),
+                    ("restaurant", "sloupska-terasa"),
+                )
+            ),
+            frozenset(
+                (
+                    ("swimming", "koupaliste-sloup"),
+                    ("restaurant", "sloupska-terasa"),
+                )
+            ),
         }
-        self.assertEqual(relation_count, 22)
+        self.assertEqual(relation_count, 36)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):
@@ -589,6 +633,36 @@ class SeoTest(TestCase):
         self.assertContains(
             response,
             'href="/cs/vylety/privoz-mlynky-vyhlidky/"',
+        )
+
+    def test_restaurants_are_linked_bidirectionally_from_nearby_trips(self):
+        """Food tips have their own section and lead back to the matching trips."""
+        pumptrack = self.client.get("/cs/vylety/pumptrack-cvikov/")
+        self.assertContains(pumptrack, "Kde se najíst poblíž")
+        self.assertContains(
+            pumptrack,
+            'href="/cs/vylety/restaurace/#na-krajicku"',
+        )
+        self.assertContains(pumptrack, "Přímo u pumptracku a trampolín")
+
+        hvozd = self.client.get("/cs/vylety/hvozd/")
+        self.assertContains(
+            hvozd,
+            'href="/cs/vylety/restaurace/#resort-hvozd"',
+        )
+        self.assertContains(
+            hvozd,
+            'href="/cs/vylety/restaurace/#pivovar-krompach"',
+        )
+
+        sloup = self.client.get("/cs/vylety/koupani/")
+        self.assertContains(
+            sloup,
+            'href="/cs/vylety/restaurace/#na-strazi"',
+        )
+        self.assertContains(
+            sloup,
+            'href="/cs/vylety/restaurace/#sloupska-terasa"',
         )
 
     def test_ceska_kamenice_trip_has_both_route_lengths(self):
@@ -666,6 +740,74 @@ class SeoTest(TestCase):
                 self.assertContains(response, tip.name)
                 self.assertContains(response, tip.official_url)
 
+    def test_trip_guide_includes_recommended_restaurants(self):
+        """The overview opens one complete, distance-sorted restaurant guide."""
+        overview = self.client.get("/cs/vylety/")
+        self.assertContains(overview, 'href="/cs/vylety/restaurace/"')
+        self.assertContains(overview, "Jedenáct tipů v okolí")
+
+        response = self.client.get("/cs/vylety/restaurace/")
+        html = response.content.decode()
+        self.assertEqual(
+            html.count('class="restaurant-card"'),
+            len(RESTAURANTS),
+        )
+        self.assertContains(response, "Pěšky z apartmánu")
+        self.assertContains(response, "Autem nebo autobusem")
+        self.assertContains(response, "0,3 km")
+        self.assertContains(response, "11 km")
+        self.assertContains(
+            response,
+            "https://www.facebook.com/groups/662887772360954",
+        )
+        self.assertContains(response, "Obědy v pracovní dny")
+        self.assertContains(response, "V létě se zde v pátek konají koncerty")
+        self.assertContains(
+            response,
+            "Do Nového Boru je možné dojet také autobusem",
+            count=2,
+        )
+        self.assertContains(
+            response,
+            "Do Sloupu v Čechách je možné dojet také autobusem",
+            count=2,
+        )
+        self.assertContains(
+            response,
+            "Do Krompachu je možné dojet také autobusem ze Cvikova",
+            count=2,
+        )
+        self.assertContains(
+            response,
+            'href="/cs/vylety/pumptrack-cvikov/"',
+        )
+        self.assertContains(response, 'href="/cs/vylety/hvozd/"')
+        self.assertContains(
+            response,
+            "Před návštěvou si vždy ověřte aktuální informace",
+        )
+        for tip in RESTAURANTS:
+            with self.subTest(tip=tip.name):
+                self.assertContains(response, tip.name)
+                self.assertContains(response, tip.official_url)
+
+    def test_restaurant_guide_is_localized(self):
+        """Restaurant recommendations and their internal links keep the language."""
+        english = self.client.get("/en/vylety/restaurace/")
+        self.assertContains(english, "Recommended restaurants")
+        self.assertContains(english, "On foot from the apartment")
+        self.assertContains(
+            english,
+            'href="/en/vylety/pumptrack-cvikov/"',
+        )
+        self.assertNotContains(english, "Pěšky z apartmánu")
+
+        german = self.client.get("/de/vylety/restaurace/")
+        self.assertContains(german, "Empfohlene Restaurants")
+        self.assertContains(german, "Zu Fuß vom Apartment")
+        self.assertContains(german, 'href="/de/vylety/hvozd/"')
+        self.assertNotContains(german, "Autem nebo autobusem")
+
     def test_swimming_tips_are_translated(self):
         """The dedicated guide remains useful in every supported language."""
         english = self.client.get("/en/vylety/koupani/")
@@ -690,6 +832,12 @@ class SeoTest(TestCase):
                 "trip-print--swimming",
                 "Výlety s\N{NO-BREAK SPACE}koupáním",
                 "Šest míst pro malé i velké plavce",
+            ),
+            (
+                "/cs/vylety/restaurace/",
+                "trip-print--restaurants",
+                "Doporučené restaurace",
+                "Ověřené tipy pro oběd, večeři i sladkou zastávku",
             ),
             (
                 "/cs/vylety/klic/",
@@ -725,6 +873,14 @@ class SeoTest(TestCase):
         self.assertIn("body.trip-print--swimming .swimming-photo img", stylesheet)
         self.assertIn(
             "body.trip-print--swimming .swimming-card__related",
+            stylesheet,
+        )
+        self.assertIn(
+            "body.trip-print--restaurants .restaurant-grid",
+            stylesheet,
+        )
+        self.assertIn(
+            "body.trip-print--restaurants .restaurant-card__related",
             stylesheet,
         )
         self.assertIn("body.trip-print--detail .attraction-detail", stylesheet)
@@ -897,12 +1053,18 @@ class SeoTest(TestCase):
     def test_page_specific_schema_types(self):
         """Static and listing pages identify their role and main entity."""
         cases = (
-            ("/cs/vylety/", "CollectionPage", "ItemList", len(ATTRACTIONS) + 1),
+            ("/cs/vylety/", "CollectionPage", "ItemList", len(ATTRACTIONS) + 2),
             (
                 "/cs/vylety/koupani/",
                 "CollectionPage",
                 "ItemList",
                 len(SWIMMING_TIPS),
+            ),
+            (
+                "/cs/vylety/restaurace/",
+                "CollectionPage",
+                "ItemList",
+                len(RESTAURANTS),
             ),
             ("/cs/kontakt/", "ContactPage", None, None),
             ("/cs/poptavka/", "WebPage", None, None),
@@ -921,6 +1083,13 @@ class SeoTest(TestCase):
                     self.assertEqual(page["mainEntity"]["@id"], main["@id"])
                     if main_type == "ItemList":
                         self.assertEqual(main["numberOfItems"], expected_count)
+                        if path.endswith("/restaurace/"):
+                            self.assertTrue(
+                                all(
+                                    entry["item"]["@type"] == "FoodEstablishment"
+                                    for entry in main["itemListElement"]
+                                )
+                            )
                 else:
                     self.assertEqual(
                         page["about"]["@id"],
@@ -981,10 +1150,14 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 84)
+        self.assertEqual(len(locations), 87)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/koupani/",
+            locations,
+        )
+        self.assertIn(
+            "https://apartmancvikov.cz/cs/vylety/restaurace/",
             locations,
         )
         self.assertIn(
@@ -1053,6 +1226,10 @@ class SeoTest(TestCase):
         self.assertContains(
             llms,
             "https://apartmancvikov.cz/cs/vylety/koupani/",
+        )
+        self.assertContains(
+            llms,
+            "https://apartmancvikov.cz/cs/vylety/restaurace/",
         )
         self.assertContains(llms, "https://apartmancvikov.cz/cs/poptavka/")
 

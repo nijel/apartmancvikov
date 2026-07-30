@@ -96,8 +96,8 @@
                      href="{% url "home" %}">{% translate "Ubytování" %}</a>
                 </li>
                 <li>
-                  <a class="{% if request.resolver_match.url_name == "vylety" or request.resolver_match.url_name == "attraction_detail" or request.resolver_match.url_name == "swimming" %}active{% endif %}"
-                     {% if request.resolver_match.url_name == "vylety" or request.resolver_match.url_name == "attraction_detail" or request.resolver_match.url_name == "swimming" %}aria-current="page"{% endif %}
+                  <a class="{% if request.resolver_match.url_name == "vylety" or request.resolver_match.url_name == "attraction_detail" or request.resolver_match.url_name == "swimming" or request.resolver_match.url_name == "restaurants" %}active{% endif %}"
+                     {% if request.resolver_match.url_name == "vylety" or request.resolver_match.url_name == "attraction_detail" or request.resolver_match.url_name == "swimming" or request.resolver_match.url_name == "restaurants" %}aria-current="page"{% endif %}
                      href="{% url "vylety" %}">{% translate "Výlety" %}</a>
                 </li>
                 <li>
