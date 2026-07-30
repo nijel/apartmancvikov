@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
-{% load i18n images seo %}
+{% load i18n images seo trip_print %}
+
+{% block body_class %}trip-print trip-print--overview{% endblock %}
+
+{% block print_header %}
+  {% trip_print_header _("Výlety z Apartmánu Cvikov") canonical_url %}
+{% endblock print_header %}
 
 {% block title %}
   {% translate "Výlety s dětmi ve Cvikově a Lužických horách | Apartmán Cvikov" %}

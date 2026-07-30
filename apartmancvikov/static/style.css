@@ -1284,6 +1284,10 @@ html.lightbox-open {
   overflow: hidden;
 }
 
+.print-header {
+  display: none;
+}
+
 @media (min-width: 38rem) {
   .form-grid--contact,
   .form-grid--guests {
@@ -1415,5 +1419,308 @@ html.lightbox-open {
   .lightbox__nav {
     height: 2.5rem;
     width: 2.5rem;
+  }
+}
+
+@page {
+  margin: 9mm 10mm;
+  size: A4 portrait;
+}
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body.trip-print {
+    background: white;
+    color: #171412;
+    font-size: 8.5pt;
+    line-height: 1.3;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body.trip-print .skip-link,
+  body.trip-print .site-header,
+  body.trip-print .site-footer,
+  body.trip-print .lightbox,
+  body.trip-print .breadcrumbs,
+  body.trip-print .link-band,
+  body.trip-print .callout,
+  body.trip-print .button-row,
+  body.trip-print .text-link {
+    display: none !important;
+  }
+
+  body.trip-print .site-container {
+    max-width: none;
+    width: 100%;
+  }
+
+  body.trip-print .print-header {
+    align-items: center;
+    border-bottom: 1.5pt solid var(--accent);
+    display: grid;
+    gap: 4mm;
+    grid-template-columns: 50mm minmax(0, 1fr) 28mm;
+    margin-bottom: 5mm;
+    padding-bottom: 4mm;
+  }
+
+  .print-header__brand {
+    align-items: center;
+    display: flex;
+    gap: 2.5mm;
+  }
+
+  .print-header__brand img {
+    height: auto;
+    width: 15mm;
+  }
+
+  .print-header__brand p {
+    font-size: 6.8pt;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .print-header__brand .print-header__brand-name {
+    color: var(--accent);
+    font-size: 10pt;
+    font-weight: 750;
+    margin-bottom: 0.8mm;
+  }
+
+  .print-header__title .print-header__page-title {
+    color: var(--ink);
+    font-size: 18pt;
+    font-weight: 750;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  .print-header__title p {
+    color: #514a45;
+    font-size: 7.5pt;
+    line-height: 1.25;
+    margin: 1.2mm 0 0;
+  }
+
+  .print-header__qr {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .print-header__qr-code {
+    display: block;
+    height: 22mm;
+    width: 22mm;
+  }
+
+  .print-header__qr figcaption {
+    font-size: 6pt;
+    font-weight: 650;
+    line-height: 1.1;
+    margin-top: 0.8mm;
+    text-align: center;
+  }
+
+  .print-header__qr figcaption span {
+    display: none;
+  }
+
+  body.trip-print .content-section {
+    padding: 0;
+  }
+
+  body.trip-print .section-intro {
+    margin: 0 0 4mm;
+    max-width: none;
+    text-align: left;
+  }
+
+  body.trip-print .section-intro .eyebrow {
+    display: none;
+  }
+
+  body.trip-print .section-intro h2 {
+    font-size: 15pt;
+    margin: 0 0 1.5mm;
+  }
+
+  body.trip-print .section-intro > p:not(.eyebrow) {
+    color: #413c38;
+    font-size: 8pt;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  body.trip-print .eyebrow {
+    font-size: 6.3pt;
+    letter-spacing: 0.07em;
+    margin-bottom: 1mm;
+  }
+
+  body.trip-print--overview .attraction-grid {
+    gap: 2.5mm;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.trip-print--overview .attraction-card {
+    border: 0.5pt solid #bdb5ae;
+    border-radius: 2mm;
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  body.trip-print--overview .attraction-card__media,
+  body.trip-print--overview .attraction-placeholder {
+    display: none;
+  }
+
+  body.trip-print--overview .attraction-card__body {
+    display: block;
+    min-height: 0;
+    padding: 2.3mm 2.7mm;
+  }
+
+  body.trip-print--overview .attraction-card__body h2 {
+    font-size: 10.5pt;
+    line-height: 1.08;
+    margin: 0 0 1mm;
+  }
+
+  body.trip-print--overview .attraction-card__body > p:not(.eyebrow) {
+    color: #413c38;
+    font-size: 7.6pt;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  body.trip-print--swimming .swimming-page > .site-container {
+    column-gap: 5mm;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 55mm;
+  }
+
+  body.trip-print--swimming .section-intro {
+    grid-column: 1;
+  }
+
+  body.trip-print--swimming .swimming-photo {
+    align-self: start;
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0 0 4mm;
+    max-width: none;
+  }
+
+  body.trip-print--swimming .swimming-photo img {
+    border-radius: 2mm;
+    box-shadow: none;
+  }
+
+  body.trip-print--swimming .swimming-photo figcaption {
+    font-size: 6.5pt;
+    padding-top: 1mm;
+  }
+
+  body.trip-print--swimming .swimming-grid {
+    gap: 3mm;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.trip-print--swimming .swimming-card {
+    border: 0.5pt solid #bdb5ae;
+    border-radius: 2mm;
+    break-inside: avoid;
+    display: block;
+    padding: 3mm;
+  }
+
+  body.trip-print--swimming .swimming-card h3 {
+    font-size: 10.5pt;
+    margin: 0 0 1.2mm;
+  }
+
+  body.trip-print--swimming .swimming-card > p {
+    color: #413c38;
+    font-size: 7.7pt;
+    line-height: 1.22;
+    margin-bottom: 1.5mm;
+  }
+
+  body.trip-print--swimming .swimming-card__travel {
+    font-size: 7.2pt;
+    padding-top: 1.5mm;
+  }
+
+  body.trip-print--detail .attraction-detail {
+    align-items: start;
+    gap: 5mm;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  }
+
+  body.trip-print--detail .attraction-detail__media img {
+    border-radius: 2mm;
+    box-shadow: none;
+  }
+
+  body.trip-print--detail .attraction-placeholder--large {
+    height: 65mm;
+  }
+
+  body.trip-print--detail .photo-credit-detail {
+    font-size: 6pt;
+    padding-top: 1mm;
+  }
+
+  body.trip-print--detail .fact-card {
+    background: #f6f1eb;
+    border: 0.5pt solid #cfc6bc;
+    border-radius: 2mm;
+    padding: 3mm;
+  }
+
+  body.trip-print--detail .fact-card h2 {
+    font-size: 13pt;
+    margin-bottom: 2mm;
+  }
+
+  body.trip-print--detail .attraction-facts {
+    grid-template-columns: minmax(25mm, 37%) 1fr;
+    margin-bottom: 2.5mm;
+  }
+
+  body.trip-print--detail .attraction-facts dt,
+  body.trip-print--detail .attraction-facts dd {
+    border-bottom: 0.5pt solid #d6cec6;
+    font-size: 7.5pt;
+    padding-block: 1.5mm;
+  }
+
+  body.trip-print--detail .attraction-facts dd {
+    padding-left: 2mm;
+  }
+
+  body.trip-print--detail .story-block {
+    margin: 5mm 0 0;
+    max-width: none;
+  }
+
+  body.trip-print--detail .story-block h2 {
+    font-size: 13pt;
+    margin-bottom: 1.5mm;
+  }
+
+  body.trip-print--detail .story-block > p:not(.eyebrow) {
+    color: #292522;
+    font-size: 8.5pt;
+    line-height: 1.3;
+    margin: 0;
   }
 }

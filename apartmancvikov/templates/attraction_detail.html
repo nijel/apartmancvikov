@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
-{% load i18n images seo static %}
+{% load i18n images seo static trip_print %}
+
+{% block body_class %}trip-print trip-print--detail{% endblock %}
+
+{% block print_header %}
+  {% trip_print_header attraction.name canonical_url attraction.summary %}
+{% endblock print_header %}
 
 {% block title %}{{ attraction.name }} | {% translate "Tip na rodinný výlet z Apartmánu Cvikov" %}{% endblock %}
 

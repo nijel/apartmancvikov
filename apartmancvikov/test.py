@@ -310,6 +310,57 @@ class SeoTest(TestCase):
         self.assertContains(german, "Badeausflüge")
         self.assertContains(german, "Städtisches Freibad Česká Kamenice")
 
+    def test_trip_pages_include_a_print_header_and_current_page_qr(self):
+        """Every trip layout carries a local SVG QR code for its canonical URL."""
+        pages = (
+            (
+                "/cs/vylety/",
+                "trip-print--overview",
+                "Výlety z\N{NO-BREAK SPACE}Apartmánu Cvikov",
+                "Kam na\N{NO-BREAK SPACE}výlet ve\N{NO-BREAK SPACE}Cvikově",
+            ),
+            (
+                "/cs/vylety/koupani/",
+                "trip-print--swimming",
+                "Výlety s\N{NO-BREAK SPACE}koupáním",
+                "Šest míst pro malé i velké plavce",
+            ),
+            (
+                "/cs/vylety/klic/",
+                "trip-print--detail",
+                "Výstup na\N{NO-BREAK SPACE}Klíč",
+                "Praktické informace",
+            ),
+        )
+        for path, page_class, print_title, content_heading in pages:
+            with self.subTest(path=path):
+                response = self.client.get(path)
+                self.assertContains(response, page_class)
+                self.assertContains(response, 'class="print-header"')
+                self.assertContains(response, 'class="print-header__qr-code"')
+                self.assertContains(response, print_title)
+                self.assertContains(response, content_heading)
+                self.assertContains(response, f"https://apartmancvikov.cz{path}")
+                self.assertContains(response, "/static/logo.png")
+
+        home = self.client.get("/cs/")
+        self.assertNotContains(home, 'class="print-header"')
+
+    def test_trip_print_styles_target_one_a4_page(self):
+        """The print stylesheet defines compact A4 layouts for all trip pages."""
+        stylesheet = (
+            Path(settings.BASE_DIR) / "apartmancvikov" / "static" / "style.css"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("@media print", stylesheet)
+        self.assertIn("size: A4 portrait", stylesheet)
+        self.assertIn("body.trip-print--overview .attraction-grid", stylesheet)
+        self.assertIn("body.trip-print--swimming .swimming-grid", stylesheet)
+        self.assertIn("body.trip-print--swimming .swimming-photo img", stylesheet)
+        self.assertIn("body.trip-print--detail .attraction-detail", stylesheet)
+        self.assertIn("body.trip-print .button-row", stylesheet)
+        self.assertIn("body.trip-print .text-link", stylesheet)
+
     def test_unknown_attraction_returns_404(self):
         """Unknown attraction slugs do not create soft 404 pages."""
         response = self.client.get("/cs/vylety/nezname-misto/")

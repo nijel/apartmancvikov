@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
-{% load i18n images seo static %}
+{% load i18n images seo static trip_print %}
+
+{% block body_class %}trip-print trip-print--swimming{% endblock %}
+
+{% block print_header %}
+  {% trip_print_header _("Výlety s koupáním") canonical_url %}
+{% endblock print_header %}
 
 {% block title %}
   {% translate "Koupání v okolí Cvikova | Apartmán Cvikov" %}

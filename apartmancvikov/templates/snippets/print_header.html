@@ -1,0 +1,26 @@
+{% load i18n seo static %}
+
+<header class="print-header">
+  <div class="print-header__brand">
+    <img src="{% static "logo.png" %}"
+         width="100"
+         height="73"
+         alt="{% translate "Apartmán Cvikov" %}" />
+    <div>
+      <p class="print-header__brand-name">{% translate "Apartmán Cvikov" %}</p>
+      <p>Nábřežní 694 · 471 54 Cvikov</p>
+      <p>apartmancvikov.cz</p>
+    </div>
+  </div>
+  <div class="print-header__title">
+    <p class="print-header__page-title">{{ print_title|nbsp_prepositions }}</p>
+    {% if print_subtitle %}<p>{{ print_subtitle }}</p>{% endif %}
+  </div>
+  <figure class="print-header__qr">
+    {{ print_qr_svg }}
+    <figcaption>
+      {% translate "Aktuální informace" %}
+      <span>{{ print_url }}</span>
+    </figcaption>
+  </figure>
+</header>
