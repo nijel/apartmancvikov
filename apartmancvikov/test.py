@@ -332,6 +332,54 @@ class SeoTest(TestCase):
         self.assertContains(german, "Felsbank Karolínin odpočinek")
         self.assertNotContains(german, "skalní lavici")
 
+    def test_every_destination_has_structured_practical_information(self):
+        """Every trip and swimming destination has the three maintained facts."""
+        for destination in (*ATTRACTIONS, *SWIMMING_TIPS):
+            with self.subTest(destination=destination.name):
+                self.assertTrue(str(destination.stroller_access))
+                self.assertTrue(str(destination.admission))
+                self.assertTrue(str(destination.opening_hours))
+
+    def test_attraction_detail_shows_structured_practical_information(self):
+        """Trip facts include access, prices, hours, and a freshness warning."""
+        response = self.client.get("/cs/vylety/skalni-hrad-sloup/")
+        self.assertContains(response, "Kočárek")
+        self.assertContains(response, "Vstupné")
+        self.assertContains(response, "rodinné vstupné 330 Kč")
+        self.assertContains(response, "Provozní doba")
+        self.assertContains(response, "o víkendech 9–16")
+        self.assertContains(response, "Ceny a provozní doba se mohou změnit")
+
+    def test_swimming_destinations_show_structured_practical_information(self):
+        """Each swimming card contains access, admission, and summer hours."""
+        response = self.client.get("/cs/vylety/koupani/")
+        html = response.content.decode()
+        self.assertEqual(
+            html.count('class="swimming-facts"'),
+            len(SWIMMING_TIPS),
+        )
+        self.assertContains(response, "parkování auta 100 Kč")
+        self.assertContains(response, "V létě 11–19")
+        self.assertContains(response, "celodenní parkování 150 Kč")
+        self.assertContains(response, "<dt>Doprava</dt>", count=2, html=True)
+        self.assertContains(response, "Ceny a provozní doba se mohou změnit")
+
+    def test_practical_information_is_translated(self):
+        """Maintained facts and their warning are localized."""
+        english = self.client.get("/en/vylety/motyli-dum-jonsdorf/")
+        self.assertContains(english, "Pushchair")
+        self.assertContains(english, "Adult €9")
+        self.assertContains(english, "Daily 10:00–18:00")
+        self.assertContains(english, "Prices and opening hours may change")
+        self.assertNotContains(english, "Provozní doba")
+
+        german = self.client.get("/de/vylety/koupani/")
+        self.assertContains(german, "Kinderwagen")
+        self.assertContains(german, "Erwachsene 5 €")
+        self.assertContains(german, "Im Sommer 11–19 Uhr")
+        self.assertContains(german, "Preise und Öffnungszeiten können sich ändern")
+        self.assertNotContains(german, "Vstupné")
+
     def test_trip_guide_includes_swimming_tips(self):
         """One trip card opens the complete swimming guide."""
         overview = self.client.get("/cs/vylety/")

@@ -2006,3 +2006,184 @@ msgstr ""
 "On warm days, add a swim at the local mountain pool. Exotenhaus can therefore "
 "be a destination for a shorter part of the day or a stop on a longer trip "
 "into the Zittau Mountains."
+
+#: apartmancvikov/templates/attraction_detail.html
+#: apartmancvikov/templates/koupani.html
+msgid "Kočárek"
+msgstr "Pushchair"
+
+#: apartmancvikov/templates/attraction_detail.html
+#: apartmancvikov/templates/koupani.html
+msgid "Vstupné"
+msgstr "Admission"
+
+#: apartmancvikov/templates/attraction_detail.html
+#: apartmancvikov/templates/koupani.html
+msgid "Provozní doba"
+msgstr "Opening hours"
+
+#: apartmancvikov/templates/attraction_detail.html
+#: apartmancvikov/templates/koupani.html
+msgid ""
+"Ceny a provozní doba se mohou změnit. Před cestou si vždy ověřte aktuální "
+"informace na webu provozovatele."
+msgstr ""
+"Prices and opening hours may change. Always check the latest information on "
+"the operator's website before setting off."
+
+#: apartmancvikov/content.py
+msgid "Celý okruh ne; samotná Kalvárie pouze s terénním kočárkem."
+msgstr ""
+"Not for the full circuit; Calvary itself is accessible only with an all-"
+"terrain pushchair."
+
+#: apartmancvikov/content.py
+msgid "Zdarma"
+msgstr "Free"
+
+#: apartmancvikov/content.py
+msgid "Volně přístupné"
+msgstr "Open access"
+
+#: apartmancvikov/content.py
+msgid ""
+"Ano, cíl je ale určený především pro výlet na kole nebo odrážedle."
+msgstr ""
+"Yes, but the destination is intended primarily as a cycling or balance-bike "
+"trip."
+
+#: apartmancvikov/content.py
+msgid "Pumptrack zdarma; vzduchové trampolíny jsou placené."
+msgstr "The pump track is free; the inflatable trampolines charge a fee."
+
+#: apartmancvikov/content.py
+msgid "Ne"
+msgstr "No"
+
+#: apartmancvikov/content.py
+msgid "Dítě 70 Kč, dospělý 140 Kč, rodinné vstupné 330 Kč."
+msgstr "Child CZK 70, adult CZK 140, family ticket CZK 330."
+
+#: apartmancvikov/content.py
+msgid "V létě denně 9–17, mimo léto pouze o víkendech 9–16."
+msgstr ""
+"Daily 9:00–17:00 in summer; weekends only 9:00–16:00 outside summer."
+
+#: apartmancvikov/content.py
+msgid "Ano"
+msgstr "Yes"
+
+#: apartmancvikov/content.py
+msgid ""
+"100 Kč za osobu, děti do 5 let zdarma; galerie a Skleněný kostel mohou být za "
+"příplatek."
+msgstr ""
+"CZK 100 per person; children under 5 free; the gallery and Glass Church may "
+"charge an additional fee."
+
+#: apartmancvikov/content.py
+msgid ""
+"Skleněná zahrada je přístupná stále; provoz hutě a dalších expozic ověřte na "
+"webu."
+msgstr ""
+"The Glass Garden is always accessible; check the website for glassworks and "
+"other exhibition opening hours."
+
+#: apartmancvikov/content.py
+msgid "Dospělý 150 Kč, dítě 100 Kč, rodinné vstupné 450 Kč."
+msgstr "Adult CZK 150, child CZK 100, family ticket CZK 450."
+
+#: apartmancvikov/content.py
+msgid "Prohlídky od pondělí do pátku 9–13."
+msgstr "Guided tours Monday to Friday, 9:00–13:00."
+
+#: apartmancvikov/content.py
+msgid "Ceny skipasů a podmínky bikeparku ověřte na webu areálu."
+msgstr "Check the venue website for ski pass prices and bike park conditions."
+
+#: apartmancvikov/content.py
+msgid ""
+"Naučná stezka je přístupná celoročně, bikepark podle aktuálních informací a "
+"zimní areál podle sněhových podmínek."
+msgstr ""
+"The educational trail is accessible year-round; the bike park follows "
+"current announcements and the winter area depends on snow conditions."
+
+#: apartmancvikov/content.py
+msgid "2–9 €; cena se liší podle věku návštěvníka a sezony."
+msgstr "€2–9; price varies by visitor age and season."
+
+#: apartmancvikov/content.py
+msgid "V létě denně 9–18, mimo léto denně 10–16."
+msgstr ""
+"Daily 9:00–18:00 in summer; daily 10:00–16:00 outside summer."
+
+#: apartmancvikov/content.py
+msgid "Dospělý 9 €, dítě 4,50 €, rodinné vstupné 22,50 €."
+msgstr "Adult €9, child €4.50, family ticket €22.50."
+
+#: apartmancvikov/content.py
+msgid "Denně 10–18."
+msgstr "Daily 10:00–18:00."
+
+#: apartmancvikov/content.py
+msgid ""
+"Dítě do 6 let 30 Kč, dítě od 6 do 15 let 45 Kč, návštěvníci nad 15 let 70 Kč; "
+"parkování auta 100 Kč."
+msgstr ""
+"Child under 6 CZK 30, child aged 6–15 CZK 45, visitors over 15 CZK 70; car "
+"parking CZK 100."
+
+#: apartmancvikov/content.py
+msgid "V létě 7–18."
+msgstr "In summer 7:00–18:00."
+
+#: apartmancvikov/content.py
+msgid "Dítě 30 Kč, dospělý 50 Kč."
+msgstr "Child CZK 30, adult CZK 50."
+
+#: apartmancvikov/content.py
+msgid "V létě 8–22."
+msgstr "In summer 8:00–22:00."
+
+#: apartmancvikov/content.py
+msgid "70 Kč za osobu."
+msgstr "CZK 70 per person."
+
+#: apartmancvikov/content.py
+msgid "V létě 8–21."
+msgstr "In summer 8:00–21:00."
+
+#: apartmancvikov/content.py
+msgid "Dospělý 5 €, dítě 3 €, rodinné vstupné 12 €."
+msgstr "Adult €5, child €3, family ticket €12."
+
+#: apartmancvikov/content.py
+msgid "V létě 11–19."
+msgstr "In summer 11:00–19:00."
+
+#: apartmancvikov/content.py
+msgid ""
+"30–150 Kč podle sezony, věku a času vstupu; celodenní parkování 150 Kč."
+msgstr ""
+"CZK 30–150 depending on season, age and entry time; all-day parking CZK 150."
+
+#: apartmancvikov/content.py
+msgid "V létě 9–21."
+msgstr "In summer 9:00–21:00."
+
+#: apartmancvikov/content.py
+msgid "Dítě 40 Kč, dospělý 80 Kč."
+msgstr "Child CZK 40, adult CZK 80."
+
+#: apartmancvikov/content.py
+msgid "V létě 10–19."
+msgstr "In summer 10:00–19:00."
+
+#: apartmancvikov/templates/koupani.html
+msgid ""
+"Vyberte si přírodní koupaliště, horský bazén nebo jezero s dalšími aktivitami "
+"pro děti."
+msgstr ""
+"Choose a natural swimming pool, mountain pool or lake with additional "
+"activities for children."

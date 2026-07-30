@@ -19,6 +19,9 @@ class Attraction:
     family_tip: object
     map_url: str
     official_url: str
+    stroller_access: object
+    admission: object
+    opening_hours: object
     travel_tip: object | None = None
     image: str | None = None
     image_width: int | None = None
@@ -80,6 +83,9 @@ ATTRACTIONS = (
         ),
         map_url="https://mapy.cz/s/rodateluge",
         official_url="https://www.cvikov.cz/vychazkove-okruhy/ms-1081/p1=1081",
+        stroller_access=_("Celý okruh ne; samotná Kalvárie pouze s terénním kočárkem."),
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné"),
         image="vylety/kalvarie.jpg",
         image_width=1600,
         image_height=1064,
@@ -106,6 +112,11 @@ ATTRACTIONS = (
             "https://admin-storage.munipolis.com/cvikov/bulletin/files/"
             "2b5ab9d5-83b9-438d-a11e-30e8bfe85010.pdf"
         ),
+        stroller_access=_(
+            "Ano, cíl je ale určený především pro výlet na kole nebo odrážedle."
+        ),
+        admission=_("Pumptrack zdarma; vzduchové trampolíny jsou placené."),
+        opening_hours=_("Volně přístupné"),
         image="vylety/pumptrack-cvikov.jpg",
         image_width=1600,
         image_height=1200,
@@ -147,6 +158,9 @@ ATTRACTIONS = (
         family_tip=_("Pro děti, které zvládnou schody a nerovný terén; bez kočárku."),
         map_url="https://mapy.com/s/madepucoso",
         official_url="https://www.cvikov.cz/turista/ms-1091/p1=1091",
+        stroller_access=_("Ne"),
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné"),
         image="vylety/duty-kamen.jpg",
         image_width=800,
         image_height=533,
@@ -190,6 +204,9 @@ ATTRACTIONS = (
         family_tip=_("Počítejte se schody a dohledem nad dětmi na vyhlídkách."),
         map_url="https://mapy.com/s/judatacovu",
         official_url="https://www.hrad-sloup.cz/",
+        stroller_access=_("Ne"),
+        admission=_("Dítě 70 Kč, dospělý 140 Kč, rodinné vstupné 330 Kč."),
+        opening_hours=_("V létě denně 9–17, mimo léto pouze o víkendech 9–16."),
         travel_tip=_("Do Sloupu v Čechách je možné dojet také autobusem."),
         image="vylety/sloup.jpg",
         image_width=1600,
@@ -231,6 +248,15 @@ ATTRACTIONS = (
         ),
         map_url="https://mapy.com/s/fejukapobu",
         official_url="https://www.pacinekglass.com/sklenena-zahrada",
+        stroller_access=_("Ano"),
+        admission=_(
+            "100 Kč za osobu, děti do 5 let zdarma; galerie a Skleněný kostel "
+            "mohou být za příplatek."
+        ),
+        opening_hours=_(
+            "Skleněná zahrada je přístupná stále; provoz hutě a dalších expozic "
+            "ověřte na webu."
+        ),
         image="vylety/pacinek.jpg",
         image_width=1600,
         image_height=1064,
@@ -250,6 +276,9 @@ ATTRACTIONS = (
         family_tip=_("Exkurzi nebo zážitek pro děti si předem ověřte a rezervujte."),
         map_url="https://mapy.com/s/budufokado",
         official_url="https://www.ajetoglass.com/",
+        stroller_access=_("Ne"),
+        admission=_("Dospělý 150 Kč, dítě 100 Kč, rodinné vstupné 450 Kč."),
+        opening_hours=_("Prohlídky od pondělí do pátku 9–13."),
         image="vylety/ajeto.jpg",
         image_width=1600,
         image_height=1064,
@@ -284,6 +313,9 @@ ATTRACTIONS = (
         family_tip=_("Vhodné pro zdatnější děti; vezměte pevnou obuv a dostatek pití."),
         map_url="https://mapy.com/s/masavogaza",
         official_url="https://www.liberecky-kraj.cz/dr-cs/636-vrch-klic.html",
+        stroller_access=_("Ne"),
+        admission=_("Zdarma"),
+        opening_hours=_("Volně přístupné"),
         image="vylety/klic.jpg",
         image_width=1600,
         image_height=1064,
@@ -318,6 +350,12 @@ ATTRACTIONS = (
         ),
         map_url="https://mapy.com/s/gunedatolu",
         official_url="https://www.polevsko.ski/",
+        stroller_access=_("Ne"),
+        admission=_("Ceny skipasů a podmínky bikeparku ověřte na webu areálu."),
+        opening_hours=_(
+            "Naučná stezka je přístupná celoročně, bikepark podle aktuálních "
+            "informací a zimní areál podle sněhových podmínek."
+        ),
         image="vylety/polevsko.jpg",
         image_width=1600,
         image_height=1200,
@@ -337,6 +375,9 @@ ATTRACTIONS = (
         family_tip=_("Na hrad vede stoupání a schody; pro malé děti se hodí nosítko."),
         map_url="https://mapy.com/s/locacosoge",
         official_url="https://oybin.com/erleben-entdecken/burg-und-kloster/",
+        stroller_access=_("Ne"),
+        admission=_("2–9 €; cena se liší podle věku návštěvníka a sezony."),
+        opening_hours=_("V létě denně 9–18, mimo léto denně 10–16."),
         travel_tip=MOUNTAIN_EXPRESS_TIP,
         image="vylety/oybin.jpg",
         image_width=1600,
@@ -382,6 +423,9 @@ ATTRACTIONS = (
         family_tip=_("Celoroční krytý program vhodný i za deště."),
         map_url="https://mapy.com/s/mamubazode",
         official_url="https://www.exotenhaus.info/",
+        stroller_access=_("Ano"),
+        admission=_("Dospělý 9 €, dítě 4,50 €, rodinné vstupné 22,50 €."),
+        opening_hours=_("Denně 10–18."),
         travel_tip=MOUNTAIN_EXPRESS_TIP,
         image="vylety/jonsdorf.jpg",
         image_width=1600,
@@ -398,6 +442,9 @@ class SwimmingTip:
     name: object
     description: object
     official_url: str
+    stroller_access: object
+    admission: object
+    opening_hours: object
     travel_tip: object | None = None
 
 
@@ -411,6 +458,12 @@ SWIMMING_TIPS = (
         name=_("Koupaliště Sloup v Čechách"),
         description=_("Přírodní koupaliště v kempu s lanovým centrem a občerstvením."),
         official_url="https://koupaliste.sloupvcechach.cz/",
+        stroller_access=_("Ano"),
+        admission=_(
+            "Dítě do 6 let 30 Kč, dítě od 6 do 15 let 45 Kč, návštěvníci nad "
+            "15 let 70 Kč; parkování auta 100 Kč."
+        ),
+        opening_hours=_("V létě 7–18."),
         travel_tip=_("Ze Cvikova se sem můžete vydat také autobusem."),
     ),
     SwimmingTip(
@@ -420,6 +473,9 @@ SWIMMING_TIPS = (
             "skluzavkou na vodě."
         ),
         official_url="https://www.kempjablonne.cz/",
+        stroller_access=_("Ano"),
+        admission=_("Dítě 30 Kč, dospělý 50 Kč."),
+        opening_hours=_("V létě 8–22."),
     ),
     SwimmingTip(
         name=_("Rekreační areál Kristýna"),
@@ -428,6 +484,9 @@ SWIMMING_TIPS = (
             "hřištěm, šlapadly a restaurací."
         ),
         official_url="https://www.kemp-kristyna.cz/",
+        stroller_access=_("Ano"),
+        admission=_("70 Kč za osobu."),
+        opening_hours=_("V létě 8–21."),
     ),
     SwimmingTip(
         name=_("Horské koupaliště Jonsdorf"),
@@ -436,6 +495,9 @@ SWIMMING_TIPS = (
             "a občerstvením."
         ),
         official_url="https://www.jonsdorf.de/gebirgsbad/",
+        stroller_access=_("Ano"),
+        admission=_("Dospělý 5 €, dítě 3 €, rodinné vstupné 12 €."),
+        opening_hours=_("V létě 11–19."),
         travel_tip=MOUNTAIN_EXPRESS_TIP,
     ),
     SwimmingTip(
@@ -446,6 +508,11 @@ SWIMMING_TIPS = (
             "a v okolí je volně přístupné 3D bludiště."
         ),
         official_url="https://www.sportlipa.cz/venkovni-koupaliste-dubice",
+        stroller_access=_("Ano"),
+        admission=_(
+            "30–150 Kč podle sezony, věku a času vstupu; celodenní parkování 150 Kč."
+        ),
+        opening_hours=_("V létě 9–21."),
     ),
     SwimmingTip(
         name=_("Městské koupaliště Česká Kamenice"),
@@ -455,5 +522,8 @@ SWIMMING_TIPS = (
             "s kočárkem, nebo na skalní vyhlídku Ponorka."
         ),
         official_url=("https://ceska-kamenice.cz/mapa-vyletu/mestske-koupaliste/"),
+        stroller_access=_("Ano"),
+        admission=_("Dítě 40 Kč, dospělý 80 Kč."),
+        opening_hours=_("V létě 10–19."),
     ),
 )

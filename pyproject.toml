@@ -11,6 +11,7 @@ profile = "django"
 profile = "black"
 
 [tool.ruff.lint]
+allowed-confusables = ["–"]
 ignore = [
   "ANN",
   "S105",

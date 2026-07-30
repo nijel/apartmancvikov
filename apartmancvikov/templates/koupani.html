@@ -59,8 +59,9 @@
       <header class="section-intro">
         <p class="eyebrow">{% translate "K vodě" %}</p>
         <h2>{% translate "Šest míst pro malé i velké plavce" %}</h2>
-        <p>
-          {% translate "Vyberte si přírodní koupaliště, horský bazén nebo jezero s dalšími aktivitami pro děti. Před odjezdem doporučujeme ověřit aktuální otevírací dobu a podmínky koupání na webu provozovatele." %}
+        <p>{% translate "Vyberte si přírodní koupaliště, horský bazén nebo jezero s dalšími aktivitami pro děti." %}</p>
+        <p class="practical-note">
+          {% translate "Ceny a provozní doba se mohou změnit. Před cestou si vždy ověřte aktuální informace na webu provozovatele." %}
         </p>
       </header>
 
@@ -79,11 +80,26 @@
           <section class="swimming-card">
             <h3>{{ tip.name|nbsp_prepositions }}</h3>
             <p>{{ tip.description }}</p>
-            {% if tip.travel_tip %}
-              <p class="swimming-card__travel">
-                <strong>{% translate "Doprava:" %}</strong> {{ tip.travel_tip }}
-              </p>
-            {% endif %}
+            <dl class="swimming-facts">
+              <dt>{% translate "Kočárek" %}</dt>
+              <dd>
+                {{ tip.stroller_access }}
+              </dd>
+              <dt>{% translate "Vstupné" %}</dt>
+              <dd>
+                {{ tip.admission }}
+              </dd>
+              <dt>{% translate "Provozní doba" %}</dt>
+              <dd>
+                {{ tip.opening_hours }}
+              </dd>
+              {% if tip.travel_tip %}
+                <dt>{% translate "Doprava" %}</dt>
+                <dd>
+                  {{ tip.travel_tip }}
+                </dd>
+              {% endif %}
+            </dl>
             <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
           </section>
         {% endfor %}

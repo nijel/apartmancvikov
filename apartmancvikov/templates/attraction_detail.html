@@ -113,6 +113,18 @@
             <dd>
               {{ attraction.family_tip }}
             </dd>
+            <dt>{% translate "Kočárek" %}</dt>
+            <dd>
+              {{ attraction.stroller_access }}
+            </dd>
+            <dt>{% translate "Vstupné" %}</dt>
+            <dd>
+              {{ attraction.admission }}
+            </dd>
+            <dt>{% translate "Provozní doba" %}</dt>
+            <dd>
+              {{ attraction.opening_hours }}
+            </dd>
             {% if attraction.travel_tip %}
               <dt>{% translate "Doprava" %}</dt>
               <dd>
@@ -120,6 +132,9 @@
               </dd>
             {% endif %}
           </dl>
+          <p class="practical-note">
+            {% translate "Ceny a provozní doba se mohou změnit. Před cestou si vždy ověřte aktuální informace na webu provozovatele." %}
+          </p>
           <div class="button-row">
             <a href="{{ attraction.map_url }}" class="button button--primary" rel="noopener">{% translate "Zobrazit mapu" %}</a>
             <a href="{{ attraction.official_url }}"

@@ -707,10 +707,27 @@ summary {
   color: var(--muted);
 }
 
-.swimming-card__travel {
+.swimming-facts {
+  display: grid;
+  font-size: 0.92rem;
+  grid-template-columns: minmax(6.5rem, 34%) 1fr;
+  margin: 0 0 1rem;
+}
+
+.swimming-facts dt,
+.swimming-facts dd {
   border-top: 1px solid var(--line);
-  font-size: 0.95rem;
-  padding-top: 0.8rem;
+  margin: 0;
+  padding-block: 0.55rem;
+}
+
+.swimming-facts dt {
+  font-weight: 700;
+}
+
+.swimming-facts dd {
+  color: var(--muted);
+  padding-left: 0.75rem;
 }
 
 .swimming-card .text-link {
@@ -810,6 +827,22 @@ summary {
 
 .attraction-facts dd {
   padding-left: 1rem;
+}
+
+.practical-note {
+  background: rgb(139 45 38 / 7%);
+  border-left: 0.2rem solid var(--accent);
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 0.85rem;
+}
+
+.section-intro > .practical-note {
+  font-size: 0.95rem;
+  margin: 1.25rem auto 0;
+  max-width: 42rem;
+  text-align: left;
 }
 
 .story-block {
@@ -1558,6 +1591,14 @@ html.lightbox-open {
     margin: 0;
   }
 
+  body.trip-print .section-intro > .practical-note {
+    border-left-width: 1pt;
+    font-size: 6.8pt;
+    margin-top: 1.5mm;
+    max-width: none;
+    padding: 1mm 1.5mm;
+  }
+
   body.trip-print .eyebrow {
     font-size: 6.3pt;
     letter-spacing: 0.07em;
@@ -1654,9 +1695,22 @@ html.lightbox-open {
     margin-bottom: 1.5mm;
   }
 
-  body.trip-print--swimming .swimming-card__travel {
-    font-size: 7.2pt;
-    padding-top: 1.5mm;
+  body.trip-print--swimming .swimming-facts {
+    font-size: 6.9pt;
+    grid-template-columns: 19mm 1fr;
+    line-height: 1.15;
+    margin-bottom: 1.2mm;
+  }
+
+  body.trip-print--swimming .swimming-facts dt,
+  body.trip-print--swimming .swimming-facts dd {
+    border-top: 0.5pt solid #d6cec6;
+    padding-block: 0.7mm;
+  }
+
+  body.trip-print--swimming .swimming-facts dd {
+    color: #413c38;
+    padding-left: 1.2mm;
   }
 
   body.trip-print--detail .attraction-detail {
@@ -1705,6 +1759,14 @@ html.lightbox-open {
 
   body.trip-print--detail .attraction-facts dd {
     padding-left: 2mm;
+  }
+
+  body.trip-print--detail .practical-note {
+    border-left-width: 1pt;
+    font-size: 6.5pt;
+    line-height: 1.2;
+    margin: 0;
+    padding: 1mm 1.5mm;
   }
 
   body.trip-print--detail .story-block {
