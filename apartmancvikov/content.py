@@ -9,6 +9,13 @@ from django.utils.translation import gettext_lazy as _
 
 
 @dataclass(frozen=True)
+class TripRelation:
+    target_kind: Literal["attraction", "swimming"]
+    target_slug: str
+    description: object
+
+
+@dataclass(frozen=True)
 class Attraction:
     slug: str
     name: object
@@ -35,6 +42,7 @@ class Attraction:
     )
     driving_distance_km: int | float | None = None
     description_paragraphs: tuple[object, ...] = ()
+    related_trips: tuple[TripRelation, ...] = ()
 
 
 EASY = _("Lehká")
@@ -86,6 +94,16 @@ ATTRACTIONS = (
         stroller_access=_("Celý okruh ne; samotná Kalvárie pouze s terénním kočárkem."),
         admission=_("Zdarma"),
         opening_hours=_("Volně přístupné"),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="duty-kamen",
+                description=_(
+                    "Dutý kámen je zkrácenou variantou okruhu pro den, kdy "
+                    "nechcete absolvovat celou trasu."
+                ),
+            ),
+        ),
         image="vylety/kalvarie.jpg",
         image_width=1600,
         image_height=1064,
@@ -161,6 +179,16 @@ ATTRACTIONS = (
         stroller_access=_("Ne"),
         admission=_("Zdarma"),
         opening_hours=_("Volně přístupné"),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="cvikovske-vyhlidky",
+                description=_(
+                    "Pokud chcete delší výlet, projděte celý okruh přes Kalvárii "
+                    "a cvikovské vyhlídky."
+                ),
+            ),
+        ),
         image="vylety/duty-kamen.jpg",
         image_width=800,
         image_height=533,
@@ -207,6 +235,16 @@ ATTRACTIONS = (
         stroller_access=_("Ne"),
         admission=_("Dítě 70 Kč, dospělý 140 Kč, rodinné vstupné 330 Kč."),
         opening_hours=_("V létě denně 9–17, mimo léto pouze o víkendech 9–16."),
+        related_trips=(
+            TripRelation(
+                target_kind="swimming",
+                target_slug="koupaliste-sloup",
+                description=_(
+                    "Po prohlídce skalního hradu se můžete v létě osvěžit na "
+                    "koupališti ve Sloupu."
+                ),
+            ),
+        ),
         travel_tip=_("Do Sloupu v Čechách je možné dojet také autobusem."),
         image="vylety/sloup.jpg",
         image_width=1600,
@@ -257,6 +295,16 @@ ATTRACTIONS = (
             "Skleněná zahrada je přístupná stále; provoz hutě a dalších expozic "
             "ověřte na webu."
         ),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="ajeto-lindava",
+                description=_(
+                    "Pokračujte za další ukázkou ruční výroby skla a do "
+                    "Sklářské krčmy v Lindavě."
+                ),
+            ),
+        ),
         image="vylety/pacinek.jpg",
         image_width=1600,
         image_height=1064,
@@ -279,6 +327,16 @@ ATTRACTIONS = (
         stroller_access=_("Ne"),
         admission=_("Dospělý 150 Kč, dítě 100 Kč, rodinné vstupné 450 Kč."),
         opening_hours=_("Prohlídky od pondělí do pátku 9–13."),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="pacinek-glass",
+                description=_(
+                    "Sklářský výlet můžete doplnit procházkou mezi skleněnými "
+                    "rostlinami v Kunraticích."
+                ),
+            ),
+        ),
         image="vylety/ajeto.jpg",
         image_width=1600,
         image_height=1064,
@@ -316,6 +374,16 @@ ATTRACTIONS = (
         stroller_access=_("Ne"),
         admission=_("Zdarma"),
         opening_hours=_("Volně přístupné"),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="polevsko",
+                description=_(
+                    "Po výstupu můžete pokračovat do nedalekého Polevska za "
+                    "cyklistikou nebo sezonními aktivitami."
+                ),
+            ),
+        ),
         image="vylety/klic.jpg",
         image_width=1600,
         image_height=1064,
@@ -356,6 +424,16 @@ ATTRACTIONS = (
             "Naučná stezka je přístupná celoročně, bikepark podle aktuálních "
             "informací a zimní areál podle sněhových podmínek."
         ),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="klic",
+                description=_(
+                    "Pro náročnější pěší výlet v okolí vystoupejte na výrazný "
+                    "vrchol Klíč."
+                ),
+            ),
+        ),
         image="vylety/polevsko.jpg",
         image_width=1600,
         image_height=1200,
@@ -378,6 +456,16 @@ ATTRACTIONS = (
         stroller_access=_("Ne"),
         admission=_("2–9 €; cena se liší podle věku návštěvníka a sezony."),
         opening_hours=_("V létě denně 9–18, mimo léto denně 10–16."),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="motyli-dum-jonsdorf",
+                description=_(
+                    "Výlet do Žitavských hor můžete doplnit krytým programem "
+                    "se zvířaty v nedalekém Jonsdorfu."
+                ),
+            ),
+        ),
         travel_tip=MOUNTAIN_EXPRESS_TIP,
         image="vylety/oybin.jpg",
         image_width=1600,
@@ -426,6 +514,24 @@ ATTRACTIONS = (
         stroller_access=_("Ano"),
         admission=_("Dospělý 9 €, dítě 4,50 €, rodinné vstupné 22,50 €."),
         opening_hours=_("Denně 10–18."),
+        related_trips=(
+            TripRelation(
+                target_kind="swimming",
+                target_slug="koupaliste-jonsdorf",
+                description=_(
+                    "V teplém dni spojte návštěvu s koupáním v horském "
+                    "koupališti v Jonsdorfu."
+                ),
+            ),
+            TripRelation(
+                target_kind="attraction",
+                target_slug="oybin",
+                description=_(
+                    "Pro delší výlet v Žitavských horách pokračujte k hradu "
+                    "a klášteru Oybin."
+                ),
+            ),
+        ),
         travel_tip=MOUNTAIN_EXPRESS_TIP,
         image="vylety/jonsdorf.jpg",
         image_width=1600,
@@ -439,6 +545,7 @@ ATTRACTIONS_BY_SLUG = {item.slug: item for item in ATTRACTIONS}
 
 @dataclass(frozen=True)
 class SwimmingTip:
+    slug: str
     name: object
     description: object
     official_url: str
@@ -446,6 +553,7 @@ class SwimmingTip:
     admission: object
     opening_hours: object
     travel_tip: object | None = None
+    related_trips: tuple[TripRelation, ...] = ()
 
 
 SWIMMING_IMAGE = "vylety/koupaliste-jonsdorf.jpg"
@@ -455,6 +563,7 @@ SWIMMING_IMAGE_HEIGHT = 1081
 
 SWIMMING_TIPS = (
     SwimmingTip(
+        slug="koupaliste-sloup",
         name=_("Koupaliště Sloup v Čechách"),
         description=_("Přírodní koupaliště v kempu s lanovým centrem a občerstvením."),
         official_url="https://koupaliste.sloupvcechach.cz/",
@@ -465,8 +574,19 @@ SWIMMING_TIPS = (
         ),
         opening_hours=_("V létě 7–18."),
         travel_tip=_("Ze Cvikova se sem můžete vydat také autobusem."),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="skalni-hrad-sloup",
+                description=_(
+                    "Koupání můžete spojit s prohlídkou skalního hradu "
+                    "a poustevny ve Sloupu."
+                ),
+            ),
+        ),
     ),
     SwimmingTip(
+        slug="koupaliste-jablonne",
         name=_("Koupaliště Jablonné v Podještědí"),
         description=_(
             "Koupaliště v kempu s dětským hřištěm, restaurací a nafukovací "
@@ -478,6 +598,7 @@ SWIMMING_TIPS = (
         opening_hours=_("V létě 8–22."),
     ),
     SwimmingTip(
+        slug="kristyna",
         name=_("Rekreační areál Kristýna"),
         description=_(
             "Koupání v zatopeném bývalém dole s písčitou pláží, dětským "
@@ -489,6 +610,7 @@ SWIMMING_TIPS = (
         opening_hours=_("V létě 8–21."),
     ),
     SwimmingTip(
+        slug="koupaliste-jonsdorf",
         name=_("Horské koupaliště Jonsdorf"),
         description=_(
             "Koupaliště s tobogánem, dětským bazénem, vzduchovou trampolínou "
@@ -499,8 +621,19 @@ SWIMMING_TIPS = (
         admission=_("Dospělý 5 €, dítě 3 €, rodinné vstupné 12 €."),
         opening_hours=_("V létě 11–19."),
         travel_tip=MOUNTAIN_EXPRESS_TIP,
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="motyli-dum-jonsdorf",
+                description=_(
+                    "Koupání můžete spojit s návštěvou exotických zvířat, "
+                    "případně sem zamířit za horšího počasí."
+                ),
+            ),
+        ),
     ),
     SwimmingTip(
+        slug="koupaliste-dubice",
         name=_("Koupaliště Dubice"),
         description=_(
             "Koupaliště u České Lípy s tobogány a brouzdalištěm. Na přilehlém "
@@ -515,6 +648,7 @@ SWIMMING_TIPS = (
         opening_hours=_("V létě 9–21."),
     ),
     SwimmingTip(
+        slug="koupaliste-ceska-kamenice",
         name=_("Městské koupaliště Česká Kamenice"),
         description=_(
             "Koupaliště s bistrem. Návštěvu lze spojit s výletem k ručnímu "
@@ -527,3 +661,6 @@ SWIMMING_TIPS = (
         opening_hours=_("V létě 10–19."),
     ),
 )
+
+
+SWIMMING_TIPS_BY_SLUG = {item.slug: item for item in SWIMMING_TIPS}

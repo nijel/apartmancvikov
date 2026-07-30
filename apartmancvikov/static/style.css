@@ -696,6 +696,12 @@ summary {
   display: flex;
   flex-direction: column;
   padding: clamp(1.35rem, 3vw, 1.8rem);
+  scroll-margin-top: 1.5rem;
+}
+
+.swimming-card:target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgb(139 45 38 / 12%);
 }
 
 .swimming-card h3 {
@@ -728,6 +734,36 @@ summary {
 .swimming-facts dd {
   color: var(--muted);
   padding-left: 0.75rem;
+}
+
+.swimming-card__related {
+  border-top: 1px solid var(--line);
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
+}
+
+.swimming-card__related strong,
+.swimming-card__related a {
+  display: block;
+}
+
+.swimming-card__related strong {
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.swimming-card__related a {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.swimming-card__related p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0.35rem 0 0;
 }
 
 .swimming-card .text-link {
@@ -853,6 +889,58 @@ summary {
 .story-block > p:not(.eyebrow) {
   color: var(--muted);
   font-size: 1.3rem;
+}
+
+.related-trips {
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.related-trips h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.related-trips__grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.related-trip-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 0.8rem 2rem rgb(69 43 25 / 7%);
+  color: var(--ink);
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.related-trip-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-0.2rem);
+}
+
+.related-trip-card .eyebrow {
+  display: block;
+}
+
+.related-trip-card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 0.65rem;
+}
+
+.related-trip-card p {
+  color: var(--muted);
+}
+
+.related-trip-card__link {
+  color: var(--accent);
+  font-weight: 750;
 }
 
 .callout {
@@ -1713,6 +1801,31 @@ html.lightbox-open {
     padding-left: 1.2mm;
   }
 
+  body.trip-print--swimming .swimming-card__related {
+    border-top: 0.5pt solid #d6cec6;
+    margin: 0;
+    padding-top: 1mm;
+  }
+
+  body.trip-print--swimming .swimming-card__related strong {
+    font-size: 5.8pt;
+    margin-bottom: 0.5mm;
+  }
+
+  body.trip-print--swimming .swimming-card__related a {
+    color: #292522;
+    font-size: 6.8pt;
+    line-height: 1.1;
+    text-decoration: none;
+  }
+
+  body.trip-print--swimming .swimming-card__related p {
+    color: #413c38;
+    font-size: 6.2pt;
+    line-height: 1.12;
+    margin: 0.5mm 0 0;
+  }
+
   body.trip-print--detail .attraction-detail {
     align-items: start;
     gap: 5mm;
@@ -1788,5 +1901,49 @@ html.lightbox-open {
 
   body.trip-print--detail .story-block > p:last-child {
     margin-bottom: 0;
+  }
+
+  body.trip-print--detail .related-trips {
+    break-inside: avoid;
+    margin: 3mm 0 0;
+  }
+
+  body.trip-print--detail .related-trips > .eyebrow {
+    display: none;
+  }
+
+  body.trip-print--detail .related-trips h2 {
+    font-size: 11pt;
+    margin: 0 0 1.2mm;
+  }
+
+  body.trip-print--detail .related-trips__grid {
+    gap: 2mm;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.trip-print--detail .related-trip-card {
+    border: 0.5pt solid #cfc6bc;
+    border-radius: 1.5mm;
+    box-shadow: none;
+    padding: 1.8mm 2.2mm;
+  }
+
+  body.trip-print--detail .related-trip-card .eyebrow,
+  body.trip-print--detail .related-trip-card__link {
+    display: none;
+  }
+
+  body.trip-print--detail .related-trip-card h3 {
+    font-size: 8pt;
+    line-height: 1.1;
+    margin: 0 0 0.5mm;
+  }
+
+  body.trip-print--detail .related-trip-card p {
+    color: #413c38;
+    font-size: 6.5pt;
+    line-height: 1.15;
+    margin: 0;
   }
 }

@@ -76,32 +76,43 @@
       </figure>
 
       <div class="swimming-grid">
-        {% for tip in swimming_tips %}
-          <section class="swimming-card">
-            <h3>{{ tip.name|nbsp_prepositions }}</h3>
-            <p>{{ tip.description }}</p>
-            <dl class="swimming-facts">
-              <dt>{% translate "Kočárek" %}</dt>
-              <dd>
-                {{ tip.stroller_access }}
-              </dd>
-              <dt>{% translate "Vstupné" %}</dt>
-              <dd>
-                {{ tip.admission }}
-              </dd>
-              <dt>{% translate "Provozní doba" %}</dt>
-              <dd>
-                {{ tip.opening_hours }}
-              </dd>
-              {% if tip.travel_tip %}
-                <dt>{% translate "Doprava" %}</dt>
+        {% for card in swimming_cards %}
+          {% with tip=card.tip %}
+            <section class="swimming-card" id="{{ tip.slug }}">
+              <h3>{{ tip.name|nbsp_prepositions }}</h3>
+              <p>{{ tip.description }}</p>
+              <dl class="swimming-facts">
+                <dt>{% translate "Kočárek" %}</dt>
                 <dd>
-                  {{ tip.travel_tip }}
+                  {{ tip.stroller_access }}
                 </dd>
+                <dt>{% translate "Vstupné" %}</dt>
+                <dd>
+                  {{ tip.admission }}
+                </dd>
+                <dt>{% translate "Provozní doba" %}</dt>
+                <dd>
+                  {{ tip.opening_hours }}
+                </dd>
+                {% if tip.travel_tip %}
+                  <dt>{% translate "Doprava" %}</dt>
+                  <dd>
+                    {{ tip.travel_tip }}
+                  </dd>
+                {% endif %}
+              </dl>
+              {% if card.related_trips %}
+                <div class="swimming-card__related">
+                  <strong>{% translate "Spojte s výletem" %}</strong>
+                  {% for related_trip in card.related_trips %}
+                    <a href="{{ related_trip.url }}">{{ related_trip.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
+                    <p>{{ related_trip.description }}</p>
+                  {% endfor %}
+                </div>
               {% endif %}
-            </dl>
-            <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
-          </section>
+              <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
+            </section>
+          {% endwith %}
         {% endfor %}
       </div>
 

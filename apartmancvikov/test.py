@@ -380,6 +380,117 @@ class SeoTest(TestCase):
         self.assertContains(german, "Preise und Öffnungszeiten können sich ändern")
         self.assertNotContains(german, "Vstupné")
 
+    def test_related_trip_graph_is_valid_and_bidirectional(self):
+        """Every curated relation resolves and has the expected reverse edge."""
+        destinations = {
+            **{("attraction", item.slug): item for item in ATTRACTIONS},
+            **{("swimming", item.slug): item for item in SWIMMING_TIPS},
+        }
+        actual_pairs = set()
+        relation_count = 0
+        for source, destination in destinations.items():
+            for relation in destination.related_trips:
+                relation_count += 1
+                target = (relation.target_kind, relation.target_slug)
+                self.assertIn(target, destinations)
+                reverse_relations = destinations[target].related_trips
+                self.assertTrue(
+                    any(
+                        reverse.target_kind == source[0]
+                        and reverse.target_slug == source[1]
+                        for reverse in reverse_relations
+                    )
+                )
+                actual_pairs.add(frozenset((source, target)))
+
+        expected_pairs = {
+            frozenset(
+                (
+                    ("attraction", "cvikovske-vyhlidky"),
+                    ("attraction", "duty-kamen"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "skalni-hrad-sloup"),
+                    ("swimming", "koupaliste-sloup"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "pacinek-glass"),
+                    ("attraction", "ajeto-lindava"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "klic"),
+                    ("attraction", "polevsko"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "oybin"),
+                    ("attraction", "motyli-dum-jonsdorf"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "motyli-dum-jonsdorf"),
+                    ("swimming", "koupaliste-jonsdorf"),
+                )
+            ),
+        }
+        self.assertEqual(relation_count, 12)
+        self.assertEqual(actual_pairs, expected_pairs)
+
+    def test_attraction_details_link_to_related_trips(self):
+        """Detail recommendations explain and link each curated connection."""
+        shortened = self.client.get("/cs/vylety/duty-kamen/")
+        self.assertContains(shortened, "Související výlety")
+        self.assertContains(
+            shortened,
+            'href="/cs/vylety/cvikovske-vyhlidky/"',
+        )
+        self.assertContains(shortened, "projděte celý okruh přes Kalvárii")
+
+        exotenhaus = self.client.get("/cs/vylety/motyli-dum-jonsdorf/")
+        self.assertContains(exotenhaus, 'class="related-trip-card"', count=2)
+        self.assertContains(
+            exotenhaus,
+            'href="/cs/vylety/koupani/#koupaliste-jonsdorf"',
+        )
+        self.assertContains(exotenhaus, 'href="/cs/vylety/oybin/"')
+
+    def test_swimming_cards_link_to_related_attractions(self):
+        """Only the Sloup and Jonsdorf cards carry contextual trip links."""
+        response = self.client.get("/cs/vylety/koupani/")
+        self.assertContains(response, 'class="swimming-card__related"', count=2)
+        self.assertContains(response, 'id="koupaliste-sloup"')
+        self.assertContains(response, 'id="koupaliste-jonsdorf"')
+        self.assertContains(response, 'href="/cs/vylety/skalni-hrad-sloup/"')
+        self.assertContains(response, 'href="/cs/vylety/motyli-dum-jonsdorf/"')
+
+    def test_related_trip_links_and_copy_are_translated(self):
+        """Related links preserve the active language and localized rationale."""
+        english = self.client.get("/en/vylety/motyli-dum-jonsdorf/")
+        self.assertContains(english, "Related trips")
+        self.assertContains(
+            english,
+            'href="/en/vylety/koupani/#koupaliste-jonsdorf"',
+        )
+        self.assertContains(english, "On a warm day, combine your visit")
+        self.assertNotContains(english, "V teplém dni")
+
+        german = self.client.get("/de/vylety/koupani/")
+        self.assertContains(german, "Mit einem Ausflug verbinden")
+        self.assertContains(
+            german,
+            'href="/de/vylety/motyli-dum-jonsdorf/"',
+        )
+        self.assertContains(german, "Verbinden Sie das Baden")
+        self.assertNotContains(german, "Koupání můžete spojit")
+
     def test_trip_guide_includes_swimming_tips(self):
         """One trip card opens the complete swimming guide."""
         overview = self.client.get("/cs/vylety/")

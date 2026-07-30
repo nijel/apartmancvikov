@@ -151,6 +151,26 @@
         {% for paragraph in attraction.description_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
       </section>
 
+      {% if related_trips %}
+        <section class="related-trips" aria-labelledby="related-trips-title">
+          <p class="eyebrow">{% translate "Propojte výlety" %}</p>
+          <h2 id="related-trips-title">{% translate "Související výlety" %}</h2>
+          <div class="related-trips__grid">
+            {% for related_trip in related_trips %}
+              <a href="{{ related_trip.url }}" class="related-trip-card">
+                <span class="eyebrow">{% translate "Další tip" %}</span>
+                <h3>{{ related_trip.name|nbsp_prepositions }}</h3>
+                <p>{{ related_trip.description }}</p>
+                <span class="related-trip-card__link">
+                  {% translate "Zobrazit související výlet" %}
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
       <aside class="callout">
         <div>
           <p class="eyebrow">{% translate "Dovolená ve Cvikově" %}</p>

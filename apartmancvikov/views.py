@@ -16,7 +16,12 @@ from django.utils.formats import number_format
 from django.utils.translation import gettext as _
 from django.views.generic import FormView, TemplateView
 
-from .content import ATTRACTIONS, ATTRACTIONS_BY_SLUG, SWIMMING_TIPS
+from .content import (
+    ATTRACTIONS,
+    ATTRACTIONS_BY_SLUG,
+    SWIMMING_TIPS,
+    SWIMMING_TIPS_BY_SLUG,
+)
 from .forms import ContactInquiryForm
 from .site_config import (
     ADDRESS_LOCALITY,
@@ -27,6 +32,26 @@ from .site_config import (
 )
 
 logger = logging.getLogger(__name__)
+
+
+def resolve_related_trips(relations):
+    """Resolve curated relations to localized internal links."""
+    related_trips = []
+    for relation in relations:
+        if relation.target_kind == "attraction":
+            target = ATTRACTIONS_BY_SLUG[relation.target_slug]
+            url = reverse("attraction_detail", kwargs={"slug": target.slug})
+        else:
+            target = SWIMMING_TIPS_BY_SLUG[relation.target_slug]
+            url = f"{reverse('swimming')}#{target.slug}"
+        related_trips.append(
+            {
+                "name": target.name,
+                "description": relation.description,
+                "url": url,
+            }
+        )
+    return tuple(related_trips)
 
 
 class HomeView(TemplateView):
@@ -50,6 +75,13 @@ class SwimmingTripsView(TemplateView):
         """Add the curated swimming options to their dedicated guide."""
         context = super().get_context_data(**kwargs)
         context["swimming_tips"] = SWIMMING_TIPS
+        context["swimming_cards"] = tuple(
+            {
+                "tip": tip,
+                "related_trips": resolve_related_trips(tip.related_trips),
+            }
+            for tip in SWIMMING_TIPS
+        )
         return context
 
 
@@ -96,6 +128,7 @@ class AttractionDetailView(TemplateView):
                 "attraction_meta_description": (
                     f"{attraction.summary} {distance_description}"
                 ),
+                "related_trips": resolve_related_trips(attraction.related_trips),
             }
         )
         return context

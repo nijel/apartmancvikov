@@ -2226,3 +2226,113 @@ msgid ""
 msgstr ""
 "Wählen Sie ein Naturbad, Gebirgsbad oder einen See mit weiteren Angeboten "
 "für Kinder."
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Propojte výlety"
+msgstr "Ausflüge verbinden"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Související výlety"
+msgstr "Passende Ausflüge"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Další tip"
+msgstr "Weiterer Tipp"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Zobrazit související výlet"
+msgstr "Passenden Ausflug anzeigen"
+
+#: apartmancvikov/templates/koupani.html
+msgid "Spojte s výletem"
+msgstr "Mit einem Ausflug verbinden"
+
+#: apartmancvikov/content.py
+msgid ""
+"Dutý kámen je zkrácenou variantou okruhu pro den, kdy nechcete absolvovat "
+"celou trasu."
+msgstr ""
+"Dutý kámen ist eine kürzere Variante des Rundwegs für einen Tag, an dem Sie "
+"nicht die gesamte Strecke gehen möchten."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pokud chcete delší výlet, projděte celý okruh přes Kalvárii a cvikovské "
+"vyhlídky."
+msgstr ""
+"Für einen längeren Ausflug gehen Sie den gesamten Rundweg über den "
+"Kalvarienberg und die Cvikover Aussichtspunkte."
+
+#: apartmancvikov/content.py
+msgid ""
+"Po prohlídce skalního hradu se můžete v létě osvěžit na koupališti ve Sloupu."
+msgstr ""
+"Nach der Besichtigung der Felsenburg können Sie sich im Sommer im Freibad "
+"Sloup erfrischen."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pokračujte za další ukázkou ruční výroby skla a do Sklářské krčmy v Lindavě."
+msgstr ""
+"Setzen Sie den Ausflug mit einem weiteren Einblick in die handwerkliche "
+"Glasherstellung und einem Besuch der Glasmacher-Schänke in Lindava fort."
+
+#: apartmancvikov/content.py
+msgid ""
+"Sklářský výlet můžete doplnit procházkou mezi skleněnými rostlinami v "
+"Kunraticích."
+msgstr ""
+"Ergänzen Sie Ihren Glasausflug mit einem Spaziergang zwischen den gläsernen "
+"Pflanzen in Kunratice."
+
+#: apartmancvikov/content.py
+msgid ""
+"Po výstupu můžete pokračovat do nedalekého Polevska za cyklistikou nebo "
+"sezonními aktivitami."
+msgstr ""
+"Nach dem Aufstieg können Sie im nahen Polevsko mit Radfahren oder saisonalen "
+"Aktivitäten weitermachen."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pro náročnější pěší výlet v okolí vystoupejte na výrazný vrchol Klíč."
+msgstr ""
+"Für eine anspruchsvollere Wanderung in der Umgebung besteigen Sie den "
+"markanten Gipfel Klíč."
+
+#: apartmancvikov/content.py
+msgid ""
+"Výlet do Žitavských hor můžete doplnit krytým programem se zvířaty v "
+"nedalekém Jonsdorfu."
+msgstr ""
+"Ergänzen Sie den Ausflug ins Zittauer Gebirge mit einem wetterunabhängigen "
+"Tiererlebnis im nahen Jonsdorf."
+
+#: apartmancvikov/content.py
+msgid ""
+"V teplém dni spojte návštěvu s koupáním v horském koupališti v Jonsdorfu."
+msgstr ""
+"Verbinden Sie den Besuch an einem warmen Tag mit einem Bad im Gebirgsbad "
+"Jonsdorf."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pro delší výlet v Žitavských horách pokračujte k hradu a klášteru Oybin."
+msgstr ""
+"Für einen längeren Ausflug im Zittauer Gebirge fahren Sie weiter zu Burg und "
+"Kloster Oybin."
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupání můžete spojit s prohlídkou skalního hradu a poustevny ve Sloupu."
+msgstr ""
+"Verbinden Sie das Baden mit einem Besuch der Felsenburg und Einsiedelei in "
+"Sloup."
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupání můžete spojit s návštěvou exotických zvířat, případně sem zamířit za "
+"horšího počasí."
+msgstr ""
+"Verbinden Sie das Baden mit einem Besuch der exotischen Tiere oder weichen "
+"Sie bei schlechtem Wetter dorthin aus."

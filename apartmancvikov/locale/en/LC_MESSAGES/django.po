@@ -2187,3 +2187,110 @@ msgid ""
 msgstr ""
 "Choose a natural swimming pool, mountain pool or lake with additional "
 "activities for children."
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Propojte výlety"
+msgstr "Combine your trips"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Související výlety"
+msgstr "Related trips"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Další tip"
+msgstr "Another tip"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Zobrazit související výlet"
+msgstr "View related trip"
+
+#: apartmancvikov/templates/koupani.html
+msgid "Spojte s výletem"
+msgstr "Combine with a trip"
+
+#: apartmancvikov/content.py
+msgid ""
+"Dutý kámen je zkrácenou variantou okruhu pro den, kdy nechcete absolvovat "
+"celou trasu."
+msgstr ""
+"Dutý kámen is a shorter version of the circuit for a day when you do not want "
+"to complete the whole route."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pokud chcete delší výlet, projděte celý okruh přes Kalvárii a cvikovské "
+"vyhlídky."
+msgstr ""
+"For a longer trip, walk the full circuit via Calvary and the Cvikov "
+"viewpoints."
+
+#: apartmancvikov/content.py
+msgid ""
+"Po prohlídce skalního hradu se můžete v létě osvěžit na koupališti ve Sloupu."
+msgstr ""
+"After touring the rock castle, cool off at the swimming pool in Sloup in "
+"summer."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pokračujte za další ukázkou ruční výroby skla a do Sklářské krčmy v Lindavě."
+msgstr ""
+"Continue to another example of handmade glassmaking and the Glass Tavern in "
+"Lindava."
+
+#: apartmancvikov/content.py
+msgid ""
+"Sklářský výlet můžete doplnit procházkou mezi skleněnými rostlinami v "
+"Kunraticích."
+msgstr ""
+"Add a walk among the glass plants in Kunratice to your glassmaking trip."
+
+#: apartmancvikov/content.py
+msgid ""
+"Po výstupu můžete pokračovat do nedalekého Polevska za cyklistikou nebo "
+"sezonními aktivitami."
+msgstr ""
+"After the climb, continue to nearby Polevsko for cycling or seasonal "
+"activities."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pro náročnější pěší výlet v okolí vystoupejte na výrazný vrchol Klíč."
+msgstr ""
+"For a more demanding walk nearby, climb the distinctive Klíč peak."
+
+#: apartmancvikov/content.py
+msgid ""
+"Výlet do Žitavských hor můžete doplnit krytým programem se zvířaty v "
+"nedalekém Jonsdorfu."
+msgstr ""
+"Add an indoor animal attraction in nearby Jonsdorf to your trip to the Zittau "
+"Mountains."
+
+#: apartmancvikov/content.py
+msgid ""
+"V teplém dni spojte návštěvu s koupáním v horském koupališti v Jonsdorfu."
+msgstr ""
+"On a warm day, combine your visit with a swim at the mountain pool in "
+"Jonsdorf."
+
+#: apartmancvikov/content.py
+msgid ""
+"Pro delší výlet v Žitavských horách pokračujte k hradu a klášteru Oybin."
+msgstr ""
+"For a longer trip in the Zittau Mountains, continue to Oybin Castle and "
+"Monastery."
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupání můžete spojit s prohlídkou skalního hradu a poustevny ve Sloupu."
+msgstr ""
+"Combine your swim with a visit to the rock castle and hermitage in Sloup."
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupání můžete spojit s návštěvou exotických zvířat, případně sem zamířit za "
+"horšího počasí."
+msgstr ""
+"Combine your swim with a visit to exotic animals, or head there in poor "
+"weather."
