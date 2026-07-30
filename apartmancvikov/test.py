@@ -223,6 +223,28 @@ class SeoTest(TestCase):
         response = self.client.get("/cs/vylety/nezname-misto/")
         self.assertEqual(response.status_code, 404)
 
+    def test_exotenhaus_uses_current_information(self):
+        """The former butterfly-house guide reflects the current exhibition."""
+        response = self.client.get("/cs/vylety/motyli-dum-jonsdorf/")
+
+        self.assertContains(response, "Dům exotických zvířat")
+        self.assertContains(response, "2 000 litrů")
+        self.assertContains(response, "Část s motýly je momentálně uzavřená")
+        self.assertContains(response, "https://www.exotenhaus.info/")
+        self.assertNotContains(response, "https://www.schmetterlingshaus.info/")
+        self.assertContains(response, "/static/vylety/jonsdorf.jpg")
+
+    def test_mountain_express_is_listed_for_reachable_attractions(self):
+        """Jonsdorf, Oybin and the swimming guide mention the seasonal service."""
+        message = "termín a dostupnost jízdenek si ověřte předem"
+        for path in (
+            "/cs/vylety/motyli-dum-jonsdorf/",
+            "/cs/vylety/oybin/",
+            "/cs/vylety/koupani/",
+        ):
+            with self.subTest(path=path):
+                self.assertContains(self.client.get(path), message)
+
     def test_licensed_photo_includes_attribution(self):
         """Third-party imagery links to its source and license."""
         response = self.client.get("/cs/vylety/duty-kamen/")

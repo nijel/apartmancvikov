@@ -245,29 +245,33 @@ msgstr ""
 "Trage hilfreich."
 
 #: apartmancvikov/content.py:210
-msgid "Motýlí dům Jonsdorf"
-msgstr "Schmetterlingshaus Jonsdorf"
+msgid "Dům exotických zvířat (Exotenhaus) Jonsdorf"
+msgstr "Exotenhaus Jonsdorf"
 
 #: apartmancvikov/content.py:211
-msgid "Tropičtí motýli a další zvířata v celoročním krytém areálu."
+msgid ""
+"Plazi, obojživelníci, hmyz a mořské akvárium; motýlí část je momentálně "
+"uzavřená."
 msgstr ""
-"Tropische Schmetterlinge und weitere Tiere in einer ganzjährig geöffneten "
-"Innenanlage."
+"Reptilien, Amphibien, Insekten und ein Meerwasseraquarium; der "
+"Schmetterlingsbereich ist derzeit geschlossen."
 
 #: apartmancvikov/content.py:213
 msgid ""
-"Motýlí dům v Jonsdorfu je praktickým cílem i za deště. V tropické hale lze "
-"zblízka pozorovat volně poletující motýly a návštěvu spojit s dalšími "
-"rodinnými cíli v Žitavských horách."
+"Exotenhaus představuje přibližně 40 různých tropických živočichů v "
+"teráriích: ještěry, želvy, hady, obojživelníky, hmyz, pavouky a štíry. "
+"Výrazným prvkem expozice je třímetrové mořské akvárium o objemu 2 000 litrů "
+"s korálovými rybami a živými korály. Část s motýly je momentálně uzavřená."
 msgstr ""
-"Das Schmetterlingshaus in Jonsdorf ist auch bei Regen ein praktisches Ziel. "
-"In der Tropenhalle lassen sich frei fliegende Schmetterlinge aus der Nähe "
-"beobachten; der Besuch kann mit weiteren Familienzielen im Zittauer Gebirge "
-"verbunden werden."
+"Das Exotenhaus zeigt rund 40 verschiedene tropische Tiere in Terrarien: "
+"Echsen, Schildkröten, Schlangen, Amphibien, Insekten, Spinnen und Skorpione. "
+"Ein Höhepunkt ist das drei Meter lange Meerwasseraquarium mit 2.000 Litern, "
+"Korallenfischen und lebenden Korallen. Der Schmetterlingsbereich ist derzeit "
+"geschlossen."
 
 #: apartmancvikov/content.py:219
-msgid "Vhodné pro malé děti i jako program při nepříznivém počasí."
-msgstr "Für kleine Kinder und als Schlechtwetterprogramm geeignet."
+msgid "Celoroční krytý program vhodný i za deště."
+msgstr "Ein ganzjähriges Schlechtwetterziel im Innenbereich."
 
 #: apartmancvikov/forms.py:18
 msgid "Jméno a příjmení"
@@ -1608,11 +1612,11 @@ msgstr "Ein Freibad mit Wasserrutsche, Kinderbecken, Lufttrampolin und Imbiss."
 
 #: apartmancvikov/content.py
 msgid ""
-"V létě sem podle aktuálního jízdního řádu jezdí horský expres z náměstí ve "
-"Cvikově."
+"V létě sem ve vybraných termínech jezdí Horský expres z náměstí ve Cvikově; "
+"termín a dostupnost jízdenek si ověřte předem."
 msgstr ""
-"Im Sommer fährt je nach aktuellem Fahrplan ein Gebirgsexpress vom Marktplatz "
-"in Cvikov hierher."
+"Im Sommer fährt der Gebirgsexpress an ausgewählten Terminen vom Marktplatz "
+"in Cvikov hierher; prüfen Sie Termin und Ticketverfügbarkeit im Voraus."
 
 #: apartmancvikov/content.py
 msgid "Koupaliště Dubice"
@@ -1698,6 +1702,10 @@ msgstr ""
 #: apartmancvikov/templates/koupani.html
 msgid "Doprava:"
 msgstr "Anreise:"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Doprava"
+msgstr "Anreise"
 
 #: apartmancvikov/templates/koupani.html
 msgid "Další nápady"

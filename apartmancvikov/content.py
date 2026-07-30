@@ -18,6 +18,7 @@ class Attraction:
     family_tip: object
     map_url: str
     official_url: str
+    travel_tip: object | None = None
     image: str | None = None
     image_width: int | None = None
     image_height: int | None = None
@@ -29,6 +30,10 @@ class Attraction:
 
 EASY = _("Lehká")
 MODERATE = _("Střední")
+MOUNTAIN_EXPRESS_TIP = _(
+    "V létě sem ve vybraných termínech jezdí Horský expres z náměstí ve "
+    "Cvikově; termín a dostupnost jízdenek si ověřte předem."
+)
 
 
 ATTRACTIONS = (
@@ -205,24 +210,31 @@ ATTRACTIONS = (
         family_tip=_("Na hrad vede stoupání a schody; pro malé děti se hodí nosítko."),
         map_url="https://mapy.cz/turisticka?q=Burg%20und%20Kloster%20Oybin",
         official_url="https://oybin.com/erleben-entdecken/burg-und-kloster/",
+        travel_tip=MOUNTAIN_EXPRESS_TIP,
         image="vylety/oybin.jpg",
         image_width=1600,
         image_height=1200,
     ),
     Attraction(
         slug="motyli-dum-jonsdorf",
-        name=_("Motýlí dům Jonsdorf"),
-        summary=_("Tropičtí motýli a další zvířata v celoročním krytém areálu."),
+        name=_("Dům exotických zvířat (Exotenhaus) Jonsdorf"),
+        summary=_(
+            "Plazi, obojživelníci, hmyz a mořské akvárium; motýlí část je "
+            "momentálně uzavřená."
+        ),
         description=_(
-            "Motýlí dům v Jonsdorfu je praktickým cílem i za deště. V tropické "
-            "hale lze zblízka pozorovat volně poletující motýly a návštěvu spojit "
-            "s dalšími rodinnými cíli v Žitavských horách."
+            "Exotenhaus představuje přibližně 40 různých tropických živočichů "
+            "v teráriích: ještěry, želvy, hady, obojživelníky, hmyz, pavouky "
+            "a štíry. Výrazným prvkem expozice je třímetrové mořské akvárium "
+            "o objemu 2 000 litrů s korálovými rybami a živými korály. Část "
+            "s motýly je momentálně uzavřená."
         ),
         distance_km=20,
         difficulty=EASY,
-        family_tip=_("Vhodné pro malé děti i jako program při nepříznivém počasí."),
-        map_url="https://mapy.cz/turisticka?q=Schmetterlingshaus%20Jonsdorf",
-        official_url="https://www.schmetterlingshaus.info/",
+        family_tip=_("Celoroční krytý program vhodný i za deště."),
+        map_url="https://mapy.cz/turisticka?q=Exotenhaus%20Jonsdorf",
+        official_url="https://www.exotenhaus.info/",
+        travel_tip=MOUNTAIN_EXPRESS_TIP,
         image="vylety/jonsdorf.jpg",
         image_width=1600,
         image_height=1200,
@@ -276,10 +288,7 @@ SWIMMING_TIPS = (
             "a občerstvením."
         ),
         official_url="https://www.jonsdorf.de/gebirgsbad/",
-        travel_tip=_(
-            "V létě sem podle aktuálního jízdního řádu jezdí horský expres "
-            "z náměstí ve Cvikově."
-        ),
+        travel_tip=MOUNTAIN_EXPRESS_TIP,
     ),
     SwimmingTip(
         name=_("Koupaliště Dubice"),

@@ -235,27 +235,32 @@ msgstr ""
 "for young children."
 
 #: apartmancvikov/content.py:210
-msgid "Motýlí dům Jonsdorf"
-msgstr "Butterfly House Jonsdorf"
+msgid "Dům exotických zvířat (Exotenhaus) Jonsdorf"
+msgstr "Jonsdorf Exotic Animal House (Exotenhaus)"
 
 #: apartmancvikov/content.py:211
-msgid "Tropičtí motýli a další zvířata v celoročním krytém areálu."
+msgid ""
+"Plazi, obojživelníci, hmyz a mořské akvárium; motýlí část je momentálně "
+"uzavřená."
 msgstr ""
-"Tropical butterflies and other animals in an indoor, year-round attraction."
+"Reptiles, amphibians, insects and a marine aquarium; the butterfly section "
+"is currently closed."
 
 #: apartmancvikov/content.py:213
 msgid ""
-"Motýlí dům v Jonsdorfu je praktickým cílem i za deště. V tropické hale lze "
-"zblízka pozorovat volně poletující motýly a návštěvu spojit s dalšími "
-"rodinnými cíli v Žitavských horách."
+"Exotenhaus představuje přibližně 40 různých tropických živočichů v "
+"teráriích: ještěry, želvy, hady, obojživelníky, hmyz, pavouky a štíry. "
+"Výrazným prvkem expozice je třímetrové mořské akvárium o objemu 2 000 litrů "
+"s korálovými rybami a živými korály. Část s motýly je momentálně uzavřená."
 msgstr ""
-"The Butterfly House in Jonsdorf is a practical destination even in rainy "
-"weather. See free-flying butterflies up close in the tropical hall and "
-"combine the visit with other family attractions in the Zittau Mountains."
+"The Exotenhaus presents around 40 different tropical animals in terrariums: "
+"lizards, turtles, snakes, amphibians, insects, spiders and scorpions. A "
+"highlight is the three-metre, 2,000-litre marine aquarium with coral fish "
+"and living corals. The butterfly section is currently closed."
 
 #: apartmancvikov/content.py:219
-msgid "Vhodné pro malé děti i jako program při nepříznivém počasí."
-msgstr "Suitable for young children and as a bad-weather activity."
+msgid "Celoroční krytý program vhodný i za deště."
+msgstr "An indoor year-round activity suitable for rainy days."
 
 #: apartmancvikov/forms.py:18
 msgid "Jméno a příjmení"
@@ -1581,11 +1586,11 @@ msgstr ""
 
 #: apartmancvikov/content.py
 msgid ""
-"V létě sem podle aktuálního jízdního řádu jezdí horský expres z náměstí ve "
-"Cvikově."
+"V létě sem ve vybraných termínech jezdí Horský expres z náměstí ve Cvikově; "
+"termín a dostupnost jízdenek si ověřte předem."
 msgstr ""
-"In summer, subject to the current timetable, the mountain express runs here "
-"from the square in Cvikov."
+"On selected dates in summer, the Mountain Express runs here from the square "
+"in Cvikov; check the date and ticket availability in advance."
 
 #: apartmancvikov/content.py
 msgid "Koupaliště Dubice"
@@ -1671,6 +1676,10 @@ msgstr ""
 #: apartmancvikov/templates/koupani.html
 msgid "Doprava:"
 msgstr "Transport:"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Doprava"
+msgstr "Transport"
 
 #: apartmancvikov/templates/koupani.html
 msgid "Další nápady"

@@ -84,6 +84,12 @@
             <dd>
               {{ attraction.family_tip }}
             </dd>
+            {% if attraction.travel_tip %}
+              <dt>{% translate "Doprava" %}</dt>
+              <dd>
+                {{ attraction.travel_tip }}
+              </dd>
+            {% endif %}
           </dl>
           <div class="button-row">
             <a href="{{ attraction.map_url }}" class="button button--primary" rel="noopener">{% translate "Zobrazit mapu" %}</a>
