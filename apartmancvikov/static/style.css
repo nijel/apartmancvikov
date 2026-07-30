@@ -445,7 +445,8 @@ summary {
 .room-grid,
 .review-grid,
 .gallery-grid,
-.attraction-grid {
+.attraction-grid,
+.swimming-grid {
   display: grid;
   gap: 1.25rem;
 }
@@ -662,6 +663,62 @@ summary {
 .attraction-placeholder--large {
   border-radius: var(--radius);
   height: 30rem;
+}
+
+.swimming-photo {
+  margin: 0 auto clamp(2rem, 5vw, 3.5rem);
+  max-width: 62rem;
+}
+
+.swimming-photo a {
+  display: block;
+}
+
+.swimming-photo img {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  width: 100%;
+}
+
+.swimming-photo figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding-top: 0.45rem;
+  text-align: right;
+}
+
+.swimming-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+}
+
+.swimming-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.swimming-card > p {
+  color: var(--muted);
+}
+
+.swimming-card__travel {
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  padding-top: 0.8rem;
+}
+
+.swimming-card .text-link {
+  margin-top: auto;
+}
+
+.swimming-page .callout {
+  margin-top: clamp(3rem, 7vw, 5rem);
 }
 
 .link-band {
@@ -1243,7 +1300,8 @@ html.lightbox-open {
 
   .room-grid,
   .review-grid,
-  .attraction-grid {
+  .attraction-grid,
+  .swimming-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1324,7 +1382,8 @@ html.lightbox-open {
 
   .room-grid,
   .review-grid,
-  .attraction-grid {
+  .attraction-grid,
+  .swimming-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

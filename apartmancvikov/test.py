@@ -15,7 +15,7 @@ from django.core import mail, signing
 from django.test import TestCase, override_settings
 from django.utils.safestring import mark_safe
 
-from .content import ATTRACTIONS
+from .content import ATTRACTIONS, SWIMMING_TIPS
 from .forms import FORM_TOKEN_SALT
 from .image_config import variant_path
 from .models import Booking
@@ -189,6 +189,36 @@ class SeoTest(TestCase):
                     self.assertEqual(len(re.findall(r"<h1(?:\s|>)", html)), 1)
                     self.assertIn(str(attraction.official_url), html)
 
+    def test_trip_guide_includes_swimming_tips(self):
+        """One trip card opens the complete swimming guide."""
+        overview = self.client.get("/cs/vylety/")
+        self.assertContains(overview, 'href="/cs/vylety/koupani/"')
+        self.assertNotContains(overview, 'class="swimming-card"')
+
+        response = self.client.get("/cs/vylety/koupani/")
+        html = response.content.decode()
+        self.assertEqual(html.count('class="swimming-card"'), len(SWIMMING_TIPS))
+        self.assertEqual(len(re.findall(r"<h1(?:\s|>)", html)), 1)
+        self.assertContains(
+            response,
+            "/static/responsive/vylety/koupaliste-jonsdorf-480.webp",
+        )
+        for tip in SWIMMING_TIPS:
+            with self.subTest(tip=tip.name):
+                self.assertContains(response, tip.name)
+                self.assertContains(response, tip.official_url)
+
+    def test_swimming_tips_are_translated(self):
+        """The dedicated guide remains useful in every supported language."""
+        self.assertContains(
+            self.client.get("/en/vylety/koupani/"),
+            "Swimming trips",
+        )
+        self.assertContains(
+            self.client.get("/de/vylety/koupani/"),
+            "Badeausflüge",
+        )
+
     def test_unknown_attraction_returns_404(self):
         """Unknown attraction slugs do not create soft 404 pages."""
         response = self.client.get("/cs/vylety/nezname-misto/")
@@ -331,15 +361,21 @@ class SeoTest(TestCase):
     def test_page_specific_schema_types(self):
         """Static and listing pages identify their role and main entity."""
         cases = (
-            ("/cs/vylety/", "CollectionPage", "ItemList"),
-            ("/cs/kontakt/", "ContactPage", None),
-            ("/cs/poptavka/", "WebPage", None),
-            ("/cs/cenik/", "WebPage", "Service"),
-            ("/cs/obsazenost/", "WebPage", None),
-            ("/cs/ochrana-osobnich-udaju/", "WebPage", None),
-            ("/cs/podminky-uziti-fotografii/", "WebPage", None),
+            ("/cs/vylety/", "CollectionPage", "ItemList", len(ATTRACTIONS) + 1),
+            (
+                "/cs/vylety/koupani/",
+                "CollectionPage",
+                "ItemList",
+                len(SWIMMING_TIPS),
+            ),
+            ("/cs/kontakt/", "ContactPage", None, None),
+            ("/cs/poptavka/", "WebPage", None, None),
+            ("/cs/cenik/", "WebPage", "Service", None),
+            ("/cs/obsazenost/", "WebPage", None, None),
+            ("/cs/ochrana-osobnich-udaju/", "WebPage", None, None),
+            ("/cs/podminky-uziti-fotografii/", "WebPage", None, None),
         )
-        for path, page_type, main_type in cases:
+        for path, page_type, main_type, expected_count in cases:
             with self.subTest(path=path):
                 graph = self.get_schema_graph(path)
                 page = self.schema_node(graph, page_type)
@@ -348,7 +384,7 @@ class SeoTest(TestCase):
                     main = self.schema_node(graph, main_type)
                     self.assertEqual(page["mainEntity"]["@id"], main["@id"])
                     if main_type == "ItemList":
-                        self.assertEqual(main["numberOfItems"], len(ATTRACTIONS))
+                        self.assertEqual(main["numberOfItems"], expected_count)
                 else:
                     self.assertEqual(
                         page["about"]["@id"],
@@ -409,8 +445,12 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 54)
+        self.assertEqual(len(locations), 57)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
+        self.assertIn(
+            "https://apartmancvikov.cz/cs/vylety/koupani/",
+            locations,
+        )
         self.assertIn(
             "https://apartmancvikov.cz/de/vylety/motyli-dum-jonsdorf/", locations
         )
@@ -434,6 +474,11 @@ class SeoTest(TestCase):
             "<image:loc>https://apartmancvikov.cz/static/vylety/duty-kamen.jpg</image:loc>",
             sitemap,
         )
+        self.assertIn(
+            "<image:loc>https://apartmancvikov.cz/static/vylety/"
+            "koupaliste-jonsdorf.jpg</image:loc>",
+            sitemap,
+        )
 
     def test_machine_readable_endpoints(self):
         """Robots and agent summaries publish their essential information."""
@@ -451,6 +496,10 @@ class SeoTest(TestCase):
         self.assertContains(llms, "Spacious 130 m² apartment with 3 bedrooms")
         self.assertContains(llms, "2 additional floor mattresses")
         self.assertContains(llms, "https://apartmancvikov.cz/cs/vylety/")
+        self.assertContains(
+            llms,
+            "https://apartmancvikov.cz/cs/vylety/koupani/",
+        )
         self.assertContains(llms, "https://apartmancvikov.cz/cs/poptavka/")
 
 

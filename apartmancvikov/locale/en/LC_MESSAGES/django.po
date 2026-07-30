@@ -389,11 +389,11 @@ msgstr "Family trips from Apartment Cvikov"
 #: apartmancvikov/structured_data.py:312
 #: apartmancvikov/templates/vylety.html:11
 msgid ""
-"Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: pumptrack, "
-"vyhlídky, skály, hrady, sklárny, lyžování i program za deště."
+"Deset ověřených tipů na rodinné výlety a šest míst ke koupání v okolí "
+"Apartmánu Cvikov."
 msgstr ""
-"Ten verified family trip ideas from Apartment Cvikov: a pump track, "
-"viewpoints, rocks, castles, glassworks, skiing and rainy-day activities."
+"Ten tried-and-tested family trip ideas and six places to swim near Apartmán "
+"Cvikov."
 
 #: apartmancvikov/structured_data.py:319 apartmancvikov/templates/cenik.html:6
 #: apartmancvikov/templates/cenik.html:16
@@ -1443,9 +1443,12 @@ msgstr ""
 "Mountains."
 
 #: apartmancvikov/templates/vylety.html:29
-msgid "Poznejte s dětmi přírodu, skály, hrady a sklářskou historii."
+msgid ""
+"Poznejte s dětmi přírodu, skály, hrady, sklářskou historii i místa ke "
+"koupání."
 msgstr ""
-"Explore nature, rocks, castles and glassmaking history with your children."
+"Explore nature, rocks, castles, glassmaking history and places to swim with "
+"your children."
 
 #: apartmancvikov/templates/vylety.html:36
 msgid "Tipy pro rodiny"
@@ -1525,3 +1528,188 @@ msgid "Děkujeme, poptávka byla odeslána. Ozveme se vám co nejdříve."
 msgstr ""
 "Thank you, your enquiry has been sent. We will get back to you as soon as "
 "possible."
+
+#: apartmancvikov/content.py
+msgid "Koupaliště Sloup v Čechách"
+msgstr "Sloup v Čechách swimming lake"
+
+#: apartmancvikov/content.py
+msgid "Přírodní koupaliště v kempu s lanovým centrem a občerstvením."
+msgstr ""
+"A natural swimming area at a campsite with a high ropes course and "
+"refreshments."
+
+#: apartmancvikov/content.py
+msgid "Ze Cvikova se sem můžete vydat také autobusem."
+msgstr "You can also get there by bus from Cvikov."
+
+#: apartmancvikov/content.py
+msgid "Koupaliště Jablonné v Podještědí"
+msgstr "Jablonné v Podještědí swimming pool"
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupaliště v kempu s dětským hřištěm, restaurací a nafukovací skluzavkou na "
+"vodě."
+msgstr ""
+"A campsite swimming pool with a children's playground, restaurant and "
+"inflatable water slide."
+
+#: apartmancvikov/content.py
+msgid "Rekreační areál Kristýna"
+msgstr "Kristýna recreation area"
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupání v zatopeném bývalém dole s písčitou pláží, dětským hřištěm, šlapadly "
+"a restaurací."
+msgstr ""
+"Swimming in a flooded former mine with a sandy beach, children's playground, "
+"pedal boats and restaurant."
+
+#: apartmancvikov/content.py apartmancvikov/templates/koupani.html
+msgid "Horské koupaliště Jonsdorf"
+msgstr "Jonsdorf mountain swimming pool"
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupaliště s tobogánem, dětským bazénem, vzduchovou trampolínou a "
+"občerstvením."
+msgstr ""
+"A swimming pool with a water slide, children's pool, air trampoline and "
+"refreshments."
+
+#: apartmancvikov/content.py
+msgid ""
+"V létě sem podle aktuálního jízdního řádu jezdí horský expres z náměstí ve "
+"Cvikově."
+msgstr ""
+"In summer, subject to the current timetable, the mountain express runs here "
+"from the square in Cvikov."
+
+#: apartmancvikov/content.py
+msgid "Koupaliště Dubice"
+msgstr "Dubice swimming pool"
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupaliště u České Lípy s tobogány a brouzdalištěm. Na přilehlém rybníce je "
+"možné vyzkoušet wakeboarding, paddleboarding i koupání a v okolí je volně "
+"přístupné 3D bludiště."
+msgstr ""
+"A swimming pool near Česká Lípa with water slides and a paddling pool. Try "
+"wakeboarding, paddleboarding or swimming on the adjacent lake and visit the "
+"freely accessible 3D maze nearby."
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/koupani.html
+msgid "Výlety s koupáním z Apartmánu Cvikov"
+msgstr "Swimming trips from Apartmán Cvikov"
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/koupani.html
+msgid ""
+"Šest tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, Jablonné v "
+"Podještědí, Kristýna, Jonsdorf, Dubice a Česká Kamenice."
+msgstr ""
+"Six swimming tips near Apartmán Cvikov: Sloup v Čechách, Jablonné v "
+"Podještědí, Kristýna, Jonsdorf, Dubice and Česká Kamenice."
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/vylety.html
+#: apartmancvikov/templates/koupani.html
+msgid "Výlety s koupáním"
+msgstr "Swimming trips"
+
+#: apartmancvikov/structured_data.py
+msgid "Koupání v okolí Cvikova"
+msgstr "Swimming near Cvikov"
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/vylety.html
+#: apartmancvikov/templates/koupani.html
+msgid "Horské koupaliště Jonsdorf s tobogánem"
+msgstr "Jonsdorf mountain swimming pool with a water slide"
+
+#: apartmancvikov/templates/koupani.html
+msgid "Koupání v okolí Cvikova | Apartmán Cvikov"
+msgstr "Swimming near Cvikov | Apartmán Cvikov"
+
+#: apartmancvikov/templates/koupani.html apartmancvikov/templates/vylety.html
+msgid ""
+"Přírodní koupaliště, bazény a jezera pro osvěžení i celodenní rodinný výlet."
+msgstr ""
+"Natural swimming areas, pools and lakes for a refreshing dip or a full-day "
+"family trip."
+
+#: apartmancvikov/templates/koupani.html
+msgid ""
+"Pokud vás omrzí bazén na zahradě nebo chcete spojit koupání s výletem, je v "
+"okolí několik možností."
+msgstr ""
+"If you tire of the garden pool or want to combine a swim with a day trip, "
+"there are several options nearby."
+
+#: apartmancvikov/templates/koupani.html
+msgid "Koupání"
+msgstr "Swimming"
+
+#: apartmancvikov/templates/koupani.html
+msgid "K vodě"
+msgstr "By the water"
+
+#: apartmancvikov/templates/koupani.html
+msgid "Šest míst pro malé i velké plavce"
+msgstr "Six places for swimmers of all ages"
+
+#: apartmancvikov/templates/koupani.html
+msgid ""
+"Vyberte si přírodní koupaliště, horský bazén nebo jezero s dalšími aktivitami "
+"pro děti. Před odjezdem doporučujeme ověřit aktuální otevírací dobu a "
+"podmínky koupání na webu provozovatele."
+msgstr ""
+"Choose a natural swimming area, mountain pool or lake with more activities "
+"for children. Before setting off, we recommend checking current opening "
+"hours and swimming conditions on the operator's website."
+
+#: apartmancvikov/templates/koupani.html
+msgid "Doprava:"
+msgstr "Transport:"
+
+#: apartmancvikov/templates/koupani.html
+msgid "Další nápady"
+msgstr "More ideas"
+
+#: apartmancvikov/templates/koupani.html
+msgid "Vyberte si další rodinný výlet"
+msgstr "Choose another family trip"
+
+#: apartmancvikov/templates/koupani.html
+msgid ""
+"V okolí najdete také skály, hrady, vyhlídky, sklárny a program pro deštivé "
+"dny."
+msgstr ""
+"You will also find rocks, castles, viewpoints, glassworks and rainy-day "
+"activities nearby."
+
+#: apartmancvikov/templates/koupani.html
+msgid "Všechny výlety"
+msgstr "All trips"
+
+#: apartmancvikov/templates/vylety.html
+msgid "Šest tipů v okolí"
+msgstr "Six nearby tips"
+
+#: apartmancvikov/templates/vylety.html
+msgid "Prohlédnout koupání"
+msgstr "Explore swimming options"
+
+#: apartmancvikov/content.py
+msgid "Městské koupaliště Česká Kamenice"
+msgstr "Česká Kamenice municipal swimming pool"
+
+#: apartmancvikov/content.py
+msgid ""
+"Koupaliště s bistrem. Návštěvu lze spojit s výletem k ručnímu přívozu a do "
+"parku miniatur Mlýnky Brand, kam se dostanete i s kočárkem, nebo na skalní "
+"vyhlídku Ponorka."
+msgstr ""
+"A swimming pool with a bistro. Combine your visit with a trip to the hand-"
+"operated ferry and the Mlýnky Brand miniature park, which is also accessible "
+"with a pushchair, or to the Ponorka rock viewpoint."

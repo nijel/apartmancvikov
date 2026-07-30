@@ -7,7 +7,14 @@ from django.templatetags.static import static
 from django.urls import reverse
 from django.utils.translation import gettext as _
 
-from .content import ATTRACTIONS, ATTRACTIONS_BY_SLUG
+from .content import (
+    ATTRACTIONS,
+    ATTRACTIONS_BY_SLUG,
+    SWIMMING_IMAGE,
+    SWIMMING_IMAGE_HEIGHT,
+    SWIMMING_IMAGE_WIDTH,
+    SWIMMING_TIPS,
+)
 from .site_config import (
     ADDRESS_COUNTRY,
     ADDRESS_LOCALITY,
@@ -313,9 +320,17 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Rodinné výlety z Apartmánu Cvikov"),
             _(
-                "Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: "
-                "pumptrack, vyhlídky, skály, hrady, sklárny, lyžování i "
-                "program za deště."
+                "Deset ověřených tipů na rodinné výlety a šest míst ke koupání "
+                "v okolí Apartmánu Cvikov."
+            ),
+        ),
+        "swimming": (
+            "CollectionPage",
+            _("Výlety s koupáním z Apartmánu Cvikov"),
+            _(
+                "Šest tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, "
+                "Jablonné v Podještědí, Kristýna, Jonsdorf, Dubice a Česká "
+                "Kamenice."
             ),
         ),
         "cenik": (
@@ -439,28 +454,87 @@ def _attraction_node(request, attraction, image_node):
 
 def _trip_list_node():
     list_url = _absolute(reverse("vylety"))
+    items = [
+        {
+            "@type": "ListItem",
+            "position": position,
+            "item": {
+                "@type": "TouristAttraction",
+                "@id": f"{_absolute(reverse('attraction_detail', kwargs={'slug': item.slug}))}#attraction",
+                "name": str(item.name),
+                "url": _absolute(
+                    reverse("attraction_detail", kwargs={"slug": item.slug})
+                ),
+                "image": _image_url(item.image) if item.image else None,
+            },
+        }
+        for position, item in enumerate(ATTRACTIONS, start=1)
+    ]
+    swimming_url = _absolute(reverse("swimming"))
+    items.append(
+        {
+            "@type": "ListItem",
+            "position": len(items) + 1,
+            "item": {
+                "@type": "CollectionPage",
+                "@id": f"{swimming_url}#webpage",
+                "name": str(_("Výlety s koupáním")),
+                "url": swimming_url,
+                "image": _image_url(SWIMMING_IMAGE),
+            },
+        }
+    )
     return {
         "@type": "ItemList",
         "@id": f"{list_url}#item-list",
         "name": str(_("Výlety z Apartmánu Cvikov")),
-        "numberOfItems": len(ATTRACTIONS),
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": position,
-                "item": {
-                    "@type": "TouristAttraction",
-                    "@id": f"{_absolute(reverse('attraction_detail', kwargs={'slug': item.slug}))}#attraction",
-                    "name": str(item.name),
-                    "url": _absolute(
-                        reverse("attraction_detail", kwargs={"slug": item.slug})
-                    ),
-                    "image": _image_url(item.image) if item.image else None,
-                },
-            }
-            for position, item in enumerate(ATTRACTIONS, start=1)
-        ],
+        "numberOfItems": len(items),
+        "itemListElement": items,
     }
+
+
+def _swimming_list_node():
+    list_url = _absolute(reverse("swimming"))
+    items = [
+        {
+            "@type": "ListItem",
+            "position": position,
+            "item": {
+                "@type": "SportsActivityLocation",
+                "name": str(item.name),
+                "description": str(item.description),
+                "url": item.official_url,
+            },
+        }
+        for position, item in enumerate(SWIMMING_TIPS, start=1)
+    ]
+    return {
+        "@type": "ItemList",
+        "@id": f"{list_url}#item-list",
+        "name": str(_("Koupání v okolí Cvikova")),
+        "numberOfItems": len(items),
+        "itemListElement": items,
+    }
+
+
+def _collection_page_data(view_name):
+    if view_name == "vylety":
+        return _attraction_image_node(ATTRACTIONS[0]), _trip_list_node()
+    image_node = _image_node(
+        SWIMMING_IMAGE,
+        SWIMMING_IMAGE_WIDTH,
+        SWIMMING_IMAGE_HEIGHT,
+        _("Horské koupaliště Jonsdorf s tobogánem"),
+    )
+    return image_node, _swimming_list_node()
+
+
+def _static_breadcrumb(request, view_name, home_url, name):
+    items = [(_("Ubytování"), home_url)]
+    if view_name == "swimming":
+        items.append((_("Výlety"), _absolute(reverse("vylety"))))
+    items.append((name, _page_url(request)))
+    return _breadcrumb_node(request, items)
 
 
 def build_structured_data(request):
@@ -469,6 +543,7 @@ def build_structured_data(request):
     if match is None or match.url_name not in {
         "home",
         "vylety",
+        "swimming",
         "attraction_detail",
         "cenik",
         "obsazenost",
@@ -506,10 +581,8 @@ def build_structured_data(request):
         nodes.extend([page_node, image_node, attraction_node, breadcrumb])
     else:
         page_type, name, description = _page_metadata(view_name)
-        if view_name == "vylety":
-            first_attraction = ATTRACTIONS[0]
-            image_node = _attraction_image_node(first_attraction)
-            item_list = _trip_list_node()
+        if view_name in {"vylety", "swimming"}:
+            image_node, item_list = _collection_page_data(view_name)
             main_entity = item_list["@id"]
         else:
             image_node = _image_node(
@@ -538,11 +611,6 @@ def build_structured_data(request):
         if item_list:
             nodes.append(item_list)
         if view_name != "home":
-            nodes.append(
-                _breadcrumb_node(
-                    request,
-                    [(_("Ubytování"), home_url), (name, _page_url(request))],
-                )
-            )
+            nodes.append(_static_breadcrumb(request, view_name, home_url, name))
 
     return {"@context": "https://schema.org", "@graph": nodes}

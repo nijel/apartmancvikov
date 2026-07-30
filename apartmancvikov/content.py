@@ -231,3 +231,72 @@ ATTRACTIONS = (
 
 
 ATTRACTIONS_BY_SLUG = {item.slug: item for item in ATTRACTIONS}
+
+
+@dataclass(frozen=True)
+class SwimmingTip:
+    name: object
+    description: object
+    official_url: str
+    travel_tip: object | None = None
+
+
+SWIMMING_IMAGE = "vylety/koupaliste-jonsdorf.jpg"
+SWIMMING_IMAGE_WIDTH = 1920
+SWIMMING_IMAGE_HEIGHT = 1081
+
+
+SWIMMING_TIPS = (
+    SwimmingTip(
+        name=_("Koupaliště Sloup v Čechách"),
+        description=_("Přírodní koupaliště v kempu s lanovým centrem a občerstvením."),
+        official_url="https://koupaliste.sloupvcechach.cz/",
+        travel_tip=_("Ze Cvikova se sem můžete vydat také autobusem."),
+    ),
+    SwimmingTip(
+        name=_("Koupaliště Jablonné v Podještědí"),
+        description=_(
+            "Koupaliště v kempu s dětským hřištěm, restaurací a nafukovací "
+            "skluzavkou na vodě."
+        ),
+        official_url="https://www.kempjablonne.cz/",
+    ),
+    SwimmingTip(
+        name=_("Rekreační areál Kristýna"),
+        description=_(
+            "Koupání v zatopeném bývalém dole s písčitou pláží, dětským "
+            "hřištěm, šlapadly a restaurací."
+        ),
+        official_url="https://www.kemp-kristyna.cz/",
+    ),
+    SwimmingTip(
+        name=_("Horské koupaliště Jonsdorf"),
+        description=_(
+            "Koupaliště s tobogánem, dětským bazénem, vzduchovou trampolínou "
+            "a občerstvením."
+        ),
+        official_url="https://www.jonsdorf.de/gebirgsbad/",
+        travel_tip=_(
+            "V létě sem podle aktuálního jízdního řádu jezdí horský expres "
+            "z náměstí ve Cvikově."
+        ),
+    ),
+    SwimmingTip(
+        name=_("Koupaliště Dubice"),
+        description=_(
+            "Koupaliště u České Lípy s tobogány a brouzdalištěm. Na přilehlém "
+            "rybníce je možné vyzkoušet wakeboarding, paddleboarding i koupání "
+            "a v okolí je volně přístupné 3D bludiště."
+        ),
+        official_url="https://www.sportlipa.cz/venkovni-koupaliste-dubice",
+    ),
+    SwimmingTip(
+        name=_("Městské koupaliště Česká Kamenice"),
+        description=_(
+            "Koupaliště s bistrem. Návštěvu lze spojit s výletem k ručnímu "
+            "přívozu a do parku miniatur Mlýnky Brand, kam se dostanete i "
+            "s kočárkem, nebo na skalní vyhlídku Ponorka."
+        ),
+        official_url=("https://ceska-kamenice.cz/mapa-vyletu/mestske-koupaliste/"),
+    ),
+)

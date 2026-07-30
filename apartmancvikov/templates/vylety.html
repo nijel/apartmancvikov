@@ -8,7 +8,7 @@
 
 {% block meta_description %}
   <meta name="description"
-        content="{% translate "Deset ověřených tipů na rodinné výlety z Apartmánu Cvikov: pumptrack, vyhlídky, skály, hrady, sklárny, lyžování i program za deště." %}" />
+        content="{% translate "Deset ověřených tipů na rodinné výlety a šest míst ke koupání v okolí Apartmánu Cvikov." %}" />
 {% endblock meta_description %}
 
 {% block ogtitle %}
@@ -26,7 +26,7 @@
 {% endblock headline %}
 
 {% block lead %}
-  {% translate "Poznejte s dětmi přírodu, skály, hrady a sklářskou historii." %}
+  {% translate "Poznejte s dětmi přírodu, skály, hrady, sklářskou historii i místa ke koupání." %}
 {% endblock lead %}
 
 {% block content %}
@@ -72,6 +72,17 @@
             </div>
           </article>
         {% endfor %}
+        <article class="attraction-card" id="koupani">
+          <figure class="attraction-card__media">
+            {% responsive_image "vylety/koupaliste-jonsdorf.jpg" 1920 1081 _("Horské koupaliště Jonsdorf s tobogánem") sizes="(min-width: 54rem) 25vw, (min-width: 38rem) 50vw, 100vw" %}
+          </figure>
+          <div class="attraction-card__body">
+            <p class="eyebrow">{% translate "Šest tipů v okolí" %}</p>
+            <h2>{% translate "Výlety s koupáním" %}</h2>
+            <p>{% translate "Přírodní koupaliště, bazény a jezera pro osvěžení i celodenní rodinný výlet." %}</p>
+            <a href="{% url "swimming" %}" class="text-link card-link">{% translate "Prohlédnout koupání" %}<span aria-hidden="true">→</span></a>
+          </div>
+        </article>
       </div>
     </div>
   </section>

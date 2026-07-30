@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% load i18n images seo static %}
+
+{% block title %}
+  {% translate "Koupání v okolí Cvikova | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description"
+        content="{% translate "Šest tipů na koupání v okolí Apartmánu Cvikov: Sloup v Čechách, Jablonné v Podještědí, Kristýna, Jonsdorf, Dubice a Česká Kamenice." %}" />
+{% endblock meta_description %}
+
+{% block ogtitle %}
+  <meta property="og:title"
+        content="{% translate "Výlety s koupáním z Apartmánu Cvikov" %}" />
+{% endblock ogtitle %}
+
+{% block ogdescription %}
+  <meta property="og:description"
+        content="{% translate "Přírodní koupaliště, bazény a jezera pro osvěžení i celodenní rodinný výlet." %}" />
+{% endblock ogdescription %}
+
+{% block headline %}
+  {% translate "Výlety s koupáním" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Pokud vás omrzí bazén na zahradě nebo chcete spojit koupání s výletem, je v okolí několik možností." %}
+{% endblock lead %}
+
+{% block ogimage %}
+  <meta property="og:image"
+        content="{{ site_url }}{% static "vylety/koupaliste-jonsdorf.jpg" %}" />
+{% endblock ogimage %}
+
+{% block ogimagealt %}
+  <meta property="og:image:alt"
+        content="{% translate "Horské koupaliště Jonsdorf s tobogánem" %}" />
+{% endblock ogimagealt %}
+
+{% block content %}
+  <article class="content-section swimming-page">
+    <div class="site-container">
+      <nav class="breadcrumbs" aria-label="{% translate "Drobečková navigace" %}">
+        <ol>
+          <li><a href="{% url "home" %}">{% translate "Ubytování" %}</a></li>
+          <li><a href="{% url "vylety" %}">{% translate "Výlety" %}</a></li>
+          <li aria-current="page">{% translate "Koupání" %}</li>
+        </ol>
+      </nav>
+
+      <header class="section-intro">
+        <p class="eyebrow">{% translate "K vodě" %}</p>
+        <h2>{% translate "Šest míst pro malé i velké plavce" %}</h2>
+        <p>
+          {% translate "Vyberte si přírodní koupaliště, horský bazén nebo jezero s dalšími aktivitami pro děti. Před odjezdem doporučujeme ověřit aktuální otevírací dobu a podmínky koupání na webu provozovatele." %}
+        </p>
+      </header>
+
+      <figure class="swimming-photo">
+        {% responsive_image_url "vylety/koupaliste-jonsdorf.jpg" 1920 as swimming_lightbox %}
+        <a href="{{ swimming_lightbox }}"
+           data-lightbox
+           data-caption="{% translate "Horské koupaliště Jonsdorf" %}">
+          {% responsive_image "vylety/koupaliste-jonsdorf.jpg" 1920 1081 _("Horské koupaliště Jonsdorf s tobogánem") sizes="(min-width: 54rem) 62rem, 100vw" %}
+        </a>
+        <figcaption>{% translate "Horské koupaliště Jonsdorf" %}</figcaption>
+      </figure>
+
+      <div class="swimming-grid">
+        {% for tip in swimming_tips %}
+          <section class="swimming-card">
+            <h3>{{ tip.name|nbsp_prepositions }}</h3>
+            <p>{{ tip.description }}</p>
+            {% if tip.travel_tip %}
+              <p class="swimming-card__travel">
+                <strong>{% translate "Doprava:" %}</strong> {{ tip.travel_tip }}
+              </p>
+            {% endif %}
+            <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
+          </section>
+        {% endfor %}
+      </div>
+
+      <aside class="callout">
+        <div>
+          <p class="eyebrow">{% translate "Další nápady" %}</p>
+          <h2>{% translate "Vyberte si další rodinný výlet" %}</h2>
+          <p>{% translate "V okolí najdete také skály, hrady, vyhlídky, sklárny a program pro deštivé dny." %}</p>
+        </div>
+        <div class="button-row">
+          <a href="{% url "vylety" %}" class="button button--primary">{% translate "Všechny výlety" %}</a>
+          <a href="{% url "obsazenost" %}" class="button button--secondary">{% translate "Volné termíny" %}</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+{% endblock content %}

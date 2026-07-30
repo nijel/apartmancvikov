@@ -15,7 +15,7 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic import FormView, TemplateView
 
-from .content import ATTRACTIONS, ATTRACTIONS_BY_SLUG
+from .content import ATTRACTIONS, ATTRACTIONS_BY_SLUG, SWIMMING_TIPS
 from .forms import ContactInquiryForm
 from .site_config import (
     ADDRESS_LOCALITY,
@@ -39,6 +39,16 @@ class TripsView(TemplateView):
         """Add all curated attractions to the trips overview."""
         context = super().get_context_data(**kwargs)
         context["attractions"] = ATTRACTIONS
+        return context
+
+
+class SwimmingTripsView(TemplateView):
+    template_name = "koupani.html"
+
+    def get_context_data(self, **kwargs):
+        """Add the curated swimming options to their dedicated guide."""
+        context = super().get_context_data(**kwargs)
+        context["swimming_tips"] = SWIMMING_TIPS
         return context
 
 
@@ -161,6 +171,7 @@ def llms_txt(_request):
 - English: {settings.SITE_URL}/en/
 - German: {settings.SITE_URL}/de/
 - Family trip guide: {settings.SITE_URL}/cs/vylety/
+- Swimming trip guide: {settings.SITE_URL}/cs/vylety/koupani/
 - Availability: {settings.SITE_URL}/cs/obsazenost/
 - Prices and conditions: {settings.SITE_URL}/cs/cenik/
 - Contact: {settings.SITE_URL}/cs/kontakt/
@@ -173,8 +184,8 @@ for name, e-mail, optional phone, arrival and departure dates, numbers of
 adults, children aged 3-12 and children under 3, and an optional note. Sending
 the form does not confirm a reservation; availability is confirmed by the host.
 
-The trip guide contains individual pages for ten attractions around Cvikov.
-For changeable admission prices and opening hours, follow the official
-attraction links on those pages.
+The trip guide contains individual pages for ten attractions around Cvikov
+and six additional swimming tips. For changeable admission prices and opening
+hours, follow the official attraction links on those pages.
 """
     return HttpResponse(content, content_type="text/plain; charset=utf-8")

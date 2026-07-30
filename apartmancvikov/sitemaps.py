@@ -7,7 +7,7 @@ from django.contrib.sitemaps import Sitemap
 from django.templatetags.static import static
 from django.urls import reverse
 
-from .content import ATTRACTIONS
+from .content import ATTRACTIONS, SWIMMING_IMAGE
 
 HOME_IMAGES = (
     "foto/dum.jpg",
@@ -72,6 +72,7 @@ class StaticViewSitemap(LocalizedSitemap):
         return [
             "home",
             "vylety",
+            "swimming",
             "cenik",
             "obsazenost",
             "kontakt",
@@ -89,7 +90,13 @@ class StaticViewSitemap(LocalizedSitemap):
         if item == "home":
             return ("bg.jpg", *HOME_IMAGES)
         if item == "vylety":
-            return ("bg.jpg", *(item.image for item in ATTRACTIONS if item.image))
+            return (
+                "bg.jpg",
+                *(item.image for item in ATTRACTIONS if item.image),
+                SWIMMING_IMAGE,
+            )
+        if item == "swimming":
+            return ("bg.jpg", SWIMMING_IMAGE)
         return ("bg.jpg",)
 
 

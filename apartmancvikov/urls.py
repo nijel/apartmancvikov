@@ -34,6 +34,7 @@ from .views import (
     AttractionDetailView,
     HomeView,
     InquiryView,
+    SwimmingTripsView,
     TripsView,
     llms_txt,
     robots_txt,
@@ -44,6 +45,7 @@ sitemaps = {"static": StaticViewSitemap, "attractions": AttractionSitemap}
 urlpatterns = i18n_patterns(  # noqa: RUF005
     path("", HomeView.as_view(), name="home"),
     path("vylety/", TripsView.as_view(), name="vylety"),
+    path("vylety/koupani/", SwimmingTripsView.as_view(), name="swimming"),
     path(
         "vylety/<slug:slug>/",
         AttractionDetailView.as_view(),
