@@ -320,7 +320,7 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Rodinné výlety z Apartmánu Cvikov"),
             _(
-                "Deset ověřených tipů na rodinné výlety a šest míst ke koupání "
+                "Jedenáct ověřených tipů na rodinné výlety a šest míst ke koupání "
                 "v okolí Apartmánu Cvikov."
             ),
         ),

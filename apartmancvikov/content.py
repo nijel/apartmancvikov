@@ -41,6 +41,8 @@ class Attraction:
         "from_apartment"
     )
     driving_distance_km: int | float | None = None
+    alternate_distance_label: object | None = None
+    alternate_distance_km: int | float | None = None
     description_paragraphs: tuple[object, ...] = ()
     related_trips: tuple[TripRelation, ...] = ()
 
@@ -439,6 +441,67 @@ ATTRACTIONS = (
         image_height=1200,
     ),
     Attraction(
+        slug="privoz-mlynky-vyhlidky",
+        name=_("Přívoz, Mlýnky a vyhlídky"),
+        summary=_("Dětský přívoz, vodní miniatury a skalní vyhlídky v České Kamenici."),
+        description=_(
+            "Od městského koupaliště se vydejte k rybníku s ručním přívozem, "
+            "na kterém se děti mohou vlastní silou převézt na druhý břeh. "
+            "Krátká cesta pokračuje do parku miniatur Mlýnky a stejnou trasou "
+            "se vrací zpět."
+        ),
+        description_paragraphs=(
+            _(
+                "Mlýnky tvoří modely českokamenických domů rozmístěné kolem "
+                "potůčku. Voda roztáčí pohyblivé části mlýna, pily a dalších "
+                "staveb; děti mohou také pumpovat vodu, zvedat hráze a měnit "
+                "její tok."
+            ),
+            _(
+                "Delší okruh stoupá lesem na pískovcové vyhlídky Žába a "
+                "Ponorka. Ponorku tvoří tři skalní věže přístupné po vytesaných "
+                "schodech a propojené můstky se zábradlím. Z nejvyšší skály je "
+                "výhled na Jehlu, Zámecký vrch a okolní krajinu."
+            ),
+            _(
+                "Podle sil můžete výlet prodloužit také na čedičovou Jehlu. "
+                "K její malé vyhlídkové plošině vede stezka po úzkém skalnatém "
+                "hřbítku, proto se tato část nehodí pro kočárky ani pro děti, "
+                "které si nejsou jisté v prudším terénu."
+            ),
+        ),
+        distance_km=4,
+        distance_kind="walking_loop",
+        driving_distance_km=22,
+        alternate_distance_label=_("K Mlýnkům a zpět"),
+        alternate_distance_km=1.4,
+        difficulty=MODERATE,
+        family_tip=_(
+            "Krátká varianta k přívozu a Mlýnkům je nenáročná; na vyhlídkách "
+            "počítejte se schody a dohledem nad dětmi."
+        ),
+        map_url="https://mapy.com/s/gacumosara",
+        official_url=("https://ceska-kamenice.cz/mapa-vyletu/okruh-vyhlidky-brand/"),
+        stroller_access=_(
+            "K přívozu a Mlýnkům ano; celý okruh přes skalní vyhlídky ne."
+        ),
+        admission=_("Zdarma"),
+        opening_hours=_("Přívoz, Mlýnky i vyhlídky jsou volně přístupné."),
+        related_trips=(
+            TripRelation(
+                target_kind="swimming",
+                target_slug="koupaliste-ceska-kamenice",
+                description=_(
+                    "Po výletě se můžete osvěžit na nedalekém městském "
+                    "koupališti s bistrem."
+                ),
+            ),
+        ),
+        image="vylety/ceska-kamenice-privoz.jpg",
+        image_width=1600,
+        image_height=1200,
+    ),
+    Attraction(
         slug="oybin",
         name=_("Hrad a klášter Oybin"),
         summary=_("Romantické zříceniny na skalním masivu v Žitavských horách."),
@@ -552,6 +615,7 @@ class SwimmingTip:
     stroller_access: object
     admission: object
     opening_hours: object
+    driving_distance_km: int | float | None = None
     travel_tip: object | None = None
     related_trips: tuple[TripRelation, ...] = ()
 
@@ -650,15 +714,22 @@ SWIMMING_TIPS = (
     SwimmingTip(
         slug="koupaliste-ceska-kamenice",
         name=_("Městské koupaliště Česká Kamenice"),
-        description=_(
-            "Koupaliště s bistrem. Návštěvu lze spojit s výletem k ručnímu "
-            "přívozu a do parku miniatur Mlýnky Brand, kam se dostanete i "
-            "s kočárkem, nebo na skalní vyhlídku Ponorka."
-        ),
+        description=_("Koupaliště s bistrem."),
         official_url=("https://ceska-kamenice.cz/mapa-vyletu/mestske-koupaliste/"),
         stroller_access=_("Ano"),
         admission=_("Dítě 40 Kč, dospělý 80 Kč."),
         opening_hours=_("V létě 10–19."),
+        driving_distance_km=22,
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="privoz-mlynky-vyhlidky",
+                description=_(
+                    "Od koupaliště se vydejte přes ruční přívoz a Mlýnky na "
+                    "skalní vyhlídky."
+                ),
+            ),
+        ),
     ),
 )
 

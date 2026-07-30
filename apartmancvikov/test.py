@@ -440,8 +440,14 @@ class SeoTest(TestCase):
                     ("swimming", "koupaliste-jonsdorf"),
                 )
             ),
+            frozenset(
+                (
+                    ("attraction", "privoz-mlynky-vyhlidky"),
+                    ("swimming", "koupaliste-ceska-kamenice"),
+                )
+            ),
         }
-        self.assertEqual(relation_count, 12)
+        self.assertEqual(relation_count, 14)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):
@@ -463,13 +469,54 @@ class SeoTest(TestCase):
         self.assertContains(exotenhaus, 'href="/cs/vylety/oybin/"')
 
     def test_swimming_cards_link_to_related_attractions(self):
-        """Only the Sloup and Jonsdorf cards carry contextual trip links."""
+        """The curated swimming cards carry contextual trip links."""
         response = self.client.get("/cs/vylety/koupani/")
-        self.assertContains(response, 'class="swimming-card__related"', count=2)
+        self.assertContains(response, 'class="swimming-card__related"', count=3)
         self.assertContains(response, 'id="koupaliste-sloup"')
         self.assertContains(response, 'id="koupaliste-jonsdorf"')
+        self.assertContains(response, 'id="koupaliste-ceska-kamenice"')
         self.assertContains(response, 'href="/cs/vylety/skalni-hrad-sloup/"')
         self.assertContains(response, 'href="/cs/vylety/motyli-dum-jonsdorf/"')
+        self.assertContains(
+            response,
+            'href="/cs/vylety/privoz-mlynky-vyhlidky/"',
+        )
+
+    def test_ceska_kamenice_trip_has_both_route_lengths(self):
+        """The long loop and stroller-friendly short route stay distinct."""
+        response = self.client.get("/cs/vylety/privoz-mlynky-vyhlidky/")
+        self.assertContains(response, "Přívoz, Mlýnky a vyhlídky")
+        self.assertContains(response, "<dt>Vzdálenost autem</dt>", html=True)
+        self.assertContains(response, "<dt>Délka okruhu</dt>", html=True)
+        self.assertContains(response, "<dt>K Mlýnkům a zpět</dt>", html=True)
+        self.assertContains(response, "22 km")
+        self.assertContains(response, "4 km")
+        self.assertContains(response, "1,4 km")
+        self.assertContains(response, "Přívoz, Mlýnky i vyhlídky jsou volně přístupné")
+        self.assertContains(
+            response,
+            "/static/responsive/vylety/ceska-kamenice-privoz-480.webp",
+        )
+        self.assertContains(
+            response,
+            'href="/cs/vylety/koupani/#koupaliste-ceska-kamenice"',
+        )
+
+        swimming = self.client.get("/cs/vylety/koupani/")
+        self.assertContains(swimming, "Koupaliště s bistrem.")
+        self.assertContains(swimming, "22 km")
+
+        english = self.client.get("/en/vylety/privoz-mlynky-vyhlidky/")
+        self.assertContains(english, "Ferry, Mlýnky and viewpoints")
+        self.assertContains(english, "To Mlýnky and back")
+        self.assertContains(english, "freely accessible")
+        self.assertNotContains(english, "volně přístupné")
+
+        german = self.client.get("/de/vylety/privoz-mlynky-vyhlidky/")
+        self.assertContains(german, "Fähre, Mlýnky und Aussichtspunkte")
+        self.assertContains(german, "Zu Mlýnky und zurück")
+        self.assertContains(german, "frei zugänglich")
+        self.assertNotContains(german, "volně přístupné")
 
     def test_related_trip_links_and_copy_are_translated(self):
         """Related links preserve the active language and localized rationale."""
@@ -824,7 +871,7 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 57)
+        self.assertEqual(len(locations), 60)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/koupani/",
@@ -832,6 +879,10 @@ class SeoTest(TestCase):
         )
         self.assertIn(
             "https://apartmancvikov.cz/de/vylety/motyli-dum-jonsdorf/", locations
+        )
+        self.assertIn(
+            "https://apartmancvikov.cz/cs/vylety/privoz-mlynky-vyhlidky/",
+            locations,
         )
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/pumptrack-cvikov/", locations
@@ -856,6 +907,11 @@ class SeoTest(TestCase):
         self.assertIn(
             "<image:loc>https://apartmancvikov.cz/static/vylety/"
             "koupaliste-jonsdorf.jpg</image:loc>",
+            sitemap,
+        )
+        self.assertIn(
+            "<image:loc>https://apartmancvikov.cz/static/vylety/"
+            "ceska-kamenice-privoz.jpg</image:loc>",
             sitemap,
         )
 

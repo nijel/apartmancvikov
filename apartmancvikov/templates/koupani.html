@@ -82,6 +82,12 @@
               <h3>{{ tip.name|nbsp_prepositions }}</h3>
               <p>{{ tip.description }}</p>
               <dl class="swimming-facts">
+                {% if tip.driving_distance_km %}
+                  <dt>{% translate "Vzdálenost autem" %}</dt>
+                  <dd>
+                    {{ tip.driving_distance_km }} km
+                  </dd>
+                {% endif %}
                 <dt>{% translate "Kočárek" %}</dt>
                 <dd>
                   {{ tip.stroller_access }}

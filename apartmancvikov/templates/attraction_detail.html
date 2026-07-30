@@ -105,6 +105,12 @@
               <dt>{% translate "Vzdálenost" %}</dt>
               <dd>{% blocktranslate with distance=attraction.distance_km %}přibližně {{ distance }} km{% endblocktranslate %}</dd>
             {% endif %}
+            {% if attraction.alternate_distance_km %}
+              <dt>{{ attraction.alternate_distance_label }}</dt>
+              <dd>
+                {{ attraction.alternate_distance_km }} km
+              </dd>
+            {% endif %}
             <dt>{% translate "Náročnost" %}</dt>
             <dd>
               {{ attraction.difficulty }}

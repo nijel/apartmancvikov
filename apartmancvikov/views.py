@@ -121,6 +121,14 @@ class AttractionDetailView(TemplateView):
             distance_description = _(
                 "Přibližně %(distance)s km od Apartmánu Cvikov."
             ) % {"distance": distance}
+        if attraction.alternate_distance_km is not None:
+            distance_description = _(
+                "%(primary)s Kratší varianta „%(label)s“ měří %(distance)s km."
+            ) % {
+                "primary": distance_description,
+                "label": attraction.alternate_distance_label,
+                "distance": number_format(attraction.alternate_distance_km),
+            }
 
         context.update(
             {
@@ -242,7 +250,7 @@ for name, e-mail, optional phone, arrival and departure dates, numbers of
 adults, children aged 3-12 and children under 3, and an optional note. Sending
 the form does not confirm a reservation; availability is confirmed by the host.
 
-The trip guide contains individual pages for ten attractions around Cvikov
+The trip guide contains individual pages for eleven attractions around Cvikov
 and six additional swimming tips. For changeable admission prices and opening
 hours, follow the official attraction links on those pages.
 """

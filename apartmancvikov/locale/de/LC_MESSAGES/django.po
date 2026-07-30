@@ -2336,3 +2336,112 @@ msgid ""
 msgstr ""
 "Verbinden Sie das Baden mit einem Besuch der exotischen Tiere oder weichen "
 "Sie bei schlechtem Wetter dorthin aus."
+
+#: apartmancvikov/content.py
+msgid "Přívoz, Mlýnky a vyhlídky"
+msgstr "Fähre, Mlýnky und Aussichtspunkte"
+
+#: apartmancvikov/content.py
+msgid "Dětský přívoz, vodní miniatury a skalní vyhlídky v České Kamenici."
+msgstr ""
+"Eine Kinderfähre, wasserbetriebene Miniaturen und Felsenaussichten in Česká "
+"Kamenice."
+
+#: apartmancvikov/content.py
+msgid ""
+"Od městského koupaliště se vydejte k rybníku s ručním přívozem, na kterém se "
+"děti mohou vlastní silou převézt na druhý břeh. Krátká cesta pokračuje do "
+"parku miniatur Mlýnky a stejnou trasou se vrací zpět."
+msgstr ""
+"Vom städtischen Freibad gehen Sie zum Teich mit einer handbetriebenen Fähre, "
+"mit der sich Kinder aus eigener Kraft ans andere Ufer ziehen können. Der "
+"kurze Weg führt weiter zum Miniaturenpark Mlýnky und auf derselben Strecke "
+"zurück."
+
+#: apartmancvikov/content.py
+msgid ""
+"Mlýnky tvoří modely českokamenických domů rozmístěné kolem potůčku. Voda "
+"roztáčí pohyblivé části mlýna, pily a dalších staveb; děti mohou také "
+"pumpovat vodu, zvedat hráze a měnit její tok."
+msgstr ""
+"Mlýnky besteht aus Modellen von Gebäuden aus Česká Kamenice, die um einen "
+"Bach angeordnet sind. Das Wasser bewegt Teile einer Mühle, eines Sägewerks "
+"und weiterer Bauten; Kinder können außerdem Wasser pumpen, Wehre anheben und "
+"den Wasserlauf verändern."
+
+#: apartmancvikov/content.py
+msgid ""
+"Delší okruh stoupá lesem na pískovcové vyhlídky Žába a Ponorka. Ponorku "
+"tvoří tři skalní věže přístupné po vytesaných schodech a propojené můstky se "
+"zábradlím. Z nejvyšší skály je výhled na Jehlu, Zámecký vrch a okolní "
+"krajinu."
+msgstr ""
+"Der längere Rundweg steigt durch den Wald zu den Sandsteinaussichten Žába "
+"und Ponorka an. Ponorka besteht aus drei Felstürmen, die über in den Fels "
+"gehauene Stufen erreichbar und durch Stege mit Geländern verbunden sind. "
+"Vom höchsten Felsen reicht der Blick zur Jehla, zum Zámecký vrch und in die "
+"umliegende Landschaft."
+
+#: apartmancvikov/content.py
+msgid ""
+"Podle sil můžete výlet prodloužit také na čedičovou Jehlu. K její malé "
+"vyhlídkové plošině vede stezka po úzkém skalnatém hřbítku, proto se tato část "
+"nehodí pro kočárky ani pro děti, které si nejsou jisté v prudším terénu."
+msgstr ""
+"Je nach Kondition können Sie den Ausflug bis zum Basaltgipfel Jehla "
+"verlängern. Ein Pfad über einen schmalen felsigen Kamm führt zur kleinen "
+"Aussichtsplattform; dieser Abschnitt eignet sich daher weder für "
+"Kinderwagen noch für Kinder, die sich in steilerem Gelände unsicher fühlen."
+
+#: apartmancvikov/content.py
+msgid "K Mlýnkům a zpět"
+msgstr "Zu Mlýnky und zurück"
+
+#: apartmancvikov/content.py
+msgid ""
+"Krátká varianta k přívozu a Mlýnkům je nenáročná; na vyhlídkách počítejte se "
+"schody a dohledem nad dětmi."
+msgstr ""
+"Die kurze Variante zur Fähre und nach Mlýnky ist leicht; an den "
+"Aussichtspunkten müssen Sie mit Stufen rechnen und Kinder beaufsichtigen."
+
+#: apartmancvikov/content.py
+msgid "K přívozu a Mlýnkům ano; celý okruh přes skalní vyhlídky ne."
+msgstr ""
+"Bis zur Fähre und nach Mlýnky ja; für den gesamten Rundweg über die "
+"Felsenaussichten nein."
+
+#: apartmancvikov/content.py
+msgid "Přívoz, Mlýnky i vyhlídky jsou volně přístupné."
+msgstr "Die Fähre, Mlýnky und die Aussichtspunkte sind frei zugänglich."
+
+#: apartmancvikov/content.py
+msgid "Po výletě se můžete osvěžit na nedalekém městském koupališti s bistrem."
+msgstr ""
+"Nach dem Ausflug können Sie sich im nahen städtischen Freibad mit Bistro "
+"erfrischen."
+
+#: apartmancvikov/content.py
+msgid "Koupaliště s bistrem."
+msgstr "Ein Freibad mit Bistro."
+
+#: apartmancvikov/content.py
+msgid "Od koupaliště se vydejte přes ruční přívoz a Mlýnky na skalní vyhlídky."
+msgstr ""
+"Vom Freibad gelangen Sie über die handbetriebene Fähre und Mlýnky zu den "
+"Felsenaussichten."
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/vylety.html
+msgid ""
+"Jedenáct ověřených tipů na rodinné výlety a šest míst ke koupání v okolí "
+"Apartmánu Cvikov."
+msgstr ""
+"Elf erprobte Tipps für Familienausflüge und sechs Badestellen in der "
+"Umgebung der Ferienwohnung Cvikov."
+
+#: apartmancvikov/views.py
+#, python-format
+msgid ""
+"%(primary)s Kratší varianta „%(label)s“ měří %(distance)s km."
+msgstr ""
+"%(primary)s Die kürzere Variante „%(label)s“ ist %(distance)s km lang."

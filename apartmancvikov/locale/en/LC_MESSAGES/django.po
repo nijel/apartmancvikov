@@ -2294,3 +2294,110 @@ msgid ""
 msgstr ""
 "Combine your swim with a visit to exotic animals, or head there in poor "
 "weather."
+
+#: apartmancvikov/content.py
+msgid "Přívoz, Mlýnky a vyhlídky"
+msgstr "Ferry, Mlýnky and viewpoints"
+
+#: apartmancvikov/content.py
+msgid "Dětský přívoz, vodní miniatury a skalní vyhlídky v České Kamenici."
+msgstr ""
+"A children's ferry, water-powered miniatures and rock viewpoints in Česká "
+"Kamenice."
+
+#: apartmancvikov/content.py
+msgid ""
+"Od městského koupaliště se vydejte k rybníku s ručním přívozem, na kterém se "
+"děti mohou vlastní silou převézt na druhý břeh. Krátká cesta pokračuje do "
+"parku miniatur Mlýnky a stejnou trasou se vrací zpět."
+msgstr ""
+"From the municipal swimming pool, walk to the pond with a hand-operated "
+"ferry, where children can pull themselves across to the other side. The "
+"short walk continues to the Mlýnky miniature park and returns along the "
+"same route."
+
+#: apartmancvikov/content.py
+msgid ""
+"Mlýnky tvoří modely českokamenických domů rozmístěné kolem potůčku. Voda "
+"roztáčí pohyblivé části mlýna, pily a dalších staveb; děti mohou také "
+"pumpovat vodu, zvedat hráze a měnit její tok."
+msgstr ""
+"Mlýnky consists of models of Česká Kamenice buildings arranged around a "
+"stream. The water turns moving parts of a mill, sawmill and other "
+"structures; children can also pump water, raise sluice gates and alter its "
+"flow."
+
+#: apartmancvikov/content.py
+msgid ""
+"Delší okruh stoupá lesem na pískovcové vyhlídky Žába a Ponorka. Ponorku "
+"tvoří tři skalní věže přístupné po vytesaných schodech a propojené můstky se "
+"zábradlím. Z nejvyšší skály je výhled na Jehlu, Zámecký vrch a okolní "
+"krajinu."
+msgstr ""
+"The longer loop climbs through the woods to the Žába and Ponorka sandstone "
+"viewpoints. Ponorka consists of three rock towers reached by carved steps "
+"and connected by railed bridges. The highest rock overlooks Jehla, Zámecký "
+"vrch and the surrounding countryside."
+
+#: apartmancvikov/content.py
+msgid ""
+"Podle sil můžete výlet prodloužit také na čedičovou Jehlu. K její malé "
+"vyhlídkové plošině vede stezka po úzkém skalnatém hřbítku, proto se tato část "
+"nehodí pro kočárky ani pro děti, které si nejsou jisté v prudším terénu."
+msgstr ""
+"If you have enough energy, extend the trip to the basalt peak of Jehla. A "
+"path along a narrow rocky ridge leads to its small viewing platform, so "
+"this section is unsuitable for pushchairs or children who are not confident "
+"on steeper terrain."
+
+#: apartmancvikov/content.py
+msgid "K Mlýnkům a zpět"
+msgstr "To Mlýnky and back"
+
+#: apartmancvikov/content.py
+msgid ""
+"Krátká varianta k přívozu a Mlýnkům je nenáročná; na vyhlídkách počítejte se "
+"schody a dohledem nad dětmi."
+msgstr ""
+"The short option to the ferry and Mlýnky is easy; expect steps at the "
+"viewpoints and keep children under supervision."
+
+#: apartmancvikov/content.py
+msgid "K přívozu a Mlýnkům ano; celý okruh přes skalní vyhlídky ne."
+msgstr ""
+"Yes to the ferry and Mlýnky; no for the full loop via the rock viewpoints."
+
+#: apartmancvikov/content.py
+msgid "Přívoz, Mlýnky i vyhlídky jsou volně přístupné."
+msgstr "The ferry, Mlýnky and the viewpoints are freely accessible."
+
+#: apartmancvikov/content.py
+msgid "Po výletě se můžete osvěžit na nedalekém městském koupališti s bistrem."
+msgstr ""
+"After the trip, cool off at the nearby municipal swimming pool with a "
+"bistro."
+
+#: apartmancvikov/content.py
+msgid "Koupaliště s bistrem."
+msgstr "A swimming pool with a bistro."
+
+#: apartmancvikov/content.py
+msgid "Od koupaliště se vydejte přes ruční přívoz a Mlýnky na skalní vyhlídky."
+msgstr ""
+"From the swimming pool, continue via the hand-operated ferry and Mlýnky to "
+"the rock viewpoints."
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/vylety.html
+msgid ""
+"Jedenáct ověřených tipů na rodinné výlety a šest míst ke koupání v okolí "
+"Apartmánu Cvikov."
+msgstr ""
+"Eleven tried-and-tested family trip ideas and six places to swim near "
+"Apartment Cvikov."
+
+#: apartmancvikov/views.py
+#, python-format
+msgid ""
+"%(primary)s Kratší varianta „%(label)s“ měří %(distance)s km."
+msgstr ""
+"%(primary)s The shorter “%(label)s” option is %(distance)s km long."
