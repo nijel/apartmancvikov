@@ -292,7 +292,7 @@ adults, children aged 3-12 and children under 3, and an optional note. Sending
 the form does not confirm a reservation; availability is confirmed by the host.
 
 The trip guide contains individual pages for nineteen attractions around
-Cvikov, six additional swimming tips and eleven recommended restaurants. For
+Cvikov, six additional swimming tips and twelve recommended restaurants. For
 changeable admission prices and opening hours, follow the official links on
 those pages.
 """

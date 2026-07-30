@@ -322,7 +322,7 @@ def _page_metadata(view_name):
             _("Rodinné výlety z Apartmánu Cvikov"),
             _(
                 "Devatenáct ověřených tipů na rodinné výlety, šest míst ke "
-                "koupání a jedenáct doporučených restaurací v okolí "
+                "koupání a dvanáct doporučených restaurací v okolí "
                 "Apartmánu Cvikov."
             ),
         ),
@@ -339,7 +339,7 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Doporučené restaurace z Apartmánu Cvikov"),
             _(
-                "Jedenáct doporučených restaurací, jídelen a občerstvení v "
+                "Dvanáct doporučených restaurací, jídelen a občerstvení v "
                 "pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních "
                 "cílech."
             ),

@@ -1255,6 +1255,16 @@ SWIMMING_TIPS = (
             "30–150 Kč podle sezony, věku a času vstupu; celodenní parkování 150 Kč."
         ),
         opening_hours=_("V létě 9–21."),
+        related_trips=(
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="kaido-sushi",
+                description=_(
+                    "Před koupáním nebo po něm se můžete zastavit na sushi "
+                    "a ramen v Kaido Sushi."
+                ),
+            ),
+        ),
     ),
     SwimmingTip(
         slug="koupaliste-ceska-kamenice",

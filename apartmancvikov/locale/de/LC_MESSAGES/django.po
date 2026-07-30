@@ -2961,8 +2961,8 @@ msgid "Rybí speciality z vlastních rybníků a sádek i tradiční česká kuc
 msgstr "Fischspezialitäten aus eigenen Teichen und Hälterungen sowie traditionelle tschechische Küche."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
-msgid "Jedenáct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
-msgstr "Elf empfohlene Restaurants, Kantinen und Imbisse in Laufnähe der Ferienwohnung Cvikov und nahe gelegener Ausflugsziele."
+msgid "Dvanáct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
+msgstr "Zwölf empfohlene Restaurants, Kantinen und Imbisse in Laufnähe der Ferienwohnung Cvikov und nahe gelegener Ausflugsziele."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 #: apartmancvikov/templates/vylety.html
@@ -2970,8 +2970,8 @@ msgid "Doporučené restaurace"
 msgstr "Empfohlene Restaurants"
 
 #: apartmancvikov/structured_data.py
-msgid "Devatenáct ověřených tipů na rodinné výlety, šest míst ke koupání a jedenáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Neunzehn erprobte Tipps für Familienausflüge, sechs Badestellen und elf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
+msgid "Devatenáct ověřených tipů na rodinné výlety, šest míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Neunzehn erprobte Tipps für Familienausflüge, sechs Badestellen und zwölf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace z Apartmánu Cvikov"
@@ -3078,12 +3078,12 @@ msgid "Provoz"
 msgstr "Betrieb"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Devatenáct rodinných výletů, šest míst ke koupání a jedenáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Neunzehn Familienausflüge, sechs Badestellen und elf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
+msgid "Devatenáct rodinných výletů, šest míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Neunzehn Familienausflüge, sechs Badestellen und zwölf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
 
 #: apartmancvikov/templates/vylety.html
-msgid "Jedenáct tipů v okolí"
-msgstr "Elf Tipps in der Umgebung"
+msgid "Dvanáct tipů v okolí"
+msgstr "Zwölf Tipps in der Umgebung"
 
 #: apartmancvikov/templates/vylety.html
 msgid "Kam zajít pěšky na oběd a kde se najíst při výletech v okolí Cvikova."
@@ -3092,3 +3092,19 @@ msgstr "Wohin Sie zum Mittagessen laufen und wo Sie bei Ausflügen rund um Cviko
 #: apartmancvikov/templates/vylety.html
 msgid "Prohlédnout restaurace"
 msgstr "Restaurants ansehen"
+
+#: apartmancvikov/content.py
+msgid "Před koupáním nebo po něm se můžete zastavit na sushi a ramen v Kaido Sushi."
+msgstr "Vor oder nach dem Baden können Sie bei Kaido Sushi Sushi und Ramen genießen."
+
+#: apartmancvikov/restaurants.py
+msgid "Kaido Sushi"
+msgstr "Kaido Sushi"
+
+#: apartmancvikov/restaurants.py
+msgid "Sushi a ramen v České Lípě."
+msgstr "Sushi und Ramen in Česká Lípa."
+
+#: apartmancvikov/restaurants.py
+msgid "Návštěvu Kaido Sushi můžete spojit s koupáním na koupališti Dubice."
+msgstr "Verbinden Sie einen Besuch bei Kaido Sushi mit einem Bad im Freibad Dubice."

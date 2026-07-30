@@ -210,6 +210,24 @@ RESTAURANTS = (
         distance_km=11,
         distance_kind="driving",
     ),
+    RestaurantTip(
+        slug="kaido-sushi",
+        name=_("Kaido Sushi"),
+        description=_("Sushi a ramen v České Lípě."),
+        official_url=("https://www.facebook.com/p/Kaido-Sushi-%C4%8CL-61556848413838/"),
+        distance_km=19,
+        distance_kind="driving",
+        related_trips=(
+            TripRelation(
+                target_kind="swimming",
+                target_slug="koupaliste-dubice",
+                description=_(
+                    "Návštěvu Kaido Sushi můžete spojit s koupáním na "
+                    "koupališti Dubice."
+                ),
+            ),
+        ),
+    ),
 )
 
 

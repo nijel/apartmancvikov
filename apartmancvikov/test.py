@@ -599,8 +599,14 @@ class SeoTest(TestCase):
                     ("restaurant", "sloupska-terasa"),
                 )
             ),
+            frozenset(
+                (
+                    ("swimming", "koupaliste-dubice"),
+                    ("restaurant", "kaido-sushi"),
+                )
+            ),
         }
-        self.assertEqual(relation_count, 36)
+        self.assertEqual(relation_count, 38)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):
@@ -663,6 +669,10 @@ class SeoTest(TestCase):
         self.assertContains(
             sloup,
             'href="/cs/vylety/restaurace/#sloupska-terasa"',
+        )
+        self.assertContains(
+            sloup,
+            'href="/cs/vylety/restaurace/#kaido-sushi"',
         )
 
     def test_ceska_kamenice_trip_has_both_route_lengths(self):
@@ -744,7 +754,7 @@ class SeoTest(TestCase):
         """The overview opens one complete, distance-sorted restaurant guide."""
         overview = self.client.get("/cs/vylety/")
         self.assertContains(overview, 'href="/cs/vylety/restaurace/"')
-        self.assertContains(overview, "Jedenáct tipů v okolí")
+        self.assertContains(overview, "Dvanáct tipů v okolí")
 
         response = self.client.get("/cs/vylety/restaurace/")
         html = response.content.decode()
@@ -755,7 +765,12 @@ class SeoTest(TestCase):
         self.assertContains(response, "Pěšky z apartmánu")
         self.assertContains(response, "Autem nebo autobusem")
         self.assertContains(response, "0,3 km")
-        self.assertContains(response, "11 km")
+        self.assertContains(response, "19 km")
+        self.assertContains(response, "Sushi a ramen v České Lípě")
+        self.assertContains(
+            response,
+            "https://www.facebook.com/p/Kaido-Sushi-%C4%8CL-61556848413838/",
+        )
         self.assertContains(
             response,
             "https://www.facebook.com/groups/662887772360954",
@@ -782,6 +797,10 @@ class SeoTest(TestCase):
             'href="/cs/vylety/pumptrack-cvikov/"',
         )
         self.assertContains(response, 'href="/cs/vylety/hvozd/"')
+        self.assertContains(
+            response,
+            'href="/cs/vylety/koupani/#koupaliste-dubice"',
+        )
         self.assertContains(
             response,
             "Před návštěvou si vždy ověřte aktuální informace",
