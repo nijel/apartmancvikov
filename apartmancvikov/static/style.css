@@ -1887,6 +1887,10 @@ html.lightbox-open {
     max-width: none;
   }
 
+  body.trip-print--detail .story-block > .eyebrow {
+    display: none;
+  }
+
   body.trip-print--detail .story-block h2 {
     font-size: 13pt;
     margin-bottom: 1.5mm;
