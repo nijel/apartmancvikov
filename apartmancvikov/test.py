@@ -567,7 +567,12 @@ class SeoTest(TestCase):
         self.assertIn("body.trip-print--overview .attraction-grid", stylesheet)
         self.assertIn("body.trip-print--swimming .swimming-grid", stylesheet)
         self.assertIn("body.trip-print--swimming .swimming-photo img", stylesheet)
+        self.assertIn(
+            "body.trip-print--swimming .swimming-card__related",
+            stylesheet,
+        )
         self.assertIn("body.trip-print--detail .attraction-detail", stylesheet)
+        self.assertIn("body.trip-print--detail .related-trips", stylesheet)
         self.assertIn("body.trip-print .button-row", stylesheet)
         self.assertIn("body.trip-print .text-link", stylesheet)
 
