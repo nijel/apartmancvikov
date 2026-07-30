@@ -464,8 +464,8 @@ ATTRACTIONS = (
                 "výhled na Jehlu, Zámecký vrch a okolní krajinu."
             ),
             _(
-                "Podle sil můžete výlet prodloužit také na čedičovou Jehlu. "
-                "K její malé vyhlídkové plošině vede stezka po úzkém skalnatém "
+                "Podle sil můžete do trasy zařadit také čedičovou Jehlu. K její "
+                "malé vyhlídkové plošině vede stezka po úzkém skalnatém "
                 "hřbítku, proto se tato část nehodí pro kočárky ani pro děti, "
                 "které si nejsou jisté v prudším terénu."
             ),

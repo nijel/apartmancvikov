@@ -2341,12 +2341,12 @@ msgstr ""
 
 #: apartmancvikov/content.py
 msgid ""
-"Podle sil můžete výlet prodloužit také na čedičovou Jehlu. K její malé "
+"Podle sil můžete do trasy zařadit také čedičovou Jehlu. K její malé "
 "vyhlídkové plošině vede stezka po úzkém skalnatém hřbítku, proto se tato část "
 "nehodí pro kočárky ani pro děti, které si nejsou jisté v prudším terénu."
 msgstr ""
-"If you have enough energy, extend the trip to the basalt peak of Jehla. A "
-"path along a narrow rocky ridge leads to its small viewing platform, so "
+"If you have enough energy, include the basalt peak of Jehla in your route. "
+"A path along a narrow rocky ridge leads to its small viewing platform, so "
 "this section is unsuitable for pushchairs or children who are not confident "
 "on steeper terrain."
 
