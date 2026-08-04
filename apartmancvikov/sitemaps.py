@@ -72,6 +72,7 @@ class StaticViewSitemap(LocalizedSitemap):
         return [
             "home",
             "vylety",
+            "cycling",
             "swimming",
             "restaurants",
             "cenik",

@@ -14,7 +14,7 @@
 
 {% block meta_description %}
   <meta name="description"
-        content="{% translate "Dvacet rodinných výletů, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov." %}" />
+        content="{% translate "Dvacet rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov." %}" />
 {% endblock meta_description %}
 
 {% block ogtitle %}
@@ -32,7 +32,7 @@
 {% endblock headline %}
 
 {% block lead %}
-  {% translate "Poznejte s dětmi přírodu, skály, hrady, sklářskou historii i místa ke koupání." %}
+  {% translate "Poznejte s dětmi přírodu, skály, hrady, sklářskou historii, cyklotrasy i místa ke koupání." %}
 {% endblock lead %}
 
 {% block content %}
@@ -94,6 +94,22 @@
             </div>
           </article>
         {% endfor %}
+        <article class="attraction-card" id="cyklovylety">
+          <div class="attraction-placeholder attraction-placeholder--cycling"
+               aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img">
+              <circle cx="17" cy="43" r="11" fill="none" stroke="currentColor" stroke-width="4" />
+              <circle cx="48" cy="43" r="11" fill="none" stroke="currentColor" stroke-width="4" />
+              <path d="m17 43 10-19 9 19H17l8-14h15l8 14M25 24h-7m18 0 5-7h6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+            </svg>
+          </div>
+          <div class="attraction-card__body">
+            <p class="eyebrow">{% translate "Pět tras z Cvikova" %}</p>
+            <h2>{% translate "Doporučené cyklotrasy" %}</h2>
+            <p>{% translate "Vyberte si z pěti cyklistických tras. U každé najdete délku celé trasy, převýšení a odkaz na mapu." %}</p>
+            <a href="{% url "cycling" %}" class="text-link card-link">{% translate "Prohlédnout cyklotrasy" %}<span aria-hidden="true">→</span></a>
+          </div>
+        </article>
         <article class="attraction-card" id="koupani">
           <figure class="attraction-card__media">
             {% responsive_image "vylety/koupaliste-jonsdorf.jpg" 1920 1081 _("Horské koupaliště Jonsdorf s tobogánem") sizes="(min-width: 54rem) 25vw, (min-width: 38rem) 50vw, 100vw" %}

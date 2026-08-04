@@ -32,6 +32,7 @@ from django.views.generic import TemplateView
 from .sitemaps import AttractionSitemap, StaticViewSitemap
 from .views import (
     AttractionDetailView,
+    CyclingTripsView,
     HomeView,
     InquiryView,
     RestaurantTipsView,
@@ -46,6 +47,7 @@ sitemaps = {"static": StaticViewSitemap, "attractions": AttractionSitemap}
 urlpatterns = i18n_patterns(  # noqa: RUF005
     path("", HomeView.as_view(), name="home"),
     path("vylety/", TripsView.as_view(), name="vylety"),
+    path("vylety/cyklovylety/", CyclingTripsView.as_view(), name="cycling"),
     path("vylety/koupani/", SwimmingTripsView.as_view(), name="swimming"),
     path("vylety/restaurace/", RestaurantTipsView.as_view(), name="restaurants"),
     path(

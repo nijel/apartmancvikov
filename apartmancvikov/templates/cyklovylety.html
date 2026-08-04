@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% load i18n seo trip_print %}
+
+{% block body_class %}trip-print trip-print--cycling{% endblock %}
+
+{% block print_header %}
+  {% trip_print_header _("Doporučené cyklotrasy") canonical_url %}
+{% endblock print_header %}
+
+{% block title %}
+  {% translate "Cyklovýlety z Cvikova | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description"
+        content="{% translate "Pět doporučených cyklotras z Cvikova s délkou trasy, převýšením, mapou a tipy na koupání a restaurace po cestě." %}" />
+{% endblock meta_description %}
+
+{% block ogtitle %}
+  <meta property="og:title"
+        content="{% translate "Doporučené cyklotrasy z Apartmánu Cvikov" %}" />
+{% endblock ogtitle %}
+
+{% block ogdescription %}
+  <meta property="og:description"
+        content="{% translate "Pět cyklistických okruhů z Cvikova do Lužických hor a okolí Nového Boru." %}" />
+{% endblock ogdescription %}
+
+{% block headline %}
+  {% translate "Doporučené cyklotrasy" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Vyrazte z Cvikova na kole k Lužickým horám, Novému Boru, Milštejnu nebo do Kunratic." %}
+{% endblock lead %}
+
+{% block content %}
+  <article class="content-section cycling-page">
+    <div class="site-container">
+      <nav class="breadcrumbs" aria-label="{% translate "Drobečková navigace" %}">
+        <ol>
+          <li><a href="{% url "home" %}">{% translate "Ubytování" %}</a></li>
+          <li><a href="{% url "vylety" %}">{% translate "Výlety" %}</a></li>
+          <li aria-current="page">{% translate "Cyklovýlety" %}</li>
+        </ol>
+      </nav>
+
+      <header class="section-intro">
+        <p class="eyebrow">{% translate "Na kole z Cvikova" %}</p>
+        <h2>{% translate "Pět tras pro výlet na kole" %}</h2>
+        <p>{% translate "Vyberte si z pěti cyklistických tras. U každé najdete délku celé trasy, převýšení, odkaz na mapu a související tipy po cestě." %}</p>
+      </header>
+
+      <div class="cycling-routes__grid">
+        {% for card in cycling_cards %}
+          {% with tip=card.tip %}
+            <section class="cycling-route" id="cyklotrasa-{{ tip.slug }}">
+              <h3>{{ tip.name|nbsp_prepositions }}</h3>
+              <dl class="cycling-route__facts">
+                <div>
+                  <dt>{% translate "Délka trasy" %}</dt>
+                  <dd>{% blocktranslate with distance=tip.distance_km %}{{ distance }} km{% endblocktranslate %}</dd>
+                </div>
+                <div>
+                  <dt>{% translate "Převýšení" %}</dt>
+                  <dd>{% blocktranslate with elevation=tip.elevation_gain_m %}{{ elevation }} m{% endblocktranslate %}</dd>
+                </div>
+              </dl>
+              <p>{{ tip.description }}</p>
+              {% if card.related_trips %}
+                <div class="cycling-route__related">
+                  <strong>{% translate "Spojte s výletem" %}</strong>
+                  {% for related_trip in card.related_trips %}
+                    <a href="{{ related_trip.url }}">{{ related_trip.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
+                    <p>{{ related_trip.description }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if card.related_restaurants %}
+                <div class="cycling-route__related">
+                  <strong>{% translate "Kde se najíst poblíž" %}</strong>
+                  {% for restaurant in card.related_restaurants %}
+                    <a href="{{ restaurant.url }}">{{ restaurant.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
+                    <p>{{ restaurant.description }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <div class="button-row">
+                <a href="{{ tip.map_url }}" class="button button--secondary" rel="noopener">{% translate "Zobrazit mapu trasy" %}</a>
+              </div>
+            </section>
+          {% endwith %}
+        {% endfor %}
+      </div>
+
+      <aside class="callout">
+        <div>
+          <p class="eyebrow">{% translate "Další nápady" %}</p>
+          <h2>{% translate "Vyberte si další rodinný výlet" %}</h2>
+          <p>{% translate "V okolí najdete také pěší výlety, koupání a restaurace pro celodenní program." %}</p>
+        </div>
+        <div class="button-row">
+          <a href="{% url "vylety" %}" class="button button--primary">{% translate "Všechny výlety" %}</a>
+          <a href="{% url "swimming" %}" class="button button--secondary">{% translate "Výlety s koupáním" %}</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+{% endblock content %}

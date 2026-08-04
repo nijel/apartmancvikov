@@ -10,7 +10,7 @@ from django.utils.translation import gettext_lazy as _
 
 @dataclass(frozen=True)
 class TripRelation:
-    target_kind: Literal["attraction", "swimming", "restaurant"]
+    target_kind: Literal["attraction", "cycling", "swimming", "restaurant"]
     target_slug: str
     description: object
 
@@ -22,6 +22,17 @@ class RouteVariant:
     map_url: str
     description: object
     distance_km_max: int | float | None = None
+
+
+@dataclass(frozen=True)
+class CyclingTrip:
+    slug: str
+    name: object
+    description: object
+    distance_km: int | float
+    elevation_gain_m: int
+    map_url: str
+    related_trips: tuple[TripRelation, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -63,6 +74,81 @@ MOUNTAIN_EXPRESS_TIP = _(
     "V létě sem ve vybraných termínech jezdí Horský expres z náměstí ve "
     "Cvikově; termín a dostupnost jízdenek si ověřte předem."
 )
+
+
+CYCLING_TRIPS = (
+    CyclingTrip(
+        slug="novy-bor",
+        name=_("Okruh přes Nový Bor"),
+        distance_km=20,
+        elevation_gain_m=237,
+        map_url="https://mapy.com/s/jahafutero",
+        description=_("Údolím samoty přes Radvanec do Nového Boru."),
+        related_trips=(
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="bep-novy-bor",
+                description=_(
+                    "Během okruhu se můžete v Novém Boru zastavit na asijskou "
+                    "kuchyni v restauraci BẾP."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="royal-maharaja",
+                description=_(
+                    "V Novém Boru můžete cyklovýlet spojit s návštěvou indické "
+                    "restaurace The Royal Maharaja."
+                ),
+            ),
+        ),
+    ),
+    CyclingTrip(
+        slug="okolo-klice",
+        name=_("Okolo Klíče"),
+        distance_km=20,
+        elevation_gain_m=316,
+        map_url="https://mapy.com/s/kafofavuba",
+        description=_("Krátká, ale výživná vyjížďka okolo Klíče."),
+    ),
+    CyclingTrip(
+        slug="milstejn-nadeje",
+        name=_("Milštejn a Naděje"),
+        distance_km=16,
+        elevation_gain_m=235,
+        map_url="https://mapy.com/s/pacapemude",
+        description=_("Vystoupejte k Milštejnu a horské nádrži Naděje."),
+        related_trips=(
+            TripRelation(
+                target_kind="swimming",
+                target_slug="nadrz-nadeje",
+                description=_(
+                    "U nádrže Naděje se můžete během cyklovýletu osvěžit v "
+                    "chladné horské vodě."
+                ),
+            ),
+        ),
+    ),
+    CyclingTrip(
+        slug="nova-hut",
+        name=_("Na Novou Huť"),
+        distance_km=22,
+        elevation_gain_m=347,
+        map_url="https://mapy.com/s/hajucesele",
+        description=_("Okruh Lužickými lesy na Novou Huť s návratem přes Rousínov."),
+    ),
+    CyclingTrip(
+        slug="kunratice",
+        name=_("Okruh přes Kunratice"),
+        distance_km=12,
+        elevation_gain_m=82,
+        map_url="https://mapy.com/s/jogogapaca",
+        description=_("Nenáročná projížďka do Kunratic u Cvikova."),
+    ),
+)
+
+
+CYCLING_TRIPS_BY_SLUG = {item.slug: item for item in CYCLING_TRIPS}
 
 
 ATTRACTIONS = (
@@ -1309,6 +1395,14 @@ SWIMMING_TIPS = (
                 target_slug="milstejn-nadeje",
                 description=_(
                     "Koupání spojte s okruhem z Trávníku přes skalní areál Milštejna."
+                ),
+            ),
+            TripRelation(
+                target_kind="cycling",
+                target_slug="milstejn-nadeje",
+                description=_(
+                    "K nádrži můžete vyrazit také po šestnáctikilometrové "
+                    "cyklotrase přes Milštejn."
                 ),
             ),
         ),

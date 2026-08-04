@@ -10,6 +10,7 @@ from django.utils.translation import gettext as _
 from .content import (
     ATTRACTIONS,
     ATTRACTIONS_BY_SLUG,
+    CYCLING_TRIPS,
     SWIMMING_IMAGE,
     SWIMMING_IMAGE_HEIGHT,
     SWIMMING_IMAGE_WIDTH,
@@ -321,9 +322,17 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Rodinné výlety z Apartmánu Cvikov"),
             _(
-                "Dvacet ověřených tipů na rodinné výlety, sedm míst ke "
-                "koupání a dvanáct doporučených restaurací v okolí "
-                "Apartmánu Cvikov."
+                "Dvacet ověřených tipů na rodinné výlety, pět doporučených "
+                "cyklotras, sedm míst ke koupání a dvanáct doporučených "
+                "restaurací v okolí Apartmánu Cvikov."
+            ),
+        ),
+        "cycling": (
+            "CollectionPage",
+            _("Doporučené cyklotrasy z Apartmánu Cvikov"),
+            _(
+                "Pět doporučených cyklotras z Cvikova s délkou trasy, "
+                "převýšením, mapou a tipy na koupání a restaurace po cestě."
             ),
         ),
         "swimming": (
@@ -481,6 +490,20 @@ def _trip_list_node():
         }
         for position, item in enumerate(ATTRACTIONS, start=1)
     ]
+    cycling_url = _absolute(reverse("cycling"))
+    items.append(
+        {
+            "@type": "ListItem",
+            "position": len(items) + 1,
+            "item": {
+                "@type": "CollectionPage",
+                "@id": f"{cycling_url}#webpage",
+                "name": str(_("Doporučené cyklotrasy")),
+                "url": cycling_url,
+                "image": _image_url("bg.jpg"),
+            },
+        }
+    )
     swimming_url = _absolute(reverse("swimming"))
     items.append(
         {
@@ -513,6 +536,41 @@ def _trip_list_node():
         "@type": "ItemList",
         "@id": f"{list_url}#item-list",
         "name": str(_("Výlety z Apartmánu Cvikov")),
+        "numberOfItems": len(items),
+        "itemListElement": items,
+    }
+
+
+def _cycling_list_node():
+    list_url = _absolute(reverse("cycling"))
+    items = [
+        {
+            "@type": "ListItem",
+            "position": position,
+            "item": {
+                "@type": "TouristTrip",
+                "name": str(route.name),
+                "description": str(route.description),
+                "url": route.map_url,
+                "distance": {
+                    "@type": "QuantitativeValue",
+                    "value": route.distance_km,
+                    "unitCode": "KMT",
+                },
+                "additionalProperty": {
+                    "@type": "PropertyValue",
+                    "name": str(_("Převýšení")),
+                    "value": route.elevation_gain_m,
+                    "unitCode": "MTR",
+                },
+            },
+        }
+        for position, route in enumerate(CYCLING_TRIPS, start=1)
+    ]
+    return {
+        "@type": "ItemList",
+        "@id": f"{list_url}#item-list",
+        "name": str(_("Doporučené cyklotrasy z Cvikova")),
         "numberOfItems": len(items),
         "itemListElement": items,
     }
@@ -569,6 +627,14 @@ def _restaurant_list_node():
 def _collection_page_data(view_name):
     if view_name == "vylety":
         return _attraction_image_node(ATTRACTIONS[0]), _trip_list_node()
+    if view_name == "cycling":
+        image_node = _image_node(
+            "bg.jpg",
+            1920,
+            500,
+            _("Lužické hory u Cvikova"),
+        )
+        return image_node, _cycling_list_node()
     if view_name == "swimming":
         image_node = _image_node(
             SWIMMING_IMAGE,
@@ -588,7 +654,7 @@ def _collection_page_data(view_name):
 
 def _static_breadcrumb(request, view_name, home_url, name):
     items = [(_("Ubytování"), home_url)]
-    if view_name in {"swimming", "restaurants"}:
+    if view_name in {"cycling", "swimming", "restaurants"}:
         items.append((_("Výlety"), _absolute(reverse("vylety"))))
     items.append((name, _page_url(request)))
     return _breadcrumb_node(request, items)
@@ -600,6 +666,7 @@ def build_structured_data(request):
     if match is None or match.url_name not in {
         "home",
         "vylety",
+        "cycling",
         "swimming",
         "restaurants",
         "attraction_detail",
@@ -639,7 +706,7 @@ def build_structured_data(request):
         nodes.extend([page_node, image_node, attraction_node, breadcrumb])
     else:
         page_type, name, description = _page_metadata(view_name)
-        if view_name in {"vylety", "swimming", "restaurants"}:
+        if view_name in {"vylety", "cycling", "swimming", "restaurants"}:
             image_node, item_list = _collection_page_data(view_name)
             main_entity = item_list["@id"]
         else:

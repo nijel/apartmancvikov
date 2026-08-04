@@ -18,7 +18,7 @@ from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
 from .availability import maximum_inquiry_date
-from .content import ATTRACTIONS, SWIMMING_TIPS
+from .content import ATTRACTIONS, CYCLING_TRIPS, SWIMMING_TIPS
 from .forms import FORM_TOKEN_SALT
 from .image_config import variant_path
 from .models import Booking
@@ -422,6 +422,125 @@ class SeoTest(TestCase):
         )
         self.assertNotContains(milstejn, 'href="None"')
 
+    def test_recommended_cycling_routes_have_lengths_elevations_and_maps(self):
+        """Every recommended cycle route keeps its supplied facts together."""
+        overview = self.client.get("/cs/vylety/")
+        self.assertContains(overview, 'href="/cs/vylety/cyklovylety/"')
+        self.assertContains(overview, "Pět tras z Cvikova")
+        self.assertNotContains(overview, 'class="cycling-route"')
+
+        response = self.client.get("/cs/vylety/cyklovylety/")
+        self.assertContains(response, 'class="cycling-route"', count=5)
+        expected_routes = (
+            (
+                "Okruh přes Nový Bor",
+                "20 km",
+                "237 m",
+                "jahafutero",
+                "Údolím samoty přes Radvanec do Nového Boru.",
+            ),
+            (
+                "Okolo Klíče",
+                "20 km",
+                "316 m",
+                "kafofavuba",
+                "Krátká, ale výživná vyjížďka okolo Klíče.",
+            ),
+            (
+                "Milštejn a Naděje",
+                "16 km",
+                "235 m",
+                "pacapemude",
+                "Vystoupejte k Milštejnu a horské nádrži Naděje.",
+            ),
+            (
+                "Na Novou Huť",
+                "22 km",
+                "347 m",
+                "hajucesele",
+                "Okruh Lužickými lesy na Novou Huť s návratem přes Rousínov.",
+            ),
+            (
+                "Okruh přes Kunratice",
+                "12 km",
+                "82 m",
+                "jogogapaca",
+                "Nenáročná projížďka do Kunratic u Cvikova.",
+            ),
+        )
+        for name, distance, elevation, map_slug, description in expected_routes:
+            with self.subTest(name=name):
+                self.assertContains(response, name)
+                self.assertContains(response, distance)
+                self.assertContains(response, elevation)
+                self.assertContains(response, f"https://mapy.com/s/{map_slug}")
+                self.assertContains(response, description)
+
+        english = self.client.get("/en/vylety/cyklovylety/")
+        self.assertContains(english, "Recommended cycle routes")
+        self.assertContains(english, "Elevation gain")
+        self.assertContains(english, "A short but challenging ride around Klíč.")
+        self.assertNotContains(english, "Doporučené cyklotrasy")
+
+        german = self.client.get("/de/vylety/cyklovylety/")
+        self.assertContains(german, "Empfohlene Radrouten")
+        self.assertContains(german, "Höhenmeter")
+        self.assertContains(german, "Eine leichte Tour nach Kunratice u Cvikova.")
+        self.assertNotContains(german, "Doporučené cyklotrasy")
+
+    def test_cycling_trips_link_bidirectionally_to_swimming_and_restaurants(self):
+        """Cycling cards participate in the same relation graph as other tips."""
+        overview = self.client.get("/cs/vylety/cyklovylety/")
+        self.assertContains(overview, 'id="cyklotrasa-novy-bor"')
+        self.assertContains(overview, 'id="cyklotrasa-milstejn-nadeje"')
+        self.assertContains(
+            overview,
+            'href="/cs/vylety/restaurace/#bep-novy-bor"',
+        )
+        self.assertContains(
+            overview,
+            'href="/cs/vylety/restaurace/#royal-maharaja"',
+        )
+        self.assertContains(
+            overview,
+            'href="/cs/vylety/koupani/#nadrz-nadeje"',
+        )
+
+        swimming = self.client.get("/cs/vylety/koupani/")
+        self.assertContains(
+            swimming,
+            'href="/cs/vylety/cyklovylety/#cyklotrasa-milstejn-nadeje"',
+        )
+        self.assertContains(swimming, "šestnáctikilometrové cyklotrase")
+
+        restaurants = self.client.get("/cs/vylety/restaurace/")
+        self.assertContains(
+            restaurants,
+            'href="/cs/vylety/cyklovylety/#cyklotrasa-novy-bor"',
+            count=2,
+        )
+        self.assertContains(restaurants, "cyklistickém okruhu přes Nový Bor", count=2)
+
+        english = self.client.get("/en/vylety/cyklovylety/")
+        self.assertContains(
+            english,
+            "During the circuit, stop in Nový Bor for Asian cuisine at BẾP.",
+        )
+        self.assertContains(
+            english,
+            'href="/en/vylety/restaurace/#bep-novy-bor"',
+        )
+
+        german = self.client.get("/de/vylety/koupani/")
+        self.assertContains(
+            german,
+            "16 Kilometer langen Radroute über Milštejn",
+        )
+        self.assertContains(
+            german,
+            'href="/de/vylety/cyklovylety/#cyklotrasa-milstejn-nadeje"',
+        )
+
     def test_extended_trip_descriptions_are_translated(self):
         """New paragraphs remain useful in both translated site versions."""
         english = self.client.get("/en/vylety/klic/")
@@ -513,6 +632,7 @@ class SeoTest(TestCase):
         """Every curated relation resolves and has the expected reverse edge."""
         destinations = {
             **{("attraction", item.slug): item for item in ATTRACTIONS},
+            **{("cycling", item.slug): item for item in CYCLING_TRIPS},
             **{("swimming", item.slug): item for item in SWIMMING_TIPS},
             **{("restaurant", item.slug): item for item in RESTAURANTS},
         }
@@ -654,8 +774,26 @@ class SeoTest(TestCase):
                     ("swimming", "nadrz-nadeje"),
                 )
             ),
+            frozenset(
+                (
+                    ("cycling", "milstejn-nadeje"),
+                    ("swimming", "nadrz-nadeje"),
+                )
+            ),
+            frozenset(
+                (
+                    ("cycling", "novy-bor"),
+                    ("restaurant", "bep-novy-bor"),
+                )
+            ),
+            frozenset(
+                (
+                    ("cycling", "novy-bor"),
+                    ("restaurant", "royal-maharaja"),
+                )
+            ),
         }
-        self.assertEqual(relation_count, 40)
+        self.assertEqual(relation_count, 46)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):
@@ -922,6 +1060,12 @@ class SeoTest(TestCase):
                 "Sedm míst pro malé i velké plavce",
             ),
             (
+                "/cs/vylety/cyklovylety/",
+                "trip-print--cycling",
+                "Doporučené cyklotrasy",
+                "Pět tras pro výlet na kole",
+            ),
+            (
                 "/cs/vylety/restaurace/",
                 "trip-print--restaurants",
                 "Doporučené restaurace",
@@ -963,6 +1107,8 @@ class SeoTest(TestCase):
         self.assertIn("@media print", stylesheet)
         self.assertIn("size: A4 portrait", stylesheet)
         self.assertIn("body.trip-print--overview .attraction-grid", stylesheet)
+        self.assertIn("body.trip-print--cycling .cycling-routes__grid", stylesheet)
+        self.assertIn("body.trip-print--cycling .cycling-route__related", stylesheet)
         self.assertIn("body.trip-print--swimming .swimming-grid", stylesheet)
         self.assertIn("body.trip-print--swimming .swimming-photo img", stylesheet)
         self.assertIn(
@@ -1147,7 +1293,18 @@ class SeoTest(TestCase):
     def test_page_specific_schema_types(self):
         """Static and listing pages identify their role and main entity."""
         cases = (
-            ("/cs/vylety/", "CollectionPage", "ItemList", len(ATTRACTIONS) + 2),
+            (
+                "/cs/vylety/",
+                "CollectionPage",
+                "ItemList",
+                len(ATTRACTIONS) + 3,
+            ),
+            (
+                "/cs/vylety/cyklovylety/",
+                "CollectionPage",
+                "ItemList",
+                len(CYCLING_TRIPS),
+            ),
             (
                 "/cs/vylety/koupani/",
                 "CollectionPage",
@@ -1244,8 +1401,12 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 90)
+        self.assertEqual(len(locations), 93)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
+        self.assertIn(
+            "https://apartmancvikov.cz/cs/vylety/cyklovylety/",
+            locations,
+        )
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/koupani/",
             locations,
@@ -1326,6 +1487,10 @@ class SeoTest(TestCase):
         self.assertContains(llms, "Spacious 130 m² apartment with 3 bedrooms")
         self.assertContains(llms, "2 additional floor mattresses")
         self.assertContains(llms, "https://apartmancvikov.cz/cs/vylety/")
+        self.assertContains(
+            llms,
+            "https://apartmancvikov.cz/cs/vylety/cyklovylety/",
+        )
         self.assertContains(
             llms,
             "https://apartmancvikov.cz/cs/vylety/koupani/",

@@ -1455,11 +1455,11 @@ msgstr ""
 
 #: apartmancvikov/templates/vylety.html:29
 msgid ""
-"Poznejte s dětmi přírodu, skály, hrady, sklářskou historii i místa ke "
-"koupání."
+"Poznejte s dětmi přírodu, skály, hrady, sklářskou historii, cyklotrasy i "
+"místa ke koupání."
 msgstr ""
-"Explore nature, rocks, castles, glassmaking history and places to swim with "
-"your children."
+"Explore nature, rocks, castles, glassmaking history, cycle routes and places "
+"to swim with your children."
 
 #: apartmancvikov/templates/vylety.html:36
 msgid "Tipy pro rodiny"
@@ -2926,8 +2926,8 @@ msgid "Doporučené restaurace"
 msgstr "Recommended restaurants"
 
 #: apartmancvikov/structured_data.py
-msgid "Dvacet ověřených tipů na rodinné výlety, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Twenty tried-and-tested family trip ideas, seven places to swim and twelve recommended restaurants near Apartment Cvikov."
+msgid "Dvacet ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Twenty tried-and-tested family trip ideas, five recommended cycle routes, seven places to swim and twelve recommended restaurants near Apartment Cvikov."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace z Apartmánu Cvikov"
@@ -3034,8 +3034,8 @@ msgid "Provoz"
 msgstr "Opening"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Dvacet rodinných výletů, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Twenty family trips, seven places to swim and twelve recommended restaurants near Apartment Cvikov."
+msgid "Dvacet rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Twenty family trips, five recommended cycle routes, seven places to swim and twelve recommended restaurants near Apartment Cvikov."
 
 #: apartmancvikov/templates/vylety.html
 msgid "Dvanáct tipů v okolí"
@@ -3202,3 +3202,138 @@ msgid ""
 msgstr ""
 "Prices, opening hours and conditions may change. Always check the latest "
 "information with the operator or on the map before setting off."
+
+#: apartmancvikov/content.py
+msgid "Okruh přes Nový Bor"
+msgstr "Circuit via Nový Bor"
+
+#: apartmancvikov/content.py
+msgid "Údolím samoty přes Radvanec do Nového Boru."
+msgstr "Through the Valley of Solitude via Radvanec to Nový Bor."
+
+#: apartmancvikov/content.py
+msgid "Okolo Klíče"
+msgstr "Around Klíč"
+
+#: apartmancvikov/content.py
+msgid "Krátká, ale výživná vyjížďka okolo Klíče."
+msgstr "A short but challenging ride around Klíč."
+
+#: apartmancvikov/content.py
+msgid "Vystoupejte k Milštejnu a horské nádrži Naděje."
+msgstr "Climb to Milštejn and the Naděje mountain reservoir."
+
+#: apartmancvikov/content.py
+msgid "Na Novou Huť"
+msgstr "To Nová Huť"
+
+#: apartmancvikov/content.py
+msgid "Okruh Lužickými lesy na Novou Huť s návratem přes Rousínov."
+msgstr "A circuit through the Lusatian forests to Nová Huť, returning via Rousínov."
+
+#: apartmancvikov/content.py
+msgid "Okruh přes Kunratice"
+msgstr "Circuit via Kunratice"
+
+#: apartmancvikov/content.py
+msgid "Nenáročná projížďka do Kunratic u Cvikova."
+msgstr "An easy ride to Kunratice u Cvikova."
+
+#: apartmancvikov/templates/vylety.html
+msgid "Na kole z Cvikova"
+msgstr "Cycling from Cvikov"
+
+#: apartmancvikov/templates/vylety.html
+msgid "Doporučené cyklotrasy"
+msgstr "Recommended cycle routes"
+
+#: apartmancvikov/templates/vylety.html
+msgid "Vyberte si z pěti cyklistických tras. U každé najdete délku celé trasy, převýšení a odkaz na mapu."
+msgstr "Choose from five cycling routes. Each includes the full route length, elevation gain and a link to the map."
+
+#: apartmancvikov/templates/vylety.html
+msgid "Délka trasy"
+msgstr "Route length"
+
+#: apartmancvikov/structured_data.py apartmancvikov/templates/vylety.html
+msgid "Převýšení"
+msgstr "Elevation gain"
+
+#: apartmancvikov/templates/vylety.html
+#, python-format
+msgid "%(elevation)s m"
+msgstr "%(elevation)s m"
+
+#: apartmancvikov/content.py
+msgid "Během okruhu se můžete v Novém Boru zastavit na asijskou kuchyni v restauraci BẾP."
+msgstr "During the circuit, stop in Nový Bor for Asian cuisine at BẾP."
+
+#: apartmancvikov/content.py
+msgid "V Novém Boru můžete cyklovýlet spojit s návštěvou indické restaurace The Royal Maharaja."
+msgstr "In Nový Bor, combine your cycling trip with a visit to The Royal Maharaja Indian restaurant."
+
+#: apartmancvikov/content.py
+msgid "U nádrže Naděje se můžete během cyklovýletu osvěžit v chladné horské vodě."
+msgstr "At Naděje reservoir, cool off in the cold mountain water during your cycling trip."
+
+#: apartmancvikov/content.py
+msgid "K nádrži můžete vyrazit také po šestnáctikilometrové cyklotrase přes Milštejn."
+msgstr "You can also reach the reservoir on the 16-kilometre cycling route via Milštejn."
+
+#: apartmancvikov/restaurants.py
+msgid "Restauraci můžete zařadit jako zastávku na cyklistickém okruhu přes Nový Bor."
+msgstr "You can include the restaurant as a stop on the cycling circuit via Nový Bor."
+
+#: apartmancvikov/restaurants.py
+msgid "Indickou restauraci můžete zařadit jako zastávku na cyklistickém okruhu přes Nový Bor."
+msgstr "You can include the Indian restaurant as a stop on the cycling circuit via Nový Bor."
+
+#: apartmancvikov/templates/vylety.html
+msgid "Pět tras z Cvikova"
+msgstr "Five routes from Cvikov"
+
+#: apartmancvikov/templates/vylety.html
+msgid "Prohlédnout cyklotrasy"
+msgstr "Browse cycle routes"
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Cyklovýlety z Cvikova | Apartmán Cvikov"
+msgstr "Cycling trips from Cvikov | Apartment Cvikov"
+
+#: apartmancvikov/structured_data.py
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Pět doporučených cyklotras z Cvikova s délkou trasy, převýšením, mapou a tipy na koupání a restaurace po cestě."
+msgstr "Five recommended cycling routes from Cvikov with route length, elevation gain, a map and swimming and restaurant tips along the way."
+
+#: apartmancvikov/structured_data.py
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Doporučené cyklotrasy z Apartmánu Cvikov"
+msgstr "Recommended cycling routes from Apartment Cvikov"
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Pět cyklistických okruhů z Cvikova do Lužických hor a okolí Nového Boru."
+msgstr "Five cycling circuits from Cvikov into the Lusatian Mountains and around Nový Bor."
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Vyrazte z Cvikova na kole k Lužickým horám, Novému Boru, Milštejnu nebo do Kunratic."
+msgstr "Set out from Cvikov by bike towards the Lusatian Mountains, Nový Bor, Milštejn or Kunratice."
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Cyklovýlety"
+msgstr "Cycling trips"
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Pět tras pro výlet na kole"
+msgstr "Five routes for a cycling trip"
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Vyberte si z pěti cyklistických tras. U každé najdete délku celé trasy, převýšení, odkaz na mapu a související tipy po cestě."
+msgstr "Choose from five cycling routes. Each includes the full route length, elevation gain, a map link and related tips along the way."
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "V okolí najdete také pěší výlety, koupání a restaurace pro celodenní program."
+msgstr "The area also offers walking trips, swimming and restaurants for a full day out."
+
+#: apartmancvikov/structured_data.py
+msgid "Doporučené cyklotrasy z Cvikova"
+msgstr "Recommended cycle routes from Cvikov"

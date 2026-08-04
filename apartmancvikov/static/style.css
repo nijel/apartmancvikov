@@ -671,6 +671,11 @@ summary {
   width: 5rem;
 }
 
+.attraction-placeholder--cycling svg {
+  height: 5.5rem;
+  width: 5.5rem;
+}
+
 .swimming-photo {
   margin: 0 auto clamp(2rem, 5vw, 3.5rem);
   max-width: 62rem;
@@ -1032,6 +1037,107 @@ summary {
   flex: none;
   font-weight: 750;
   margin: 0;
+}
+
+.cycling-routes__grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.cycling-route {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+  scroll-margin-top: 1.5rem;
+}
+
+.cycling-route:target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgb(139 45 38 / 12%);
+}
+
+.cycling-route h3 {
+  font-size: 1.55rem;
+  margin-bottom: 0.65rem;
+}
+
+.cycling-route > p {
+  color: var(--muted);
+}
+
+.cycling-route__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 0 1rem;
+}
+
+.cycling-route__facts div {
+  border-block: 1px solid var(--line);
+  padding: 0.65rem 0;
+}
+
+.cycling-route__facts div + div {
+  border-left: 1px solid var(--line);
+  padding-left: 1rem;
+}
+
+.cycling-route__facts dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.cycling-route__facts dd {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 750;
+  margin: 0;
+}
+
+.cycling-route .button-row {
+  margin-top: auto;
+}
+
+.cycling-route__related {
+  border-top: 1px solid var(--line);
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
+}
+
+.cycling-route__related strong,
+.cycling-route__related a {
+  display: block;
+}
+
+.cycling-route__related strong {
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.cycling-route__related a {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.cycling-route__related p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0.35rem 0 0;
+}
+
+.cycling-route__related p + a {
+  margin-top: 0.75rem;
+}
+
+.cycling-page .callout {
+  margin-top: clamp(3rem, 7vw, 5rem);
 }
 
 .related-trips {
@@ -1879,6 +1985,94 @@ html.lightbox-open {
     margin-bottom: 0.6mm;
   }
 
+  body.trip-print--cycling .section-intro {
+    margin-bottom: 2mm;
+  }
+
+  body.trip-print--cycling .section-intro h2 {
+    font-size: 13pt;
+  }
+
+  body.trip-print--cycling .cycling-routes__grid {
+    gap: 2mm;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body.trip-print--cycling .cycling-route {
+    border: 0.5pt solid #bdb5ae;
+    border-radius: 2mm;
+    break-inside: avoid;
+    padding: 2mm 2.2mm;
+  }
+
+  body.trip-print--cycling .cycling-route h3 {
+    font-size: 8.5pt;
+    line-height: 1.08;
+    margin-bottom: 1mm;
+  }
+
+  body.trip-print--cycling .cycling-route > p {
+    color: #413c38;
+    font-size: 6.4pt;
+    line-height: 1.15;
+    margin: 1mm 0;
+  }
+
+  body.trip-print--cycling .cycling-route__facts {
+    display: block;
+    font-size: 6.2pt;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  body.trip-print--cycling .cycling-route__facts div {
+    align-items: baseline;
+    border: 0;
+    display: flex;
+    gap: 0.8mm;
+    padding: 0;
+  }
+
+  body.trip-print--cycling .cycling-route__facts div + div {
+    border: 0;
+    padding-left: 0;
+  }
+
+  body.trip-print--cycling .cycling-route__facts dt,
+  body.trip-print--cycling .cycling-route__facts dd {
+    font-size: inherit;
+  }
+
+  body.trip-print--cycling .cycling-route__related {
+    border-top: 0.5pt solid #d6cec6;
+    margin: 0.8mm 0 0;
+    padding-top: 0.6mm;
+  }
+
+  body.trip-print--cycling .cycling-route__related strong {
+    font-size: 5.2pt;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3mm;
+  }
+
+  body.trip-print--cycling .cycling-route__related a {
+    color: #292522;
+    font-size: 5.8pt;
+    line-height: 1.1;
+    text-decoration: none;
+  }
+
+  body.trip-print--cycling .cycling-route__related p {
+    color: #413c38;
+    font-size: 5.2pt;
+    line-height: 1.1;
+    margin: 0.3mm 0 0;
+  }
+
+  body.trip-print--cycling .cycling-route__related p + a {
+    margin-top: 0.6mm;
+  }
+
   body.trip-print--swimming .swimming-page > .site-container {
     column-gap: 5mm;
     display: grid;
@@ -1912,7 +2106,7 @@ html.lightbox-open {
   }
 
   body.trip-print--swimming .swimming-grid {
-    gap: 1.5mm;
+    gap: 1mm;
     grid-column: 1 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding-right: 0.5mm;
@@ -1923,32 +2117,32 @@ html.lightbox-open {
     border-radius: 2mm;
     break-inside: avoid;
     display: block;
-    padding: 2.2mm;
+    padding: 1.7mm 2mm;
   }
 
   body.trip-print--swimming .swimming-card h3 {
-    font-size: 10.5pt;
-    margin: 0 0 1.2mm;
+    font-size: 10pt;
+    margin: 0 0 0.8mm;
   }
 
   body.trip-print--swimming .swimming-card > p {
     color: #413c38;
-    font-size: 7.7pt;
-    line-height: 1.22;
-    margin-bottom: 1.5mm;
+    font-size: 7.3pt;
+    line-height: 1.16;
+    margin-bottom: 1mm;
   }
 
   body.trip-print--swimming .swimming-facts {
-    font-size: 6.9pt;
+    font-size: 6.6pt;
     grid-template-columns: 19mm 1fr;
-    line-height: 1.15;
-    margin-bottom: 1.2mm;
+    line-height: 1.1;
+    margin-bottom: 0.8mm;
   }
 
   body.trip-print--swimming .swimming-facts dt,
   body.trip-print--swimming .swimming-facts dd {
     border-top: 0.5pt solid #d6cec6;
-    padding-block: 0.7mm;
+    padding-block: 0.5mm;
   }
 
   body.trip-print--swimming .swimming-facts dd {
@@ -1959,26 +2153,26 @@ html.lightbox-open {
   body.trip-print--swimming .swimming-card__related {
     border-top: 0.5pt solid #d6cec6;
     margin: 0;
-    padding-top: 1mm;
+    padding-top: 0.7mm;
   }
 
   body.trip-print--swimming .swimming-card__related strong {
-    font-size: 5.8pt;
-    margin-bottom: 0.5mm;
+    font-size: 5.5pt;
+    margin-bottom: 0.3mm;
   }
 
   body.trip-print--swimming .swimming-card__related a {
     color: #292522;
-    font-size: 6.8pt;
+    font-size: 6.4pt;
     line-height: 1.1;
     text-decoration: none;
   }
 
   body.trip-print--swimming .swimming-card__related p {
     color: #413c38;
-    font-size: 6.2pt;
-    line-height: 1.12;
-    margin: 0.5mm 0 0;
+    font-size: 5.9pt;
+    line-height: 1.08;
+    margin: 0.3mm 0 0;
   }
 
   body.trip-print--restaurants .section-intro {

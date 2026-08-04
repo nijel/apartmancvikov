@@ -19,6 +19,8 @@ from django.views.generic import FormView, TemplateView
 from .content import (
     ATTRACTIONS,
     ATTRACTIONS_BY_SLUG,
+    CYCLING_TRIPS,
+    CYCLING_TRIPS_BY_SLUG,
     SWIMMING_TIPS,
     SWIMMING_TIPS_BY_SLUG,
 )
@@ -42,12 +44,17 @@ def resolve_related_destinations(relations):
         if relation.target_kind == "attraction":
             target = ATTRACTIONS_BY_SLUG[relation.target_slug]
             url = reverse("attraction_detail", kwargs={"slug": target.slug})
+        elif relation.target_kind == "cycling":
+            target = CYCLING_TRIPS_BY_SLUG[relation.target_slug]
+            url = f"{reverse('cycling')}#cyklotrasa-{target.slug}"
         elif relation.target_kind == "swimming":
             target = SWIMMING_TIPS_BY_SLUG[relation.target_slug]
             url = f"{reverse('swimming')}#{target.slug}"
-        else:
+        elif relation.target_kind == "restaurant":
             target = RESTAURANTS_BY_SLUG[relation.target_slug]
             url = f"{reverse('restaurants')}#{target.slug}"
+        else:
+            raise ValueError(relation.target_kind)
         related_destinations.append(
             {
                 "name": target.name,
@@ -83,6 +90,22 @@ class TripsView(TemplateView):
         """Add all curated attractions to the trips overview."""
         context = super().get_context_data(**kwargs)
         context["attractions"] = ATTRACTIONS
+        return context
+
+
+class CyclingTripsView(TemplateView):
+    template_name = "cyklovylety.html"
+
+    def get_context_data(self, **kwargs):
+        """Add cycling trips with their related destinations."""
+        context = super().get_context_data(**kwargs)
+        context["cycling_cards"] = tuple(
+            {
+                "tip": tip,
+                **group_related_destinations(tip.related_trips),
+            }
+            for tip in CYCLING_TRIPS
+        )
         return context
 
 
@@ -277,6 +300,7 @@ def llms_txt(_request):
 - English: {settings.SITE_URL}/en/
 - German: {settings.SITE_URL}/de/
 - Family trip guide: {settings.SITE_URL}/cs/vylety/
+- Cycling trip guide: {settings.SITE_URL}/cs/vylety/cyklovylety/
 - Swimming trip guide: {settings.SITE_URL}/cs/vylety/koupani/
 - Recommended restaurants: {settings.SITE_URL}/cs/vylety/restaurace/
 - Availability: {settings.SITE_URL}/cs/obsazenost/

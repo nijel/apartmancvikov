@@ -150,6 +150,16 @@ RESTAURANTS = (
         distance_km=9,
         distance_kind="driving",
         travel_tip=_("Do Nového Boru je možné dojet také autobusem."),
+        related_trips=(
+            TripRelation(
+                target_kind="cycling",
+                target_slug="novy-bor",
+                description=_(
+                    "Restauraci můžete zařadit jako zastávku na cyklistickém "
+                    "okruhu přes Nový Bor."
+                ),
+            ),
+        ),
     ),
     RestaurantTip(
         slug="royal-maharaja",
@@ -159,6 +169,16 @@ RESTAURANTS = (
         distance_km=9,
         distance_kind="driving",
         travel_tip=_("Do Nového Boru je možné dojet také autobusem."),
+        related_trips=(
+            TripRelation(
+                target_kind="cycling",
+                target_slug="novy-bor",
+                description=_(
+                    "Indickou restauraci můžete zařadit jako zastávku na "
+                    "cyklistickém okruhu přes Nový Bor."
+                ),
+            ),
+        ),
     ),
     RestaurantTip(
         slug="resort-hvozd",
