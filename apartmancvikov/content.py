@@ -231,10 +231,7 @@ ATTRACTIONS = (
             "Nezapomeňte na helmu; menší okruh je vhodný pro první zkušenosti."
         ),
         map_url="https://mapy.com/s/dezohapela",
-        official_url=(
-            "https://admin-storage.munipolis.com/cvikov/bulletin/files/"
-            "2b5ab9d5-83b9-438d-a11e-30e8bfe85010.pdf"
-        ),
+        official_url=("https://www.dirty-parks.cz/pumptrack-cvikov/"),
         stroller_access=_(
             "Ano, cíl je ale určený především pro výlet na kole nebo odrážedle."
         ),
