@@ -152,6 +152,24 @@ class SeoTest(TestCase):
         self.assertIn("Obsazeno", html)
         self.assertNotIn(booking.uid, html)
 
+    def test_single_day_event_shows_departure_on_following_morning(self):
+        """A one-day calendar event also occupies the next morning."""
+        start = date.today() + timedelta(days=10)  # noqa: DTZ011
+        following_day = start + timedelta(days=1)
+        Booking.objects.create(start=start, end=start, uid="one-day-event")
+
+        html = self.client.get("/cs/obsazenost/").content.decode()
+
+        self.assertIn(
+            f'class="booking_start" data-status="arrival"><time datetime="{start}">',
+            html,
+        )
+        self.assertIn(
+            f'class="booking_end" data-status="departure"><time '
+            f'datetime="{following_day}">',
+            html,
+        )
+
     def test_responsive_image_manifest_matches_committed_assets(self):
         """Every recorded derivative exists and source photos are represented."""
         static_dir = Path(settings.BASE_DIR) / "apartmancvikov" / "static"

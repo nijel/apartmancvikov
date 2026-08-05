@@ -29,9 +29,15 @@ class BookingCalendar(HTMLCalendar):
     def fill_in_dates(self):
         """Load booking dates from the database."""
         for booking in Booking.objects.all():
+            display_end = booking.end
+            if booking.start == booking.end:
+                # A one-day calendar event represents an overnight stay: show
+                # its departure half on the following morning without changing
+                # the dates used by availability checks.
+                display_end += timedelta(days=1)
             self.start_dates.add(booking.start)
-            self.end_dates.add(booking.end)
-            days_range = (booking.end - booking.start).days - 1
+            self.end_dates.add(display_end)
+            days_range = (display_end - booking.start).days - 1
             if days_range > 0:
                 self.booked_dates.update(
                     booking.start + timedelta(days=day + 1) for day in range(days_range)
