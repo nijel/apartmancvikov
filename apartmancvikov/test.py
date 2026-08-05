@@ -903,7 +903,7 @@ class SeoTest(TestCase):
     def test_swimming_cards_link_to_related_attractions(self):
         """The curated swimming cards carry contextual trip links."""
         response = self.client.get("/cs/vylety/koupani/")
-        self.assertContains(response, 'class="swimming-card__related"', count=4)
+        self.assertContains(response, 'class="swimming-card__related"', count=5)
         self.assertContains(response, 'id="koupaliste-sloup"')
         self.assertContains(response, 'id="koupaliste-jonsdorf"')
         self.assertContains(response, 'id="koupaliste-ceska-kamenice"')
@@ -1516,7 +1516,7 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 93)
+        self.assertEqual(len(locations), 96)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/cyklovylety/",
