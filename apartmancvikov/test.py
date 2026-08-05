@@ -559,6 +559,46 @@ class SeoTest(TestCase):
             'href="/de/vylety/cyklovylety/#cyklotrasa-milstejn-nadeje"',
         )
 
+    def test_jablonne_lemberk_trip_has_routes_and_official_links(self):
+        """The Jablonné guide keeps both supplied routes and distinct sources."""
+        response = self.client.get("/cs/vylety/jablonne-lemberk/")
+        self.assertContains(response, "Jablonné a Lemberk")
+        self.assertContains(response, "Vzdálenost autem")
+        self.assertContains(response, "10 km")
+        self.assertContains(response, "Do Jablonného v Podještědí je možné")
+        self.assertContains(response, "autem nebo autobusem")
+        self.assertContains(response, "Základní okruh")
+        self.assertContains(response, "6,2 km")
+        self.assertContains(response, "https://mapy.com/s/nuderocako")
+        self.assertContains(response, "Kočárková varianta")
+        self.assertContains(response, "6,4 km")
+        self.assertContains(response, "https://mapy.com/s/catadakube")
+        self.assertContains(response, "Bazilika sv. Vavřince a sv. Zdislavy")
+        self.assertContains(response, "https://www.zamek-lemberk.cz/")
+        self.assertContains(
+            response,
+            "https://rybylemberk.cz/obcersteni-parkovani/zip-line",
+        )
+        self.assertContains(
+            response,
+            'href="/cs/vylety/koupani/#koupaliste-jablonne"',
+        )
+        self.assertContains(
+            response,
+            'href="/cs/vylety/restaurace/#lemberk"',
+        )
+
+        graph = self.get_schema_graph("/cs/vylety/jablonne-lemberk/")
+        attraction = self.schema_node(graph, "TouristAttraction")
+        self.assertEqual(
+            attraction["sameAs"],
+            [
+                "https://www.zdislava.cz/",
+                "https://www.zamek-lemberk.cz/",
+                "https://rybylemberk.cz/obcersteni-parkovani/zip-line",
+            ],
+        )
+
     def test_extended_trip_descriptions_are_translated(self):
         """New paragraphs remain useful in both translated site versions."""
         english = self.client.get("/en/vylety/klic/")
@@ -588,6 +628,16 @@ class SeoTest(TestCase):
         self.assertContains(milstejn_german, "Milštejn und Naděje")
         self.assertContains(milstejn_german, "Kinderwagentaugliche Route")
         self.assertNotContains(milstejn_german, "Kočárková varianta")
+
+        lemberk_english = self.client.get("/en/vylety/jablonne-lemberk/")
+        self.assertContains(lemberk_english, "Jablonné and Lemberk")
+        self.assertContains(lemberk_english, "Pushchair-friendly route")
+        self.assertNotContains(lemberk_english, "Kočárková varianta")
+
+        lemberk_german = self.client.get("/de/vylety/jablonne-lemberk/")
+        self.assertContains(lemberk_german, "Jablonné und Lemberk")
+        self.assertContains(lemberk_german, "Kinderwagentaugliche Route")
+        self.assertNotContains(lemberk_german, "Kočárková varianta")
 
     def test_every_destination_has_structured_practical_information(self):
         """Trips and swimming tips expose only the facts maintained for them."""
@@ -816,8 +866,20 @@ class SeoTest(TestCase):
                     ("restaurant", "royal-maharaja"),
                 )
             ),
+            frozenset(
+                (
+                    ("attraction", "jablonne-lemberk"),
+                    ("swimming", "koupaliste-jablonne"),
+                )
+            ),
+            frozenset(
+                (
+                    ("attraction", "jablonne-lemberk"),
+                    ("restaurant", "lemberk"),
+                )
+            ),
         }
-        self.assertEqual(relation_count, 48)
+        self.assertEqual(relation_count, 52)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):

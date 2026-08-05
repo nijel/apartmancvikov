@@ -2937,8 +2937,8 @@ msgid "Doporučené restaurace"
 msgstr "Recommended restaurants"
 
 #: apartmancvikov/structured_data.py
-msgid "Dvacet ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a třináct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Twenty tried-and-tested family trip ideas, five recommended cycle routes, seven places to swim and thirteen recommended restaurants near Apartment Cvikov."
+msgid "Dvacet jedna ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a třináct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Twenty-one tried-and-tested family trip ideas, five recommended cycle routes, seven places to swim and thirteen recommended restaurants near Apartment Cvikov."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace z Apartmánu Cvikov"
@@ -3045,8 +3045,8 @@ msgid "Provoz"
 msgstr "Opening"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Dvacet rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a třináct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Twenty family trips, five recommended cycle routes, seven places to swim and thirteen recommended restaurants near Apartment Cvikov."
+msgid "Dvacet jedna rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a třináct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Twenty-one family trips, five recommended cycle routes, seven places to swim and thirteen recommended restaurants near Apartment Cvikov."
 
 #: apartmancvikov/templates/vylety.html
 msgid "Třináct tipů v okolí"
@@ -3348,3 +3348,87 @@ msgstr "The area also offers walking trips, swimming and restaurants for a full 
 #: apartmancvikov/structured_data.py
 msgid "Doporučené cyklotrasy z Cvikova"
 msgstr "Recommended cycle routes from Cvikov"
+
+#: apartmancvikov/content.py
+msgid "Jablonné a Lemberk"
+msgstr "Jablonné and Lemberk"
+
+#: apartmancvikov/content.py
+msgid "Za svatou Zdislavou do Jablonného v Podještědí a na zámek Lemberk."
+msgstr "Follow in the footsteps of Saint Zdislava to Jablonné v Podještědí and Lemberk Castle."
+
+#: apartmancvikov/content.py
+msgid "Vydejte se za svatou Zdislavou do Jablonného v Podještědí a na zámek Lemberk. Pěší okruh spojuje historické centrum s bazilikou a zámkem; u Dvorního rybníka jej můžete doplnit jízdou na zip line."
+msgstr "Follow in the footsteps of Saint Zdislava to Jablonné v Podještědí and Lemberk Castle. The walking circuit links the historic centre with the basilica and castle; at Dvorní Pond you can add a ride on the zip line."
+
+#: apartmancvikov/content.py
+msgid "V Jablonném navštivte baziliku svatého Vavřince a svaté Zdislavy. Barokní chrám z let 1699 až 1729 stojí nad hrobem svaté Zdislavy, která se svým manželem Havlem založila ve městě špitál, dominikánský klášter a kostel."
+msgstr "In Jablonné, visit the Basilica of St Lawrence and St Zdislava. The Baroque church, built between 1699 and 1729, stands over the tomb of Saint Zdislava, who founded a hospital, Dominican monastery and church in the town with her husband Havel."
+
+#: apartmancvikov/content.py
+msgid "Zámek Lemberk vznikl z hradu založeného v polovině 13. století Havlem z rodu Markvarticů. Dnešní podobu získal při barokní přestavbě v letech 1660 až 1680. Při prohlídce můžete vidět zámeckou kapli, Bajkový sál s renesančním kazetovým stropem i místnosti připomínající Zdislavu."
+msgstr "Lemberk Castle developed from a castle founded in the mid-13th century by Havel of the Markvartic family. It acquired its present appearance during the Baroque rebuilding of 1660 to 1680. On the tour you can see the castle chapel, the Bajkový Hall with its Renaissance coffered ceiling and rooms commemorating Zdislava."
+
+#: apartmancvikov/content.py
+msgid "V Ráji pod Lemberkem se můžete svézt na 205 metrů dlouhé zip line nad Dvorním rybníkem. Provoz probíhá pod dohledem instruktora; před návštěvou si ověřte aktuální otevírací dobu a případná omezení kvůli počasí."
+msgstr "At Ráj pod Lemberkem, you can ride a 205-metre zip line above Dvorní Pond. The ride is supervised by an instructor; before visiting, check current opening hours and any weather restrictions."
+
+#: apartmancvikov/content.py
+msgid "Zip line je přístupná od výšky 95 cm a do hmotnosti 110 kg; na provoz dohlíží instruktor."
+msgstr "The zip line is available to visitors at least 95 cm tall and weighing no more than 110 kg; an instructor supervises the ride."
+
+#: apartmancvikov/content.py
+msgid "Ano; využijte kočárkovou variantu dlouhou 6,4 km."
+msgstr "Yes; use the 6.4 km pushchair-friendly route."
+
+#: apartmancvikov/content.py
+msgid "Zip line stojí 250 Kč za jeden sjezd nebo 1 000 Kč za pět sjezdů; vstupné na zámek ověřte na jeho webu."
+msgstr "The zip line costs CZK 250 for one ride or CZK 1,000 for five rides; check the castle website for admission prices."
+
+#: apartmancvikov/content.py
+msgid "Zip line je od dubna do června a v září a říjnu otevřená o víkendech a svátcích 10–16, v červenci a srpnu od úterý do neděle 10–16. Provoz zámku a baziliky ověřte předem."
+msgstr "The zip line is open at weekends and on public holidays from 10:00 to 16:00 from April to June and in September and October, and Tuesday to Sunday from 10:00 to 16:00 in July and August. Check the castle and basilica opening hours in advance."
+
+#: apartmancvikov/content.py
+msgid "Do Jablonného v Podještědí je možné dojet autem nebo autobusem."
+msgstr "You can reach Jablonné v Podještědí by car or bus."
+
+#: apartmancvikov/content.py
+msgid "Základní okruh"
+msgstr "Standard circuit"
+
+#: apartmancvikov/content.py
+msgid "Pěší okruh mezi Jablonným v Podještědí a Lemberkem."
+msgstr "A walking circuit between Jablonné v Podještědí and Lemberk."
+
+#: apartmancvikov/content.py
+msgid "Mírně delší varianta okruhu vedená po cestách vhodných pro kočárek."
+msgstr "A slightly longer circuit following paths suitable for a pushchair."
+
+#: apartmancvikov/content.py
+msgid "V létě můžete výlet doplnit koupáním v kempu v Jablonném v Podještědí."
+msgstr "In summer, combine the trip with a swim at the campsite in Jablonné v Podještědí."
+
+#: apartmancvikov/content.py
+msgid "Po cestě se můžete zastavit na rybí speciality nebo tradiční českou kuchyni v restauraci Lemberk."
+msgstr "Along the way, stop for fish specialities or traditional Czech cuisine at the Lemberk restaurant."
+
+#: apartmancvikov/content.py
+msgid "Bazilika sv. Vavřince a sv. Zdislavy"
+msgstr "Basilica of St Lawrence and St Zdislava"
+
+#: apartmancvikov/content.py
+msgid "Zámek Lemberk"
+msgstr "Lemberk Castle"
+
+#: apartmancvikov/content.py
+msgid "Zip line pod Lemberkem"
+msgstr "Zip line below Lemberk"
+
+#: apartmancvikov/content.py
+msgid "Koupání můžete spojit s okruhem za svatou Zdislavou a na zámek Lemberk."
+msgstr "Combine your swim with the circuit following Saint Zdislava and visiting Lemberk Castle."
+
+#: apartmancvikov/restaurants.py
+msgid "Restauraci můžete spojit s okruhem přes Jablonné v Podještědí a zámek Lemberk."
+msgstr "Combine the restaurant with the circuit through Jablonné v Podještědí and Lemberk Castle."

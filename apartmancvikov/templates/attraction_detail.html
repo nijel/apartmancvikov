@@ -145,9 +145,15 @@
             {% if attraction.map_url %}
               <a href="{{ attraction.map_url }}" class="button button--primary" rel="noopener">{% translate "Zobrazit mapu" %}</a>
             {% endif %}
-            <a href="{{ attraction.official_url }}"
-               class="button button--secondary"
-               rel="noopener">{% translate "Aktuální informace" %}</a>
+            {% if attraction.official_links %}
+              {% for link in attraction.official_links %}
+                <a href="{{ link.url }}" class="button button--secondary" rel="noopener">{{ link.name }}</a>
+              {% endfor %}
+            {% else %}
+              <a href="{{ attraction.official_url }}"
+                 class="button button--secondary"
+                 rel="noopener">{% translate "Aktuální informace" %}</a>
+            {% endif %}
           </div>
         </aside>
       </div>

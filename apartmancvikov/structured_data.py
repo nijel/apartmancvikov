@@ -322,7 +322,7 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Rodinné výlety z Apartmánu Cvikov"),
             _(
-                "Dvacet ověřených tipů na rodinné výlety, pět doporučených "
+                "Dvacet jedna ověřených tipů na rodinné výlety, pět doporučených "
                 "cyklotras, sedm míst ke koupání a třináct doporučených "
                 "restaurací v okolí Apartmánu Cvikov."
             ),
@@ -467,7 +467,11 @@ def _attraction_node(request, attraction, image_node):
         "description": str(attraction.description),
         "url": page_url,
         "image": {"@id": image_node["@id"]},
-        "sameAs": attraction.official_url,
+        "sameAs": (
+            [link.url for link in attraction.official_links]
+            if attraction.official_links
+            else attraction.official_url
+        ),
         "mainEntityOfPage": {"@id": f"{page_url}#webpage"},
     }
 

@@ -315,7 +315,7 @@ for name, e-mail, optional phone, arrival and departure dates, numbers of
 adults, children aged 3-12 and children under 3, and an optional note. Sending
 the form does not confirm a reservation; availability is confirmed by the host.
 
-The trip guide contains individual pages for twenty attractions around
+The trip guide contains individual pages for twenty-one attractions around
 Cvikov, seven additional swimming tips and thirteen recommended restaurants. For
 changeable admission prices and opening hours, follow the official links on
 those pages.

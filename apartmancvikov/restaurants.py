@@ -247,6 +247,16 @@ RESTAURANTS = (
         official_url=("https://penzionlemberk.cz/penzion-restaurace/restaurace"),
         distance_km=11,
         distance_kind="driving",
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="jablonne-lemberk",
+                description=_(
+                    "Restauraci můžete spojit s okruhem přes Jablonné v "
+                    "Podještědí a zámek Lemberk."
+                ),
+            ),
+        ),
     ),
     RestaurantTip(
         slug="kaido-sushi",

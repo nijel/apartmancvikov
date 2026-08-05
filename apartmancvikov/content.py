@@ -25,6 +25,12 @@ class RouteVariant:
 
 
 @dataclass(frozen=True)
+class OfficialLink:
+    name: object
+    url: str
+
+
+@dataclass(frozen=True)
 class CyclingTrip:
     slug: str
     name: object
@@ -66,6 +72,7 @@ class Attraction:
     description_paragraphs: tuple[object, ...] = ()
     route_variants: tuple[RouteVariant, ...] = ()
     related_trips: tuple[TripRelation, ...] = ()
+    official_links: tuple[OfficialLink, ...] = ()
 
 
 EASY = _("Lehká")
@@ -792,6 +799,106 @@ ATTRACTIONS = (
         image_height=1068,
     ),
     Attraction(
+        slug="jablonne-lemberk",
+        name=_("Jablonné a Lemberk"),
+        summary=_("Za svatou Zdislavou do Jablonného v Podještědí a na zámek Lemberk."),
+        description=_(
+            "Vydejte se za svatou Zdislavou do Jablonného v Podještědí a na "
+            "zámek Lemberk. Pěší okruh spojuje historické centrum s bazilikou "
+            "a zámkem; u Dvorního rybníka jej můžete doplnit jízdou na zip line."
+        ),
+        description_paragraphs=(
+            _(
+                "V Jablonném navštivte baziliku svatého Vavřince a svaté "
+                "Zdislavy. Barokní chrám z let 1699 až 1729 stojí nad hrobem "
+                "svaté Zdislavy, která se svým manželem Havlem založila ve "
+                "městě špitál, dominikánský klášter a kostel."
+            ),
+            _(
+                "Zámek Lemberk vznikl z hradu založeného v polovině 13. století "
+                "Havlem z rodu Markvarticů. Dnešní podobu získal při barokní "
+                "přestavbě v letech 1660 až 1680. Při prohlídce můžete vidět "
+                "zámeckou kapli, Bajkový sál s renesančním kazetovým stropem "
+                "i místnosti připomínající Zdislavu."
+            ),
+            _(
+                "V Ráji pod Lemberkem se můžete svézt na 205 metrů dlouhé zip "
+                "line nad Dvorním rybníkem. Provoz probíhá pod dohledem "
+                "instruktora; před návštěvou si ověřte aktuální otevírací dobu "
+                "a případná omezení kvůli počasí."
+            ),
+        ),
+        distance_km=10,
+        distance_kind="driving",
+        difficulty=EASY,
+        family_tip=_(
+            "Zip line je přístupná od výšky 95 cm a do hmotnosti 110 kg; na "
+            "provoz dohlíží instruktor."
+        ),
+        map_url=None,
+        official_url="https://www.zdislava.cz/",
+        stroller_access=_("Ano; využijte kočárkovou variantu dlouhou 6,4 km."),
+        admission=_(
+            "Zip line stojí 250 Kč za jeden sjezd nebo 1 000 Kč za pět sjezdů; "
+            "vstupné na zámek ověřte na jeho webu."
+        ),
+        opening_hours=_(
+            "Zip line je od dubna do června a v září a říjnu otevřená o "
+            "víkendech a svátcích 10–16, v červenci a srpnu od úterý do neděle "
+            "10–16. Provoz zámku a baziliky ověřte předem."
+        ),
+        travel_tip=_("Do Jablonného v Podještědí je možné dojet autem nebo autobusem."),
+        route_variants=(
+            RouteVariant(
+                name=_("Základní okruh"),
+                distance_km=6.2,
+                map_url="https://mapy.com/s/nuderocako",
+                description=_("Pěší okruh mezi Jablonným v Podještědí a Lemberkem."),
+            ),
+            RouteVariant(
+                name=_("Kočárková varianta"),
+                distance_km=6.4,
+                map_url="https://mapy.com/s/catadakube",
+                description=_(
+                    "Mírně delší varianta okruhu vedená po cestách vhodných pro "
+                    "kočárek."
+                ),
+            ),
+        ),
+        related_trips=(
+            TripRelation(
+                target_kind="swimming",
+                target_slug="koupaliste-jablonne",
+                description=_(
+                    "V létě můžete výlet doplnit koupáním v kempu v Jablonném "
+                    "v Podještědí."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="lemberk",
+                description=_(
+                    "Po cestě se můžete zastavit na rybí speciality nebo "
+                    "tradiční českou kuchyni v restauraci Lemberk."
+                ),
+            ),
+        ),
+        official_links=(
+            OfficialLink(
+                name=_("Bazilika sv. Vavřince a sv. Zdislavy"),
+                url="https://www.zdislava.cz/",
+            ),
+            OfficialLink(
+                name=_("Zámek Lemberk"),
+                url="https://www.zamek-lemberk.cz/",
+            ),
+            OfficialLink(
+                name=_("Zip line pod Lemberkem"),
+                url=("https://rybylemberk.cz/obcersteni-parkovani/zip-line"),
+            ),
+        ),
+    ),
+    Attraction(
         slug="polevsko",
         name=_("Polevsko v létě i v zimě"),
         summary=_("Rodinné lyžování, cyklistika a výlety v krajině nad Novým Borem."),
@@ -1373,6 +1480,16 @@ SWIMMING_TIPS = (
         official_url="https://www.kempjablonne.cz/",
         admission=_("Dítě 30 Kč, dospělý 50 Kč."),
         opening_hours=_("V létě 8–22."),
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="jablonne-lemberk",
+                description=_(
+                    "Koupání můžete spojit s okruhem za svatou Zdislavou a na "
+                    "zámek Lemberk."
+                ),
+            ),
+        ),
     ),
     SwimmingTip(
         slug="nadrz-nadeje",
