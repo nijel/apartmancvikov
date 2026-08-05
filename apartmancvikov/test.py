@@ -1156,14 +1156,12 @@ class SeoTest(TestCase):
             with self.subTest(path=path):
                 self.assertContains(self.client.get(path), message)
 
-    def test_licensed_photo_includes_attribution(self):
-        """Third-party imagery links to its source and license."""
+    def test_own_duty_kamen_photo_replaces_wikimedia_image(self):
+        """The new own photo is shown without the former external attribution."""
         response = self.client.get("/cs/vylety/duty-kamen/")
         self.assertContains(response, "/static/vylety/duty-kamen.jpg")
-        self.assertContains(
-            response, "https://commons.wikimedia.org/wiki/File:Koerner.jpg"
-        )
-        self.assertContains(response, "https://creativecommons.org/licenses/by-sa/3.0/")
+        self.assertNotContains(response, "Lutz Maertens")
+        self.assertNotContains(response, "commons.wikimedia.org")
 
     def test_structured_data_is_valid_json(self):
         """Attraction pages expose one linked graph with all expected entities."""
@@ -1358,19 +1356,25 @@ class SeoTest(TestCase):
                 self.assertNotIn("AggregateRating", schema_text)
                 self.assertNotIn('"Review"', schema_text)
 
-    def test_licensed_image_has_machine_readable_attribution(self):
-        """Licensed attraction photography carries source and license metadata."""
+    def test_duty_kamen_image_has_own_photo_metadata(self):
+        """The new own attraction photo identifies the operator as rights holder."""
         graph = self.get_schema_graph("/cs/vylety/duty-kamen/")
         image = self.schema_node(graph, "ImageObject")
-        self.assertEqual(image["creditText"], "Lutz Maertens")
+        operator = self.schema_node(graph, "Person")
+        self.assertEqual(image["width"], 4000)
+        self.assertEqual(image["height"], 3000)
+        self.assertEqual(image["creditText"], "Apartmán Cvikov")
+        self.assertEqual(image["creator"]["@id"], operator["@id"])
+        self.assertEqual(image["copyrightHolder"]["@id"], operator["@id"])
+        self.assertEqual(image["copyrightNotice"], f"© {OPERATOR_NAME}")
         self.assertEqual(
-            image["license"], "https://creativecommons.org/licenses/by-sa/3.0/"
+            image["license"],
+            "https://apartmancvikov.cz/cs/podminky-uziti-fotografii/",
         )
         self.assertEqual(
             image["acquireLicensePage"],
-            "https://commons.wikimedia.org/wiki/File:Koerner.jpg",
+            "https://apartmancvikov.cz/cs/kontakt/",
         )
-        self.assertEqual(image["copyrightNotice"], "© Lutz Maertens")
 
     def test_own_image_has_machine_readable_authorship(self):
         """Property photography identifies the operator as its rights holder."""
