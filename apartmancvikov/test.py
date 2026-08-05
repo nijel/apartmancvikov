@@ -692,6 +692,12 @@ class SeoTest(TestCase):
             ),
             frozenset(
                 (
+                    ("attraction", "ajeto-lindava"),
+                    ("restaurant", "sklarska-krcma"),
+                )
+            ),
+            frozenset(
+                (
                     ("attraction", "klic"),
                     ("attraction", "polevsko"),
                 )
@@ -811,7 +817,7 @@ class SeoTest(TestCase):
                 )
             ),
         }
-        self.assertEqual(relation_count, 46)
+        self.assertEqual(relation_count, 48)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):
@@ -869,6 +875,13 @@ class SeoTest(TestCase):
         )
         self.assertContains(pumptrack, "Přímo u pumptracku a trampolín")
 
+        ajeto = self.client.get("/cs/vylety/ajeto-lindava/")
+        self.assertContains(
+            ajeto,
+            'href="/cs/vylety/restaurace/#sklarska-krcma"',
+        )
+        self.assertContains(ajeto, "tradiční českou kuchyni")
+
         hvozd = self.client.get("/cs/vylety/hvozd/")
         self.assertContains(
             hvozd,
@@ -892,6 +905,11 @@ class SeoTest(TestCase):
             sloup,
             'href="/cs/vylety/restaurace/#kaido-sushi"',
         )
+
+        restaurants = self.client.get("/cs/vylety/restaurace/")
+        self.assertContains(restaurants, 'id="sklarska-krcma"')
+        self.assertContains(restaurants, 'href="/cs/vylety/ajeto-lindava/"')
+        self.assertContains(restaurants, "ukázkou ruční výroby skla")
 
     def test_ceska_kamenice_trip_has_both_route_lengths(self):
         """The long loop and stroller-friendly short route stay distinct."""
@@ -975,7 +993,7 @@ class SeoTest(TestCase):
         """The overview opens one complete, distance-sorted restaurant guide."""
         overview = self.client.get("/cs/vylety/")
         self.assertContains(overview, 'href="/cs/vylety/restaurace/"')
-        self.assertContains(overview, "Dvanáct tipů v okolí")
+        self.assertContains(overview, "Třináct tipů v okolí")
 
         response = self.client.get("/cs/vylety/restaurace/")
         html = response.content.decode()
@@ -988,6 +1006,9 @@ class SeoTest(TestCase):
         self.assertContains(response, "0,3 km")
         self.assertContains(response, "19 km")
         self.assertContains(response, "Sushi a ramen v České Lípě")
+        self.assertContains(response, "Sklářská krčma")
+        self.assertContains(response, "Tradiční česká kuchyně")
+        self.assertContains(response, "https://www.ajetoglass.com/sklarska-krcma")
         self.assertContains(
             response,
             "https://www.facebook.com/p/Kaido-Sushi-%C4%8CL-61556848413838/",
@@ -1036,17 +1057,27 @@ class SeoTest(TestCase):
         english = self.client.get("/en/vylety/restaurace/")
         self.assertContains(english, "Recommended restaurants")
         self.assertContains(english, "On foot from the apartment")
+        self.assertContains(english, "Traditional Czech cuisine")
+        self.assertContains(english, "Combine a visit to Sklářská krčma")
         self.assertContains(
             english,
             'href="/en/vylety/pumptrack-cvikov/"',
         )
+        self.assertContains(english, 'href="/en/vylety/ajeto-lindava/"')
         self.assertNotContains(english, "Pěšky z apartmánu")
+        english_ajeto = self.client.get("/en/vylety/ajeto-lindava/")
+        self.assertContains(english_ajeto, "After touring the glassworks")
 
         german = self.client.get("/de/vylety/restaurace/")
         self.assertContains(german, "Empfohlene Restaurants")
         self.assertContains(german, "Zu Fuß vom Apartment")
+        self.assertContains(german, "Traditionelle tschechische Küche")
+        self.assertContains(german, "Verbinden Sie einen Besuch")
         self.assertContains(german, 'href="/de/vylety/hvozd/"')
+        self.assertContains(german, 'href="/de/vylety/ajeto-lindava/"')
         self.assertNotContains(german, "Autem nebo autobusem")
+        german_ajeto = self.client.get("/de/vylety/ajeto-lindava/")
+        self.assertContains(german_ajeto, "Nach der Besichtigung der Glashütte")
 
     def test_swimming_tips_are_translated(self):
         """The dedicated guide remains useful in every supported language."""

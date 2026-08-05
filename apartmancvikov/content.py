@@ -564,8 +564,7 @@ ATTRACTIONS = (
                 target_kind="attraction",
                 target_slug="ajeto-lindava",
                 description=_(
-                    "Pokračujte za další ukázkou ruční výroby skla a do "
-                    "Sklářské krčmy v Lindavě."
+                    "Pokračujte za další ukázkou ruční výroby skla do Lindavy."
                 ),
             ),
             TripRelation(
@@ -584,11 +583,10 @@ ATTRACTIONS = (
     Attraction(
         slug="ajeto-lindava",
         name=_("Sklárna AJETO v Lindavě"),
-        summary=_("Sklářská huť, zážitkové prohlídky a Sklářská krčma."),
+        summary=_("Sklářská huť s možností prohlídek a sklářských zážitků."),
         description=_(
             "Ve sklárně AJETO lze sledovat ruční výrobu skla a po předchozí "
-            "domluvě využít nabídku exkurzí a sklářských zážitků. Výlet můžete "
-            "spojit s návštěvou přilehlé Sklářské krčmy."
+            "domluvě využít nabídku exkurzí a sklářských zážitků."
         ),
         distance_km=6,
         distance_kind="driving",
@@ -606,6 +604,14 @@ ATTRACTIONS = (
                 description=_(
                     "Sklářský výlet můžete doplnit procházkou mezi skleněnými "
                     "rostlinami v Kunraticích."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
+                target_slug="sklarska-krcma",
+                description=_(
+                    "Po prohlídce sklárny se můžete zastavit na tradiční českou "
+                    "kuchyni v přilehlé Sklářské krčmě."
                 ),
             ),
         ),

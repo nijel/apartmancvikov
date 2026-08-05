@@ -161,19 +161,20 @@ msgid "Sklárna AJETO v Lindavě"
 msgstr "Glashütte AJETO in Lindava"
 
 #: apartmancvikov/content.py:137
-msgid "Sklářská huť, zážitkové prohlídky a Sklářská krčma."
-msgstr "Glashütte, Erlebnisführungen und Glasmacher-Schänke."
+msgid "Sklářská huť s možností prohlídek a sklářských zážitků."
+msgstr "Eine Glashütte mit Führungen und Glasmacher-Erlebnissen."
 
 #: apartmancvikov/content.py:139
 msgid ""
 "Ve sklárně AJETO lze sledovat ruční výrobu skla a po předchozí domluvě "
-"využít nabídku exkurzí a sklářských zážitků. Výlet můžete spojit s návštěvou "
-"přilehlé Sklářské krčmy."
+"využít nabídku exkurzí a sklářských zážitků."
 msgstr ""
 "In der Glashütte AJETO können Sie die Glasherstellung von Hand beobachten "
-"und nach vorheriger Absprache an Führungen oder Glaserlebnissen teilnehmen. "
-"Verbinden Sie den Ausflug mit einem Besuch der angrenzenden Glasmacher-"
-"Schänke."
+"und nach vorheriger Absprache an Führungen oder Glaserlebnissen teilnehmen."
+
+#: apartmancvikov/content.py
+msgid "Po prohlídce sklárny se můžete zastavit na tradiční českou kuchyni v přilehlé Sklářské krčmě."
+msgstr "Nach der Besichtigung der Glashütte können Sie in der angrenzenden Sklářská krčma traditionelle tschechische Küche genießen."
 
 #: apartmancvikov/content.py:145
 msgid "Exkurzi nebo zážitek pro děti si předem ověřte a rezervujte."
@@ -2271,11 +2272,8 @@ msgstr ""
 "Sloup erfrischen."
 
 #: apartmancvikov/content.py
-msgid ""
-"Pokračujte za další ukázkou ruční výroby skla a do Sklářské krčmy v Lindavě."
-msgstr ""
-"Setzen Sie den Ausflug mit einem weiteren Einblick in die handwerkliche "
-"Glasherstellung und einem Besuch der Glasmacher-Schänke in Lindava fort."
+msgid "Pokračujte za další ukázkou ruční výroby skla do Lindavy."
+msgstr "Fahren Sie nach Lindava weiter, um ein weiteres Beispiel handwerklicher Glasherstellung zu erleben."
 
 #: apartmancvikov/content.py
 msgid ""
@@ -2877,6 +2875,18 @@ msgid "Občerstvení leží přímo u pumptracku a navazujícího dětského are
 msgstr "Der Imbiss liegt direkt am Pumptrack und dem angrenzenden Kinderareal."
 
 #: apartmancvikov/restaurants.py
+msgid "Sklářská krčma"
+msgstr "Sklářská krčma"
+
+#: apartmancvikov/restaurants.py
+msgid "Tradiční česká kuchyně."
+msgstr "Traditionelle tschechische Küche."
+
+#: apartmancvikov/restaurants.py
+msgid "Návštěvu Sklářské krčmy můžete spojit s prohlídkou sklárny AJETO a ukázkou ruční výroby skla."
+msgstr "Verbinden Sie einen Besuch in der Sklářská krčma mit einer Führung durch die Glashütte AJETO und einer Vorführung handwerklicher Glasherstellung."
+
+#: apartmancvikov/restaurants.py
 msgid "Sloupská Terasa"
 msgstr "Sloupská Terasa"
 
@@ -2961,8 +2971,8 @@ msgid "Rybí speciality z vlastních rybníků a sádek i tradiční česká kuc
 msgstr "Fischspezialitäten aus eigenen Teichen und Hälterungen sowie traditionelle tschechische Küche."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
-msgid "Dvanáct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
-msgstr "Zwölf empfohlene Restaurants, Kantinen und Imbisse in Laufnähe der Ferienwohnung Cvikov und nahe gelegener Ausflugsziele."
+msgid "Třináct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
+msgstr "Dreizehn empfohlene Restaurants, Kantinen und Imbisse in Laufnähe der Ferienwohnung Cvikov und nahe gelegener Ausflugsziele."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 #: apartmancvikov/templates/vylety.html
@@ -2970,8 +2980,8 @@ msgid "Doporučené restaurace"
 msgstr "Empfohlene Restaurants"
 
 #: apartmancvikov/structured_data.py
-msgid "Dvacet ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Zwanzig erprobte Tipps für Familienausflüge, fünf empfohlene Radrouten, sieben Badestellen und zwölf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
+msgid "Dvacet ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a třináct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Zwanzig erprobte Tipps für Familienausflüge, fünf empfohlene Radrouten, sieben Badestellen und dreizehn empfohlene Restaurants rund um die Ferienwohnung Cvikov."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace z Apartmánu Cvikov"
@@ -3078,12 +3088,12 @@ msgid "Provoz"
 msgstr "Betrieb"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Dvacet rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a dvanáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Zwanzig Familienausflüge, fünf empfohlene Radrouten, sieben Badestellen und zwölf empfohlene Restaurants rund um die Ferienwohnung Cvikov."
+msgid "Dvacet rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a třináct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Zwanzig Familienausflüge, fünf empfohlene Radrouten, sieben Badestellen und dreizehn empfohlene Restaurants rund um die Ferienwohnung Cvikov."
 
 #: apartmancvikov/templates/vylety.html
-msgid "Dvanáct tipů v okolí"
-msgstr "Zwölf Tipps in der Umgebung"
+msgid "Třináct tipů v okolí"
+msgstr "Dreizehn Tipps in der Umgebung"
 
 #: apartmancvikov/templates/vylety.html
 msgid "Kam zajít pěšky na oběd a kde se najíst při výletech v okolí Cvikova."

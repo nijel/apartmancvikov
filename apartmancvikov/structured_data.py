@@ -323,7 +323,7 @@ def _page_metadata(view_name):
             _("Rodinné výlety z Apartmánu Cvikov"),
             _(
                 "Dvacet ověřených tipů na rodinné výlety, pět doporučených "
-                "cyklotras, sedm míst ke koupání a dvanáct doporučených "
+                "cyklotras, sedm míst ke koupání a třináct doporučených "
                 "restaurací v okolí Apartmánu Cvikov."
             ),
         ),
@@ -348,7 +348,7 @@ def _page_metadata(view_name):
             "CollectionPage",
             _("Doporučené restaurace z Apartmánu Cvikov"),
             _(
-                "Dvanáct doporučených restaurací, jídelen a občerstvení v "
+                "Třináct doporučených restaurací, jídelen a občerstvení v "
                 "pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních "
                 "cílech."
             ),

@@ -83,6 +83,24 @@ RESTAURANTS = (
         ),
     ),
     RestaurantTip(
+        slug="sklarska-krcma",
+        name=_("Sklářská krčma"),
+        description=_("Tradiční česká kuchyně."),
+        official_url="https://www.ajetoglass.com/sklarska-krcma",
+        distance_km=6,
+        distance_kind="driving",
+        related_trips=(
+            TripRelation(
+                target_kind="attraction",
+                target_slug="ajeto-lindava",
+                description=_(
+                    "Návštěvu Sklářské krčmy můžete spojit s prohlídkou "
+                    "sklárny AJETO a ukázkou ruční výroby skla."
+                ),
+            ),
+        ),
+    ),
+    RestaurantTip(
         slug="sloupska-terasa",
         name=_("Sloupská Terasa"),
         description=_(
