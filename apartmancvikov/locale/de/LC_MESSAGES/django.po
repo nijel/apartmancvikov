@@ -2229,24 +2229,68 @@ msgstr ""
 "für Kinder."
 
 #: apartmancvikov/templates/attraction_detail.html
-msgid "Propojte výlety"
-msgstr "Ausflüge verbinden"
+msgid "Další výlety"
+msgstr "Weitere Ausflüge"
 
 #: apartmancvikov/templates/attraction_detail.html
-msgid "Související výlety"
-msgstr "Passende Ausflüge"
+#: apartmancvikov/templates/cyklovylety.html apartmancvikov/templates/koupani.html
+#: apartmancvikov/templates/snippets/restaurant_card.html
+msgid "Výlety v okolí"
+msgstr "Ausflüge in der Umgebung"
 
 #: apartmancvikov/templates/attraction_detail.html
-msgid "Další tip"
-msgstr "Weiterer Tipp"
+msgid "Výlet"
+msgstr "Ausflug"
 
 #: apartmancvikov/templates/attraction_detail.html
-msgid "Zobrazit související výlet"
-msgstr "Passenden Ausflug anzeigen"
+msgid "Zobrazit výlet"
+msgstr "Ausflug anzeigen"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Na kole"
+msgstr "Mit dem Fahrrad"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Cyklovýlet"
+msgstr "Radausflug"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Zobrazit cyklotrasu"
+msgstr "Radroute anzeigen"
+
+#: apartmancvikov/templates/attraction_detail.html apartmancvikov/templates/koupani.html
+#: apartmancvikov/templates/snippets/restaurant_card.html
+msgid "Cyklotrasy v okolí"
+msgstr "Radrouten in der Umgebung"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Osvěžení po cestě"
+msgstr "Erfrischung unterwegs"
+
+#: apartmancvikov/templates/attraction_detail.html
+#: apartmancvikov/templates/snippets/restaurant_card.html
+msgid "Koupání v okolí"
+msgstr "Baden in der Umgebung"
+
+#: apartmancvikov/templates/attraction_detail.html
+msgid "Zobrazit místo ke koupání"
+msgstr "Badestelle anzeigen"
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Další cyklotrasy"
+msgstr "Weitere Radrouten"
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Koupání po cestě"
+msgstr "Baden unterwegs"
+
+#: apartmancvikov/templates/cyklovylety.html
+msgid "Kde se najíst po cestě"
+msgstr "Essen unterwegs"
 
 #: apartmancvikov/templates/koupani.html
-msgid "Spojte s výletem"
-msgstr "Mit einem Ausflug verbinden"
+msgid "Další koupání v okolí"
+msgstr "Weitere Bademöglichkeiten in der Umgebung"
 
 #: apartmancvikov/content.py
 msgid ""
@@ -3004,12 +3048,12 @@ msgid "Kde se najíst poblíž"
 msgstr "Essen in der Nähe"
 
 #: apartmancvikov/templates/attraction_detail.html
-msgid "Doporučená restaurace"
-msgstr "Empfohlenes Restaurant"
+msgid "Tip na jídlo"
+msgstr "Essenstipp"
 
 #: apartmancvikov/templates/attraction_detail.html
-msgid "Zobrazit doporučenou restauraci"
-msgstr "Empfohlenes Restaurant anzeigen"
+msgid "Zobrazit tip na jídlo"
+msgstr "Essenstipp anzeigen"
 
 #: apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace v okolí Cvikova | Apartmán Cvikov"

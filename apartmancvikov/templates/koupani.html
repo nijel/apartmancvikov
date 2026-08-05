@@ -109,12 +109,30 @@
                   </dd>
                 {% endif %}
               </dl>
-              {% if card.related_trips %}
+              {% if card.related_attractions %}
                 <div class="swimming-card__related">
-                  <strong>{% translate "Spojte s výletem" %}</strong>
-                  {% for related_trip in card.related_trips %}
-                    <a href="{{ related_trip.url }}">{{ related_trip.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
-                    <p>{{ related_trip.description }}</p>
+                  <strong>{% translate "Výlety v okolí" %}</strong>
+                  {% for attraction in card.related_attractions %}
+                    <a href="{{ attraction.url }}">{{ attraction.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
+                    <p>{{ attraction.description }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if card.related_cycling %}
+                <div class="swimming-card__related">
+                  <strong>{% translate "Cyklotrasy v okolí" %}</strong>
+                  {% for cycling in card.related_cycling %}
+                    <a href="{{ cycling.url }}">{{ cycling.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
+                    <p>{{ cycling.description }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if card.related_swimming %}
+                <div class="swimming-card__related">
+                  <strong>{% translate "Další koupání v okolí" %}</strong>
+                  {% for swimming in card.related_swimming %}
+                    <a href="{{ swimming.url }}">{{ swimming.name|nbsp_prepositions }} <span aria-hidden="true">→</span></a>
+                    <p>{{ swimming.description }}</p>
                   {% endfor %}
                 </div>
               {% endif %}

@@ -885,7 +885,7 @@ class SeoTest(TestCase):
     def test_attraction_details_link_to_related_trips(self):
         """Detail recommendations explain and link each curated connection."""
         shortened = self.client.get("/cs/vylety/duty-kamen/")
-        self.assertContains(shortened, "Související výlety")
+        self.assertContains(shortened, "Výlety v okolí")
         self.assertContains(
             shortened,
             'href="/cs/vylety/cvikovske-vyhlidky/"',
@@ -899,11 +899,14 @@ class SeoTest(TestCase):
             'href="/cs/vylety/koupani/#koupaliste-jonsdorf"',
         )
         self.assertContains(exotenhaus, 'href="/cs/vylety/oybin/"')
+        self.assertContains(exotenhaus, "Výlety v okolí")
+        self.assertContains(exotenhaus, "Koupání v okolí")
+        self.assertNotContains(exotenhaus, "Související výlety")
 
     def test_swimming_cards_link_to_related_attractions(self):
         """The curated swimming cards carry contextual trip links."""
         response = self.client.get("/cs/vylety/koupani/")
-        self.assertContains(response, 'class="swimming-card__related"', count=5)
+        self.assertContains(response, 'class="swimming-card__related"', count=6)
         self.assertContains(response, 'id="koupaliste-sloup"')
         self.assertContains(response, 'id="koupaliste-jonsdorf"')
         self.assertContains(response, 'id="koupaliste-ceska-kamenice"')
@@ -915,6 +918,9 @@ class SeoTest(TestCase):
             'href="/cs/vylety/privoz-mlynky-vyhlidky/"',
         )
         self.assertContains(response, 'href="/cs/vylety/milstejn-nadeje/"')
+        self.assertContains(response, "Výlety v okolí")
+        self.assertContains(response, "Cyklotrasy v okolí")
+        self.assertNotContains(response, "Spojte s výletem")
 
     def test_nadeje_swimming_tip_has_map_distance_and_access_note(self):
         """The natural reservoir uses its map without implying direct car access."""
@@ -972,6 +978,38 @@ class SeoTest(TestCase):
         self.assertContains(restaurants, 'id="sklarska-krcma"')
         self.assertContains(restaurants, 'href="/cs/vylety/ajeto-lindava/"')
         self.assertContains(restaurants, "ukázkou ruční výroby skla")
+        self.assertContains(restaurants, "Výlety v okolí")
+        self.assertContains(restaurants, "Cyklotrasy v okolí")
+        self.assertContains(restaurants, "Koupání v okolí")
+        self.assertNotContains(restaurants, "Spojte s výletem")
+
+        cycling = self.client.get("/cs/vylety/cyklovylety/")
+        self.assertContains(cycling, "Koupání po cestě")
+        self.assertContains(cycling, "Kde se najíst po cestě")
+        self.assertNotContains(cycling, "Spojte s výletem")
+
+        self.assertContains(ajeto, "Tip na jídlo")
+        self.assertNotContains(ajeto, "Doporučená restaurace")
+
+    def test_related_destination_headings_are_translated(self):
+        """Typed relation headings stay clear in both translated versions."""
+        cycling_english = self.client.get("/en/vylety/cyklovylety/")
+        self.assertContains(cycling_english, "Swimming along the way")
+        self.assertContains(cycling_english, "Where to eat along the way")
+        self.assertNotContains(cycling_english, "Koupání po cestě")
+
+        cycling_german = self.client.get("/de/vylety/cyklovylety/")
+        self.assertContains(cycling_german, "Baden unterwegs")
+        self.assertContains(cycling_german, "Essen unterwegs")
+        self.assertNotContains(cycling_german, "Kde se najíst po cestě")
+
+        ajeto_english = self.client.get("/en/vylety/ajeto-lindava/")
+        self.assertContains(ajeto_english, "Food tip")
+        self.assertNotContains(ajeto_english, "Tip na jídlo")
+
+        ajeto_german = self.client.get("/de/vylety/ajeto-lindava/")
+        self.assertContains(ajeto_german, "Essenstipp")
+        self.assertNotContains(ajeto_german, "Tip na jídlo")
 
     def test_ceska_kamenice_trip_has_both_route_lengths(self):
         """The long loop and stroller-friendly short route stay distinct."""
@@ -1012,7 +1050,8 @@ class SeoTest(TestCase):
     def test_related_trip_links_and_copy_are_translated(self):
         """Related links preserve the active language and localized rationale."""
         english = self.client.get("/en/vylety/motyli-dum-jonsdorf/")
-        self.assertContains(english, "Related trips")
+        self.assertContains(english, "Trips nearby")
+        self.assertContains(english, "Swimming nearby")
         self.assertContains(
             english,
             'href="/en/vylety/koupani/#koupaliste-jonsdorf"',
@@ -1021,7 +1060,8 @@ class SeoTest(TestCase):
         self.assertNotContains(english, "V teplém dni")
 
         german = self.client.get("/de/vylety/koupani/")
-        self.assertContains(german, "Mit einem Ausflug verbinden")
+        self.assertContains(german, "Ausflüge in der Umgebung")
+        self.assertContains(german, "Radrouten in der Umgebung")
         self.assertContains(
             german,
             'href="/de/vylety/motyli-dum-jonsdorf/"',

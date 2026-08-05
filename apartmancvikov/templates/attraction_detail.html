@@ -192,18 +192,58 @@
         </section>
       {% endif %}
 
-      {% if related_trips %}
-        <section class="related-trips" aria-labelledby="related-trips-title">
-          <p class="eyebrow">{% translate "Propojte výlety" %}</p>
-          <h2 id="related-trips-title">{% translate "Související výlety" %}</h2>
+      {% if related_attractions %}
+        <section class="related-trips" aria-labelledby="related-attractions-title">
+          <p class="eyebrow">{% translate "Další výlety" %}</p>
+          <h2 id="related-attractions-title">{% translate "Výlety v okolí" %}</h2>
           <div class="related-trips__grid">
-            {% for related_trip in related_trips %}
-              <a href="{{ related_trip.url }}" class="related-trip-card">
-                <span class="eyebrow">{% translate "Další tip" %}</span>
-                <h3>{{ related_trip.name|nbsp_prepositions }}</h3>
-                <p>{{ related_trip.description }}</p>
+            {% for attraction in related_attractions %}
+              <a href="{{ attraction.url }}" class="related-trip-card">
+                <span class="eyebrow">{% translate "Výlet" %}</span>
+                <h3>{{ attraction.name|nbsp_prepositions }}</h3>
+                <p>{{ attraction.description }}</p>
                 <span class="related-trip-card__link">
-                  {% translate "Zobrazit související výlet" %}
+                  {% translate "Zobrazit výlet" %}
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+      {% if related_cycling %}
+        <section class="related-trips" aria-labelledby="related-cycling-title">
+          <p class="eyebrow">{% translate "Na kole" %}</p>
+          <h2 id="related-cycling-title">{% translate "Cyklotrasy v okolí" %}</h2>
+          <div class="related-trips__grid">
+            {% for cycling in related_cycling %}
+              <a href="{{ cycling.url }}" class="related-trip-card">
+                <span class="eyebrow">{% translate "Cyklovýlet" %}</span>
+                <h3>{{ cycling.name|nbsp_prepositions }}</h3>
+                <p>{{ cycling.description }}</p>
+                <span class="related-trip-card__link">
+                  {% translate "Zobrazit cyklotrasu" %}
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+      {% if related_swimming %}
+        <section class="related-trips" aria-labelledby="related-swimming-title">
+          <p class="eyebrow">{% translate "Osvěžení po cestě" %}</p>
+          <h2 id="related-swimming-title">{% translate "Koupání v okolí" %}</h2>
+          <div class="related-trips__grid">
+            {% for swimming in related_swimming %}
+              <a href="{{ swimming.url }}" class="related-trip-card">
+                <span class="eyebrow">{% translate "Koupání" %}</span>
+                <h3>{{ swimming.name|nbsp_prepositions }}</h3>
+                <p>{{ swimming.description }}</p>
+                <span class="related-trip-card__link">
+                  {% translate "Zobrazit místo ke koupání" %}
                   <span aria-hidden="true">→</span>
                 </span>
               </a>
@@ -220,11 +260,11 @@
           <div class="related-trips__grid">
             {% for restaurant in related_restaurants %}
               <a href="{{ restaurant.url }}" class="related-trip-card">
-                <span class="eyebrow">{% translate "Doporučená restaurace" %}</span>
+                <span class="eyebrow">{% translate "Tip na jídlo" %}</span>
                 <h3>{{ restaurant.name|nbsp_prepositions }}</h3>
                 <p>{{ restaurant.description }}</p>
                 <span class="related-trip-card__link">
-                  {% translate "Zobrazit doporučenou restauraci" %}
+                  {% translate "Zobrazit tip na jídlo" %}
                   <span aria-hidden="true">→</span>
                 </span>
               </a>

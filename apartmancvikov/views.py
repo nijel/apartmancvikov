@@ -67,11 +67,17 @@ def resolve_related_destinations(relations):
 
 
 def group_related_destinations(relations):
-    """Separate food recommendations from trips while preserving their order."""
+    """Group related destinations by their actual type."""
     destinations = resolve_related_destinations(relations)
     return {
-        "related_trips": tuple(
-            item for item in destinations if item["kind"] != "restaurant"
+        "related_attractions": tuple(
+            item for item in destinations if item["kind"] == "attraction"
+        ),
+        "related_cycling": tuple(
+            item for item in destinations if item["kind"] == "cycling"
+        ),
+        "related_swimming": tuple(
+            item for item in destinations if item["kind"] == "swimming"
         ),
         "related_restaurants": tuple(
             item for item in destinations if item["kind"] == "restaurant"
@@ -135,7 +141,7 @@ class RestaurantTipsView(TemplateView):
         cards = tuple(
             {
                 "tip": tip,
-                "related_trips": resolve_related_destinations(tip.related_trips),
+                **group_related_destinations(tip.related_trips),
             }
             for tip in RESTAURANTS
         )
