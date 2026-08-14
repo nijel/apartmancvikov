@@ -517,6 +517,10 @@ class SeoTest(TestCase):
         )
         self.assertContains(
             overview,
+            'href="/cs/vylety/restaurace/#la-vita"',
+        )
+        self.assertContains(
+            overview,
             'href="/cs/vylety/restaurace/#royal-maharaja"',
         )
         self.assertContains(
@@ -535,9 +539,9 @@ class SeoTest(TestCase):
         self.assertContains(
             restaurants,
             'href="/cs/vylety/cyklovylety/#cyklotrasa-novy-bor"',
-            count=2,
+            count=3,
         )
-        self.assertContains(restaurants, "cyklistickém okruhu přes Nový Bor", count=2)
+        self.assertContains(restaurants, "cyklistickém okruhu přes Nový Bor", count=3)
 
         english = self.client.get("/en/vylety/cyklovylety/")
         self.assertContains(
@@ -863,6 +867,12 @@ class SeoTest(TestCase):
             frozenset(
                 (
                     ("cycling", "novy-bor"),
+                    ("restaurant", "la-vita"),
+                )
+            ),
+            frozenset(
+                (
+                    ("cycling", "novy-bor"),
                     ("restaurant", "royal-maharaja"),
                 )
             ),
@@ -879,7 +889,7 @@ class SeoTest(TestCase):
                 )
             ),
         }
-        self.assertEqual(relation_count, 52)
+        self.assertEqual(relation_count, 54)
         self.assertEqual(actual_pairs, expected_pairs)
 
     def test_attraction_details_link_to_related_trips(self):
@@ -1095,7 +1105,7 @@ class SeoTest(TestCase):
         """The overview opens one complete, distance-sorted restaurant guide."""
         overview = self.client.get("/cs/vylety/")
         self.assertContains(overview, 'href="/cs/vylety/restaurace/"')
-        self.assertContains(overview, "Třináct tipů v okolí")
+        self.assertContains(overview, "Čtrnáct tipů v okolí")
 
         response = self.client.get("/cs/vylety/restaurace/")
         html = response.content.decode()
@@ -1110,6 +1120,9 @@ class SeoTest(TestCase):
         self.assertContains(response, "Sushi a ramen v České Lípě")
         self.assertContains(response, "Sklářská krčma")
         self.assertContains(response, "Tradiční česká kuchyně")
+        self.assertContains(response, 'id="la-vita"')
+        self.assertContains(response, "Moderní italská restaurace v Novém Boru")
+        self.assertContains(response, "https://www.lavita173.cz/")
         self.assertContains(response, "https://www.ajetoglass.com/sklarska-krcma")
         self.assertContains(
             response,
@@ -1124,7 +1137,7 @@ class SeoTest(TestCase):
         self.assertContains(
             response,
             "Do Nového Boru je možné dojet také autobusem",
-            count=2,
+            count=3,
         )
         self.assertContains(
             response,
@@ -1160,6 +1173,7 @@ class SeoTest(TestCase):
         self.assertContains(english, "Recommended restaurants")
         self.assertContains(english, "On foot from the apartment")
         self.assertContains(english, "Traditional Czech cuisine")
+        self.assertContains(english, "A modern Italian restaurant in Nový Bor")
         self.assertContains(english, "Combine a visit to Sklářská krčma")
         self.assertContains(
             english,
@@ -1174,6 +1188,7 @@ class SeoTest(TestCase):
         self.assertContains(german, "Empfohlene Restaurants")
         self.assertContains(german, "Zu Fuß vom Apartment")
         self.assertContains(german, "Traditionelle tschechische Küche")
+        self.assertContains(german, "Ein modernes italienisches Restaurant in Nový Bor")
         self.assertContains(german, "Verbinden Sie einen Besuch")
         self.assertContains(german, 'href="/de/vylety/hvozd/"')
         self.assertContains(german, 'href="/de/vylety/ajeto-lindava/"')

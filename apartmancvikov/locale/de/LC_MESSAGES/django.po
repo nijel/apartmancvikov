@@ -2975,6 +2975,14 @@ msgid "Do Nového Boru je možné dojet také autobusem."
 msgstr "Nový Bor ist auch mit dem Bus erreichbar."
 
 #: apartmancvikov/restaurants.py
+msgid "La Vita"
+msgstr "La Vita"
+
+#: apartmancvikov/restaurants.py
+msgid "Moderní italská restaurace v Novém Boru."
+msgstr "Ein modernes italienisches Restaurant in Nový Bor."
+
+#: apartmancvikov/restaurants.py
 msgid "The Royal Maharaja"
 msgstr "The Royal Maharaja"
 
@@ -3015,8 +3023,8 @@ msgid "Rybí speciality z vlastních rybníků a sádek i tradiční česká kuc
 msgstr "Fischspezialitäten aus eigenen Teichen und Hälterungen sowie traditionelle tschechische Küche."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
-msgid "Třináct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
-msgstr "Dreizehn empfohlene Restaurants, Kantinen und Imbisse in Laufnähe der Ferienwohnung Cvikov und nahe gelegener Ausflugsziele."
+msgid "Čtrnáct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
+msgstr "Vierzehn empfohlene Restaurants, Kantinen und Imbisse in Laufnähe der Ferienwohnung Cvikov und nahe gelegener Ausflugsziele."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 #: apartmancvikov/templates/vylety.html
@@ -3024,8 +3032,8 @@ msgid "Doporučené restaurace"
 msgstr "Empfohlene Restaurants"
 
 #: apartmancvikov/structured_data.py
-msgid "Dvacet jedna ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a třináct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Einundzwanzig erprobte Tipps für Familienausflüge, fünf empfohlene Radrouten, sieben Badestellen und dreizehn empfohlene Restaurants rund um die Ferienwohnung Cvikov."
+msgid "Dvacet jedna ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a čtrnáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Einundzwanzig erprobte Tipps für Familienausflüge, fünf empfohlene Radrouten, sieben Badestellen und vierzehn empfohlene Restaurants rund um die Ferienwohnung Cvikov."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace z Apartmánu Cvikov"
@@ -3060,8 +3068,8 @@ msgid "Doporučené restaurace v okolí Cvikova | Apartmán Cvikov"
 msgstr "Empfohlene Restaurants rund um Cvikov | Apartment Cvikov"
 
 #: apartmancvikov/templates/restaurace.html
-msgid "Česká, asijská i indická kuchyně, pivovary, rybí speciality, zmrzlina a občerstvení u rodinných výletů."
-msgstr "Tschechische, asiatische und indische Küche, Brauereien, Fischspezialitäten, Eis und Imbisse bei Familienausflügen."
+msgid "Česká, italská, asijská i indická kuchyně, pivovary, rybí speciality, zmrzlina a občerstvení u rodinných výletů."
+msgstr "Tschechische, italienische, asiatische und indische Küche, Brauereien, Fischspezialitäten, Eis und Imbisse bei Familienausflügen."
 
 #: apartmancvikov/templates/restaurace.html
 msgid "Kam zajít pěšky na oběd a kde se dobře najíst při výletech v okolí Cvikova."
@@ -3132,12 +3140,12 @@ msgid "Provoz"
 msgstr "Betrieb"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Dvacet jedna rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a třináct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Einundzwanzig Familienausflüge, fünf empfohlene Radrouten, sieben Badestellen und dreizehn empfohlene Restaurants rund um die Ferienwohnung Cvikov."
+msgid "Dvacet jedna rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a čtrnáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Einundzwanzig Familienausflüge, fünf empfohlene Radrouten, sieben Badestellen und vierzehn empfohlene Restaurants rund um die Ferienwohnung Cvikov."
 
 #: apartmancvikov/templates/vylety.html
-msgid "Třináct tipů v okolí"
-msgstr "Dreizehn Tipps in der Umgebung"
+msgid "Čtrnáct tipů v okolí"
+msgstr "Vierzehn Tipps in der Umgebung"
 
 #: apartmancvikov/templates/vylety.html
 msgid "Kam zajít pěšky na oběd a kde se najíst při výletech v okolí Cvikova."
@@ -3372,6 +3380,10 @@ msgid "Během okruhu se můžete v Novém Boru zastavit na asijskou kuchyni v re
 msgstr "Während der Rundtour können Sie in Nový Bor im Restaurant BẾP asiatisch essen."
 
 #: apartmancvikov/content.py
+msgid "V Novém Boru můžete cyklovýlet spojit s návštěvou italské restaurace La Vita."
+msgstr "In Nový Bor können Sie die Radtour mit einem Besuch des italienischen Restaurants La Vita verbinden."
+
+#: apartmancvikov/content.py
 msgid "V Novém Boru můžete cyklovýlet spojit s návštěvou indické restaurace The Royal Maharaja."
 msgstr "In Nový Bor können Sie die Radtour mit einem Besuch des indischen Restaurants The Royal Maharaja verbinden."
 
@@ -3386,6 +3398,10 @@ msgstr "Sie können den Stausee auch auf der 16 Kilometer langen Radroute über 
 #: apartmancvikov/restaurants.py
 msgid "Restauraci můžete zařadit jako zastávku na cyklistickém okruhu přes Nový Bor."
 msgstr "Das Restaurant können Sie als Zwischenstopp auf der Radrunde über Nový Bor einplanen."
+
+#: apartmancvikov/restaurants.py
+msgid "Italskou restauraci můžete zařadit jako zastávku na cyklistickém okruhu přes Nový Bor."
+msgstr "Das italienische Restaurant können Sie als Zwischenstopp auf der Radrunde über Nový Bor einplanen."
 
 #: apartmancvikov/restaurants.py
 msgid "Indickou restauraci můžete zařadit jako zastávku na cyklistickém okruhu přes Nový Bor."

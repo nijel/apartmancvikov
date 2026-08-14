@@ -180,6 +180,25 @@ RESTAURANTS = (
         ),
     ),
     RestaurantTip(
+        slug="la-vita",
+        name=_("La Vita"),
+        description=_("Moderní italská restaurace v Novém Boru."),
+        official_url="https://www.lavita173.cz/",
+        distance_km=9,
+        distance_kind="driving",
+        travel_tip=_("Do Nového Boru je možné dojet také autobusem."),
+        related_trips=(
+            TripRelation(
+                target_kind="cycling",
+                target_slug="novy-bor",
+                description=_(
+                    "Italskou restauraci můžete zařadit jako zastávku na "
+                    "cyklistickém okruhu přes Nový Bor."
+                ),
+            ),
+        ),
+    ),
+    RestaurantTip(
         slug="royal-maharaja",
         name=_("The Royal Maharaja"),
         description=_("Indická restaurace v Novém Boru."),

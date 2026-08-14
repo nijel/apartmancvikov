@@ -102,6 +102,14 @@ CYCLING_TRIPS = (
             ),
             TripRelation(
                 target_kind="restaurant",
+                target_slug="la-vita",
+                description=_(
+                    "V Novém Boru můžete cyklovýlet spojit s návštěvou italské "
+                    "restaurace La Vita."
+                ),
+            ),
+            TripRelation(
+                target_kind="restaurant",
                 target_slug="royal-maharaja",
                 description=_(
                     "V Novém Boru můžete cyklovýlet spojit s návštěvou indické "
