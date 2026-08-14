@@ -12,6 +12,7 @@ from unittest.mock import patch
 
 from django.conf import settings
 from django.core import mail, signing
+from django.templatetags.static import static
 from django.test import TestCase, override_settings
 from django.utils import timezone
 from django.utils.html import escape
@@ -89,8 +90,9 @@ class SeoTest(TestCase):
         response = self.client.get("/cs/")
         self.assertNotContains(response, "bootstrap")
         self.assertNotContains(response, "jsdelivr")
-        self.assertContains(response, "/static/style.css")
-        self.assertContains(response, "/static/site.js")
+        self.assertContains(response, static("style.css"))
+        self.assertContains(response, static("site.js"))
+        self.assertRegex(static("style.css"), r"^/static/style\.[0-9a-f]{12}\.css$")
         self.assertContains(response, 'class="nav-menu"')
         self.assertContains(response, 'class="lightbox__image-stage"')
         self.assertContains(response, 'class="lightbox__zoom"')
@@ -102,7 +104,10 @@ class SeoTest(TestCase):
         response = self.client.get("/cs/")
         html = response.content.decode()
         self.assertIn('<source type="image/webp"', html)
-        self.assertIn('srcset="/static/responsive/foto/dum-480.jpg 480w,', html)
+        self.assertIn(
+            f'srcset="{static("responsive/foto/dum-480.jpg")} 480w,',
+            html,
+        )
         self.assertIn('sizes="(min-width: 54rem) 50vw, 100vw"', html)
         self.assertIn('class="site-header__media"', html)
         self.assertIn('fetchpriority="high"', html)
@@ -391,7 +396,7 @@ class SeoTest(TestCase):
                 response = self.client.get(f"/cs/vylety/{slug}/")
                 self.assertEqual(response.status_code, 200)
                 image_slug = "brniste-stezky" if slug == "stezky-brniste" else slug
-                self.assertContains(response, f"/static/vylety/{image_slug}.jpg")
+                self.assertContains(response, static(f"vylety/{image_slug}.jpg"))
                 for detail in details:
                     self.assertContains(response, detail)
 
@@ -432,7 +437,7 @@ class SeoTest(TestCase):
         self.assertContains(milstejn, "Volně přístupné")
         self.assertContains(
             milstejn,
-            "/static/responsive/vylety/milstejn-480.webp",
+            static("responsive/vylety/milstejn-480.webp"),
         )
         self.assertContains(
             milstejn,
@@ -1034,7 +1039,7 @@ class SeoTest(TestCase):
         self.assertContains(response, "Přívoz, Mlýnky i vyhlídky jsou volně přístupné")
         self.assertContains(
             response,
-            "/static/responsive/vylety/ceska-kamenice-privoz-480.webp",
+            static("responsive/vylety/ceska-kamenice-privoz-480.webp"),
         )
         self.assertContains(
             response,
@@ -1091,7 +1096,7 @@ class SeoTest(TestCase):
         self.assertEqual(len(re.findall(r"<h1(?:\s|>)", html)), 1)
         self.assertContains(
             response,
-            "/static/responsive/vylety/koupaliste-jonsdorf-480.webp",
+            static("responsive/vylety/koupaliste-jonsdorf-480.webp"),
         )
         for tip in SWIMMING_TIPS:
             with self.subTest(tip=tip.name):
@@ -1259,7 +1264,7 @@ class SeoTest(TestCase):
                 self.assertContains(response, print_title)
                 self.assertContains(response, content_heading)
                 self.assertContains(response, f"https://apartmancvikov.cz{path}")
-                self.assertContains(response, "/static/logo.png")
+                self.assertContains(response, static("logo.png"))
 
         home = self.client.get("/cs/")
         self.assertNotContains(home, 'class="print-header"')
@@ -1309,7 +1314,7 @@ class SeoTest(TestCase):
         self.assertContains(response, "Část s motýly je momentálně uzavřená")
         self.assertContains(response, "https://www.exotenhaus.info/")
         self.assertNotContains(response, "https://www.schmetterlingshaus.info/")
-        self.assertContains(response, "/static/vylety/jonsdorf.jpg")
+        self.assertContains(response, static("vylety/jonsdorf.jpg"))
 
     def test_mountain_express_is_listed_for_reachable_attractions(self):
         """Jonsdorf, Oybin and the swimming guide mention the seasonal service."""
@@ -1325,7 +1330,7 @@ class SeoTest(TestCase):
     def test_own_duty_kamen_photo_replaces_wikimedia_image(self):
         """The new own photo is shown without the former external attribution."""
         response = self.client.get("/cs/vylety/duty-kamen/")
-        self.assertContains(response, "/static/vylety/duty-kamen.jpg")
+        self.assertContains(response, static("vylety/duty-kamen.jpg"))
         self.assertNotContains(response, "Lutz Maertens")
         self.assertNotContains(response, "commons.wikimedia.org")
 
@@ -1618,27 +1623,28 @@ class SeoTest(TestCase):
             sitemap,
         )
         self.assertIn(
-            "<image:loc>https://apartmancvikov.cz/static/vylety/duty-kamen.jpg</image:loc>",
+            f"<image:loc>{settings.SITE_URL}"
+            f"{static('vylety/duty-kamen.jpg')}</image:loc>",
             sitemap,
         )
         self.assertIn(
-            "<image:loc>https://apartmancvikov.cz/static/vylety/"
-            "koupaliste-jonsdorf.jpg</image:loc>",
+            f"<image:loc>{settings.SITE_URL}"
+            f"{static('vylety/koupaliste-jonsdorf.jpg')}</image:loc>",
             sitemap,
         )
         self.assertIn(
-            "<image:loc>https://apartmancvikov.cz/static/vylety/"
-            "ceska-kamenice-privoz.jpg</image:loc>",
+            f"<image:loc>{settings.SITE_URL}"
+            f"{static('vylety/ceska-kamenice-privoz.jpg')}</image:loc>",
             sitemap,
         )
         self.assertIn(
-            "<image:loc>https://apartmancvikov.cz/static/vylety/"
-            "brniste-stezky.jpg</image:loc>",
+            f"<image:loc>{settings.SITE_URL}"
+            f"{static('vylety/brniste-stezky.jpg')}</image:loc>",
             sitemap,
         )
         self.assertIn(
-            "<image:loc>https://apartmancvikov.cz/static/vylety/"
-            "milstejn.jpg</image:loc>",
+            f"<image:loc>{settings.SITE_URL}"
+            f"{static('vylety/milstejn.jpg')}</image:loc>",
             sitemap,
         )
 

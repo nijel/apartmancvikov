@@ -2,6 +2,16 @@
 
 Website for Apartman Cvikov
 
+## Static files
+
+Production uses Django's manifest static-files storage, which gives changed
+CSS, JavaScript, images, and fonts content-hashed URLs. Run this after every
+deployment so the templates and the collected files use the same manifest:
+
+```sh
+.venv/bin/python manage.py collectstatic --noinput
+```
+
 ## E-mail delivery
 
 Development uses Django's console e-mail backend and does not send real

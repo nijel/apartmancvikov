@@ -139,6 +139,14 @@ CALDAV_PASSWORD = ""
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "static"
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+    },
+}
 
 SITE_URL = "https://apartmancvikov.cz"
 
