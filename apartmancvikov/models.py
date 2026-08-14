@@ -12,3 +12,12 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.start} - {self.end}: {self.uid}"
+
+
+class WeatherForecastSnapshot(models.Model):
+    source = models.CharField(max_length=50, unique=True)
+    payload = models.JSONField()
+    fetched_at = models.DateTimeField()
+
+    def __str__(self):
+        return f"{self.source}: {self.fetched_at}"

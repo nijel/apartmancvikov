@@ -33,6 +33,12 @@ from .site_config import (
     CONTACT_EMAIL,
     CONTACT_PHONE_DISPLAY,
 )
+from .weather import (
+    CHMI_FORECAST_URL,
+    METEOBLUE_FORECAST_URL,
+    YR_FORECAST_URL,
+    get_weather_forecast,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -87,6 +93,31 @@ def group_related_destinations(relations):
 
 class HomeView(TemplateView):
     template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        """Add the compact saved weather forecast to the homepage."""
+        context = super().get_context_data(**kwargs)
+        context["weather"] = get_weather_forecast()
+        return context
+
+
+class WeatherView(TemplateView):
+    template_name = "weather.html"
+
+    def get_context_data(self, **kwargs):
+        """Add the full saved forecast and external provider links."""
+        context = super().get_context_data(**kwargs)
+        context.update(
+            {
+                "weather": get_weather_forecast(),
+                "weather_providers": (
+                    ("ČHMÚ", CHMI_FORECAST_URL),
+                    ("Meteoblue", METEOBLUE_FORECAST_URL),
+                    ("Yr.no", YR_FORECAST_URL),
+                ),
+            }
+        )
+        return context
 
 
 class TripsView(TemplateView):
@@ -309,6 +340,7 @@ def llms_txt(_request):
 - Cycling trip guide: {settings.SITE_URL}/cs/vylety/cyklovylety/
 - Swimming trip guide: {settings.SITE_URL}/cs/vylety/koupani/
 - Recommended restaurants: {settings.SITE_URL}/cs/vylety/restaurace/
+- Weather forecast: {settings.SITE_URL}/cs/pocasi/
 - Availability: {settings.SITE_URL}/cs/obsazenost/
 - Prices and conditions: {settings.SITE_URL}/cs/cenik/
 - Contact: {settings.SITE_URL}/cs/kontakt/

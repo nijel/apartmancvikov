@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  {% translate "Předpověď počasí pro Cvikov | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description"
+        content="{% translate "Předpověď počasí modelu ALADIN pro Cvikov po částech dne s teplotou, srážkami, větrem a oblačností." %}" />
+{% endblock meta_description %}
+
+{% block ogtitle %}
+  <meta property="og:title" content="{% translate "Předpověď počasí pro Cvikov" %}" />
+{% endblock ogtitle %}
+
+{% block ogdescription %}
+  <meta property="og:description"
+        content="{% translate "Aktuální bodová předpověď modelu ALADIN a odkazy na další předpovědi pro Cvikov." %}" />
+{% endblock ogdescription %}
+
+{% block headline %}
+  {% translate "Počasí v Cvikově" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Přehledná předpověď modelu ALADIN pro plánování pobytu a výletů." %}
+{% endblock lead %}
+
+{% block content %}
+  <article class="content-section weather-page">
+    <div class="site-container">
+      <nav class="breadcrumbs" aria-label="{% translate "Drobečková navigace" %}">
+        <ol>
+          <li><a href="{% url "home" %}">{% translate "Ubytování" %}</a></li>
+          <li aria-current="page">{% translate "Počasí" %}</li>
+        </ol>
+      </nav>
+
+      <header class="section-intro">
+        <p class="eyebrow">{% translate "Model ALADIN" %}</p>
+        <h2>{% translate "Předpověď na příští tři dny" %}</h2>
+        <p>{% translate "Předpověď pro Cvikov je rozdělená na ráno, poledne, odpoledne a večer, abyste rychle zjistili očekávanou teplotu a srážky." %}</p>
+      </header>
+
+      {% if weather.available %}
+        {% if weather.stale %}
+          <p class="weather-warning" role="status">
+            {% translate "Předpověď se nepodařilo nedávno aktualizovat. Zobrazená data jsou starší než dvě hodiny." %}
+          </p>
+        {% endif %}
+
+        <div class="weather-forecast">
+          <div class="weather-table-wrap" tabindex="0">
+            <table class="weather-table">
+              <caption class="visually-hidden">{% translate "Předpověď na příští tři dny" %}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{% translate "Část dne" %}</th>
+                  <th scope="col">{% translate "Předpověď" %}</th>
+                  <th scope="col">
+                    {% translate "Teplota" %}
+                    <small>min / max</small>
+                  </th>
+                  <th scope="col">{% translate "Celkové srážky" %}</th>
+                  <th scope="col">{% translate "Max. vítr" %}</th>
+                  <th scope="col">{% translate "Průměrná oblačnost" %}</th>
+                </tr>
+              </thead>
+              {% for day in weather.days %}
+                <tbody>
+                  <tr class="weather-table__day">
+                    <th scope="rowgroup" colspan="6">
+                      <span>
+                        {% if day.is_today %}
+                          {% translate "Dnes" %}
+                        {% elif day.is_tomorrow %}
+                          {% translate "Zítra" %}
+                        {% else %}
+                          {{ day.date|date:"l j. E" }}
+                        {% endif %}
+                      </span>
+                      {% if day.minimum != None and day.maximum != None %}
+                        <span>
+                          {% blocktranslate with minimum=day.minimum|floatformat:"0" maximum=day.maximum|floatformat:"0" %}{{ minimum }} až {{ maximum }} °C{% endblocktranslate %}
+                        </span>
+                      {% endif %}
+                    </th>
+                  </tr>
+                  {% for period in day.periods %}
+                    <tr class="weather-table__period">
+                      <th scope="row">
+                        <strong>{{ period.label }}</strong>
+                        <small>{{ period.time_label }}</small>
+                      </th>
+                      <td class="weather-table__condition">
+                        <span class="weather-table__condition-inner">
+                          <span class="weather-symbol weather-symbol--{{ period.condition_key }}"
+                                aria-hidden="true">{{ period.symbol }}</span>
+                          <span>{{ period.condition }}</span>
+                        </span>
+                      </td>
+                      <td class="weather-table__primary">
+                        {% if period.minimum != None and period.maximum != None %}
+                          <strong>{{ period.minimum|floatformat:"0" }} / {{ period.maximum|floatformat:"0" }} °C</strong>
+                        {% endif %}
+                      </td>
+                      <td class="weather-table__primary">
+                        {% if period.precipitation != None %}<strong>{{ period.precipitation|floatformat:"-1" }} mm</strong>{% endif %}
+                      </td>
+                      <td class="weather-table__secondary">
+                        {% if period.wind_speed != None %}{{ period.wind_speed|floatformat:"-1" }} m/s{% endif %}
+                      </td>
+                      <td class="weather-table__secondary">
+                        {% if period.clouds != None %}{{ period.clouds|floatformat:"0" }} %{% endif %}
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+
+        <p class="weather-updated">
+          {% blocktranslate with updated=weather.updated_at|date:"j. E Y, H:i" %}Data byla naposledy úspěšně stažena {{ updated }}.{% endblocktranslate %}
+        </p>
+      {% else %}
+        <section class="weather-unavailable" aria-labelledby="weather-unavailable-title">
+          <h2 id="weather-unavailable-title">{% translate "Předpověď nyní není dostupná" %}</h2>
+          <p>{% translate "Poslední uložená předpověď už skončila nebo zatím nebyla stažena. Aktuální informace najdete u poskytovatelů níže." %}</p>
+          {% if weather.updated_at %}
+            <p>
+              {% blocktranslate with updated=weather.updated_at|date:"j. E Y, H:i" %}Poslední úspěšné stažení proběhlo {{ updated }}.{% endblocktranslate %}
+            </p>
+          {% endif %}
+        </section>
+      {% endif %}
+
+      <section class="weather-providers" aria-labelledby="weather-providers-title">
+        <p class="eyebrow">{% translate "Další zdroje" %}</p>
+        <h2 id="weather-providers-title">{% translate "Porovnejte předpovědi" %}</h2>
+        <p>{% translate "Pro plánování výletu doporučujeme porovnat více modelů a před odchodem ověřit aktuální situaci." %}</p>
+        <div class="weather-provider-links">
+          {% for provider, provider_url in weather_providers %}
+            <a class="weather-provider"
+               href="{{ provider_url }}"
+               target="_blank"
+               rel="external noopener noreferrer">
+              <strong>{{ provider }}</strong>
+              <span>{% translate "Otevřít předpověď" %}</span>
+              <span class="visually-hidden">— {% translate "otevře se v novém okně" %}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+
+      <footer class="weather-attribution">
+        <p>{% translate "Zdroj dat: Český hydrometeorologický ústav (ČHMÚ), model ALADIN." %}</p>
+        <p>{% translate "Jde o výstup numerického modelu, nikoli o měření přímo u apartmánu. Skutečné počasí se může lišit." %}</p>
+      </footer>
+    </div>
+  </article>
+{% endblock content %}

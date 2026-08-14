@@ -48,6 +48,31 @@
         </div>
       </section>
 
+      <section class="home-weather" aria-labelledby="home-weather-title">
+        <div class="home-weather__content">
+          <h2 id="home-weather-title">{% translate "Předpověď na dnešek" %}</h2>
+          {% if weather.available %}
+            <div class="home-weather__current">
+              <span class="weather-symbol weather-symbol--{{ weather.current.condition_key }}"
+                    aria-hidden="true">{{ weather.current.symbol }}</span>
+              <p>
+                <strong>{{ weather.current.condition }}</strong>
+                {% if weather.today_min != None and weather.today_max != None %}
+                  <span>
+                    {% blocktranslate with minimum=weather.today_min|floatformat:"0" maximum=weather.today_max|floatformat:"0" %}{{ minimum }} až {{ maximum }} °C{% endblocktranslate %}
+                  </span>
+                {% endif %}
+              </p>
+            </div>
+          {% else %}
+            <p>{% translate "Předpověď se nyní nepodařilo načíst. Zkuste prosím podrobnou stránku počasí." %}</p>
+          {% endif %}
+        </div>
+        <div class="home-weather__action">
+          <a class="button button--primary" href="{% url "weather" %}">{% translate "Podrobná předpověď" %}</a>
+        </div>
+      </section>
+
       <div class="feature-split">
         <figure class="feature-split__media">
           {% translate "Apartmán Cvikov se zahradou" as house_alt %}

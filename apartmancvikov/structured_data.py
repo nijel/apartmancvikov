@@ -29,6 +29,8 @@ from .site_config import (
     OPERATOR_ID_NUMBER,
     OPERATOR_NAME,
     PRICE_CURRENCY,
+    PROPERTY_LATITUDE,
+    PROPERTY_LONGITUDE,
     STANDARD_ADULT_PRICE_CZK,
     STANDARD_CHILD_PRICE_CZK,
     STANDARD_INFANT_PRICE_CZK,
@@ -126,8 +128,8 @@ def _lodging_node():
             "email": CONTACT_EMAIL,
             "availableLanguage": ["cs", "en"],
         },
-        "latitude": 50.77409,
-        "longitude": 14.64013,
+        "latitude": PROPERTY_LATITUDE,
+        "longitude": PROPERTY_LONGITUDE,
         "checkinTime": "15:00",
         "checkoutTime": "10:00",
         "knowsLanguage": ["cs-CZ", "en"],
@@ -316,6 +318,14 @@ def _page_metadata(view_name):
             _(
                 "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově pro až "
                 "devět hostů."
+            ),
+        ),
+        "weather": (
+            "WebPage",
+            _("Předpověď počasí pro Cvikov"),
+            _(
+                "Předpověď počasí modelu ALADIN pro Cvikov po částech dne s "
+                "teplotou, srážkami, větrem a oblačností."
             ),
         ),
         "vylety": (
@@ -669,6 +679,7 @@ def build_structured_data(request):
     match = request.resolver_match
     if match is None or match.url_name not in {
         "home",
+        "weather",
         "vylety",
         "cycling",
         "swimming",

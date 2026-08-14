@@ -101,6 +101,11 @@
                      href="{% url "vylety" %}">{% translate "Výlety" %}</a>
                 </li>
                 <li>
+                  <a class="{% if request.resolver_match.url_name == "weather" %}active{% endif %}"
+                     {% if request.resolver_match.url_name == "weather" %}aria-current="page"{% endif %}
+                     href="{% url "weather" %}">{% translate "Počasí" %}</a>
+                </li>
+                <li>
                   <a class="{% if request.resolver_match.url_name == "obsazenost" %}active{% endif %}"
                      {% if request.resolver_match.url_name == "obsazenost" %}aria-current="page"{% endif %}
                      href="{% url "obsazenost" %}">{% translate "Obsazenost" %}</a>

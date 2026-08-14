@@ -23,3 +23,21 @@ DEFAULT_FROM_EMAIL = f"Apartmán Cvikov <{CONTACT_EMAIL}>"
 
 The public recipient address and other business details are defined in
 `apartmancvikov/site_config.py`. Never commit SMTP credentials.
+
+## Weather forecast
+
+The website reads the ČHMÚ ALADIN forecast from a database snapshot, so page
+requests never wait for the upstream service. Apply migrations and refresh the
+snapshot with:
+
+```sh
+.venv/bin/python manage.py weather_sync
+```
+
+Successful synchronization is silent by default. Use `-v 2` to print a success
+confirmation.
+
+Run this command every 30 minutes in production. For example, a cron entry can
+use `*/30 * * * * cd /path/to/apartmancvikov && .venv/bin/python manage.py
+weather_sync`. A failed download leaves the last valid snapshot untouched and
+returns a non-zero status.

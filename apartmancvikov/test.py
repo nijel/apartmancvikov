@@ -1571,8 +1571,9 @@ class SeoTest(TestCase):
         self.assertEqual(response.status_code, 200)
         sitemap = response.content.decode()
         locations = re.findall(r"<loc>(.*?)</loc>", sitemap)
-        self.assertEqual(len(locations), 96)
+        self.assertEqual(len(locations), 99)
         self.assertIn("https://apartmancvikov.cz/cs/", locations)
+        self.assertIn("https://apartmancvikov.cz/cs/pocasi/", locations)
         self.assertIn(
             "https://apartmancvikov.cz/cs/vylety/cyklovylety/",
             locations,
@@ -1669,6 +1670,7 @@ class SeoTest(TestCase):
             llms,
             "https://apartmancvikov.cz/cs/vylety/restaurace/",
         )
+        self.assertContains(llms, "https://apartmancvikov.cz/cs/pocasi/")
         self.assertContains(llms, "https://apartmancvikov.cz/cs/poptavka/")
 
 

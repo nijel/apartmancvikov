@@ -71,6 +71,7 @@ class StaticViewSitemap(LocalizedSitemap):
         """Return the named static pages included in the sitemap."""
         return [
             "home",
+            "weather",
             "vylety",
             "cycling",
             "swimming",

@@ -3540,3 +3540,203 @@ msgstr "Verbinden Sie das Baden mit dem Rundweg auf den Spuren der heiligen Zdis
 #: apartmancvikov/restaurants.py
 msgid "Restauraci můžete spojit s okruhem přes Jablonné v Podještědí a zámek Lemberk."
 msgstr "Verbinden Sie den Restaurantbesuch mit dem Rundweg durch Jablonné v Podještědí und zum Schloss Lemberk."
+
+#: apartmancvikov/structured_data.py:325
+#: apartmancvikov/templates/weather.html:16
+msgid "Předpověď počasí pro Cvikov"
+msgstr "Wettervorhersage für Cvikov"
+
+#: apartmancvikov/structured_data.py:327
+#: apartmancvikov/templates/weather.html:11
+msgid "Předpověď počasí modelu ALADIN pro Cvikov po částech dne s teplotou, srážkami, větrem a oblačností."
+msgstr "Wettervorhersage des Modells ALADIN für Cvikov nach Tageszeit mit Temperatur, Niederschlag, Wind und Bewölkung."
+
+#: apartmancvikov/templates/base.html:106
+#: apartmancvikov/templates/weather.html:38
+msgid "Počasí"
+msgstr "Wetter"
+
+#: apartmancvikov/templates/index.html:53
+msgid "Předpověď na dnešek"
+msgstr "Vorhersage für heute"
+
+#: apartmancvikov/templates/index.html:62
+#: apartmancvikov/templates/weather.html:87
+#, python-format
+msgid "%(minimum)s až %(maximum)s °C"
+msgstr "%(minimum)s bis %(maximum)s °C"
+
+#: apartmancvikov/templates/index.html:68
+msgid "Předpověď se nyní nepodařilo načíst. Zkuste prosím podrobnou stránku počasí."
+msgstr "Die Vorhersage konnte derzeit nicht geladen werden. Versuchen Sie es bitte auf der ausführlichen Wetterseite."
+
+#: apartmancvikov/templates/index.html:72
+msgid "Podrobná předpověď"
+msgstr "Ausführliche Vorhersage"
+
+#: apartmancvikov/templates/weather.html:6
+msgid "Předpověď počasí pro Cvikov | Apartmán Cvikov"
+msgstr "Wettervorhersage für Cvikov | Apartment Cvikov"
+
+#: apartmancvikov/templates/weather.html:21
+msgid "Aktuální bodová předpověď modelu ALADIN a odkazy na další předpovědi pro Cvikov."
+msgstr "Aktuelle Punktvorhersage des Modells ALADIN und Links zu weiteren Vorhersagen für Cvikov."
+
+#: apartmancvikov/templates/weather.html:25
+msgid "Počasí v Cvikově"
+msgstr "Wetter in Cvikov"
+
+#: apartmancvikov/templates/weather.html:29
+msgid "Přehledná předpověď modelu ALADIN pro plánování pobytu a výletů."
+msgstr "Eine übersichtliche Vorhersage des Modells ALADIN zur Planung Ihres Aufenthalts und Ihrer Ausflüge."
+
+#: apartmancvikov/templates/weather.html:43
+msgid "Model ALADIN"
+msgstr "Modell ALADIN"
+
+#: apartmancvikov/templates/weather.html:44
+#: apartmancvikov/templates/weather.html:58
+msgid "Předpověď na příští tři dny"
+msgstr "Vorhersage für die nächsten drei Tage"
+
+#: apartmancvikov/templates/weather.html:45
+msgid "Předpověď pro Cvikov je rozdělená na ráno, poledne, odpoledne a večer, abyste rychle zjistili očekávanou teplotu a srážky."
+msgstr "Die Vorhersage für Cvikov ist in Morgen, Mittag, Nachmittag und Abend unterteilt, damit Sie die erwartete Temperatur und den Niederschlag schnell erkennen."
+
+#: apartmancvikov/templates/weather.html:51
+msgid "Předpověď se nepodařilo nedávno aktualizovat. Zobrazená data jsou starší než dvě hodiny."
+msgstr "Die Vorhersage konnte in letzter Zeit nicht aktualisiert werden. Die angezeigten Daten sind älter als zwei Stunden."
+
+#: apartmancvikov/templates/weather.html:61
+msgid "Část dne"
+msgstr "Tageszeit"
+
+#: apartmancvikov/templates/weather.html:62
+msgid "Předpověď"
+msgstr "Vorhersage"
+
+#: apartmancvikov/templates/weather.html:64
+msgid "Teplota"
+msgstr "Temperatur"
+
+#: apartmancvikov/templates/weather.html:67
+msgid "Celkové srážky"
+msgstr "Gesamtniederschlag"
+
+#: apartmancvikov/templates/weather.html:68
+msgid "Max. vítr"
+msgstr "Max. Wind"
+
+#: apartmancvikov/templates/weather.html:69
+msgid "Průměrná oblačnost"
+msgstr "Durchschnittliche Bewölkung"
+
+#: apartmancvikov/templates/weather.html:78
+msgid "Dnes"
+msgstr "Heute"
+
+#: apartmancvikov/templates/weather.html:80
+msgid "Zítra"
+msgstr "Morgen"
+
+#: apartmancvikov/templates/weather.html:128
+#, python-format
+msgid "Data byla naposledy úspěšně stažena %(updated)s."
+msgstr "Die Daten wurden zuletzt am %(updated)s erfolgreich heruntergeladen."
+
+#: apartmancvikov/templates/weather.html:132
+msgid "Předpověď nyní není dostupná"
+msgstr "Vorhersage derzeit nicht verfügbar"
+
+#: apartmancvikov/templates/weather.html:133
+msgid "Poslední uložená předpověď už skončila nebo zatím nebyla stažena. Aktuální informace najdete u poskytovatelů níže."
+msgstr "Die letzte gespeicherte Vorhersage ist bereits abgelaufen oder wurde noch nicht heruntergeladen. Aktuelle Informationen finden Sie bei den unten aufgeführten Anbietern."
+
+#: apartmancvikov/templates/weather.html:136
+#, python-format
+msgid "Poslední úspěšné stažení proběhlo %(updated)s."
+msgstr "Der letzte erfolgreiche Download erfolgte am %(updated)s."
+
+#: apartmancvikov/templates/weather.html:143
+msgid "Další zdroje"
+msgstr "Weitere Quellen"
+
+#: apartmancvikov/templates/weather.html:144
+msgid "Porovnejte předpovědi"
+msgstr "Vorhersagen vergleichen"
+
+#: apartmancvikov/templates/weather.html:145
+msgid "Pro plánování výletu doporučujeme porovnat více modelů a před odchodem ověřit aktuální situaci."
+msgstr "Für die Planung eines Ausflugs empfehlen wir, mehrere Modelle zu vergleichen und vor dem Aufbruch die aktuelle Lage zu prüfen."
+
+#: apartmancvikov/templates/weather.html:153
+msgid "Otevřít předpověď"
+msgstr "Vorhersage öffnen"
+
+#: apartmancvikov/templates/weather.html:161
+msgid "Zdroj dat: Český hydrometeorologický ústav (ČHMÚ), model ALADIN."
+msgstr "Datenquelle: Tschechisches Hydrometeorologisches Institut (ČHMÚ), Modell ALADIN."
+
+#: apartmancvikov/templates/weather.html:162
+msgid "Jde o výstup numerického modelu, nikoli o měření přímo u apartmánu. Skutečné počasí se může lišit."
+msgstr "Es handelt sich um die Ausgabe eines numerischen Modells, nicht um eine Messung direkt am Apartment. Das tatsächliche Wetter kann abweichen."
+
+#: apartmancvikov/weather.py:96
+msgid "Jasno"
+msgstr "Klar"
+
+#: apartmancvikov/weather.py:97
+msgid "Jasná noc"
+msgstr "Klare Nacht"
+
+#: apartmancvikov/weather.py:98
+msgid "Polojasno až oblačno"
+msgstr "Heiter bis wolkig"
+
+#: apartmancvikov/weather.py:99
+msgid "Zataženo"
+msgstr "Bedeckt"
+
+#: apartmancvikov/weather.py:100
+msgid "Déšť nebo přeháňky"
+msgstr "Regen oder Schauer"
+
+#: apartmancvikov/weather.py:101
+msgid "Déšť se sněhem nebo mrznoucí déšť"
+msgstr "Schneeregen oder gefrierender Regen"
+
+#: apartmancvikov/weather.py:102
+msgid "Sněžení"
+msgstr "Schneefall"
+
+#: apartmancvikov/weather.py:103
+msgid "Bouřka"
+msgstr "Gewitter"
+
+#: apartmancvikov/weather.py:104
+msgid "Kroupy"
+msgstr "Hagel"
+
+#: apartmancvikov/weather.py:105
+msgid "Mlha"
+msgstr "Nebel"
+
+#: apartmancvikov/weather.py:106
+msgid "Neurčené počasí"
+msgstr "Unbestimmtes Wetter"
+
+#: apartmancvikov/weather.py:112
+msgid "Ráno"
+msgstr "Morgen"
+
+#: apartmancvikov/weather.py:119
+msgid "Poledne"
+msgstr "Mittag"
+
+#: apartmancvikov/weather.py:126
+msgid "Odpoledne"
+msgstr "Nachmittag"
+
+#: apartmancvikov/weather.py:133
+msgid "Večer"
+msgstr "Abend"
