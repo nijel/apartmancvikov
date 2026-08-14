@@ -2194,7 +2194,7 @@ html.lightbox-open {
 
   body.trip-print--restaurants .restaurant-grid {
     gap: 1.7mm;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   body.trip-print--restaurants .restaurant-card {
