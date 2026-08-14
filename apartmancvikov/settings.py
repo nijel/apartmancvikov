@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "apartmancvikov",
+    "weblate_fonts",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
