@@ -1561,6 +1561,8 @@ table.booking abbr {
   color: var(--accent);
   display: inline-block;
   flex: 0 0 auto;
+  font-family:
+    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;

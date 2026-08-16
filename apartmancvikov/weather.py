@@ -93,16 +93,16 @@ ICON_CONDITION_MAP = {
 }
 
 CONDITION_PRESENTATION = {
-    "sunny": (_("Jasno"), "☀"),
-    "clear-night": (_("Jasná noc"), "☾"),
+    "sunny": (_("Jasno"), "☀️"),
+    "clear-night": (_("Jasná noc"), "🌙"),
     "partly-cloudy": (_("Polojasno až oblačno"), "⛅"),
-    "cloudy": (_("Zataženo"), "☁"),
-    "rainy": (_("Déšť nebo přeháňky"), "☂"),
-    "sleet": (_("Déšť se sněhem nebo mrznoucí déšť"), "❄"),
-    "snowy": (_("Sněžení"), "❄"),
-    "thunderstorm": (_("Bouřka"), "ϟ"),
-    "hail": (_("Kroupy"), "◆"),
-    "fog": (_("Mlha"), "≋"),
+    "cloudy": (_("Zataženo"), "☁️"),
+    "rainy": (_("Déšť nebo přeháňky"), "🌧️"),
+    "sleet": (_("Déšť se sněhem nebo mrznoucí déšť"), "🌨️"),
+    "snowy": (_("Sněžení"), "❄️"),
+    "thunderstorm": (_("Bouřka"), "⛈️"),
+    "hail": (_("Kroupy"), "🧊"),
+    "fog": (_("Mlha"), "🌫️"),
     "unknown": (_("Neurčené počasí"), "?"),
 }
 
