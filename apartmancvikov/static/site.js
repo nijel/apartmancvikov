@@ -3,7 +3,7 @@
 const navMenu = document.querySelector(".nav-menu");
 
 if (navMenu) {
-  const desktopNavigation = window.matchMedia("(min-width: 54rem)");
+  const desktopNavigation = window.matchMedia("(min-width: 68rem)");
   const syncNavigation = () => {
     navMenu.open = desktopNavigation.matches;
   };
