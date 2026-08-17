@@ -34,6 +34,12 @@ DEFAULT_FROM_EMAIL = f"Apartmán Cvikov <{CONTACT_EMAIL}>"
 The public recipient address and other business details are defined in
 `apartmancvikov/site_config.py`. Never commit SMTP credentials.
 
+## Availability calendar
+
+The public iCalendar feed for synchronizing aggregated availability with
+e-chalupy.cz and other booking services is available at
+`https://apartmancvikov.cz/obsazenost.ics`. It contains no guest details.
+
 ## Weather forecast
 
 The website reads the ČHMÚ ALADIN forecast from a database snapshot, so page

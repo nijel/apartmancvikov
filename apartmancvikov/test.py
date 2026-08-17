@@ -175,6 +175,80 @@ class SeoTest(TestCase):
             html,
         )
 
+    def test_ical_feed_matches_aggregated_calendar_periods(self):
+        """The iCalendar feed merges adjoining bookings and gaps like HTML."""
+        start = date.today() + timedelta(days=10)  # noqa: DTZ011
+        first_end = start + timedelta(days=3)
+        gap = start + timedelta(days=4)
+        joined_start = start + timedelta(days=5)
+        joined_end = start + timedelta(days=7)
+        separate_start = start + timedelta(days=10)
+        separate_end = start + timedelta(days=12)
+        Booking.objects.create(
+            start=joined_start,
+            end=joined_end,
+            uid="private-joined-booking",
+        )
+        Booking.objects.create(
+            start=separate_start,
+            end=separate_end,
+            uid="private-separate-booking",
+        )
+        Booking.objects.create(
+            start=start,
+            end=first_end,
+            uid="private-first-booking",
+        )
+
+        html = self.client.get("/cs/obsazenost/").content.decode()
+        response = self.client.get("/obsazenost.ics")
+        calendar = response.content.decode()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.headers["Content-Type"], "text/calendar; charset=utf-8"
+        )
+        self.assertEqual(
+            response.headers["Content-Disposition"],
+            'inline; filename="apartman-cvikov-obsazenost.ics"',
+        )
+        self.assertTrue(calendar.startswith("BEGIN:VCALENDAR\r\n"))
+        self.assertTrue(calendar.endswith("END:VCALENDAR\r\n"))
+        self.assertEqual(calendar.count("BEGIN:VEVENT"), 2)
+        self.assertIn(f"DTSTART:{start:%Y%m%d}\r\n", calendar)
+        self.assertIn(f"DTEND:{joined_end:%Y%m%d}\r\n", calendar)
+        self.assertIn(f"DTSTART:{separate_start:%Y%m%d}\r\n", calendar)
+        self.assertIn(f"DTEND:{separate_end:%Y%m%d}\r\n", calendar)
+        self.assertIn(
+            f"UID:obsazenost-{start:%Y%m%d}-{joined_end:%Y%m%d}@apartmancvikov.cz\r\n",
+            calendar,
+        )
+        self.assertNotIn("private-first-booking", calendar)
+        self.assertNotIn("private-joined-booking", calendar)
+        self.assertNotIn("ATTENDEE", calendar)
+        self.assertIn(
+            f'class="booking_middle" data-status="occupied"><time datetime="{gap}">',
+            html,
+        )
+        self.assertIn(
+            f'class="booking_middle" data-status="occupied"><time '
+            f'datetime="{joined_start}">',
+            html,
+        )
+
+    def test_single_day_event_has_next_day_as_ical_end(self):
+        """A one-day source event exports as one overnight iCalendar stay."""
+        start = date.today() + timedelta(days=10)  # noqa: DTZ011
+        following_day = start + timedelta(days=1)
+        Booking.objects.create(start=start, end=start, uid="private-one-day-event")
+
+        calendar = self.client.get("/obsazenost.ics").content.decode()
+
+        self.assertEqual(calendar.count("BEGIN:VEVENT"), 1)
+        self.assertIn(f"DTSTART:{start:%Y%m%d}\r\n", calendar)
+        self.assertIn(f"DTEND:{following_day:%Y%m%d}\r\n", calendar)
+        self.assertNotIn("private-one-day-event", calendar)
+
     def test_responsive_image_manifest_matches_committed_assets(self):
         """Every recorded derivative exists and source photos are represented."""
         static_dir = Path(settings.BASE_DIR) / "apartmancvikov" / "static"

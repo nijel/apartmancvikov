@@ -11,7 +11,7 @@ from django.utils.formats import date_format
 from django.utils.html import format_html, format_html_join
 from django.utils.translation import gettext as _
 
-from apartmancvikov.models import Booking
+from apartmancvikov.availability import get_aggregated_booking_periods
 
 register = template.Library()
 
@@ -24,44 +24,17 @@ class BookingCalendar(HTMLCalendar):
         self.end_dates = set()
         self.booked_dates = set()
         self.fill_in_dates()
-        self.cleanup_dates()
 
     def fill_in_dates(self):
         """Load booking dates from the database."""
-        for booking in Booking.objects.all():
-            display_end = booking.end
-            if booking.start == booking.end:
-                # A one-day calendar event represents an overnight stay: show
-                # its departure half on the following morning without changing
-                # the dates used by availability checks.
-                display_end += timedelta(days=1)
-            self.start_dates.add(booking.start)
-            self.end_dates.add(display_end)
-            days_range = (display_end - booking.start).days - 1
+        for period in get_aggregated_booking_periods():
+            self.start_dates.add(period.start)
+            self.end_dates.add(period.end)
+            days_range = (period.end - period.start).days - 1
             if days_range > 0:
                 self.booked_dates.update(
-                    booking.start + timedelta(days=day + 1) for day in range(days_range)
+                    period.start + timedelta(days=day + 1) for day in range(days_range)
                 )
-
-    def cleanup_dates(self):
-        """Cleanup booking dates to avoid spaces."""
-        starts = list(self.start_dates)
-        for start in starts:
-            # Merge when start overlaps with end or there is just one day space
-            previous = start - timedelta(days=1)
-            before_previous = start - timedelta(days=2)
-            if (
-                start in self.end_dates
-                or previous in self.end_dates
-                or before_previous in self.end_dates
-            ):
-                self.end_dates.discard(start)
-                self.end_dates.discard(previous)
-                self.end_dates.discard(before_previous)
-                self.start_dates.remove(start)
-                self.booked_dates.add(start)
-                self.booked_dates.add(previous)
-                self.booked_dates.add(before_previous)
 
     def get_calendar_data(self) -> list[tuple[int, int, list[list[date]]]]:
         """Generate calendar data."""

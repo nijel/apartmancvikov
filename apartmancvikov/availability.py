@@ -2,11 +2,54 @@
 #
 # SPDX-License-Identifier: AGPL-3.0
 
+from collections.abc import Iterable
+from dataclasses import dataclass
 from datetime import date, timedelta
 
 from .models import Booking
 
 MAXIMUM_INQUIRY_YEARS = 2
+
+
+@dataclass(frozen=True)
+class BookingPeriod:
+    """A period displayed as one continuous booking."""
+
+    start: date
+    end: date
+
+
+def aggregate_booking_periods(
+    bookings: Iterable[tuple[date, date]],
+) -> tuple[BookingPeriod, ...]:
+    """Merge bookings as they are presented in the availability calendar."""
+    one_day = timedelta(days=1)
+    merge_distance = timedelta(days=2)
+    periods = sorted(
+        (
+            BookingPeriod(start, end + one_day if start == end else end)
+            for start, end in bookings
+        ),
+        key=lambda period: (period.start, period.end),
+    )
+    aggregated: list[BookingPeriod] = []
+    for period in periods:
+        if not aggregated or period.start > aggregated[-1].end + merge_distance:
+            aggregated.append(period)
+            continue
+
+        previous = aggregated[-1]
+        aggregated[-1] = BookingPeriod(
+            start=previous.start,
+            end=max(previous.end, period.end),
+        )
+    return tuple(aggregated)
+
+
+def get_aggregated_booking_periods() -> tuple[BookingPeriod, ...]:
+    """Load bookings and return the periods shared by HTML and iCalendar."""
+    bookings = Booking.objects.order_by("start", "end").values_list("start", "end")
+    return aggregate_booking_periods(bookings)
 
 
 def maximum_inquiry_date(today: date) -> date:

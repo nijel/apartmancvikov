@@ -39,6 +39,7 @@ from .views import (
     SwimmingTripsView,
     TripsView,
     WeatherView,
+    availability_ics,
     llms_txt,
     robots_txt,
 )
@@ -80,6 +81,7 @@ urlpatterns = i18n_patterns(  # noqa: RUF005
         name="image_license",
     ),
 ) + [
+    path("obsazenost.ics", availability_ics, name="availability_ics"),
     path("robots.txt", robots_txt, name="robots"),
     path("llms.txt", llms_txt, name="llms"),
     path(
