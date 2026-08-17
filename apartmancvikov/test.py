@@ -17,6 +17,7 @@ from django.test import TestCase, override_settings
 from django.utils import timezone
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
+from icalendar import Calendar
 
 from .availability import maximum_inquiry_date
 from .content import ATTRACTIONS, CYCLING_TRIPS, SWIMMING_TIPS
@@ -202,7 +203,9 @@ class SeoTest(TestCase):
 
         html = self.client.get("/cs/obsazenost/").content.decode()
         response = self.client.get("/obsazenost.ics")
-        calendar = response.content.decode()
+        calendar_text = response.content.decode()
+        calendar = Calendar.from_ical(response.content)
+        events = calendar.walk("VEVENT")
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
@@ -212,20 +215,21 @@ class SeoTest(TestCase):
             response.headers["Content-Disposition"],
             'inline; filename="apartman-cvikov-obsazenost.ics"',
         )
-        self.assertTrue(calendar.startswith("BEGIN:VCALENDAR\r\n"))
-        self.assertTrue(calendar.endswith("END:VCALENDAR\r\n"))
-        self.assertEqual(calendar.count("BEGIN:VEVENT"), 2)
-        self.assertIn(f"DTSTART:{start:%Y%m%d}\r\n", calendar)
-        self.assertIn(f"DTEND:{joined_end:%Y%m%d}\r\n", calendar)
-        self.assertIn(f"DTSTART:{separate_start:%Y%m%d}\r\n", calendar)
-        self.assertIn(f"DTEND:{separate_end:%Y%m%d}\r\n", calendar)
-        self.assertIn(
-            f"UID:obsazenost-{start:%Y%m%d}-{joined_end:%Y%m%d}@apartmancvikov.cz\r\n",
-            calendar,
+        self.assertTrue(calendar_text.startswith("BEGIN:VCALENDAR\r\n"))
+        self.assertTrue(calendar_text.endswith("END:VCALENDAR\r\n"))
+        self.assertEqual(len(events), 2)
+        self.assertEqual(
+            [(event.decoded("dtstart"), event.decoded("dtend")) for event in events],
+            [(start, joined_end), (separate_start, separate_end)],
         )
-        self.assertNotIn("private-first-booking", calendar)
-        self.assertNotIn("private-joined-booking", calendar)
-        self.assertNotIn("ATTENDEE", calendar)
+        self.assertEqual(
+            str(events[0]["uid"]),
+            f"obsazenost-{start:%Y%m%d}-{joined_end:%Y%m%d}@apartmancvikov.cz",
+        )
+        self.assertEqual(str(events[0]["summary"]), "Obsazeno")
+        self.assertNotIn("private-first-booking", calendar_text)
+        self.assertNotIn("private-joined-booking", calendar_text)
+        self.assertNotIn("ATTENDEE", calendar_text)
         self.assertIn(
             f'class="booking_middle" data-status="occupied"><time datetime="{gap}">',
             html,
@@ -242,12 +246,13 @@ class SeoTest(TestCase):
         following_day = start + timedelta(days=1)
         Booking.objects.create(start=start, end=start, uid="private-one-day-event")
 
-        calendar = self.client.get("/obsazenost.ics").content.decode()
+        response = self.client.get("/obsazenost.ics")
+        events = Calendar.from_ical(response.content).walk("VEVENT")
 
-        self.assertEqual(calendar.count("BEGIN:VEVENT"), 1)
-        self.assertIn(f"DTSTART:{start:%Y%m%d}\r\n", calendar)
-        self.assertIn(f"DTEND:{following_day:%Y%m%d}\r\n", calendar)
-        self.assertNotIn("private-one-day-event", calendar)
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0].decoded("dtstart"), start)
+        self.assertEqual(events[0].decoded("dtend"), following_day)
+        self.assertNotIn("private-one-day-event", response.content.decode())
 
     def test_responsive_image_manifest_matches_committed_assets(self):
         """Every recorded derivative exists and source photos are represented."""

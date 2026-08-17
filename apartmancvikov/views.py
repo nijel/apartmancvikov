@@ -15,6 +15,7 @@ from django.urls import reverse
 from django.utils.formats import number_format
 from django.utils.translation import gettext as _
 from django.views.generic import FormView, TemplateView
+from icalendar import Calendar, Event
 
 from .availability import get_aggregated_booking_periods
 from .content import (
@@ -46,30 +47,22 @@ logger = logging.getLogger(__name__)
 
 def availability_ics(_request):
     """Publish privacy-safe, aggregated availability as an iCalendar feed."""
-    summary = _("Obsazeno")
-    lines = [
-        "BEGIN:VCALENDAR",
-        "PRODID:-//apartmancvikov.cz//Availability//CS",
-        "CALSCALE:GREGORIAN",
-        "VERSION:2.0",
-    ]
+    calendar = Calendar()
+    calendar.add("prodid", "-//apartmancvikov.cz//Availability//CS")
+    calendar.add("calscale", "GREGORIAN")
+    calendar.add("version", "2.0")
     for period in get_aggregated_booking_periods():
         start = period.start.strftime("%Y%m%d")
         end = period.end.strftime("%Y%m%d")
-        lines.extend(
-            [
-                "BEGIN:VEVENT",
-                f"DTSTART:{start}",
-                f"DTEND:{end}",
-                f"UID:obsazenost-{start}-{end}@apartmancvikov.cz",
-                f"SUMMARY:{summary}",
-                "END:VEVENT",
-            ]
-        )
-    lines.append("END:VCALENDAR")
+        event = Event()
+        event.add("dtstart", period.start)
+        event.add("dtend", period.end)
+        event.add("uid", f"obsazenost-{start}-{end}@apartmancvikov.cz")
+        event.add("summary", _("Obsazeno"))
+        calendar.add_component(event)
 
     response = HttpResponse(
-        "\r\n".join(lines) + "\r\n",
+        calendar.to_ical(),
         content_type="text/calendar; charset=utf-8",
     )
     response["Content-Disposition"] = (
