@@ -367,6 +367,38 @@ summary {
   text-align: center;
 }
 
+/* Error pages */
+.error-page-body .site-header {
+  min-height: 23rem;
+}
+
+.error-page-body .hero {
+  min-height: 18rem;
+  padding-block: 3rem 4rem;
+}
+
+.error-page__inner {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  max-width: 58rem;
+}
+
+.error-page__code {
+  color: var(--accent-soft);
+  font-size: clamp(6rem, 24vw, 12rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.75;
+  margin: 0;
+}
+
+.error-page__message p {
+  color: var(--muted);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Home */
 .home-intro {
   padding-top: clamp(3rem, 7vw, 6rem);
@@ -2004,6 +2036,10 @@ html.lightbox-open {
 }
 
 @media (min-width: 54rem) {
+  .error-page__inner {
+    grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1fr);
+  }
+
   .feature-split,
   .contact-layout,
   .attraction-detail {

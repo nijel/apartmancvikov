@@ -9,7 +9,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.http import Http404, HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.formats import number_format
@@ -43,6 +43,21 @@ from .weather import (
 )
 
 logger = logging.getLogger(__name__)
+
+
+def page_not_found(request, exception):
+    """Render a localized 404 page without metadata for the missing URL."""
+    return render(
+        request,
+        "404.html",
+        {
+            "canonical_url": "",
+            "exception": exception,
+            "language_urls": (),
+            "x_default_url": "",
+        },
+        status=404,
+    )
 
 
 def availability_ics(_request):

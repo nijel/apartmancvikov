@@ -516,7 +516,7 @@ msgstr "Trips from Apartment Cvikov"
 msgid "Ubytování"
 msgstr "Accommodation"
 
-#: apartmancvikov/structured_data.py:498
+#: apartmancvikov/structured_data.py:498 apartmancvikov/templates/404.html:37
 #: apartmancvikov/templates/attraction_detail.html:42
 #: apartmancvikov/templates/base.html:98
 msgid "Výlety"
@@ -593,6 +593,26 @@ msgstr "Available dates"
 #: apartmancvikov/templates/attraction_detail.html:115
 msgid "Kontaktovat apartmán"
 msgstr "Contact the apartment"
+
+#: apartmancvikov/templates/404.html:6
+msgid "Stránka nebyla nalezena | Apartmán Cvikov"
+msgstr "Page not found | Apartment Cvikov"
+
+#: apartmancvikov/templates/404.html:22
+msgid "Stránka nebyla nalezena"
+msgstr "Page not found"
+
+#: apartmancvikov/templates/404.html:26
+msgid "Požadovanou stránku se nepodařilo najít."
+msgstr "We could not find the page you requested."
+
+#: apartmancvikov/templates/404.html:34
+msgid "Možná byla přesunuta, odstraněna nebo je v adrese chyba."
+msgstr "It may have been moved, deleted, or the address may contain an error."
+
+#: apartmancvikov/templates/404.html:36
+msgid "Na úvodní stránku"
+msgstr "Back to the homepage"
 
 #: apartmancvikov/templates/base.html:13 apartmancvikov/templates/index.html:16
 msgid "Rodinné ubytování v Lužických horách | Apartmán Cvikov"

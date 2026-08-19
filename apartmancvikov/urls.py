@@ -41,10 +41,12 @@ from .views import (
     WeatherView,
     availability_ics,
     llms_txt,
+    page_not_found,
     robots_txt,
 )
 
 sitemaps = {"static": StaticViewSitemap, "attractions": AttractionSitemap}
+handler404 = page_not_found
 
 urlpatterns = i18n_patterns(  # noqa: RUF005
     path("", HomeView.as_view(), name="home"),

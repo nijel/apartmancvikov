@@ -86,6 +86,37 @@ class SeoTest(TestCase):
         self.assertEqual(self.client.get("/de/").status_code, 200)
         self.assertEqual(self.client.get("/fr/").status_code, 404)
 
+    @override_settings(DEBUG=False)
+    def test_not_found_page_is_localized_and_not_indexed(self):
+        """Missing URLs render the custom localized error page."""
+        pages = (
+            ("/cs/neexistuje/", "Stránka nebyla nalezena", "/cs/"),
+            ("/en/not-found/", "Page not found", "/en/"),
+            ("/de/nicht-gefunden/", "Seite nicht gefunden", "/de/"),
+        )
+        for path, heading, home_path in pages:
+            with self.subTest(path=path):
+                response = self.client.get(path)
+                self.assertEqual(response.status_code, 404)
+                self.assertTemplateUsed(response, "404.html")
+                self.assertContains(response, heading, status_code=404)
+                self.assertContains(
+                    response,
+                    '<meta name="robots" content="noindex, follow"',
+                    status_code=404,
+                )
+                self.assertContains(
+                    response,
+                    f'href="{home_path}"',
+                    status_code=404,
+                )
+                self.assertNotContains(response, 'rel="canonical"', status_code=404)
+                self.assertNotContains(
+                    response,
+                    'type="application/ld+json"',
+                    status_code=404,
+                )
+
     def test_pages_use_local_design_without_bootstrap(self):
         """The custom responsive design has no Bootstrap dependency."""
         response = self.client.get("/cs/")
@@ -1383,6 +1414,9 @@ class SeoTest(TestCase):
         """Unknown attraction slugs do not create soft 404 pages."""
         response = self.client.get("/cs/vylety/nezname-misto/")
         self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed(response, "404.html")
+        self.assertContains(response, "Stránka nebyla nalezena", status_code=404)
+        self.assertNotContains(response, 'rel="canonical"', status_code=404)
 
     def test_exotenhaus_uses_current_information(self):
         """The former butterfly-house guide reflects the current exhibition."""

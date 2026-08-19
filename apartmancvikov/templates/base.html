@@ -6,7 +6,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    {% block robots %}
+      <meta name="robots" content="index, follow, max-image-preview:large" />
+    {% endblock robots %}
 
     <title>
       {% block title %}
@@ -66,7 +68,9 @@
     <meta name="theme-color" content="#761919" />
     <link href="https://mastodon.social/@nijel" rel="me" />
 
-    {% json_ld structured_data %}
+    {% block structured_data %}
+      {% json_ld structured_data %}
+    {% endblock structured_data %}
 
   </head>
   <body class="{% block body_class %}{% endblock %}">

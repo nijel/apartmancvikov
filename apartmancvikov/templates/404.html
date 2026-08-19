@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  {% translate "Stránka nebyla nalezena | Apartmán Cvikov" %}
+{% endblock title %}
+
+{% block robots %}
+  <meta name="robots" content="noindex, follow" />
+{% endblock robots %}
+
+{% block meta_description %}
+{% endblock meta_description %}
+
+{% block structured_data %}
+{% endblock structured_data %}
+
+{% block body_class %}error-page-body{% endblock %}
+
+{% block headline %}
+  {% translate "Stránka nebyla nalezena" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Požadovanou stránku se nepodařilo najít." %}
+{% endblock lead %}
+
+{% block content %}
+  <section class="content-section error-page">
+    <div class="site-container error-page__inner">
+      <p class="error-page__code" aria-hidden="true">404</p>
+      <div class="error-page__message">
+        <p>{% translate "Možná byla přesunuta, odstraněna nebo je v adrese chyba." %}</p>
+        <div class="button-row">
+          <a href="{% url "home" %}" class="button button--primary">{% translate "Na úvodní stránku" %}</a>
+          <a href="{% url "vylety" %}" class="button button--secondary">{% translate "Výlety" %}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

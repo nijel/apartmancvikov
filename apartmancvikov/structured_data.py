@@ -677,21 +677,29 @@ def _static_breadcrumb(request, view_name, home_url, name):
 def build_structured_data(request):
     """Build one linked JSON-LD graph for the current localized page."""
     match = request.resolver_match
-    if match is None or match.url_name not in {
-        "home",
-        "weather",
-        "vylety",
-        "cycling",
-        "swimming",
-        "restaurants",
-        "attraction_detail",
-        "cenik",
-        "obsazenost",
-        "kontakt",
-        "poptavka",
-        "privacy",
-        "image_license",
-    }:
+    if (
+        match is None
+        or match.url_name
+        not in {
+            "home",
+            "weather",
+            "vylety",
+            "cycling",
+            "swimming",
+            "restaurants",
+            "attraction_detail",
+            "cenik",
+            "obsazenost",
+            "kontakt",
+            "poptavka",
+            "privacy",
+            "image_license",
+        }
+        or (
+            match.url_name == "attraction_detail"
+            and match.kwargs.get("slug") not in ATTRACTIONS_BY_SLUG
+        )
+    ):
         return {"@context": "https://schema.org", "@graph": []}
 
     view_name = match.url_name
