@@ -146,10 +146,14 @@
                 </div>
               {% endif %}
               {% if tip.map_url %}
-                <a href="{{ tip.map_url }}" class="text-link" rel="external noopener">{% translate "Zobrazit mapu" %}<span aria-hidden="true">→</span></a>
+                <a href="{{ tip.map_url }}"
+                   class="text-link"
+                   rel="external noopener">{% translate "Zobrazit mapu" %}<span aria-hidden="true">→</span></a>
               {% endif %}
               {% if tip.official_url %}
-                <a href="{{ tip.official_url }}" class="text-link" rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
+                <a href="{{ tip.official_url }}"
+                   class="text-link"
+                   rel="external noopener">{% translate "Aktuální informace" %}<span aria-hidden="true">→</span></a>
               {% endif %}
             </section>
           {% endwith %}

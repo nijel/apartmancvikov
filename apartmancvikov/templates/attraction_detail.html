@@ -143,7 +143,9 @@
           </p>
           <div class="button-row">
             {% if attraction.map_url %}
-              <a href="{{ attraction.map_url }}" class="button button--primary" rel="noopener">{% translate "Zobrazit mapu" %}</a>
+              <a href="{{ attraction.map_url }}"
+                 class="button button--primary"
+                 rel="noopener">{% translate "Zobrazit mapu" %}</a>
             {% endif %}
             {% if attraction.official_links %}
               {% for link in attraction.official_links %}
@@ -184,7 +186,9 @@
                 </div>
                 <p>{{ route.description }}</p>
                 <div class="button-row">
-                  <a href="{{ route.map_url }}" class="button button--secondary" rel="noopener">{% translate "Zobrazit mapu trasy" %}</a>
+                  <a href="{{ route.map_url }}"
+                     class="button button--secondary"
+                     rel="noopener">{% translate "Zobrazit mapu trasy" %}</a>
                 </div>
               </article>
             {% endfor %}
