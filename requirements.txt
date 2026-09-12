@@ -1,5 +1,5 @@
 caldav==3.3.0
-Django==5.2.17
+Django==6.1.1
 icalendar==7.3.0
 mysqlclient
 qrcode==8.2
