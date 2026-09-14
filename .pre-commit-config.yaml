@@ -43,9 +43,6 @@ repos:
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
   rev: v2.16.0
   hooks:
-  - id: pretty-format-toml
-    exclude: ^uv\.lock$
-    args: [--autofix]
   - id: pretty-format-yaml
     args: [--autofix, --indent, '2']
 - repo: https://github.com/pre-commit/mirrors-prettier
@@ -58,3 +55,12 @@ repos:
   hooks:
   - id: djlint-reformat-django
   - id: djlint-django
+- repo: https://github.com/abravalheri/validate-pyproject
+  rev: '0.26'
+  hooks:
+  - id: validate-pyproject
+- repo: https://github.com/pappasam/toml-sort
+  rev: v0.24.4
+  hooks:
+  - id: toml-sort-fix
+    exclude: ^uv\.lock$
