@@ -22,7 +22,8 @@ sys.path.insert(0, str(BASE_DIR))
 from apartmancvikov.image_config import available_widths, variant_path  # noqa: E402
 
 JPEG_QUALITY = 86
-WEBP_QUALITY = 82
+WEBP_QUALITY = 78
+WEBP_METHOD = 6
 GM_BINARY = shutil.which("gm")
 
 
@@ -76,6 +77,8 @@ def convert(source, destination, width, extension):
         ]
         if interlace:
             command.extend(["-interlace", interlace])
+        if extension == "webp":
+            command.extend(["-define", f"webp:method={WEBP_METHOD}"])
         command.append(str(target))
         subprocess.run(command, check=True)  # noqa: S603
 
@@ -106,14 +109,20 @@ def expected_output_paths():
     return result
 
 
+def encoding_settings():
+    """Return the encoding settings shared by generation and verification."""
+    return {
+        "jpeg_quality": JPEG_QUALITY,
+        "webp_quality": WEBP_QUALITY,
+        "webp_method": WEBP_METHOD,
+        "widths": list(available_widths(10_000)),
+    }
+
+
 def build_manifest(outputs):
     """Describe sources, outputs and encoding settings for CI verification."""
     return {
-        "settings": {
-            "jpeg_quality": JPEG_QUALITY,
-            "webp_quality": WEBP_QUALITY,
-            "widths": list(available_widths(10_000)),
-        },
+        "settings": encoding_settings(),
         "sources": {
             path.relative_to(STATIC_DIR).as_posix(): digest(path) for path in sources()
         },
@@ -159,10 +168,14 @@ def generate():
 
 
 def check():
-    """Verify source and output hashes without requiring image conversion."""
+    """Verify encoding settings and hashes without requiring image conversion."""
     if not MANIFEST_PATH.exists():
         raise SystemExit("Responsive image manifest is missing; regenerate images.")
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    if manifest.get("settings") != encoding_settings():
+        raise SystemExit(
+            "Image encoding settings changed; regenerate responsive images."
+        )
     current_sources = {
         path.relative_to(STATIC_DIR).as_posix(): digest(path) for path in sources()
     }
