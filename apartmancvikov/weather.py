@@ -144,7 +144,7 @@ OPTIONAL_NUMERIC_FIELDS = ("prec", "windDirection", "windGustSpeed", "snow")
 def _parse_time(value: Any) -> datetime:
     if not isinstance(value, str):
         raise TypeError("validityTime must be a string")
-    parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    parsed = datetime.fromisoformat(value)
     if timezone.is_naive(parsed):
         raise ValueError("validityTime must include a timezone")
     return parsed

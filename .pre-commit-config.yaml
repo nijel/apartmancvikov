@@ -8,7 +8,6 @@ repos:
   - id: end-of-file-fixer
   - id: check-yaml
   - id: check-toml
-  - id: requirements-txt-fixer
   - id: check-merge-conflict
   - id: debug-statements
   - id: mixed-line-ending
@@ -45,6 +44,7 @@ repos:
   rev: v2.16.0
   hooks:
   - id: pretty-format-toml
+    exclude: ^uv\.lock$
     args: [--autofix]
   - id: pretty-format-yaml
     args: [--autofix, --indent, '2']

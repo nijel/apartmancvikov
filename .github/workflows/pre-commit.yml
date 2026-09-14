@@ -25,46 +25,20 @@ jobs:
         persist-credentials: false
     - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
       with:
-        path: ~/.cache/pre-commit
-        key: ${{ runner.os }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+        path: ~/.cache/prek
+        key: ${{ runner.os }}-prek-${{ hashFiles('.pre-commit-config.yaml', 'uv.lock') }}
     - name: Setup Python
       uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
       with:
         python-version: 3.13 || 3.14
     - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
-    - name: detect method
-      id: detect
-      run: |
-        if test -f requirements-lint.txt ; then
-          echo "method=requirements" >> "$GITHUB_OUTPUT"
-        elif test -f pyproject.toml && grep -q dependency-groups pyproject.toml ; then
-          echo "method=pep735" >> "$GITHUB_OUTPUT"
-        elif test -f pyproject.toml && grep -q dependency-groups pyproject.toml ; then
-          echo "method=pyproject" >> "$GITHUB_OUTPUT"
-        else
-          echo "method=uvx" >> "$GITHUB_OUTPUT"
-        fi
-    - name: pre-commit (PEP 735)
-      if: steps.detect.outputs.method == 'pep735'
-      run: uv run --only-group pre-commit pre-commit run --all --show-diff-on-failure
-      env:
-        RUFF_OUTPUT_FORMAT: github
-        REUSE_OUTPUT_FORMAT: github
-    - name: pre-commit (uvx)
-      if: steps.detect.outputs.method == 'uvx'
-      run: uvx pre-commit run --all --show-diff-on-failure
-      env:
-        RUFF_OUTPUT_FORMAT: github
-        REUSE_OUTPUT_FORMAT: github
+      with:
+        enable-cache: true
+        cache-suffix: pre-commit
     - name: Install dependencies
-      if: steps.detect.outputs.method == 'requirements'
-      run: uv pip install --system -r requirements-lint.txt
-    - name: Install dependencies
-      if: steps.detect.outputs.method == 'pyproject'
-      run: uv pip install --system "$(sed -n 's/.*"\(pre-commit==\([^"]*\)\)".*/\1/p' pyproject.toml)"
-    - name: pre-commit (installed)
-      if: steps.detect.outputs.method == 'requirements' || steps.detect.outputs.method == 'pyproject'
-      run: pre-commit run --all --show-diff-on-failure
+      run: uv sync --locked --only-group pre-commit
+    - name: pre-commit
+      run: uv run --no-sync prek run --all-files --show-diff-on-failure
       env:
         RUFF_OUTPUT_FORMAT: github
         REUSE_OUTPUT_FORMAT: github

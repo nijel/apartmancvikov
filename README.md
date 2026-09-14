@@ -2,6 +2,41 @@
 
 Website for Apartman Cvikov
 
+## Development
+
+Use Python 3.11 or newer and uv to install the locked dependencies, including
+the development tools:
+
+```sh
+uv sync --locked
+uv run --no-sync python manage.py compilemessages -v 0
+uv run --no-sync python manage.py check
+uv run --no-sync python manage.py test
+uv run --no-sync python manage.py runserver
+```
+
+Compiling translations requires GNU gettext. Building mysqlclient requires a C
+compiler, Python development headers, pkg-config, and MySQL client development
+libraries.
+
+Run the pre-commit hooks with:
+
+```sh
+uv run --locked --only-group pre-commit prek run --all-files
+```
+
+Declare runtime dependencies in `project.dependencies` and development tools in
+`dependency-groups` in `pyproject.toml`. After changing dependencies, run `uv lock`
+and include both `pyproject.toml` and `uv.lock` in the change. To update a locked
+package within its declared constraints, use `uv lock --upgrade-package PACKAGE`.
+CI checks Python 3.11, 3.12, 3.13, and 3.14 and rejects an outdated lock file.
+
+For production, install only runtime dependencies:
+
+```sh
+uv sync --locked --no-dev
+```
+
 ## Static files
 
 Production uses Django's manifest static-files storage, which gives changed

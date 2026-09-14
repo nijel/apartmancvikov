@@ -111,7 +111,7 @@ Podle rozsahu změny spusť zejména:
 .venv/bin/python manage.py check
 .venv/bin/python manage.py test
 .venv/bin/python scripts/generate-images.py --check
-.venv/bin/pre-commit run --all-files
+uv run --locked --only-group pre-commit prek run --all-files
 ```
 
 U tiskových změn navíc vytvoř dočasná PDF z již běžícího webu, zkontroluj A4
