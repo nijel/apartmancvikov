@@ -46,12 +46,15 @@ SERVICE_ID = f"{settings.SITE_URL}/#accommodation-service"
 
 PROPERTY_IMAGES = (
     ("foto/dum.jpg", 1600, 1200),
-    ("foto/tyrkys.jpg", 1600, 1064),
-    ("foto/levandule.jpg", 1600, 1064),
-    ("foto/fuchsie.jpg", 1600, 1064),
+    ("foto/tyrkys.jpg", 4000, 3000),
+    ("foto/levandule.jpg", 4000, 3000),
+    ("foto/fuchsie.jpg", 4000, 3000),
     ("foto/obyvak.jpg", 1600, 1064),
     ("foto/kuchyn.jpg", 1600, 1064),
-    ("foto/koupelna-nahore.jpg", 1600, 1064),
+    ("foto/koupelna-nahore.jpg", 4000, 3000),
+    ("foto/koupelna-horni-2.jpg", 4000, 3000),
+    ("foto/hriste.jpg", 4000, 3000),
+    ("foto/parkoviste.jpg", 4000, 3000),
     ("foto/terasa.jpg", 1600, 901),
 )
 

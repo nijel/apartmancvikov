@@ -117,11 +117,11 @@
       {% translate "Fuchsiový pokoj se dvěma postelemi" as fuchsia_alt %}
       <div class="room-grid">
         <article class="room-card">
-          {% responsive_image_url "foto/tyrkys.jpg" 1600 as turquoise_lightbox %}
+          {% responsive_image_url "foto/tyrkys.jpg" 4000 as turquoise_lightbox %}
           <a href="{{ turquoise_lightbox }}"
              data-lightbox
              data-caption="{% translate "Tyrkysový pokoj" %}">
-            {% responsive_image "foto/tyrkys.jpg" 1600 1064 turquoise_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
+            {% responsive_image "foto/tyrkys.jpg" 4000 3000 turquoise_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
           </a>
           <div>
             <h3>{% translate "Tyrkys" %}</h3>
@@ -129,11 +129,11 @@
           </div>
         </article>
         <article class="room-card">
-          {% responsive_image_url "foto/levandule.jpg" 1600 as lavender_lightbox %}
+          {% responsive_image_url "foto/levandule.jpg" 4000 as lavender_lightbox %}
           <a href="{{ lavender_lightbox }}"
              data-lightbox
              data-caption="{% translate "Levandulový pokoj" %}">
-            {% responsive_image "foto/levandule.jpg" 1600 1064 lavender_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
+            {% responsive_image "foto/levandule.jpg" 4000 3000 lavender_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
           </a>
           <div>
             <h3>{% translate "Levandule" %}</h3>
@@ -141,11 +141,11 @@
           </div>
         </article>
         <article class="room-card">
-          {% responsive_image_url "foto/fuchsie.jpg" 1600 as fuchsia_lightbox %}
+          {% responsive_image_url "foto/fuchsie.jpg" 4000 as fuchsia_lightbox %}
           <a href="{{ fuchsia_lightbox }}"
              data-lightbox
              data-caption="{% translate "Fuchsiový pokoj" %}">
-            {% responsive_image "foto/fuchsie.jpg" 1600 1064 fuchsia_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
+            {% responsive_image "foto/fuchsie.jpg" 4000 3000 fuchsia_alt sizes="(min-width: 54rem) 33vw, 100vw" %}
           </a>
           <div>
             <h3>{% translate "Fuchsie" %}</h3>
@@ -166,14 +166,16 @@
       {% translate "Jídelna s dětským koutkem" as dining_room_caption %}
       {% translate "Kuchyně" as kitchen_caption %}
       {% translate "Koupelna se sprchou" as shower_caption %}
-      {% translate "Koupelna s vanou" as bath_caption %}
+      {% translate "Koupelna v patře s vanou" as bath_caption %}
+      {% translate "Vana a toaleta v koupelně v patře" as bath_detail_caption %}
       {% translate "Prádelna" as laundry_caption %}
       <div class="gallery-grid">
         {% include "snippets/gallery_item.html" with image="foto/obyvak.jpg" width=1600 height=1064 caption=living_room_caption %}
         {% include "snippets/gallery_item.html" with image="foto/jidelna.jpg" width=1600 height=1064 caption=dining_room_caption %}
         {% include "snippets/gallery_item.html" with image="foto/kuchyn.jpg" width=1600 height=1064 caption=kitchen_caption %}
         {% include "snippets/gallery_item.html" with image="foto/koupelna-dole.jpg" width=1600 height=1064 caption=shower_caption %}
-        {% include "snippets/gallery_item.html" with image="foto/koupelna-nahore.jpg" width=1600 height=1064 caption=bath_caption %}
+        {% include "snippets/gallery_item.html" with image="foto/koupelna-nahore.jpg" width=4000 height=3000 caption=bath_caption %}
+        {% include "snippets/gallery_item.html" with image="foto/koupelna-horni-2.jpg" width=4000 height=3000 caption=bath_detail_caption %}
         {% include "snippets/gallery_item.html" with image="foto/pradelna.jpg" width=1600 height=1064 caption=laundry_caption %}
       </div>
     </div>
@@ -186,22 +188,26 @@
         <h2>{% translate "Venkovní prostředí" %}</h2>
       </header>
       {% translate "Venkovní bazén" as pool_caption %}
-      {% translate "Pumptrack a hřiště" as pumptrack_caption %}
-      {% translate "Lezecká stěna se skluzavkou a pískovištěm" as climbing_caption %}
-      {% translate "Houpačka se skluzavkou a vrbovým tunelem" as swing_caption %}
+      {% translate "Pumptrack na zahradě" as pumptrack_caption %}
+      {% translate "Lezecká stěna, skluzavka, pískoviště a houpací síť" as climbing_caption %}
+      {% translate "Houpačka a skluzavka" as swing_caption %}
       {% translate "Blátivá kuchyňka" as mud_kitchen_caption %}
       {% translate "Trampolína a prolézačky" as trampoline_caption %}
       {% translate "Terasa" as terrace_caption %}
       {% translate "Letecký pohled" as aerial_caption %}
+      {% translate "Hřiště na zahradě" as playground_caption %}
+      {% translate "Soukromé parkování přímo před apartmánem" as parking_caption %}
       <div class="gallery-grid">
         {% include "snippets/gallery_item.html" with image="foto/dum.jpg" width=1600 height=1200 caption=pool_caption %}
-        {% include "snippets/gallery_item.html" with image="foto/pumptrack.jpg" width=1600 height=1200 caption=pumptrack_caption %}
-        {% include "snippets/gallery_item.html" with image="foto/stena.jpg" width=1600 height=901 caption=climbing_caption %}
-        {% include "snippets/gallery_item.html" with image="foto/houpacka.jpg" width=1600 height=901 caption=swing_caption %}
-        {% include "snippets/gallery_item.html" with image="foto/kuchynka.jpg" width=1600 height=901 caption=mud_kitchen_caption %}
+        {% include "snippets/gallery_item.html" with image="foto/pumptrack.jpg" width=4000 height=3000 caption=pumptrack_caption %}
+        {% include "snippets/gallery_item.html" with image="foto/hriste.jpg" width=4000 height=3000 caption=playground_caption %}
+        {% include "snippets/gallery_item.html" with image="foto/stena.jpg" width=4000 height=3000 caption=climbing_caption %}
+        {% include "snippets/gallery_item.html" with image="foto/houpacka.jpg" width=4000 height=3000 caption=swing_caption %}
+        {% include "snippets/gallery_item.html" with image="foto/kuchynka.jpg" width=4000 height=3000 caption=mud_kitchen_caption %}
         {% include "snippets/gallery_item.html" with image="foto/trampolina.jpg" width=1600 height=901 caption=trampoline_caption %}
         {% include "snippets/gallery_item.html" with image="foto/terasa.jpg" width=1600 height=901 caption=terrace_caption %}
         {% include "snippets/gallery_item.html" with image="foto/letecky.jpg" width=3200 height=1800 caption=aerial_caption %}
+        {% include "snippets/gallery_item.html" with image="foto/parkoviste.jpg" width=4000 height=3000 caption=parking_caption %}
       </div>
       <div class="centered-action">
         <a href="{% url "vylety" %}"

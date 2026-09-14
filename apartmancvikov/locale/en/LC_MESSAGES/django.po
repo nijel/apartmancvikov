@@ -1141,8 +1141,8 @@ msgid "Koupelna se sprchou"
 msgstr "Bathroom with shower"
 
 #: apartmancvikov/templates/index.html:144
-msgid "Koupelna s vanou"
-msgstr "Bathroom with bathtub"
+msgid "Koupelna v patře s vanou"
+msgstr "Upstairs bathroom with bathtub"
 
 #: apartmancvikov/templates/index.html:145
 msgid "Prádelna"
@@ -1161,16 +1161,16 @@ msgid "Venkovní bazén"
 msgstr "Outdoor swimming pool"
 
 #: apartmancvikov/templates/index.html:164
-msgid "Pumptrack a hřiště"
-msgstr "Pumptrack and playground"
+msgid "Pumptrack na zahradě"
+msgstr "Pumptrack in the garden"
 
 #: apartmancvikov/templates/index.html:165
-msgid "Lezecká stěna se skluzavkou a pískovištěm"
-msgstr "Climbing wall with slide and sandpit"
+msgid "Lezecká stěna, skluzavka, pískoviště a houpací síť"
+msgstr "Climbing wall, slide, sandpit and hammock"
 
 #: apartmancvikov/templates/index.html:166
-msgid "Houpačka se skluzavkou a vrbovým tunelem"
-msgstr "Swing with slide and willow tunnel"
+msgid "Houpačka a skluzavka"
+msgstr "Swing and slide"
 
 #: apartmancvikov/templates/index.html:167
 msgid "Blátivá kuchyňka"
@@ -3712,3 +3712,15 @@ msgstr "Afternoon"
 #: apartmancvikov/weather.py:133
 msgid "Večer"
 msgstr "Evening"
+
+#: apartmancvikov/templates/index.html
+msgid "Vana a toaleta v koupelně v patře"
+msgstr "Bathtub and toilet in the upstairs bathroom"
+
+#: apartmancvikov/templates/index.html
+msgid "Hřiště na zahradě"
+msgstr "Sports field in the garden"
+
+#: apartmancvikov/templates/index.html
+msgid "Soukromé parkování přímo před apartmánem"
+msgstr "Private parking directly in front of the apartment"
