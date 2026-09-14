@@ -1137,16 +1137,16 @@ msgid "Kuchyně"
 msgstr "Kitchen"
 
 #: apartmancvikov/templates/index.html:143
-msgid "Koupelna se sprchou"
-msgstr "Bathroom with shower"
+msgid "Koupelna v přízemí se sprchou"
+msgstr "Ground-floor bathroom with shower"
 
 #: apartmancvikov/templates/index.html:144
 msgid "Koupelna v patře s vanou"
 msgstr "Upstairs bathroom with bathtub"
 
 #: apartmancvikov/templates/index.html:145
-msgid "Prádelna"
-msgstr "Laundry"
+msgid "Prádelna s pračkou a sušákem"
+msgstr "Laundry room with washing machine and drying rack"
 
 #: apartmancvikov/templates/index.html:160
 msgid "Pro děti i dospělé"

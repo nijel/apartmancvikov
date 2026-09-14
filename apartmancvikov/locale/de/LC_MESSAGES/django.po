@@ -1162,16 +1162,16 @@ msgid "Kuchyně"
 msgstr "Küche"
 
 #: apartmancvikov/templates/index.html:143
-msgid "Koupelna se sprchou"
-msgstr "Badezimmer mit Dusche"
+msgid "Koupelna v přízemí se sprchou"
+msgstr "Badezimmer im Erdgeschoss mit Dusche"
 
 #: apartmancvikov/templates/index.html:144
 msgid "Koupelna v patře s vanou"
 msgstr "Badezimmer im Obergeschoss mit Badewanne"
 
 #: apartmancvikov/templates/index.html:145
-msgid "Prádelna"
-msgstr "Wäscherei"
+msgid "Prádelna s pračkou a sušákem"
+msgstr "Waschraum mit Waschmaschine und Wäscheständer"
 
 #: apartmancvikov/templates/index.html:160
 msgid "Pro děti i dospělé"
