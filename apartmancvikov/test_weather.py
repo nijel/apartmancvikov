@@ -10,7 +10,6 @@ from unittest.mock import patch
 from django.core.management import call_command
 from django.core.management.base import CommandError
 from django.test import TestCase
-from django.utils import timezone
 
 from .models import WeatherForecastSnapshot
 from .weather import (
@@ -299,7 +298,11 @@ class WeatherForecastTest(TestCase):
 class WeatherPageTest(TestCase):
     def setUp(self):
         """Save enough hourly data to render several forecast periods."""
-        self.now = timezone.now()
+        # At 23:45 in Cvikov, only the current hourly point remains today.
+        self.now = datetime(2026, 9, 14, 21, 45, tzinfo=UTC)
+        clock = patch("apartmancvikov.weather.timezone.now", return_value=self.now)
+        clock.start()
+        self.addCleanup(clock.stop)
         first_hour = self.now.replace(minute=0, second=0, microsecond=0)
         WeatherForecastSnapshot.objects.create(
             source=WEATHER_SOURCE,
@@ -369,14 +372,13 @@ class WeatherPageTest(TestCase):
 
         self.assertContains(response, "Předpověď na dnešek")
         self.assertContains(response, "Déšť nebo přeháňky")
-        self.assertRegex(content, r"\d+ až \d+ °C")
+        self.assertContains(response, "12 až 12 °C")
         self.assertEqual(content.count("°C"), 1)
         for detail in (
             "Modelová předpověď ALADIN",
             "Srážky",
             "Vítr",
             "Oblačnost",
-            "12 °C",
         ):
             self.assertNotContains(response, detail)
         self.assertContains(response, 'href="/cs/pocasi/"')
