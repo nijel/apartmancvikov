@@ -15,7 +15,7 @@ test = [
 
 [project]
 dependencies = [
-  "caldav==3.3.0",
+  "caldav==3.3.1",
   "Django==5.2.17",
   "icalendar==7.3.0",
   "mysqlclient",
