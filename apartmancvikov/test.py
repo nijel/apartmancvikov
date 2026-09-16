@@ -1379,8 +1379,8 @@ class SeoTest(TestCase):
         home = self.client.get("/cs/")
         self.assertNotContains(home, 'class="print-header"')
 
-    def test_trip_print_styles_target_one_a4_page(self):
-        """The print stylesheet defines compact A4 layouts for all trip pages."""
+    def test_trip_print_styles_use_a4_layouts(self):
+        """The print stylesheet defines A4 layouts for all trip pages."""
         stylesheet = (
             Path(settings.BASE_DIR) / "apartmancvikov" / "static" / "style.css"
         ).read_text(encoding="utf-8")

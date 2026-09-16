@@ -81,10 +81,18 @@ má vždy přednost.
 
 ## Tisk výletních stránek
 
-- Přehled výletů, koupání, restaurací i každý detail výletu musí být použitelný
+- Přehled výletů, koupání, cyklotras, restaurací i každý detail výletu musí být použitelný
   při samostatném tisku.
-- Tisk má být jedna strana A4 na výšku, s hlavičkou Apartmánu Cvikov a QR kódem
-  aktuální lokalizované stránky.
+- Tisk má být na A4 na výšku, na začátku dokumentu s hlavičkou Apartmánu Cvikov
+  a QR kódem aktuální lokalizované stránky. Čitelnost má přednost před počtem stran.
+- Běžný text včetně praktických údajů, variant tras a souvisejících tipů má mít
+  alespoň 11 pt a řádkování 1,3. Doprovodné údaje hlavičky, popisky QR kódu
+  a fotografické kredity mohou mít 9 pt.
+- Detail výletu má pokud možno vyjít na jednu stránku. Nejprve uprav rozložení,
+  mezery a velikost fotografie; pokud se obsah nevejde, připusť další stránku
+  bez zmenšování písma nebo krácení textu.
+- Souhrnné stránky výletů, koupání, cyklotras a restaurací mohou mít více stran.
+  Jednotlivé karty pokud možno nerozděluj a nadpisy drž s následujícím obsahem.
 - Skryj navigaci, mapová tlačítka, odkazy „Aktuální informace“, výzvy k rezervaci
   a další interaktivní prvky, které na papíře nedávají smysl.
 - Nadpisy musí fungovat bez kontextu webové navigace. Obecné označení „Náš tip“

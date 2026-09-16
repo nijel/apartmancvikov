@@ -2111,7 +2111,7 @@ html.lightbox-open {
   body.trip-print {
     background: white;
     color: #171412;
-    font-size: 8.5pt;
+    font-size: 11pt;
     line-height: 1.3;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
@@ -2156,14 +2156,14 @@ html.lightbox-open {
   }
 
   .print-header__brand p {
-    font-size: 6.8pt;
-    line-height: 1.2;
+    font-size: 9pt;
+    line-height: 1.3;
     margin: 0;
   }
 
   .print-header__brand .print-header__brand-name {
     color: var(--accent);
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: 750;
     margin-bottom: 0.8mm;
   }
@@ -2172,14 +2172,14 @@ html.lightbox-open {
     color: var(--ink);
     font-size: 18pt;
     font-weight: 750;
-    line-height: 1.05;
+    line-height: 1.3;
     margin: 0;
   }
 
   .print-header__title p {
     color: #514a45;
-    font-size: 7.5pt;
-    line-height: 1.25;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 1.2mm 0 0;
   }
 
@@ -2197,15 +2197,29 @@ html.lightbox-open {
   }
 
   .print-header__qr figcaption {
-    font-size: 6pt;
+    font-size: 9pt;
     font-weight: 650;
-    line-height: 1.1;
+    line-height: 1.3;
     margin-top: 0.8mm;
     text-align: center;
   }
 
   .print-header__qr figcaption span {
     display: none;
+  }
+
+  body.trip-print dt {
+    overflow-wrap: anywhere;
+  }
+
+  body.trip-print h2,
+  body.trip-print h3 {
+    break-after: avoid;
+  }
+
+  body.trip-print p {
+    orphans: 3;
+    widows: 3;
   }
 
   body.trip-print .content-section {
@@ -2229,28 +2243,28 @@ html.lightbox-open {
 
   body.trip-print .section-intro > p:not(.eyebrow) {
     color: #413c38;
-    font-size: 8pt;
-    line-height: 1.25;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0;
   }
 
   body.trip-print .section-intro > .practical-note {
     border-left-width: 1pt;
-    font-size: 6.8pt;
+    font-size: 11pt;
     margin-top: 1.5mm;
     max-width: none;
     padding: 1mm 1.5mm;
   }
 
   body.trip-print .eyebrow {
-    font-size: 6.3pt;
+    font-size: 11pt;
     letter-spacing: 0.07em;
     margin-bottom: 1mm;
   }
 
   body.trip-print--overview .attraction-grid {
     gap: 1.8mm;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   body.trip-print--overview .attraction-card {
@@ -2272,20 +2286,20 @@ html.lightbox-open {
   }
 
   body.trip-print--overview .attraction-card__body h2 {
-    font-size: 8.8pt;
-    line-height: 1.08;
+    font-size: 13pt;
+    line-height: 1.3;
     margin: 0 0 0.7mm;
   }
 
   body.trip-print--overview .attraction-card__body > p:not(.eyebrow) {
     color: #413c38;
-    font-size: 6.6pt;
-    line-height: 1.15;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0;
   }
 
   body.trip-print--overview .attraction-card__body .eyebrow {
-    font-size: 5.5pt;
+    font-size: 11pt;
     margin-bottom: 0.6mm;
   }
 
@@ -2299,7 +2313,7 @@ html.lightbox-open {
 
   body.trip-print--cycling .cycling-routes__grid {
     gap: 2mm;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   body.trip-print--cycling .cycling-route {
@@ -2310,22 +2324,22 @@ html.lightbox-open {
   }
 
   body.trip-print--cycling .cycling-route h3 {
-    font-size: 8.5pt;
-    line-height: 1.08;
+    font-size: 13pt;
+    line-height: 1.3;
     margin-bottom: 1mm;
   }
 
   body.trip-print--cycling .cycling-route > p {
     color: #413c38;
-    font-size: 6.4pt;
-    line-height: 1.15;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 1mm 0;
   }
 
   body.trip-print--cycling .cycling-route__facts {
     display: block;
-    font-size: 6.2pt;
-    line-height: 1.15;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0;
   }
 
@@ -2354,22 +2368,22 @@ html.lightbox-open {
   }
 
   body.trip-print--cycling .cycling-route__related strong {
-    font-size: 5.2pt;
+    font-size: 11pt;
     letter-spacing: 0.04em;
     margin-bottom: 0.3mm;
   }
 
   body.trip-print--cycling .cycling-route__related a {
     color: #292522;
-    font-size: 5.8pt;
-    line-height: 1.1;
+    font-size: 11pt;
+    line-height: 1.3;
     text-decoration: none;
   }
 
   body.trip-print--cycling .cycling-route__related p {
     color: #413c38;
-    font-size: 5.2pt;
-    line-height: 1.1;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0.3mm 0 0;
   }
 
@@ -2405,7 +2419,7 @@ html.lightbox-open {
   }
 
   body.trip-print--swimming .swimming-photo figcaption {
-    font-size: 6.5pt;
+    font-size: 9pt;
     padding-top: 1mm;
   }
 
@@ -2425,21 +2439,21 @@ html.lightbox-open {
   }
 
   body.trip-print--swimming .swimming-card h3 {
-    font-size: 10pt;
+    font-size: 13pt;
     margin: 0 0 0.8mm;
   }
 
   body.trip-print--swimming .swimming-card > p {
     color: #413c38;
-    font-size: 7.3pt;
-    line-height: 1.16;
+    font-size: 11pt;
+    line-height: 1.3;
     margin-bottom: 1mm;
   }
 
   body.trip-print--swimming .swimming-facts {
-    font-size: 6.6pt;
-    grid-template-columns: 19mm 1fr;
-    line-height: 1.1;
+    font-size: 11pt;
+    grid-template-columns: 32mm minmax(0, 1fr);
+    line-height: 1.3;
     margin-bottom: 0.8mm;
   }
 
@@ -2461,21 +2475,21 @@ html.lightbox-open {
   }
 
   body.trip-print--swimming .swimming-card__related strong {
-    font-size: 5.5pt;
+    font-size: 11pt;
     margin-bottom: 0.3mm;
   }
 
   body.trip-print--swimming .swimming-card__related a {
     color: #292522;
-    font-size: 6.4pt;
-    line-height: 1.1;
+    font-size: 11pt;
+    line-height: 1.3;
     text-decoration: none;
   }
 
   body.trip-print--swimming .swimming-card__related p {
     color: #413c38;
-    font-size: 5.9pt;
-    line-height: 1.08;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0.3mm 0 0;
   }
 
@@ -2492,13 +2506,13 @@ html.lightbox-open {
   }
 
   body.trip-print--restaurants .restaurant-group h2 {
-    font-size: 11pt;
+    font-size: 13pt;
     margin: 0 0 1.2mm;
   }
 
   body.trip-print--restaurants .restaurant-grid {
     gap: 1.7mm;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   body.trip-print--restaurants .restaurant-card {
@@ -2510,22 +2524,22 @@ html.lightbox-open {
   }
 
   body.trip-print--restaurants .restaurant-card h3 {
-    font-size: 8.5pt;
-    line-height: 1.1;
+    font-size: 13pt;
+    line-height: 1.3;
     margin: 0 0 0.7mm;
   }
 
   body.trip-print--restaurants .restaurant-card > p {
     color: #413c38;
-    font-size: 6.6pt;
-    line-height: 1.15;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0 0 1mm;
   }
 
   body.trip-print--restaurants .restaurant-facts {
-    font-size: 6.2pt;
-    grid-template-columns: 15mm 1fr;
-    line-height: 1.12;
+    font-size: 11pt;
+    grid-template-columns: 32mm minmax(0, 1fr);
+    line-height: 1.3;
     margin-bottom: 0.7mm;
   }
 
@@ -2547,41 +2561,48 @@ html.lightbox-open {
   }
 
   body.trip-print--restaurants .restaurant-card__related strong {
-    font-size: 5.5pt;
+    font-size: 11pt;
     margin-bottom: 0.3mm;
   }
 
   body.trip-print--restaurants .restaurant-card__related a {
     color: #292522;
-    font-size: 6.2pt;
-    line-height: 1.08;
+    font-size: 11pt;
+    line-height: 1.3;
     text-decoration: none;
   }
 
   body.trip-print--restaurants .restaurant-card__related p {
     color: #413c38;
-    font-size: 5.8pt;
-    line-height: 1.1;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0.3mm 0 0;
   }
 
   body.trip-print--detail .attraction-detail {
     align-items: start;
     gap: 5mm;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    grid-template-columns: 45mm minmax(0, 1fr);
   }
 
   body.trip-print--detail .attraction-detail__media img {
+    max-height: 50mm;
+    object-fit: contain;
     border-radius: 2mm;
     box-shadow: none;
   }
 
+  body.trip-print--detail
+    .attraction-detail:has(.attraction-placeholder--large) {
+    display: block;
+  }
+
   body.trip-print--detail .attraction-placeholder--large {
-    height: 65mm;
+    display: none;
   }
 
   body.trip-print--detail .photo-credit-detail {
-    font-size: 6pt;
+    font-size: 9pt;
     padding-top: 1mm;
   }
 
@@ -2605,8 +2626,8 @@ html.lightbox-open {
   body.trip-print--detail .attraction-facts dt,
   body.trip-print--detail .attraction-facts dd {
     border-bottom: 0.5pt solid #d6cec6;
-    font-size: 7.5pt;
-    padding-block: 1.5mm;
+    font-size: 11pt;
+    padding-block: 1mm;
   }
 
   body.trip-print--detail .attraction-facts dd {
@@ -2615,14 +2636,14 @@ html.lightbox-open {
 
   body.trip-print--detail .practical-note {
     border-left-width: 1pt;
-    font-size: 6.5pt;
-    line-height: 1.2;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0;
     padding: 1mm 1.5mm;
   }
 
   body.trip-print--detail .story-block {
-    margin: 5mm 0 0;
+    margin: 3mm 0 0;
     max-width: none;
   }
 
@@ -2637,7 +2658,7 @@ html.lightbox-open {
 
   body.trip-print--detail .story-block > p:not(.eyebrow) {
     color: #292522;
-    font-size: 8.5pt;
+    font-size: 11pt;
     line-height: 1.3;
     margin: 0 0 2mm;
   }
@@ -2647,7 +2668,6 @@ html.lightbox-open {
   }
 
   body.trip-print--detail .route-variants {
-    break-inside: avoid;
     margin: 3mm 0 0;
   }
 
@@ -2656,16 +2676,17 @@ html.lightbox-open {
   }
 
   body.trip-print--detail .route-variants h2 {
-    font-size: 11pt;
+    font-size: 13pt;
     margin: 0 0 1.2mm;
   }
 
   body.trip-print--detail .route-variants__grid {
     gap: 2mm;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   body.trip-print--detail .route-variant {
+    break-inside: avoid;
     border: 0.5pt solid #cfc6bc;
     border-radius: 1.5mm;
     padding: 1.8mm 2.2mm;
@@ -2676,21 +2697,20 @@ html.lightbox-open {
   }
 
   body.trip-print--detail .route-variant h3 {
-    font-size: 8pt;
-    line-height: 1.1;
+    font-size: 13pt;
+    line-height: 1.3;
     margin: 0 0 0.5mm;
   }
 
   body.trip-print--detail .route-variant > p,
   body.trip-print--detail .route-variant__distance {
     color: #413c38;
-    font-size: 6.5pt;
-    line-height: 1.15;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0;
   }
 
   body.trip-print--detail .related-trips {
-    break-inside: avoid;
     margin: 3mm 0 0;
   }
 
@@ -2699,7 +2719,7 @@ html.lightbox-open {
   }
 
   body.trip-print--detail .related-trips h2 {
-    font-size: 11pt;
+    font-size: 13pt;
     margin: 0 0 1.2mm;
   }
 
@@ -2708,7 +2728,12 @@ html.lightbox-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  body.trip-print--detail .related-trip-card:only-child {
+    grid-column: 1 / -1;
+  }
+
   body.trip-print--detail .related-trip-card {
+    break-inside: avoid;
     border: 0.5pt solid #cfc6bc;
     border-radius: 1.5mm;
     box-shadow: none;
@@ -2721,15 +2746,15 @@ html.lightbox-open {
   }
 
   body.trip-print--detail .related-trip-card h3 {
-    font-size: 8pt;
-    line-height: 1.1;
+    font-size: 13pt;
+    line-height: 1.3;
     margin: 0 0 0.5mm;
   }
 
   body.trip-print--detail .related-trip-card p {
     color: #413c38;
-    font-size: 6.5pt;
-    line-height: 1.15;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0;
   }
 }
