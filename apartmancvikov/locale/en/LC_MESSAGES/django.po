@@ -3724,3 +3724,8 @@ msgstr "Sports field in the garden"
 #: apartmancvikov/templates/index.html
 msgid "Soukromé parkování přímo před apartmánem"
 msgstr "Private parking directly in front of the apartment"
+
+#: apartmancvikov/templates/cyklovylety.html
+#, python-format
+msgid "Mapa cyklotrasy: %(name)s"
+msgstr "Cycle route map: %(name)s"

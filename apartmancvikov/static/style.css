@@ -1126,8 +1126,8 @@ summary {
 
 .cycling-routes__grid {
   display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .cycling-route {
@@ -1145,12 +1145,46 @@ summary {
   box-shadow: 0 0 0 0.2rem rgb(139 45 38 / 12%);
 }
 
+.cycling-route__map {
+  border: 0;
+  border-radius: 0.5rem;
+  display: block;
+  height: clamp(20rem, 40vw, 34rem);
+  width: 100%;
+}
+
+/* Keep the map viewport unchanged when printing: A4 minus page margins,
+   card padding and card borders. display:none would initialize it at zero size. */
+.cycling-route__print-map {
+  border: 0.5pt solid #bdb5ae;
+  border-radius: 1mm;
+  height: 100mm;
+  left: -10000px;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: calc(190mm - 4.4mm - 1pt);
+}
+
+.cycling-route__layout {
+  align-items: start;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.cycling-route__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .cycling-route h3 {
   font-size: 1.55rem;
   margin-bottom: 0.65rem;
 }
 
-.cycling-route > p {
+.cycling-route__body > p {
   color: var(--muted);
 }
 
@@ -2036,6 +2070,10 @@ html.lightbox-open {
 }
 
 @media (min-width: 54rem) {
+  .cycling-route__layout {
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  }
+
   .error-page__inner {
     grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1fr);
   }
@@ -2312,15 +2350,21 @@ html.lightbox-open {
   }
 
   body.trip-print--cycling .cycling-routes__grid {
-    gap: 2mm;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: block;
   }
 
   body.trip-print--cycling .cycling-route {
     border: 0.5pt solid #bdb5ae;
     border-radius: 2mm;
     break-inside: avoid;
+    display: block;
+    margin-bottom: 3mm;
     padding: 2mm 2.2mm;
+  }
+
+  body.trip-print--cycling .cycling-route__layout,
+  body.trip-print--cycling .cycling-route__body {
+    display: block;
   }
 
   body.trip-print--cycling .cycling-route h3 {
@@ -2329,7 +2373,19 @@ html.lightbox-open {
     margin-bottom: 1mm;
   }
 
-  body.trip-print--cycling .cycling-route > p {
+  body.trip-print--cycling .cycling-route__map {
+    display: none;
+  }
+
+  body.trip-print--cycling .cycling-route__print-map {
+    break-inside: avoid;
+    display: block;
+    margin-bottom: 2mm;
+    position: static;
+    visibility: visible;
+  }
+
+  body.trip-print--cycling .cycling-route__body > p {
     color: #413c38;
     font-size: 11pt;
     line-height: 1.3;
@@ -2337,8 +2393,10 @@ html.lightbox-open {
   }
 
   body.trip-print--cycling .cycling-route__facts {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 11pt;
+    gap: 1mm 6mm;
     line-height: 1.3;
     margin: 0;
   }

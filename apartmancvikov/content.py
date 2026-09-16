@@ -87,9 +87,9 @@ CYCLING_TRIPS = (
     CyclingTrip(
         slug="novy-bor",
         name=_("Okruh přes Nový Bor"),
-        distance_km=20,
+        distance_km=21,
         elevation_gain_m=237,
-        map_url="https://mapy.com/s/jahafutero",
+        map_url="https://mapy.com/s/holufotoko",
         description=_("Údolím samoty přes Radvanec do Nového Boru."),
         related_trips=(
             TripRelation(
@@ -121,9 +121,9 @@ CYCLING_TRIPS = (
     CyclingTrip(
         slug="okolo-klice",
         name=_("Okolo Klíče"),
-        distance_km=20,
+        distance_km=22,
         elevation_gain_m=316,
-        map_url="https://mapy.com/s/kafofavuba",
+        map_url="https://mapy.com/s/kurecotupu",
         description=_("Krátká, ale výživná vyjížďka okolo Klíče."),
     ),
     CyclingTrip(
@@ -131,7 +131,7 @@ CYCLING_TRIPS = (
         name=_("Milštejn a Naděje"),
         distance_km=16,
         elevation_gain_m=235,
-        map_url="https://mapy.com/s/pacapemude",
+        map_url="https://mapy.com/s/pabujozobe",
         description=_("Vystoupejte k Milštejnu a horské nádrži Naděje."),
         related_trips=(
             TripRelation(
@@ -147,9 +147,9 @@ CYCLING_TRIPS = (
     CyclingTrip(
         slug="nova-hut",
         name=_("Na Novou Huť"),
-        distance_km=22,
+        distance_km=23,
         elevation_gain_m=347,
-        map_url="https://mapy.com/s/hajucesele",
+        map_url="https://mapy.com/s/nolacamuju",
         description=_("Okruh Lužickými lesy na Novou Huť s návratem přes Rousínov."),
     ),
     CyclingTrip(
@@ -157,7 +157,7 @@ CYCLING_TRIPS = (
         name=_("Okruh přes Kunratice"),
         distance_km=12,
         elevation_gain_m=82,
-        map_url="https://mapy.com/s/jogogapaca",
+        map_url="https://mapy.com/s/lomojucuse",
         description=_("Nenáročná projížďka do Kunratic u Cvikova."),
     ),
 )

@@ -564,60 +564,72 @@ class SeoTest(TestCase):
 
         response = self.client.get("/cs/vylety/cyklovylety/")
         self.assertContains(response, 'class="cycling-route"', count=5)
+        self.assertContains(response, 'class="cycling-route__map"', count=5)
+        self.assertContains(response, 'class="cycling-route__print-map"', count=5)
         expected_routes = (
             (
                 "Okruh přes Nový Bor",
-                "20 km",
+                "21 km",
                 "237 m",
-                "jahafutero",
+                "holufotoko",
                 "Údolím samoty přes Radvanec do Nového Boru.",
             ),
             (
                 "Okolo Klíče",
-                "20 km",
+                "22 km",
                 "316 m",
-                "kafofavuba",
+                "kurecotupu",
                 "Krátká, ale výživná vyjížďka okolo Klíče.",
             ),
             (
                 "Milštejn a Naděje",
                 "16 km",
                 "235 m",
-                "pacapemude",
+                "pabujozobe",
                 "Vystoupejte k Milštejnu a horské nádrži Naděje.",
             ),
             (
                 "Na Novou Huť",
-                "22 km",
+                "23 km",
                 "347 m",
-                "hajucesele",
+                "nolacamuju",
                 "Okruh Lužickými lesy na Novou Huť s návratem přes Rousínov.",
             ),
             (
                 "Okruh přes Kunratice",
                 "12 km",
                 "82 m",
-                "jogogapaca",
+                "lomojucuse",
                 "Nenáročná projížďka do Kunratic u Cvikova.",
             ),
         )
-        for name, distance, elevation, map_slug, description in expected_routes:
+        for (
+            name,
+            distance,
+            elevation,
+            map_slug,
+            description,
+        ) in expected_routes:
             with self.subTest(name=name):
                 self.assertContains(response, name)
                 self.assertContains(response, distance)
                 self.assertContains(response, elevation)
                 self.assertContains(response, f"https://mapy.com/s/{map_slug}")
+                self.assertContains(response, f'src="https://mapy.com/s/{map_slug}"')
+                self.assertContains(response, f'title="Mapa cyklotrasy: {name}"')
                 self.assertContains(response, description)
 
         english = self.client.get("/en/vylety/cyklovylety/")
         self.assertContains(english, "Recommended cycle routes")
         self.assertContains(english, "Elevation gain")
+        self.assertContains(english, 'title="Cycle route map: Around Klíč"')
         self.assertContains(english, "A short but challenging ride around Klíč.")
         self.assertNotContains(english, "Doporučené cyklotrasy")
 
         german = self.client.get("/de/vylety/cyklovylety/")
         self.assertContains(german, "Empfohlene Radrouten")
         self.assertContains(german, "Höhenmeter")
+        self.assertContains(german, 'title="Karte der Radroute: Rund um den Klíč"')
         self.assertContains(german, "Eine leichte Tour nach Kunratice u Cvikova.")
         self.assertNotContains(german, "Doporučené cyklotrasy")
 
