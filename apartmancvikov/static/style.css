@@ -527,6 +527,7 @@ summary {
   position: absolute;
 }
 
+.stay-grid,
 .room-grid,
 .review-grid,
 .gallery-grid,
@@ -569,6 +570,7 @@ summary {
   margin-bottom: 0;
 }
 
+.stay-card,
 .review-card {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -577,6 +579,21 @@ summary {
   display: flex;
   flex-direction: column;
   padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.stay-grid {
+  margin-block: 2rem;
+}
+
+.stay-card h2 {
+  font-size: 1.5rem;
+}
+
+.stay-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: auto;
 }
 
 .review-card__rating {
@@ -2098,6 +2115,7 @@ html.lightbox-open {
     top: 1.5rem;
   }
 
+  .stay-grid,
   .room-grid,
   .review-grid,
   .attraction-grid,

@@ -739,8 +739,8 @@ msgid "Možnost využít dětského vybavení"
 msgstr "Possibility to use children's equipment"
 
 #: apartmancvikov/templates/cenik.html:52
-msgid "Využití kolárny, kočárkárny, lyžárny v ubytovacím prostoru"
-msgstr "Use of wheelhouse, carriage house, ski room in the accommodation area"
+msgid "Prostor pro uložení kol, kočárků a lyží"
+msgstr "Space to store bikes, pushchairs and skis"
 
 #: apartmancvikov/templates/cenik.html:53
 msgid "Wi-Fi připojení k internetu v celém objektu"
@@ -3729,3 +3729,117 @@ msgstr "Private parking directly in front of the apartment"
 #, python-format
 msgid "Mapa cyklotrasy: %(name)s"
 msgstr "Cycle route map: %(name)s"
+
+msgid "Pohodlné ubytování v Lužických horách pro rodiny, turisty, cyklisty i pracovní týmy."
+msgstr "Comfortable accommodation in the Lusatian Mountains for families, hikers, cyclists and work teams."
+
+msgid "Přijeďte s dětmi, vyrazte za pěšími a cyklistickými výlety nebo se ubytujte s kolegy během pracovní cesty. V Apartmánu Cvikov máte prostor pro společný čas i odpočinek: 130 m², tři ložnice, dvě koupelny a vybavenou kuchyň."
+msgstr "Bring the children, explore on foot or by bike, or stay with colleagues on a work trip. Apartment Cvikov gives you room to spend time together and unwind: 130 m², three bedrooms, two bathrooms and a well-equipped kitchen."
+
+msgid "K dispozici je sedm standardních lůžek, dvě další místa na matracích a možnost dětské postýlky."
+msgstr "There are seven standard beds, two additional sleeping places on floor mattresses and the option of a baby cot."
+
+msgid "Ubytování v Lužických horách | Apartmán Cvikov"
+msgstr "Accommodation in the Lusatian Mountains | Apartment Cvikov"
+
+msgid "Apartmán ve Cvikově pro rodiny, turisty, cyklisty i pracovní týmy. Tři ložnice, dvě koupelny, vybavená kuchyň, zahrada a soukromé parkování."
+msgstr "An apartment in Cvikov for families, hikers, cyclists and work teams. Three bedrooms, two bathrooms, an equipped kitchen, a garden and private parking."
+
+msgid "Vítejte ve Cvikově"
+msgstr "Welcome to Cvikov"
+
+msgid "Prostor pro společný pobyt"
+msgstr "Space to stay together"
+
+msgid "Zjistit volné termíny"
+msgstr "Check availability"
+
+msgid "S dětmi a s pohodlím"
+msgstr "Family stays made comfortable"
+
+msgid "Děti se zabaví v dětském koutku i na zahradě s pískovištěm, prolézačkami a trampolínou. V sezoně si užijete vyhřívaný venkovní bazén. Pro nejmenší si můžete zapůjčit postýlku, jídelní židličku a další vybavení."
+msgstr "Children can play in the indoor play corner or in the garden with its sandpit, climbing frames and trampoline. Enjoy the heated outdoor pool in season. A cot, high chair and other equipment are available to borrow for little ones."
+
+msgid "Prohlédnout vybavení"
+msgstr "Explore the amenities"
+
+msgid "Za výlety pěšky i na kole"
+msgstr "Explore on foot or by bike"
+
+msgid "Objevujte Lužické hory ze zázemí ve Cvikově. Vyberte si z našich tipů na pěší výlety a cyklotrasy, po návratu využijte prostor pro uložení kol a odpočiňte si před dalším dnem. K dispozici je i pračka a sušička."
+msgstr "Explore the Lusatian Mountains from your base in Cvikov. Choose from our hiking and cycling tips, then use the bike storage space and relax before another day out. A washing machine and dryer are also available."
+
+msgid "Pěší výlety"
+msgstr "Hiking trips"
+
+msgid "Zázemí pro pracovní tým"
+msgstr "A base for your work team"
+
+msgid "Po pracovním dni si uvařte ve vybavené kuchyni a odpočiňte ve společném obývacím pokoji. Tři ložnice a dvě koupelny usnadní společný pobyt s kolegy. Využijete také Wi-Fi, pračku se sušičkou a parkování až pro šest aut přímo u apartmánu."
+msgstr "After a day at work, prepare a meal in the equipped kitchen and unwind in the shared living room. Three bedrooms and two bathrooms make staying with colleagues easier. You also have Wi-Fi, a washing machine and dryer, and parking for up to six cars right by the apartment."
+
+msgid "Poptat pobyt pro tým"
+msgstr "Enquire about a team stay"
+
+msgid "Vaření a společné chvíle"
+msgstr "Cooking and time together"
+
+msgid "V kuchyni najdete indukční desku, troubu, myčku, lednici s mrazákem, mikrovlnnou troubu a veškeré nádobí pro vlastní vaření."
+msgstr "The kitchen has an induction hob, oven, dishwasher, fridge-freezer, microwave and all the kitchenware you need to prepare your own meals."
+
+msgid "V obývacím pokoji si odpočinete na pohodlné sedačce u televize. Wi-Fi je dostupná v celém objektu."
+msgstr "Relax on the comfortable sofa and watch TV in the living room. Wi-Fi is available throughout the property."
+
+msgid "Odpočinek a praktické zázemí"
+msgstr "Rest and practical comforts"
+
+msgid "Apartmán má samostatný vchod. Žaluzie a zatemňovací závěsy na všech oknech vám pomohou s klidným spánkem."
+msgstr "The apartment has its own entrance. Blinds and blackout curtains on all windows help you enjoy a restful night."
+
+msgid "V přízemí je prádelna s pračkou, sušičkou a sušákem. K dispozici je také fén."
+msgstr "The ground-floor laundry room has a washing machine, dryer and drying rack. A hairdryer is also available."
+
+msgid "K dispozici je prostor pro uložení kol, kočárků a lyží. Na soukromém pozemku přímo u apartmánu zaparkuje až šest aut."
+msgstr "Storage is available for bikes, pushchairs and skis. Up to six cars can park on private grounds right by the apartment."
+
+msgid "Ubytování je bez domácích zvířat. Děkujeme za pochopení."
+msgstr "Pets are not permitted. Thank you for understanding."
+
+msgid "Vybavení pro děti"
+msgstr "Amenities for children"
+
+msgid "V obývacím pokoji na děti čeká vybavený dětský koutek, stoleček se židličkami na kreslení a hrací koberec na autíčka."
+msgstr "The living room has a play corner, a small table and chairs for drawing, and a road play mat for toy cars."
+
+msgid "Zapůjčit si můžete dětskou postýlku, jídelní židličku, podsedák na židli, redukci na toaletu, nočník, lehátko na koupání miminek, vaničku, hrací deku, ohřívačku mléka či příkrmů a hračky do vany."
+msgstr "You can borrow a cot, high chair, chair booster seat, toilet training seat, potty, baby bath support, baby bath, play mat, milk or baby food warmer and bath toys."
+
+msgid "K dispozici jsou také zábrany na postel a schodiště a vysavač. Potřebujete pro děti něco dalšího? Stačí se nás zeptat."
+msgstr "Bed rails, stair gates and a vacuum cleaner are also available. Need anything else for the children? Just ask us."
+
+msgid "Zahrada a zábava venku"
+msgstr "Garden and outdoor fun"
+
+msgid "Na zahradě si děti užijí pískoviště, skluzavky, prolézačky, trampolínu, pumptrack a hřiště."
+msgstr "In the garden, children can enjoy a sandpit, slides, climbing frames, trampoline, pump track and play area."
+
+msgid "Ke třem ložnicím patří dvě společné koupelny: v patře s vanou, protiskluzovou podložkou a toaletou, v přízemí se sprchovým koutem a toaletou."
+msgstr "The three bedrooms share two bathrooms: one upstairs with a bathtub, non-slip mat and toilet, and one on the ground floor with a shower and toilet."
+
+msgid "Pokoj s manželskou postelí a místem pro dětskou postýlku."
+msgstr "A room with a double bed and space for a baby cot."
+
+msgid "Třílůžkový pokoj s manželskou a samostatnou postelí. Pro děti lze přidat zábrany na postel i dětskou postýlku."
+msgstr "A triple room with a double bed and a single bed. Bed rails and a baby cot can be added for children."
+
+msgid "Pokoj se dvěma samostatnými postelemi."
+msgstr "A room with two single beds."
+
+msgid "Kalendář volných a obsazených termínů Apartmánu Cvikov. Vyberte si termín pro rodinnou dovolenou, výlety nebo pobyt s kolegy."
+msgstr "Apartment Cvikov availability calendar. Choose dates for a family holiday, an outdoor break or a stay with colleagues."
+
+msgid "Naplánujte si dovolenou, výlety nebo pobyt s kolegy."
+msgstr "Plan a holiday, an outdoor break or a stay with colleagues."
+
+msgid "Plánujete rodinnou dovolenou, výlety nebo ubytování pro pracovní tým? Napište nám termín a složení skupiny. Dostupnost a cenu vám potvrdíme e-mailem."
+msgstr "Planning a family holiday, an outdoor break or accommodation for your work team? Tell us your dates and who is coming. We will confirm availability and the price by email."

@@ -115,9 +115,7 @@ def _lodging_node():
         "name": str(_("Apartmán Cvikov")),
         "description": str(
             _(
-                "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově se "
-                "třemi ložnicemi, zahradou, dětským vybavením a venkovním "
-                "bazénem."
+                "Apartmán ve Cvikově pro rodiny, turisty, cyklisty i pracovní týmy. Tři ložnice, dvě koupelny, vybavená kuchyň, zahrada a soukromé parkování."
             )
         ),
         "url": _absolute(reverse("home")),
@@ -319,8 +317,7 @@ def _page_metadata(view_name):
             "WebPage",
             _("Apartmán Cvikov"),
             _(
-                "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově pro až "
-                "devět hostů."
+                "Apartmán ve Cvikově pro rodiny, turisty, cyklisty i pracovní týmy. Tři ložnice, dvě koupelny, vybavená kuchyň, zahrada a soukromé parkování."
             ),
         ),
         "weather": (
@@ -378,8 +375,7 @@ def _page_metadata(view_name):
             "WebPage",
             _("Volné termíny v Apartmánu Cvikov"),
             _(
-                "Kalendář volných a obsazených termínů Apartmánu Cvikov. "
-                "Vyberte si termín rodinného pobytu v Lužických horách."
+                "Kalendář volných a obsazených termínů Apartmánu Cvikov. Vyberte si termín pro rodinnou dovolenou, výlety nebo pobyt s kolegy."
             ),
         ),
         "kontakt": (

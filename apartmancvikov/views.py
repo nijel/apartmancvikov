@@ -360,7 +360,7 @@ def llms_txt(_request):
     """Publish a concise, stable description for language-model agents."""
     content = f"""# Apartmán Cvikov
 
-> Family-friendly holiday apartment in Cvikov, the gateway to the Lusatian Mountains.
+> A spacious apartment in Cvikov, the gateway to the Lusatian Mountains, for families, hikers, cyclists and work teams.
 
 ## Key facts
 
@@ -370,6 +370,8 @@ def llms_txt(_request):
 - Baby cot available
 - 2 bathrooms, equipped kitchen, Wi-Fi, free private parking
 - Garden, children's play equipment, pump track and seasonal outdoor pool
+- Bike storage, washing machine and dryer
+- Shared kitchen and living room for stays with colleagues
 - Pets are not accepted
 - Phone: {CONTACT_PHONE_DISPLAY}
 - Email: {CONTACT_EMAIL}

@@ -755,8 +755,8 @@ msgid "Možnost využít dětského vybavení"
 msgstr "Möglichkeit der Nutzung von Kinderausrüstungen"
 
 #: apartmancvikov/templates/cenik.html:52
-msgid "Využití kolárny, kočárkárny, lyžárny v ubytovacím prostoru"
-msgstr "Nutzung von Steuerhaus, Kutschenhaus, Skiraum im Unterkunftsbereich"
+msgid "Prostor pro uložení kol, kočárků a lyží"
+msgstr "Platz zum Abstellen von Fahrrädern, Kinderwagen und Ski"
 
 #: apartmancvikov/templates/cenik.html:53
 msgid "Wi-Fi připojení k internetu v celém objektu"
@@ -3777,3 +3777,117 @@ msgstr "Privatparkplatz direkt vor dem Apartment"
 #, python-format
 msgid "Mapa cyklotrasy: %(name)s"
 msgstr "Karte der Radroute: %(name)s"
+
+msgid "Pohodlné ubytování v Lužických horách pro rodiny, turisty, cyklisty i pracovní týmy."
+msgstr "Komfortable Unterkunft im Lausitzer Gebirge für Familien, Wanderer, Radfahrer und Arbeitsteams."
+
+msgid "Přijeďte s dětmi, vyrazte za pěšími a cyklistickými výlety nebo se ubytujte s kolegy během pracovní cesty. V Apartmánu Cvikov máte prostor pro společný čas i odpočinek: 130 m², tři ložnice, dvě koupelny a vybavenou kuchyň."
+msgstr "Reisen Sie mit Kindern an, erkunden Sie die Umgebung zu Fuß oder mit dem Rad oder übernachten Sie mit Kollegen während einer Dienstreise. Im Apartment Cvikov haben Sie Platz für gemeinsame Zeit und Erholung: 130 m², drei Schlafzimmer, zwei Badezimmer und eine gut ausgestattete Küche."
+
+msgid "K dispozici je sedm standardních lůžek, dvě další místa na matracích a možnost dětské postýlky."
+msgstr "Es stehen sieben reguläre Betten, zwei zusätzliche Schlafplätze auf Bodenmatratzen und auf Wunsch ein Babybett zur Verfügung."
+
+msgid "Ubytování v Lužických horách | Apartmán Cvikov"
+msgstr "Unterkunft im Lausitzer Gebirge | Apartment Cvikov"
+
+msgid "Apartmán ve Cvikově pro rodiny, turisty, cyklisty i pracovní týmy. Tři ložnice, dvě koupelny, vybavená kuchyň, zahrada a soukromé parkování."
+msgstr "Apartment in Cvikov für Familien, Wanderer, Radfahrer und Arbeitsteams. Drei Schlafzimmer, zwei Bäder, ausgestattete Küche, Garten und private Parkplätze."
+
+msgid "Vítejte ve Cvikově"
+msgstr "Willkommen in Cvikov"
+
+msgid "Prostor pro společný pobyt"
+msgstr "Platz für einen gemeinsamen Aufenthalt"
+
+msgid "Zjistit volné termíny"
+msgstr "Verfügbare Termine ansehen"
+
+msgid "S dětmi a s pohodlím"
+msgstr "Mit Kindern entspannt wohnen"
+
+msgid "Děti se zabaví v dětském koutku i na zahradě s pískovištěm, prolézačkami a trampolínou. V sezoně si užijete vyhřívaný venkovní bazén. Pro nejmenší si můžete zapůjčit postýlku, jídelní židličku a další vybavení."
+msgstr "Kinder können in der Spielecke und im Garten mit Sandkasten, Klettergerüsten und Trampolin spielen. In der Saison genießen Sie den beheizten Außenpool. Für die Kleinsten können Sie ein Babybett, einen Hochstuhl und weitere Ausstattung ausleihen."
+
+msgid "Prohlédnout vybavení"
+msgstr "Ausstattung ansehen"
+
+msgid "Za výlety pěšky i na kole"
+msgstr "Zu Fuß und mit dem Rad unterwegs"
+
+msgid "Objevujte Lužické hory ze zázemí ve Cvikově. Vyberte si z našich tipů na pěší výlety a cyklotrasy, po návratu využijte prostor pro uložení kol a odpočiňte si před dalším dnem. K dispozici je i pračka a sušička."
+msgstr "Entdecken Sie das Lausitzer Gebirge von Cvikov aus. Wählen Sie aus unseren Wander- und Radtourentipps, nutzen Sie nach der Rückkehr den Platz zum Abstellen Ihrer Fahrräder und erholen Sie sich für den nächsten Tag. Waschmaschine und Trockner stehen ebenfalls bereit."
+
+msgid "Pěší výlety"
+msgstr "Wanderungen"
+
+msgid "Zázemí pro pracovní tým"
+msgstr "Eine Unterkunft für Ihr Arbeitsteam"
+
+msgid "Po pracovním dni si uvařte ve vybavené kuchyni a odpočiňte ve společném obývacím pokoji. Tři ložnice a dvě koupelny usnadní společný pobyt s kolegy. Využijete také Wi-Fi, pračku se sušičkou a parkování až pro šest aut přímo u apartmánu."
+msgstr "Kochen Sie nach dem Arbeitstag in der ausgestatteten Küche und entspannen Sie im gemeinsamen Wohnzimmer. Drei Schlafzimmer und zwei Badezimmer erleichtern den Aufenthalt mit Kollegen. Dazu kommen WLAN, Waschmaschine und Trockner sowie Parkplätze für bis zu sechs Autos direkt am Apartment."
+
+msgid "Poptat pobyt pro tým"
+msgstr "Aufenthalt für Ihr Team anfragen"
+
+msgid "Vaření a společné chvíle"
+msgstr "Kochen und gemeinsame Zeit"
+
+msgid "V kuchyni najdete indukční desku, troubu, myčku, lednici s mrazákem, mikrovlnnou troubu a veškeré nádobí pro vlastní vaření."
+msgstr "Die Küche bietet ein Induktionskochfeld, Backofen, Geschirrspüler, einen Kühlschrank mit Gefrierfach, eine Mikrowelle und sämtliches Geschirr zum Selbstkochen."
+
+msgid "V obývacím pokoji si odpočinete na pohodlné sedačce u televize. Wi-Fi je dostupná v celém objektu."
+msgstr "Im Wohnzimmer entspannen Sie auf dem gemütlichen Sofa vor dem Fernseher. WLAN steht im gesamten Haus zur Verfügung."
+
+msgid "Odpočinek a praktické zázemí"
+msgstr "Erholung und praktische Ausstattung"
+
+msgid "Apartmán má samostatný vchod. Žaluzie a zatemňovací závěsy na všech oknech vám pomohou s klidným spánkem."
+msgstr "Das Apartment hat einen eigenen Eingang. Jalousien und Verdunkelungsvorhänge an allen Fenstern sorgen für erholsamen Schlaf."
+
+msgid "V přízemí je prádelna s pračkou, sušičkou a sušákem. K dispozici je také fén."
+msgstr "Im Erdgeschoss gibt es einen Waschraum mit Waschmaschine, Trockner und Wäscheständer. Ein Haartrockner ist ebenfalls vorhanden."
+
+msgid "K dispozici je prostor pro uložení kol, kočárků a lyží. Na soukromém pozemku přímo u apartmánu zaparkuje až šest aut."
+msgstr "Es gibt Platz zum Abstellen von Fahrrädern, Kinderwagen und Ski. Auf dem Privatgrundstück direkt am Apartment finden bis zu sechs Autos Platz."
+
+msgid "Ubytování je bez domácích zvířat. Děkujeme za pochopení."
+msgstr "Haustiere sind nicht gestattet. Vielen Dank für Ihr Verständnis."
+
+msgid "Vybavení pro děti"
+msgstr "Ausstattung für Kinder"
+
+msgid "V obývacím pokoji na děti čeká vybavený dětský koutek, stoleček se židličkami na kreslení a hrací koberec na autíčka."
+msgstr "Im Wohnzimmer warten eine ausgestattete Spielecke, ein kleiner Maltisch mit Stühlen und ein Spielteppich für Spielzeugautos auf die Kinder."
+
+msgid "Zapůjčit si můžete dětskou postýlku, jídelní židličku, podsedák na židli, redukci na toaletu, nočník, lehátko na koupání miminek, vaničku, hrací deku, ohřívačku mléka či příkrmů a hračky do vany."
+msgstr "Sie können ein Babybett, einen Hochstuhl, eine Sitzerhöhung, einen Toilettensitz für Kinder, ein Töpfchen, eine Babybadeliege, eine Babywanne, eine Krabbeldecke, einen Milch- oder Babykostwärmer und Badespielzeug ausleihen."
+
+msgid "K dispozici jsou také zábrany na postel a schodiště a vysavač. Potřebujete pro děti něco dalšího? Stačí se nás zeptat."
+msgstr "Auch Bettgitter, Treppenschutzgitter und ein Staubsauger stehen bereit. Brauchen Sie noch etwas für die Kinder? Fragen Sie uns einfach."
+
+msgid "Zahrada a zábava venku"
+msgstr "Garten und Spielspaß im Freien"
+
+msgid "Na zahradě si děti užijí pískoviště, skluzavky, prolézačky, trampolínu, pumptrack a hřiště."
+msgstr "Im Garten freuen sich Kinder über Sandkasten, Rutschen, Klettergerüste, Trampolin, Pumptrack und Spielplatz."
+
+msgid "Ke třem ložnicím patří dvě společné koupelny: v patře s vanou, protiskluzovou podložkou a toaletou, v přízemí se sprchovým koutem a toaletou."
+msgstr "Zu den drei Schlafzimmern gehören zwei gemeinsame Badezimmer: eines im Obergeschoss mit Badewanne, Antirutschmatte und WC sowie eines im Erdgeschoss mit Dusche und WC."
+
+msgid "Pokoj s manželskou postelí a místem pro dětskou postýlku."
+msgstr "Ein Zimmer mit Doppelbett und Platz für ein Babybett."
+
+msgid "Třílůžkový pokoj s manželskou a samostatnou postelí. Pro děti lze přidat zábrany na postel i dětskou postýlku."
+msgstr "Ein Dreibettzimmer mit Doppelbett und Einzelbett. Für Kinder können Bettgitter und ein Babybett ergänzt werden."
+
+msgid "Pokoj se dvěma samostatnými postelemi."
+msgstr "Ein Zimmer mit zwei Einzelbetten."
+
+msgid "Kalendář volných a obsazených termínů Apartmánu Cvikov. Vyberte si termín pro rodinnou dovolenou, výlety nebo pobyt s kolegy."
+msgstr "Belegungskalender für das Apartment Cvikov. Wählen Sie Ihren Termin für Familienurlaub, Ausflüge oder einen Aufenthalt mit Kollegen."
+
+msgid "Naplánujte si dovolenou, výlety nebo pobyt s kolegy."
+msgstr "Planen Sie Ihren Urlaub, Ihre Ausflüge oder einen Aufenthalt mit Kollegen."
+
+msgid "Plánujete rodinnou dovolenou, výlety nebo ubytování pro pracovní tým? Napište nám termín a složení skupiny. Dostupnost a cenu vám potvrdíme e-mailem."
+msgstr "Planen Sie einen Familienurlaub, Ausflüge oder eine Unterkunft für Ihr Arbeitsteam? Schreiben Sie uns Ihren Wunschtermin und wer mitreist. Verfügbarkeit und Preis bestätigen wir Ihnen per E-Mail."

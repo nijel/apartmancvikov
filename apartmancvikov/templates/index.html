@@ -4,34 +4,45 @@
 
 {% get_current_language as LANGUAGE_CODE %}
 
-{% block title %}{% translate "Rodinný apartmán ve Cvikově pro 7 až 9 hostů" %} | {% translate "Apartmán Cvikov" %}{% endblock %}
+{% block title %}
+  {% translate "Ubytování v Lužických horách | Apartmán Cvikov" %}
+{% endblock title %}
 
 {% block meta_description %}
   <meta name="description"
-        content="{% translate "Prostorný rodinný apartmán o ploše 130 m² ve Cvikově se 3 ložnicemi, 2 koupelnami, zahradou, bazénem a vybavením pro děti." %}" />
+        content="{% translate "Apartmán ve Cvikově pro rodiny, turisty, cyklisty i pracovní týmy. Tři ložnice, dvě koupelny, vybavená kuchyň, zahrada a soukromé parkování." %}" />
 {% endblock meta_description %}
 
 {% block ogtitle %}
   <meta property="og:title"
-        content="{% translate "Rodinné ubytování v Lužických horách | Apartmán Cvikov" %}" />
+        content="{% translate "Ubytování v Lužických horách | Apartmán Cvikov" %}" />
 {% endblock ogtitle %}
 
 {% block ogdescription %}
   <meta property="og:description"
-        content="{% translate "Prostorný apartmán o ploše 130 m² se třemi ložnicemi, sedmi standardními lůžky a dvěma dalšími místy na matracích." %}" />
+        content="{% translate "Apartmán ve Cvikově pro rodiny, turisty, cyklisty i pracovní týmy. Tři ložnice, dvě koupelny, vybavená kuchyň, zahrada a soukromé parkování." %}" />
 {% endblock ogdescription %}
+
+{% block headline %}
+  {% translate "Apartmán Cvikov" %}
+{% endblock headline %}
+
+{% block lead %}
+  {% translate "Pohodlné ubytování v Lužických horách pro rodiny, turisty, cyklisty i pracovní týmy." %}
+{% endblock lead %}
 
 {% block content %}
   <section class="content-section home-intro">
     <div class="site-container">
       <header class="section-intro section-intro--left">
-        <p class="eyebrow">{% translate "Rodinná dovolená" %}</p>
+        <p class="eyebrow">{% translate "Vítejte ve Cvikově" %}</p>
         <h2>
           {% filter nbsp_prepositions %}
-            {% translate "Ubytování v apartmánu" %}
+            {% translate "Prostor pro společný pobyt" %}
           {% endfilter %}
         </h2>
         <p>{% include "snippets/description.html" %}</p>
+        <a class="button button--primary" href="{% url "obsazenost" %}">{% translate "Zjistit volné termíny" %}</a>
       </header>
 
       <section class="quick-facts" aria-labelledby="quick-facts-title">
@@ -47,6 +58,31 @@
           <div class="quick-fact"><strong>×</strong><span>{% translate "bez domácích zvířat" %}</span></div>
         </div>
       </section>
+
+      <div class="stay-grid">
+        <section class="stay-card">
+          <h2>{% translate "S dětmi a s pohodlím" %}</h2>
+          <p>{% translate "Děti se zabaví v dětském koutku i na zahradě s pískovištěm, prolézačkami a trampolínou. V sezoně si užijete vyhřívaný venkovní bazén. Pro nejmenší si můžete zapůjčit postýlku, jídelní židličku a další vybavení." %}</p>
+          <div class="stay-card__links">
+            <a href="#vybaveni">{% translate "Prohlédnout vybavení" %}</a>
+          </div>
+        </section>
+        <section class="stay-card">
+          <h2>{% translate "Za výlety pěšky i na kole" %}</h2>
+          <p>{% translate "Objevujte Lužické hory ze zázemí ve Cvikově. Vyberte si z našich tipů na pěší výlety a cyklotrasy, po návratu využijte prostor pro uložení kol a odpočiňte si před dalším dnem. K dispozici je i pračka a sušička." %}</p>
+          <div class="stay-card__links">
+            <a href="{% url "vylety" %}">{% translate "Pěší výlety" %}</a>
+            <a href="{% url "cycling" %}">{% translate "Cyklovýlety" %}</a>
+          </div>
+        </section>
+        <section class="stay-card">
+          <h2>{% translate "Zázemí pro pracovní tým" %}</h2>
+          <p>{% translate "Po pracovním dni si uvařte ve vybavené kuchyni a odpočiňte ve společném obývacím pokoji. Tři ložnice a dvě koupelny usnadní společný pobyt s kolegy. Využijete také Wi-Fi, pračku se sušičkou a parkování až pro šest aut přímo u apartmánu." %}</p>
+          <div class="stay-card__links">
+            <a href="{% url "poptavka" %}">{% translate "Poptat pobyt pro tým" %}</a>
+          </div>
+        </section>
+      </div>
 
       <section class="home-weather" aria-labelledby="home-weather-title">
         <div class="home-weather__content">
@@ -86,19 +122,28 @@
         <div class="feature-split__content" id="vybaveni">
           <p class="eyebrow">{% translate "Vše pro pohodlný pobyt" %}</p>
           <h2>{% translate "Vybavení apartmánu" %}</h2>
+          <h3>{% translate "Vaření a společné chvíle" %}</h3>
           <ul class="check-list">
-            <li>{% translate "Příjemné, klidné ubytování pro rodinu či uzavřenou společnost. Apartmán má samostatný vchod." %}</li>
-            <li>{% translate "Mnoho zábavy nejen pro Vaše děti na zahradě - pískoviště, skluzavky, prolézačky, trampolína, pumptrack, hřiště." %}</li>
+            <li>{% translate "V kuchyni najdete indukční desku, troubu, myčku, lednici s mrazákem, mikrovlnnou troubu a veškeré nádobí pro vlastní vaření." %}</li>
+            <li>{% translate "V obývacím pokoji si odpočinete na pohodlné sedačce u televize. Wi-Fi je dostupná v celém objektu." %}</li>
+          </ul>
+          <h3>{% translate "Odpočinek a praktické zázemí" %}</h3>
+          <ul class="check-list">
+            <li>{% translate "Apartmán má samostatný vchod. Žaluzie a zatemňovací závěsy na všech oknech vám pomohou s klidným spánkem." %}</li>
+            <li>{% translate "V přízemí je prádelna s pračkou, sušičkou a sušákem. K dispozici je také fén." %}</li>
+            <li>{% translate "K dispozici je prostor pro uložení kol, kočárků a lyží. Na soukromém pozemku přímo u apartmánu zaparkuje až šest aut." %}</li>
+            <li>{% translate "Ubytování je bez domácích zvířat. Děkujeme za pochopení." %}</li>
+          </ul>
+          <h3>{% translate "Vybavení pro děti" %}</h3>
+          <ul class="check-list">
+            <li>{% translate "V obývacím pokoji na děti čeká vybavený dětský koutek, stoleček se židličkami na kreslení a hrací koberec na autíčka." %}</li>
+            <li>{% translate "Zapůjčit si můžete dětskou postýlku, jídelní židličku, podsedák na židli, redukci na toaletu, nočník, lehátko na koupání miminek, vaničku, hrací deku, ohřívačku mléka či příkrmů a hračky do vany." %}</li>
+            <li>{% translate "K dispozici jsou také zábrany na postel a schodiště a vysavač. Potřebujete pro děti něco dalšího? Stačí se nás zeptat." %}</li>
+          </ul>
+          <h3>{% translate "Zahrada a zábava venku" %}</h3>
+          <ul class="check-list">
+            <li>{% translate "Na zahradě si děti užijí pískoviště, skluzavky, prolézačky, trampolínu, pumptrack a hřiště." %}</li>
             <li>{% translate "V sezoně se můžete vykoupat ve vyhřívaném venkovním bazénu." %}</li>
-            <li>{% translate "Je k dispozici i fén na vlasy a hračky pro děti do vany." %}</li>
-            <li>{% translate "Je možnost umístit na schodiště dětskou zábranu." %}</li>
-            <li>{% translate "Na všech oknech jsou žaluzie a zatemňovací závěsy pro Váš klidný spánek." %}</li>
-            <li>{% translate "V kuchyni najdete vše pro Vaše vaření – indukční deska, trouba, myčka, lednice s mrazákem, mikrovlnná trouba a veškeré nádobí." %}</li>
-            <li>{% translate "V obývacím pokoji je televize, pohodlná sedačka, vybavený dětský koutek na hraní, stoleček se židličkami na kreslení, hrací koberec na autíčka." %}</li>
-            <li>{% translate "V přízemí se nachází prádelna s pračkou, sušičkou a sušákem na prádlo." %}</li>
-            <li>{% translate "Parkování pro až 6 automobilů je k dispozici přímo u apartmánu na soukromém pozemku." %}</li>
-            <li>{% translate "Psi ani jiná zvířata nejsou s ohledem na děti vítána, děkujeme za pochopení." %}</li>
-            <li>{% translate "Je možné zapůjčit i vybavení pro děti - dětská postýlka, jídelní židlička, redukce na toaletu, nočník, lehátko na koupání miminek, koupací vanička, hrací deka, ohřívačka mléka či příkrmů, hračky do vany, zábrany na postel, zábrany na schodiště, podsedák na židli, vysavač. Pokud bude cokoliv na děti potřeba, stačí se nás zeptat." %}</li>
           </ul>
         </div>
       </div>
@@ -110,7 +155,7 @@
       <header class="section-intro">
         <p class="eyebrow">{% translate "Klidný spánek" %}</p>
         <h2>{% translate "Pokoje" %}</h2>
-        <p>{% translate "Pro všechny pokoje je k dispozici veliká prostorná koupelna s vanou s protiskluzovou podložkou a toaletou v 1. patře a menší koupelna se sprchovým koutem a toaletou v přízemí." %}</p>
+        <p>{% translate "Ke třem ložnicím patří dvě společné koupelny: v patře s vanou, protiskluzovou podložkou a toaletou, v přízemí se sprchovým koutem a toaletou." %}</p>
       </header>
       {% translate "Tyrkysový pokoj s manželskou postelí" as turquoise_alt %}
       {% translate "Levandulový třílůžkový pokoj" as lavender_alt %}
@@ -125,7 +170,7 @@
           </a>
           <div>
             <h3>{% translate "Tyrkys" %}</h3>
-            <p>{% translate "Pokoj s manželským dvoulůžkem,  možnost dětské postýlky." %}</p>
+            <p>{% translate "Pokoj s manželskou postelí a místem pro dětskou postýlku." %}</p>
           </div>
         </article>
         <article class="room-card">
@@ -137,7 +182,7 @@
           </a>
           <div>
             <h3>{% translate "Levandule" %}</h3>
-            <p>{% translate "Třílůžkový pokoj s dvoulůžkem a další samostatnou postelí. Je možnost dát zábrany pro děti proti pádu z postele. Do pokoje se vejde i dětská postýlka." %}</p>
+            <p>{% translate "Třílůžkový pokoj s manželskou a samostatnou postelí. Pro děti lze přidat zábrany na postel i dětskou postýlku." %}</p>
           </div>
         </article>
         <article class="room-card">
@@ -149,7 +194,7 @@
           </a>
           <div>
             <h3>{% translate "Fuchsie" %}</h3>
-            <p>{% translate "Pokoj s dvěma samostatnými postelemi." %}</p>
+            <p>{% translate "Pokoj se dvěma samostatnými postelemi." %}</p>
           </div>
         </article>
       </div>
