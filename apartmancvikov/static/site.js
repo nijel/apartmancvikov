@@ -1,5 +1,20 @@
 "use strict";
 
+const routeMaps = document.querySelectorAll(".cycling-route__map-frame");
+
+if (routeMaps.length) {
+  const resizeMaps = new ResizeObserver((entries) => {
+    for (const { target, contentRect } of entries) {
+      const map = target.querySelector("iframe");
+      target.style.setProperty("--map-scale", contentRect.width / map.width);
+    }
+  });
+
+  for (const frame of routeMaps) {
+    resizeMaps.observe(frame);
+  }
+}
+
 const navMenu = document.querySelector(".nav-menu");
 
 if (navMenu) {

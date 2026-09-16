@@ -565,7 +565,8 @@ class SeoTest(TestCase):
         response = self.client.get("/cs/vylety/cyklovylety/")
         self.assertContains(response, 'class="cycling-route"', count=5)
         self.assertContains(response, 'class="cycling-route__map"', count=5)
-        self.assertContains(response, 'class="cycling-route__print-map"', count=5)
+        self.assertContains(response, '<iframe class="cycling-route__map"', count=5)
+        self.assertNotContains(response, 'class="cycling-route__print-map"')
         expected_routes = (
             (
                 "Okruh přes Nový Bor",

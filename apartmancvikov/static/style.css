@@ -1145,25 +1145,26 @@ summary {
   box-shadow: 0 0 0 0.2rem rgb(139 45 38 / 12%);
 }
 
-.cycling-route__map {
-  border: 0;
+.cycling-route__map-frame {
+  aspect-ratio: 700 / 378;
   border-radius: 0.5rem;
-  display: block;
-  height: clamp(20rem, 40vw, 34rem);
+  overflow: hidden;
+  position: relative;
   width: 100%;
 }
 
-/* Keep the map viewport unchanged when printing: A4 minus page margins,
-   card padding and card borders. display:none would initialize it at zero size. */
-.cycling-route__print-map {
-  border: 0.5pt solid #bdb5ae;
-  border-radius: 1mm;
-  height: 100mm;
-  left: -10000px;
+/* Scale the whole iframe, never its viewport, so Mapy.com does not need to
+   redraw the map when the card changes size or the page is printed. */
+.cycling-route__map {
+  border: 0;
+  display: block;
+  height: 378px;
+  left: 0;
   position: absolute;
   top: 0;
-  visibility: hidden;
-  width: calc(190mm - 4.4mm - 1pt);
+  transform: scale(var(--map-scale, 1));
+  transform-origin: top left;
+  width: 700px;
 }
 
 .cycling-route__layout {
@@ -2373,16 +2374,17 @@ html.lightbox-open {
     margin-bottom: 1mm;
   }
 
-  body.trip-print--cycling .cycling-route__map {
-    display: none;
+  body.trip-print--cycling .cycling-route__map-frame {
+    border-radius: 1mm;
+    break-inside: avoid;
+    height: 378px;
+    margin-bottom: 2mm;
+    outline: 0.5pt solid #bdb5ae;
+    width: 700px;
   }
 
-  body.trip-print--cycling .cycling-route__print-map {
-    break-inside: avoid;
-    display: block;
-    margin-bottom: 2mm;
-    position: static;
-    visibility: visible;
+  body.trip-print--cycling .cycling-route__map {
+    transform: none;
   }
 
   body.trip-print--cycling .cycling-route__body > p {

@@ -58,20 +58,14 @@
             <section class="cycling-route" id="cyklotrasa-{{ tip.slug }}">
               <h3>{{ tip.name|nbsp_prepositions }}</h3>
               <div class="cycling-route__layout">
-                <iframe class="cycling-route__map"
-                        src="{{ tip.map_url }}"
-                        title="{% blocktranslate with name=tip.name %}Mapa cyklotrasy: {{ name }}{% endblocktranslate %}"
-                        width="700"
-                        height="466"
-                        loading="eager"></iframe>
-                <iframe class="cycling-route__print-map"
-                        src="{{ tip.map_url }}"
-                        title="{% blocktranslate with name=tip.name %}Mapa cyklotrasy: {{ name }}{% endblocktranslate %}"
-                        width="700"
-                        height="378"
-                        loading="eager"
-                        aria-hidden="true"
-                        tabindex="-1"></iframe>
+                <div class="cycling-route__map-frame">
+                  <iframe class="cycling-route__map"
+                          src="{{ tip.map_url }}"
+                          title="{% blocktranslate with name=tip.name %}Mapa cyklotrasy: {{ name }}{% endblocktranslate %}"
+                          width="700"
+                          height="378"
+                          loading="eager"></iframe>
+                </div>
                 <div class="cycling-route__body">
                   <dl class="cycling-route__facts">
                     <div>
