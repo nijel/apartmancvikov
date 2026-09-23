@@ -39,7 +39,7 @@ from .site_config import (
 )
 
 
-class SeoTest(TestCase):
+class SeoTest(TestCase):  # ruff: ignore[too-many-public-methods]
     languages = ("cs", "en", "de")
 
     def get_schema_graph(self, path):
@@ -204,7 +204,7 @@ class SeoTest(TestCase):
 
     def test_availability_calendar_exposes_semantic_statuses(self):
         """Availability remains understandable without relying on color or CSS."""
-        start = date.today() + timedelta(days=10)  # noqa: DTZ011
+        start = date.today() + timedelta(days=10)  # ruff: ignore[call-date-today]
         end = start + timedelta(days=3)
         booking = Booking.objects.create(start=start, end=end, uid="private-booking")
 
@@ -225,7 +225,7 @@ class SeoTest(TestCase):
 
     def test_single_day_event_shows_departure_on_following_morning(self):
         """A one-day calendar event also occupies the next morning."""
-        start = date.today() + timedelta(days=10)  # noqa: DTZ011
+        start = date.today() + timedelta(days=10)  # ruff: ignore[call-date-today]
         following_day = start + timedelta(days=1)
         Booking.objects.create(start=start, end=start, uid="one-day-event")
 
@@ -243,7 +243,7 @@ class SeoTest(TestCase):
 
     def test_ical_feed_matches_aggregated_calendar_periods(self):
         """The iCalendar feed merges adjoining bookings and gaps like HTML."""
-        start = date.today() + timedelta(days=10)  # noqa: DTZ011
+        start = date.today() + timedelta(days=10)  # ruff: ignore[call-date-today]
         first_end = start + timedelta(days=3)
         gap = start + timedelta(days=4)
         joined_start = start + timedelta(days=5)
@@ -307,7 +307,7 @@ class SeoTest(TestCase):
 
     def test_single_day_event_has_next_day_as_ical_end(self):
         """A one-day source event exports as one overnight iCalendar stay."""
-        start = date.today() + timedelta(days=10)  # noqa: DTZ011
+        start = date.today() + timedelta(days=10)  # ruff: ignore[call-date-today]
         following_day = start + timedelta(days=1)
         Booking.objects.create(start=start, end=start, uid="private-one-day-event")
 

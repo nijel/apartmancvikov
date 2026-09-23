@@ -40,22 +40,34 @@ profile = "black"
 
 [tool.ruff.lint]
 allowed-confusables = ["–"]
+future-annotations = true
+extend-safe-fixes = [
+  "future-required-type-annotation",
+  "typing-only-standard-library-import",
+  "typing-only-third-party-import",
+  "reimplemented-operator"
+]
+preview = true
 ignore = [
   "ANN",
-  "S105",
+  "no-self-use", # TODO: Method could be a function, class method, or static method
+  "hardcoded-password-string",
+  "docstring-missing-exception",
+  "docstring-missing-returns",
+  "docstring-missing-yields",
   "PT",
-  "TRY003",
-  "EM101",
-  "D211",
-  "D212",
-  "D100",
-  "D104",
-  "D105",
-  "D203", # CONFIG: incompatible with D211
-  "E501", # CONFIG: using formatter
-  "ISC001", # CONFIG: incompatible with formatter
+  "raise-vanilla-args",
+  "raw-string-in-exception",
+  "blank-line-before-class",
+  "multi-line-summary-first-line",
+  "undocumented-public-module",
+  "undocumented-public-package",
+  "undocumented-magic-method",
+  "incorrect-blank-line-before-class", # CONFIG: incompatible with D211
+  "line-too-long", # CONFIG: using formatter
+  "single-line-implicit-string-concatenation", # CONFIG: incompatible with formatter
   "COM", # CONFIG: No trailing commas
-  "D101"
+  "undocumented-public-class"
 ]
 select = ["ALL"]
 
@@ -68,4 +80,4 @@ notice-rgx = "(?i)Copyright\\s+©\\s+"
 max-complexity = 16
 
 [tool.ruff.lint.per-file-ignores]
-"apartmancvikov//migrations/*.py" = ["RUF012"]
+"apartmancvikov//migrations/*.py" = ["mutable-class-default"]

@@ -2,7 +2,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0
 
+from __future__ import annotations
+
 from pathlib import PurePosixPath
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from django.utils.safestring import SafeString
 
 IMAGE_WIDTHS = (480, 800, 1200, 1600, 1920)
 
@@ -12,12 +18,12 @@ def available_widths(source_width):
     return tuple(width for width in IMAGE_WIDTHS if width <= source_width)
 
 
-def variant_path(path, width, extension):
+def variant_path(path: str | SafeString, width: int, extension: str) -> str:
     """Return the stable static path for one generated image variant."""
     # Django template literals are SafeString instances. Python 3.11's
     # pathlib passes str subclasses to sys.intern(), which only accepts an
     # exact str instance.
-    source = PurePosixPath(str.__str__(path))
+    source = PurePosixPath(str.__str__(path))  # ruff: ignore[unnecessary-dunder-call]
     return str(
         PurePosixPath("responsive")
         / source.parent

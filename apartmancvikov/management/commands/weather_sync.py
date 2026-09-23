@@ -24,14 +24,14 @@ USER_AGENT = "ApartmanCvikov/1.0 (+https://apartmancvikov.cz/)"
 class Command(BaseCommand):
     help = "refreshes the ČHMÚ ALADIN weather forecast"
 
-    def handle(self, *args, **options) -> None:  # noqa: ARG002
+    def handle(self, *args, **options) -> None:  # ruff: ignore[unused-method-argument]
         """Download, validate, and save the latest ALADIN forecast."""
-        request = Request(  # noqa: S310
+        request = Request(  # ruff: ignore[suspicious-url-open-usage]
             WEATHER_DATA_URL,
             headers={"User-Agent": USER_AGENT},
         )
         try:
-            with urlopen(request, timeout=HTTP_TIMEOUT_SECONDS) as response:  # noqa: S310
+            with urlopen(request, timeout=HTTP_TIMEOUT_SECONDS) as response:  # ruff: ignore[suspicious-url-open-usage]
                 status = response.status
                 payload = json.load(response)
         except (OSError, json.JSONDecodeError) as error:

@@ -19,7 +19,7 @@ def variant_url(path, source_width, extension="jpg", preferred_width=None):
     return static(variant_path(path, width, extension))
 
 
-def responsive_image_context(  # noqa: PLR0913
+def responsive_image_context(  # ruff: ignore[too-many-arguments]
     path: str,
     source_width: int,
     source_height: int,

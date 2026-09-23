@@ -10,7 +10,7 @@ register = template.Library()
 
 
 @register.inclusion_tag("snippets/responsive_image.html")
-def responsive_image(  # noqa: PLR0913
+def responsive_image(  # ruff: ignore[too-many-arguments]
     path,
     width,
     height,

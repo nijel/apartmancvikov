@@ -2,11 +2,16 @@
 #
 # SPDX-License-Identifier: AGPL-3.0
 
-from collections.abc import Iterable
+from __future__ import annotations
+
 from dataclasses import dataclass
 from datetime import date, timedelta
+from typing import TYPE_CHECKING
 
 from .models import Booking
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
 
 MAXIMUM_INQUIRY_YEARS = 2
 

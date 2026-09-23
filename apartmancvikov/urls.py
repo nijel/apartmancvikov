@@ -48,7 +48,7 @@ from .views import (
 sitemaps = {"static": StaticViewSitemap, "attractions": AttractionSitemap}
 handler404 = page_not_found
 
-urlpatterns = i18n_patterns(  # noqa: RUF005
+urlpatterns = i18n_patterns(  # ruff: ignore[collection-literal-concatenation]
     path("", HomeView.as_view(), name="home"),
     path("pocasi/", WeatherView.as_view(), name="weather"),
     path("vylety/", TripsView.as_view(), name="vylety"),

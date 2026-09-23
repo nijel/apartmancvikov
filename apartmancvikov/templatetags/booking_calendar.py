@@ -4,6 +4,7 @@
 
 from calendar import HTMLCalendar
 from datetime import date, timedelta
+from itertools import starmap
 
 from django import template
 from django.utils.dates import MONTHS, WEEKDAYS, WEEKDAYS_ABBR
@@ -38,16 +39,16 @@ class BookingCalendar(HTMLCalendar):
 
     def get_calendar_data(self) -> list[tuple[int, int, list[list[date]]]]:
         """Generate calendar data."""
-        today = date.today()  # noqa: DTZ011
+        today = date.today()  # ruff: ignore[call-date-today]
         year = today.year
         month = today.month
         months = []
-        while len(months) < 24:  # noqa: PLR2004
+        while len(months) < 24:  # ruff: ignore[magic-value-comparison]
             months.append(
                 (year, month, self.monthdatescalendar(year, month)),
             )
             month += 1
-            if month > 12:  # noqa: PLR2004
+            if month > 12:  # ruff: ignore[magic-value-comparison]
                 month = 1
                 year += 1
         return months
@@ -88,7 +89,7 @@ class BookingCalendar(HTMLCalendar):
             accessible_label,
         )
 
-    def formatmonthname(self, theyear, themonth, withyear=True):  # noqa: ARG002, FBT002
+    def formatmonthname(self, theyear, themonth, withyear=True):  # ruff: ignore[unused-method-argument, boolean-default-value-positional-argument]
         """Return the localized month as the table caption."""
         return format_html("<caption>{} {}</caption>", MONTHS[themonth], theyear)
 
@@ -138,7 +139,7 @@ class BookingCalendar(HTMLCalendar):
     def render_booking(self):
         """Generate HTML with a booking calendar."""
         data = self.get_calendar_data()
-        months = [self.format_month(year, month, dates) for year, month, dates in data]
+        months = list(starmap(self.format_month, data))
         return format_html_join(
             "\n",
             '<div class="calendar-month">{}</div>',

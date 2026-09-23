@@ -196,5 +196,5 @@ class ContactInquiryForm(forms.Form):
 
     @property
     def is_honeypot_filled(self):
-        """Return whether an automated submitter filled the trap field."""
+        """Whether an automated submitter filled the trap field."""
         return bool(self.cleaned_data.get("website"))

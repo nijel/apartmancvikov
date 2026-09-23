@@ -27,4 +27,4 @@ def json_ld(value):
     payload = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
     payload = payload.replace("<", "\\u003c").replace(">", "\\u003e")
     payload = payload.replace("&", "\\u0026")
-    return mark_safe(f'<script type="application/ld+json">{payload}</script>')  # noqa: S308
+    return mark_safe(f'<script type="application/ld+json">{payload}</script>')  # ruff: ignore[suspicious-mark-safe-usage]

@@ -8,7 +8,7 @@ import argparse
 import hashlib
 import json
 import shutil
-import subprocess
+import subprocess  # ruff: ignore[suspicious-subprocess-import]
 import sys
 from pathlib import Path
 
@@ -19,7 +19,7 @@ MANIFEST_PATH = OUTPUT_DIR / "manifest.json"
 
 sys.path.insert(0, str(BASE_DIR))
 
-from apartmancvikov.image_config import available_widths, variant_path  # noqa: E402
+from apartmancvikov.image_config import available_widths, variant_path  # ruff: ignore[module-import-not-at-top-of-file]
 
 JPEG_QUALITY = 86
 WEBP_QUALITY = 78
@@ -41,7 +41,7 @@ def sources():
 
 def dimensions(path):
     """Read source dimensions through GraphicsMagick."""
-    result = subprocess.run(  # noqa: S603
+    result = subprocess.run(  # ruff: ignore[subprocess-without-shell-equals-true]
         [GM_BINARY, "identify", "-format", "%w %h", str(path)],
         check=True,
         capture_output=True,
@@ -80,7 +80,7 @@ def convert(source, destination, width, extension):
         if extension == "webp":
             command.extend(["-define", f"webp:method={WEBP_METHOD}"])
         command.append(str(target))
-        subprocess.run(command, check=True)  # noqa: S603
+        subprocess.run(command, check=True)  # ruff: ignore[subprocess-without-shell-equals-true]
 
     if extension != "jpg":
         run(destination)

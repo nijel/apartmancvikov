@@ -30,7 +30,7 @@ def _qr_svg(url: str):
             "focusable": "false",
         }
     )
-    return mark_safe(image.to_string(encoding="unicode"))  # noqa: S308
+    return mark_safe(image.to_string(encoding="unicode"))  # ruff: ignore[suspicious-mark-safe-usage]
 
 
 @register.inclusion_tag("snippets/print_header.html")

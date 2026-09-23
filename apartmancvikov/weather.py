@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+import operator
 from datetime import datetime, timedelta
 from numbers import Real
 from typing import Any
@@ -299,7 +300,7 @@ def build_weather_forecast(
         except (TypeError, ValueError):
             continue
         parsed_entries.append((entry_time, entry))
-    parsed_entries.sort(key=lambda item: item[0])
+    parsed_entries.sort(key=operator.itemgetter(0))
 
     future_indexes = [
         index

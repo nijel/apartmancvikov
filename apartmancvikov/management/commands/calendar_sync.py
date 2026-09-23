@@ -23,14 +23,14 @@ def fixup_date(value: date | datetime, *, is_end: bool = False) -> date:
         else:
             value = value.date()
     elif is_end:
-        value = value - timedelta(days=1)
+        value -= timedelta(days=1)
     return value
 
 
 class Command(BaseCommand):
     help = "refreshes calendar data"
 
-    def handle(self, *args, **options) -> None:  # noqa: ARG002
+    def handle(self, *args, **options) -> None:  # ruff: ignore[unused-method-argument]
         """Fetch CalDav calendar and sync to Booking model."""
         verbosity = int(options["verbosity"])
         existing = {booking.uid: booking for booking in Booking.objects.all()}
