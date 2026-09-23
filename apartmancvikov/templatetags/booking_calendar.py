@@ -42,7 +42,7 @@ class BookingCalendar(HTMLCalendar):
         year = today.year
         month = today.month
         months = []
-        while len(months) < 18:  # noqa: PLR2004
+        while len(months) < 24:  # noqa: PLR2004
             months.append(
                 (year, month, self.monthdatescalendar(year, month)),
             )
