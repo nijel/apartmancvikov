@@ -26,7 +26,7 @@ class RestaurantTip:
 RESTAURANTS = (
     RestaurantTip(
         slug="plechovka",
-        name=_("Plechovka"),
+        name=_("Pohostinství Plechovka"),
         description=_(
             "Jídelna pro rychlý a cenově dostupný oběd během pracovního týdne."
         ),
@@ -59,6 +59,14 @@ RESTAURANTS = (
             "Obědy v pracovní dny; o víkendu rozvoz pizzy. V létě bývá někdy "
             "otevřená zahrádka také o víkendu."
         ),
+    ),
+    RestaurantTip(
+        slug="u-veroniky",
+        name=_("Restaurace U Veroniky"),
+        description=_("Vietnamská kuchyně ve Cvikově pro oběd i večeři."),
+        official_url="https://www.facebook.com/p/Restaurace-u-Veronika-61560846603761/",
+        distance_km=1.1,
+        distance_kind="walking",
     ),
     RestaurantTip(
         slug="na-krajicku",

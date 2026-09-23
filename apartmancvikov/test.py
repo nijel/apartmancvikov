@@ -146,6 +146,40 @@ class SeoTest(TestCase):
         self.assertEqual(html.count('fetchpriority="high"'), 1)
         self.assertIn('content="index, follow, max-image-preview:large"', html)
 
+    def test_practical_stay_information_is_localized(self):
+        """Guests can find heating, smoking rules and summer stay terms."""
+        expected = {
+            "cs": (
+                "ústředním topením",
+                "vyhrazeném místě na zahradě",
+                "upřednostňujeme týdenní pobyty",
+            ),
+            "en": (
+                "central heating",
+                "designated area in the garden",
+                "prefer week-long stays",
+            ),
+            "de": (
+                "Zentralheizung",
+                "ausgewiesenen Raucherbereich",
+                "bevorzugen wir Aufenthalte von einer Woche",
+            ),
+        }
+        for language, (heating, smoking, summer) in expected.items():
+            with self.subTest(language=language):
+                home = self.client.get(f"/{language}/")
+                prices = self.client.get(f"/{language}/cenik/")
+                self.assertContains(home, heating)
+                self.assertContains(home, smoking)
+                self.assertContains(prices, summer)
+
+        home = self.client.get("/cs/")
+        self.assertContains(
+            home,
+            'href="https://www.rohlik.cz/?referralCode=FY6SG8I6"',
+        )
+        self.assertContains(home, 'rel="sponsored noopener noreferrer"')
+
     def test_home_links_selected_reviews_to_their_original_sources(self):
         """Selected review excerpts identify and link to their source portals."""
         response = self.client.get("/cs/")
@@ -1233,7 +1267,7 @@ class SeoTest(TestCase):
         """The overview opens one complete, distance-sorted restaurant guide."""
         overview = self.client.get("/cs/vylety/")
         self.assertContains(overview, 'href="/cs/vylety/restaurace/"')
-        self.assertContains(overview, "Čtrnáct tipů v okolí")
+        self.assertContains(overview, "Patnáct tipů v okolí")
 
         response = self.client.get("/cs/vylety/restaurace/")
         html = response.content.decode()
@@ -1243,6 +1277,14 @@ class SeoTest(TestCase):
         )
         self.assertContains(response, "Pěšky z apartmánu")
         self.assertContains(response, "Autem nebo autobusem")
+        self.assertContains(response, "Pět podniků je dostupných pěšky")
+        self.assertContains(response, 'id="u-veroniky"')
+        self.assertContains(response, "Pohostinství Plechovka")
+        self.assertContains(response, "1,1 km")
+        self.assertContains(
+            response,
+            "https://www.facebook.com/p/Restaurace-u-Veronika-61560846603761/",
+        )
         self.assertContains(response, "0,3 km")
         self.assertContains(response, "19 km")
         self.assertContains(response, "Sushi a ramen v České Lípě")

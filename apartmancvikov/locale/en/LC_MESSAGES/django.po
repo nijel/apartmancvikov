@@ -719,8 +719,8 @@ msgid "Co cena zahrnuje?"
 msgstr "What does the price include?"
 
 #: apartmancvikov/templates/cenik.html:47
-msgid "Ubytování v útulných pokojích se společnou koupelnou."
-msgstr "Accommodation in cozy rooms with a shared bathroom."
+msgid "Ubytování ve třech útulných pokojích se dvěma koupelnami."
+msgstr "Accommodation in three comfortable rooms with two bathrooms."
 
 #: apartmancvikov/templates/cenik.html:48
 msgid "Na pokojích jsou připraveny osušky a ručníky."
@@ -2848,8 +2848,8 @@ msgid "Na zmrzlinu nebo zákusek se zastavte ve Sloupské Terase."
 msgstr "Stop at Sloupská Terasa for ice cream or dessert."
 
 #: apartmancvikov/restaurants.py
-msgid "Plechovka"
-msgstr "Plechovka"
+msgid "Pohostinství Plechovka"
+msgstr "Pohostinství Plechovka"
 
 #: apartmancvikov/restaurants.py
 msgid "Jídelna pro rychlý a cenově dostupný oběd během pracovního týdne."
@@ -3000,8 +3000,8 @@ msgid "Rybí speciality z vlastních rybníků a sádek i tradiční česká kuc
 msgstr "Fish specialities from the restaurant's own ponds and tanks, along with traditional Czech cuisine."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
-msgid "Čtrnáct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
-msgstr "Fourteen recommended restaurants, canteens and refreshment stands within walking distance of Apartment Cvikov and near surrounding attractions."
+msgid "Patnáct doporučených restaurací, jídelen a občerstvení v pěší vzdálenosti od Apartmánu Cvikov i v okolních výletních cílech."
+msgstr "Fifteen recommended restaurants, canteens and refreshment stands within walking distance of Apartment Cvikov and near surrounding attractions."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 #: apartmancvikov/templates/vylety.html
@@ -3009,8 +3009,8 @@ msgid "Doporučené restaurace"
 msgstr "Recommended restaurants"
 
 #: apartmancvikov/structured_data.py
-msgid "Dvacet jedna ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a čtrnáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Twenty-one tried-and-tested family trip ideas, five recommended cycle routes, seven places to swim and fourteen recommended restaurants near Apartment Cvikov."
+msgid "Dvacet jedna ověřených tipů na rodinné výlety, pět doporučených cyklotras, sedm míst ke koupání a patnáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Twenty-one tried-and-tested family trip ideas, five recommended cycle routes, seven places to swim and fifteen recommended restaurants near Apartment Cvikov."
 
 #: apartmancvikov/structured_data.py apartmancvikov/templates/restaurace.html
 msgid "Doporučené restaurace z Apartmánu Cvikov"
@@ -3065,8 +3065,8 @@ msgid "Ověřené tipy pro oběd, večeři i sladkou zastávku"
 msgstr "Tried-and-tested tips for lunch, dinner and a sweet stop"
 
 #: apartmancvikov/templates/restaurace.html
-msgid "Čtyři podniky jsou dostupné pěšky přímo z apartmánu, další můžete navštívit cestou na výlet nebo při návratu."
-msgstr "Four places are within walking distance of the apartment; visit the others on your way to or from a trip."
+msgid "Pět podniků je dostupných pěšky přímo z apartmánu, další můžete navštívit cestou na výlet nebo při návratu."
+msgstr "Five places are within walking distance of the apartment; visit the others on your way to or from a trip."
 
 #: apartmancvikov/templates/restaurace.html
 msgid "Otevírací doba, nabídka a sezonní provoz se mohou změnit. Před návštěvou si vždy ověřte aktuální informace u provozovatele."
@@ -3117,12 +3117,12 @@ msgid "Provoz"
 msgstr "Opening"
 
 #: apartmancvikov/templates/vylety.html
-msgid "Dvacet jedna rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a čtrnáct doporučených restaurací v okolí Apartmánu Cvikov."
-msgstr "Twenty-one family trips, five recommended cycle routes, seven places to swim and fourteen recommended restaurants near Apartment Cvikov."
+msgid "Dvacet jedna rodinných výletů, pět doporučených cyklotras, sedm míst ke koupání a patnáct doporučených restaurací v okolí Apartmánu Cvikov."
+msgstr "Twenty-one family trips, five recommended cycle routes, seven places to swim and fifteen recommended restaurants near Apartment Cvikov."
 
 #: apartmancvikov/templates/vylety.html
-msgid "Čtrnáct tipů v okolí"
-msgstr "Fourteen nearby tips"
+msgid "Patnáct tipů v okolí"
+msgstr "Fifteen nearby tips"
 
 #: apartmancvikov/templates/vylety.html
 msgid "Kam zajít pěšky na oběd a kde se najíst při výletech v okolí Cvikova."
@@ -3793,8 +3793,8 @@ msgstr "Relax on the comfortable sofa and watch TV in the living room. Wi-Fi is 
 msgid "Odpočinek a praktické zázemí"
 msgstr "Rest and practical comforts"
 
-msgid "Apartmán má samostatný vchod. Žaluzie a zatemňovací závěsy na všech oknech vám pomohou s klidným spánkem."
-msgstr "The apartment has its own entrance. Blinds and blackout curtains on all windows help you enjoy a restful night."
+msgid "Apartmán má samostatný vchod; majitelé bydlí v jiné části objektu."
+msgstr "The apartment has its own entrance; the owners live in a separate part of the property."
 
 msgid "V přízemí je prádelna s pračkou, sušičkou a sušákem. K dispozici je také fén."
 msgstr "The ground-floor laundry room has a washing machine, dryer and drying rack. A hairdryer is also available."
@@ -3843,3 +3843,36 @@ msgstr "Plan a holiday, an outdoor break or a stay with colleagues."
 
 msgid "Plánujete rodinnou dovolenou, výlety nebo ubytování pro pracovní tým? Napište nám termín a složení skupiny. Dostupnost a cenu vám potvrdíme e-mailem."
 msgstr "Planning a family holiday, an outdoor break or accommodation for your work team? Tell us your dates and who is coming. We will confirm availability and the price by email."
+
+msgid "Ve velkém obývacím pokoji se pohodlně sejdete všichni; prostor pro společný čas nabízí také oplocená zahrada s terasou."
+msgstr "The large living room has space for everyone to gather, and the fenced garden with its terrace offers more room to spend time together."
+
+msgid "Stravování je vlastní. Potraviny nakoupíte ve Cvikově nebo vám je doveze"
+msgstr "Meals are self-catered. You can buy groceries in Cvikov or have them delivered by"
+
+msgid "Na oběd nebo večeři můžete zajít do některé z"
+msgstr "For lunch or dinner, you can visit one of the"
+
+msgid "restaurací v okolí"
+msgstr "nearby restaurants"
+
+msgid "Na všech oknech jsou žaluzie, zatemňovací závěsy a sítě proti hmyzu."
+msgstr "All windows have blinds, blackout curtains and insect screens."
+
+msgid "Apartmán je vytápěn ústředním topením; o vytápění se hosté nemusí starat."
+msgstr "The apartment has central heating, which guests do not need to manage."
+
+msgid "Uvnitř apartmánu se nekouří. Kouření je možné na vyhrazeném místě na zahradě."
+msgstr "Smoking is not permitted inside the apartment. You can smoke in the designated area in the garden."
+
+msgid "K venkovnímu posezení slouží terasa se zahradním nábytkem; k dispozici je také gril a ohniště."
+msgstr "The terrace has garden furniture for outdoor seating, and a barbecue and fire pit are also available."
+
+msgid "O letních prázdninách upřednostňujeme týdenní pobyty. Kratší termíny jsou možné po domluvě."
+msgstr "During the summer holidays, we prefer week-long stays. Shorter stays can be arranged."
+
+msgid "Restaurace U Veroniky"
+msgstr "Restaurace U Veroniky"
+
+msgid "Vietnamská kuchyně ve Cvikově pro oběd i večeři."
+msgstr "Vietnamese food in Cvikov for lunch or dinner."
