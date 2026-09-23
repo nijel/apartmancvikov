@@ -45,11 +45,14 @@ repos:
   hooks:
   - id: pretty-format-yaml
     args: [--autofix, --indent, '2']
-- repo: https://github.com/pre-commit/mirrors-prettier
-  rev: v4.0.0-alpha.8
+- repo: https://github.com/biomejs/pre-commit
+  rev: v2.5.14
   hooks:
-  - id: prettier
-    files: \.(css|less|scss|graphql|gql|js|jsx|json|md|markdown|mdown|mkdn|mdx|ts|tsx|vue)$
+  - id: biome-check
+    args: [--error-on-warnings]
+    additional_dependencies:
+    - '@biomejs/biome@2.5.14'
+    language: node
 - repo: https://github.com/djlint/djLint
   rev: v1.46.2
   hooks:

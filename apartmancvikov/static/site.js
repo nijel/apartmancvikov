@@ -1,5 +1,3 @@
-"use strict";
-
 const routeMaps = document.querySelectorAll(".cycling-route__map-frame");
 
 if (routeMaps.length) {
