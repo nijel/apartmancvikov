@@ -2849,7 +2849,7 @@ msgstr "Stop at Sloupská Terasa for ice cream or dessert."
 
 #: apartmancvikov/restaurants.py
 msgid "Pohostinství Plechovka"
-msgstr "Pohostinství Plechovka"
+msgstr "Plechovka Pub"
 
 #: apartmancvikov/restaurants.py
 msgid "Jídelna pro rychlý a cenově dostupný oběd během pracovního týdne."
@@ -3872,7 +3872,7 @@ msgid "O letních prázdninách upřednostňujeme týdenní pobyty. Kratší ter
 msgstr "During the summer holidays, we prefer week-long stays. Shorter stays can be arranged."
 
 msgid "Restaurace U Veroniky"
-msgstr "Restaurace U Veroniky"
+msgstr "Restaurant U Veroniky"
 
 msgid "Vietnamská kuchyně ve Cvikově pro oběd i večeři."
 msgstr "Vietnamese food in Cvikov for lunch or dinner."

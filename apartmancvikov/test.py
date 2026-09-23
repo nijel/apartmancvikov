@@ -1341,6 +1341,8 @@ class SeoTest(TestCase):
         """Restaurant recommendations and their internal links keep the language."""
         english = self.client.get("/en/vylety/restaurace/")
         self.assertContains(english, "Recommended restaurants")
+        self.assertContains(english, "Plechovka Pub")
+        self.assertContains(english, "Restaurant U Veroniky")
         self.assertContains(english, "On foot from the apartment")
         self.assertContains(english, "Traditional Czech cuisine")
         self.assertContains(english, "A modern Italian restaurant in Nový Bor")
@@ -1356,6 +1358,8 @@ class SeoTest(TestCase):
 
         german = self.client.get("/de/vylety/restaurace/")
         self.assertContains(german, "Empfohlene Restaurants")
+        self.assertContains(german, "Gaststätte Plechovka")
+        self.assertContains(german, "Restaurant U Veroniky")
         self.assertContains(german, "Zu Fuß vom Apartment")
         self.assertContains(german, "Traditionelle tschechische Küche")
         self.assertContains(german, "Ein modernes italienisches Restaurant in Nový Bor")
