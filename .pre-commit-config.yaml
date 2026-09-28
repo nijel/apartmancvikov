@@ -54,7 +54,7 @@ repos:
     - '@biomejs/biome@2.5.14'
     language: node
 - repo: https://github.com/djlint/djLint
-  rev: v1.46.2
+  rev: v1.46.3
   hooks:
   - id: djlint-reformat-django
   - id: djlint-django
