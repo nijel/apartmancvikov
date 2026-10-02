@@ -2087,9 +2087,14 @@ msgid "Dítě 70 Kč, dospělý 140 Kč, rodinné vstupné 330 Kč."
 msgstr "Child CZK 70, adult CZK 140, family ticket CZK 330."
 
 #: apartmancvikov/content.py
-msgid "V létě denně 9–17, mimo léto pouze o víkendech 9–16."
+msgid ""
+"V dubnu a říjnu o víkendech a svátcích 9–16; v květnu a září denně kromě "
+"pondělí 9–17; od června do srpna denně 9–17. Mimo uvedenou sezonu ověřte "
+"možnost návštěvy předem."
 msgstr ""
-"Daily 9:00–17:00 in summer; weekends only 9:00–16:00 outside summer."
+"April and October: weekends and public holidays 9–16; May and September: "
+"daily except Monday 9–17; June to August: daily 9–17. Outside these "
+"months, check whether a visit is possible in advance."
 
 #: apartmancvikov/content.py
 msgid "Ano"
@@ -2112,8 +2117,14 @@ msgstr ""
 "other exhibition opening hours."
 
 #: apartmancvikov/content.py
-msgid "Dospělý 150 Kč, dítě 100 Kč, rodinné vstupné 450 Kč."
-msgstr "Adult CZK 150, child CZK 100, family ticket CZK 450."
+msgid ""
+"S průvodcem: dospělý 150 Kč, dítě, student nebo senior 100 Kč, rodina (2 "
+"dospělí a 2 děti) 450 Kč. Bez průvodce: dospělý 100 Kč, dítě, student nebo"
+" senior 80 Kč."
+msgstr ""
+"Guided tour: adult CZK 150, child, student or senior CZK 100, family (2 "
+"adults and 2 children) CZK 450. Without a guide: adult CZK 100, child, "
+"student or senior CZK 80."
 
 #: apartmancvikov/content.py
 msgid "Prohlídky od pondělí do pátku 9–13."
@@ -2132,17 +2143,22 @@ msgstr ""
 "current announcements and the winter area depends on snow conditions."
 
 #: apartmancvikov/content.py
-msgid "2–9 €; cena se liší podle věku návštěvníka a sezony."
-msgstr "€2–9; price varies by visitor age and season."
-
-#: apartmancvikov/content.py
-msgid "V létě denně 9–18, mimo léto denně 10–16."
+msgid ""
+"Od dubna do října: dospělý 9 €, dítě 6–14 let 3 €, rodina (2 dospělí a "
+"nejméně 2 děti) 22 €. Od listopadu do března: dospělý 6 €, dítě 6–14 let 2"
+" €, rodina 14 €."
 msgstr ""
-"Daily 9:00–18:00 in summer; daily 10:00–16:00 outside summer."
+"April to October: adult €9, child aged 6–14 €3, family (2 adults and at "
+"least 2 children) €22. November to March: adult €6, child aged 6–14 €2, "
+"family €14."
 
 #: apartmancvikov/content.py
-msgid "Dospělý 9 €, dítě 4,50 €, rodinné vstupné 22,50 €."
-msgstr "Adult €9, child €4.50, family ticket €22.50."
+msgid "Od dubna do října denně 9–18; od listopadu do března denně 10–16."
+msgstr "April to October: daily 9–18; November to March: daily 10–16."
+
+#: apartmancvikov/content.py
+msgid "Dospělý 9 €, dítě od 3 do 16 let 4,50 €, rodinné vstupné 22,50 €."
+msgstr "Adult €9, child aged 3–16 €4.50, family admission €22.50."
 
 #: apartmancvikov/content.py
 msgid "Denně 10–18."
@@ -2622,8 +2638,16 @@ msgid "Barokní poutní areál s nejseverněji položenou loretou v Evropě."
 msgstr "A Baroque pilgrimage complex containing Europe's northernmost Loreto."
 
 #: apartmancvikov/content.py
-msgid "Loretánská kaple Panny Marie v Rumburku vznikla v letech 1704 až 1709 podle návrhu Jana Lucase Hildebrandta. Je přesnou kopií Svaté chýše v italském Loretu, zde však zdobenou místním pískovcem."
-msgstr "The Loreto Chapel of the Virgin Mary in Rumburk was built between 1704 and 1709 to a design by Johann Lucas von Hildebrandt. It is an exact copy of the Holy House in Loreto, Italy, but here it is decorated with local sandstone."
+msgid ""
+"Loretánská kaple Panny Marie v Rumburku vznikla v letech 1704 až 1707 "
+"podle návrhu Jana Lucase Hildebrandta. Vnější výzdoba byla dokončena roku "
+"1709. Je barokní kopií Svaté chýše v italském Loretu, zde zdobenou místním"
+" pískovcem."
+msgstr ""
+"The Loreto Chapel of the Virgin Mary in Rumburk was built between 1704 and"
+" 1707 to a design by Johann Lucas von Hildebrandt. Its exterior decoration"
+" was completed in 1709. It is a Baroque copy of the Holy House in Loreto, "
+"Italy, decorated here with local sandstone."
 
 #: apartmancvikov/content.py
 msgid "Bohatě zdobená kaple stojí uprostřed ambitu bývalého kapucínského kláštera. Spolu s kostelem svatého Vavřince vytváří klidný uzavřený areál jen několik kroků od centra Rumburku."
@@ -2650,8 +2674,12 @@ msgid "Dospělý 80 Kč, dítě od 7 do 15 let 40 Kč, děti do 6 let zdarma."
 msgstr "Adults CZK 80, children aged 7–15 CZK 40, children under 6 free."
 
 #: apartmancvikov/content.py
-msgid "Od listopadu do dubna v sobotu 9–16:30; od května do října od úterý do soboty 9–16:30."
-msgstr "November to April: Saturday 09:00–16:30; May to October: Tuesday to Saturday 09:00–16:30."
+msgid ""
+"Od listopadu do dubna v sobotu 9–16:30; od května do října od úterý do "
+"soboty 9–16:30. Poslední vstup v 16:00."
+msgstr ""
+"November to April: Saturdays 9–16:30; May to October: Tuesday to Saturday "
+"9–16:30. Last admission at 16:00."
 
 #: apartmancvikov/content.py
 msgid "Transbordér u Chrastavy"
@@ -2666,8 +2694,14 @@ msgid "Hlavním zážitkem osmikilometrového okruhu je transbordér u Andělsk�
 msgstr "The highlight of the eight-kilometre loop is the transporter bridge at Andělská Hora: a suspended cabin that you propel across the Lusatian Neisse yourself. The route runs mainly along a cycle path and combines nature with industrial heritage."
 
 #: apartmancvikov/content.py
-msgid "Kabina překonává řeku na více než dvacetimetrovém závěsu. Cestující otáčením kliky pohánějí jednoduchý mechanismus a převezou na druhý břeh sebe, jízdní kolo i dětský kočárek."
-msgstr "The cabin crosses the river on a suspension more than twenty metres long. By turning a crank, passengers power a simple mechanism that carries them, their bicycle and even a pushchair to the opposite bank."
+msgid ""
+"Kabina překonává řeku na více než dvacetimetrovém závěsu. Cestující "
+"přitahováním lana přes kladkostroj převezou na druhý břeh sebe, jízdní "
+"kolo i dětský kočárek."
+msgstr ""
+"The suspended cabin crosses the river over a span of more than twenty "
+"metres. Passengers pull a rope through a pulley system to take themselves,"
+" bicycles and strollers to the other bank."
 
 #: apartmancvikov/content.py
 msgid "Při pokračování směrem do Chrastavy minete výraznou secesní textilní továrnu z červených cihel. Ve městě lze navštívit také muzeum hasičské techniky nebo expozici vodního náhonu a Francisovy turbíny."
@@ -2678,8 +2712,12 @@ msgid "Transbordér je volně přístupný a funguje bez obsluhy, takže samotn�
 msgstr "The transporter bridge is freely accessible and operates without staff, making the crossing itself part of the adventure for children. When water levels are high, always respect the current conditions on site."
 
 #: apartmancvikov/content.py
-msgid "Děti si mohou kabinu samy pohánět; menším pomůže s klikou dospělý."
-msgstr "Children can propel the cabin themselves; an adult can help younger ones with the crank."
+msgid ""
+"Děti si mohou kabinu samy pohánět; menším pomůže s přitahováním lana "
+"dospělý."
+msgstr ""
+"Children can move the cabin themselves; an adult can help younger children"
+" pull the rope."
 
 #: apartmancvikov/content.py
 msgid "Volně přístupné celoročně."
@@ -2730,12 +2768,21 @@ msgid "Stezky kolem Brniště"
 msgstr "Trails around Brniště"
 
 #: apartmancvikov/content.py
-msgid "Tři rodinné trasy za skalními sochami, hastrmany a českým sklem."
-msgstr "Three family trails featuring rock sculptures, water sprites and Czech glass."
+msgid "Tři vybrané rodinné trasy za skalními sochami, hastrmany a českým sklem."
+msgstr ""
+"Three selected family routes featuring rock sculptures, water sprites and "
+"Czech glass."
 
 #: apartmancvikov/content.py
-msgid "V Brništi si můžete vybrat ze tří tematických stezek různé délky. Každá má vlastní mapu a jiný příběh: umění ukryté v lese, vodní svět hastrmanů nebo skleněná díla zasazená do krajiny."
-msgstr "In Brniště you can choose from three themed trails of different lengths. Each has its own map and story: art hidden in the forest, the watery world of water sprites, or glass artworks set in the landscape."
+msgid ""
+"V Brništi doporučujeme tři vybrané tematické stezky různé délky. Každá má "
+"vlastní mapu a jiný příběh: umění ukryté v lese, vodní svět hastrmanů nebo"
+" skleněná díla zasazená do krajiny."
+msgstr ""
+"In Brniště, we recommend three selected themed trails of different "
+"lengths. Each has its own map and a different story: art hidden in the "
+"forest, the watery world of water sprites, or glass artworks set in the "
+"landscape."
 
 #: apartmancvikov/content.py
 msgid "Trasy začínají na různých místech v okolí obce, proto si před odjezdem otevřete mapu vybrané varianty. Všechny jsou volně přístupné a lze je projít samostatně."
@@ -2778,8 +2825,13 @@ msgid "Skleněná stezka"
 msgstr "Glass Trail"
 
 #: apartmancvikov/content.py
-msgid "Cesta ke Schrötrově kapli míjí skleněný strom a díla Bořka Šípka i Jiřího Pačinka; zpět se vraťte stejnou trasou, okolní pozemky jsou soukromé."
-msgstr "The path to Schröter's Chapel passes a glass tree and works by Bořek Šípek and Jiří Pačinek; return along the same route because the surrounding land is private."
+msgid ""
+"Cesta ke Schöterově kapli míjí skleněný strom a díla Bořka Šípka i Jiřího "
+"Pačinka; zpět se vraťte stejnou trasou, okolní pozemky jsou soukromé."
+msgstr ""
+"The path to Schöter’s Chapel passes a glass tree and works by Bořek Šípek "
+"and Jiří Pačinek; return along the same route, as the surrounding land is "
+"private."
 
 #: apartmancvikov/content.py
 msgid "Po Skleněné stezce pokračujte za dalšími díly Jiřího Pačinka do sklářské zahrady v Kunraticích."
@@ -3873,6 +3925,18 @@ msgstr "During the summer holidays, we prefer week-long stays. Shorter stays can
 
 msgid "Restaurace U Veroniky"
 msgstr "Restaurant U Veroniky"
+
+#: apartmancvikov/restaurants.py
+msgid "V pondělí zavřeno."
+msgstr "Closed on Mondays."
+
+#: apartmancvikov/restaurants.py
+msgid "V pondělí a úterý zavřeno."
+msgstr "Closed on Mondays and Tuesdays."
+
+#: apartmancvikov/restaurants.py
+msgid "Od pondělí do čtvrtka zavřeno."
+msgstr "Closed Monday to Thursday."
 
 msgid "Vietnamská kuchyně ve Cvikově pro oběd i večeři."
 msgstr "Vietnamese food in Cvikov for lunch or dinner."

@@ -2701,6 +2701,17 @@ html.lightbox-open {
     margin-bottom: 2.5mm;
   }
 
+  body.trip-print--detail
+    .attraction-detail[data-attraction="skalni-hrad-sloup"] {
+    grid-template-columns: 30mm minmax(0, 1fr);
+  }
+
+  body.trip-print--detail
+    .attraction-detail[data-attraction="skalni-hrad-sloup"]
+    .attraction-facts {
+    grid-template-columns: minmax(25mm, 30%) 1fr;
+  }
+
   body.trip-print--detail .attraction-facts dt,
   body.trip-print--detail .attraction-facts dd {
     border-bottom: 0.5pt solid #d6cec6;

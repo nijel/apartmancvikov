@@ -825,7 +825,8 @@ class SeoTest(TestCase):  # ruff: ignore[too-many-public-methods]
         self.assertContains(response, "Vstupné")
         self.assertContains(response, "rodinné vstupné 330 Kč")
         self.assertContains(response, "Provozní doba")
-        self.assertContains(response, "o víkendech 9–16")
+        self.assertContains(response, "V dubnu a říjnu o víkendech a svátcích 9–16")
+        self.assertContains(response, "v květnu a září denně kromě pondělí 9–17")
         self.assertContains(response, "Ceny a provozní doba se mohou změnit")
 
     def test_swimming_destinations_show_structured_practical_information(self):

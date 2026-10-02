@@ -494,10 +494,14 @@ ATTRACTIONS = (
         difficulty=MODERATE,
         family_tip=_("Počítejte se schody a dohledem nad dětmi na vyhlídkách."),
         map_url="https://mapy.com/s/judatacovu",
-        official_url="https://www.hrad-sloup.cz/",
+        official_url="https://hradsloup.cz/",
         stroller_access=_("Ne"),
         admission=_("Dítě 70 Kč, dospělý 140 Kč, rodinné vstupné 330 Kč."),
-        opening_hours=_("V létě denně 9–17, mimo léto pouze o víkendech 9–16."),
+        opening_hours=_(
+            "V dubnu a říjnu o víkendech a svátcích 9–16; v květnu a září denně kromě "
+            "pondělí 9–17; od června do srpna denně 9–17. Mimo uvedenou sezonu ověřte "
+            "možnost návštěvy předem."
+        ),
         related_trips=(
             TripRelation(
                 target_kind="swimming",
@@ -607,7 +611,11 @@ ATTRACTIONS = (
         map_url="https://mapy.com/s/budufokado",
         official_url="https://www.ajetoglass.com/",
         stroller_access=_("Ne"),
-        admission=_("Dospělý 150 Kč, dítě 100 Kč, rodinné vstupné 450 Kč."),
+        admission=_(
+            "S průvodcem: dospělý 150 Kč, dítě, student nebo senior 100 Kč, rodina (2 "
+            "dospělí a 2 děti) 450 Kč. Bez průvodce: dospělý 100 Kč, dítě, student "
+            "nebo senior 80 Kč."
+        ),
         opening_hours=_("Prohlídky od pondělí do pátku 9–13."),
         related_trips=(
             TripRelation(
@@ -1001,9 +1009,10 @@ ATTRACTIONS = (
         name=_("Loreta Rumburk"),
         summary=_("Barokní poutní areál s nejseverněji položenou loretou v Evropě."),
         description=_(
-            "Loretánská kaple Panny Marie v Rumburku vznikla v letech 1704 až "
-            "1709 podle návrhu Jana Lucase Hildebrandta. Je přesnou kopií "
-            "Svaté chýše v italském Loretu, zde však zdobenou místním pískovcem."
+            "Loretánská kaple Panny Marie v Rumburku vznikla v letech 1704 až 1707 "
+            "podle návrhu Jana Lucase Hildebrandta. Vnější výzdoba byla dokončena "
+            "roku 1709. Je barokní kopií Svaté chýše v italském Loretu, zde zdobenou "
+            "místním pískovcem."
         ),
         description_paragraphs=(
             _(
@@ -1036,8 +1045,8 @@ ATTRACTIONS = (
         ),
         admission=_("Dospělý 80 Kč, dítě od 7 do 15 let 40 Kč, děti do 6 let zdarma."),
         opening_hours=_(
-            "Od listopadu do dubna v sobotu 9–16:30; od května do října "
-            "od úterý do soboty 9–16:30."
+            "Od listopadu do dubna v sobotu 9–16:30; od května do října od úterý do "
+            "soboty 9–16:30. Poslední vstup v 16:00."
         ),
         image="vylety/loreta-rumburk.jpg",
         image_width=400,
@@ -1057,9 +1066,9 @@ ATTRACTIONS = (
         ),
         description_paragraphs=(
             _(
-                "Kabina překonává řeku na více než dvacetimetrovém závěsu. "
-                "Cestující otáčením kliky pohánějí jednoduchý mechanismus a "
-                "převezou na druhý břeh sebe, jízdní kolo i dětský kočárek."
+                "Kabina překonává řeku na více než dvacetimetrovém závěsu. Cestující "
+                "přitahováním lana přes kladkostroj převezou na druhý břeh sebe, "
+                "jízdní kolo i dětský kočárek."
             ),
             _(
                 "Při pokračování směrem do Chrastavy minete výraznou secesní "
@@ -1078,7 +1087,8 @@ ATTRACTIONS = (
         driving_distance_km=29,
         difficulty=EASY,
         family_tip=_(
-            "Děti si mohou kabinu samy pohánět; menším pomůže s klikou dospělý."
+            "Děti si mohou kabinu samy pohánět; menším pomůže s "
+            "přitahováním lana dospělý."
         ),
         map_url="https://mapy.com/s/latagomabe",
         official_url=(
@@ -1159,11 +1169,13 @@ ATTRACTIONS = (
     Attraction(
         slug="stezky-brniste",
         name=_("Stezky kolem Brniště"),
-        summary=_("Tři rodinné trasy za skalními sochami, hastrmany a českým sklem."),
+        summary=_(
+            "Tři vybrané rodinné trasy za skalními sochami, hastrmany a českým sklem."
+        ),
         description=_(
-            "V Brništi si můžete vybrat ze tří tematických stezek různé délky. "
-            "Každá má vlastní mapu a jiný příběh: umění ukryté v lese, vodní "
-            "svět hastrmanů nebo skleněná díla zasazená do krajiny."
+            "V Brništi doporučujeme tři vybrané tematické stezky různé délky. Každá "
+            "má vlastní mapu a jiný příběh: umění ukryté v lese, vodní svět hastrmanů "
+            "nebo skleněná díla zasazená do krajiny."
         ),
         description_paragraphs=(
             _(
@@ -1215,9 +1227,9 @@ ATTRACTIONS = (
                 distance_km=3.7,
                 map_url="https://mapy.com/s/nujepuhota",
                 description=_(
-                    "Cesta ke Schrötrově kapli míjí skleněný strom a díla "
-                    "Bořka Šípka i Jiřího Pačinka; zpět se vraťte stejnou trasou, "
-                    "okolní pozemky jsou soukromé."
+                    "Cesta ke Schöterově kapli míjí skleněný strom a díla Bořka Šípka "
+                    "i Jiřího Pačinka; zpět se vraťte stejnou trasou, okolní pozemky "
+                    "jsou soukromé."
                 ),
             ),
         ),
@@ -1320,8 +1332,14 @@ ATTRACTIONS = (
         map_url="https://mapy.com/s/locacosoge",
         official_url="https://oybin.com/erleben-entdecken/burg-und-kloster/",
         stroller_access=_("Ne"),
-        admission=_("2–9 €; cena se liší podle věku návštěvníka a sezony."),
-        opening_hours=_("V létě denně 9–18, mimo léto denně 10–16."),
+        admission=_(
+            "Od dubna do října: dospělý 9 €, dítě 6–14 let 3 €, rodina (2 dospělí a "
+            "nejméně 2 děti) 22 €. Od listopadu do března: dospělý 6 €, dítě 6–14 let "
+            "2 €, rodina 14 €."
+        ),
+        opening_hours=_(
+            "Od dubna do října denně 9–18; od listopadu do března denně 10–16."
+        ),
         related_trips=(
             TripRelation(
                 target_kind="attraction",
@@ -1386,7 +1404,9 @@ ATTRACTIONS = (
         map_url="https://mapy.com/s/mamubazode",
         official_url="https://www.exotenhaus.info/",
         stroller_access=_("Ano"),
-        admission=_("Dospělý 9 €, dítě 4,50 €, rodinné vstupné 22,50 €."),
+        admission=_(
+            "Dospělý 9 €, dítě od 3 do 16 let 4,50 €, rodinné vstupné 22,50 €."
+        ),
         opening_hours=_("Denně 10–18."),
         related_trips=(
             TripRelation(

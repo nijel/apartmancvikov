@@ -176,6 +176,7 @@ RESTAURANTS = (
         distance_km=9,
         distance_kind="driving",
         travel_tip=_("Do Nového Boru je možné dojet také autobusem."),
+        schedule_note=_("V pondělí zavřeno."),
         related_trips=(
             TripRelation(
                 target_kind="cycling",
@@ -254,6 +255,7 @@ RESTAURANTS = (
         distance_km=10,
         distance_kind="driving",
         travel_tip=_("Do Krompachu je možné dojet také autobusem ze Cvikova."),
+        schedule_note=_("V pondělí a úterý zavřeno."),
         related_trips=(
             TripRelation(
                 target_kind="attraction",
@@ -274,6 +276,7 @@ RESTAURANTS = (
         official_url=("https://penzionlemberk.cz/penzion-restaurace/restaurace"),
         distance_km=11,
         distance_kind="driving",
+        schedule_note=_("Od pondělí do čtvrtka zavřeno."),
         related_trips=(
             TripRelation(
                 target_kind="attraction",
