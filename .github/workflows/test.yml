@@ -8,40 +8,40 @@ jobs:
     strategy:
       matrix:
         python-version:
-        - '3.11'
-        - '3.12'
-        - '3.13'
-        - '3.14'
+          - "3.11"
+          - "3.12"
+          - "3.13"
+          - "3.14"
     name: Python ${{ matrix.python-version }}
 
     steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-      with:
-        python-version: ${{ matrix.python-version }}
-    - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
-      with:
-        enable-cache: true
-        cache-suffix: ${{ matrix.python-version }}
-    - run: sudo apt-get update
-    - run: sudo apt-get install -y gettext
-    - name: Install dependencies
-      run: uv sync --locked --no-default-groups --group test
-    - name: Compile MO files
-      run: uv run --no-sync python manage.py compilemessages
-    - name: Check responsive image variants
-      run: uv run --no-sync python scripts/generate-images.py --check
-    - name: Collect static files
-      run: uv run --no-sync python manage.py collectstatic --noinput
-    - name: Django checks
-      run: uv run --no-sync python manage.py check
-    - name: Test with Django
-      run: uv run --no-sync coverage run manage.py test
-    - name: Coverage
-      run: |
-        uv run --no-sync coverage combine
-        uv run --no-sync coverage xml
-    - uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
-      with:
-        name: Python ${{ matrix.python-version }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          cache-suffix: ${{ matrix.python-version }}
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y gettext
+      - name: Install dependencies
+        run: uv sync --locked --no-default-groups --group test
+      - name: Compile MO files
+        run: uv run --no-sync python manage.py compilemessages
+      - name: Check responsive image variants
+        run: uv run --no-sync python scripts/generate-images.py --check
+      - name: Collect static files
+        run: uv run --no-sync python manage.py collectstatic --noinput
+      - name: Django checks
+        run: uv run --no-sync python manage.py check
+      - name: Test with Django
+        run: uv run --no-sync coverage run manage.py test
+      - name: Coverage
+        run: |
+          uv run --no-sync coverage combine
+          uv run --no-sync coverage xml
+      - uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          name: Python ${{ matrix.python-version }}
