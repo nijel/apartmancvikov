@@ -8,8 +8,8 @@ name: Pre-commit check
 on:
   push:
     branches-ignore:
-    - renovate/**
-    - weblate
+      - renovate/**
+      - weblate
   pull_request:
 
 permissions:
@@ -20,32 +20,32 @@ jobs:
     runs-on: ubuntu-26.04
 
     steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      with:
-        persist-credentials: false
-    - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-      with:
-        path: ~/.cache/prek
-        key: ${{ runner.os }}-prek-${{ hashFiles('.pre-commit-config.yaml', 'uv.lock') }}
-    - name: Setup Python
-      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-      with:
-        python-version: 3.15
-    - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
-      with:
-        enable-cache: true
-        cache-suffix: pre-commit
-    - name: Install dependencies
-      run: uv sync --locked --only-group pre-commit
-    - name: pre-commit
-      run: uv run --no-sync prek run --all-files --show-diff-on-failure
-      env:
-        RUFF_OUTPUT_FORMAT: github
-        REUSE_OUTPUT_FORMAT: github
-    - name: diff
-      run: git diff
-      if: always()
-    - uses: pre-commit-ci/lite-action@062bca0919bc9d6e66755cc05074b70c77e111fc # v1.2.0
-      if: always()
-      with:
-        msg: 'chore(pre-commit): apply code formatting'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/prek
+          key: ${{ runner.os }}-prek-${{ hashFiles('.pre-commit-config.yaml', 'uv.lock') }}
+      - name: Setup Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: 3.15
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          cache-suffix: pre-commit
+      - name: Install dependencies
+        run: uv sync --locked --only-group pre-commit
+      - name: pre-commit
+        run: uv run --no-sync prek run --all-files --show-diff-on-failure
+        env:
+          RUFF_OUTPUT_FORMAT: github
+          REUSE_OUTPUT_FORMAT: github
+      - name: diff
+        run: git diff
+        if: always()
+      - uses: pre-commit-ci/lite-action@062bca0919bc9d6e66755cc05074b70c77e111fc # v1.2.0
+        if: always()
+        with:
+          msg: "chore(pre-commit): apply code formatting"

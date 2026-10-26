@@ -1,69 +1,69 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v6.0.0
-  hooks:
-  - id: trailing-whitespace
-  - id: end-of-file-fixer
-  - id: check-yaml
-  - id: check-toml
-  - id: check-merge-conflict
-  - id: debug-statements
-  - id: mixed-line-ending
-    args: [--fix=lf]
-- repo: https://github.com/adamchainz/django-upgrade
-  rev: 1.33.0
-  hooks:
-  - id: django-upgrade
-    args: [--target-version, '5.2']
-- repo: https://github.com/adamchainz/djade-pre-commit
-  rev: 1.10.0
-  hooks:
-  - id: djade
-    args: [--target-version, '5.2']
-- repo: https://github.com/adrienverge/yamllint
-  rev: v1.38.0
-  hooks:
-  - id: yamllint
-- repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.17.2
-  hooks:
-  - id: ruff
-    args: [--fix, --exit-non-zero-on-fix]
-  - id: ruff-format
-- repo: https://github.com/asottile/blacken-docs
-  rev: 1.20.0
-  hooks:
-  - id: blacken-docs
-- repo: meta
-  hooks:
-  - id: check-hooks-apply
-  - id: check-useless-excludes
-- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-  rev: v2.16.0
-  hooks:
-  - id: pretty-format-yaml
-    args: [--autofix, --indent, '2']
-- repo: https://github.com/biomejs/pre-commit
-  rev: v2.6.3
-  hooks:
-  - id: biome-check
-    args: [--error-on-warnings]
-    additional_dependencies:
-    - '@biomejs/biome@2.6.3'
-    language: node
-- repo: https://github.com/djlint/djLint
-  rev: v1.47.0
-  hooks:
-  - id: djlint-reformat-django
-  - id: djlint-django
-- repo: https://github.com/abravalheri/validate-pyproject
-  rev: v0.27
-  hooks:
-  - id: validate-pyproject
-- repo: https://github.com/pappasam/toml-sort
-  rev: v0.25.0
-  hooks:
-  - id: toml-sort-fix
-    exclude: ^uv\.lock$
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: mixed-line-ending
+        args: [--fix=lf]
+  - repo: https://github.com/adamchainz/django-upgrade
+    rev: 1.33.0
+    hooks:
+      - id: django-upgrade
+        args: [--target-version, "5.2"]
+  - repo: https://github.com/adamchainz/djade-pre-commit
+    rev: 1.10.0
+    hooks:
+      - id: djade
+        args: [--target-version, "5.2"]
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
+    hooks:
+      - id: yamllint
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.2
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+  - repo: https://github.com/asottile/blacken-docs
+    rev: 1.20.0
+    hooks:
+      - id: blacken-docs
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.16.0
+    hooks:
+      - id: pretty-format-yaml
+        args: [--autofix, --indent, "2"]
+  - repo: https://github.com/biomejs/pre-commit
+    rev: v2.6.3
+    hooks:
+      - id: biome-check
+        args: [--error-on-warnings]
+        additional_dependencies:
+          - "@biomejs/biome@2.6.3"
+        language: node
+  - repo: https://github.com/djlint/djLint
+    rev: v1.47.0
+    hooks:
+      - id: djlint-reformat-django
+      - id: djlint-django
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.27
+    hooks:
+      - id: validate-pyproject
+  - repo: https://github.com/pappasam/toml-sort
+    rev: v0.25.0
+    hooks:
+      - id: toml-sort-fix
+        exclude: ^uv\.lock$
