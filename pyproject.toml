@@ -17,7 +17,7 @@ test = [
 dependencies = [
   "caldav==3.7.0",
   "Django==5.2.19",
-  "icalendar==7.3.0",
+  "icalendar==7.3.2",
   "mysqlclient",
   "qrcode==8.2",
   "weblate-fonts==2026.1"
