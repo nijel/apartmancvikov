@@ -46,12 +46,12 @@ repos:
       - id: pretty-format-yaml
         args: [--autofix, --indent, "2"]
   - repo: https://github.com/biomejs/pre-commit
-    rev: v2.6.8
+    rev: v2.6.9
     hooks:
       - id: biome-check
         args: [--error-on-warnings]
         additional_dependencies:
-          - "@biomejs/biome@2.6.8"
+          - "@biomejs/biome@2.6.9"
         language: node
   - repo: https://github.com/djlint/djLint
     rev: v1.54.0
